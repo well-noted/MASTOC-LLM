@@ -62,9 +62,9 @@ to setup
 
   create-humans 3
   set nrActions 3
-  ask human 0 [ set ki 5  set action 1 set initial-cattle ki ]
-  ask human 1 [ set ki 15 set action 1 set initial-cattle ki ]
-  ask human 2 [ set ki 25 set action 1 set initial-cattle ki ]
+  ask human 0 [ set ki agent0-initial-cows  set action 1 set initial-cattle ki ]
+  ask human 1 [ set ki agent1-initial-cows  set action 1 set initial-cattle ki ]
+  ask human 2 [ set ki agent2-initial-cows  set action 1 set initial-cattle ki ]
   set K sum [ ki ] of humans
   set P 2
   ask humans [ set previous-action (random 3) - 1 ]
@@ -1093,6 +1093,51 @@ institution-check-interval
 1
 1
 ticks
+HORIZONTAL
+
+SLIDER
+8
+876
+216
+909
+agent0-initial-cows
+agent0-initial-cows
+1
+60
+5
+1
+1
+cows
+HORIZONTAL
+
+SLIDER
+8
+912
+216
+945
+agent1-initial-cows
+agent1-initial-cows
+1
+60
+15
+1
+1
+cows
+HORIZONTAL
+
+SLIDER
+8
+948
+216
+981
+agent2-initial-cows
+agent2-initial-cows
+1
+60
+25
+1
+1
+cows
 HORIZONTAL
 @#$#@#$#@
 WHAT IS IT?
