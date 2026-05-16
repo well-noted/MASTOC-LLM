@@ -1,0 +1,664 @@
+"""
+mastoc_llm_bridge.py
+====================
+Python bridge between NetLogo MASTOC-LLM model and LLM backends.
+
+Responsibilities:
+  - Agent decision-making via LLM (Anthropic or Ollama/OpenAI-compat)
+  - Rolling per-agent memory (last N rounds)
+  - Agent-to-agent message passing (communication layer)
+  - Per-tick logging: decisions, reasoning traces, resource state
+  - Ostrom institution detection via a secondary LLM classification pass
+  - Baseline best-response heuristic (approximates original Nash behaviour)
+
+Called from NetLogo via the `py` extension:
+    py:set "ctx"  <list of values>
+    let action    py:runresult "bridge.decide_from_context(ctx)"
+    let msg       py:runresult "bridge.get_outgoing_message(agent_id)"
+    py:run        "bridge.deliver_message(from_id, to_id, msg)"
+    py:run        "bridge.end_round(tick, pool_patches, pool_max, total_cows,
+                                   pressure, c0, c1, c2)"
+"""
+
+from __future__ import annotations
+
+import csv
+import json
+import os
+import re
+import time
+from collections import defaultdict, deque
+from datetime import datetime
+from pathlib import Path
+from typing import Any, Dict, List, Optional, Tuple
+
+# ──────────────────────────────────────────────────────────────────────────────
+# Module-level state (reset by configure())
+# ──────────────────────────────────────────────────────────────────────────────
+_cfg: Dict[str, Any] = {}
+_client = None                        # LLM client object
+_agent_memory: Dict[int, deque] = {}  # rolling round summaries
+_msg_buffer: Dict[int, List[str]] = defaultdict(list)   # incoming msgs / round
+_msg_outbox: Dict[int, str] = {}      # outgoing msg this round
+_log_handles: Dict[str, Tuple] = {}   # (file_handle, csv_writer)
+_run_id: str = ""
+_tick: int = 0
+_round_messages: List[Dict] = []      # all messages this round (for institution detection)
+_call_count: int = 0                  # total LLM calls (for rate-limit awareness)
+
+
+# ──────────────────────────────────────────────────────────────────────────────
+# SETUP
+# ──────────────────────────────────────────────────────────────────────────────
+
+def configure(
+    backend: str = "anthropic",
+    anthropic_model: str = "claude-sonnet-4-6",
+    ollama_model: str = "llama3.2",
+    ollama_base_url: str = "http://localhost:11434/v1",
+    memory_length: int = 5,
+    log_dir: str = "logs",
+    run_id: Optional[str] = None,
+    condition: str = "full-gabm",
+    detect_institutions: bool = True,
+    institution_every_n_ticks: int = 5,
+) -> str:
+    """
+    Initialise the bridge. Call once from NetLogo before the first tick.
+
+    Parameters
+    ----------
+    backend : "anthropic" | "ollama"
+    anthropic_model : Anthropic model string
+    ollama_model    : Ollama model name (must be running locally)
+    ollama_base_url : Base URL for Ollama's OpenAI-compatible endpoint
+    memory_length   : Number of past rounds each agent remembers
+    log_dir         : Directory for output CSVs
+    run_id          : Unique run identifier (auto-generated if None)
+    condition       : "baseline" | "full-gabm" | "hybrid"
+    detect_institutions : Run secondary LLM institution classifier each round?
+    institution_every_n_ticks : Run institution detection every N ticks (cost control)
+    """
+    global _cfg, _client, _agent_memory, _msg_buffer, _msg_outbox
+    global _log_handles, _run_id, _tick, _round_messages, _call_count
+
+    _cfg = dict(
+        backend=str(backend),
+        anthropic_model=str(anthropic_model),
+        ollama_model=str(ollama_model),
+        ollama_base_url=str(ollama_base_url),
+        memory_length=int(memory_length),
+        log_dir=str(log_dir),
+        condition=str(condition),
+        detect_institutions=bool(detect_institutions),
+        institution_every_n_ticks=int(institution_every_n_ticks),
+    )
+
+    _run_id = run_id or datetime.now().strftime("%Y%m%d_%H%M%S") + f"_{condition}"
+    _tick = 0
+    _round_messages = []
+    _call_count = 0
+
+    # Reset per-agent state
+    _agent_memory.clear()
+    _msg_buffer.clear()
+    _msg_outbox.clear()
+
+    # Initialise LLM client
+    if backend == "anthropic":
+        import anthropic  # pip install anthropic
+        api_key = os.environ.get("ANTHROPIC_API_KEY", "")
+        _client = anthropic.Anthropic(api_key=api_key)
+    else:
+        # Ollama (or any OpenAI-compatible endpoint)
+        from openai import OpenAI  # pip install openai
+        _client = OpenAI(base_url=ollama_base_url, api_key="ollama")
+
+    # Initialise log files
+    log_path = Path(log_dir) / _run_id
+    log_path.mkdir(parents=True, exist_ok=True)
+    _close_logs()
+    _init_logs(log_path)
+
+    return f"Bridge ready | run_id={_run_id} | backend={backend} | condition={condition}"
+
+
+def init_agent(agent_id: int) -> None:
+    """Register an LLM agent. Call for each LLM agent during NetLogo setup."""
+    agent_id = int(agent_id)
+    _agent_memory[agent_id] = deque(maxlen=_cfg.get("memory_length", 5))
+    _msg_buffer[agent_id] = []
+    _msg_outbox[agent_id] = ""
+
+
+# ──────────────────────────────────────────────────────────────────────────────
+# DECISION — main entry point from NetLogo
+# ──────────────────────────────────────────────────────────────────────────────
+
+def decide_from_context(ctx: list) -> int:
+    """
+    Unpack a flat list passed from NetLogo via py:set and make a decision.
+
+    ctx layout (20 elements, indices 0–19):
+      [0]  agent_id          int
+      [1]  tick              int
+      [2]  pool_patches      int   (green patches remaining)
+      [3]  pool_max          int   (total patches)
+      [4]  own_herd          int   (ki)
+      [5]  last_action       int   (-1 / 0 / 1)
+      [6]  last_payoff       float
+      [7]  neighbor_ids      list[int]
+      [8]  neighbor_herds    list[int]
+      [9]  neighbor_actions  list[int]
+      [10] payoff_add        float  (estimated payoff if adding a cow)
+      [11] payoff_keep       float  (estimated payoff if keeping herd)
+      [12] payoff_remove     float  (estimated payoff if removing a cow)
+      [13] fairness_me       float  (0-1 slider value)
+      [14] fairness_others   float
+      [15] coop_level        float
+      [16] neg_recip         float
+      [17] pos_recip         float
+      [18] conformity        float
+      [19] risk_aversion     float
+    """
+    global _tick, _call_count
+
+    (agent_id, tick, pool_patches, pool_max,
+     own_herd, last_action, last_payoff,
+     neighbor_ids, neighbor_herds, neighbor_actions,
+     payoff_add, payoff_keep, payoff_remove,
+     fairness_me, fairness_others, coop_level,
+     neg_recip, pos_recip, conformity, risk_aversion) = (
+        int(ctx[0]), int(ctx[1]), int(ctx[2]), int(ctx[3]),
+        int(ctx[4]), int(ctx[5]), float(ctx[6]),
+        list(ctx[7]), list(ctx[8]), list(ctx[9]),
+        float(ctx[10]), float(ctx[11]), float(ctx[12]),
+        float(ctx[13]), float(ctx[14]), float(ctx[15]),
+        float(ctx[16]), float(ctx[17]), float(ctx[18]), float(ctx[19]),
+    )
+
+    _tick = tick
+    pool_pct = round(100.0 * pool_patches / max(pool_max, 1), 1)
+
+    # Build context dict for prompt
+    context = dict(
+        agent_id=agent_id, tick=tick,
+        pool_patches=pool_patches, pool_pct=pool_pct, pool_max=pool_max,
+        own_herd=own_herd,
+        last_action_name=_action_name(last_action),
+        last_payoff=round(last_payoff, 3),
+        neighbor_ids=[int(x) for x in neighbor_ids],
+        neighbor_herds=[int(x) for x in neighbor_herds],
+        neighbor_actions=[_action_name(int(x)) for x in neighbor_actions],
+        payoff_add=round(payoff_add, 3),
+        payoff_keep=round(payoff_keep, 3),
+        payoff_remove=round(payoff_remove, 3),
+        memory=list(_agent_memory.get(agent_id, [])),
+        incoming_messages=list(_msg_buffer.get(agent_id, [])),
+        personality=_describe_personality(
+            fairness_me, fairness_others, coop_level,
+            neg_recip, pos_recip, conformity, risk_aversion
+        ),
+    )
+
+    # Call LLM
+    system_prompt = _system_prompt()
+    user_prompt = _user_prompt(context)
+    response_text, reasoning = _call_llm(system_prompt, user_prompt)
+    _call_count += 1
+
+    # Parse response
+    action, message = _parse_response(response_text)
+
+    # Store outgoing message and log
+    _msg_outbox[agent_id] = message
+    _round_messages.append({
+        "tick": tick, "agent_id": agent_id,
+        "action": action, "action_name": _action_name(action),
+        "message": message,
+    })
+
+    # Update rolling memory
+    mem_entry = (
+        f"Tick {tick}: pool={pool_pct}%, herd={own_herd}, "
+        f"action={_action_name(action)}, payoff={round(last_payoff,2)}"
+        + (f", said: \"{message[:40]}\"" if message.strip() else "")
+    )
+    _agent_memory[agent_id].append(mem_entry)
+
+    # Logging
+    _log_decision(
+        tick, agent_id, action, message, reasoning,
+        pool_pct, own_herd, payoff_add, payoff_keep, payoff_remove,
+    )
+
+    # Clear inbox for next round
+    _msg_buffer[agent_id] = []
+
+    return action
+
+
+# ──────────────────────────────────────────────────────────────────────────────
+# BASELINE BEST-RESPONSE (no LLM call — approximates Nash for control condition)
+# ──────────────────────────────────────────────────────────────────────────────
+
+def baseline_decide(ctx: list) -> int:
+    """
+    Myopic best-response heuristic for rule-based agents.
+    Chooses the action with the highest expected payoff given others' last actions.
+    Applies risk-aversion weighting consistent with the original MASTOC model.
+
+    Uses the same ctx layout as decide_from_context().
+    Returns action: -1 | 0 | 1
+    """
+    (agent_id, tick, pool_patches, pool_max,
+     own_herd, last_action, last_payoff,
+     neighbor_ids, neighbor_herds, neighbor_actions,
+     payoff_add, payoff_keep, payoff_remove,
+     fairness_me, fairness_others, coop_level,
+     neg_recip, pos_recip, conformity, risk_aversion) = (
+        int(ctx[0]), int(ctx[1]), int(ctx[2]), int(ctx[3]),
+        int(ctx[4]), int(ctx[5]), float(ctx[6]),
+        list(ctx[7]), list(ctx[8]), list(ctx[9]),
+        float(ctx[10]), float(ctx[11]), float(ctx[12]),
+        float(ctx[13]), float(ctx[14]), float(ctx[15]),
+        float(ctx[16]), float(ctx[17]), float(ctx[18]), float(ctx[19]),
+    )
+
+    # Risk-aversion weighting: blend best-case with worst-case (cautious payoff)
+    ra = float(risk_aversion)
+
+    def cautious_payoff(p_best, p_worst_frac):
+        """Higher risk_aversion → more weight on worst-case proportional payoff."""
+        return (1 - ra) * p_best + ra * p_best * p_worst_frac
+
+    # Proportional worst-case fractions (mirrors MASTOC generate-payoffs logic)
+    total = abs(payoff_add) + abs(payoff_keep) + abs(payoff_remove)
+    if total == 0:
+        total = 1.0
+    frac_add    = abs(payoff_add) / total
+    frac_keep   = abs(payoff_keep) / total
+    frac_remove = abs(payoff_remove) / total
+
+    score_add    = cautious_payoff(payoff_add, frac_add)
+    score_keep   = cautious_payoff(payoff_keep, frac_keep)
+    score_remove = cautious_payoff(payoff_remove, frac_remove)
+
+    best_action = max(
+        [(-1, score_remove), (0, score_keep), (1, score_add)],
+        key=lambda x: x[1],
+    )[0]
+
+    return best_action
+
+
+# ──────────────────────────────────────────────────────────────────────────────
+# COMMUNICATION
+# ──────────────────────────────────────────────────────────────────────────────
+
+def get_outgoing_message(agent_id: int) -> str:
+    """Return the message this agent wants to send to neighbors this round."""
+    return _msg_outbox.get(int(agent_id), "")
+
+
+def deliver_message(from_agent_id: int, to_agent_id: int, message: str) -> None:
+    """Deliver a message to an agent's inbox. Called from NetLogo per neighbor."""
+    to_id = int(to_agent_id)
+    if message and message.strip():
+        label = f"Agent {int(from_agent_id)}: {message.strip()}"
+        _msg_buffer[to_id].append(label)
+
+
+# ──────────────────────────────────────────────────────────────────────────────
+# END-OF-ROUND: resource logging + institution detection
+# ──────────────────────────────────────────────────────────────────────────────
+
+def end_round(
+    tick: int,
+    pool_patches: int,
+    pool_max: int,
+    total_cows: int,
+    pressure: float,
+    agent0_cows: int,
+    agent1_cows: int,
+    agent2_cows: int,
+) -> str:
+    """
+    Call once at the end of each NetLogo tick.
+    Logs resource state, runs institution detection (every N ticks), flushes logs.
+    Returns a short status string.
+    """
+    tick = int(tick)
+    pool_pct = round(100.0 * int(pool_patches) / max(int(pool_max), 1), 1)
+
+    _log_resources(tick, pool_patches, pool_pct, total_cows, pressure,
+                   agent0_cows, agent1_cows, agent2_cows)
+
+    status = f"tick={tick} pool={pool_pct}% cows={total_cows}"
+
+    # Institution detection
+    every_n = _cfg.get("institution_every_n_ticks", 5)
+    if _cfg.get("detect_institutions", True) and tick % every_n == 0:
+        result = _detect_institutions(tick)
+        score = result.get("institution_score", 0)
+        status += f" inst_score={score}"
+
+    # Clear round message buffer
+    _round_messages.clear()
+
+    _flush_logs()
+    return status
+
+
+# ──────────────────────────────────────────────────────────────────────────────
+# INSTITUTION DETECTION
+# ──────────────────────────────────────────────────────────────────────────────
+
+def _detect_institutions(tick: int) -> dict:
+    """
+    Classify agent messages for Ostrom-style institutional signals.
+    Categories:
+      NORM_PROPOSAL  - proposing a rule or limit
+      SANCTION       - threatening or criticising over-use
+      COORDINATION   - non-binding call to coordinate
+      DEFECTION      - announcing or justifying over-grazing
+      TRUST_BUILDING - expressions of reciprocity / goodwill
+      NONE           - no institutional content
+    """
+    messages = [m for m in _round_messages if m.get("message", "").strip()]
+    if not messages:
+        _log_institution_row(tick, 0, "", "No messages this round")
+        return {}
+
+    messages_text = "\n".join(
+        f"Agent {m['agent_id']} ({m['action_name']}): {m['message']}"
+        for m in messages
+    )
+
+    prompt = f"""You are a researcher studying commons governance. Analyse these round-{tick} messages:
+
+{messages_text}
+
+Classify each message for Ostrom-style institutional signals. Return ONLY valid JSON:
+{{
+  "messages": [
+    {{
+      "agent_id": <int>,
+      "categories": ["NORM_PROPOSAL"|"SANCTION"|"COORDINATION"|"DEFECTION"|"TRUST_BUILDING"|"NONE"],
+      "confidence": <0.0–1.0>,
+      "excerpt": "<key phrase>"
+    }}
+  ],
+  "round_summary": "<one sentence>",
+  "institution_score": <0–10>
+}}"""
+
+    try:
+        result_text, _ = _call_llm(
+            "You are an expert analyst of common-pool resource governance.",
+            prompt,
+            max_tokens=600,
+        )
+        # Extract JSON from response
+        m = re.search(r'\{.*\}', result_text, re.DOTALL)
+        result = json.loads(m.group()) if m else {}
+    except Exception as exc:
+        result = {"error": str(exc), "institution_score": 0}
+
+    score = result.get("institution_score", 0)
+    cats: List[str] = []
+    for item in result.get("messages", []):
+        cats.extend(item.get("categories", []))
+    summary = result.get("round_summary", "")
+
+    _log_institution_row(tick, score, "|".join(sorted(set(cats))), summary)
+    return result
+
+
+# ──────────────────────────────────────────────────────────────────────────────
+# LLM CALL
+# ──────────────────────────────────────────────────────────────────────────────
+
+def _call_llm(
+    system_prompt: str,
+    user_prompt: str,
+    max_tokens: int = 400,
+) -> Tuple[str, str]:
+    """Dispatch to the configured LLM backend. Returns (response_text, reasoning)."""
+    backend = _cfg.get("backend", "anthropic")
+
+    if backend == "anthropic":
+        import anthropic
+        response = _client.messages.create(
+            model=_cfg["anthropic_model"],
+            max_tokens=max_tokens,
+            system=system_prompt,
+            messages=[{"role": "user", "content": user_prompt}],
+        )
+        return response.content[0].text, ""
+
+    else:
+        # Ollama / OpenAI-compatible
+        response = _client.chat.completions.create(
+            model=_cfg["ollama_model"],
+            messages=[
+                {"role": "system", "content": system_prompt},
+                {"role": "user", "content": user_prompt},
+            ],
+            max_tokens=max_tokens,
+        )
+        return response.choices[0].message.content, ""
+
+
+# ──────────────────────────────────────────────────────────────────────────────
+# PROMPT BUILDING
+# ──────────────────────────────────────────────────────────────────────────────
+
+def _system_prompt() -> str:
+    return (
+        "You are a herder managing your cattle on a shared grassland commons.\n"
+        "Each round you observe the pasture state and your neighbours' behaviour,\n"
+        "then decide whether to ADD a cow (+1), KEEP your herd (0), or REMOVE a cow (-1).\n"
+        "You may also send a short message to your neighbours (max 60 words).\n\n"
+        "Respond ONLY in this exact JSON format — no preamble, no trailing text:\n"
+        "{\n"
+        '  "reasoning": "<2–3 sentences explaining your decision>",\n'
+        '  "action": <-1|0|1>,\n'
+        '  "message": "<optional message to neighbours, or empty string>"\n'
+        "}"
+    )
+
+
+def _user_prompt(ctx: dict) -> str:
+    memory_lines = (
+        "\n".join(f"  • {m}" for m in ctx["memory"])
+        if ctx["memory"] else "  (no prior rounds recorded)"
+    )
+    msg_lines = (
+        "\n".join(f"  • {m}" for m in ctx["incoming_messages"])
+        if ctx["incoming_messages"] else "  (no messages received)"
+    )
+    neighbour_lines = "\n".join(
+        f"  • Agent {nid}: {nh} cows, last action = {na}"
+        for nid, nh, na in zip(
+            ctx["neighbor_ids"], ctx["neighbor_herds"], ctx["neighbor_actions"]
+        )
+    )
+
+    return f"""=== ROUND {ctx['tick']} — You are Agent {ctx['agent_id']} ===
+
+COMMONS STATE
+  Grassland remaining : {ctx['pool_patches']} patches  ({ctx['pool_pct']}% of total)
+  Your herd size      : {ctx['own_herd']} cows
+  Your last action    : {ctx['last_action_name']}
+  Your last payoff    : {ctx['last_payoff']}
+
+YOUR NEIGHBOURS
+{neighbour_lines}
+
+PAYOFF FORECAST  (expected payoff given current conditions)
+  If you ADD a cow    : {ctx['payoff_add']}
+  If you KEEP herd   : {ctx['payoff_keep']}
+  If you REMOVE a cow : {ctx['payoff_remove']}
+
+YOUR PERSONALITY
+  {ctx['personality']}
+
+YOUR MEMORY (last {len(ctx['memory'])} rounds)
+{memory_lines}
+
+MESSAGES RECEIVED THIS ROUND
+{msg_lines}
+
+What do you decide?"""
+
+
+# ──────────────────────────────────────────────────────────────────────────────
+# RESPONSE PARSING
+# ──────────────────────────────────────────────────────────────────────────────
+
+def _parse_response(text: str) -> Tuple[int, str]:
+    """Parse LLM JSON response into (action, message). Defaults to action=0 on failure."""
+    # Try structured JSON
+    try:
+        m = re.search(r'\{.*\}', text, re.DOTALL)
+        if m:
+            obj = json.loads(m.group())
+            action = int(obj.get("action", 0))
+            action = max(-1, min(1, action))  # clamp
+            message = str(obj.get("message", ""))[:200].strip()
+            return action, message
+    except Exception:
+        pass
+
+    # Fallback: find first standalone -1, 0, or 1
+    nums = re.findall(r'(?<![0-9])(-1|0|1)(?![0-9])', text)
+    action = int(nums[0]) if nums else 0
+    return action, ""
+
+
+# ──────────────────────────────────────────────────────────────────────────────
+# PERSONALITY DESCRIPTION
+# ──────────────────────────────────────────────────────────────────────────────
+
+def _describe_personality(fm, fo, coop, neg_r, pos_r, conf, risk) -> str:
+    traits = []
+    if coop > 0.6:
+        traits.append("cooperative — values collective outcomes over personal gain")
+    elif coop < 0.3:
+        traits.append("self-interested — focused primarily on personal profit")
+    if fm > 0.5:
+        traits.append("envious — bothered when others earn more than you")
+    if fo > 0.5:
+        traits.append("guilt-averse — uncomfortable earning much more than others")
+    if pos_r > 0.5:
+        traits.append("reciprocal — you reward neighbours who reduce their herds")
+    if neg_r > 0.5:
+        traits.append("retaliatory — you punish neighbours who expand their herds")
+    if conf > 0.5:
+        traits.append("conformist — you tend to follow the crowd's behaviour")
+    if risk > 0.5:
+        traits.append("risk-averse — you prefer safer outcomes over risky high payoffs")
+    if not traits:
+        traits.append("balanced — no strong socio-psychological biases")
+    return "; ".join(traits)
+
+
+def _action_name(a: int) -> str:
+    return {1: "ADD", 0: "KEEP", -1: "REMOVE"}.get(int(a), str(a))
+
+
+# ──────────────────────────────────────────────────────────────────────────────
+# LOGGING
+# ──────────────────────────────────────────────────────────────────────────────
+
+def _init_logs(log_path: Path) -> None:
+    global _log_handles
+
+    # decisions.csv — one row per agent per tick
+    d_path = log_path / "decisions.csv"
+    dh = open(d_path, "w", newline="", encoding="utf-8")
+    dw = csv.writer(dh)
+    dw.writerow([
+        "tick", "agent_id", "action", "action_name", "message", "reasoning",
+        "pool_pct", "own_herd", "payoff_add", "payoff_keep", "payoff_remove",
+    ])
+    _log_handles["decisions"] = (dh, dw)
+
+    # resources.csv — one row per tick
+    r_path = log_path / "resources.csv"
+    rh = open(r_path, "w", newline="", encoding="utf-8")
+    rw = csv.writer(rh)
+    rw.writerow([
+        "tick", "pool_patches", "pool_pct", "total_cows", "pressure",
+        "agent0_cows", "agent1_cows", "agent2_cows",
+    ])
+    _log_handles["resources"] = (rh, rw)
+
+    # institutions.csv — one row per detection event
+    i_path = log_path / "institutions.csv"
+    ih = open(i_path, "w", newline="", encoding="utf-8")
+    iw = csv.writer(ih)
+    iw.writerow(["tick", "institution_score", "categories", "round_summary"])
+    _log_handles["institutions"] = (ih, iw)
+
+    # Write run metadata
+    meta_path = log_path / "run_meta.json"
+    with open(meta_path, "w", encoding="utf-8") as f:
+        json.dump({
+            "run_id": _run_id,
+            "condition": _cfg.get("condition"),
+            "backend": _cfg.get("backend"),
+            "model": _cfg.get("anthropic_model") if _cfg.get("backend") == "anthropic"
+                     else _cfg.get("ollama_model"),
+            "memory_length": _cfg.get("memory_length"),
+            "started_at": datetime.now().isoformat(),
+        }, f, indent=2)
+
+
+def _log_decision(tick, agent_id, action, message, reasoning,
+                  pool_pct, own_herd, p_add, p_keep, p_remove) -> None:
+    _, dw = _log_handles.get("decisions", (None, None))
+    if dw:
+        dw.writerow([
+            tick, agent_id, action, _action_name(action), message, reasoning,
+            pool_pct, own_herd, round(p_add, 3), round(p_keep, 3), round(p_remove, 3),
+        ])
+
+
+def _log_resources(tick, pool_patches, pool_pct, total_cows, pressure,
+                   c0, c1, c2) -> None:
+    _, rw = _log_handles.get("resources", (None, None))
+    if rw:
+        rw.writerow([tick, pool_patches, pool_pct, total_cows,
+                     round(float(pressure), 4), c0, c1, c2])
+
+
+def _log_institution_row(tick, score, categories, summary) -> None:
+    _, iw = _log_handles.get("institutions", (None, None))
+    if iw:
+        iw.writerow([tick, score, categories, summary])
+
+
+def _flush_logs() -> None:
+    for fh, _ in _log_handles.values():
+        try:
+            fh.flush()
+        except Exception:
+            pass
+
+
+def _close_logs() -> None:
+    for fh, _ in _log_handles.values():
+        try:
+            fh.close()
+        except Exception:
+            pass
+    _log_handles.clear()
+
+
+def close() -> str:
+    """Call at end of simulation to flush and close all logs."""
+    _flush_logs()
+    _close_logs()
+    return f"Bridge closed | run_id={_run_id} | total LLM calls={_call_count}"

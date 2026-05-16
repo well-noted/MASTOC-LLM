@@ -1,0 +1,64 @@
+{
+  "_comment": "MASTOC-LLM runtime configuration. Values here are defaults; the NetLogo GUI sliders/choosers take precedence at runtime.",
+
+  "llm": {
+    "backend": "anthropic",
+    "anthropic_model": "claude-sonnet-4-6",
+    "ollama_model": "llama3.2",
+    "ollama_base_url": "http://localhost:11434/v1"
+  },
+
+  "simulation": {
+    "ticks": 120,
+    "memory_length": 5,
+    "detect_institutions": true,
+    "institution_check_interval": 5
+  },
+
+  "conditions": {
+    "baseline": {
+      "condition": "baseline",
+      "hybrid_fraction": 0.0,
+      "description": "Rule-based best-response — control (reproduces classical tragedy)"
+    },
+    "full_gabm": {
+      "condition": "full-gabm",
+      "hybrid_fraction": 0.0,
+      "description": "All agents use LLM reasoning"
+    },
+    "hybrid_33": {
+      "condition": "hybrid",
+      "hybrid_fraction": 0.33,
+      "description": "1 of 3 agents is LLM-based (institutional entrepreneur hypothesis)"
+    }
+  },
+
+  "agents": {
+    "count": 3,
+    "initial_cattle": [5, 15, 25],
+    "initial_action": 1
+  },
+
+  "environment": {
+    "cow_forage_requirement": 2,
+    "initial_grassland_pct": 100,
+    "initial_grass_growth_rate": 0.001,
+    "price_P": 2
+  },
+
+  "dispositions": {
+    "_comment": "Default slider values — matches original MASTOC v1.1.0 defaults",
+    "fairness_concerning_me": 0,
+    "fairness_concerning_others": 1,
+    "cooperation_level": 1,
+    "negative_reciprocity": 0,
+    "positive_reciprocity": 1,
+    "conformity_level": 0,
+    "risk_aversion_level": 1
+  },
+
+  "logging": {
+    "log_dir": "logs",
+    "data_dir": "Data"
+  }
+}

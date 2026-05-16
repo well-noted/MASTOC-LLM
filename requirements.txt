@@ -1,0 +1,15 @@
+# MASTOC-LLM Python dependencies
+# Install with: pip install -r requirements.txt
+
+# ── LLM backends (install at least one) ──────────────────────────────────────
+anthropic>=0.40.0          # Anthropic API (claude-sonnet-4-6 etc.)
+openai>=1.0.0              # Ollama OpenAI-compat endpoint + experiment_runner fallback
+
+# ── Analysis & visualisation ─────────────────────────────────────────────────
+pandas>=2.0.0
+matplotlib>=3.7.0
+seaborn>=0.12.0
+
+# ── Optional: headless NetLogo execution ─────────────────────────────────────
+# pynetlogo>=0.4.0          # uncomment for --mode run in experiment_runner.py
+# jpype1>=1.4.0             # required by pynetlogo

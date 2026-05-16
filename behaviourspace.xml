@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="utf-8"?>
+<experiments>
+  <experiment name="baseline" repetitions="3" sequentialRunOrder="false" runMetricsEveryStep="true">
+    <setup>setup</setup>
+    <go>simulation</go>
+    <timeLimit steps="120"/>
+    <metric>count patches with [pcolor = green - 2]</metric>
+    <metric>count cows</metric>
+    <metric>pressure</metric>
+    <metric>count cows with [owner = human 0]</metric>
+    <metric>count cows with [owner = human 1]</metric>
+    <metric>count cows with [owner = human 2]</metric>
+    <enumeratedValueSet variable="cow-forage-requirement">
+      <value value="2"/>
+    </enumeratedValueSet>
+    <enumeratedValueSet variable="initial-grassland">
+      <value value="100"/>
+    </enumeratedValueSet>
+    <enumeratedValueSet variable="initial-grass-growth-rate">
+      <value value="0.001"/>
+    </enumeratedValueSet>
+    <enumeratedValueSet variable="fairness-concerning-me">
+      <value value="0"/>
+    </enumeratedValueSet>
+    <enumeratedValueSet variable="fairness-concerning-others">
+      <value value="1"/>
+    </enumeratedValueSet>
+    <enumeratedValueSet variable="cooperation-level">
+      <value value="1"/>
+    </enumeratedValueSet>
+    <enumeratedValueSet variable="negative-reciprocity">
+      <value value="0"/>
+    </enumeratedValueSet>
+    <enumeratedValueSet variable="positive-reciprocity">
+      <value value="1"/>
+    </enumeratedValueSet>
+    <enumeratedValueSet variable="conformity-level">
+      <value value="0"/>
+    </enumeratedValueSet>
+    <enumeratedValueSet variable="risk-aversion-level">
+      <value value="1"/>
+    </enumeratedValueSet>
+    <enumeratedValueSet variable="llm-backend">
+      <value value=""anthropic""/>
+    </enumeratedValueSet>
+    <enumeratedValueSet variable="anthropic-model-name">
+      <value value=""claude-sonnet-4-6""/>
+    </enumeratedValueSet>
+    <enumeratedValueSet variable="ollama-model-name">
+      <value value=""llama3.2""/>
+    </enumeratedValueSet>
+    <enumeratedValueSet variable="memory-length">
+      <value value="5"/>
+    </enumeratedValueSet>
+    <enumeratedValueSet variable="detect-institutions">
+      <value value="true"/>
+    </enumeratedValueSet>
+    <enumeratedValueSet variable="institution-check-interval">
+      <value value="5"/>
+    </enumeratedValueSet>
+    <enumeratedValueSet variable="condition">
+      <value value=""baseline""/>
+    </enumeratedValueSet>
+    <enumeratedValueSet variable="hybrid-fraction">
+      <value value="0"/>
+    </enumeratedValueSet>
+  </experiment>
+  <experiment name="full-gabm" repetitions="3" sequentialRunOrder="false" runMetricsEveryStep="true">
+    <setup>setup</setup>
+    <go>simulation</go>
+    <timeLimit steps="120"/>
+    <metric>count patches with [pcolor = green - 2]</metric>
+    <metric>count cows</metric>
+    <metric>pressure</metric>
+    <metric>count cows with [owner = human 0]</metric>
+    <metric>count cows with [owner = human 1]</metric>
+    <metric>count cows with [owner = human 2]</metric>
+    <enumeratedValueSet variable="cow-forage-requirement">
+      <value value="2"/>
+    </enumeratedValueSet>
+    <enumeratedValueSet variable="initial-grassland">
+      <value value="100"/>
+    </enumeratedValueSet>
+    <enumeratedValueSet variable="initial-grass-growth-rate">
+      <value value="0.001"/>
+    </enumeratedValueSet>
+    <enumeratedValueSet variable="fairness-concerning-me">
+      <value value="0"/>
+    </enumeratedValueSet>
+    <enumeratedValueSet variable="fairness-concerning-others">
+      <value value="1"/>
+    </enumeratedValueSet>
+    <enumeratedValueSet variable="cooperation-level">
+      <value value="1"/>
+    </enumeratedValueSet>
+    <enumeratedValueSet variable="negative-reciprocity">
+      <value value="0"/>
+    </enumeratedValueSet>
+    <enumeratedValueSet variable="positive-reciprocity">
+      <value value="1"/>
+    </enumeratedValueSet>
+    <enumeratedValueSet variable="conformity-level">
+      <value value="0"/>
+    </enumeratedValueSet>
+    <enumeratedValueSet variable="risk-aversion-level">
+      <value value="1"/>
+    </enumeratedValueSet>
+    <enumeratedValueSet variable="llm-backend">
+      <value value=""anthropic""/>
+    </enumeratedValueSet>
+    <enumeratedValueSet variable="anthropic-model-name">
+      <value value=""claude-sonnet-4-6""/>
+    </enumeratedValueSet>
+    <enumeratedValueSet variable="ollama-model-name">
+      <value value=""llama3.2""/>
+    </enumeratedValueSet>
+    <enumeratedValueSet variable="memory-length">
+      <value value="5"/>
+    </enumeratedValueSet>
+    <enumeratedValueSet variable="detect-institutions">
+      <value value="true"/>
+    </enumeratedValueSet>
+    <enumeratedValueSet variable="institution-check-interval">
+      <value value="5"/>
+    </enumeratedValueSet>
+    <enumeratedValueSet variable="condition">
+      <value value=""full-gabm""/>
+    </enumeratedValueSet>
+    <enumeratedValueSet variable="hybrid-fraction">
+      <value value="0"/>
+    </enumeratedValueSet>
+  </experiment>
+  <experiment name="hybrid-33" repetitions="3" sequentialRunOrder="false" runMetricsEveryStep="true">
+    <setup>setup</setup>
+    <go>simulation</go>
+    <timeLimit steps="120"/>
+    <metric>count patches with [pcolor = green - 2]</metric>
+    <metric>count cows</metric>
+    <metric>pressure</metric>
+    <metric>count cows with [owner = human 0]</metric>
+    <metric>count cows with [owner = human 1]</metric>
+    <metric>count cows with [owner = human 2]</metric>
+    <enumeratedValueSet variable="cow-forage-requirement">
+      <value value="2"/>
+    </enumeratedValueSet>
+    <enumeratedValueSet variable="initial-grassland">
+      <value value="100"/>
+    </enumeratedValueSet>
+    <enumeratedValueSet variable="initial-grass-growth-rate">
+      <value value="0.001"/>
+    </enumeratedValueSet>
+    <enumeratedValueSet variable="fairness-concerning-me">
+      <value value="0"/>
+    </enumeratedValueSet>
+    <enumeratedValueSet variable="fairness-concerning-others">
+      <value value="1"/>
+    </enumeratedValueSet>
+    <enumeratedValueSet variable="cooperation-level">
+      <value value="1"/>
+    </enumeratedValueSet>
+    <enumeratedValueSet variable="negative-reciprocity">
+      <value value="0"/>
+    </enumeratedValueSet>
+    <enumeratedValueSet variable="positive-reciprocity">
+      <value value="1"/>
+    </enumeratedValueSet>
+    <enumeratedValueSet variable="conformity-level">
+      <value value="0"/>
+    </enumeratedValueSet>
+    <enumeratedValueSet variable="risk-aversion-level">
+      <value value="1"/>
+    </enumeratedValueSet>
+    <enumeratedValueSet variable="llm-backend">
+      <value value=""anthropic""/>
+    </enumeratedValueSet>
+    <enumeratedValueSet variable="anthropic-model-name">
+      <value value=""claude-sonnet-4-6""/>
+    </enumeratedValueSet>
+    <enumeratedValueSet variable="ollama-model-name">
+      <value value=""llama3.2""/>
+    </enumeratedValueSet>
+    <enumeratedValueSet variable="memory-length">
+      <value value="5"/>
+    </enumeratedValueSet>
+    <enumeratedValueSet variable="detect-institutions">
+      <value value="true"/>
+    </enumeratedValueSet>
+    <enumeratedValueSet variable="institution-check-interval">
+      <value value="5"/>
+    </enumeratedValueSet>
+    <enumeratedValueSet variable="condition">
+      <value value=""hybrid""/>
+    </enumeratedValueSet>
+    <enumeratedValueSet variable="hybrid-fraction">
+      <value value="0.33"/>
+    </enumeratedValueSet>
+  </experiment>
+</experiments>
