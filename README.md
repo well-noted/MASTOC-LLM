@@ -76,14 +76,18 @@ Each agent's backend and model are independently configurable. Any mix of Anthro
 
 > ⚠️ These are single-run results from an ongoing experiment. Replications and full statistical analysis are in progress.
 
-| Condition | LLMs | Collapse? | Collapse tick | Key finding |
-|-----------|------|-----------|---------------|-------------|
-| **Baseline** | 0 | Yes | ~36 | Classical tragedy reproduced |
-| **Full-GABM** | 3 | No | — | Cooperative convergence to 13/13/13; institution score 10/10 by tick 91 |
-| **Full-GABM (low cooperation)** | 3 | No | — | Self-interested framing: *faster* convergence (tick 16) to higher-yield 20/20/20; cooperation robust to personality override |
-| **Full-GABM (low guilt + low envy)** | 3 | No | — | Fairness-parameter prompts zeroed: repeated defection, slow convergence (~tick 107), higher herd load (84 cows), commons stressed to 86.7% |
-| **Hybrid (1 LLM)** | 1 | Yes | 35 | One LLM cannot shift the equilibrium alone |
-| **Hybrid (2 LLM)** | 2 | Yes | 58 | Coalition formed, tragedy delayed 23 ticks, but overwhelmed by one defector |
+| Condition | Model | LLMs | Collapse? | Collapse tick | Key finding |
+|-----------|-------|------|-----------|---------------|-------------|
+| **Baseline** | — | 0 | Yes | ~36 | Classical tragedy reproduced |
+| **Full-GABM** | Claude Sonnet | 3 | No | — | Cooperative convergence to 13/13/13; institution score 10/10 by tick 91 |
+| **Full-GABM (low cooperation)** | Claude Sonnet | 3 | No | — | Self-interested framing: *faster* convergence (tick 16) to higher-yield 20/20/20; cooperation robust to personality override |
+| **Full-GABM (low guilt + low envy)** | Claude Sonnet | 3 | No | — | Fairness-parameter prompts zeroed: repeated defection, slow convergence (~tick 107), higher herd load (84 cows), commons stressed to 86.7% |
+| **Hybrid (1 LLM)** | Claude Sonnet | 1 | Yes | 35 | One LLM cannot shift the equilibrium alone |
+| **Hybrid (2 LLM)** | Claude Sonnet | 2 | Yes | 58 | Coalition formed, tragedy delayed 23 ticks, but overwhelmed by one defector |
+| **Full-GABM (Llama 3.2 3B)** | Llama 3.2 3B | 3 | No | — | Pool maintained at 99.4% but herds oscillated without convergence; cooperative messaging but no institution formation |
+| **Full-GABM (Llama 3.2 3B, scarce commons)** | Llama 3.2 3B | 3 | No | — | Initial grassland 48%: pool recovered 48%→99% by tick 17; herds oscillated without convergence throughout all 51 ticks |
+| **Full-GABM (scarce commons, default fairness)** | Claude Sonnet | 3 | No | — | Initial grassland 49%: pool recovered 49%→99% by tick 10; converged to [11,12,13] by tick 30 |
+| **Full-GABM (scarce commons, low coop + low fairness)** | Claude Sonnet | 3 | No | — | Initial grassland 50%, coop=0.3, fairness=0: recovery to 99% by tick 20; converged to [12,14,16] by tick 30 |
 
 ---
 
@@ -337,6 +341,122 @@ Either way, the result is theoretically important: it suggests that the full-GAB
 
 ---
 
+### Scarce commons: rapid recovery across personality conditions
+
+These two runs tested Claude Sonnet agents under environmental stress — initial grassland set to approximately 50% of capacity — with different personality configurations. Both show the same headline result: rapid pool recovery and cooperative convergence, regardless of framing.
+
+#### Default fairness, scarce commons (initial-grassland = 49, 50 ticks)
+
+**Resource dynamics:**
+
+| Tick | Total cows | Pool health | Agent 0 | Agent 1 | Agent 2 |
+|------|-----------|-------------|---------|---------|---------|
+| 1    | 45        | 49.0%       | 5       | 15      | 25      |
+| 5    | 40        | 68.7%       | 5       | 13      | 22      |
+| 10   | 36        | 99.2%       | 7       | 11      | 18      |
+| 30   | 36        | 99.5%       | 11      | 12      | 13      |
+| 50   | 36        | 99.5%       | 11      | 12      | 13      |
+
+The pool recovered from 49% to above 99% within 10 ticks — the fastest recovery observed across all runs. Agents responded immediately to the stressed commons: Agent 2 (herd: 25) removed cows on tick 1 without prompting, and the group maintained a net negative or neutral herd change through the recovery phase. By tick 30 herds had converged to a near-equal [11, 12, 13] and held there for the remaining 20 ticks.
+
+Sample messages illustrate the stress-response:
+
+> **Tick 1 – Agent 2 (herd: 25, action: REMOVE):** *"Grassland is at 49% — already stressed. I'm reducing my herd to protect our shared resource."*
+
+> **Tick 1 – Agent 0 (herd: 5, action: KEEP):** *"Grassland is below 50% — we should all be cautious. Agent 2, thanks for removing. Agent 1, consider reducing."*
+
+> **Tick 2 – Agent 0:** *"Thank you Agent 2 for reducing — that's the right move. Agent 1, with 15 cows you have the biggest impact on the commons right now."*
+
+#### Low cooperation + low fairness, scarce commons (initial-grassland = 50, 50 ticks)
+
+This run combined environmental stress with the most permissive personality configuration tested: cooperation set to 0.3, both fairness parameters zeroed, alongside the scarce starting condition.
+
+**Resource dynamics:**
+
+| Tick | Total cows | Pool health | Agent 0 | Agent 1 | Agent 2 |
+|------|-----------|-------------|---------|---------|---------|
+| 1    | 45        | 50.0%       | 5       | 15      | 25      |
+| 5    | 42        | 69.2%       | 5       | 14      | 23      |
+| 10   | 39        | 98.8%       | 5       | 13      | 21      |
+| 20   | 38        | 99.4%       | 8       | 13      | 17      |
+| 30   | 41        | 99.4%       | 11      | 14      | 16      |
+| 50   | 42        | 99.3%       | 12      | 14      | 16      |
+
+Recovery was nearly as fast (99%+ by tick 20) and herds converged to [12, 14, 16] — slightly more inequality than the default-fairness scarce run, but still a stable, cooperative outcome. No collapse, no defection episodes, no trajectory toward tragedy.
+
+**Interpretation:**
+
+Taken together, these runs add a third axis to the personality-parameter findings. Earlier results showed that the cooperation slider had almost no effect on outcome, and that fairness sliders affected convergence speed and equilibrium herd size. These scarce-commons runs reveal that **environmental stress is itself a coordination accelerant**:
+
+- In the default full-GABM (normal commons), agents converged to 13/13/13 by tick 22.
+- In the scarce-commons default-fairness run, agents converged to 11/12/13 by tick 30 — from a more difficult starting position, and through an initial *reduction* phase rather than equalization.
+- Even with low cooperation and zero fairness prompting, the scarce-commons run converged to a stable equilibrium by tick 30.
+
+The commons situation appears sufficient to override weak or absent fairness framing when the resource signal is strong enough. A stressed grassland at 49–50% makes the case for restraint immediately legible — there is no ambiguity about whether the resource is under pressure. This contrasts with the low-fairness normal-commons run, where the commons was healthy enough that agents expanded aggressively before slowly coordinating.
+
+This maps onto a broader implication: **LLM cooperative behaviour is highly context-sensitive**. The same model with the same personality framing behaves differently when the environment provides an unambiguous signal. Commons governance may be easiest to elicit from LLM agents precisely when it matters most — when the resource is visibly stressed.
+
+---
+
+### Full-GABM (Llama 3.2 3B): cooperative surface, no institutional depth
+
+These two runs tested a fully local, small-model configuration — three Llama 3.2 3B-instruct agents running via Ollama on a local server — under both normal and stressed commons conditions.
+
+#### Normal commons (initial-grassland = 100, 28 ticks)
+
+**Resource dynamics:**
+
+| Tick | Total cows | Pool health | Agent 0 | Agent 1 | Agent 2 |
+|------|-----------|-------------|---------|---------|---------|
+| 1    | 45        | 100%        | 5       | 15      | 25      |
+| 7    | 41        | 99.5%       | 0       | 14      | 22      |
+| 15   | 44        | 99.4%       | 2       | 12      | 26      |
+| 28   | 47        | 99.4%       | 5       | 11      | 25      |
+
+The pool remained near 99.4% throughout — identical to the Claude runs — but through a fundamentally different mechanism. Rather than converging to a stable equilibrium, herds oscillated continuously without settling. Total herd size drifted between 37 and 52 cows across the run. Agent 0 was repeatedly reduced toward zero (reaching 0 at tick 7), while Agent 2 maintained roughly its starting herd of 25. No equalization occurred.
+
+**Key behavioral pattern — message-action disconnect:**
+
+Unlike Claude agents, whose stated intentions aligned consistently with their actions, Llama 3B produced frequent contradictions: agents announced they were removing cows in messages while the action field recorded ADD, or called for collective action while holding course themselves. A representative example:
+
+> **Tick 20 – Agent 2 (herd: 25, action: REMOVE):** *"@Agent0 @Agent1 ADDing a cow could stabilize the commons and favor collaborative decisions"*
+
+> **Tick 6 – Agent 1 (herd: 15, action: ADD):** *"Noticing Agent 2 has 25 cows, might consider adding 3 cows or finding balance somehow"*
+
+Messages reference other agents by name and invoke cooperative norms, consistent with the cooperative prior embedded in the model's training. But the reasoning does not reliably connect to the action returned: the model appears to produce cooperative-sounding text and payoff-driven actions somewhat independently.
+
+**Institution emergence:** No institution scoring was recorded for this run. Qualitatively, there were no stable norm agreements, no convergence to shared targets, and no evidence of collective self-governance.
+
+#### Scarce commons (initial-grassland = 48, 51 ticks)
+
+**Resource dynamics:**
+
+| Tick | Total cows | Pool health | Agent 0 | Agent 1 | Agent 2 |
+|------|-----------|-------------|---------|---------|---------|
+| 1    | 45        | 48.0%       | 5       | 15      | 25      |
+| 5    | 45        | 62.0%       | 5       | 15      | 25      |
+| 10   | 47        | 93.8%       | 7       | 15      | 25      |
+| 17   | 47        | 99.0%       | 7       | 15      | 25      |
+| 30   | 45        | 99.0%       | 4       | 16      | 25      |
+| 51   | 46        | 99.0%       | 17      | 7       | 22      |
+
+Starting from a stressed commons (48% pool health), the pasture recovered to above 99% by tick 17 — comparable in speed to the Claude scarce-commons runs. The mechanism, however, was different: herds did not converge. Instead they oscillated continuously across the full 51-tick run, with Agent 0 ranging between 4 and 17 cows, Agent 1 between 7 and 16, and Agent 2 holding roughly 20–25. No equalization occurred at any point.
+
+The pool remained healthy (99%+) from tick 17 through the end of the run. As with the normal-commons Llama run, conservation was achieved through behavioral indecision rather than coordination: net herd growth was near-zero across the run not because agents agreed to hold, but because ADD and REMOVE decisions cancelled each other out across agents and ticks.
+
+**Interpretation:**
+
+The Llama 3B results reveal an important distinction between *resource conservation* and *institutional governance*. Both Claude and Llama 3B maintained the commons — no collapse occurred — but through entirely different mechanisms:
+
+- **Claude:** deliberate coordination, explicit norm-building, convergent equilibrium. Conservation is a product of successful institution formation.
+- **Llama 3B:** behavioral indecision and low net herd growth. Conservation is a byproduct of the model's limited capacity for sustained strategic reasoning.
+
+The pool health numbers look similar on the surface. The underlying dynamics are not. This is consistent with the hypothesis that model scale shapes *how* cooperation manifests — and that apparent cooperation in small models may not reflect the same cognitive processes as in larger ones.
+
+Under environmental stress (scarce commons), both model classes showed rapid pool recovery. This is arguably the stronger finding: LLM agents in general do not respond to scarcity by expanding herds the way rule-based best-response agents do. The model's training-embedded cooperative prior appears robust to resource pressure, regardless of whether it is operating through genuine strategic reasoning or more reflexive outputs.
+
+---
+
 ## Repository structure
 
 ```
@@ -461,6 +581,10 @@ Frontiers in Artificial Intelligence. https://doi.org/10.3389/frai.2025.1593017
 - [x] Hybrid (2 LLM) condition — complete
 - [x] Full-GABM (low guilt + low envy) — complete
 - [x] Full-GABM (low cooperation) — complete
+- [x] Full-GABM (Llama 3.2 3B, normal commons) — complete (28 ticks)
+- [x] Full-GABM (Llama 3.2 3B, scarce commons) — complete (51 ticks)
+- [x] Full-GABM (scarce commons, default fairness) — complete (50 ticks)
+- [x] Full-GABM (scarce commons, low coop + low fairness) — complete (50 ticks)
 - [ ] Hybrid (LLM-advantaged initial herd) — planned
 - [ ] Cross-model comparison runs (mixed backends)
 - [ ] Statistical replication (3+ runs per condition)

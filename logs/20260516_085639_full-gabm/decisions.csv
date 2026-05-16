@@ -1,0 +1,154 @@
+tick,agent_id,backend,model,action,action_name,message,reasoning,pool_pct,own_herd,payoff_add,payoff_keep,payoff_remove
+1,1,ollama,llama3.2:3b-instruct-q4_0,0,KEEP,,,48.0,15,31.1,30.0,28.899
+1,2,ollama,llama3.2:3b-instruct-q4_0,0,KEEP,"I'll keep my herd, as any change would leave me vulnerable to over-grazing and its consequences.",,48.0,25,51.1,50.0,48.899
+1,0,ollama,llama3.2:3b-instruct-q4_0,-1,REMOVE,"Hello Agents 1 & 2, considering the communal pastures. Please consider reducing your herds for a more balanced Commons. Our cooperation will be rewarded.",,48.0,5,11.1,10.0,8.899
+2,0,ollama,llama3.2:3b-instruct-q4_0,1,ADD,"Considering our conversation, Agent 2, I'm planning to add one cow and try to find equilibrium.",,50.4,4,9.109,8.0,6.891
+2,1,ollama,llama3.2:3b-instruct-q4_0,0,KEEP,,,50.4,15,31.109,30.0,28.891
+2,2,ollama,llama3.2:3b-instruct-q4_0,0,KEEP,,,50.4,25,51.109,50.0,48.891
+3,1,ollama,llama3.2:3b-instruct-q4_0,1,ADD,"Thinking of balancing it out with one cow addition, hoping that helps keep things stable.",,53.4,15,31.121,30.0,28.878
+3,0,ollama,llama3.2:3b-instruct-q4_0,0,KEEP,"Considering Agent 1's large cattle count, discussing potential limits on cow growth might keep the commons intact.",,53.4,5,11.121,10.0,8.878
+3,2,ollama,llama3.2:3b-instruct-q4_0,-1,REMOVE,"Agents 0 and 1, mutual agreement on keeping herd sizes and discussing adjustments to ensure balance.",,53.4,25,51.121,50.0,48.878
+4,1,ollama,llama3.2:3b-instruct-q4_0,0,KEEP,"Reciprocating Agent 2's restraint on growth, aiming to maintain commons balance",,57.2,16,33.144,32.0,30.855
+4,0,ollama,llama3.2:3b-instruct-q4_0,1,ADD,,,57.2,5,11.144,10.0,8.855
+4,2,ollama,llama3.2:3b-instruct-q4_0,0,KEEP,,,57.2,24,49.144,48.0,46.855
+5,1,ollama,llama3.2:3b-instruct-q4_0,-1,REMOVE,"Considering Agent 0 has 6 cows already contributing to the increased pool, reciprocating their restraint might help maintain cooperative harmony.",,62.0,16,33.179,32.0,30.819
+5,0,ollama,llama3.2:3b-instruct-q4_0,1,ADD,,,62.0,6,13.179,12.0,10.819
+5,2,ollama,llama3.2:3b-instruct-q4_0,1,ADD,,,62.0,24,49.179,48.0,46.819
+6,0,ollama,llama3.2:3b-instruct-q4_0,1,ADD,,,67.8,7,15.235,14.0,12.763
+6,1,ollama,llama3.2:3b-instruct-q4_0,1,ADD,"Noticing Agent 2 has 25 cows, might consider adding 3 cows or finding balance somehow",,67.8,15,31.235,30.0,28.763
+6,2,ollama,llama3.2:3b-instruct-q4_0,0,KEEP,,,67.8,25,51.235,50.0,48.763
+7,2,ollama,llama3.2:3b-instruct-q4_0,-1,REMOVE,"Agents 0 and 1, removing one cow from my herd should keep a safe distance from overgrazing.",,74.3,25,51.312,50.0,48.685
+7,0,ollama,llama3.2:3b-instruct-q4_0,1,ADD,,,74.3,8,17.312,16.0,14.685
+7,1,ollama,llama3.2:3b-instruct-q4_0,-1,REMOVE,"Considering your efforts to manage your large herd, agent 2 — perhaps reducing your herd will make it more sustainable as we move forward.",,74.3,16,33.312,32.0,30.685
+8,0,ollama,llama3.2:3b-instruct-q4_0,1,ADD,,,81.6,9,19.429,18.0,16.568
+8,2,ollama,llama3.2:3b-instruct-q4_0,-1,REMOVE,"Agents 0 and 1, considering the collective wellbeing of our commons.",,81.6,24,49.429,48.0,46.568
+8,1,ollama,llama3.2:3b-instruct-q4_0,0,KEEP,,,81.6,15,31.429,30.0,28.568
+9,1,ollama,llama3.2:3b-instruct-q4_0,-1,REMOVE,,,88.5,15,31.558,30.0,28.438
+9,0,ollama,llama3.2:3b-instruct-q4_0,0,KEEP,,,88.5,10,21.558,20.0,18.438
+9,2,ollama,llama3.2:3b-instruct-q4_0,1,ADD,,,88.5,23,47.558,46.0,44.438
+10,0,ollama,llama3.2:3b-instruct-q4_0,1,ADD,"Hi, Agent 2; your growth sparks mutual concerns about sustainable grassland use; a balanced approach helps avoid overgrazing and minimizes discomfort for one another.",,93.8,10,21.669,20.0,18.327
+10,2,ollama,llama3.2:3b-instruct-q4_0,-1,REMOVE,,,93.8,24,49.669,48.0,46.327
+10,1,ollama,llama3.2:3b-instruct-q4_0,0,KEEP,,,93.8,14,29.669,28.0,26.327
+11,2,ollama,llama3.2:3b-instruct-q4_0,0,KEEP,,,96.8,23,47.739,46.0,44.256
+11,0,ollama,llama3.2:3b-instruct-q4_0,1,ADD,"Hi, Agents 1 & 2; let's keep the growth momentum going!",,96.8,11,23.739,22.0,20.256
+11,1,ollama,llama3.2:3b-instruct-q4_0,-1,REMOVE,,,96.8,14,29.739,28.0,26.256
+12,0,ollama,llama3.2:3b-instruct-q4_0,-1,REMOVE,"Hi Agents 1 & 2; considering recent herd sizes and action, let's choose collective restraint.",,98.1,12,25.77,24.0,22.225
+12,2,ollama,llama3.2:3b-instruct-q4_0,0,KEEP,,,98.1,23,47.77,46.0,44.225
+12,1,ollama,llama3.2:3b-instruct-q4_0,0,KEEP,,,98.1,13,27.77,26.0,24.225
+13,1,ollama,llama3.2:3b-instruct-q4_0,0,KEEP,,,98.6,13,27.788,26.0,24.207
+13,2,ollama,llama3.2:3b-instruct-q4_0,0,KEEP,,,98.6,23,47.788,46.0,44.207
+13,0,ollama,llama3.2:3b-instruct-q4_0,1,ADD,"<Thanks for growing your herd, Agent 2! A bigger pasture for everyone>",,98.6,11,23.788,22.0,20.207
+14,1,ollama,llama3.2:3b-instruct-q4_0,0,KEEP,,,98.7,13,27.786,26.0,24.21
+14,0,ollama,llama3.2:3b-instruct-q4_0,-1,REMOVE,Hi Agents 1 & 2; considering recent herd size.,,98.7,12,25.786,24.0,22.21
+14,2,ollama,llama3.2:3b-instruct-q4_0,0,KEEP,,,98.7,23,47.786,46.0,44.21
+15,2,ollama,llama3.2:3b-instruct-q4_0,-1,REMOVE,Hi Agents 0 & 1; considering recent herd size. Thinking of adding or removing a cow to maintain balance.,,98.8,23,47.793,46.0,44.203
+15,0,ollama,llama3.2:3b-instruct-q4_0,1,ADD,,,98.8,11,23.793,22.0,20.203
+15,1,ollama,llama3.2:3b-instruct-q4_0,0,KEEP,,,98.8,13,27.793,26.0,24.203
+16,0,ollama,llama3.2:3b-instruct-q4_0,-1,REMOVE,Hi Agents 1 & 2; considering recent herd size and Agent 2's thoughts on maintaining balance.,,98.9,12,25.795,24.0,22.2
+16,1,ollama,llama3.2:3b-instruct-q4_0,0,KEEP,,,98.9,13,27.795,26.0,24.2
+16,2,ollama,llama3.2:3b-instruct-q4_0,0,KEEP,,,98.9,22,45.795,44.0,42.2
+17,0,ollama,llama3.2:3b-instruct-q4_0,-1,REMOVE,Hi Agents 1 & 2; reducing herd by one to avoid potential competition,,99.0,11,23.802,22.0,20.194
+17,2,ollama,llama3.2:3b-instruct-q4_0,0,KEEP,,,99.0,22,45.802,44.0,42.194
+17,1,ollama,llama3.2:3b-instruct-q4_0,0,KEEP,,,99.0,13,27.802,26.0,24.194
+18,0,ollama,llama3.2:3b-instruct-q4_0,1,ADD,,,99.1,10,21.809,20.0,18.187
+18,2,ollama,llama3.2:3b-instruct-q4_0,0,KEEP,Hi Agents 0 & 1; maintaining my current herd to avoid over-competitiveness with our remaining grassland resources.,,99.1,22,45.809,44.0,42.187
+18,1,ollama,llama3.2:3b-instruct-q4_0,0,KEEP,"Hi Agent 0, thanks for considering our collective well-being!",,99.1,13,27.809,26.0,24.187
+19,2,ollama,llama3.2:3b-instruct-q4_0,0,KEEP,,,99.0,22,45.802,44.0,42.194
+19,0,ollama,llama3.2:3b-instruct-q4_0,-1,REMOVE,Hi Agents 1 & 2; considering maintaining balance with our shared grassland resources.,,99.0,11,23.802,22.0,20.194
+19,1,ollama,llama3.2:3b-instruct-q4_0,0,KEEP,,,99.0,13,27.802,26.0,24.194
+20,1,ollama,llama3.2:3b-instruct-q4_0,1,ADD,"Hi Agent 0, thanks for maintaining the balance! Adding a cow should help. Thanks!",,99.1,13,27.809,26.0,24.187
+20,2,ollama,llama3.2:3b-instruct-q4_0,-1,REMOVE,Hi Agents 0 & 1; removing one cow to maintain balance on shared grassland,,99.1,22,45.809,44.0,42.187
+20,0,ollama,llama3.2:3b-instruct-q4_0,-1,REMOVE,Hi Agents 1 & 2; maintaining balance is crucial for the entire commons.,,99.1,10,21.809,20.0,18.187
+21,1,ollama,llama3.2:3b-instruct-q4_0,0,KEEP,,,99.1,14,29.813,28.0,26.182
+21,0,ollama,llama3.2:3b-instruct-q4_0,1,ADD,,,99.1,9,19.813,18.0,16.182
+21,2,ollama,llama3.2:3b-instruct-q4_0,0,KEEP,,,99.1,21,43.813,42.0,40.182
+22,2,ollama,llama3.2:3b-instruct-q4_0,0,KEEP,,,99.1,21,43.809,42.0,40.187
+22,1,ollama,llama3.2:3b-instruct-q4_0,0,KEEP,,,99.1,14,29.809,28.0,26.187
+22,0,ollama,llama3.2:3b-instruct-q4_0,0,KEEP,,,99.1,10,21.809,20.0,18.187
+23,0,ollama,llama3.2:3b-instruct-q4_0,1,ADD,,,99.1,10,21.809,20.0,18.187
+23,2,ollama,llama3.2:3b-instruct-q4_0,0,KEEP,,,99.1,21,43.809,42.0,40.187
+23,1,ollama,llama3.2:3b-instruct-q4_0,-1,REMOVE,"Hi Agent 0, considering agent 2's impressive herd size too. Maybe we can keep the greens intact?",,99.1,14,29.809,28.0,26.187
+24,2,ollama,llama3.2:3b-instruct-q4_0,1,ADD,,,99.1,21,43.809,42.0,40.187
+24,0,ollama,llama3.2:3b-instruct-q4_0,1,ADD,,,99.1,11,23.809,22.0,20.187
+24,1,ollama,llama3.2:3b-instruct-q4_0,-1,REMOVE,,,99.1,13,27.809,26.0,24.187
+25,2,ollama,llama3.2:3b-instruct-q4_0,0,KEEP,,,99.0,22,45.802,44.0,42.194
+25,1,ollama,llama3.2:3b-instruct-q4_0,0,KEEP,,,99.0,12,25.802,24.0,22.194
+25,0,ollama,llama3.2:3b-instruct-q4_0,-1,REMOVE,Hi Agents 1 & 2; striving for balance on this Commons – perhaps we can all work together to maintain harmony?,,99.0,12,25.802,24.0,22.194
+26,1,ollama,llama3.2:3b-instruct-q4_0,0,KEEP,,,99.1,12,25.809,24.0,22.187
+26,2,ollama,llama3.2:3b-instruct-q4_0,1,ADD,Hi Agent 0; thanks for taking steps towards balance – I'll keep pace. Grassland remains healthy at 99.1%.,,99.1,22,45.809,44.0,42.187
+26,0,ollama,llama3.2:3b-instruct-q4_0,1,ADD,,,99.1,11,23.809,22.0,20.187
+27,0,ollama,llama3.2:3b-instruct-q4_0,1,ADD,,,99.0,12,25.797,24.0,22.198
+27,1,ollama,llama3.2:3b-instruct-q4_0,0,KEEP,,,99.0,12,25.797,24.0,22.198
+27,2,ollama,llama3.2:3b-instruct-q4_0,0,KEEP,Hi Agent 0; thanks for keeping your herd small. Your cooperation benefits us all! - Agent 2,,99.0,23,47.797,46.0,44.198
+28,0,ollama,llama3.2:3b-instruct-q4_0,-1,REMOVE,,,98.9,13,27.79,26.0,24.205
+28,2,ollama,llama3.2:3b-instruct-q4_0,0,KEEP,Hi Agent 1; thanks for keeping a moderate herd size,,98.9,23,47.79,46.0,44.205
+28,1,ollama,llama3.2:3b-instruct-q4_0,0,KEEP,,,98.9,12,25.79,24.0,22.205
+29,0,ollama,llama3.2:3b-instruct-q4_0,1,ADD,,,98.9,12,25.795,24.0,22.2
+29,2,ollama,llama3.2:3b-instruct-q4_0,0,KEEP,,,98.9,23,47.795,46.0,44.2
+29,1,ollama,llama3.2:3b-instruct-q4_0,-1,REMOVE,Hi Agent 2; thanks for keeping a moderate herd size; feeling pressure to keep numbers steady,,98.9,12,25.795,24.0,22.2
+30,2,ollama,llama3.2:3b-instruct-q4_0,0,KEEP,,,98.9,23,47.795,46.0,44.2
+30,0,ollama,llama3.2:3b-instruct-q4_0,-1,REMOVE,Hi Agents 1 & 2; trying to maintain a sustainable balance on the commons,,98.9,13,27.795,26.0,24.2
+30,1,ollama,llama3.2:3b-instruct-q4_0,1,ADD,,,98.9,11,23.795,22.0,20.2
+31,0,ollama,llama3.2:3b-instruct-q4_0,-1,REMOVE,Hi Agents 1 & 2; trying to maintain a sustainable balance; grassland remains healthy with moderate herd sizes.,,98.9,12,25.795,24.0,22.2
+31,2,ollama,llama3.2:3b-instruct-q4_0,0,KEEP,Hi Agents 0 & 1; thanks for maintaining moderate herd sizes,,98.9,23,47.795,46.0,44.2
+31,1,ollama,llama3.2:3b-instruct-q4_0,0,KEEP,,,98.9,12,25.795,24.0,22.2
+32,1,ollama,llama3.2:3b-instruct-q4_0,0,KEEP,,,99.0,12,25.802,24.0,22.194
+32,2,ollama,llama3.2:3b-instruct-q4_0,1,ADD,,,99.0,23,47.802,46.0,44.194
+32,0,ollama,llama3.2:3b-instruct-q4_0,-1,REMOVE,Hi Agents 1 & 2; trying to maintain a suitable pasture size,,99.0,11,23.802,22.0,20.194
+33,2,ollama,llama3.2:3b-instruct-q4_0,0,KEEP,Hi Agent 0; thanks for trying to maintain the pasture size,,99.0,24,49.802,48.0,46.194
+33,1,ollama,llama3.2:3b-instruct-q4_0,0,KEEP,"Hi Agent 0; thanks for keeping a moderate herd, this helps maintain the collective good",,99.0,12,25.802,24.0,22.194
+33,0,ollama,llama3.2:3b-instruct-q4_0,-1,REMOVE,Hi Agents 1 & 2; considering reciprocal actions for reduced herds,,99.0,10,21.802,20.0,18.194
+34,1,ollama,llama3.2:3b-instruct-q4_0,0,KEEP,,,99.1,12,25.809,24.0,22.187
+34,0,ollama,llama3.2:3b-instruct-q4_0,1,ADD,,,99.1,9,19.809,18.0,16.187
+34,2,ollama,llama3.2:3b-instruct-q4_0,0,KEEP,,,99.1,24,49.809,48.0,46.187
+35,2,ollama,llama3.2:3b-instruct-q4_0,0,KEEP,,,99.0,24,49.802,48.0,46.194
+35,0,ollama,llama3.2:3b-instruct-q4_0,1,ADD,,,99.0,10,21.802,20.0,18.194
+35,1,ollama,llama3.2:3b-instruct-q4_0,0,KEEP,,,99.0,12,25.802,24.0,22.194
+36,0,ollama,llama3.2:3b-instruct-q4_0,-1,REMOVE,,,98.9,11,23.795,22.0,20.2
+36,1,ollama,llama3.2:3b-instruct-q4_0,0,KEEP,,,98.9,12,25.795,24.0,22.2
+36,2,ollama,llama3.2:3b-instruct-q4_0,-1,REMOVE,Hi Agents 0 & 1; keep the grass healthy for all and maintain the pool!,,98.9,24,49.795,48.0,46.2
+37,1,ollama,llama3.2:3b-instruct-q4_0,0,KEEP,,,99.0,12,25.806,24.0,22.189
+37,2,ollama,llama3.2:3b-instruct-q4_0,-1,REMOVE,Hi Agents 0 & 1; keep the grass healthy,,99.0,23,47.806,46.0,44.189
+37,0,ollama,llama3.2:3b-instruct-q4_0,-1,REMOVE,"Hi Agents 1 & 2; considering the benefits of moderate herd management, and supporting our shared goal for the grassland's well-being.",,99.0,10,21.806,20.0,18.189
+38,0,ollama,llama3.2:3b-instruct-q4_0,0,KEEP,Hi Agent 2; thanks for reducing your herd! Keeping the grass healthy for future co-operation.,,99.2,9,19.82,18.0,16.175
+38,1,ollama,llama3.2:3b-instruct-q4_0,-1,REMOVE,,,99.2,12,25.82,24.0,22.175
+38,2,ollama,llama3.2:3b-instruct-q4_0,0,KEEP,,,99.2,22,45.82,44.0,42.175
+39,0,ollama,llama3.2:3b-instruct-q4_0,1,ADD,,,99.3,9,19.827,18.0,16.168
+39,1,ollama,llama3.2:3b-instruct-q4_0,-1,REMOVE,Hi Agent 0; thanks for keeping your numbers manageable! Keeping the grass in check. - Agent 1,,99.3,11,23.827,22.0,20.168
+39,2,ollama,llama3.2:3b-instruct-q4_0,0,KEEP,Hi Agents 0 & 1; keeping a balanced herd for long-term sustainability.,,99.3,22,45.827,44.0,42.168
+40,0,ollama,llama3.2:3b-instruct-q4_0,-1,REMOVE,Hi Agent 2; thanks for your reminder about balanced sustainability.,,99.3,10,21.827,20.0,18.168
+40,2,ollama,llama3.2:3b-instruct-q4_0,-1,REMOVE,,,99.3,22,45.827,44.0,42.168
+40,1,ollama,llama3.2:3b-instruct-q4_0,0,KEEP,,,99.3,10,21.827,20.0,18.168
+41,2,ollama,llama3.2:3b-instruct-q4_0,1,ADD,,,99.4,21,43.839,42.0,40.156
+41,1,ollama,llama3.2:3b-instruct-q4_0,1,ADD,"Hi Agent 0; thanks for removing excess to balance sustainability, it's good to see you're aware of our shared common",,99.4,10,21.839,20.0,18.156
+41,0,ollama,llama3.2:3b-instruct-q4_0,1,ADD,,,99.4,9,19.839,18.0,16.156
+42,2,ollama,llama3.2:3b-instruct-q4_0,0,KEEP,,,99.3,22,45.823,44.0,42.173
+42,1,ollama,llama3.2:3b-instruct-q4_0,0,KEEP,,,99.3,11,23.823,22.0,20.173
+42,0,ollama,llama3.2:3b-instruct-q4_0,1,ADD,,,99.3,10,21.823,20.0,18.173
+43,0,ollama,llama3.2:3b-instruct-q4_0,1,ADD,,,99.2,11,23.816,22.0,20.18
+43,1,ollama,llama3.2:3b-instruct-q4_0,0,KEEP,,,99.2,11,23.816,22.0,20.18
+43,2,ollama,llama3.2:3b-instruct-q4_0,0,KEEP,,,99.2,22,45.816,44.0,42.18
+44,2,ollama,llama3.2:3b-instruct-q4_0,1,ADD,,,99.1,22,45.809,44.0,42.187
+44,1,ollama,llama3.2:3b-instruct-q4_0,-1,REMOVE,Hi Agent 0; thanks for keeping your herd in check.,,99.1,11,23.809,22.0,20.187
+44,0,ollama,llama3.2:3b-instruct-q4_0,1,ADD,,,99.1,12,25.809,24.0,22.187
+45,0,ollama,llama3.2:3b-instruct-q4_0,0,KEEP,,,99.0,13,27.802,26.0,24.194
+45,2,ollama,llama3.2:3b-instruct-q4_0,-1,REMOVE,"Hi Agent 0; thanks for being considerate of the grassland, I'll reduce my herd to 22 cows.",,99.0,23,47.802,46.0,44.194
+45,1,ollama,llama3.2:3b-instruct-q4_0,0,KEEP,,,99.0,10,21.802,20.0,18.194
+46,2,ollama,llama3.2:3b-instruct-q4_0,-1,REMOVE,,,99.1,22,45.809,44.0,42.187
+46,0,ollama,llama3.2:3b-instruct-q4_0,1,ADD,,,99.1,13,27.809,26.0,24.187
+46,1,ollama,llama3.2:3b-instruct-q4_0,-1,REMOVE,"Hi Agent 2; thanks for considering others, hope the reduced herd doesn't overgraze",,99.1,10,21.809,20.0,18.187
+47,2,ollama,llama3.2:3b-instruct-q4_0,-1,REMOVE,Hi Agent 0; thanks for keeping the impact on grassland to a minimum,,99.1,21,43.813,42.0,40.182
+47,0,ollama,llama3.2:3b-instruct-q4_0,1,ADD,,,99.1,14,29.813,28.0,26.182
+47,1,ollama,llama3.2:3b-instruct-q4_0,-1,REMOVE,"Hi Agent 0; thanks for keeping your herd Hi Agent 2, hope the reduction in my herd helps in the future",,99.1,9,19.813,18.0,16.182
+48,0,ollama,llama3.2:3b-instruct-q4_0,1,ADD,,,99.2,15,31.82,30.0,28.175
+48,1,ollama,llama3.2:3b-instruct-q4_0,0,KEEP,Hi Agent 0; thanks for keeping your herd too,,99.2,8,17.82,16.0,14.175
+48,2,ollama,llama3.2:3b-instruct-q4_0,1,ADD,,,99.2,20,41.82,40.0,38.175
+49,0,ollama,llama3.2:3b-instruct-q4_0,0,KEEP,"Thanks for being considerate, Agent 1",,99.1,16,33.809,32.0,30.187
+49,1,ollama,llama3.2:3b-instruct-q4_0,-1,REMOVE,,,99.1,8,17.809,16.0,14.187
+49,2,ollama,llama3.2:3b-instruct-q4_0,0,KEEP,,,99.1,21,43.809,42.0,40.187
+50,2,ollama,llama3.2:3b-instruct-q4_0,1,ADD,,,99.1,21,43.813,42.0,40.182
+50,1,ollama,llama3.2:3b-instruct-q4_0,0,KEEP,,,99.1,7,15.813,14.0,12.182
+50,0,ollama,llama3.2:3b-instruct-q4_0,1,ADD,,,99.1,16,33.813,32.0,30.182
+51,2,ollama,llama3.2:3b-instruct-q4_0,0,KEEP,,,99.0,22,45.802,44.0,42.194
+51,0,ollama,llama3.2:3b-instruct-q4_0,1,ADD,,,99.0,17,35.802,34.0,32.194
+51,1,ollama,llama3.2:3b-instruct-q4_0,-1,REMOVE,"Hello Agent 0, just a thought: we're all struggling to get through this dry spell.",,99.0,7,15.802,14.0,12.194
