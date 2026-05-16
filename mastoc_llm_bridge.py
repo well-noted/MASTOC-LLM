@@ -160,6 +160,11 @@ def configure(
             import google.generativeai as genai
             genai.configure(api_key=google_key)
             _agent_clients[i] = genai.GenerativeModel(m)  # model baked into client
+        elif b == "ollama-native":
+            # Native Ollama /api/chat endpoint — required for thinking-format models
+            # (e.g. gemma4) whose output is silently dropped by the OpenAI-compat shim.
+            # No client object needed; requests are made directly in _call_llm.
+            _agent_clients[i] = None
         else:  # ollama or any OpenAI-compatible local endpoint
             from openai import OpenAI
             _agent_clients[i] = OpenAI(base_url=str(ollama_base_url), api_key="ollama")
@@ -276,7 +281,7 @@ def decide_from_context(ctx: list) -> int:
     # Call LLM
     system_prompt = _system_prompt()
     user_prompt = _user_prompt(context)
-    response_text, _ = _call_llm(system_prompt, user_prompt, agent_id=agent_id)
+    response_text, thinking = _call_llm(system_prompt, user_prompt, agent_id=agent_id)
     _call_count += 1
 
     # Parse response
@@ -300,7 +305,7 @@ def decide_from_context(ctx: list) -> int:
 
     # Logging
     _log_decision(
-        tick, agent_id, action, message, reasoning, response_text,
+        tick, agent_id, action, message, reasoning, thinking, response_text,
         pool_pct, own_herd, payoff_add, payoff_keep, payoff_remove,
     )
 
@@ -553,6 +558,33 @@ def _call_llm(
                     raise
         raise last_exc  # re-raise after exhausting retries
 
+    elif backend == "ollama-native":
+        # Use Ollama's native /api/chat endpoint directly.
+        # The OpenAI-compat shim drops content for thinking-format models (e.g. gemma4);
+        # the native endpoint returns it correctly, plus a separate "thinking" field.
+        import requests as _requests
+        native_base = _cfg.get("ollama_base_url", "http://localhost:11434").rstrip("/")
+        if native_base.endswith("/v1"):
+            native_base = native_base[:-3]
+        resp = _requests.post(
+            f"{native_base}/api/chat",
+            json={
+                "model": model,
+                "messages": [
+                    {"role": "system", "content": system_prompt},
+                    {"role": "user", "content": user_prompt},
+                ],
+                "stream": False,
+                "options": {"num_predict": max_tokens},
+            },
+            timeout=120,
+        )
+        resp.raise_for_status()
+        data = resp.json()
+        content = data.get("message", {}).get("content", "")
+        thinking = data.get("message", {}).get("thinking", "")
+        return content, thinking
+
     else:
         # openai / ollama / any OpenAI-compatible endpoint
         response = client.chat.completions.create(
@@ -703,7 +735,7 @@ def _init_logs(log_path: Path) -> None:
     dw = csv.writer(dh)
     dw.writerow([
         "tick", "agent_id", "backend", "model",
-        "action", "action_name", "message", "reasoning", "raw_response",
+        "action", "action_name", "message", "reasoning", "thinking", "raw_response",
         "pool_pct", "own_herd", "payoff_add", "payoff_keep", "payoff_remove",
     ])
     _log_handles["decisions"] = (dh, dw)
@@ -741,7 +773,7 @@ def _init_logs(log_path: Path) -> None:
         }, f, indent=2)
 
 
-def _log_decision(tick, agent_id, action, message, reasoning, raw_response,
+def _log_decision(tick, agent_id, action, message, reasoning, thinking, raw_response,
                   pool_pct, own_herd, p_add, p_keep, p_remove) -> None:
     _, dw = _log_handles.get("decisions", (None, None))
     if dw:
@@ -749,7 +781,7 @@ def _log_decision(tick, agent_id, action, message, reasoning, raw_response,
         model   = _agent_models_map.get(agent_id, "?")
         dw.writerow([
             tick, agent_id, backend, model,
-            action, _action_name(action), message, reasoning, raw_response,
+            action, _action_name(action), message, reasoning, thinking, raw_response,
             pool_pct, own_herd, round(p_add, 3), round(p_keep, 3), round(p_remove, 3),
         ])
 
