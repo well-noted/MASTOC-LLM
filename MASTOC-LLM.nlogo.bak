@@ -141,7 +141,8 @@ to setup-python-bridge
   py:set "cfg_detect_institutions" detect-institutions    ;; NetLogo bool → Python bool
   py:set "cfg_institution_interval" institution-check-interval
 
-  py:set "cfg_system_prompt" system-prompt-override
+  py:set "cfg_system_prompt"   system-prompt-override
+  py:set "cfg_ollama_base_url" ollama-base-url
   let status py:runresult (word
     "bridge.configure("
     "agent_backends=cfg_agent_backends, "
@@ -151,9 +152,25 @@ to setup-python-bridge
     "log_dir='logs', "
     "detect_institutions=cfg_detect_institutions, "
     "institution_every_n_ticks=cfg_institution_interval, "
-    "system_prompt_override=cfg_system_prompt"
+    "system_prompt_override=cfg_system_prompt, "
+    "ollama_base_url=cfg_ollama_base_url"
     ")")
   show status
+
+  ;; Log all experiment parameters to run_meta.json for reproducibility
+  py:set "param_keys" (list
+    "cooperation_level" "fairness_concerning_me" "fairness_concerning_others"
+    "positive_reciprocity" "negative_reciprocity" "risk_aversion_level"
+    "initial_grassland" "initial_grass_growth_rate" "cow_forage_requirement"
+    "memory_length" "initial_cows_agent0" "initial_cows_agent1" "initial_cows_agent2"
+    "ollama_base_url")
+  py:set "param_vals" (list
+    cooperation-level fairness-concerning-me fairness-concerning-others
+    positive-reciprocity negative-reciprocity risk-aversion-level
+    initial-grassland initial-grass-growth-rate cow-forage-requirement
+    memory-length agent0-initial-cows agent1-initial-cows agent2-initial-cows
+    ollama-base-url)
+  py:run "bridge.log_params(dict(zip(param_keys, param_vals)))"
 
   ;; Register each LLM agent with the bridge
   ask humans with [ is-llm-agent ] [
@@ -1181,6 +1198,18 @@ system-prompt-override
 1
 0
 String
+
+INPUTBOX
+8
+1086
+432
+1116
+ollama-base-url
+http://localhost:11434/v1
+0
+0
+String
+
 @#$#@#$#@
 WHAT IS IT?
 -----------

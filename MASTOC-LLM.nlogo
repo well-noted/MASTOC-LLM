@@ -1031,7 +1031,7 @@ CHOOSER
 618
 agent0-backend
 agent0-backend
-"anthropic" "openai" "ollama" "google"
+"anthropic" "openai" "ollama" "ollama-native" "google"
 0
 
 INPUTBOX
@@ -1052,7 +1052,7 @@ CHOOSER
 680
 agent1-backend
 agent1-backend
-"anthropic" "openai" "ollama" "google"
+"anthropic" "openai" "ollama" "ollama-native" "google"
 0
 
 INPUTBOX
@@ -1073,7 +1073,7 @@ CHOOSER
 742
 agent2-backend
 agent2-backend
-"anthropic" "openai" "ollama" "google"
+"anthropic" "openai" "ollama" "ollama-native" "google"
 0
 
 INPUTBOX

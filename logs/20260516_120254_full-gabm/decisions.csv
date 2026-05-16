@@ -1,0 +1,7 @@
+tick,agent_id,backend,model,action,action_name,message,reasoning,raw_response,pool_pct,own_herd,payoff_add,payoff_keep,payoff_remove
+1,0,ollama,gemma4:e4b,0,KEEP,,,,100.0,5,11.832,10.0,8.163
+1,1,ollama,gemma4:e4b,0,KEEP,,,,100.0,15,31.832,30.0,28.163
+1,2,ollama,gemma4:e4b,0,KEEP,,,,100.0,25,51.832,50.0,48.163
+2,2,ollama,gemma4:e4b,0,KEEP,,,,99.3,25,51.813,50.0,48.182
+2,1,ollama,gemma4:e4b,0,KEEP,,,,99.3,15,31.813,30.0,28.182
+2,0,ollama,gemma4:e4b,0,KEEP,,,,99.3,5,11.813,10.0,8.182
