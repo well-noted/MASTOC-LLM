@@ -18,6 +18,8 @@ Each folder also has a `label` and `description` field written into its `run_met
 | `full-gabm_scarce_default-fairness` | `20260516_093606_full-gabm` | 50 | initial-grassland=49; pool 49%→99% by tick 10; converged [11,12,13] by tick 30 — fastest recovery observed |
 | `full-gabm_scarce_low-coop-low-fairness` | `20260516_094859_full-gabm` | 50 | initial-grassland=50, coop=0.3, fairness=0; pool 50%→99% by tick 20; converged [12,14,16] by tick 30 |
 
+| `hybrid_llm-advantaged` | `20260516_103644_hybrid` | 35 | Agent 1 (LLM) starts with 40 cows; removes continuously 40→25; rule-based agents grow +32 each; collapse tick 33 — 2 ticks earlier than baseline 1-LLM hybrid |
+
 ## Preliminary / unconfirmed
 
 | Label | Folder | Notes |

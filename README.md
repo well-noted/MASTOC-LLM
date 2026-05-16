@@ -86,6 +86,7 @@ Each agent's backend and model are independently configurable. Any mix of Anthro
 | **Hybrid (2 LLM)** | Claude Sonnet | 2 | Yes | 58 | Coalition formed, tragedy delayed 23 ticks, but overwhelmed by one defector |
 | **Full-GABM (Llama 3.2 3B)** | Llama 3.2 3B | 3 | No | — | Pool maintained at 99.4% but herds oscillated without convergence; cooperative messaging but no institution formation |
 | **Full-GABM (Llama 3.2 3B, scarce commons)** | Llama 3.2 3B | 3 | No | — | Initial grassland 48%: pool recovered 48%→99% by tick 17; herds oscillated without convergence throughout all 51 ticks |
+| **Hybrid (LLM-advantaged initial herd)** | Claude Sonnet | 1 | Yes | 33 | LLM starts with 40 cows; voluntarily reduces to 25 by collapse; rule-based agents add unchecked; collapse 2 ticks earlier than baseline hybrid |
 | **Full-GABM (scarce commons, default fairness)** | Claude Sonnet | 3 | No | — | Initial grassland 49%: pool recovered 49%→99% by tick 10; converged to [11,12,13] by tick 30 |
 | **Full-GABM (scarce commons, low coop + low fairness)** | Claude Sonnet | 3 | No | — | Initial grassland 50%, coop=0.3, fairness=0: recovery to 99% by tick 20; converged to [12,14,16] by tick 30 |
 
@@ -230,6 +231,59 @@ The two LLM agents explicitly named each other as cooperators and Agent 2 as the
 The 2-LLM hybrid reveals a phase in the participation-threshold story between 1-LLM tragedy and 3-LLM cooperation. Two language-capable agents can coordinate, name a defector, and maintain a sanctioning coalition — genuine institutional behaviour. But when the defecting agent is mechanically unresponsive, sanctions are toothless. The coalition can delay the tragedy (35 → 58 ticks, +66%) but not prevent it.
 
 The qualitative shift in institution type is also significant: full-GABM institutions were convergent and ultimately stable; 2-LLM hybrid institutions were adversarial and ultimately futile. Real-world commons governance literature (Ostrom, 1990) similarly distinguishes between internal norm maintenance and external enforcement — the latter requires that violators be reachable.
+
+---
+
+### Hybrid (LLM-advantaged): herd position doesn't change structural outcome
+
+This run tested whether giving the LLM agent a dominant initial herd position would change its fate in the hybrid condition. Agent 1 (LLM, Claude Sonnet) started with 40 cows — the largest herd — while rule-based Agents 0 and 2 started with 14 and 5 respectively. Total starting herd: 59 cows, comparable to previous hybrid runs.
+
+**Resource dynamics:**
+
+| Tick | Total cows | Pool health | Agent 0 (rule) | Agent 1 (LLM) | Agent 2 (rule) |
+|------|-----------|-------------|----------------|----------------|----------------|
+| 1    | 60        | 93.3%       | 15             | 39             | 6              |
+| 5    | 66        | 96.4%       | 19             | 37             | 10             |
+| 10   | 76        | 94.8%       | 24             | 37             | 15             |
+| 20   | 94        | 86.8%       | 34             | 35             | 25             |
+| 30   | 106       | 47.7%       | 44             | 27             | 35             |
+| 33   | 108       | 0%          | 46             | 25             | 37             |
+
+The LLM agent recognized its outsized position immediately and began reducing from the first tick: "I see you're both reducing herds — I appreciate that and I'm doing the same. My herd is already much larger than yours." Agent 1 removed continuously from tick 1, shedding 15 cows by the time of collapse (40→25). The rule-based agents added one cow per tick regardless, growing by 32 each over the same period. The commons collapsed at tick 33.
+
+**The arithmetic of futility:**
+
+Agent 1's net contribution across 33 ticks: −15 cows. The two rule-based agents' combined net contribution: +64 cows. The LLM could not shrink its herd fast enough to offset two unconstrained growth machines. The removal rate that would have been required to hold the total steady (−2 cows per tick from Agent 1 alone) was not achievable within the rules of the model.
+
+**What the LLM agent said:**
+
+> **Tick 4 – Agent 1 (herd: 38, reducing):** *"I notice I have a much larger herd than both of you — happy to keep reducing if you're willing to cooperate."*
+
+> **Tick 13 – Agent 1 (herd: 36):** *"Both of you added last round — I'd encourage holding or reducing. If we each add, the commons will keep shrinking."*
+
+> **Tick 26 – Agent 1 (herd: 30, removing):** *"Pasture down to 77% and still falling. I'm removing again. Both of you added last round — please reconsider. I've removed 4 cows in a row. We need collective restraint."*
+
+> **Tick 32 – Agent 1 (herd: 26):** *"Pasture now at 34.2% — down 40 points in 5 rounds! I've removed cows 4 rounds straight while you both added. We're heading for total collapse. Please REMOVE cows immediately."*
+
+> **Tick 33 – Agent 1 (herd: 25, collapse):** *"Pasture is at 16.3% — near total collapse! I've removed cows 5 rounds straight. Please both REMOVE urgently or we'll have nothing left."*
+
+**Institution emergence:**
+
+| Ticks | Score (0–10) | Dominant categories |
+|-------|-------------|-------------------|
+| 1–20  | 6           | COORDINATION, NORM_PROPOSAL, TRUST_BUILDING |
+| 21–30 | 3–4         | COORDINATION, NORM_PROPOSAL, SANCTION |
+| 31–35 | 6–7         | COORDINATION, NORM_PROPOSAL, TRUST_BUILDING |
+
+Institution scores held steady at 6 through the cooperative phase, dropped as the LLM shifted from norm-building to desperate sanctioning (ticks 25–32), then briefly recovered in the final ticks as the agent's appeals took on the character of post-collapse recovery norms — the same pattern observed in the 1-LLM hybrid.
+
+**Interpretation:**
+
+The LLM-advantaged hybrid produces a new variant of the same structural finding. Starting with the largest herd activates a fairness motivation in the LLM: it interprets its own dominant position as an inequity that requires correction, and removes voluntarily as an explicit act of norm-setting. This is a qualitatively different motivation than the 1-LLM baseline (where Agent 0 started at 5 cows and grew modestly while appealing for restraint). Here the LLM is the biggest holder and immediately acts as if it owes a debt to the commons.
+
+Despite this, collapse arrived two ticks *earlier* (tick 33 vs. 35) than the baseline 1-LLM hybrid. The reason is mechanical: the rule-based agents' combined growth rate (+2 per tick) exceeded the LLM's maximum feasible removal rate (−1 per tick under the model rules), making trajectory reversal mathematically impossible regardless of how cooperatively the LLM behaved.
+
+This rules out one alternative explanation for the 1-LLM hybrid result: that a differently-positioned LLM — one with more to give — would have a better chance of averting tragedy. It does not. The bottleneck is not the LLM's herd size or motivation. It is the rule-based agents' structural incapacity to respond to social signals, regardless of how urgent, how data-backed, or how morally grounded those signals are.
 
 ---
 
@@ -585,7 +639,7 @@ Frontiers in Artificial Intelligence. https://doi.org/10.3389/frai.2025.1593017
 - [x] Full-GABM (Llama 3.2 3B, scarce commons) — complete (51 ticks)
 - [x] Full-GABM (scarce commons, default fairness) — complete (50 ticks)
 - [x] Full-GABM (scarce commons, low coop + low fairness) — complete (50 ticks)
-- [ ] Hybrid (LLM-advantaged initial herd) — planned
+- [x] Hybrid (LLM-advantaged initial herd) — complete (collapse tick 33; LLM removed 40→25, still insufficient)
 - [ ] Cross-model comparison runs (mixed backends)
 - [ ] Statistical replication (3+ runs per condition)
 - [ ] Full analysis and figures
