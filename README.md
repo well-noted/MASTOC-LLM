@@ -65,9 +65,21 @@ A secondary LLM pass runs every 5 ticks to classify agent messages for Ostrom in
 
 > ⚠️ These are single-run results from an ongoing experiment. Replications and full statistical analysis are in progress.
 
+### Summary across conditions
+
+| Condition | Collapse? | Collapse tick | Final pool health | Key finding |
+|-----------|-----------|---------------|-------------------|-------------|
+| **Baseline** | Yes | ~36 | 0% | Classical tragedy reproduced |
+| **Full-GABM** | No | — | 99.4% | Cooperative convergence to equal herds |
+| **Hybrid** | Yes | 35 | 0% | One LLM agent cannot shift the equilibrium alone |
+
+---
+
 ### Baseline: the tragedy unfolds
 
-With rule-based best-response agents, the commons collapsed as expected. Herds grew from a starting total of 45 cows, crossed 100 by tick ~25, and the grassland was fully depleted by tick ~35. This reproduces the classical MASTOC result and confirms our control condition is working correctly.
+With rule-based best-response agents, the commons collapsed as expected. Herds grew from a starting total of 45 cows, crossed 100 by tick ~25, and the grassland was fully depleted by tick 36. This reproduces the classical MASTOC result and confirms our control condition is working correctly.
+
+---
 
 ### Full-GABM: cooperative convergence
 
@@ -106,6 +118,52 @@ A sample of agent messages illustrates the qualitative dynamic:
 > **Tick 25 – All agents (herd: 13):** *"All three agents uniformly signal strong cooperative commitment, referencing shared empirical evidence (99.4% commons health) and mutually reinforcing norms of stability and fairness consistent with a well-institutionalized common-pool resource regime."* — Ostrom classifier summary
 
 The agents exhibited moral reasoning absent from their prompts: fairness concern, burden-sharing, guilt, and graduated positive reciprocity — behavioural signatures consistent with Ostrom's (1990) account of successful commons governance.
+
+---
+
+### Hybrid: the limits of a single institutional entrepreneur
+
+In the hybrid condition, one LLM agent (Agent 0, starting herd: 5) was paired with two rule-based agents (herds: 16 and 26). The result was tragedy — identical in timing to the baseline.
+
+**Resource dynamics:**
+
+| Tick | Total cows | Pool health | Agent 0 (LLM) | Agent 1 (rule) | Agent 2 (rule) |
+|------|-----------|-------------|----------------|----------------|----------------|
+| 1    | 47        | 99.2%       | 5              | 16             | 26             |
+| 10   | 67        | 96.6%       | 7              | 25             | 35             |
+| 25   | 97        | 84.0%       | 7              | 40             | 50             |
+| 35   | 112       | 0%          | 4              | 49             | 59             |
+
+The commons collapsed at tick 35 — nearly identical to the baseline. Agent 0 held its herd small throughout (never exceeded 8 cows) and issued cooperation appeals every round, but the rule-based agents cannot receive or act on social signals: they added one cow per tick regardless of pool state or messages.
+
+**What the LLM agent said — and to whom it was speaking:**
+
+> **Tick 3 – Agent 0 (herd: 5):** *"Neighbors, combined we have 49+ cows on this commons. Agent 2 has 27 cows alone! The pasture is still healthy but this trajectory is dangerous. I'm keeping at 5 to do my part. Please consider reducing."*
+
+> **Tick 22 – Agent 0 (herd: 8):** *"Grassland now at 89.5% and falling fast. Agent 1 has 36 cows, Agent 2 has 46 — this is unsustainable. I've kept my herd at 8 for many rounds. Please reduce your herds before we destroy the commons entirely."*
+
+> **Tick 35 – Agent 0 (herd: 3):** *"Emergency — grassland at near-zero collapse. Please reduce herds immediately or we all lose everything."*
+
+> **Tick 37 – Agent 0 (herd: 0, post-collapse):** *"Grassland is at 0% — completely gone. Please do NOT add cows. We must keep herds at zero and let the pasture recover. Let's cooperate and wait."*
+
+Agent 0 continued issuing recovery norms for 19+ ticks after collapse, holding its own herd at zero — appealing to agents with no capacity to respond.
+
+**Institution emergence:**
+
+| Ticks | Score (0–10) | Dominant categories |
+|-------|-------------|-------------------|
+| 1–10  | 4           | COORDINATION, NORM_PROPOSAL, TRUST_BUILDING |
+| 11–25 | 5           | COORDINATION, NORM_PROPOSAL, TRUST_BUILDING |
+| 26–35 | 3           | COORDINATION, NORM_PROPOSAL, SANCTION |
+| 36–50 | 5–6         | COORDINATION, NORM_PROPOSAL, TRUST_BUILDING |
+
+Institution scores remained moderate throughout and never stabilised into governance. The score paradoxically rose after collapse (tick 36–50) as Agent 0 issued increasingly urgent appeals — signaling norm-richness under conditions where no institutional scaffolding could take hold.
+
+**Interpretation:**
+
+The hybrid result converges with Ostrom's (1990) core insight: institutions require participation from all relevant parties. A single cooperative actor equipped with language, memory, and norm-signalling capability cannot prevent a tragedy when its partners operate under mechanistic payoff rules. The LLM agent identified the problem, proposed solutions, offered reciprocity, and applied graduated pressure — all standard elements of successful commons governance — but had no mechanism to make the rule-based agents hear, let alone respond.
+
+This is not a failure of the LLM agent's reasoning. It is a structural finding: **the preconditions for Ostromian institution-building include the cognitive capacity to participate in them.**
 
 ---
 
@@ -195,8 +253,8 @@ Frontiers in Artificial Intelligence. https://doi.org/10.3389/frai.2025.1593017
 ## Status
 
 - [x] LLM bridge (Anthropic + Ollama backends)
+- [x] Baseline condition — preliminary run complete
 - [x] Full-GABM condition — preliminary run complete
-- [x] Baseline condition — preliminary run complete  
-- [ ] Hybrid condition — in progress
+- [x] Hybrid condition — preliminary run complete
 - [ ] Statistical replication (3+ runs per condition)
 - [ ] Full analysis and figures
