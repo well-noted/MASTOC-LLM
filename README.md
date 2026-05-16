@@ -74,12 +74,12 @@ Each agent's backend and model are independently configurable. Any mix of Anthro
 
 > ⚠️ These are single-run results from an ongoing experiment. Replications and full statistical analysis are in progress.
 
-| Condition | LLMs | Collapse? | Collapse tick | Final pool health | Key finding |
-|-----------|------|-----------|---------------|-------------------|-------------|
-| **Baseline** | 0 | Yes | ~36 | 0% | Classical tragedy reproduced |
-| **Full-GABM** | 3 | No | — | 99.4% | Cooperative convergence to equal herds |
-| **Hybrid (1 LLM)** | 1 | Yes | 35 | 0% | One LLM cannot shift the equilibrium alone |
-| **Hybrid (2 LLM)** | 2 | pending | — | — | Run complete — analysis in progress |
+| Condition | LLMs | Collapse? | Collapse tick | Key finding |
+|-----------|------|-----------|---------------|-------------|
+| **Baseline** | 0 | Yes | ~36 | Classical tragedy reproduced |
+| **Full-GABM** | 3 | No | — | Cooperative convergence to equal herds; institution score 10/10 |
+| **Hybrid (1 LLM)** | 1 | Yes | 35 | One LLM cannot shift the equilibrium alone |
+| **Hybrid (2 LLM)** | 2 | Yes | 58 | Coalition formed, tragedy delayed 23 ticks, but overwhelmed by one defector |
 
 ---
 
@@ -175,6 +175,56 @@ This is not a failure of the LLM agent's reasoning. It is a structural finding: 
 
 ---
 
+### Hybrid (2 LLM): coalition formation, delayed tragedy
+
+With `hybrid-fraction = 0.67`, two agents used LLM reasoning (Agents 0 and 1) and one was rule-based (Agent 2). The commons still collapsed — but 23 ticks later than the 1-LLM case, and through an entirely different institutional dynamic.
+
+**Resource dynamics:**
+
+| Tick | Total cows | Pool health | Agent 0 (LLM) | Agent 1 (LLM) | Agent 2 (rule) |
+|------|-----------|-------------|----------------|----------------|----------------|
+| 1    | 46        | 99.3%       | 5              | 15             | 26             |
+| 10   | 56        | 98.1%       | 6              | 15             | 35             |
+| 25   | 72        | 95.6%       | 6              | 16             | 50             |
+| 50   | 99        | 74.6%       | 8              | 16             | 75             |
+| 57   | 105       | 10.4%       | 8              | 15             | 82             |
+| 58   | —         | 0%          | —              | —              | —              |
+
+Agents 0 and 1 maintained small, stable herds throughout — never exceeding 8 and 16 cows respectively. Agent 2 added one cow per tick without deviation, reaching 82 cows at collapse. The combined herd of the two LLM agents (24 cows) was overwhelmed by one unchecked rule-based defector.
+
+**A different kind of institution:**
+
+Unlike the full-GABM, where institutions were constructive (norm convergence, trust-building, cooperative equilibrium), the 2-LLM hybrid produced *defensive* institutions — a coordinated coalition directed outward at the defector.
+
+| Ticks | Score (0–10) | Dominant categories |
+|-------|-------------|-------------------|
+| 1–10  | 4           | COORDINATION, NORM_PROPOSAL, SANCTION |
+| 11–25 | 4–5         | COORDINATION, NORM_PROPOSAL, SANCTION |
+| 26–55 | 4–6         | COORDINATION, NORM_PROPOSAL, SANCTION |
+| 56–60 | 6           | COORDINATION, NORM_PROPOSAL, TRUST_BUILDING |
+
+SANCTION was the dominant signal throughout — the two LLM agents issued joint ultimatums, attributed blame, invoked fairness norms, and threatened reciprocal defection. The Ostrom classifier described their behaviour as a "coordinated coalition."
+
+**What the coalition said:**
+
+> **Tick 2 – Agent 0:** *"Grassland looks healthy at 99.3%, but Agent 2's large herd of 26 and adding worries me. I'm keeping my 5 cows stable to model restraint. Agent 2, please consider reducing — a herd that large could degrade our shared commons."*
+
+> **Tick 5 – Agent 1 (to Agent 0):** *"Agent 0, thank you for your continued restraint — I'm keeping at 15 again. Agent 2, you're at 29 cows now, nearly double mine. This imbalance is unfair and risky for all of us."*
+
+> **Tick 25 — Ostrom classifier:** *"Agents 0 and 1 present a coordinated ultimatum to Agent 2, invoking free-rider norms and threatening reciprocal defection as a conditional sanction if herd reduction does not occur."*
+
+> **Tick 50 – Agent 1:** *"Agent 2: You're now at 74 cows — 4.6x my herd, 9x Agent 0's. Pasture fell from 85% to 77% in 5 rounds. This trajectory leads to collapse for all of us. Agent 0 and I are holding steady. Please start removing."*
+
+The two LLM agents explicitly named each other as cooperators and Agent 2 as the defector from tick 2 onward. Their coalition held — neither defected to free-riding — for the entire 58-tick run.
+
+**Interpretation:**
+
+The 2-LLM hybrid reveals a phase in the participation-threshold story between 1-LLM tragedy and 3-LLM cooperation. Two language-capable agents can coordinate, name a defector, and maintain a sanctioning coalition — genuine institutional behaviour. But when the defecting agent is mechanically unresponsive, sanctions are toothless. The coalition can delay the tragedy (35 → 58 ticks, +66%) but not prevent it.
+
+The qualitative shift in institution type is also significant: full-GABM institutions were convergent and ultimately stable; 2-LLM hybrid institutions were adversarial and ultimately futile. Real-world commons governance literature (Ostrom, 1990) similarly distinguishes between internal norm maintenance and external enforcement — the latter requires that violators be reachable.
+
+---
+
 ## Repository structure
 
 ```
@@ -246,6 +296,32 @@ See [SETUP.md](SETUP.md) for full documentation.
 
 ---
 
+## Research agenda
+
+Full details in [RESEARCH_AGENDA.md](RESEARCH_AGENDA.md). Experiments are grouped by what they require — most need only parameter adjustments with the current setup.
+
+**I. Statistical replication** — 3–5 runs per condition to assess outcome variance. Currently all results are single runs.
+
+**II. Participation threshold** — We have data at 0, 1, 2, and 3 LLM agents. The sharpest transition is between 2 and 3. Scaling to 5 or 10 agents would test whether there is a minimum quorum for governance to hold.
+
+**III. Cross-model comparison** — The per-agent backend/model choosers make this straightforward. Key questions: does model size predict cooperation propensity (Haiku vs Sonnet vs Opus)? Can agents from different providers (Claude, GPT-4o, Gemini, Llama) reach cooperative equilibrium together? Can a fully local Ollama run reproduce the full-GABM result?
+
+**IV. Initial conditions** — Per-agent herd sliders enable LLM-advantaged hybrid runs (LLM starts with 40 cows instead of 5), equal-start full-GABM, and extreme inequality tests.
+
+**V. Resource pressure** — Vary `initial-grassland` and `cow-forage-requirement` to test whether institution emergence is a response to scarcity or a general property of language-capable agents.
+
+**VI. Memory and time horizon** — Sweep `memory-length` from 1 to 10 across the full-GABM condition. Does commons governance require memory, and how much?
+
+**VII. Personality × LLM interaction** — The original MASTOC disposition sliders (`fairness-concerning-others`, `cooperation-level`, `positive-reciprocity`) are already wired for rule-based agents. Do fairer rule-based agents close the participation-threshold gap?
+
+**VIII. Communication experiments** *(small code change)* — Suppress outgoing messages to test whether reasoning alone (without communication) produces cooperation. How much of the result depends on talking vs. thinking?
+
+**IX. Recovery and long runs** — Run to 300 ticks post-collapse. Is the LLM post-collapse behaviour (hold at zero, appeal for restraint) actually functional given enough time?
+
+**X. Adversarial conditions** *(prompt engineering)* — Instruct one LLM to defect. Do the others detect and adapt? Does training alignment correlate with cooperative tendency?
+
+---
+
 ## Citations
 
 ```
@@ -270,7 +346,7 @@ Frontiers in Artificial Intelligence. https://doi.org/10.3389/frai.2025.1593017
 - [x] Baseline condition — preliminary run complete
 - [x] Full-GABM condition — preliminary run complete
 - [x] Hybrid (1 LLM) condition — preliminary run complete
-- [x] Hybrid (2 LLM) condition — run complete, analysis pending
+- [x] Hybrid (2 LLM) condition — complete
 - [ ] Hybrid (LLM-advantaged initial herd) — planned
 - [ ] Cross-model comparison runs (mixed backends)
 - [ ] Statistical replication (3+ runs per condition)
