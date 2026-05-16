@@ -276,11 +276,11 @@ def decide_from_context(ctx: list) -> int:
     # Call LLM
     system_prompt = _system_prompt()
     user_prompt = _user_prompt(context)
-    response_text, reasoning = _call_llm(system_prompt, user_prompt, agent_id=agent_id)
+    response_text, _ = _call_llm(system_prompt, user_prompt, agent_id=agent_id)
     _call_count += 1
 
     # Parse response
-    action, message = _parse_response(response_text)
+    action, message, reasoning = _parse_response(response_text)
 
     # Store outgoing message and log
     _msg_outbox[agent_id] = message
@@ -300,7 +300,7 @@ def decide_from_context(ctx: list) -> int:
 
     # Logging
     _log_decision(
-        tick, agent_id, action, message, reasoning,
+        tick, agent_id, action, message, reasoning, response_text,
         pool_pct, own_herd, payoff_add, payoff_keep, payoff_remove,
     )
 
@@ -636,8 +636,8 @@ What do you decide?"""
 # RESPONSE PARSING
 # ──────────────────────────────────────────────────────────────────────────────
 
-def _parse_response(text: str) -> Tuple[int, str]:
-    """Parse LLM JSON response into (action, message). Defaults to action=0 on failure."""
+def _parse_response(text: str) -> Tuple[int, str, str]:
+    """Parse LLM JSON response into (action, message, reasoning). Defaults to action=0 on failure."""
     # Try structured JSON
     try:
         m = re.search(r'\{.*\}', text, re.DOTALL)
@@ -646,14 +646,17 @@ def _parse_response(text: str) -> Tuple[int, str]:
             action = int(obj.get("action", 0))
             action = max(-1, min(1, action))  # clamp
             message = str(obj.get("message", ""))[:200].strip()
-            return action, message
+            reasoning = str(obj.get("reasoning", "")).strip()
+            return action, message, reasoning
     except Exception:
         pass
 
     # Fallback: find first standalone -1, 0, or 1
+    # Log a warning so format failures are visible rather than silent
+    print(f"[_parse_response] WARNING: JSON parse failed, falling back to regex. Raw response: {text[:200]!r}")
     nums = re.findall(r'(?<![0-9])(-1|0|1)(?![0-9])', text)
     action = int(nums[0]) if nums else 0
-    return action, ""
+    return action, "", ""
 
 
 # ──────────────────────────────────────────────────────────────────────────────
@@ -700,7 +703,7 @@ def _init_logs(log_path: Path) -> None:
     dw = csv.writer(dh)
     dw.writerow([
         "tick", "agent_id", "backend", "model",
-        "action", "action_name", "message", "reasoning",
+        "action", "action_name", "message", "reasoning", "raw_response",
         "pool_pct", "own_herd", "payoff_add", "payoff_keep", "payoff_remove",
     ])
     _log_handles["decisions"] = (dh, dw)
@@ -738,7 +741,7 @@ def _init_logs(log_path: Path) -> None:
         }, f, indent=2)
 
 
-def _log_decision(tick, agent_id, action, message, reasoning,
+def _log_decision(tick, agent_id, action, message, reasoning, raw_response,
                   pool_pct, own_herd, p_add, p_keep, p_remove) -> None:
     _, dw = _log_handles.get("decisions", (None, None))
     if dw:
@@ -746,7 +749,7 @@ def _log_decision(tick, agent_id, action, message, reasoning,
         model   = _agent_models_map.get(agent_id, "?")
         dw.writerow([
             tick, agent_id, backend, model,
-            action, _action_name(action), message, reasoning,
+            action, _action_name(action), message, reasoning, raw_response,
             pool_pct, own_herd, round(p_add, 3), round(p_keep, 3), round(p_remove, 3),
         ])
 
