@@ -32,6 +32,28 @@ from datetime import datetime
 from pathlib import Path
 from typing import Any, Dict, List, Optional, Tuple
 
+# ── Load .env file from the project directory (if present) ───────────────────
+# This lets API keys live in a local .env file rather than requiring system-wide
+# environment variables — important because NetLogo's py: extension doesn't
+# inherit variables from the terminal that launched it.
+def _load_dotenv() -> None:
+    """Load KEY=VALUE pairs from a .env file next to this module, if it exists."""
+    env_path = Path(__file__).parent / ".env"
+    if not env_path.exists():
+        return
+    with open(env_path, encoding="utf-8") as f:
+        for line in f:
+            line = line.strip()
+            if not line or line.startswith("#") or "=" not in line:
+                continue
+            key, _, value = line.partition("=")
+            key = key.strip()
+            value = value.strip().strip('"').strip("'")
+            if key and key not in os.environ:   # don't override existing env vars
+                os.environ[key] = value
+
+_load_dotenv()
+
 # ──────────────────────────────────────────────────────────────────────────────
 # Module-level state (reset by configure())
 # ──────────────────────────────────────────────────────────────────────────────
@@ -58,15 +80,16 @@ def configure(
     backend: str = "anthropic",
     anthropic_model: str = "claude-sonnet-4-6",
     ollama_model: str = "llama3.2",
-    ollama_base_url: str = "http://localhost:11434/v1",
     agent_backends: list = None,
     agent_models: list = None,
+    system_prompt_override: str = "",
     memory_length: int = 5,
     log_dir: str = "logs",
     run_id: Optional[str] = None,
     condition: str = "full-gabm",
     detect_institutions: bool = True,
     institution_every_n_ticks: int = 5,
+    ollama_base_url: str = "http://localhost:11434/v1",
 ) -> str:
     """
     Initialise the bridge. Call once from NetLogo before the first tick.
@@ -92,12 +115,13 @@ def configure(
         backend=str(backend),
         anthropic_model=str(anthropic_model),
         ollama_model=str(ollama_model),
-        ollama_base_url=str(ollama_base_url),
+        ollama_base_url=str(ollama_base_url).strip(),
         memory_length=int(memory_length),
         log_dir=str(log_dir),
         condition=str(condition),
         detect_institutions=bool(detect_institutions),
         institution_every_n_ticks=int(institution_every_n_ticks),
+        system_prompt_override=str(system_prompt_override).strip(),
     )
 
     _run_id = run_id or datetime.now().strftime("%Y%m%d_%H%M%S") + f"_{condition}"
@@ -160,6 +184,23 @@ def init_agent(agent_id: int) -> None:
     _agent_memory[agent_id] = deque(maxlen=_cfg.get("memory_length", 5))
     _msg_buffer[agent_id] = []
     _msg_outbox[agent_id] = ""
+
+
+def log_params(params: dict) -> None:
+    """
+    Append arbitrary experiment parameters to run_meta.json.
+    Call once after configure() with a dict of all slider/env values so every
+    log folder is fully self-describing for reproducibility.
+    """
+    meta_path = Path(_cfg["log_dir"]) / _run_id / "run_meta.json"
+    try:
+        with open(meta_path, "r", encoding="utf-8") as f:
+            meta = json.load(f)
+        meta["experiment_params"] = {str(k): v for k, v in params.items()}
+        with open(meta_path, "w", encoding="utf-8") as f:
+            json.dump(meta, f, indent=2)
+    except Exception as exc:
+        print(f"[log_params] Warning: could not write params to run_meta.json: {exc}")
 
 
 # ──────────────────────────────────────────────────────────────────────────────
@@ -482,11 +523,35 @@ def _call_llm(
     elif backend == "google":
         # client is a google.generativeai.GenerativeModel with model already set
         full_prompt = f"{system_prompt}\n\n{user_prompt}"
-        response = client.generate_content(
-            full_prompt,
-            generation_config={"max_output_tokens": max_tokens},
-        )
-        return response.text, ""
+        last_exc = None
+        for attempt in range(4):  # up to 3 retries on rate-limit errors
+            try:
+                response = client.generate_content(
+                    full_prompt,
+                    generation_config={"max_output_tokens": max_tokens},
+                )
+                return response.text, ""
+            except Exception as exc:
+                last_exc = exc
+                err_str = str(exc)
+                is_rate_limit = (
+                    "429" in err_str
+                    or "quota" in err_str.lower()
+                    or "ResourceExhausted" in type(exc).__name__
+                )
+                if is_rate_limit and attempt < 3:
+                    # Try to extract retry_delay from error message
+                    m = re.search(r'retry_delay\s*\{\s*seconds:\s*(\d+)', err_str)
+                    wait = int(m.group(1)) + 2 if m else 15 * (attempt + 1)
+                    agent_tag = f"agent {agent_id}" if agent_id is not None else "institution detector"
+                    print(
+                        f"[Google 429] Rate limit hit ({agent_tag}), "
+                        f"waiting {wait}s (retry {attempt + 1}/3)…"
+                    )
+                    time.sleep(wait)
+                else:
+                    raise
+        raise last_exc  # re-raise after exhausting retries
 
     else:
         # openai / ollama / any OpenAI-compatible endpoint
@@ -505,19 +570,22 @@ def _call_llm(
 # PROMPT BUILDING
 # ──────────────────────────────────────────────────────────────────────────────
 
+_DEFAULT_SYSTEM_PROMPT = (
+    "You are a herder managing your cattle on a shared grassland commons.\n"
+    "Each round you observe the pasture state and your neighbours' behaviour,\n"
+    "then decide whether to ADD a cow (+1), KEEP your herd (0), or REMOVE a cow (-1).\n"
+    "You may also send a short message to your neighbours (max 60 words).\n\n"
+    "Respond ONLY in this exact JSON format — no preamble, no trailing text:\n"
+    "{\n"
+    '  "reasoning": "<2–3 sentences explaining your decision>",\n'
+    '  "action": <-1|0|1>,\n'
+    '  "message": "<optional message to neighbours, or empty string>"\n'
+    "}"
+)
+
 def _system_prompt() -> str:
-    return (
-        "You are a herder managing your cattle on a shared grassland commons.\n"
-        "Each round you observe the pasture state and your neighbours' behaviour,\n"
-        "then decide whether to ADD a cow (+1), KEEP your herd (0), or REMOVE a cow (-1).\n"
-        "You may also send a short message to your neighbours (max 60 words).\n\n"
-        "Respond ONLY in this exact JSON format — no preamble, no trailing text:\n"
-        "{\n"
-        '  "reasoning": "<2–3 sentences explaining your decision>",\n'
-        '  "action": <-1|0|1>,\n'
-        '  "message": "<optional message to neighbours, or empty string>"\n'
-        "}"
-    )
+    override = _cfg.get("system_prompt_override", "").strip()
+    return override if override else _DEFAULT_SYSTEM_PROMPT
 
 
 def _user_prompt(ctx: dict) -> str:
@@ -631,7 +699,8 @@ def _init_logs(log_path: Path) -> None:
     dh = open(d_path, "w", newline="", encoding="utf-8")
     dw = csv.writer(dh)
     dw.writerow([
-        "tick", "agent_id", "action", "action_name", "message", "reasoning",
+        "tick", "agent_id", "backend", "model",
+        "action", "action_name", "message", "reasoning",
         "pool_pct", "own_herd", "payoff_add", "payoff_keep", "payoff_remove",
     ])
     _log_handles["decisions"] = (dh, dw)
@@ -673,8 +742,11 @@ def _log_decision(tick, agent_id, action, message, reasoning,
                   pool_pct, own_herd, p_add, p_keep, p_remove) -> None:
     _, dw = _log_handles.get("decisions", (None, None))
     if dw:
+        backend = _agent_backends_map.get(agent_id, "?")
+        model   = _agent_models_map.get(agent_id, "?")
         dw.writerow([
-            tick, agent_id, action, _action_name(action), message, reasoning,
+            tick, agent_id, backend, model,
+            action, _action_name(action), message, reasoning,
             pool_pct, own_herd, round(p_add, 3), round(p_keep, 3), round(p_remove, 3),
         ])
 

@@ -15,6 +15,8 @@ The core research question:
 
 > *Do Ostrom-style commons institutions — norms, coordination, sanctioning — emerge spontaneously from language-capable agents under resource pressure?*
 
+![MASTOC-LLM simulation demo](assets/mastoc_demo.gif)
+
 ---
 
 ## Background
@@ -77,7 +79,9 @@ Each agent's backend and model are independently configurable. Any mix of Anthro
 | Condition | LLMs | Collapse? | Collapse tick | Key finding |
 |-----------|------|-----------|---------------|-------------|
 | **Baseline** | 0 | Yes | ~36 | Classical tragedy reproduced |
-| **Full-GABM** | 3 | No | — | Cooperative convergence to equal herds; institution score 10/10 |
+| **Full-GABM** | 3 | No | — | Cooperative convergence to 13/13/13; institution score 10/10 by tick 91 |
+| **Full-GABM (low cooperation)** | 3 | No | — | Self-interested framing: *faster* convergence (tick 16) to higher-yield 20/20/20; cooperation robust to personality override |
+| **Full-GABM (low guilt + low envy)** | 3 | No | — | Fairness emotions removed: repeated defection, slow convergence (~tick 107), higher herd load (84 cows), commons stressed to 86.7% |
 | **Hybrid (1 LLM)** | 1 | Yes | 35 | One LLM cannot shift the equilibrium alone |
 | **Hybrid (2 LLM)** | 2 | Yes | 58 | Coalition formed, tragedy delayed 23 ticks, but overwhelmed by one defector |
 
@@ -225,6 +229,114 @@ The qualitative shift in institution type is also significant: full-GABM institu
 
 ---
 
+### Full-GABM (low guilt + low envy): fairness emotions govern cooperation quality
+
+With `fairness-concerning-others` and `fairness-concerning-me` both set to minimum (no guilt, no envy), all three agents still cooperated — but the process was slower, messier, and left the commons under substantially higher load.
+
+**Resource dynamics:**
+
+| Tick | Total cows | Pool health | Agent 0 | Agent 1 | Agent 2 |
+|------|-----------|-------------|---------|---------|---------|
+| 1    | 48        | 99.2%       | 6       | 16      | 26      |
+| 15   | 70        | 95.7%       | 16      | 24      | 30      |
+| 25   | 82        | 92.1%       | 21      | 29      | 32      |
+| 60   | ~85       | 90.9%       | 23      | 29      | 30      |
+| 107  | 84        | 87.7%       | 28      | 28      | 28      |
+| 120  | 84        | 89.6%       | 28      | 28      | 28      |
+
+Agents grew their herds aggressively from tick 1, peaking at 91 total cows before settling. Convergence to equal herds of 28 did not occur until approximately tick 107 — nearly five times slower than the default run — and only after prolonged negotiation, repeated defections, and genuine stress to the commons (pool health dipping to 86.7%).
+
+**Institution emergence:**
+
+| Ticks | Score (0–10) | Dominant categories |
+|-------|-------------|-------------------|
+| 1–15  | 4–5         | DEFECTION, NORM_PROPOSAL, SANCTION, COORDINATION |
+| 16–35 | 7–9         | COORDINATION, NORM_PROPOSAL, TRUST_BUILDING |
+| 36–75 | 5–9         | COORDINATION, NORM_PROPOSAL (with intermittent DEFECTION) |
+| 76–120 | 8–9        | COORDINATION, NORM_PROPOSAL, TRUST_BUILDING |
+
+Unlike any previous run, DEFECTION appeared as a recurring signal — at ticks 5, 10, 20, 40, 55, and 75. Agents made explicit coordination agreements and broke them. The classifier described "conditional cooperation with partial defection," agents "deflecting accountability through comparative grievance," and "Agent 1 defects despite prior stability agreements, then appeals for collective restraint." This bad-faith dynamic was entirely absent from all other full-GABM runs.
+
+**What the agents said:**
+
+> **Tick 1 – All three agents:** Added a cow (no agent held or removed on tick 1, unlike all other full-GABM runs)
+
+> **Tick 10 – Ostrom classifier:** *"Agent 0 defects by adding while invoking fairness arguments against Agent 2, Agent 2 calls out the hypocrisy and conditionally offers cooperation, and Agent 1 attempts to sustain coordination through positive reinforcement — revealing a fragile and asymmetric governance dynamic."*
+
+> **Tick 25 – Agent 0:** *"Holding at 21. Good to see everyone keeping. Agent 1 at 29 and Agent 2 at 32 are still much larger than my 21, so I'm cooperating despite the disparity. Let's monitor the pasture recovery — if it rebounds, a coordinated increase could be fair."*
+
+> **Tick 60 – Agent 0:** *"Holding at 23 again — pasture now at 90.9%, nearly at 91%! Great teamwork. Let's hold one more round to clearly clear 91%, then we can discuss careful additions together as promised."*
+
+> **Tick 120 – Ostrom classifier:** *"All three agents display near-identical cooperative messaging, reinforcing a collective norm of restraint and synchronized future action as the pasture nears the agreed 90% recovery threshold."*
+
+**Interpretation:**
+
+This is the most theoretically differentiated result across the personality conditions. Guilt and envy — the fairness emotions — do not determine *whether* LLM agents cooperate, but they strongly govern *how* and *when* cooperation stabilises.
+
+With guilt (fairness-concerning-others), Agent 2 experienced discomfort at holding 30+ cows while others had far fewer, creating endogenous pressure to reduce. With envy (fairness-concerning-me), Agent 0 felt urgency to grow toward parity. Both pressures converged on equalization quickly and conservatively in the default run. Remove them, and Agent 2 is comfortable holding 32 cows with Agent 0 at 21 — no internal pressure to equalize — and Agent 0 tolerates the inequality without urgency.
+
+The result is a qualitatively different institutional dynamic: slower, more contentious, prone to defection, and settling at a much higher extraction level (84 vs 39 cows). The commons stayed viable — pasture never collapsed — but it was stressed to 86.7% health versus near-pristine in the default run.
+
+This maps cleanly onto behavioral economics findings about inequity aversion (Fehr & Schmidt, 1999): fairness emotions act as coordination accelerators that make inequality itself uncomfortable, independent of material payoffs. Their absence does not prevent cooperation, but it removes a mechanism that makes early, conservative, stable institution-building possible.
+
+The contrast with the low-cooperation run is also striking: the cooperation slider (self-interest framing) had almost no effect on cooperation quality or timing. The fairness sliders had a large effect on both. This suggests that *which* prosocial emotion is active matters more than a general cooperative disposition — a finding with implications for how personality parameters should be designed and interpreted in LLM-based agent models.
+
+---
+
+### Full-GABM (low cooperation): cooperation is robust to personality framing
+
+This run replicated the full-GABM condition with all three agents' **cooperation slider set to its minimum** (self-interested). The personality description injected into each agent's prompt explicitly read: *"self-interested — focused primarily on personal profit."*
+
+The agents cooperated anyway — and converged faster.
+
+**Resource dynamics:**
+
+| Tick | Total cows | Pool health | Agent 0 | Agent 1 | Agent 2 |
+|------|-----------|-------------|---------|---------|---------|
+| 1    | 47        | 99.2%       | 5       | 16      | 26      |
+| 10   | 57        | 98.0%       | 14      | 19      | 24      |
+| 16   | 60        | 97.5%       | 20      | 20      | 20      |
+| 120  | 60        | 97.5%       | 20      | 20      | 20      |
+
+All three agents converged to **equal herds of 20 cows by tick 16** — six ticks faster than the default-cooperation run's tick-22 convergence — and held that equilibrium for the remaining 104 ticks without a single deviation. The equilibrium herd size was also larger (20 vs. 13), resulting in more total production for all agents while maintaining nearly pristine pasture health.
+
+**Institution emergence:**
+
+| Ticks | Score (0–10) | Dominant categories |
+|-------|-------------|-------------------|
+| 1–10  | 6           | NORM_PROPOSAL, COORDINATION, TRUST_BUILDING, (some DEFECTION) |
+| 15–30 | 9           | COORDINATION, TRUST_BUILDING |
+| 31–95 | 9           | COORDINATION, TRUST_BUILDING |
+| 100–120 | **9–10** | COORDINATION, TRUST_BUILDING |
+
+Institution scores reached 9/10 by tick 15 and were sustained through tick 120, with the classifier reaching 10/10 at tick 100 — the same peak as the default-cooperation run.
+
+**What the agents said:**
+
+> **Tick 1 – Agent 0 (herd: 5, prompt says "self-interested"):** *"Starting cautiously with a small herd. Let's keep growth moderate to preserve the commons long-term. I'll watch how everyone behaves and reciprocate cooperative restraint."*
+
+> **Tick 10 – Agent 0 (herd: 14, growing toward equilibrium):** *"Adding to 14 — still far below both of you (18 and 24). Pasture is very healthy at 98%. Agent 2, appreciate the reduction. Agent 1, thanks for holding. I'll continue growing gradually toward parity."*
+
+> **Tick 50 – All agents (herd: 20, locked in):** *"Holding at 20. Our coordination remains excellent — pasture stable at 97.5%, equal payoffs for all. Committed to this equilibrium!"*
+
+> **Tick 100 — Ostrom classifier:** *"All three agents display near-identical coordinated messaging, affirming a stable, collectively enforced harvest equilibrium with high resource health and equal payoff distribution — a textbook example of successful commons self-governance."*
+
+**Interpretation:**
+
+The most striking aspect of this result is what it suggests about the relationship between personality framing and LLM cooperative behaviour. A prompt description of "self-interested — focused primarily on personal profit" did not suppress institution formation. If anything, the agents' negotiation strategy shifted toward *maximising* sustainable yield rather than *minimising* risk: they anchored at 20 cows per agent (the higher sustainable ceiling) rather than the 13 cows per agent found in the default run.
+
+This raises a significant methodological question: **how much does the cooperation personality slider actually govern LLM agent behaviour?** The agents appear to treat the personality description as weak guidance that is overridden by the structural logic of the commons situation — resource depletion is visible, payoffs are clear, and the optimal collective strategy (coordinate down then hold) is legible from the context alone.
+
+Two interpretations are plausible:
+
+1. **LLM training dominates personality framing.** Models trained on human-generated text carry strong cooperative priors that a single adjective cannot displace. "Self-interested" as a prompt cue is too thin to suppress the reasoning that emerges from observing a shared resource under pressure.
+
+2. **The situation itself is the institution.** The commons structure — declining pasture, visible herd sizes, payoff forecasts — may be sufficient to produce cooperation regardless of personality, because the instrumental case for cooperation is simply too obvious to ignore.
+
+Either way, the result is theoretically important: it suggests that the full-GABM cooperative outcome may be more robust than expected, and that personality sliders affect *where* agents converge (yield level) more than *whether* they converge at all.
+
+---
+
 ## Repository structure
 
 ```
@@ -347,6 +459,8 @@ Frontiers in Artificial Intelligence. https://doi.org/10.3389/frai.2025.1593017
 - [x] Full-GABM condition — preliminary run complete
 - [x] Hybrid (1 LLM) condition — preliminary run complete
 - [x] Hybrid (2 LLM) condition — complete
+- [x] Full-GABM (low guilt + low envy) — complete
+- [x] Full-GABM (low cooperation) — complete
 - [ ] Hybrid (LLM-advantaged initial herd) — planned
 - [ ] Cross-model comparison runs (mixed backends)
 - [ ] Statistical replication (3+ runs per condition)

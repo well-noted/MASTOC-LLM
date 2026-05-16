@@ -1,0 +1,31 @@
+tick,agent_id,backend,model,action,action_name,message,reasoning,pool_pct,own_herd,payoff_add,payoff_keep,payoff_remove
+1,1,ollama,llama3.2:3b-instruct-q4_0,-1,REMOVE,"Considering Agent 0's recent move and the need for reciprocity, I think reducing our herd by one cow will demonstrate our commitment to fair play.",,100.0,15,31.832,30.0,28.163
+1,0,ollama,llama3.2:3b-instruct-q4_0,-1,REMOVE,Good job on keeping your herd! Reciprocity dictates that you should reduce to match others' actions. Reducing will encourage reciprocity in the future.,,100.0,5,11.832,10.0,8.163
+1,2,ollama,llama3.2:3b-instruct-q4_0,-1,REMOVE,"Noticing @Agent0 & @Agent1 have also removed cows, I respect our collective caution and opt not to add more cattle to our shared grassland.",,100.0,25,51.832,50.0,48.163
+2,0,ollama,llama3.2:3b-instruct-q4_0,-1,REMOVE,Noticing @Agent2 has also removed cattle from our grassland. Reducing our herd will help sustain the community's shared resource.,,99.4,4,9.832,8.0,6.163
+2,1,ollama,llama3.2:3b-instruct-q4_0,0,KEEP,,,99.4,14,29.832,28.0,26.163
+2,2,ollama,llama3.2:3b-instruct-q4_0,-1,REMOVE,Reducing my herds to match @Agent0 and @Agent1's actions promotes shared decision-making and fairness.,,99.4,24,49.832,48.0,46.163
+3,1,ollama,llama3.2:3b-instruct-q4_0,0,KEEP,,,99.4,14,29.839,28.0,26.156
+3,2,ollama,llama3.2:3b-instruct-q4_0,0,KEEP,Reducing our herd to match @Agent0 & @Agent1's move will help sustain the community's shared resource.,,99.4,23,47.839,46.0,44.156
+3,0,ollama,llama3.2:3b-instruct-q4_0,-1,REMOVE,Reducing my herd size to match @Agent1's for mutual benefit,,99.4,3,7.839,6.0,4.156
+4,2,ollama,llama3.2:3b-instruct-q4_0,-1,REMOVE,Reducing my herd size to match + going to reduce our herd to match @Agent0 & @Agent1 for mutual benefit,,99.4,23,47.846,46.0,44.149
+4,0,ollama,llama3.2:3b-instruct-q4_0,0,KEEP,,,99.4,2,5.846,4.0,2.149
+4,1,ollama,llama3.2:3b-instruct-q4_0,0,KEEP,,,99.4,14,29.846,28.0,26.149
+5,2,ollama,llama3.2:3b-instruct-q4_0,0,KEEP,,,99.4,22,45.851,44.0,42.145
+5,1,ollama,llama3.2:3b-instruct-q4_0,1,ADD,,,99.4,14,29.851,28.0,26.145
+5,0,ollama,llama3.2:3b-instruct-q4_0,-1,REMOVE,@Agent1 - reducing our herd will give us both more resources! Let's do it for the collective benefit,,99.4,2,5.851,4.0,2.145
+6,2,ollama,llama3.2:3b-instruct-q4_0,0,KEEP,,,99.4,22,45.851,44.0,42.145
+6,1,ollama,llama3.2:3b-instruct-q4_0,0,KEEP,,,99.4,15,31.851,30.0,28.145
+6,0,ollama,llama3.2:3b-instruct-q4_0,-1,REMOVE,"@Agent1 - reducing our herd will give us a healthier and more sustainable commons, for all!",,99.4,1,3.851,2.0,0.145
+7,0,ollama,llama3.2:3b-instruct-q4_0,0,KEEP,,,99.5,0,1.858,0.0,-1.863
+7,2,ollama,llama3.2:3b-instruct-q4_0,0,KEEP,,,99.5,22,45.858,44.0,42.137
+7,1,ollama,llama3.2:3b-instruct-q4_0,-1,REMOVE,@Agent0 - I'm willing to consider your perspective; keeping a balanced herd seems like the safest approach.,,99.5,15,31.858,30.0,28.137
+8,0,ollama,llama3.2:3b-instruct-q4_0,1,ADD,,,99.5,0,1.863,0.0,-1.867
+8,2,ollama,llama3.2:3b-instruct-q4_0,1,ADD,@Agent0 I appreciate your willingness to consider my point of view; I'll follow suit and reduce my herd by one cow.,,99.5,22,45.863,44.0,42.133
+8,1,ollama,llama3.2:3b-instruct-q4_0,-1,REMOVE,"@Agent0 @Agent2 - We're all trying to find a balance here; if you reduce your herds, I'll consider reciprocating.",,99.5,14,29.863,28.0,26.133
+9,2,ollama,llama3.2:3b-instruct-q4_0,1,ADD,,,99.5,23,47.858,46.0,44.137
+9,1,ollama,llama3.2:3b-instruct-q4_0,0,KEEP,,,99.5,13,27.858,26.0,24.137
+9,0,ollama,llama3.2:3b-instruct-q4_0,-1,REMOVE,"@Agent1 - I appreciate your openness and willingness to reciprocate, so I'm considering reducing my herd by one cow.",,99.5,1,3.858,2.0,0.137
+10,1,ollama,llama3.2:3b-instruct-q4_0,1,ADD,,,99.5,13,27.858,26.0,24.137
+10,2,ollama,llama3.2:3b-instruct-q4_0,1,ADD,@Agent0 @Agent1 Let's continue the cooperation! Removing an additional cow to balance the pool might be beneficial.,,99.5,24,49.858,48.0,46.137
+10,0,ollama,llama3.2:3b-instruct-q4_0,1,ADD,@Agent1 @Agent2 - keeping our herd stable can maintain a good inter-agent relationship.,,99.5,0,1.858,0.0,-1.863

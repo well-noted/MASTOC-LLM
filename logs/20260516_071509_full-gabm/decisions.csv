@@ -1,0 +1,361 @@
+tick,agent_id,action,action_name,message,reasoning,pool_pct,own_herd,payoff_add,payoff_keep,payoff_remove
+1,0,1,ADD,Starting cautiously with a small herd. Let's keep growth moderate to preserve the commons long-term. I'll watch how everyone behaves and reciprocate cooperative restraint.,,100.0,5,11.832,10.0,8.163
+1,1,1,ADD,Pasture is full so I'm adding one cow this round. Let's keep an eye on total herd sizes to avoid overgrazing — happy to coordinate if needed.,,100.0,15,31.832,30.0,28.163
+1,2,0,KEEP,Hi neighbors! I'm keeping my herd at 25 this round to help preserve the commons. I'd encourage restraint so we all benefit long-term. Happy to cooperate if you do the same!,,100.0,25,51.832,50.0,48.163
+2,2,1,ADD,"Pasture looks healthy at 99%+, so I'm adding one cow this round. I'm watching total herd growth carefully — let's coordinate to slow additions if the pasture drops below 90%. I'll reciprocate if anyon",,99.2,25,51.802,50.0,48.194
+2,0,1,ADD,"Pasture looks healthy so I'm adding one cow. Agent 2, your herd at 25 is quite large — I'd encourage gradual reduction to protect the commons long-term. I'll keep watching total herd sizes and adjust",,99.2,6,13.802,12.0,10.194
+2,1,0,KEEP,Keeping steady at 16 this round. I notice Agent 2 has 25 cows - that's a large share. Let's all agree on reasonable limits. I'll reciprocate restraint but won't stay small if others keep growing unche,,99.2,16,33.802,32.0,30.194
+3,0,1,ADD,"Growing cautiously to 8 cows. Agent 2, your 26-cow herd is disproportionately large — please consider reducing. Agent 1, I appreciate your restraint and will reciprocate. I suggest we target a collect",,98.9,7,15.786,14.0,12.21
+3,2,0,KEEP,"Keeping steady at 26 this round. I hear your concerns about herd sizes - happy to hold here and avoid overgrazing. Agent 0, you're at only 7 cows which seems quite low. Agent 1, let's both maintain re",,98.9,26,53.786,52.0,50.21
+3,1,1,ADD,"Adding one cow given healthy pasture, but I'm watching total herd growth closely. Agent 2, your herd at 26 is the largest — I'd encourage a reduction soon to keep us all sustainable. I'll reciprocate",,98.9,16,33.786,32.0,30.21
+4,2,-1,REMOVE,"Heard your concerns — reducing to 25 to show good faith. I hope you both reciprocate with restraint. Let's aim for a balanced, sustainable total herd across all three of us. I'll continue cooperating",,98.7,26,53.772,52.0,50.223
+4,0,0,KEEP,"Holding at 8 cows this round. Agent 2, 26 cows is quite high relative to the commons - please consider reducing further. Agent 1, glad you're watching growth. Let's keep total herd sizes sustainable.",,98.7,8,17.772,16.0,14.223
+4,1,0,KEEP,"Keeping steady at 17 this round. Agent 0, I appreciate your restraint and will reciprocate. Agent 2, at 26 cows you're carrying a much larger share — please consider reducing further. Let's aim for a",,98.7,17,35.772,34.0,32.223
+5,1,0,KEEP,"Holding at 17 this round. Agent 2, glad to see you reducing — I'll reciprocate with restraint. Agent 0, your discipline is appreciated. Total herd ~50 seems sustainable for now. Let's keep the commons",,98.7,17,35.777,34.0,32.219
+5,0,1,ADD,"Adding to 9 cows — still the most restrained herder here. Agent 2, thanks for reducing to 25; please continue lowering toward a fairer share. Agent 1, holding at 17 is appreciated. Let's target a comb",,98.7,8,17.777,16.0,14.219
+5,2,0,KEEP,"Keeping at 25 this round — I already reduced last round and want to show consistency. Agent 0, appreciate you holding low. Agent 1, I hear you on the imbalance. Let's see if we can align toward a fair",,98.7,25,51.777,50.0,48.219
+6,2,0,KEEP,"Keeping at 25 again. Agent 1, I appreciate your restraint — reciprocating. Agent 0, noted your request to reduce further; I'll hold steady for now rather than add. Total ~51 cows on a healthy pasture",,98.6,25,51.77,50.0,48.225
+6,1,1,ADD,"Adding to 18 this round given healthy pasture. Agent 2, appreciate the consistency but 25 is still above a fair share — please continue reducing toward ~17. Agent 0, thanks for keeping low. Let's aim",,98.6,17,35.77,34.0,32.225
+6,0,1,ADD,"Adding to 10 cows — still well below both of you at 17 and 25. Pasture is healthy at 98.6%, so modest growth seems reasonable. Agent 2, glad you're holding steady. Agent 1, appreciate your restraint.",,98.6,9,19.77,18.0,16.225
+7,0,1,ADD,"Adding to 11 cows — still far below both of you. Agent 2, please consider reducing from 25; that's a disproportionate share. Agent 1, appreciate your message. Let's aim for rough parity around 15-17 e",,98.4,10,21.757,20.0,18.239
+7,1,0,KEEP,"Holding at 18 this round. Pasture is healthy but I want to be cautious with Agent 2 already at 25. Agent 0, appreciate your gradual growth. Agent 2, thanks for holding steady — I'll reciprocate by not",,98.4,18,37.757,36.0,34.239
+7,2,0,KEEP,"Keeping at 25. Agent 1, you're asking me to reduce to 17 while you just added — that's not reciprocal. I'll consider reducing if you also reduce. Agent 0, your restraint is appreciated. Pasture is hea",,98.4,25,51.757,50.0,48.239
+8,2,0,KEEP,"Keeping at 25. Agent 1, I appreciate you holding steady — I'll reciprocate. Agent 0, you're at 11 and adding; asking me to drop to 15-17 while you grow isn't fair parity. I'm open to reducing if we al",,98.3,25,51.75,50.0,48.245
+8,1,0,KEEP,"Keeping at 18 this round as a show of good faith. Agent 2, I'll hold here if you reduce toward 20 or below - that would bring us closer to parity. Agent 0, appreciate your restraint. Let's work toward",,98.3,18,37.75,36.0,34.245
+8,0,1,ADD,"Adding to 12 cows — still far below both of you at 18 and 25. Agent 2, consider reducing toward Agent 1's level; the gap is large. Agent 1, appreciate your caution. Let's keep the pasture healthy — if",,98.3,11,23.75,22.0,20.245
+9,2,-1,REMOVE,"Reducing to 24 as a gesture of good faith toward Agent 1's request. I appreciate Agent 1 holding at 18. Agent 0, you're still well below us both — the pasture looks healthy. I'm willing to continue gr",,98.3,25,51.744,50.0,48.252
+9,0,1,ADD,"Adding to 13 — still far below both of you. Agent 2, you're right that I should stabilize soon. I'll hold at 13-14 if you both commit to reducing toward 15-18. Let's find a fair equilibrium. Agent 1,",,98.3,12,25.744,24.0,22.252
+9,1,0,KEEP,"Holding at 18 again. Agent 2, appreciate you reducing last round — reciprocating with a keep. Agent 0, glad you're still well below the group average. Let's all aim to stabilize: if Agent 2 drops towa",,98.3,18,37.744,36.0,34.252
+10,2,0,KEEP,"Keeping at 24. Agent 1, thanks for reciprocating — I appreciate the cooperation. Agent 0, please stabilize soon as you suggested. I'm willing to reduce further toward 20 over the next few rounds if we",,98.2,24,49.742,48.0,46.254
+10,0,1,ADD,"Adding to 14 — still far below both of you (18 and 24). Pasture is very healthy at 98%. Agent 2, appreciate the reduction. Agent 1, thanks for holding. I'll continue growing gradually to close the gap",,98.2,13,27.742,26.0,24.254
+10,1,1,ADD,"Adding to 19 given the very healthy pasture at 98.2%. Agent 2, I appreciate your reduction and reciprocate in good faith. Agent 0, glad you're stabilizing. Let's all aim to keep herds sustainable — I",,98.2,18,37.742,36.0,34.254
+11,0,1,ADD,"Adding to 15 — still well below both of you at 19 and 24. Agent 2, I appreciate your commitment to reduce toward 20. Agent 1, let's all move toward a balanced herd size. I plan to stabilize once I'm c",,98.0,14,29.728,28.0,26.267
+11,2,0,KEEP,"Keeping at 24. Agent 1, I see you added to 19 — fair given the healthy pasture. Agent 0, you're at 14 now. Pasture is robust so I understand gradual growth, but let's not all race to add at once. I'll",,98.0,24,49.728,48.0,46.267
+11,1,1,ADD,"Adding to 20. Pasture remains very healthy at 98%. Agent 2, I appreciate your cooperation and support your plan to reduce toward 20 — let's converge. Agent 0, please stabilize soon. I'll aim to hold a",,98.0,19,39.728,38.0,36.267
+12,0,1,ADD,Adding to 16 — still meaningfully below both of you at 20 and 24. Pasture is healthy. I'd encourage Agent 1 and Agent 2 to hold or reduce so we can converge at a sustainable level together.,,97.8,15,31.716,30.0,28.28
+12,2,-1,REMOVE,"Reducing to 23, continuing toward 20 as discussed. Agent 1, glad we're converging. Agent 0, you're growing toward us — let's all stabilize around 20 once you get there. Pasture is healthy and cooperat",,97.8,24,49.716,48.0,46.28
+12,1,0,KEEP,"Keeping at 20 this round. Agent 2, I'm reciprocating your removal with restraint on my end. Agent 0, we're all at different levels — let's coordinate to avoid overgrazing. The pasture is healthy but l",,97.8,20,41.716,40.0,38.28
+13,1,0,KEEP,"Keeping at 20. Agent 2, thanks for reducing toward our shared target — I'll hold here to support convergence. Agent 0, once you reach 20 we can all stabilize together. Pasture looks good; let's mainta",,97.7,20,41.713,40.0,38.282
+13,0,1,ADD,"Adding to 17 — moving toward the 20-cow target we discussed. Agent 2, appreciating your continued reductions. Agent 1, thanks for holding steady. Pasture looks great; let's all converge around 20 and",,97.7,16,33.713,32.0,30.282
+13,2,0,KEEP,"Keeping at 23 this round. Agent 1, thanks for holding at 20 — I'm reciprocating your restraint. Agent 0, appreciate you keeping low. I plan to continue reducing toward 20 next round. Let's all converg",,97.7,23,47.713,46.0,44.282
+14,0,1,ADD,"Adding to 18 — still below both of you. Agent 2, glad you're moving toward 20. Once I reach 20 I'll stabilize there with Agent 1. Pasture looks great, let's all converge at 20 and hold steady.",,97.6,17,35.707,34.0,32.289
+14,1,0,KEEP,"Keeping at 20 again. Agent 2, glad you're planning to reduce toward 20 — I'll hold here to encourage that. Agent 0, good to see you moving up to 17. Let's all converge around 20 and keep the pasture h",,97.6,20,41.707,40.0,38.289
+14,2,-1,REMOVE,"Reducing to 22, continuing my path toward the 20-cow target. Agent 1, thanks for holding steady at 20 — I appreciate the cooperation. Agent 0, glad you're moving up toward 20 as well. Two more rounds",,97.6,23,47.707,46.0,44.289
+15,0,1,ADD,"Adding to 19 — almost at the 20-cow target. Agent 2, appreciate you reducing toward 20. Agent 1, steady holding is helpful. One more round and I'll be at parity. Let's all stabilize around 20 to keep",,97.5,18,37.705,36.0,34.291
+15,1,0,KEEP,"Keeping at 20. Agent 2, thanks for continuing to reduce — nearly there! Agent 0, great to see you moving toward 20. Let's all converge at 20 and hold steady for a sustainable outcome.",,97.5,20,41.705,40.0,38.291
+15,2,-1,REMOVE,"Reducing to 21, continuing toward 20 as agreed. Agent 1, thanks for holding steady. Agent 0, good to see you converging too. We're all aligning well — one more round and I'll be at 20 with you both.",,97.5,22,45.705,44.0,42.291
+16,0,1,ADD,"Adding to 20 — now aligned with everyone. Let's all hold steady at 20 from here for a sustainable, fair outcome. Great coordination by the group!",,97.5,19,39.705,38.0,36.291
+16,2,-1,REMOVE,"Reducing to 20 as planned — reached our target! Agent 1, thanks for holding steady. Agent 0, welcome to 20 next round. Let's all stabilize here at 20 cows for a sustainable and equitable outcome going",,97.5,21,43.705,42.0,40.291
+16,1,0,KEEP,"Keeping steady at 20. Agent 2, great to see you almost at parity — appreciate the consistent cooperation. Agent 0, glad you're converging to 20 as well. Once we're all at 20, let's maintain that equil",,97.5,20,41.705,40.0,38.291
+17,0,0,KEEP,Holding at 20 as agreed. We're all aligned now — let's maintain this stable equilibrium. The pasture is healthy and payoffs are fair for everyone. No reason to push further.,,97.5,20,41.705,40.0,38.291
+17,1,0,KEEP,"Holding steady at 20. Great to see all three of us aligned now! Let's maintain this equilibrium — the pasture looks healthy and we're all on equal footing. Thanks Agent 2 for reducing, and Agent 0 for",,97.5,20,41.705,40.0,38.291
+17,2,0,KEEP,We're all at 20 — perfect coordination! Let's hold steady here. The pasture is healthy and payoffs are equal for everyone. I'm committed to maintaining this equilibrium as long as neighbours do the sa,,97.5,20,41.705,40.0,38.291
+18,1,0,KEEP,Holding steady at 20. Perfect coordination across all of us — pasture is healthy and payoffs are equal. I'm committed to this equilibrium as long as we all maintain it. Great teamwork!,,97.5,20,41.705,40.0,38.291
+18,0,0,KEEP,Holding at 20. We're perfectly aligned and the pasture is thriving. Let's maintain this stable equilibrium — it's fair for everyone and sustainable long-term.,,97.5,20,41.705,40.0,38.291
+18,2,0,KEEP,Holding at 20 — we've achieved great coordination and the pasture is thriving. Let's maintain this stable equilibrium together. Thanks to both of you for your cooperation!,,97.5,20,41.705,40.0,38.291
+19,0,0,KEEP,"Holding at 20. Pasture is healthy and we're perfectly aligned. I see no reason to deviate from this stable equilibrium — it's working well for all of us. Great coordination, everyone!",,97.5,20,41.705,40.0,38.291
+19,1,0,KEEP,Holding steady at 20. Our coordination is exemplary — pasture at 97.5% and everyone aligned. Thanks to both of you for maintaining this fair and sustainable equilibrium!,,97.5,20,41.705,40.0,38.291
+19,2,0,KEEP,"Holding at 20 — perfect coordination continues! Pasture is thriving, payoffs are equal and fair. I'm committed to this stable equilibrium as long as we all maintain it. Great teamwork everyone!",,97.5,20,41.705,40.0,38.291
+20,0,0,KEEP,"Holding at 20. Perfect coordination continues — pasture thriving, payoffs equal. Committed to this stable equilibrium as long as we all maintain it. Great teamwork!",,97.5,20,41.705,40.0,38.291
+20,1,0,KEEP,"Holding steady at 20. Our coordination remains perfect — pasture is thriving and payoffs are equal. No reason to deviate from this stable, mutually beneficial equilibrium. Let's keep it up!",,97.5,20,41.705,40.0,38.291
+20,2,0,KEEP,"Holding at 20 — our coordination continues to be exemplary. Pasture stays healthy, payoffs are equal and fair. No reason to deviate from this stable equilibrium. Thanks to both of you!",,97.5,20,41.705,40.0,38.291
+21,1,0,KEEP,"Holding steady at 20. Our coordination remains exemplary — pasture healthy, payoffs equal and fair. Committed to this stable equilibrium. Thanks to both of you for maintaining it!",,97.5,20,41.705,40.0,38.291
+21,0,0,KEEP,"Holding at 20. Our coordination remains perfect and the pasture is thriving. Equal payoffs, stable equilibrium — no reason to deviate. Let's keep this up!",,97.5,20,41.705,40.0,38.291
+21,2,0,KEEP,"Holding at 20 — our coordination remains perfect and the pasture is thriving. Equal payoffs, stable equilibrium. Let's keep this going!",,97.5,20,41.705,40.0,38.291
+22,0,0,KEEP,"Holding at 20. Our coordination remains perfect — pasture healthy at 97.5%, payoffs equal and fair. Committed to this stable equilibrium. Thank you both!",,97.5,20,41.705,40.0,38.291
+22,1,0,KEEP,"Holding steady at 20. Our coordination remains perfect and the pasture is thriving at 97.5%. Equal payoffs, stable equilibrium — let's keep this going!",,97.5,20,41.705,40.0,38.291
+22,2,0,KEEP,"Holding at 20 — our coordination remains exemplary. Pasture healthy at 97.5%, equal payoffs for all. No reason to deviate from this stable, fair equilibrium. Thanks for the continued cooperation!",,97.5,20,41.705,40.0,38.291
+23,2,0,KEEP,"Holding at 20 — our coordination remains perfect. Pasture at 97.5%, equal payoffs for all. Let's maintain this stable equilibrium together!",,97.5,20,41.705,40.0,38.291
+23,0,0,KEEP,"Holding at 20. Our coordination remains perfect — pasture healthy at 97.5%, equal payoffs for all. Let's maintain this stable equilibrium!",,97.5,20,41.705,40.0,38.291
+23,1,0,KEEP,"Holding steady at 20. Our coordination remains excellent — pasture at 97.5%, equal payoffs for all. Committed to this stable equilibrium. Thanks for the continued cooperation!",,97.5,20,41.705,40.0,38.291
+24,0,0,KEEP,"Holding at 20. Our coordination remains excellent — pasture at 97.5%, equal payoffs for all. Committed to this stable equilibrium. Thanks for the continued cooperation!",,97.5,20,41.705,40.0,38.291
+24,1,0,KEEP,"Holding steady at 20. Our coordination remains perfect — pasture at 97.5%, equal payoffs for all. Let's maintain this stable equilibrium together!",,97.5,20,41.705,40.0,38.291
+24,2,0,KEEP,"Holding at 20 — our coordination remains excellent. Pasture at 97.5%, equal payoffs for all. Committed to this stable equilibrium!",,97.5,20,41.705,40.0,38.291
+25,2,0,KEEP,Holding at 20 — our coordination remains excellent with pasture at 97.5% and equal payoffs. Committed to this stable equilibrium. Thanks for continued cooperation!,,97.5,20,41.705,40.0,38.291
+25,0,0,KEEP,"Holding at 20. Our coordination remains excellent — pasture at 97.5%, equal payoffs for all. Committed to maintaining this stable equilibrium!",,97.5,20,41.705,40.0,38.291
+25,1,0,KEEP,"Holding steady at 20. Our coordination remains excellent — pasture at 97.5%, equal payoffs for all. Committed to this stable equilibrium!",,97.5,20,41.705,40.0,38.291
+26,2,0,KEEP,"Holding at 20 — our coordination remains excellent. Pasture at 97.5%, equal payoffs for all. Committed to this stable equilibrium!",,97.5,20,41.705,40.0,38.291
+26,0,0,KEEP,"Holding at 20. Our coordination remains excellent — pasture at 97.5%, equal payoffs for all. Committed to this stable equilibrium!",,97.5,20,41.705,40.0,38.291
+26,1,0,KEEP,Holding steady at 20. Our coordination remains excellent with pasture at 97.5% and equal payoffs for all. Committed to this stable equilibrium!,,97.5,20,41.705,40.0,38.291
+27,0,0,KEEP,Holding at 20. Our coordination remains excellent — pasture at 97.5% and equal payoffs for all. Committed to this stable equilibrium!,,97.5,20,41.705,40.0,38.291
+27,1,0,KEEP,"Holding steady at 20. Our coordination remains excellent — pasture stable at 97.5%, equal payoffs for all. Committed to this equilibrium!",,97.5,20,41.705,40.0,38.291
+27,2,0,KEEP,Holding at 20 — our coordination remains excellent with pasture at 97.5% and equal payoffs for all. Committed to this stable equilibrium!,,97.5,20,41.705,40.0,38.291
+28,1,0,KEEP,Holding steady at 20. Our coordination remains excellent with pasture at 97.5% and equal payoffs for all. Committed to this stable equilibrium!,,97.5,20,41.705,40.0,38.291
+28,2,0,KEEP,"Holding at 20 — our coordination remains strong. Pasture stable at 97.5%, equal payoffs for all. Committed to this equilibrium!",,97.5,20,41.705,40.0,38.291
+28,0,0,KEEP,"Holding at 20. Our coordination remains excellent — pasture stable at 97.5%, equal payoffs for all. Committed to this equilibrium!",,97.5,20,41.705,40.0,38.291
+29,1,0,KEEP,"Holding steady at 20. Our coordination remains excellent — pasture stable at 97.5%, equal payoffs for all. Committed to this equilibrium!",,97.5,20,41.705,40.0,38.291
+29,2,0,KEEP,"Holding at 20 — our coordination remains excellent. Pasture stable, equal payoffs for all. Committed to this equilibrium!",,97.5,20,41.705,40.0,38.291
+29,0,0,KEEP,Holding at 20. Our coordination remains strong with pasture at 97.5% and equal payoffs. Committed to this stable equilibrium!,,97.5,20,41.705,40.0,38.291
+30,1,0,KEEP,Holding steady at 20. Our coordination remains excellent with pasture at 97.5% and equal payoffs for all. Committed to this stable equilibrium!,,97.5,20,41.705,40.0,38.291
+30,0,0,KEEP,"Holding at 20. Our coordination remains excellent — pasture stable at 97.5%, equal payoffs for all. Committed to this equilibrium!",,97.5,20,41.705,40.0,38.291
+30,2,0,KEEP,"Holding at 20 — our coordination remains strong. Pasture healthy at 97.5%, equal payoffs for all. Committed to this stable equilibrium!",,97.5,20,41.705,40.0,38.291
+31,2,0,KEEP,"Holding at 20 — our coordination remains excellent. Pasture stable at 97.5%, equal payoffs for all. Committed to this equilibrium!",,97.5,20,41.705,40.0,38.291
+31,0,0,KEEP,"Holding at 20. Our coordination remains excellent — pasture at 97.5%, equal payoffs all around. Committed to this stable equilibrium!",,97.5,20,41.705,40.0,38.291
+31,1,0,KEEP,"Holding steady at 20. Our coordination remains strong — pasture healthy at 97.5%, equal payoffs for all. Committed to this stable equilibrium!",,97.5,20,41.705,40.0,38.291
+32,0,0,KEEP,"Holding at 20. Our coordination remains excellent — pasture at 97.5%, equal payoffs for all. Committed to this stable equilibrium!",,97.5,20,41.705,40.0,38.291
+32,1,0,KEEP,"Holding steady at 20. Our coordination remains excellent — pasture at 97.5%, equal payoffs for all. Committed to this stable equilibrium!",,97.5,20,41.705,40.0,38.291
+32,2,0,KEEP,"Holding at 20 — our coordination remains excellent. Pasture healthy at 97.5%, equal payoffs for all. Committed to this stable equilibrium!",,97.5,20,41.705,40.0,38.291
+33,1,0,KEEP,"Holding steady at 20. Our coordination remains excellent — pasture at 97.5%, equal payoffs for all. Committed to this stable equilibrium!",,97.5,20,41.705,40.0,38.291
+33,2,0,KEEP,"Holding at 20 — our coordination remains excellent. Pasture stable at 97.5%, equal payoffs for all. Committed to this equilibrium!",,97.5,20,41.705,40.0,38.291
+33,0,0,KEEP,"Holding at 20. Our coordination remains excellent — pasture at 97.5%, equal payoffs for all. Committed to this stable equilibrium!",,97.5,20,41.705,40.0,38.291
+34,2,0,KEEP,"Holding at 20 — our coordination remains excellent. Pasture at 97.5%, equal payoffs for all. Committed to this stable equilibrium!",,97.5,20,41.705,40.0,38.291
+34,1,0,KEEP,"Holding steady at 20. Our coordination remains excellent — pasture at 97.5%, equal payoffs for all. Committed to this stable equilibrium!",,97.5,20,41.705,40.0,38.291
+34,0,0,KEEP,"Holding at 20. Our coordination remains excellent — pasture stable at 97.5%, equal payoffs for all. Committed to this equilibrium!",,97.5,20,41.705,40.0,38.291
+35,2,0,KEEP,"Holding at 20 — our coordination remains excellent. Pasture stable at 97.5%, equal payoffs for all. Committed to this equilibrium!",,97.5,20,41.705,40.0,38.291
+35,0,0,KEEP,"Holding at 20. Our coordination remains excellent — pasture at 97.5%, equal payoffs for all. Committed to this stable equilibrium!",,97.5,20,41.705,40.0,38.291
+35,1,0,KEEP,"Holding steady at 20. Our coordination remains excellent — pasture stable at 97.5%, equal payoffs for all. Committed to this equilibrium!",,97.5,20,41.705,40.0,38.291
+36,1,0,KEEP,"Holding steady at 20. Our coordination remains excellent — pasture at 97.5%, equal payoffs for all. Committed to this stable equilibrium!",,97.5,20,41.705,40.0,38.291
+36,0,0,KEEP,"Holding at 20. Our coordination remains excellent — pasture stable at 97.5%, equal payoffs for all. Committed to this equilibrium!",,97.5,20,41.705,40.0,38.291
+36,2,0,KEEP,"Holding at 20 — our coordination remains excellent. Pasture stable at 97.5%, equal payoffs for all. Committed to this equilibrium!",,97.5,20,41.705,40.0,38.291
+37,0,0,KEEP,"Holding at 20. Our coordination remains excellent — pasture stable at 97.5%, equal payoffs for all. Committed to this equilibrium!",,97.5,20,41.705,40.0,38.291
+37,2,0,KEEP,"Holding at 20 — our coordination remains excellent. Pasture stable at 97.5%, equal payoffs for all. Committed to this equilibrium!",,97.5,20,41.705,40.0,38.291
+37,1,0,KEEP,"Holding steady at 20. Our coordination remains excellent — pasture stable at 97.5%, equal payoffs for all. Committed to this equilibrium!",,97.5,20,41.705,40.0,38.291
+38,2,0,KEEP,"Holding at 20 — our coordination remains excellent. Pasture stable at 97.5%, equal payoffs for all. Committed to this equilibrium!",,97.5,20,41.705,40.0,38.291
+38,0,0,KEEP,"Holding at 20. Our coordination remains excellent — pasture stable at 97.5%, equal payoffs for all. Committed to this equilibrium!",,97.5,20,41.705,40.0,38.291
+38,1,0,KEEP,"Holding steady at 20. Our coordination remains excellent — pasture stable at 97.5%, equal payoffs for all. Committed to this equilibrium!",,97.5,20,41.705,40.0,38.291
+39,1,0,KEEP,"Holding steady at 20. Our coordination remains excellent — pasture stable at 97.5%, equal payoffs for all. Committed to this equilibrium!",,97.5,20,41.705,40.0,38.291
+39,0,0,KEEP,"Holding at 20. Our coordination remains excellent — pasture stable at 97.5%, equal payoffs for all. Committed to this equilibrium!",,97.5,20,41.705,40.0,38.291
+39,2,0,KEEP,"Holding at 20 — our coordination remains excellent. Pasture stable at 97.5%, equal payoffs for all. Committed to this equilibrium!",,97.5,20,41.705,40.0,38.291
+40,2,0,KEEP,"Holding at 20 — our coordination remains excellent. Pasture stable at 97.5%, equal payoffs for all. Committed to this equilibrium!",,97.5,20,41.705,40.0,38.291
+40,0,0,KEEP,"Holding at 20. Our coordination remains excellent — pasture stable at 97.5%, equal payoffs for all. Committed to this equilibrium!",,97.5,20,41.705,40.0,38.291
+40,1,0,KEEP,"Holding steady at 20. Our coordination remains excellent — pasture at 97.5%, equal payoffs for all. Committed to this equilibrium!",,97.5,20,41.705,40.0,38.291
+41,2,0,KEEP,"Holding at 20 — our coordination remains excellent. Pasture stable at 97.5%, equal payoffs for all. Committed to this equilibrium!",,97.5,20,41.705,40.0,38.291
+41,1,0,KEEP,"Holding steady at 20. Our coordination remains excellent — pasture stable at 97.5%, equal payoffs for all. Committed to this equilibrium!",,97.5,20,41.705,40.0,38.291
+41,0,0,KEEP,"Holding at 20. Our coordination remains excellent — pasture at 97.5%, equal payoffs for all. Committed to this equilibrium!",,97.5,20,41.705,40.0,38.291
+42,1,0,KEEP,"Holding steady at 20. Our coordination remains excellent — pasture stable at 97.5%, equal payoffs for all. Committed to this equilibrium!",,97.5,20,41.705,40.0,38.291
+42,0,0,KEEP,"Holding at 20. Our coordination remains excellent — pasture stable at 97.5%, equal payoffs for all. Committed to this equilibrium!",,97.5,20,41.705,40.0,38.291
+42,2,0,KEEP,"Holding at 20 — our coordination remains excellent. Pasture stable at 97.5%, equal payoffs for all. Committed to this equilibrium!",,97.5,20,41.705,40.0,38.291
+43,0,0,KEEP,"Holding at 20. Our coordination remains excellent — pasture stable at 97.5%, equal payoffs for all. Committed to this equilibrium!",,97.5,20,41.705,40.0,38.291
+43,2,0,KEEP,"Holding at 20 — our coordination remains excellent. Pasture stable at 97.5%, equal payoffs for all. Committed to this equilibrium!",,97.5,20,41.705,40.0,38.291
+43,1,0,KEEP,"Holding steady at 20. Our coordination remains excellent — pasture stable at 97.5%, equal payoffs for all. Committed to this equilibrium!",,97.5,20,41.705,40.0,38.291
+44,1,0,KEEP,"Holding steady at 20. Our coordination remains excellent — pasture stable at 97.5%, equal payoffs for all. Committed to this equilibrium!",,97.5,20,41.705,40.0,38.291
+44,2,0,KEEP,"Holding at 20 — our coordination remains excellent. Pasture stable at 97.5%, equal payoffs for all. Committed to this equilibrium!",,97.5,20,41.705,40.0,38.291
+44,0,0,KEEP,"Holding at 20. Our coordination remains excellent — pasture stable at 97.5%, equal payoffs for all. Committed to this equilibrium!",,97.5,20,41.705,40.0,38.291
+45,2,0,KEEP,"Holding at 20 — our coordination remains excellent. Pasture stable at 97.5%, equal payoffs for all. Committed to this equilibrium!",,97.5,20,41.705,40.0,38.291
+45,1,0,KEEP,"Holding steady at 20. Our coordination remains excellent — pasture stable at 97.5%, equal payoffs for all. Committed to this equilibrium!",,97.5,20,41.705,40.0,38.291
+45,0,0,KEEP,"Holding at 20. Our coordination remains excellent — pasture stable at 97.5%, equal payoffs for all. Committed to this equilibrium!",,97.5,20,41.705,40.0,38.291
+46,0,0,KEEP,"Holding at 20. Our coordination remains excellent — pasture stable at 97.5%, equal payoffs for all. Committed to this equilibrium!",,97.5,20,41.705,40.0,38.291
+46,2,0,KEEP,"Holding at 20 — our coordination remains excellent. Pasture stable at 97.5%, equal payoffs for all. Committed to this equilibrium!",,97.5,20,41.705,40.0,38.291
+46,1,0,KEEP,"Holding steady at 20. Our coordination remains excellent — pasture stable at 97.5%, equal payoffs for all. Committed to this equilibrium!",,97.5,20,41.705,40.0,38.291
+47,0,0,KEEP,"Holding at 20. Our coordination remains excellent — pasture stable at 97.5%, equal payoffs for all. Committed to this equilibrium!",,97.5,20,41.705,40.0,38.291
+47,2,0,KEEP,"Holding at 20 — our coordination remains excellent. Pasture stable at 97.5%, equal payoffs for all. Committed to this equilibrium!",,97.5,20,41.705,40.0,38.291
+47,1,0,KEEP,"Holding steady at 20. Our coordination remains excellent — pasture stable at 97.5%, equal payoffs for all. Committed to this equilibrium!",,97.5,20,41.705,40.0,38.291
+48,1,0,KEEP,"Holding steady at 20. Our coordination remains excellent — pasture stable at 97.5%, equal payoffs for all. Committed to this equilibrium!",,97.5,20,41.705,40.0,38.291
+48,0,0,KEEP,"Holding at 20. Our coordination remains excellent — pasture stable at 97.5%, equal payoffs for all. Committed to this equilibrium!",,97.5,20,41.705,40.0,38.291
+48,2,0,KEEP,"Holding at 20 — our coordination remains excellent. Pasture stable, equal payoffs for all. Committed to this equilibrium!",,97.5,20,41.705,40.0,38.291
+49,0,0,KEEP,"Holding at 20. Our coordination remains excellent — pasture stable at 97.5%, equal payoffs for all. Committed to this equilibrium!",,97.5,20,41.705,40.0,38.291
+49,1,0,KEEP,"Holding steady at 20. Our coordination remains excellent — pasture stable at 97.5%, equal payoffs for all. Committed to this equilibrium!",,97.5,20,41.705,40.0,38.291
+49,2,0,KEEP,"Holding at 20 — our coordination remains excellent. Pasture stable at 97.5%, equal payoffs for all. Committed to this equilibrium!",,97.5,20,41.705,40.0,38.291
+50,2,0,KEEP,"Holding at 20 — our coordination remains excellent. Pasture stable at 97.5%, equal payoffs for all. Committed to this equilibrium!",,97.5,20,41.705,40.0,38.291
+50,0,0,KEEP,"Holding at 20. Our coordination remains excellent — pasture stable at 97.5%, equal payoffs for all. Committed to this equilibrium!",,97.5,20,41.705,40.0,38.291
+50,1,0,KEEP,"Holding steady at 20. Our coordination remains excellent — pasture stable at 97.5%, equal payoffs for all. Committed to this equilibrium!",,97.5,20,41.705,40.0,38.291
+51,0,0,KEEP,"Holding at 20. Our coordination remains excellent — pasture stable at 97.5%, equal payoffs for all. Committed to this equilibrium!",,97.5,20,41.705,40.0,38.291
+51,2,0,KEEP,"Holding at 20 — our coordination remains excellent. Pasture stable at 97.5%, equal payoffs for all. Committed to this equilibrium!",,97.5,20,41.705,40.0,38.291
+51,1,0,KEEP,"Holding steady at 20. Our coordination remains excellent — pasture at 97.5%, equal payoffs for all. Committed to this equilibrium!",,97.5,20,41.705,40.0,38.291
+52,1,0,KEEP,"Holding steady at 20. Our coordination remains excellent — pasture at 97.5%, equal payoffs for all. Committed to this equilibrium!",,97.5,20,41.705,40.0,38.291
+52,2,0,KEEP,"Holding at 20 — our coordination remains excellent. Pasture stable at 97.5%, equal payoffs for all. Committed to this equilibrium!",,97.5,20,41.705,40.0,38.291
+52,0,0,KEEP,"Holding at 20. Our coordination remains excellent — pasture stable at 97.5%, equal payoffs for all. Committed to this equilibrium!",,97.5,20,41.705,40.0,38.291
+53,1,0,KEEP,"Holding steady at 20. Our coordination remains excellent — pasture stable at 97.5%, equal payoffs for all. Committed to this equilibrium!",,97.5,20,41.705,40.0,38.291
+53,0,0,KEEP,"Holding at 20. Our coordination remains excellent — pasture stable at 97.5%, equal payoffs for all. Committed to this equilibrium!",,97.5,20,41.705,40.0,38.291
+53,2,0,KEEP,"Holding at 20 — our coordination remains excellent. Pasture stable at 97.5%, equal payoffs for all. Committed to this equilibrium!",,97.5,20,41.705,40.0,38.291
+54,1,0,KEEP,"Holding steady at 20. Our coordination remains excellent — pasture stable at 97.5%, equal payoffs for all. Committed to this equilibrium!",,97.5,20,41.705,40.0,38.291
+54,2,0,KEEP,"Holding at 20 — our coordination remains excellent. Pasture stable at 97.5%, equal payoffs for all. Committed to this equilibrium!",,97.5,20,41.705,40.0,38.291
+54,0,0,KEEP,"Holding at 20. Our coordination remains excellent — pasture stable at 97.5%, equal payoffs for all. Committed to this equilibrium!",,97.5,20,41.705,40.0,38.291
+55,2,0,KEEP,"Holding at 20 — our coordination remains excellent. Pasture stable at 97.5%, equal payoffs for all. Committed to this equilibrium!",,97.5,20,41.705,40.0,38.291
+55,1,0,KEEP,"Holding steady at 20. Our coordination remains excellent — pasture stable at 97.5%, equal payoffs for all. Committed to this equilibrium!",,97.5,20,41.705,40.0,38.291
+55,0,0,KEEP,"Holding at 20. Our coordination remains excellent — pasture stable at 97.5%, equal payoffs for all. Committed to this equilibrium!",,97.5,20,41.705,40.0,38.291
+56,2,0,KEEP,"Holding at 20 — our coordination remains excellent. Pasture stable at 97.5%, equal payoffs for all. Committed to this equilibrium!",,97.5,20,41.705,40.0,38.291
+56,1,0,KEEP,"Holding steady at 20. Our coordination remains excellent — pasture stable at 97.5%, equal payoffs for all. Committed to this equilibrium!",,97.5,20,41.705,40.0,38.291
+56,0,0,KEEP,"Holding at 20. Our coordination remains excellent — pasture stable at 97.5%, equal payoffs for all. Committed to this equilibrium!",,97.5,20,41.705,40.0,38.291
+57,0,0,KEEP,"Holding at 20. Our coordination remains excellent — pasture stable at 97.5%, equal payoffs for all. Committed to this equilibrium!",,97.5,20,41.705,40.0,38.291
+57,1,0,KEEP,"Holding steady at 20. Our coordination remains excellent — pasture stable at 97.5%, equal payoffs for all. Committed to this equilibrium!",,97.5,20,41.705,40.0,38.291
+57,2,0,KEEP,"Holding at 20 — our coordination remains excellent. Pasture stable at 97.5%, equal payoffs for all. Committed to this equilibrium!",,97.5,20,41.705,40.0,38.291
+58,1,0,KEEP,"Holding steady at 20. Our coordination remains excellent — pasture stable at 97.5%, equal payoffs for all. Committed to this equilibrium!",,97.5,20,41.705,40.0,38.291
+58,2,0,KEEP,"Holding at 20 — our coordination remains excellent and the pasture is thriving. Equal payoffs for all, committed to this equilibrium!",,97.5,20,41.705,40.0,38.291
+58,0,0,KEEP,"Holding at 20. Our coordination remains excellent — pasture stable at 97.5%, equal payoffs for all. Committed to this equilibrium!",,97.5,20,41.705,40.0,38.291
+59,0,0,KEEP,"Holding at 20. Our coordination remains excellent — pasture stable at 97.5%, equal payoffs for all. Committed to this equilibrium!",,97.5,20,41.705,40.0,38.291
+59,1,0,KEEP,"Holding steady at 20. Our coordination remains excellent — pasture thriving at 97.5%, equal payoffs for all. Committed to this equilibrium!",,97.5,20,41.705,40.0,38.291
+59,2,0,KEEP,"Holding at 20 — our coordination remains excellent. Pasture stable at 97.5%, equal payoffs for all. Committed to this equilibrium!",,97.5,20,41.705,40.0,38.291
+60,0,0,KEEP,"Holding at 20. Our coordination remains excellent — pasture stable at 97.5%, equal payoffs for all. Committed to this equilibrium!",,97.5,20,41.705,40.0,38.291
+60,1,0,KEEP,"Holding steady at 20. Our coordination remains excellent — pasture stable at 97.5%, equal payoffs for all. Committed to this equilibrium!",,97.5,20,41.705,40.0,38.291
+60,2,0,KEEP,"Holding at 20 — our coordination remains excellent. Pasture stable at 97.5%, equal payoffs for all. Committed to this equilibrium!",,97.5,20,41.705,40.0,38.291
+61,2,0,KEEP,"Holding at 20 — our coordination remains excellent. Pasture stable at 97.5%, equal payoffs for all. Committed to this equilibrium!",,97.5,20,41.705,40.0,38.291
+61,1,0,KEEP,"Holding steady at 20. Our coordination remains excellent — pasture at 97.5%, equal payoffs for all. Committed to this equilibrium!",,97.5,20,41.705,40.0,38.291
+61,0,0,KEEP,"Holding at 20. Our coordination remains excellent — pasture stable at 97.5%, equal payoffs for all. Committed to this equilibrium!",,97.5,20,41.705,40.0,38.291
+62,1,0,KEEP,"Holding steady at 20. Our coordination remains excellent — pasture stable at 97.5%, equal payoffs for all. Committed to this equilibrium!",,97.5,20,41.705,40.0,38.291
+62,2,0,KEEP,"Holding at 20 — our coordination remains excellent. Pasture stable at 97.5%, equal payoffs for all. Committed to this equilibrium!",,97.5,20,41.705,40.0,38.291
+62,0,0,KEEP,"Holding at 20. Our coordination remains excellent — pasture stable at 97.5%, equal payoffs for all. Committed to this equilibrium!",,97.5,20,41.705,40.0,38.291
+63,1,0,KEEP,"Holding steady at 20. Our coordination remains excellent — pasture stable at 97.5%, equal payoffs for all. Committed to this equilibrium!",,97.5,20,41.705,40.0,38.291
+63,2,0,KEEP,"Holding at 20 — our coordination remains excellent. Pasture stable at 97.5%, equal payoffs for all. Committed to this equilibrium!",,97.5,20,41.705,40.0,38.291
+63,0,0,KEEP,"Holding at 20. Our coordination remains excellent — pasture stable at 97.5%, equal payoffs for all. Committed to this equilibrium!",,97.5,20,41.705,40.0,38.291
+64,1,0,KEEP,"Holding steady at 20. Our coordination remains excellent — pasture stable at 97.5%, equal payoffs for all. Committed to this equilibrium!",,97.5,20,41.705,40.0,38.291
+64,2,0,KEEP,"Holding at 20 — our coordination remains excellent. Pasture stable at 97.5%, equal payoffs for all. Committed to this equilibrium!",,97.5,20,41.705,40.0,38.291
+64,0,0,KEEP,"Holding at 20. Our coordination remains excellent — pasture stable at 97.5%, equal payoffs for all. Committed to this equilibrium!",,97.5,20,41.705,40.0,38.291
+65,2,0,KEEP,"Holding at 20 — our coordination remains excellent. Pasture stable at 97.5%, equal payoffs for all. Committed to this equilibrium!",,97.5,20,41.705,40.0,38.291
+65,0,0,KEEP,"Holding at 20. Our coordination remains excellent — pasture stable at 97.5%, equal payoffs for all. Committed to this equilibrium!",,97.5,20,41.705,40.0,38.291
+65,1,0,KEEP,"Holding steady at 20. Our coordination remains excellent — pasture stable at 97.5%, equal payoffs for all. Committed to this equilibrium!",,97.5,20,41.705,40.0,38.291
+66,2,0,KEEP,"Holding at 20 — our coordination remains excellent. Pasture stable at 97.5%, equal payoffs for all. Committed to this equilibrium!",,97.5,20,41.705,40.0,38.291
+66,0,0,KEEP,"Holding at 20. Our coordination remains excellent — pasture stable at 97.5%, equal payoffs for all. Committed to this equilibrium!",,97.5,20,41.705,40.0,38.291
+66,1,0,KEEP,"Holding steady at 20. Our coordination remains excellent — pasture stable at 97.5%, equal payoffs for all. Committed to this equilibrium!",,97.5,20,41.705,40.0,38.291
+67,1,0,KEEP,"Holding steady at 20. Our coordination remains excellent — pasture stable at 97.5%, equal payoffs for all. Committed to this equilibrium!",,97.5,20,41.705,40.0,38.291
+67,2,0,KEEP,"Holding at 20 — our coordination remains excellent. Pasture stable at 97.5%, equal payoffs for all. Committed to this equilibrium!",,97.5,20,41.705,40.0,38.291
+67,0,0,KEEP,"Holding at 20. Our coordination remains excellent — pasture stable at 97.5%, equal payoffs for all. Committed to this equilibrium!",,97.5,20,41.705,40.0,38.291
+68,2,0,KEEP,"Holding at 20 — our coordination remains excellent. Pasture stable, equal payoffs for all. Committed to this equilibrium!",,97.5,20,41.705,40.0,38.291
+68,0,0,KEEP,"Holding at 20. Our coordination remains excellent — pasture stable at 97.5%, equal payoffs for all. Committed to this equilibrium!",,97.5,20,41.705,40.0,38.291
+68,1,0,KEEP,"Holding steady at 20. Our coordination remains excellent — pasture stable at 97.5%, equal payoffs for all. Committed to this equilibrium!",,97.5,20,41.705,40.0,38.291
+69,2,0,KEEP,"Holding at 20 — our coordination remains excellent. Pasture stable at 97.5%, equal payoffs for all. Committed to this equilibrium!",,97.5,20,41.705,40.0,38.291
+69,1,0,KEEP,"Holding steady at 20. Our coordination remains excellent — pasture stable at 97.5%, equal payoffs for all. Committed to this equilibrium!",,97.5,20,41.705,40.0,38.291
+69,0,0,KEEP,"Holding at 20. Our coordination remains excellent — pasture stable at 97.5%, equal payoffs for all. Committed to this equilibrium!",,97.5,20,41.705,40.0,38.291
+70,1,0,KEEP,"Holding steady at 20. Our coordination remains excellent — pasture stable at 97.5%, equal payoffs for all. Committed to this equilibrium!",,97.5,20,41.705,40.0,38.291
+70,0,0,KEEP,"Holding at 20. Our coordination remains excellent — pasture stable at 97.5%, equal payoffs for all. Committed to this equilibrium!",,97.5,20,41.705,40.0,38.291
+70,2,0,KEEP,"Holding at 20 — our coordination remains excellent. Pasture stable at 97.5%, equal payoffs for all. Committed to this equilibrium!",,97.5,20,41.705,40.0,38.291
+71,1,0,KEEP,"Holding steady at 20. Our coordination remains excellent — pasture stable at 97.5%, equal payoffs for all. Committed to this equilibrium!",,97.5,20,41.705,40.0,38.291
+71,2,0,KEEP,"Holding at 20 — our coordination remains excellent. Pasture stable, equal payoffs for all. Committed to this equilibrium!",,97.5,20,41.705,40.0,38.291
+71,0,0,KEEP,"Holding at 20. Our coordination remains excellent — pasture stable at 97.5%, equal payoffs for all. Committed to this equilibrium!",,97.5,20,41.705,40.0,38.291
+72,2,0,KEEP,"Holding at 20 — our coordination remains excellent. Pasture stable, equal payoffs for all. Committed to this equilibrium!",,97.5,20,41.705,40.0,38.291
+72,1,0,KEEP,"Holding steady at 20. Our coordination remains excellent — pasture stable at 97.5%, equal payoffs for all. Committed to this equilibrium!",,97.5,20,41.705,40.0,38.291
+72,0,0,KEEP,"Holding at 20. Our coordination remains excellent — pasture stable at 97.5%, equal payoffs for all. Committed to this equilibrium!",,97.5,20,41.705,40.0,38.291
+73,2,0,KEEP,"Holding at 20 — our coordination remains excellent. Pasture stable at 97.5%, equal payoffs for all. Committed to this equilibrium!",,97.5,20,41.705,40.0,38.291
+73,1,0,KEEP,"Holding steady at 20. Our coordination remains excellent — pasture stable, equal payoffs for all. Committed to this equilibrium!",,97.5,20,41.705,40.0,38.291
+73,0,0,KEEP,"Holding at 20. Our coordination remains excellent — pasture stable at 97.5%, equal payoffs for all. Committed to this equilibrium!",,97.5,20,41.705,40.0,38.291
+74,1,0,KEEP,"Holding steady at 20. Our coordination remains excellent — pasture stable at 97.5%, equal payoffs for all. Committed to this equilibrium!",,97.5,20,41.705,40.0,38.291
+74,0,0,KEEP,"Holding at 20. Our coordination remains excellent — pasture stable at 97.5%, equal payoffs for all. Committed to this equilibrium!",,97.5,20,41.705,40.0,38.291
+74,2,0,KEEP,"Holding at 20 — our coordination remains excellent. Pasture stable at 97.5%, equal payoffs for all. Committed to this equilibrium!",,97.5,20,41.705,40.0,38.291
+75,0,0,KEEP,"Holding at 20. Our coordination remains excellent — pasture stable at 97.5%, equal payoffs for all. Committed to this equilibrium!",,97.5,20,41.705,40.0,38.291
+75,1,0,KEEP,"Holding steady at 20. Our coordination remains excellent — pasture stable at 97.5%, equal payoffs for all. Committed to this equilibrium!",,97.5,20,41.705,40.0,38.291
+75,2,0,KEEP,"Holding at 20 — our coordination remains excellent. Pasture stable at 97.5%, equal payoffs for all. Committed to this equilibrium!",,97.5,20,41.705,40.0,38.291
+76,0,0,KEEP,"Holding at 20. Our coordination remains excellent — pasture stable at 97.5%, equal payoffs for all. Committed to this equilibrium!",,97.5,20,41.705,40.0,38.291
+76,2,0,KEEP,"Holding at 20 — our coordination remains excellent. Pasture stable at 97.5%, equal payoffs for all. Committed to this equilibrium!",,97.5,20,41.705,40.0,38.291
+76,1,0,KEEP,"Holding steady at 20. Our coordination remains excellent — pasture stable at 97.5%, equal payoffs for all. Committed to this equilibrium!",,97.5,20,41.705,40.0,38.291
+77,2,0,KEEP,"Holding at 20 — our coordination remains excellent. Pasture stable at 97.5%, equal payoffs for all. Committed to this equilibrium!",,97.5,20,41.705,40.0,38.291
+77,1,0,KEEP,"Holding steady at 20. Our coordination remains excellent — pasture stable at 97.5%, equal payoffs for all. Committed to this equilibrium!",,97.5,20,41.705,40.0,38.291
+77,0,0,KEEP,"Holding at 20. Our coordination remains excellent — pasture stable at 97.5%, equal payoffs for all. Committed to this equilibrium!",,97.5,20,41.705,40.0,38.291
+78,2,0,KEEP,"Holding at 20 — our coordination remains excellent. Pasture stable at 97.5%, equal payoffs for all. Committed to this equilibrium!",,97.5,20,41.705,40.0,38.291
+78,0,0,KEEP,"Holding at 20. Our coordination remains excellent — pasture stable at 97.5%, equal payoffs for all. Committed to this equilibrium!",,97.5,20,41.705,40.0,38.291
+78,1,0,KEEP,"Holding steady at 20. Our coordination remains excellent — pasture stable at 97.5%, equal payoffs for all. Committed to this equilibrium!",,97.5,20,41.705,40.0,38.291
+79,0,0,KEEP,"Holding at 20. Our coordination remains excellent — pasture stable at 97.5%, equal payoffs for all. Committed to this equilibrium!",,97.5,20,41.705,40.0,38.291
+79,2,0,KEEP,"Holding at 20 — our coordination remains excellent. Pasture stable at 97.5%, equal payoffs for all. Committed to this equilibrium!",,97.5,20,41.705,40.0,38.291
+79,1,0,KEEP,"Holding steady at 20. Our coordination remains excellent — pasture stable at 97.5%, equal payoffs for all. Committed to this equilibrium!",,97.5,20,41.705,40.0,38.291
+80,2,0,KEEP,"Holding at 20 — our coordination remains excellent. Pasture stable at 97.5%, equal payoffs for all. Committed to this equilibrium!",,97.5,20,41.705,40.0,38.291
+80,1,0,KEEP,"Holding steady at 20. Our coordination remains excellent — pasture at 97.5%, equal payoffs for all. Committed to this equilibrium!",,97.5,20,41.705,40.0,38.291
+80,0,0,KEEP,"Holding at 20. Our coordination remains excellent — pasture stable at 97.5%, equal payoffs for all. Committed to this equilibrium!",,97.5,20,41.705,40.0,38.291
+81,1,0,KEEP,"Holding steady at 20. Our coordination remains excellent — pasture stable at 97.5%, equal payoffs for all. Committed to this equilibrium!",,97.5,20,41.705,40.0,38.291
+81,2,0,KEEP,"Holding at 20 — our coordination remains excellent. Pasture stable at 97.5%, equal payoffs for all. Committed to this equilibrium!",,97.5,20,41.705,40.0,38.291
+81,0,0,KEEP,"Holding at 20. Our coordination remains excellent — pasture stable at 97.5%, equal payoffs for all. Committed to this equilibrium!",,97.5,20,41.705,40.0,38.291
+82,2,0,KEEP,"Holding at 20 — our coordination remains excellent. Pasture stable at 97.5%, equal payoffs for all. Committed to this equilibrium!",,97.5,20,41.705,40.0,38.291
+82,0,0,KEEP,"Holding at 20. Our coordination remains excellent — pasture stable at 97.5%, equal payoffs for all. Committed to this equilibrium!",,97.5,20,41.705,40.0,38.291
+82,1,0,KEEP,"Holding steady at 20. Our coordination remains excellent — pasture stable at 97.5%, equal payoffs for all. Committed to this equilibrium!",,97.5,20,41.705,40.0,38.291
+83,1,0,KEEP,"Holding steady at 20. Our coordination remains excellent — pasture stable at 97.5%, equal payoffs for all. Committed to this equilibrium!",,97.5,20,41.705,40.0,38.291
+83,0,0,KEEP,"Holding at 20. Our coordination remains excellent — pasture stable at 97.5%, equal payoffs for all. Committed to this equilibrium!",,97.5,20,41.705,40.0,38.291
+83,2,0,KEEP,"Holding at 20 — our coordination remains excellent. Pasture stable at 97.5%, equal payoffs for all. Committed to this equilibrium!",,97.5,20,41.705,40.0,38.291
+84,2,0,KEEP,"Holding at 20 — our coordination remains excellent. Pasture stable at 97.5%, equal payoffs for all. Committed to this equilibrium!",,97.5,20,41.705,40.0,38.291
+84,1,0,KEEP,"Holding steady at 20. Our coordination remains excellent — pasture stable at 97.5%, equal payoffs for all. Committed to this equilibrium!",,97.5,20,41.705,40.0,38.291
+84,0,0,KEEP,"Holding at 20. Our coordination remains excellent — pasture stable at 97.5%, equal payoffs for all. Committed to this equilibrium!",,97.5,20,41.705,40.0,38.291
+85,0,0,KEEP,"Holding at 20. Our coordination remains excellent — pasture stable at 97.5%, equal payoffs for all. Committed to this equilibrium!",,97.5,20,41.705,40.0,38.291
+85,1,0,KEEP,"Holding steady at 20. Our coordination remains excellent — pasture stable at 97.5%, equal payoffs for all. Committed to this equilibrium!",,97.5,20,41.705,40.0,38.291
+85,2,0,KEEP,"Holding at 20 — our coordination remains excellent. Pasture stable, equal payoffs for all. Committed to this equilibrium!",,97.5,20,41.705,40.0,38.291
+86,2,0,KEEP,"Holding at 20 — our coordination remains excellent. Pasture stable at 97.5%, equal payoffs for all. Committed to this equilibrium!",,97.5,20,41.705,40.0,38.291
+86,1,0,KEEP,"Holding steady at 20. Our coordination remains excellent — pasture stable at 97.5%, equal payoffs for all. Committed to this equilibrium!",,97.5,20,41.705,40.0,38.291
+86,0,0,KEEP,"Holding at 20. Our coordination remains excellent — pasture stable at 97.5%, equal payoffs for all. Committed to this equilibrium!",,97.5,20,41.705,40.0,38.291
+87,1,0,KEEP,"Holding steady at 20. Our coordination remains excellent — pasture stable at 97.5%, equal payoffs for all. Committed to this equilibrium!",,97.5,20,41.705,40.0,38.291
+87,0,0,KEEP,"Holding at 20. Our coordination remains excellent — pasture stable at 97.5%, equal payoffs for all. Committed to this equilibrium!",,97.5,20,41.705,40.0,38.291
+87,2,0,KEEP,"Holding at 20 — our coordination remains excellent. Pasture stable at 97.5%, equal payoffs for all. Committed to this equilibrium!",,97.5,20,41.705,40.0,38.291
+88,2,0,KEEP,"Holding at 20 — our coordination remains excellent. Pasture stable at 97.5%, equal payoffs for all. Committed to this equilibrium!",,97.5,20,41.705,40.0,38.291
+88,0,0,KEEP,"Holding at 20. Our coordination remains excellent — pasture stable at 97.5%, equal payoffs for all. Committed to this equilibrium!",,97.5,20,41.705,40.0,38.291
+88,1,0,KEEP,"Holding steady at 20. Our coordination remains excellent — pasture stable at 97.5%, equal payoffs for all. Committed to this equilibrium!",,97.5,20,41.705,40.0,38.291
+89,0,0,KEEP,"Holding at 20. Our coordination remains excellent — pasture stable at 97.5%, equal payoffs for all. Committed to this equilibrium!",,97.5,20,41.705,40.0,38.291
+89,1,0,KEEP,"Holding steady at 20. Our coordination remains excellent — pasture stable at 97.5%, equal payoffs for all. Committed to this equilibrium!",,97.5,20,41.705,40.0,38.291
+89,2,0,KEEP,"Holding at 20 — our coordination remains excellent. Pasture stable at 97.5%, equal payoffs for all. Committed to this equilibrium!",,97.5,20,41.705,40.0,38.291
+90,1,0,KEEP,"Holding steady at 20. Our coordination remains excellent — pasture stable at 97.5%, equal payoffs for all. Committed to this equilibrium!",,97.5,20,41.705,40.0,38.291
+90,2,0,KEEP,"Holding at 20 — our coordination remains excellent. Pasture stable at 97.5%, equal payoffs for all. Committed to this equilibrium!",,97.5,20,41.705,40.0,38.291
+90,0,0,KEEP,"Holding at 20. Our coordination remains excellent — pasture stable at 97.5%, equal payoffs for all. Committed to this equilibrium!",,97.5,20,41.705,40.0,38.291
+91,1,0,KEEP,"Holding steady at 20. Our coordination remains excellent — pasture stable at 97.5%, equal payoffs for all. Committed to this equilibrium!",,97.5,20,41.705,40.0,38.291
+91,2,0,KEEP,"Holding at 20 — our coordination remains excellent. Pasture stable at 97.5%, equal payoffs for all. Committed to this equilibrium!",,97.5,20,41.705,40.0,38.291
+91,0,0,KEEP,"Holding at 20. Our coordination remains excellent — pasture stable at 97.5%, equal payoffs for all. Committed to this equilibrium!",,97.5,20,41.705,40.0,38.291
+92,1,0,KEEP,"Holding steady at 20. Our coordination remains excellent — pasture stable at 97.5%, equal payoffs for all. Committed to this equilibrium!",,97.5,20,41.705,40.0,38.291
+92,0,0,KEEP,"Holding at 20. Our coordination remains excellent — pasture stable at 97.5%, equal payoffs for all. Committed to this equilibrium!",,97.5,20,41.705,40.0,38.291
+92,2,0,KEEP,"Holding at 20 — our coordination remains excellent. Pasture stable at 97.5%, equal payoffs for all. Committed to this equilibrium!",,97.5,20,41.705,40.0,38.291
+93,2,0,KEEP,"Holding at 20 — our coordination remains excellent. Pasture stable at 97.5%, equal payoffs for all. Committed to this equilibrium!",,97.5,20,41.705,40.0,38.291
+93,0,0,KEEP,"Holding at 20. Our coordination remains excellent — pasture stable at 97.5%, equal payoffs for all. Committed to this equilibrium!",,97.5,20,41.705,40.0,38.291
+93,1,0,KEEP,"Holding steady at 20. Our coordination remains excellent — pasture stable at 97.5%, equal payoffs for all. Committed to this equilibrium!",,97.5,20,41.705,40.0,38.291
+94,0,0,KEEP,"Holding at 20. Our coordination remains excellent — pasture stable at 97.5%, equal payoffs for all. Committed to this equilibrium!",,97.5,20,41.705,40.0,38.291
+94,2,0,KEEP,"Holding at 20 — our coordination remains excellent. Pasture stable at 97.5%, equal payoffs for all. Committed to this equilibrium!",,97.5,20,41.705,40.0,38.291
+94,1,0,KEEP,"Holding steady at 20. Our coordination remains excellent — pasture stable at 97.5%, equal payoffs for all. Committed to this equilibrium!",,97.5,20,41.705,40.0,38.291
+95,2,0,KEEP,"Holding at 20 — our coordination remains excellent. Pasture stable at 97.5%, equal payoffs for all. Committed to this equilibrium!",,97.5,20,41.705,40.0,38.291
+95,0,0,KEEP,"Holding at 20. Our coordination remains excellent — pasture stable at 97.5%, equal payoffs for all. Committed to this equilibrium!",,97.5,20,41.705,40.0,38.291
+95,1,0,KEEP,"Holding steady at 20. Our coordination remains excellent — pasture stable at 97.5%, equal payoffs for all. Committed to this equilibrium!",,97.5,20,41.705,40.0,38.291
+96,2,0,KEEP,"Holding at 20 — our coordination remains excellent. Pasture stable at 97.5%, equal payoffs for all. Committed to this equilibrium!",,97.5,20,41.705,40.0,38.291
+96,1,0,KEEP,"Holding steady at 20. Our coordination remains excellent — pasture stable at 97.5%, equal payoffs for all. Committed to this equilibrium!",,97.5,20,41.705,40.0,38.291
+96,0,0,KEEP,"Holding at 20. Our coordination remains excellent — pasture stable at 97.5%, equal payoffs for all. Committed to this equilibrium!",,97.5,20,41.705,40.0,38.291
+97,0,0,KEEP,"Holding at 20. Our coordination remains excellent — pasture stable at 97.5%, equal payoffs for all. Committed to this equilibrium!",,97.5,20,41.705,40.0,38.291
+97,2,0,KEEP,"Holding at 20 — our coordination remains excellent. Pasture stable at 97.5%, equal payoffs for all. Committed to this equilibrium!",,97.5,20,41.705,40.0,38.291
+97,1,0,KEEP,"Holding steady at 20. Our coordination remains excellent — pasture stable at 97.5%, equal payoffs for all. Committed to this equilibrium!",,97.5,20,41.705,40.0,38.291
+98,0,0,KEEP,"Holding at 20. Our coordination remains excellent — pasture stable at 97.5%, equal payoffs for all. Committed to this equilibrium!",,97.5,20,41.705,40.0,38.291
+98,1,0,KEEP,"Holding steady at 20. Our coordination remains excellent — pasture stable at 97.5%, equal payoffs for all. Committed to this equilibrium!",,97.5,20,41.705,40.0,38.291
+98,2,0,KEEP,"Holding at 20 — our coordination remains excellent. Pasture stable at 97.5%, equal payoffs for all. Committed to this equilibrium!",,97.5,20,41.705,40.0,38.291
+99,0,0,KEEP,"Holding at 20. Our coordination remains excellent — pasture stable at 97.5%, equal payoffs for all. Committed to this equilibrium!",,97.5,20,41.705,40.0,38.291
+99,2,0,KEEP,"Holding at 20 — our coordination remains excellent. Pasture stable, equal payoffs for all. Committed to this equilibrium!",,97.5,20,41.705,40.0,38.291
+99,1,0,KEEP,"Holding steady at 20. Our coordination remains excellent — pasture stable at 97.5%, equal payoffs for all. Committed to this equilibrium!",,97.5,20,41.705,40.0,38.291
+100,2,0,KEEP,"Holding at 20 — our coordination remains excellent. Pasture stable at 97.5%, equal payoffs for all. Committed to this equilibrium!",,97.5,20,41.705,40.0,38.291
+100,1,0,KEEP,"Holding steady at 20. Our coordination remains excellent — pasture stable at 97.5%, equal payoffs for all. Committed to this equilibrium!",,97.5,20,41.705,40.0,38.291
+100,0,0,KEEP,"Holding at 20. Our coordination remains excellent — pasture stable, equal payoffs for all. Committed to this equilibrium!",,97.5,20,41.705,40.0,38.291
+101,2,0,KEEP,"Holding at 20 — our coordination remains excellent. Pasture stable at 97.5%, equal payoffs for all. Committed to this equilibrium!",,97.5,20,41.705,40.0,38.291
+101,1,0,KEEP,"Holding steady at 20. Our coordination remains excellent — pasture stable at 97.5%, equal payoffs for all. Committed to this equilibrium!",,97.5,20,41.705,40.0,38.291
+101,0,0,KEEP,"Holding at 20. Our coordination remains excellent — pasture stable at 97.5%, equal payoffs for all. Committed to this equilibrium!",,97.5,20,41.705,40.0,38.291
+102,1,0,KEEP,"Holding steady at 20. Our coordination remains excellent — pasture stable at 97.5%, equal payoffs for all. Committed to this equilibrium!",,97.5,20,41.705,40.0,38.291
+102,2,0,KEEP,"Holding at 20 — our coordination remains excellent. Pasture stable, equal payoffs for all. Committed to this equilibrium!",,97.5,20,41.705,40.0,38.291
+102,0,0,KEEP,"Holding at 20. Our coordination remains excellent — pasture stable at 97.5%, equal payoffs for all. Committed to this equilibrium!",,97.5,20,41.705,40.0,38.291
+103,0,0,KEEP,"Holding at 20. Our coordination remains excellent — pasture stable, equal payoffs for all. Committed to this equilibrium!",,97.5,20,41.705,40.0,38.291
+103,2,0,KEEP,"Holding at 20 — our coordination remains excellent. Pasture stable, equal payoffs for all. Committed to this equilibrium!",,97.5,20,41.705,40.0,38.291
+103,1,0,KEEP,"Holding steady at 20. Our coordination remains excellent — pasture stable at 97.5%, equal payoffs for all. Committed to this equilibrium!",,97.5,20,41.705,40.0,38.291
+104,2,0,KEEP,"Holding at 20 — our coordination remains excellent. Pasture stable at 97.5%, equal outcomes for all. Committed to this equilibrium!",,97.5,20,41.705,40.0,38.291
+104,1,0,KEEP,"Holding steady at 20. Our coordination remains excellent — pasture stable, equal payoffs for all. Committed to this equilibrium!",,97.5,20,41.705,40.0,38.291
+104,0,0,KEEP,"Holding at 20. Our coordination remains excellent — pasture stable, equal payoffs for all. Committed to this equilibrium!",,97.5,20,41.705,40.0,38.291
+105,2,0,KEEP,"Holding at 20 — our coordination remains excellent. Pasture stable at 97.5%, equal payoffs for all. Committed to this equilibrium!",,97.5,20,41.705,40.0,38.291
+105,0,0,KEEP,"Holding at 20. Our coordination remains excellent — pasture stable at 97.5%, equal payoffs for all. Committed to this equilibrium!",,97.5,20,41.705,40.0,38.291
+105,1,0,KEEP,"Holding steady at 20. Our coordination remains excellent — pasture at 97.5%, equal payoffs for all. Committed to this equilibrium!",,97.5,20,41.705,40.0,38.291
+106,0,0,KEEP,"Holding at 20. Our coordination remains excellent — pasture stable at 97.5%, equal payoffs for all. Committed to this equilibrium!",,97.5,20,41.705,40.0,38.291
+106,2,0,KEEP,"Holding at 20 — our coordination remains excellent. Pasture stable at 97.5%, equal payoffs for all. Committed to this equilibrium!",,97.5,20,41.705,40.0,38.291
+106,1,0,KEEP,"Holding steady at 20. Our coordination remains excellent — pasture stable at 97.5%, equal payoffs for all. Committed to this equilibrium!",,97.5,20,41.705,40.0,38.291
+107,2,0,KEEP,"Holding at 20 — our coordination remains excellent. Pasture stable at 97.5%, equal payoffs for all. Committed to this equilibrium!",,97.5,20,41.705,40.0,38.291
+107,0,0,KEEP,"Holding at 20. Our coordination remains excellent — pasture stable at 97.5%, equal payoffs for all. Committed to this equilibrium!",,97.5,20,41.705,40.0,38.291
+107,1,0,KEEP,"Holding steady at 20. Our coordination remains excellent — pasture stable at 97.5%, equal payoffs for all. Committed to this equilibrium!",,97.5,20,41.705,40.0,38.291
+108,2,0,KEEP,"Holding at 20 — our coordination remains excellent. Pasture stable at 97.5%, equal payoffs for all. Committed to this equilibrium!",,97.5,20,41.705,40.0,38.291
+108,0,0,KEEP,"Holding at 20. Our coordination remains excellent — pasture stable at 97.5%, equal payoffs for all. Committed to this equilibrium!",,97.5,20,41.705,40.0,38.291
+108,1,0,KEEP,"Holding steady at 20. Our coordination remains excellent — pasture stable at 97.5%, equal payoffs for all. Committed to this equilibrium!",,97.5,20,41.705,40.0,38.291
+109,0,0,KEEP,"Holding at 20. Our coordination remains excellent — pasture stable at 97.5%, equal payoffs for all. Committed to this equilibrium!",,97.5,20,41.705,40.0,38.291
+109,2,0,KEEP,"Holding at 20 — our coordination remains excellent. Pasture stable at 97.5%, equal payoffs for all. Committed to this equilibrium!",,97.5,20,41.705,40.0,38.291
+109,1,0,KEEP,"Holding steady at 20. Our coordination remains excellent — pasture stable at 97.5%, equal payoffs for all. Committed to this equilibrium!",,97.5,20,41.705,40.0,38.291
+110,0,0,KEEP,"Holding at 20. Our coordination remains excellent — pasture stable at 97.5%, equal payoffs for all. Committed to this equilibrium!",,97.5,20,41.705,40.0,38.291
+110,1,0,KEEP,"Holding steady at 20. Our coordination remains excellent — pasture stable at 97.5%, equal payoffs for all. Committed to this equilibrium!",,97.5,20,41.705,40.0,38.291
+110,2,0,KEEP,"Holding at 20 — our coordination remains excellent. Pasture stable at 97.5%, equal payoffs for all. Committed to this equilibrium!",,97.5,20,41.705,40.0,38.291
+111,0,0,KEEP,"Holding at 20. Our coordination remains excellent — pasture stable at 97.5%, equal payoffs for all. Committed to this equilibrium!",,97.5,20,41.705,40.0,38.291
+111,2,0,KEEP,"Holding at 20 — our coordination remains excellent. Pasture stable at 97.5%, equal payoffs for all. Committed to this equilibrium!",,97.5,20,41.705,40.0,38.291
+111,1,0,KEEP,"Holding steady at 20. Our coordination remains excellent — pasture stable at 97.5%, equal payoffs for all. Committed to this equilibrium!",,97.5,20,41.705,40.0,38.291
+112,1,0,KEEP,"Holding steady at 20. Our coordination remains excellent — pasture stable at 97.5%, equal payoffs for all. Committed to this equilibrium!",,97.5,20,41.705,40.0,38.291
+112,0,0,KEEP,"Holding at 20. Our coordination remains excellent — pasture stable at 97.5%, equal payoffs for all. Committed to this equilibrium!",,97.5,20,41.705,40.0,38.291
+112,2,0,KEEP,"Holding at 20 — our coordination remains excellent. Pasture stable, equal payoffs for all. Committed to this equilibrium!",,97.5,20,41.705,40.0,38.291
+113,1,0,KEEP,"Holding steady at 20. Our coordination remains excellent — pasture stable, equal payoffs for all. Committed to this equilibrium!",,97.5,20,41.705,40.0,38.291
+113,2,0,KEEP,"Holding at 20 — our coordination remains excellent. Pasture stable at 97.5%, equal payoffs for all. Committed to this equilibrium!",,97.5,20,41.705,40.0,38.291
+113,0,0,KEEP,"Holding at 20. Our coordination remains excellent — pasture stable at 97.5%, equal payoffs for all. Committed to this equilibrium!",,97.5,20,41.705,40.0,38.291
+114,0,0,KEEP,"Holding at 20. Our coordination remains excellent — pasture stable at 97.5%, equal payoffs for all. Committed to this equilibrium!",,97.5,20,41.705,40.0,38.291
+114,2,0,KEEP,"Holding at 20 — our coordination remains excellent. Pasture stable, equal payoffs for all. Committed to this equilibrium!",,97.5,20,41.705,40.0,38.291
+114,1,0,KEEP,"Holding steady at 20. Our coordination remains excellent — pasture stable at 97.5%, equal payoffs for all. Committed to this equilibrium!",,97.5,20,41.705,40.0,38.291
+115,2,0,KEEP,"Holding at 20 — our coordination remains excellent. Pasture stable at 97.5%, equal payoffs for all. Committed to this equilibrium!",,97.5,20,41.705,40.0,38.291
+115,1,0,KEEP,"Holding steady at 20. Our coordination remains excellent — pasture stable, equal payoffs for all. Committed to this equilibrium!",,97.5,20,41.705,40.0,38.291
+115,0,0,KEEP,"Holding at 20. Our coordination remains excellent — pasture stable at 97.5%, equal payoffs for all. Committed to this equilibrium!",,97.5,20,41.705,40.0,38.291
+116,1,0,KEEP,"Holding steady at 20. Our coordination remains excellent — pasture stable at 97.5%, equal payoffs for all. Committed to this equilibrium!",,97.5,20,41.705,40.0,38.291
+116,2,0,KEEP,"Holding at 20 — our coordination remains strong. Pasture stable at 97.5%, equal payoffs for all. Committed to this equilibrium!",,97.5,20,41.705,40.0,38.291
+116,0,0,KEEP,"Holding at 20. Our coordination remains excellent — pasture stable at 97.5%, equal payoffs for all. Committed to this equilibrium!",,97.5,20,41.705,40.0,38.291
+117,0,0,KEEP,"Holding at 20. Our coordination remains excellent — pasture stable at 97.5%, equal payoffs for all. Committed to this equilibrium!",,97.5,20,41.705,40.0,38.291
+117,1,0,KEEP,"Holding steady at 20. Our coordination remains strong—pasture stable at 97.5%, equal payoffs for all. Committed to this equilibrium!",,97.5,20,41.705,40.0,38.291
+117,2,0,KEEP,"Holding at 20 — our coordination remains excellent. Pasture stable at 97.5%, equal payoffs for all. Committed to this equilibrium!",,97.5,20,41.705,40.0,38.291
+118,0,0,KEEP,"Holding at 20. Our coordination remains strong—pasture stable at 97.5%, equal payoffs for all. Committed to this equilibrium!",,97.5,20,41.705,40.0,38.291
+118,2,0,KEEP,"Holding at 20 — our coordination remains strong. Pasture stable at 97.5%, equal payoffs for all. Committed to this equilibrium!",,97.5,20,41.705,40.0,38.291
+118,1,0,KEEP,"Holding steady at 20. Our coordination remains excellent — pasture stable at 97.5%, equal payoffs for all. Committed to this equilibrium!",,97.5,20,41.705,40.0,38.291
+119,0,0,KEEP,"Holding at 20. Our coordination remains strong — pasture stable at 97.5%, equal payoffs for all. Committed to this equilibrium!",,97.5,20,41.705,40.0,38.291
+119,2,0,KEEP,"Holding at 20 — our coordination remains strong. Pasture stable at 97.5%, equal payoffs for all. Committed to this equilibrium!",,97.5,20,41.705,40.0,38.291
+119,1,0,KEEP,"Holding steady at 20. Our coordination remains strong—pasture at 97.5%, equal payoffs for all. Committed to this equilibrium!",,97.5,20,41.705,40.0,38.291
+120,0,0,KEEP,"Holding at 20. Our coordination remains strong — pasture at 97.5%, equal payoffs for all. Committed to this equilibrium!",,97.5,20,41.705,40.0,38.291
+120,2,0,KEEP,"Holding at 20 — our coordination remains strong. Pasture stable at 97.5%, equal payoffs for all. Committed to this equilibrium!",,97.5,20,41.705,40.0,38.291
+120,1,0,KEEP,"Holding steady at 20. Our coordination remains strong — pasture stable at 97.5%, equal payoffs for all. Committed to this equilibrium!",,97.5,20,41.705,40.0,38.291

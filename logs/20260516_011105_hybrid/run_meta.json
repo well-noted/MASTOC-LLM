@@ -4,5 +4,7 @@
   "backend": "anthropic",
   "model": "claude-sonnet-4-6",
   "memory_length": 5,
-  "started_at": "2026-05-16T01:11:07.981350"
+  "started_at": "2026-05-16T01:11:07.981350",
+  "label": "hybrid_test_unconfirmed",
+  "description": "Hybrid run, condition unclear \u2014 no per-agent model params logged (old bridge version). Collapsed tick ~30. Treat as preliminary/unconfirmed."
 }

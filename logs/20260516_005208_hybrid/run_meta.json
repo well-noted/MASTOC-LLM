@@ -4,5 +4,7 @@
   "backend": "anthropic",
   "model": "claude-sonnet-4-6",
   "memory_length": 5,
-  "started_at": "2026-05-16T00:52:10.980811"
+  "started_at": "2026-05-16T00:52:10.980811",
+  "label": "hybrid_1llm",
+  "description": "Hybrid: 1 LLM agent (Agent 0) + 2 rule-based. Commons collapsed tick ~35, identical to baseline. LLM held small herd and appealed for cooperation; rule-based agents non-responsive."
 }
