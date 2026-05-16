@@ -86,14 +86,9 @@ Each agent's backend and model are independently configurable. Any mix of Anthro
 | **Hybrid (2 LLM)** | Claude Sonnet 4.6| 2 | Yes | 58 | Coalition formed, tragedy delayed 23 ticks, but overwhelmed by one defector |
 | **Full-GABM (Llama 3.2 3B)** | Llama 3.2 3B | 3 | No | — | Pool maintained at 99.4% but herds oscillated without convergence; cooperative messaging but no institution formation |
 | **Full-GABM (Llama 3.2 3B, scarce commons)** | Llama 3.2 3B | 3 | No | — | Initial grassland 48%: pool recovered 48%→99% by tick 17; herds oscillated without convergence throughout all 51 ticks |
-<<<<<<< HEAD
-| **Hybrid (LLM-advantaged initial herd)** | Claude Sonnet | 1 | Yes | 33 | LLM starts with 40 cows; voluntarily reduces to 25 by collapse; rule-based agents add unchecked; collapse 2 ticks earlier than baseline hybrid |
-| **Full-GABM (scarce commons, default fairness)** | Claude Sonnet | 3 | No | — | Initial grassland 49%: pool recovered 49%→99% by tick 10; converged to [11,12,13] by tick 30 |
-| **Full-GABM (scarce commons, low coop + low fairness)** | Claude Sonnet | 3 | No | — | Initial grassland 50%, coop=0.3, fairness=0: recovery to 99% by tick 20; converged to [12,14,16] by tick 30 |
-=======
-| **Full-GABM (scarce commons, default fairness)** | Claude Sonnet 4.6| 3 | No | — | Initial grassland 49%: pool recovered 49%→99% by tick 10; converged to [11,12,13] by tick 30 |
-| **Full-GABM (scarce commons, low coop + low fairness)** | Claude Sonnet 4.6| 3 | No | — | Initial grassland 50%, coop=0.3, fairness=0: recovery to 99% by tick 20; converged to [12,14,16] by tick 30 |
->>>>>>> d18666c9f04b750f4438484b3b1393e3a6eae444
+| **Hybrid (LLM-advantaged initial herd)** | Claude Sonnet 4.6 | 1 | Yes | 33 | LLM starts with 40 cows; voluntarily reduces to 25 by collapse; rule-based agents add unchecked; collapse 2 ticks earlier than baseline hybrid |
+| **Full-GABM (scarce commons, default fairness)** | Claude Sonnet 4.6 | 3 | No | — | Initial grassland 49%: pool recovered 49%→99% by tick 10; converged to [11,12,13] by tick 30 |
+| **Full-GABM (scarce commons, low coop + low fairness)** | Claude Sonnet 4.6 | 3 | No | — | Initial grassland 50%, coop=0.3, fairness=0: recovery to 99% by tick 20; converged to [12,14,16] by tick 30 |
 
 ---
 
