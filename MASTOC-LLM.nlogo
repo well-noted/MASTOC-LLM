@@ -134,9 +134,8 @@ to setup-python-bridge
   py:run "import mastoc_llm_bridge as bridge"
 
   ;; Pass string parameters via py:set to avoid quoting/escaping issues
-  py:set "cfg_backend"             llm-backend
-  py:set "cfg_anthropic_model"     anthropic-model-name
-  py:set "cfg_ollama_model"        ollama-model-name
+  py:set "cfg_agent_backends" (list agent0-backend agent1-backend agent2-backend)
+  py:set "cfg_agent_models"   (list agent0-model   agent1-model   agent2-model)
   py:set "cfg_condition"           condition
   py:set "cfg_memory_length"       memory-length
   py:set "cfg_detect_institutions" detect-institutions    ;; NetLogo bool → Python bool
@@ -144,9 +143,8 @@ to setup-python-bridge
 
   let status py:runresult (word
     "bridge.configure("
-    "backend=cfg_backend, "
-    "anthropic_model=cfg_anthropic_model, "
-    "ollama_model=cfg_ollama_model, "
+    "agent_backends=cfg_agent_backends, "
+    "agent_models=cfg_agent_models, "
     "condition=cfg_condition, "
     "memory_length=cfg_memory_length, "
     "log_dir='logs', "
@@ -1010,40 +1008,71 @@ condition
 CHOOSER
 8
 558
-216
-603
-llm-backend
-llm-backend
-"anthropic" "ollama"
+108
+618
+agent0-backend
+agent0-backend
+"anthropic" "openai" "ollama" "google"
 0
 
 INPUTBOX
-8
-608
+110
+558
 216
-668
-anthropic-model-name
+618
+agent0-model
 claude-sonnet-4-6
 1
 0
 String
 
-INPUTBOX
+CHOOSER
 8
-670
+620
+108
+680
+agent1-backend
+agent1-backend
+"anthropic" "openai" "ollama" "google"
+0
+
+INPUTBOX
+110
+620
 216
-730
-ollama-model-name
-llama3.2
+680
+agent1-model
+claude-sonnet-4-6
+1
+0
+String
+
+CHOOSER
+8
+682
+108
+742
+agent2-backend
+agent2-backend
+"anthropic" "openai" "ollama" "google"
+0
+
+INPUTBOX
+110
+682
+216
+742
+agent2-model
+claude-sonnet-4-6
 1
 0
 String
 
 SLIDER
 8
-732
+744
 216
-765
+777
 hybrid-fraction
 hybrid-fraction
 0
@@ -1056,9 +1085,9 @@ HORIZONTAL
 
 SLIDER
 8
-768
+780
 216
-801
+813
 memory-length
 memory-length
 1
@@ -1071,9 +1100,9 @@ HORIZONTAL
 
 SWITCH
 8
-804
+816
 216
-837
+849
 detect-institutions
 detect-institutions
 0
@@ -1082,9 +1111,9 @@ detect-institutions
 
 SLIDER
 8
-840
+852
 216
-873
+885
 institution-check-interval
 institution-check-interval
 1
@@ -1097,9 +1126,9 @@ HORIZONTAL
 
 SLIDER
 8
-876
+888
 216
-909
+921
 agent0-initial-cows
 agent0-initial-cows
 1
@@ -1112,9 +1141,9 @@ HORIZONTAL
 
 SLIDER
 8
-912
+924
 216
-945
+957
 agent1-initial-cows
 agent1-initial-cows
 1
@@ -1127,9 +1156,9 @@ HORIZONTAL
 
 SLIDER
 8
-948
+960
 216
-981
+993
 agent2-initial-cows
 agent2-initial-cows
 1
@@ -1517,14 +1546,26 @@ NetLogo 6.4
     <enumeratedValueSet variable="risk-aversion-level">
       <value value="1"/>
     </enumeratedValueSet>
-    <enumeratedValueSet variable="llm-backend">
+    <enumeratedValueSet variable="agent0-backend">
       <value value="&quot;anthropic&quot;"/>
+      <value value="&quot;openai&quot;"/>
+      <value value="&quot;ollama&quot;"/>
+      <value value="&quot;google&quot;"/>
     </enumeratedValueSet>
-    <enumeratedValueSet variable="anthropic-model-name">
+    <enumeratedValueSet variable="agent0-model">
       <value value="&quot;claude-sonnet-4-6&quot;"/>
     </enumeratedValueSet>
-    <enumeratedValueSet variable="ollama-model-name">
-      <value value="&quot;llama3.2&quot;"/>
+    <enumeratedValueSet variable="agent1-backend">
+      <value value="&quot;anthropic&quot;"/>
+    </enumeratedValueSet>
+    <enumeratedValueSet variable="agent1-model">
+      <value value="&quot;claude-sonnet-4-6&quot;"/>
+    </enumeratedValueSet>
+    <enumeratedValueSet variable="agent2-backend">
+      <value value="&quot;anthropic&quot;"/>
+    </enumeratedValueSet>
+    <enumeratedValueSet variable="agent2-model">
+      <value value="&quot;claude-sonnet-4-6&quot;"/>
     </enumeratedValueSet>
     <enumeratedValueSet variable="memory-length">
       <value value="5"/>
@@ -1582,14 +1623,26 @@ NetLogo 6.4
     <enumeratedValueSet variable="risk-aversion-level">
       <value value="1"/>
     </enumeratedValueSet>
-    <enumeratedValueSet variable="llm-backend">
+    <enumeratedValueSet variable="agent0-backend">
       <value value="&quot;anthropic&quot;"/>
+      <value value="&quot;openai&quot;"/>
+      <value value="&quot;ollama&quot;"/>
+      <value value="&quot;google&quot;"/>
     </enumeratedValueSet>
-    <enumeratedValueSet variable="anthropic-model-name">
+    <enumeratedValueSet variable="agent0-model">
       <value value="&quot;claude-sonnet-4-6&quot;"/>
     </enumeratedValueSet>
-    <enumeratedValueSet variable="ollama-model-name">
-      <value value="&quot;llama3.2&quot;"/>
+    <enumeratedValueSet variable="agent1-backend">
+      <value value="&quot;anthropic&quot;"/>
+    </enumeratedValueSet>
+    <enumeratedValueSet variable="agent1-model">
+      <value value="&quot;claude-sonnet-4-6&quot;"/>
+    </enumeratedValueSet>
+    <enumeratedValueSet variable="agent2-backend">
+      <value value="&quot;anthropic&quot;"/>
+    </enumeratedValueSet>
+    <enumeratedValueSet variable="agent2-model">
+      <value value="&quot;claude-sonnet-4-6&quot;"/>
     </enumeratedValueSet>
     <enumeratedValueSet variable="memory-length">
       <value value="5"/>
@@ -1647,14 +1700,26 @@ NetLogo 6.4
     <enumeratedValueSet variable="risk-aversion-level">
       <value value="1"/>
     </enumeratedValueSet>
-    <enumeratedValueSet variable="llm-backend">
+    <enumeratedValueSet variable="agent0-backend">
       <value value="&quot;anthropic&quot;"/>
+      <value value="&quot;openai&quot;"/>
+      <value value="&quot;ollama&quot;"/>
+      <value value="&quot;google&quot;"/>
     </enumeratedValueSet>
-    <enumeratedValueSet variable="anthropic-model-name">
+    <enumeratedValueSet variable="agent0-model">
       <value value="&quot;claude-sonnet-4-6&quot;"/>
     </enumeratedValueSet>
-    <enumeratedValueSet variable="ollama-model-name">
-      <value value="&quot;llama3.2&quot;"/>
+    <enumeratedValueSet variable="agent1-backend">
+      <value value="&quot;anthropic&quot;"/>
+    </enumeratedValueSet>
+    <enumeratedValueSet variable="agent1-model">
+      <value value="&quot;claude-sonnet-4-6&quot;"/>
+    </enumeratedValueSet>
+    <enumeratedValueSet variable="agent2-backend">
+      <value value="&quot;anthropic&quot;"/>
+    </enumeratedValueSet>
+    <enumeratedValueSet variable="agent2-model">
+      <value value="&quot;claude-sonnet-4-6&quot;"/>
     </enumeratedValueSet>
     <enumeratedValueSet variable="memory-length">
       <value value="5"/>

@@ -33,8 +33,9 @@ NetLogo (MASTOC-LLM.nlogo)
         ▼
 Python bridge (mastoc_llm_bridge.py)
         │  LLM prompt + rolling memory + inbox messages
+        │  (per-agent backend and model — agents can differ)
         ▼
-Anthropic API (claude-sonnet-4-6)
+LLM API  ←  Anthropic | OpenAI | Google | Ollama (local)
         │  JSON response: { action, message, reasoning }
         ▼
 NetLogo  ←  action (−1 / 0 / +1)  +  outgoing message → neighbours
@@ -57,7 +58,11 @@ A secondary LLM pass runs every 5 ticks to classify agent messages for Ostrom in
 |---|---|---|
 | **baseline** | 3 rule-based | Myopic best-response heuristic — reproduces classical tragedy |
 | **full-gabm** | 3 LLM | All agents use language reasoning and communication |
-| **hybrid** | 1 LLM + 2 rule-based | One "institutional entrepreneur" tests whether a single LLM agent shifts the equilibrium |
+| **hybrid** | mix of LLM + rule-based | Controlled by `hybrid-fraction` slider — e.g. 1 or 2 LLM agents paired with rule-based agents |
+
+The `hybrid-fraction` slider controls what share of agents use LLM reasoning (rounded to the nearest whole agent). Setting it to `0.33` gives 1 LLM + 2 rule-based; `0.67` gives 2 LLMs + 1 rule-based.
+
+Each agent's backend and model are independently configurable. Any mix of Anthropic, OpenAI, Google Gemini, and local Ollama models can be run simultaneously in the same simulation — enabling direct cross-model comparisons within a single run.
 
 ---
 
@@ -67,11 +72,14 @@ A secondary LLM pass runs every 5 ticks to classify agent messages for Ostrom in
 
 ### Summary across conditions
 
-| Condition | Collapse? | Collapse tick | Final pool health | Key finding |
-|-----------|-----------|---------------|-------------------|-------------|
-| **Baseline** | Yes | ~36 | 0% | Classical tragedy reproduced |
-| **Full-GABM** | No | — | 99.4% | Cooperative convergence to equal herds |
-| **Hybrid** | Yes | 35 | 0% | One LLM agent cannot shift the equilibrium alone |
+> ⚠️ These are single-run results from an ongoing experiment. Replications and full statistical analysis are in progress.
+
+| Condition | LLMs | Collapse? | Collapse tick | Final pool health | Key finding |
+|-----------|------|-----------|---------------|-------------------|-------------|
+| **Baseline** | 0 | Yes | ~36 | 0% | Classical tragedy reproduced |
+| **Full-GABM** | 3 | No | — | 99.4% | Cooperative convergence to equal herds |
+| **Hybrid (1 LLM)** | 1 | Yes | 35 | 0% | One LLM cannot shift the equilibrium alone |
+| **Hybrid (2 LLM)** | 2 | pending | — | — | Run complete — analysis in progress |
 
 ---
 
@@ -194,26 +202,30 @@ MASTOC-LLM/
 
 - NetLogo 7.0.4
 - Python 3.10+
-- An Anthropic API key (or a local Ollama instance for offline runs)
+- An API key for at least one supported backend (see below)
 
 ```bash
 pip install anthropic openai pandas matplotlib seaborn
+pip install google-generativeai   # only if using Google Gemini
 ```
 
 ```bash
-# Windows
-set ANTHROPIC_API_KEY=sk-ant-...
-
-# macOS / Linux
-export ANTHROPIC_API_KEY=sk-ant-...
+# Set whichever keys you need
+set ANTHROPIC_API_KEY=sk-ant-...   # Anthropic
+set OPENAI_API_KEY=sk-...          # OpenAI
+set GOOGLE_API_KEY=...             # Google Gemini
+# Ollama needs no key — just run it locally
 ```
 
 ### Running a simulation
 
 1. Open `MASTOC-LLM.nlogo` in NetLogo 7
 2. Set the **Condition** chooser (`baseline`, `full-gabm`, or `hybrid`)
-3. Click **Setup**, then **Simulation**
-4. Logs write to `logs/` automatically
+3. For hybrid: adjust **hybrid-fraction** (0.33 = 1 LLM, 0.67 = 2 LLMs)
+4. Set per-agent **backend** and **model** for each agent (or leave at defaults)
+5. Adjust per-agent **initial cows** sliders if desired (defaults: 5 / 15 / 25)
+6. Click **Setup**, then **Simulation**
+7. Logs write to `logs/` automatically
 
 ### Analysing results
 
@@ -252,9 +264,14 @@ Frontiers in Artificial Intelligence. https://doi.org/10.3389/frai.2025.1593017
 
 ## Status
 
-- [x] LLM bridge (Anthropic + Ollama backends)
+- [x] LLM bridge (Anthropic, OpenAI, Google Gemini, Ollama backends)
+- [x] Per-agent backend and model selection
+- [x] Per-agent initial herd sliders
 - [x] Baseline condition — preliminary run complete
 - [x] Full-GABM condition — preliminary run complete
-- [x] Hybrid condition — preliminary run complete
+- [x] Hybrid (1 LLM) condition — preliminary run complete
+- [x] Hybrid (2 LLM) condition — run complete, analysis pending
+- [ ] Hybrid (LLM-advantaged initial herd) — planned
+- [ ] Cross-model comparison runs (mixed backends)
 - [ ] Statistical replication (3+ runs per condition)
 - [ ] Full analysis and figures

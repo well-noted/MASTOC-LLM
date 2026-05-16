@@ -36,7 +36,10 @@ from typing import Any, Dict, List, Optional, Tuple
 # Module-level state (reset by configure())
 # ──────────────────────────────────────────────────────────────────────────────
 _cfg: Dict[str, Any] = {}
-_client = None                        # LLM client object
+_client = None                        # LLM client object (institution detector / fallback)
+_agent_clients: Dict[int, Any] = {}      # per-agent LLM client
+_agent_backends_map: Dict[int, str] = {} # per-agent backend name
+_agent_models_map: Dict[int, str] = {}   # per-agent model string
 _agent_memory: Dict[int, deque] = {}  # rolling round summaries
 _msg_buffer: Dict[int, List[str]] = defaultdict(list)   # incoming msgs / round
 _msg_outbox: Dict[int, str] = {}      # outgoing msg this round
@@ -56,6 +59,8 @@ def configure(
     anthropic_model: str = "claude-sonnet-4-6",
     ollama_model: str = "llama3.2",
     ollama_base_url: str = "http://localhost:11434/v1",
+    agent_backends: list = None,
+    agent_models: list = None,
     memory_length: int = 5,
     log_dir: str = "logs",
     run_id: Optional[str] = None,
@@ -81,6 +86,7 @@ def configure(
     """
     global _cfg, _client, _agent_memory, _msg_buffer, _msg_outbox
     global _log_handles, _run_id, _tick, _round_messages, _call_count
+    global _agent_clients, _agent_backends_map, _agent_models_map
 
     _cfg = dict(
         backend=str(backend),
@@ -104,15 +110,40 @@ def configure(
     _msg_buffer.clear()
     _msg_outbox.clear()
 
-    # Initialise LLM client
-    if backend == "anthropic":
-        import anthropic  # pip install anthropic
-        api_key = os.environ.get("ANTHROPIC_API_KEY", "")
-        _client = anthropic.Anthropic(api_key=api_key)
-    else:
-        # Ollama (or any OpenAI-compatible endpoint)
-        from openai import OpenAI  # pip install openai
-        _client = OpenAI(base_url=ollama_base_url, api_key="ollama")
+    # Build per-agent client map
+    anthropic_key = os.environ.get("ANTHROPIC_API_KEY", "")
+    openai_key    = os.environ.get("OPENAI_API_KEY", "")
+    google_key    = os.environ.get("GOOGLE_API_KEY", "")
+    n_agents = 3
+    default_model = anthropic_model if backend == "anthropic" else ollama_model
+    backends = list(agent_backends) if agent_backends else [backend] * n_agents
+    models   = list(agent_models)   if agent_models   else [default_model] * n_agents
+
+    _agent_clients.clear()
+    _agent_backends_map.clear()
+    _agent_models_map.clear()
+
+    for i, (b, m) in enumerate(zip(backends, models)):
+        b = str(b).strip().lower()
+        m = str(m).strip()
+        if b == "anthropic":
+            import anthropic
+            _agent_clients[i] = anthropic.Anthropic(api_key=anthropic_key)
+        elif b == "openai":
+            from openai import OpenAI
+            _agent_clients[i] = OpenAI(api_key=openai_key)
+        elif b == "google":
+            import google.generativeai as genai
+            genai.configure(api_key=google_key)
+            _agent_clients[i] = genai.GenerativeModel(m)  # model baked into client
+        else:  # ollama or any OpenAI-compatible local endpoint
+            from openai import OpenAI
+            _agent_clients[i] = OpenAI(base_url=str(ollama_base_url), api_key="ollama")
+        _agent_backends_map[i] = b
+        _agent_models_map[i]   = m
+
+    # Default client for institution detector = agent 0's client
+    _client = _agent_clients.get(0)
 
     # Initialise log files
     log_path = Path(log_dir) / _run_id
@@ -204,7 +235,7 @@ def decide_from_context(ctx: list) -> int:
     # Call LLM
     system_prompt = _system_prompt()
     user_prompt = _user_prompt(context)
-    response_text, reasoning = _call_llm(system_prompt, user_prompt)
+    response_text, reasoning = _call_llm(system_prompt, user_prompt, agent_id=agent_id)
     _call_count += 1
 
     # Parse response
@@ -423,24 +454,44 @@ def _call_llm(
     system_prompt: str,
     user_prompt: str,
     max_tokens: int = 400,
+    agent_id: int = None,
 ) -> Tuple[str, str]:
-    """Dispatch to the configured LLM backend. Returns (response_text, reasoning)."""
-    backend = _cfg.get("backend", "anthropic")
+    """Dispatch to the appropriate LLM backend for this agent. Returns (response_text, reasoning)."""
+    # Per-agent lookup; fall back to global _client for institution detector
+    if agent_id is not None and agent_id in _agent_clients:
+        backend = _agent_backends_map[agent_id]
+        client  = _agent_clients[agent_id]
+        model   = _agent_models_map[agent_id]
+    else:
+        backend = _agent_backends_map.get(0, _cfg.get("backend", "anthropic"))
+        client  = _client
+        model   = _agent_models_map.get(0,
+                      _cfg.get("anthropic_model", "claude-sonnet-4-6")
+                      if backend == "anthropic" else _cfg.get("ollama_model", "llama3.2"))
 
     if backend == "anthropic":
         import anthropic
-        response = _client.messages.create(
-            model=_cfg["anthropic_model"],
+        response = client.messages.create(
+            model=model,
             max_tokens=max_tokens,
             system=system_prompt,
             messages=[{"role": "user", "content": user_prompt}],
         )
         return response.content[0].text, ""
 
+    elif backend == "google":
+        # client is a google.generativeai.GenerativeModel with model already set
+        full_prompt = f"{system_prompt}\n\n{user_prompt}"
+        response = client.generate_content(
+            full_prompt,
+            generation_config={"max_output_tokens": max_tokens},
+        )
+        return response.text, ""
+
     else:
-        # Ollama / OpenAI-compatible
-        response = _client.chat.completions.create(
-            model=_cfg["ollama_model"],
+        # openai / ollama / any OpenAI-compatible endpoint
+        response = client.chat.completions.create(
+            model=model,
             messages=[
                 {"role": "system", "content": system_prompt},
                 {"role": "user", "content": user_prompt},
@@ -608,9 +659,11 @@ def _init_logs(log_path: Path) -> None:
         json.dump({
             "run_id": _run_id,
             "condition": _cfg.get("condition"),
-            "backend": _cfg.get("backend"),
-            "model": _cfg.get("anthropic_model") if _cfg.get("backend") == "anthropic"
-                     else _cfg.get("ollama_model"),
+            "agent_models": [
+                {"backend": _agent_backends_map.get(i, "?"),
+                 "model":   _agent_models_map.get(i, "?")}
+                for i in range(3)
+            ],
             "memory_length": _cfg.get("memory_length"),
             "started_at": datetime.now().isoformat(),
         }, f, indent=2)
@@ -660,5 +713,4 @@ def _close_logs() -> None:
 def close() -> str:
     """Call at end of simulation to flush and close all logs."""
     _flush_logs()
-    _close_logs()
-    return f"Bridge closed | run_id={_run_id} | total LLM calls={_call_count}"
+ 

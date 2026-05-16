@@ -3,7 +3,8 @@
 
 # ── LLM backends (install at least one) ──────────────────────────────────────
 anthropic>=0.40.0          # Anthropic API (claude-sonnet-4-6 etc.)
-openai>=1.0.0              # Ollama OpenAI-compat endpoint + experiment_runner fallback
+openai>=1.0.0              # OpenAI API + Ollama OpenAI-compat endpoint
+# google-generativeai>=0.8.0  # Google Gemini — uncomment if using google backend
 
 # ── Analysis & visualisation ─────────────────────────────────────────────────
 pandas>=2.0.0
