@@ -81,7 +81,7 @@ Each agent's backend and model are independently configurable. Any mix of Anthro
 | **Baseline** | 0 | Yes | ~36 | Classical tragedy reproduced |
 | **Full-GABM** | 3 | No | — | Cooperative convergence to 13/13/13; institution score 10/10 by tick 91 |
 | **Full-GABM (low cooperation)** | 3 | No | — | Self-interested framing: *faster* convergence (tick 16) to higher-yield 20/20/20; cooperation robust to personality override |
-| **Full-GABM (low guilt + low envy)** | 3 | No | — | Fairness emotions removed: repeated defection, slow convergence (~tick 107), higher herd load (84 cows), commons stressed to 86.7% |
+| **Full-GABM (low guilt + low envy)** | 3 | No | — | Fairness-parameter prompts zeroed: repeated defection, slow convergence (~tick 107), higher herd load (84 cows), commons stressed to 86.7% |
 | **Hybrid (1 LLM)** | 1 | Yes | 35 | One LLM cannot shift the equilibrium alone |
 | **Hybrid (2 LLM)** | 2 | Yes | 58 | Coalition formed, tragedy delayed 23 ticks, but overwhelmed by one defector |
 
@@ -129,7 +129,7 @@ A sample of agent messages illustrates the qualitative dynamic:
 
 > **Tick 25 – All agents (herd: 13):** *"All three agents uniformly signal strong cooperative commitment, referencing shared empirical evidence (99.4% commons health) and mutually reinforcing norms of stability and fairness consistent with a well-institutionalized common-pool resource regime."* — Ostrom classifier summary
 
-The agents exhibited moral reasoning absent from their prompts: fairness concern, burden-sharing, guilt, and graduated positive reciprocity — behavioural signatures consistent with Ostrom's (1990) account of successful commons governance.
+The agents produced outputs displaying behavioural patterns absent from their prompts: fairness-coded appeals, burden-sharing proposals, guilt-coded reciprocity, and graduated positive reinforcement — signatures consistent with Ostrom's (1990) account of successful commons governance.
 
 ---
 
@@ -229,7 +229,7 @@ The qualitative shift in institution type is also significant: full-GABM institu
 
 ---
 
-### Full-GABM (low guilt + low envy): fairness emotions govern cooperation quality
+### Full-GABM (low guilt + low envy): fairness parameters shape cooperation quality
 
 With `fairness-concerning-others` and `fairness-concerning-me` both set to minimum (no guilt, no envy), all three agents still cooperated — but the process was slower, messier, and left the commons under substantially higher load.
 
@@ -255,7 +255,7 @@ Agents grew their herds aggressively from tick 1, peaking at 91 total cows befor
 | 36–75 | 5–9         | COORDINATION, NORM_PROPOSAL (with intermittent DEFECTION) |
 | 76–120 | 8–9        | COORDINATION, NORM_PROPOSAL, TRUST_BUILDING |
 
-Unlike any previous run, DEFECTION appeared as a recurring signal — at ticks 5, 10, 20, 40, 55, and 75. Agents made explicit coordination agreements and broke them. The classifier described "conditional cooperation with partial defection," agents "deflecting accountability through comparative grievance," and "Agent 1 defects despite prior stability agreements, then appeals for collective restraint." This bad-faith dynamic was entirely absent from all other full-GABM runs.
+Unlike any previous run, DEFECTION appeared as a recurring signal — at ticks 5, 10, 20, 40, 55, and 75. Agents made explicit coordination agreements and broke them. The classifier described "conditional cooperation with partial defection," agents "deflecting accountability through comparative grievance," and "Agent 1 defects despite prior stability agreements, then appeals for collective restraint." This norm-inconsistent pattern was entirely absent from all other full-GABM runs.
 
 **What the agents said:**
 
@@ -271,13 +271,13 @@ Unlike any previous run, DEFECTION appeared as a recurring signal — at ticks 5
 
 **Interpretation:**
 
-This is the most theoretically differentiated result across the personality conditions. Guilt and envy — the fairness emotions — do not determine *whether* LLM agents cooperate, but they strongly govern *how* and *when* cooperation stabilises.
+This is the most theoretically differentiated result across the personality conditions. The guilt and envy parameters — the fairness-framing components of each agent's prompt — do not determine *whether* LLM agents cooperate, but they strongly shape *how* and *when* cooperation stabilises.
 
-With guilt (fairness-concerning-others), Agent 2 experienced discomfort at holding 30+ cows while others had far fewer, creating endogenous pressure to reduce. With envy (fairness-concerning-me), Agent 0 felt urgency to grow toward parity. Both pressures converged on equalization quickly and conservatively in the default run. Remove them, and Agent 2 is comfortable holding 32 cows with Agent 0 at 21 — no internal pressure to equalize — and Agent 0 tolerates the inequality without urgency.
+With guilt (fairness-concerning-others) active, Agent 2's outputs reflected pressure to reduce a disproportionately large herd, producing consistent removal actions. With envy (fairness-concerning-me) active, Agent 0's outputs reflected urgency to grow toward parity. Both dynamics converged on equalization quickly and conservatively in the default run. Without them, Agent 2 produced no adjustment signals despite holding 32 cows against Agent 0's 21 — and Agent 0 maintained cooperation without expressing urgency about the disparity.
 
 The result is a qualitatively different institutional dynamic: slower, more contentious, prone to defection, and settling at a much higher extraction level (84 vs 39 cows). The commons stayed viable — pasture never collapsed — but it was stressed to 86.7% health versus near-pristine in the default run.
 
-This maps cleanly onto behavioral economics findings about inequity aversion (Fehr & Schmidt, 1999): fairness emotions act as coordination accelerators that make inequality itself uncomfortable, independent of material payoffs. Their absence does not prevent cooperation, but it removes a mechanism that makes early, conservative, stable institution-building possible.
+This maps cleanly onto behavioral economics findings about inequity aversion (Fehr & Schmidt, 1999): fairness-parameter framing acts as a coordination accelerator by making inequality an explicit aversive signal in the agent's prompt context, independent of material payoffs. Its absence does not prevent cooperation, but removes a mechanism that produces early, conservative, stable institution-building.
 
 The contrast with the low-cooperation run is also striking: the cooperation slider (self-interest framing) had almost no effect on cooperation quality or timing. The fairness sliders had a large effect on both. This suggests that *which* prosocial emotion is active matters more than a general cooperative disposition — a finding with implications for how personality parameters should be designed and interpreted in LLM-based agent models.
 
