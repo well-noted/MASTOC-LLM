@@ -146,7 +146,6 @@ to setup-python-bridge
   py:set "cfg_system_prompt"   system-prompt-override
   py:set "cfg_ollama_base_url" ollama-base-url
   py:set "cfg_verbose" verbose-mode
-  py:set "cfg_communication" communication?
   let status py:runresult (word
     "bridge.configure("
     "agent_backends=cfg_agent_backends, "
@@ -158,8 +157,7 @@ to setup-python-bridge
     "institution_every_n_ticks=cfg_institution_interval, "
     "system_prompt_override=cfg_system_prompt, "
     "ollama_base_url=cfg_ollama_base_url, "
-    "verbose=cfg_verbose, "
-    "communication=cfg_communication"
+    "verbose=cfg_verbose"
     ")")
   show status
 
@@ -1116,8 +1114,8 @@ SLIDER
 813
 memory-length
 memory-length
-0
-15
+1
+10
 5
 1
 1
@@ -1135,22 +1133,11 @@ detect-institutions
 1
 -1000
 
-SWITCH
+SLIDER
 8
 852
 216
 885
-communication?
-communication?
-0
-1
--1000
-
-SLIDER
-8
-888
-216
-921
 institution-check-interval
 institution-check-interval
 1
@@ -1163,9 +1150,9 @@ HORIZONTAL
 
 SLIDER
 8
-924
+888
 216
-957
+921
 agent0-initial-cows
 agent0-initial-cows
 1
@@ -1178,9 +1165,9 @@ HORIZONTAL
 
 SLIDER
 8
-996
+924
 216
-1029
+957
 agent1-initial-cows
 agent1-initial-cows
 1
@@ -1193,9 +1180,9 @@ HORIZONTAL
 
 SLIDER
 8
-1032
+960
 216
-1065
+993
 agent2-initial-cows
 agent2-initial-cows
 1
@@ -1208,9 +1195,9 @@ HORIZONTAL
 
 INPUTBOX
 8
-1068
+996
 216
-1148
+1076
 system-prompt-override
  
 1
@@ -1219,9 +1206,9 @@ String
 
 INPUTBOX
 8
-1152
+1086
 432
-1182
+1116
 ollama-base-url
 http://localhost:11434/v1
 0
@@ -1230,9 +1217,9 @@ String
 
 TEXTBOX
 8
-1186
+1150
 216
-1204
+1168
 Simulation parameters:
 11
 0.0
@@ -1240,9 +1227,9 @@ Simulation parameters:
 
 SLIDER
 8
-1211
+1175
 216
-1244
+1208
 num-rounds
 num-rounds
 1
@@ -1255,9 +1242,9 @@ HORIZONTAL
 
 SWITCH
 8
-1251
+1215
 216
-1284
+1248
 run-indefinitely
 run-indefinitely
 1
@@ -1266,9 +1253,9 @@ run-indefinitely
 
 SWITCH
 8
-1291
+1255
 216
-1324
+1288
 verbose-mode
 verbose-mode
 1
@@ -1277,9 +1264,9 @@ verbose-mode
 
 MONITOR
 8
-1331
+1295
 216
-1376
+1340
 NIL
 sim-status
 17

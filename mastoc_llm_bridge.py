@@ -95,6 +95,7 @@ def configure(
     institution_every_n_ticks: int = 5,
     ollama_base_url: str = "http://localhost:11434/v1",
     verbose: bool = False,
+    communication: bool = True,
 ) -> str:
     """
     Initialise the bridge. Call once from NetLogo before the first tick.
@@ -105,12 +106,14 @@ def configure(
     anthropic_model : Anthropic model string
     ollama_model    : Ollama model name (must be running locally)
     ollama_base_url : Base URL for Ollama's OpenAI-compatible endpoint
-    memory_length   : Number of past rounds each agent remembers
+    memory_length   : Number of past rounds each agent remembers (0 = no memory)
     log_dir         : Directory for output CSVs
     run_id          : Unique run identifier (auto-generated if None)
     condition       : "baseline" | "full-gabm" | "hybrid"
     detect_institutions : Run secondary LLM institution classifier each round?
     institution_every_n_ticks : Run institution detection every N ticks (cost control)
+    communication   : If False, agents receive no neighbour messages and send none;
+                      isolates pure LLM reasoning from social coordination
     """
     global _cfg, _client, _agent_memory, _msg_buffer, _msg_outbox
     global _log_handles, _run_id, _tick, _round_messages, _call_count
@@ -128,6 +131,7 @@ def configure(
         institution_every_n_ticks=int(institution_every_n_ticks),
         system_prompt_override=str(system_prompt_override).strip(),
         verbose=bool(verbose),
+        communication=bool(communication),
     )
 
     _run_id = run_id or datetime.now().strftime("%Y%m%d_%H%M%S") + f"_{condition}"
@@ -280,8 +284,8 @@ def decide_from_context(ctx: list) -> int:
         payoff_add=round(payoff_add, 3),
         payoff_keep=round(payoff_keep, 3),
         payoff_remove=round(payoff_remove, 3),
-        memory=list(_agent_memory.get(agent_id, [])),
-        incoming_messages=list(_msg_buffer.get(agent_id, [])),
+        memory=list(_agent_memory.get(agent_id, [])) if _cfg.get("memory_length", 5) > 0 else [],
+        incoming_messages=list(_msg_buffer.get(agent_id, [])) if _cfg.get("communication", True) else [],
         personality=_describe_personality(
             fairness_me, fairness_others, coop_level,
             neg_recip, pos_recip, conformity, risk_aversion
@@ -306,6 +310,10 @@ def decide_from_context(ctx: list) -> int:
 
     # Parse response
     action, message, reasoning = _parse_response(response_text)
+
+    # Suppress outgoing message when communication is disabled
+    if not _cfg.get("communication", True):
+        message = ""
 
     # Store outgoing message and log
     _msg_outbox[agent_id] = message
@@ -394,12 +402,18 @@ def baseline_decide(ctx: list) -> int:
 # ──────────────────────────────────────────────────────────────────────────────
 
 def get_outgoing_message(agent_id: int) -> str:
-    """Return the message this agent wants to send to neighbors this round."""
+    """Return the message this agent wants to send to neighbors this round.
+    Returns empty string when communication is disabled."""
+    if not _cfg.get("communication", True):
+        return ""
     return _msg_outbox.get(int(agent_id), "")
 
 
 def deliver_message(from_agent_id: int, to_agent_id: int, message: str) -> None:
-    """Deliver a message to an agent's inbox. Called from NetLogo per neighbor."""
+    """Deliver a message to an agent's inbox. Called from NetLogo per neighbor.
+    No-ops silently when communication is disabled."""
+    if not _cfg.get("communication", True):
+        return
     to_id = int(to_agent_id)
     if message and message.strip():
         label = f"Agent {int(from_agent_id)}: {message.strip()}"
@@ -837,6 +851,7 @@ def _init_logs(log_path: Path) -> None:
                 for i in range(3)
             ],
             "memory_length": _cfg.get("memory_length"),
+            "communication": _cfg.get("communication", True),
             "started_at": datetime.now().isoformat(),
         }, f, indent=2)
 
@@ -888,4 +903,5 @@ def _close_logs() -> None:
 def close() -> str:
     """Call at end of simulation to flush and close all logs."""
     _flush_logs()
- 
+    _close_logs()
+    return f"Run {_run_id} complete. {_call_count} LLM calls made."
