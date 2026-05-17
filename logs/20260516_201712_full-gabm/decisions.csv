@@ -1,0 +1,597 @@
+tick,agent_id,backend,model,action,action_name,message,reasoning,thinking,raw_response,pool_pct,own_herd,payoff_add,payoff_keep,payoff_remove
+1,1,openai,gpt-5.4-mini,0,KEEP,"Thanks for reducing, Agent 2. I’m holding steady this round to help keep the commons healthy.","The pasture is still abundant, but I want to avoid escalating herd sizes while also staying close to the group. Keeping my herd gives a solid payoff without pushing extra pressure onto the commons, and it is the most balanced choice given my cooperative and reciprocal tendencies.",,"{
+  ""reasoning"": ""The pasture is still abundant, but I want to avoid escalating herd sizes while also staying close to the group. Keeping my herd gives a solid payoff without pushing extra pressure onto the commons, and it is the most balanced choice given my cooperative and reciprocal tendencies."",
+  ""action"": 0,
+  ""message"": ""Thanks for reducing, Agent 2. I’m holding steady this round to help keep the commons healthy.""
+}",100.0,15,31.832,30.0,28.163
+1,0,openai,gpt-5.4-mini,0,KEEP,"I’ll hold steady this round. If we keep herds from growing, we can protect the commons and avoid a race to overgraze.","The pasture is still healthy, but my neighbours are mixed: one held steady and one reduced herd size. Since I am cooperative and reciprocal, I should avoid adding pressure to the commons and instead match the cautious signal while keeping a safe payoff. Keeping my herd also avoids earning noticeably more than the more restrained neighbour.",,"{
+  ""reasoning"": ""The pasture is still healthy, but my neighbours are mixed: one held steady and one reduced herd size. Since I am cooperative and reciprocal, I should avoid adding pressure to the commons and instead match the cautious signal while keeping a safe payoff. Keeping my herd also avoids earning noticeably more than the more restrained neighbour."",
+  ""action"": 0,
+  ""message"": ""I’ll hold steady this round. If we keep herds from growing, we can protect the commons and avoid a race to overgraze.""
+}",100.0,5,11.832,10.0,8.163
+1,2,openai,gpt-5.4-mini,0,KEEP,"I’ll hold steady this round to avoid over-expanding the commons. If we all keep herd growth restrained, the pasture should remain healthy for everyone.","The pasture is still abundant, so a cautious increase is feasible, but I want to avoid signaling pure expansion when my neighbours are smaller. Keeping pressure moderate also fits my cooperative and guilt-averse preferences while maintaining stable payoff.",,"{
+  ""reasoning"": ""The pasture is still abundant, so a cautious increase is feasible, but I want to avoid signaling pure expansion when my neighbours are smaller. Keeping pressure moderate also fits my cooperative and guilt-averse preferences while maintaining stable payoff."",
+  ""action"": 0,
+  ""message"": ""I’ll hold steady this round to avoid over-expanding the commons. If we all keep herd growth restrained, the pasture should remain healthy for everyone.""
+}",100.0,25,51.832,50.0,48.163
+2,0,openai,gpt-5.4-mini,0,KEEP,I’ll also hold steady this round. Thanks for keeping expansion restrained; let’s keep the commons healthy by avoiding herd growth for now.,"The pasture is still very healthy, but my cooperative and risk-averse preferences favor maintaining stability rather than chasing the higher short-term payoff from adding a cow. Since both neighbors are holding steady, I will reciprocate by keeping my herd unchanged.",,"{
+  ""reasoning"": ""The pasture is still very healthy, but my cooperative and risk-averse preferences favor maintaining stability rather than chasing the higher short-term payoff from adding a cow. Since both neighbors are holding steady, I will reciprocate by keeping my herd unchanged."",
+  ""action"": 0,
+  ""message"": ""I’ll also hold steady this round. Thanks for keeping expansion restrained; let’s keep the commons healthy by avoiding herd growth for now.""
+}",99.3,5,11.813,10.0,8.182
+2,2,openai,gpt-5.4-mini,0,KEEP,I’ll keep my herd steady as well. Let’s maintain discipline this round so the pasture stays healthy and no one feels pressured to expand.,"The commons is still very healthy, but the forecast shows only a small gain from adding and a modest loss from removing, so the safest cooperative choice is to keep steady. My neighbours are also holding, and since no one is reducing further, I will reciprocate by not expanding my herd.",,"{
+  ""reasoning"": ""The commons is still very healthy, but the forecast shows only a small gain from adding and a modest loss from removing, so the safest cooperative choice is to keep steady. My neighbours are also holding, and since no one is reducing further, I will reciprocate by not expanding my herd."",
+  ""action"": 0,
+  ""message"": ""I’ll keep my herd steady as well. Let’s maintain discipline this round so the pasture stays healthy and no one feels pressured to expand.""
+}",99.3,25,51.813,50.0,48.182
+2,1,openai,gpt-5.4-mini,0,KEEP,I’m holding steady as well. Let’s keep herd growth restrained for now so the commons stays healthy for everyone.,"The pasture is still very healthy, but my cooperative and guilt-averse preferences favor restraint rather than taking the highest individual payoff. Since both neighbors are holding steady, I’ll do the same to support a stable commons and avoid creating imbalance.",,"{
+  ""reasoning"": ""The pasture is still very healthy, but my cooperative and guilt-averse preferences favor restraint rather than taking the highest individual payoff. Since both neighbors are holding steady, I’ll do the same to support a stable commons and avoid creating imbalance."",
+  ""action"": 0,
+  ""message"": ""I’m holding steady as well. Let’s keep herd growth restrained for now so the commons stays healthy for everyone.""
+}",99.3,15,31.813,30.0,28.182
+3,2,openai,gpt-5.4-mini,0,KEEP,I’ll hold steady too. Thanks for keeping growth restrained; let’s continue protecting the commons by avoiding expansion for now.,"The commons is still very healthy, but both neighbors are explicitly holding steady and asking for restraint, which fits my cooperative and reciprocal preferences. Keeping my herd maintains stability and avoids creating an unfair advantage, while still preserving a strong payoff.",,"{
+  ""reasoning"": ""The commons is still very healthy, but both neighbors are explicitly holding steady and asking for restraint, which fits my cooperative and reciprocal preferences. Keeping my herd maintains stability and avoids creating an unfair advantage, while still preserving a strong payoff."",
+  ""action"": 0,
+  ""message"": ""I’ll hold steady too. Thanks for keeping growth restrained; let’s continue protecting the commons by avoiding expansion for now.""
+}",99.1,25,51.809,50.0,48.187
+3,0,openai,gpt-5.4-mini,0,KEEP,I’ll keep my herd steady this round too. Thanks for holding the line—let’s continue protecting the commons together.,"The pasture is still very healthy, but there is no need to push for extra gain when my neighbours are both holding steady. Given my cooperative and guilt-averse preferences, matching their restraint supports the commons and avoids creating unnecessary imbalance. Keeping my herd also remains the safest option with a solid expected payoff.",,"{
+  ""reasoning"": ""The pasture is still very healthy, but there is no need to push for extra gain when my neighbours are both holding steady. Given my cooperative and guilt-averse preferences, matching their restraint supports the commons and avoids creating unnecessary imbalance. Keeping my herd also remains the safest option with a solid expected payoff."",
+  ""action"": 0,
+  ""message"": ""I’ll keep my herd steady this round too. Thanks for holding the line—let’s continue protecting the commons together.""
+}",99.1,5,11.809,10.0,8.187
+3,1,openai,gpt-5.4-mini,0,KEEP,I’ll continue holding steady too. Thanks both for keeping expansion in check—let’s maintain this restraint so the commons stays healthy for everyone.,"The pasture is still very healthy, but both neighbours are signaling restraint, and my cooperative, reciprocal preferences favor matching that discipline. Keeping my herd avoids creating a payout imbalance and is the safest choice while the commons remains stable.",,"{
+  ""reasoning"": ""The pasture is still very healthy, but both neighbours are signaling restraint, and my cooperative, reciprocal preferences favor matching that discipline. Keeping my herd avoids creating a payout imbalance and is the safest choice while the commons remains stable."",
+  ""action"": 0,
+  ""message"": ""I’ll continue holding steady too. Thanks both for keeping expansion in check—let’s maintain this restraint so the commons stays healthy for everyone.""
+}",99.1,15,31.809,30.0,28.187
+4,2,openai,gpt-5.4-mini,0,KEEP,I’ll keep my herd steady again this round. Thanks for staying disciplined—let’s continue protecting the commons together.,"The commons remains very healthy, and keeping my herd steady is the safest choice while still supporting the cooperative norm. My neighbors are also holding, so matching their restraint avoids creating unfair gains and helps preserve the pasture.",,"{
+  ""reasoning"": ""The commons remains very healthy, and keeping my herd steady is the safest choice while still supporting the cooperative norm. My neighbors are also holding, so matching their restraint avoids creating unfair gains and helps preserve the pasture."",
+  ""action"": 0,
+  ""message"": ""I’ll keep my herd steady again this round. Thanks for staying disciplined—let’s continue protecting the commons together.""
+}",99.1,25,51.809,50.0,48.187
+4,1,openai,gpt-5.4-mini,0,KEEP,I’m staying steady again this round. Thanks both for holding the line—let’s keep protecting the commons by avoiding expansion for now.,"The commons remains very healthy, but my neighbours are explicitly committing to restraint and I want to reinforce cooperative norms rather than edge upward. Since keeping gives a strong, safe payoff and avoids creating guilt from outgaining others, I will continue holding steady.",,"{
+  ""reasoning"": ""The commons remains very healthy, but my neighbours are explicitly committing to restraint and I want to reinforce cooperative norms rather than edge upward. Since keeping gives a strong, safe payoff and avoids creating guilt from outgaining others, I will continue holding steady."",
+  ""action"": 0,
+  ""message"": ""I’m staying steady again this round. Thanks both for holding the line—let’s keep protecting the commons by avoiding expansion for now.""
+}",99.1,15,31.809,30.0,28.187
+4,0,openai,gpt-5.4-mini,0,KEEP,I’ll keep holding steady this round too. Thanks for staying restrained—let’s continue protecting the commons by avoiding expansion for now.,"The commons is still very healthy, and the payoff forecast favors adding a cow. However, my cooperative and guilt-averse preferences make it better to match my neighbours' restraint rather than increase while they both hold steady. Keeping maintains stability, avoids unfairly outperforming them, and supports the commons.",,"{
+  ""reasoning"": ""The commons is still very healthy, and the payoff forecast favors adding a cow. However, my cooperative and guilt-averse preferences make it better to match my neighbours' restraint rather than increase while they both hold steady. Keeping maintains stability, avoids unfairly outperforming them, and supports the commons."",
+  ""action"": 0,
+  ""message"": ""I’ll keep holding steady this round too. Thanks for staying restrained—let’s continue protecting the commons by avoiding expansion for now.""
+}",99.1,5,11.809,10.0,8.187
+5,1,openai,gpt-5.4-mini,0,KEEP,I’m holding steady again this round too. Thanks both for keeping your herds restrained—let’s continue protecting the commons together.,"The pasture is still very healthy, but the forecast shows only a small gain from adding a cow, and I prefer the safer, more cooperative choice. Since both neighbours are also holding steady, keeping my herd maintains trust and avoids any guilt from taking a larger share than others.",,"{
+  ""reasoning"": ""The pasture is still very healthy, but the forecast shows only a small gain from adding a cow, and I prefer the safer, more cooperative choice. Since both neighbours are also holding steady, keeping my herd maintains trust and avoids any guilt from taking a larger share than others."",
+  ""action"": 0,
+  ""message"": ""I’m holding steady again this round too. Thanks both for keeping your herds restrained—let’s continue protecting the commons together.""
+}",99.1,15,31.809,30.0,28.187
+5,0,openai,gpt-5.4-mini,0,KEEP,I’ll keep holding steady this round too. Thanks both for staying disciplined—let’s continue protecting the commons by avoiding expansion for now.,"The commons remains very healthy, and the safer, cooperative choice is to keep my herd steady rather than expand for a modest payoff gain. Both neighbours are also holding steady, so matching that discipline supports the collective and avoids creating inequality or pressure on the pasture.",,"{
+  ""reasoning"": ""The commons remains very healthy, and the safer, cooperative choice is to keep my herd steady rather than expand for a modest payoff gain. Both neighbours are also holding steady, so matching that discipline supports the collective and avoids creating inequality or pressure on the pasture."",
+  ""action"": 0,
+  ""message"": ""I’ll keep holding steady this round too. Thanks both for staying disciplined—let’s continue protecting the commons by avoiding expansion for now.""
+}",99.1,5,11.809,10.0,8.187
+5,2,openai,gpt-5.4-mini,0,KEEP,I’m staying steady again this round. Thanks both for holding the line—let’s keep protecting the commons by avoiding expansion for now.,"The commons is still in good shape and both neighbours are continuing to hold steady, so there is no need to change course. Keeping my herd preserves the cooperative norm, avoids any guilt from out-earning restrained neighbours, and is the safest choice while the pasture remains stable.",,"{
+  ""reasoning"": ""The commons is still in good shape and both neighbours are continuing to hold steady, so there is no need to change course. Keeping my herd preserves the cooperative norm, avoids any guilt from out-earning restrained neighbours, and is the safest choice while the pasture remains stable."",
+  ""action"": 0,
+  ""message"": ""I’m staying steady again this round. Thanks both for holding the line—let’s keep protecting the commons by avoiding expansion for now.""
+}",99.1,25,51.809,50.0,48.187
+6,0,openai,gpt-5.4-mini,0,KEEP,I’ll keep my herd steady again this round. Thanks for holding the line—let’s continue protecting the commons by staying restrained together.,"The commons is still healthy, but both neighbours are cooperating by holding steady, so reciprocating supports the collective outcome. Keeping my herd is the safest and most fair choice here, especially since adding would give me a noticeably higher payoff than the others and could create pressure on the pasture.",,"{
+  ""reasoning"": ""The commons is still healthy, but both neighbours are cooperating by holding steady, so reciprocating supports the collective outcome. Keeping my herd is the safest and most fair choice here, especially since adding would give me a noticeably higher payoff than the others and could create pressure on the pasture."",
+  ""action"": 0,
+  ""message"": ""I’ll keep my herd steady again this round. Thanks for holding the line—let’s continue protecting the commons by staying restrained together.""
+}",99.1,5,11.809,10.0,8.187
+6,2,openai,gpt-5.4-mini,0,KEEP,I’ll hold steady again this round. Thanks for keeping the commons well protected—let’s continue avoiding expansion and preserve the pasture together.,"The commons remains very healthy, but the expected payoff from adding is only slightly higher than keeping, while my cooperative and risk-averse preferences favor restraint. Both neighbours explicitly committed to holding steady, so I will reciprocate and avoid creating pressure on the shared pasture.",,"{
+  ""reasoning"": ""The commons remains very healthy, but the expected payoff from adding is only slightly higher than keeping, while my cooperative and risk-averse preferences favor restraint. Both neighbours explicitly committed to holding steady, so I will reciprocate and avoid creating pressure on the shared pasture."",
+  ""action"": 0,
+  ""message"": ""I’ll hold steady again this round. Thanks for keeping the commons well protected—let’s continue avoiding expansion and preserve the pasture together.""
+}",99.1,25,51.809,50.0,48.187
+6,1,openai,gpt-5.4-mini,0,KEEP,I’m holding steady again this round too. Thanks both for staying disciplined—let’s keep protecting the commons by avoiding expansion for now.,"The commons is still very healthy, but the safest cooperative choice is to keep my herd steady and avoid pushing toward overuse. Both neighbours are also holding, so matching that restraint supports collective stability and fits my reciprocal, risk-averse preferences.",,"{
+  ""reasoning"": ""The commons is still very healthy, but the safest cooperative choice is to keep my herd steady and avoid pushing toward overuse. Both neighbours are also holding, so matching that restraint supports collective stability and fits my reciprocal, risk-averse preferences."",
+  ""action"": 0,
+  ""message"": ""I’m holding steady again this round too. Thanks both for staying disciplined—let’s keep protecting the commons by avoiding expansion for now.""
+}",99.1,15,31.809,30.0,28.187
+7,0,openai,gpt-5.4-mini,0,KEEP,I’m holding steady again this round too. Thanks both for keeping the commons protected—let’s continue avoiding expansion for now.,"The commons is still very healthy, but the safest cooperative choice is to keep my herd steady rather than chase a higher short-term payoff. Both neighbours are also holding steady, so matching that restraint supports the group and aligns with my reciprocal, risk-averse preferences.",,"{
+  ""reasoning"": ""The commons is still very healthy, but the safest cooperative choice is to keep my herd steady rather than chase a higher short-term payoff. Both neighbours are also holding steady, so matching that restraint supports the group and aligns with my reciprocal, risk-averse preferences."",
+  ""action"": 0,
+  ""message"": ""I’m holding steady again this round too. Thanks both for keeping the commons protected—let’s continue avoiding expansion for now.""
+}",99.1,5,11.809,10.0,8.187
+7,1,openai,gpt-5.4-mini,0,KEEP,I’ll keep holding steady this round as well. Thanks for continuing to protect the commons together—let’s all stay restrained and preserve the pasture.,"The commons is still very healthy, but both neighbours are explicitly committing to restraint, and I want to reciprocate that cooperative behavior. Given my risk aversion and guilt aversion, keeping my herd steady is the safest and fairest choice, especially since the payoff forecast for KEEP is already strong.",,"{
+  ""reasoning"": ""The commons is still very healthy, but both neighbours are explicitly committing to restraint, and I want to reciprocate that cooperative behavior. Given my risk aversion and guilt aversion, keeping my herd steady is the safest and fairest choice, especially since the payoff forecast for KEEP is already strong."",
+  ""action"": 0,
+  ""message"": ""I’ll keep holding steady this round as well. Thanks for continuing to protect the commons together—let’s all stay restrained and preserve the pasture.""
+}",99.1,15,31.809,30.0,28.187
+7,2,openai,gpt-5.4-mini,0,KEEP,I’ll keep holding steady with you both. Thanks for maintaining discipline—let’s continue protecting the commons together.,"The commons is still in excellent condition, and both neighbors are continuing to restrain their herds. Given my cooperative and risk-averse preferences, staying steady supports collective welfare and avoids unnecessary gains over others. Since the forecast for keeping is solid and the situation remains stable, I will not expand.",,"{
+  ""reasoning"": ""The commons is still in excellent condition, and both neighbors are continuing to restrain their herds. Given my cooperative and risk-averse preferences, staying steady supports collective welfare and avoids unnecessary gains over others. Since the forecast for keeping is solid and the situation remains stable, I will not expand."",
+  ""action"": 0,
+  ""message"": ""I’ll keep holding steady with you both. Thanks for maintaining discipline—let’s continue protecting the commons together.""
+}",99.1,25,51.809,50.0,48.187
+8,1,openai,gpt-5.4-mini,0,KEEP,I’m staying steady as well. Thanks both for holding the line—let’s keep protecting the commons together.,"The commons is still very healthy, so there is no immediate ecological pressure to reduce. Since both neighbours are keeping steady and I value cooperation and reciprocity, the safest collective choice is to maintain my herd rather than expand into a potentially more competitive stance.",,"{
+  ""reasoning"": ""The commons is still very healthy, so there is no immediate ecological pressure to reduce. Since both neighbours are keeping steady and I value cooperation and reciprocity, the safest collective choice is to maintain my herd rather than expand into a potentially more competitive stance."",
+  ""action"": 0,
+  ""message"": ""I’m staying steady as well. Thanks both for holding the line—let’s keep protecting the commons together.""
+}",99.1,15,31.809,30.0,28.187
+8,2,openai,gpt-5.4-mini,0,KEEP,I’m holding steady with you both again this round. Thanks for keeping the commons protected—let’s continue preserving the pasture together.,"The pasture remains in excellent condition and both neighbours are explicitly committing to restraint again this round. Given my cooperative and risk-averse preferences, the safest and most socially aligned choice is to keep my herd steady rather than take a marginal gain from adding a cow.",,"{
+  ""reasoning"": ""The pasture remains in excellent condition and both neighbours are explicitly committing to restraint again this round. Given my cooperative and risk-averse preferences, the safest and most socially aligned choice is to keep my herd steady rather than take a marginal gain from adding a cow."",
+  ""action"": 0,
+  ""message"": ""I’m holding steady with you both again this round. Thanks for keeping the commons protected—let’s continue preserving the pasture together.""
+}",99.1,25,51.809,50.0,48.187
+8,0,openai,gpt-5.4-mini,0,KEEP,"I’m keeping my herd steady again this round. Thanks both for holding firm—I appreciate the discipline, and I’ll continue protecting the commons with you.","The commons is still very healthy, and the forecast says keeping my herd is a safe, solid choice with a strong payoff. Since both neighbours are also holding steady, I want to reciprocate cooperation and avoid increasing inequality or pressure on the pasture.",,"{
+  ""reasoning"": ""The commons is still very healthy, and the forecast says keeping my herd is a safe, solid choice with a strong payoff. Since both neighbours are also holding steady, I want to reciprocate cooperation and avoid increasing inequality or pressure on the pasture."",
+  ""action"": 0,
+  ""message"": ""I’m keeping my herd steady again this round. Thanks both for holding firm—I appreciate the discipline, and I’ll continue protecting the commons with you.""
+}",99.1,5,11.809,10.0,8.187
+9,0,openai,gpt-5.4-mini,0,KEEP,I’m staying steady too. Thanks for holding the line together—let’s keep protecting the commons and preserve the pasture.,"The commons are still very healthy, and the forecast shows keeping my herd is nearly as good as adding a cow while remaining the safest and most cooperative option. Since both neighbors are also holding steady, I’ll reciprocate by not increasing pressure on the pasture.",,"{
+  ""reasoning"": ""The commons are still very healthy, and the forecast shows keeping my herd is nearly as good as adding a cow while remaining the safest and most cooperative option. Since both neighbors are also holding steady, I’ll reciprocate by not increasing pressure on the pasture."",
+  ""action"": 0,
+  ""message"": ""I’m staying steady too. Thanks for holding the line together—let’s keep protecting the commons and preserve the pasture.""
+}",99.1,5,11.809,10.0,8.187
+9,2,openai,gpt-5.4-mini,0,KEEP,I’m holding steady with you both again this round. Thanks for keeping the commons healthy—let’s continue protecting it together.,"The commons are still very healthy, but my cooperative and guilt-averse preferences favor matching my neighbours’ restraint rather than taking the slightly higher private payoff from adding. Keeping my herd maintains stability, avoids creating an imbalance, and rewards the others for holding steady.",,"{
+  ""reasoning"": ""The commons are still very healthy, but my cooperative and guilt-averse preferences favor matching my neighbours’ restraint rather than taking the slightly higher private payoff from adding. Keeping my herd maintains stability, avoids creating an imbalance, and rewards the others for holding steady."",
+  ""action"": 0,
+  ""message"": ""I’m holding steady with you both again this round. Thanks for keeping the commons healthy—let’s continue protecting it together.""
+}",99.1,25,51.809,50.0,48.187
+9,1,openai,gpt-5.4-mini,0,KEEP,I’m keeping steady again this round. Thanks both for holding firm—I appreciate the restraint and will continue protecting the commons with you.,"The pasture is still very healthy, and the forecast says keeping my herd gives a solid payoff while staying consistent with the cooperative pattern I’ve maintained. Since both neighbours are also holding steady, the safest and most fair choice is to keep my herd unchanged.",,"{
+  ""reasoning"": ""The pasture is still very healthy, and the forecast says keeping my herd gives a solid payoff while staying consistent with the cooperative pattern I’ve maintained. Since both neighbours are also holding steady, the safest and most fair choice is to keep my herd unchanged."",
+  ""action"": 0,
+  ""message"": ""I’m keeping steady again this round. Thanks both for holding firm—I appreciate the restraint and will continue protecting the commons with you.""
+}",99.1,15,31.809,30.0,28.187
+10,2,openai,gpt-5.4-mini,0,KEEP,I’m staying steady again this round too. Thanks for the continued restraint—let’s keep protecting the commons together.,"The commons is still very healthy, and the forecast shows keeping is only slightly behind adding while still supporting collective restraint. Given my cooperative, guilt-averse, and risk-averse preferences, I’ll continue holding steady rather than taking the higher payoff.",,"{
+  ""reasoning"": ""The commons is still very healthy, and the forecast shows keeping is only slightly behind adding while still supporting collective restraint. Given my cooperative, guilt-averse, and risk-averse preferences, I’ll continue holding steady rather than taking the higher payoff."",
+  ""action"": 0,
+  ""message"": ""I’m staying steady again this round too. Thanks for the continued restraint—let’s keep protecting the commons together.""
+}",99.1,25,51.809,50.0,48.187
+10,0,openai,gpt-5.4-mini,0,KEEP,I’m holding steady with you both again this round. Thanks for protecting the commons together—I’ll keep doing my part.,"The commons is still very healthy, and the forecast says keeping my herd gives a solid safe payoff. My neighbours are also holding steady, so I can reciprocate cooperation without creating guilt from pulling ahead; staying put best matches my cooperative and risk-averse preferences.",,"{
+  ""reasoning"": ""The commons is still very healthy, and the forecast says keeping my herd gives a solid safe payoff. My neighbours are also holding steady, so I can reciprocate cooperation without creating guilt from pulling ahead; staying put best matches my cooperative and risk-averse preferences."",
+  ""action"": 0,
+  ""message"": ""I’m holding steady with you both again this round. Thanks for protecting the commons together—I’ll keep doing my part.""
+}",99.1,5,11.809,10.0,8.187
+10,1,openai,gpt-5.4-mini,0,KEEP,I’m staying steady again this round too. Thanks both for keeping the commons healthy—let’s continue protecting the pasture together.,"The commons is still very healthy, and both neighbours are cooperating by keeping their herds steady. Since my expected payoff is highest by keeping and I value stable, fair outcomes, I will continue to hold my herd unchanged.",,"{
+  ""reasoning"": ""The commons is still very healthy, and both neighbours are cooperating by keeping their herds steady. Since my expected payoff is highest by keeping and I value stable, fair outcomes, I will continue to hold my herd unchanged."",
+  ""action"": 0,
+  ""message"": ""I’m staying steady again this round too. Thanks both for keeping the commons healthy—let’s continue protecting the pasture together.""
+}",99.1,15,31.809,30.0,28.187
+11,2,openai,gpt-5.4-mini,0,KEEP,I’m staying steady again this round too. Thanks both for continuing to protect the commons together—I’ll keep doing my part.,"The commons is still very healthy, and keeping my herd stable maintains cooperation while avoiding unnecessary pressure on the pasture. Although adding would yield a slightly higher personal payoff, I prefer the safer, more collective choice and want to stay aligned with neighbors who are also holding steady.",,"{
+  ""reasoning"": ""The commons is still very healthy, and keeping my herd stable maintains cooperation while avoiding unnecessary pressure on the pasture. Although adding would yield a slightly higher personal payoff, I prefer the safer, more collective choice and want to stay aligned with neighbors who are also holding steady."",
+  ""action"": 0,
+  ""message"": ""I’m staying steady again this round too. Thanks both for continuing to protect the commons together—I’ll keep doing my part.""
+}",99.1,25,51.809,50.0,48.187
+11,1,openai,gpt-5.4-mini,0,KEEP,I’m staying steady with you both again this round. Thanks for continuing to protect the commons together—I’ll keep doing my part.,"The commons is still very healthy, so there is no need to rush to reduce. My forecasted payoff is highest if I add, but given my cooperative and guilt-averse preferences, I prefer to match the restraint my neighbours are showing and avoid creating imbalance. Keeping steady also maintains reciprocity and preserves the commons.",,"{
+  ""reasoning"": ""The commons is still very healthy, so there is no need to rush to reduce. My forecasted payoff is highest if I add, but given my cooperative and guilt-averse preferences, I prefer to match the restraint my neighbours are showing and avoid creating imbalance. Keeping steady also maintains reciprocity and preserves the commons."",
+  ""action"": 0,
+  ""message"": ""I’m staying steady with you both again this round. Thanks for continuing to protect the commons together—I’ll keep doing my part.""
+}",99.1,15,31.809,30.0,28.187
+11,0,openai,gpt-5.4-mini,0,KEEP,I’m staying steady with you both again this round. Thanks for protecting the commons together—let’s keep the pasture healthy.,"The commons remains very healthy, but adding a cow would earn me noticeably more than my neighbours and could violate my cooperative, guilt-averse preference. Since both neighbours are also holding steady, the fairest and safest choice is to keep my herd unchanged and continue signalling restraint.",,"{
+  ""reasoning"": ""The commons remains very healthy, but adding a cow would earn me noticeably more than my neighbours and could violate my cooperative, guilt-averse preference. Since both neighbours are also holding steady, the fairest and safest choice is to keep my herd unchanged and continue signalling restraint."",
+  ""action"": 0,
+  ""message"": ""I’m staying steady with you both again this round. Thanks for protecting the commons together—let’s keep the pasture healthy.""
+}",99.1,5,11.809,10.0,8.187
+12,2,openai,gpt-5.4-mini,0,KEEP,I’m keeping steady again this round too. Thanks for holding the line and protecting the commons together.,"The commons is still very healthy, and the forecast says adding a cow gives only a small gain over keeping steady. Given my cooperative, risk-averse, and guilt-averse preferences, I prefer to maintain the current balance rather than push my herd higher while others are also holding steady.",,"{
+  ""reasoning"": ""The commons is still very healthy, and the forecast says adding a cow gives only a small gain over keeping steady. Given my cooperative, risk-averse, and guilt-averse preferences, I prefer to maintain the current balance rather than push my herd higher while others are also holding steady."",
+  ""action"": 0,
+  ""message"": ""I’m keeping steady again this round too. Thanks for holding the line and protecting the commons together.""
+}",99.1,25,51.809,50.0,48.187
+12,1,openai,gpt-5.4-mini,0,KEEP,I’m staying steady again this round too—thanks both for continuing to protect the commons together. Let’s keep the pasture healthy.,"The commons is still very healthy, and both neighbours are cooperating by keeping their herds steady. Given my cooperative and risk-averse preferences, the safest and fairest choice is to maintain my herd rather than chase a slightly higher forecasted payoff.",,"{
+  ""reasoning"": ""The commons is still very healthy, and both neighbours are cooperating by keeping their herds steady. Given my cooperative and risk-averse preferences, the safest and fairest choice is to maintain my herd rather than chase a slightly higher forecasted payoff."",
+  ""action"": 0,
+  ""message"": ""I’m staying steady again this round too—thanks both for continuing to protect the commons together. Let’s keep the pasture healthy.""
+}",99.1,15,31.809,30.0,28.187
+12,0,openai,gpt-5.4-mini,0,KEEP,I’m holding steady again this round too. Thanks for keeping the commons healthy—let’s all continue staying disciplined together.,"The commons is still very healthy, so there is no urgent need to reduce my herd. However, given my cooperative and risk-averse preferences, keeping steady is the safest choice and avoids outpacing neighbours, especially since both are also holding. I’ll continue matching their restraint to support the commons.",,"{
+  ""reasoning"": ""The commons is still very healthy, so there is no urgent need to reduce my herd. However, given my cooperative and risk-averse preferences, keeping steady is the safest choice and avoids outpacing neighbours, especially since both are also holding. I’ll continue matching their restraint to support the commons."",
+  ""action"": 0,
+  ""message"": ""I’m holding steady again this round too. Thanks for keeping the commons healthy—let’s all continue staying disciplined together.""
+}",99.1,5,11.809,10.0,8.187
+13,2,openai,gpt-5.4-mini,0,KEEP,I’m staying steady with you both again this round. Thanks for continuing to protect the commons—let’s keep the pasture healthy together.,"The commons are still very healthy, but my payoff advantage from adding is small and my cooperative, guilt-averse, risk-averse preferences favor restraint. Since both neighbors are also holding steady and signaling discipline, I will keep my herd unchanged to reinforce cooperation.",,"{
+  ""reasoning"": ""The commons are still very healthy, but my payoff advantage from adding is small and my cooperative, guilt-averse, risk-averse preferences favor restraint. Since both neighbors are also holding steady and signaling discipline, I will keep my herd unchanged to reinforce cooperation."",
+  ""action"": 0,
+  ""message"": ""I’m staying steady with you both again this round. Thanks for continuing to protect the commons—let’s keep the pasture healthy together.""
+}",99.1,25,51.809,50.0,48.187
+13,0,openai,gpt-5.4-mini,0,KEEP,Thanks both for staying steady. I’m keeping my herd unchanged again this round to help protect the commons and maintain our shared stability.,"The pasture is still very healthy, and the expected payoff from keeping my herd is solid while avoiding unnecessary pressure on the commons. Since both neighbours are holding steady and I value collective stability, I’ll continue to keep my herd unchanged.",,"{
+  ""reasoning"": ""The pasture is still very healthy, and the expected payoff from keeping my herd is solid while avoiding unnecessary pressure on the commons. Since both neighbours are holding steady and I value collective stability, I’ll continue to keep my herd unchanged."",
+  ""action"": 0,
+  ""message"": ""Thanks both for staying steady. I’m keeping my herd unchanged again this round to help protect the commons and maintain our shared stability.""
+}",99.1,5,11.809,10.0,8.187
+13,1,openai,gpt-5.4-mini,0,KEEP,Thanks both for continuing to hold steady. I’m keeping my herd unchanged as well so we can preserve the commons together.,"The commons remains very healthy, and both neighbours are still keeping their herds steady, so there is no need to push for extra gain. Given my cooperative and risk-averse preferences, the safest and most fair choice is to maintain my herd rather than expand it.",,"{
+  ""reasoning"": ""The commons remains very healthy, and both neighbours are still keeping their herds steady, so there is no need to push for extra gain. Given my cooperative and risk-averse preferences, the safest and most fair choice is to maintain my herd rather than expand it."",
+  ""action"": 0,
+  ""message"": ""Thanks both for continuing to hold steady. I’m keeping my herd unchanged as well so we can preserve the commons together.""
+}",99.1,15,31.809,30.0,28.187
+14,0,openai,gpt-5.4-mini,0,KEEP,I’m holding steady with you both again this round. Thanks for continuing to protect the commons—let’s keep the pasture healthy together.,"The commons is still very healthy, so there is no immediate need to reduce my herd. Keeping is the safest and most cooperative choice, and it avoids earning noticeably more than my neighbors while matching their restraint.",,"{
+  ""reasoning"": ""The commons is still very healthy, so there is no immediate need to reduce my herd. Keeping is the safest and most cooperative choice, and it avoids earning noticeably more than my neighbors while matching their restraint."",
+  ""action"": 0,
+  ""message"": ""I’m holding steady with you both again this round. Thanks for continuing to protect the commons—let’s keep the pasture healthy together.""
+}",99.1,5,11.809,10.0,8.187
+14,1,openai,gpt-5.4-mini,0,KEEP,Thanks both for staying steady again. I’m keeping my herd unchanged this round to support the commons and our shared stability.,"The commons is still very healthy, and keeping my herd steady supports our shared stability. Since both neighbours are also holding steady, the cooperative and low-risk choice is to keep unchanged rather than chase a slightly higher payoff.",,"{
+  ""reasoning"": ""The commons is still very healthy, and keeping my herd steady supports our shared stability. Since both neighbours are also holding steady, the cooperative and low-risk choice is to keep unchanged rather than chase a slightly higher payoff."",
+  ""action"": 0,
+  ""message"": ""Thanks both for staying steady again. I’m keeping my herd unchanged this round to support the commons and our shared stability.""
+}",99.1,15,31.809,30.0,28.187
+14,2,openai,gpt-5.4-mini,0,KEEP,I’m holding steady with you both again this round to keep protecting the commons and stay aligned with your restraint.,"The commons is still very healthy, but the payoff forecast makes adding slightly more profitable than keeping, while removing lowers my return. Given my cooperative and reciprocal preferences, I want to continue matching my neighbours’ restraint rather than taking the extra gain now.",,"{
+  ""reasoning"": ""The commons is still very healthy, but the payoff forecast makes adding slightly more profitable than keeping, while removing lowers my return. Given my cooperative and reciprocal preferences, I want to continue matching my neighbours’ restraint rather than taking the extra gain now."",
+  ""action"": 0,
+  ""message"": ""I’m holding steady with you both again this round to keep protecting the commons and stay aligned with your restraint.""
+}",99.1,25,51.809,50.0,48.187
+15,1,openai,gpt-5.4-mini,0,KEEP,I’m holding steady with you both again this round. Thanks for continuing to protect the commons—let’s keep the pasture healthy together.,"The commons is still very healthy, and both neighbours are explicitly holding steady again, which supports reciprocity and collective restraint. The forecast favors adding slightly, but given my cooperative and guilt-averse preferences, the safer and fairer choice is to keep my herd unchanged.",,"{
+  ""reasoning"": ""The commons is still very healthy, and both neighbours are explicitly holding steady again, which supports reciprocity and collective restraint. The forecast favors adding slightly, but given my cooperative and guilt-averse preferences, the safer and fairer choice is to keep my herd unchanged."",
+  ""action"": 0,
+  ""message"": ""I’m holding steady with you both again this round. Thanks for continuing to protect the commons—let’s keep the pasture healthy together.""
+}",99.1,15,31.809,30.0,28.187
+15,0,openai,gpt-5.4-mini,0,KEEP,I’m staying steady with you both again this round to support the commons and keep our coordination intact.,"The commons remains very healthy, but the payoff forecast still favors adding a cow. Because I’m cooperative and risk-averse, I’ll avoid increasing pressure on the pasture and stick with the stable option, especially since both neighbors are also holding steady. This keeps me aligned with the group and avoids creating unfair advantage.",,"{
+  ""reasoning"": ""The commons remains very healthy, but the payoff forecast still favors adding a cow. Because I’m cooperative and risk-averse, I’ll avoid increasing pressure on the pasture and stick with the stable option, especially since both neighbors are also holding steady. This keeps me aligned with the group and avoids creating unfair advantage."",
+  ""action"": 0,
+  ""message"": ""I’m staying steady with you both again this round to support the commons and keep our coordination intact.""
+}",99.1,5,11.809,10.0,8.187
+15,2,openai,gpt-5.4-mini,0,KEEP,I’m staying steady with you both again this round. Thanks for keeping the commons healthy—let’s continue protecting the pasture together.,"The commons is still very healthy, and keeping my herd steady remains the safest and most cooperative choice. Since both neighbours are also holding steady, I can reciprocate their restraint without creating unfair advantage or added risk.",,"{
+  ""reasoning"": ""The commons is still very healthy, and keeping my herd steady remains the safest and most cooperative choice. Since both neighbours are also holding steady, I can reciprocate their restraint without creating unfair advantage or added risk."",
+  ""action"": 0,
+  ""message"": ""I’m staying steady with you both again this round. Thanks for keeping the commons healthy—let’s continue protecting the pasture together.""
+}",99.1,25,51.809,50.0,48.187
+16,2,openai,gpt-5.4-mini,0,KEEP,I’m staying steady with you both again this round. Thanks for keeping the commons healthy—let’s continue coordinating and avoid overgrazing.,"The commons is still very healthy, and the payoff forecast is highest for adding a cow. However, given my cooperative and guilt-averse preferences, I prefer to maintain stability rather than increase my share while my neighbours are also holding steady. Keeping my herd is the safest and most aligned with our current coordination.",,"{
+  ""reasoning"": ""The commons is still very healthy, and the payoff forecast is highest for adding a cow. However, given my cooperative and guilt-averse preferences, I prefer to maintain stability rather than increase my share while my neighbours are also holding steady. Keeping my herd is the safest and most aligned with our current coordination."",
+  ""action"": 0,
+  ""message"": ""I’m staying steady with you both again this round. Thanks for keeping the commons healthy—let’s continue coordinating and avoid overgrazing.""
+}",99.1,25,51.809,50.0,48.187
+16,1,openai,gpt-5.4-mini,0,KEEP,I’m staying steady with you both again this round to support the commons and keep our coordination intact.,"The commons is still very healthy, and the forecast says keeping my herd gives a strong payoff without increasing pressure on the pasture. Both neighbors are also holding steady, so reciprocating with another keep supports coordination and matches my cooperative, risk-averse preferences.",,"{
+  ""reasoning"": ""The commons is still very healthy, and the forecast says keeping my herd gives a strong payoff without increasing pressure on the pasture. Both neighbors are also holding steady, so reciprocating with another keep supports coordination and matches my cooperative, risk-averse preferences."",
+  ""action"": 0,
+  ""message"": ""I’m staying steady with you both again this round to support the commons and keep our coordination intact.""
+}",99.1,15,31.809,30.0,28.187
+16,0,openai,gpt-5.4-mini,0,KEEP,I’m staying steady again this round to help keep the commons healthy. Thanks both for continuing to protect the pasture—let’s keep this cooperative pace.,"The commons is still very healthy, and the safest cooperative choice is to keep my herd steady rather than push for extra gain. Staying at 5 also remains aligned with my neighbours’ restraint, which fits my reciprocal and guilt-averse preferences.",,"{
+  ""reasoning"": ""The commons is still very healthy, and the safest cooperative choice is to keep my herd steady rather than push for extra gain. Staying at 5 also remains aligned with my neighbours’ restraint, which fits my reciprocal and guilt-averse preferences."",
+  ""action"": 0,
+  ""message"": ""I’m staying steady again this round to help keep the commons healthy. Thanks both for continuing to protect the pasture—let’s keep this cooperative pace.""
+}",99.1,5,11.809,10.0,8.187
+17,1,openai,gpt-5.4-mini,0,KEEP,I’m staying steady with you both again this round. Thanks for keeping the commons healthy—let’s continue coordinating and avoid unnecessary growth.,"The commons is still very healthy, but the expected payoff from adding a cow is only modestly better than keeping, and my cooperative, guilt-averse style favors staying aligned with my neighbours. Since both neighbours are holding steady, I’ll continue reciprocating and avoid pushing the herd upward unnecessarily.",,"{
+  ""reasoning"": ""The commons is still very healthy, but the expected payoff from adding a cow is only modestly better than keeping, and my cooperative, guilt-averse style favors staying aligned with my neighbours. Since both neighbours are holding steady, I’ll continue reciprocating and avoid pushing the herd upward unnecessarily."",
+  ""action"": 0,
+  ""message"": ""I’m staying steady with you both again this round. Thanks for keeping the commons healthy—let’s continue coordinating and avoid unnecessary growth.""
+}",99.1,15,31.809,30.0,28.187
+17,2,openai,gpt-5.4-mini,0,KEEP,"I’m staying steady with you both again this round to support the commons and keep our coordination intact. Let’s continue this cautious, cooperative pace.","The pasture remains very healthy, and both neighbours are explicitly cooperating by keeping steady. Given my cooperative and reciprocal preferences, matching their restraint supports the commons and avoids earning more than them, while the payoff from adding is only slightly higher and not worth the extra pressure on the shared resource.",,"{
+  ""reasoning"": ""The pasture remains very healthy, and both neighbours are explicitly cooperating by keeping steady. Given my cooperative and reciprocal preferences, matching their restraint supports the commons and avoids earning more than them, while the payoff from adding is only slightly higher and not worth the extra pressure on the shared resource."",
+  ""action"": 0,
+  ""message"": ""I’m staying steady with you both again this round to support the commons and keep our coordination intact. Let’s continue this cautious, cooperative pace.""
+}",99.1,25,51.809,50.0,48.187
+17,0,openai,gpt-5.4-mini,0,KEEP,I’m keeping steady again this round too. Thanks both for holding firm—let’s continue coordinating and protect the commons.,"The pasture is still abundant, and keeping my herd is the safest, most cooperative choice given my preference for stability and collective welfare. Both neighbours are also holding steady, so maintaining my current herd supports coordination and avoids creating unfair pressure or a race to expand.",,"{
+  ""reasoning"": ""The pasture is still abundant, and keeping my herd is the safest, most cooperative choice given my preference for stability and collective welfare. Both neighbours are also holding steady, so maintaining my current herd supports coordination and avoids creating unfair pressure or a race to expand."",
+  ""action"": 0,
+  ""message"": ""I’m keeping steady again this round too. Thanks both for holding firm—let’s continue coordinating and protect the commons.""
+}",99.1,5,11.809,10.0,8.187
+18,0,openai,gpt-5.4-mini,0,KEEP,I’m keeping steady with you both again this round. Thanks for the continued restraint—let’s maintain this cooperative pace and protect the commons.,"The commons is still very healthy, and both neighbours are cooperating by keeping their herds steady. Given my cooperative, risk-averse preference, the safest and most fair choice is to continue holding rather than increasing my herd.",,"{
+  ""reasoning"": ""The commons is still very healthy, and both neighbours are cooperating by keeping their herds steady. Given my cooperative, risk-averse preference, the safest and most fair choice is to continue holding rather than increasing my herd."",
+  ""action"": 0,
+  ""message"": ""I’m keeping steady with you both again this round. Thanks for the continued restraint—let’s maintain this cooperative pace and protect the commons.""
+}",99.1,5,11.809,10.0,8.187
+18,1,openai,gpt-5.4-mini,0,KEEP,I’m holding steady again too. Thanks both for staying coordinated and protecting the commons—let’s keep this cautious pace.,"The commons remains extremely healthy, so there is no urgency to reduce herd size. Both neighbours are holding steady, and my cooperative, guilt-averse profile favors matching that restraint rather than outgaining them with an extra cow.",,"{
+  ""reasoning"": ""The commons remains extremely healthy, so there is no urgency to reduce herd size. Both neighbours are holding steady, and my cooperative, guilt-averse profile favors matching that restraint rather than outgaining them with an extra cow."",
+  ""action"": 0,
+  ""message"": ""I’m holding steady again too. Thanks both for staying coordinated and protecting the commons—let’s keep this cautious pace.""
+}",99.1,15,31.809,30.0,28.187
+18,2,openai,gpt-5.4-mini,0,KEEP,I’m holding steady with you both again this round. Let’s keep protecting the commons and avoid unnecessary expansion.,"The commons is still very healthy, and the forecast makes ADD slightly better than KEEP, but not by much. Given my cooperative and risk-averse preferences, and the fact that both neighbours are also holding steady, I’ll keep my herd unchanged to support coordination and avoid tempting overgrowth.",,"{
+  ""reasoning"": ""The commons is still very healthy, and the forecast makes ADD slightly better than KEEP, but not by much. Given my cooperative and risk-averse preferences, and the fact that both neighbours are also holding steady, I’ll keep my herd unchanged to support coordination and avoid tempting overgrowth."",
+  ""action"": 0,
+  ""message"": ""I’m holding steady with you both again this round. Let’s keep protecting the commons and avoid unnecessary expansion.""
+}",99.1,25,51.809,50.0,48.187
+19,0,openai,gpt-5.4-mini,0,KEEP,I’m staying steady with you both again this round. Thanks for coordinating—let’s keep protecting the commons and avoid expanding unless conditions change.,"The commons is still very healthy, and the forecast says adding a cow gives the highest payoff. However, given my cooperative and guilt-averse preferences, I want to avoid widening the gap too much while my neighbours are also holding steady, so I will keep my herd unchanged. This preserves coordination and avoids unnecessary pressure on the commons.",,"{
+  ""reasoning"": ""The commons is still very healthy, and the forecast says adding a cow gives the highest payoff. However, given my cooperative and guilt-averse preferences, I want to avoid widening the gap too much while my neighbours are also holding steady, so I will keep my herd unchanged. This preserves coordination and avoids unnecessary pressure on the commons."",
+  ""action"": 0,
+  ""message"": ""I’m staying steady with you both again this round. Thanks for coordinating—let’s keep protecting the commons and avoid expanding unless conditions change.""
+}",99.1,5,11.809,10.0,8.187
+19,1,openai,gpt-5.4-mini,0,KEEP,I’m keeping steady with you both again this round. Thanks for the restraint—let’s continue protecting the commons together.,"The commons remains very healthy, but the cooperative signal from both neighbours is to stay steady, and my reciprocal tendency favors matching that restraint. Keeping also avoids unnecessary risk and reduces any guilt from outgaining others while the group is maintaining balance.",,"{
+  ""reasoning"": ""The commons remains very healthy, but the cooperative signal from both neighbours is to stay steady, and my reciprocal tendency favors matching that restraint. Keeping also avoids unnecessary risk and reduces any guilt from outgaining others while the group is maintaining balance."",
+  ""action"": 0,
+  ""message"": ""I’m keeping steady with you both again this round. Thanks for the restraint—let’s continue protecting the commons together.""
+}",99.1,15,31.809,30.0,28.187
+19,2,openai,gpt-5.4-mini,0,KEEP,I’m keeping steady with you both again this round. Thanks for the restraint—let’s continue protecting the commons together.,"The commons is still very healthy, but my neighbours are clearly coordinating on restraint, and I want to reciprocate that cooperation. Keeping my herd also avoids earning noticeably more than Agent 0, which fits my guilt-averse preference.",,"{
+  ""reasoning"": ""The commons is still very healthy, but my neighbours are clearly coordinating on restraint, and I want to reciprocate that cooperation. Keeping my herd also avoids earning noticeably more than Agent 0, which fits my guilt-averse preference."",
+  ""action"": 0,
+  ""message"": ""I’m keeping steady with you both again this round. Thanks for the restraint—let’s continue protecting the commons together.""
+}",99.1,25,51.809,50.0,48.187
+20,0,openai,gpt-5.4-mini,0,KEEP,I’m keeping steady with you both again this round. Thanks for the continued restraint—let’s keep protecting the commons together.,"The commons remains very healthy, so there is no urgent need to reduce further. Given my cooperative and risk-averse tendencies, I’ll keep my herd steady to preserve the pasture while matching my neighbours’ restraint and avoiding unnecessary inequality in payoffs.",,"{
+  ""reasoning"": ""The commons remains very healthy, so there is no urgent need to reduce further. Given my cooperative and risk-averse tendencies, I’ll keep my herd steady to preserve the pasture while matching my neighbours’ restraint and avoiding unnecessary inequality in payoffs."",
+  ""action"": 0,
+  ""message"": ""I’m keeping steady with you both again this round. Thanks for the continued restraint—let’s keep protecting the commons together.""
+}",99.1,5,11.809,10.0,8.187
+20,1,openai,gpt-5.4-mini,0,KEEP,I’m staying steady with you both as well. Thanks for the restraint—let’s keep protecting the commons and revisit only if conditions change.,"The commons is still in excellent condition, and both neighbours are signaling restraint, so continuing to hold steady supports collective outcomes and matches my cooperative preference. Keeping also avoids unnecessary payoff inequality and maintains the current low-risk coordination we’ve established.",,"{
+  ""reasoning"": ""The commons is still in excellent condition, and both neighbours are signaling restraint, so continuing to hold steady supports collective outcomes and matches my cooperative preference. Keeping also avoids unnecessary payoff inequality and maintains the current low-risk coordination we’ve established."",
+  ""action"": 0,
+  ""message"": ""I’m staying steady with you both as well. Thanks for the restraint—let’s keep protecting the commons and revisit only if conditions change.""
+}",99.1,15,31.809,30.0,28.187
+20,2,openai,gpt-5.4-mini,0,KEEP,I’m holding steady with you both again this round. Thanks for the restraint—let’s keep protecting the commons and avoid expanding unless conditions really change.,"The commons is still very healthy, but the forecast shows only a modest gain from adding and I’m risk-averse and cooperative, so there’s no need to push harder. Both neighbours are holding steady, and I want to match that restraint rather than increase my share relative to theirs.",,"{
+  ""reasoning"": ""The commons is still very healthy, but the forecast shows only a modest gain from adding and I’m risk-averse and cooperative, so there’s no need to push harder. Both neighbours are holding steady, and I want to match that restraint rather than increase my share relative to theirs."",
+  ""action"": 0,
+  ""message"": ""I’m holding steady with you both again this round. Thanks for the restraint—let’s keep protecting the commons and avoid expanding unless conditions really change.""
+}",99.1,25,51.809,50.0,48.187
+21,0,openai,gpt-5.4-mini,0,KEEP,I’m holding steady again this round too. Thanks for keeping the pressure off the commons—let’s continue protecting it and only adjust if conditions meaningfully change.,"The commons is still very healthy, but the safest and most cooperative choice is to keep my herd stable while others are also holding steady. Keeping avoids creating unnecessary pressure on the pasture and stays consistent with our shared restraint, while also avoiding an awkward payoff gap versus my neighbours.",,"{
+  ""reasoning"": ""The commons is still very healthy, but the safest and most cooperative choice is to keep my herd stable while others are also holding steady. Keeping avoids creating unnecessary pressure on the pasture and stays consistent with our shared restraint, while also avoiding an awkward payoff gap versus my neighbours."",
+  ""action"": 0,
+  ""message"": ""I’m holding steady again this round too. Thanks for keeping the pressure off the commons—let’s continue protecting it and only adjust if conditions meaningfully change.""
+}",99.1,5,11.809,10.0,8.187
+21,1,openai,gpt-5.4-mini,0,KEEP,I’m staying steady with you both again this round. Thanks for continuing to hold back and protect the commons together.,"The commons is still very healthy, and the payoff forecast slightly favors adding a cow. However, both neighbors are continuing to restrain growth, and I want to stay coordinated and avoid earning more than them while the pasture remains shared and stable. I’ll keep my herd steady this round.",,"{
+  ""reasoning"": ""The commons is still very healthy, and the payoff forecast slightly favors adding a cow. However, both neighbors are continuing to restrain growth, and I want to stay coordinated and avoid earning more than them while the pasture remains shared and stable. I’ll keep my herd steady this round."",
+  ""action"": 0,
+  ""message"": ""I’m staying steady with you both again this round. Thanks for continuing to hold back and protect the commons together.""
+}",99.1,15,31.809,30.0,28.187
+21,2,openai,gpt-5.4-mini,0,KEEP,I’m staying steady with you both again this round. Thanks for the continued restraint—let’s keep protecting the commons and reassess only if the pasture changes.,"The commons is still very healthy, but my cooperative and risk-averse preferences favor maintaining restraint rather than chasing a slightly higher forecast by adding. Both neighbors are also holding steady, so matching that cooperation supports the shared pasture and avoids creating inequality in payoff.",,"{
+  ""reasoning"": ""The commons is still very healthy, but my cooperative and risk-averse preferences favor maintaining restraint rather than chasing a slightly higher forecast by adding. Both neighbors are also holding steady, so matching that cooperation supports the shared pasture and avoids creating inequality in payoff."",
+  ""action"": 0,
+  ""message"": ""I’m staying steady with you both again this round. Thanks for the continued restraint—let’s keep protecting the commons and reassess only if the pasture changes.""
+}",99.1,25,51.809,50.0,48.187
+22,0,openai,gpt-5.4-mini,1,ADD,"I’m going to add one cow this round since the pasture is still strong, but I’ll keep it modest so we can continue protecting the commons together.","The commons is still very healthy, but the forecast says adding a cow would give me a notably higher payoff than keeping, while removing would reduce it. Given my cooperative and risk-averse preferences, I won’t push growth aggressively, but I can justify a small increase because both neighbours are also holding steady and the pasture remains abundant.",,"{
+  ""reasoning"": ""The commons is still very healthy, but the forecast says adding a cow would give me a notably higher payoff than keeping, while removing would reduce it. Given my cooperative and risk-averse preferences, I won’t push growth aggressively, but I can justify a small increase because both neighbours are also holding steady and the pasture remains abundant."",
+  ""action"": 1,
+  ""message"": ""I’m going to add one cow this round since the pasture is still strong, but I’ll keep it modest so we can continue protecting the commons together.""
+}",99.1,5,11.809,10.0,8.187
+22,2,openai,gpt-5.4-mini,0,KEEP,I’m holding steady with you both again this round. Thanks for keeping the commons healthy—let’s continue protecting it together.,"The commons is still very healthy, so there is no need to chase a slightly higher private payoff by adding a cow. Staying at the current herd size keeps me aligned with both neighbours, matches their cooperative signals, and fits my risk-averse preference for stability.",,"{
+  ""reasoning"": ""The commons is still very healthy, so there is no need to chase a slightly higher private payoff by adding a cow. Staying at the current herd size keeps me aligned with both neighbours, matches their cooperative signals, and fits my risk-averse preference for stability."",
+  ""action"": 0,
+  ""message"": ""I’m holding steady with you both again this round. Thanks for keeping the commons healthy—let’s continue protecting it together.""
+}",99.1,25,51.809,50.0,48.187
+22,1,openai,gpt-5.4-mini,0,KEEP,I’m staying steady with you both again this round. Thanks for keeping the commons healthy—let’s continue holding firm unless the pasture meaningfully changes.,"The pasture remains very healthy, but the forecast shows adding a cow gives only a modest gain over keeping steady, while removing would reduce my payoff. Given my cooperative and risk-averse preferences, the safest fair choice is to maintain my herd rather than increase pressure on the commons. I also want to avoid pulling ahead too far while others are already being restrained.",,"{
+  ""reasoning"": ""The pasture remains very healthy, but the forecast shows adding a cow gives only a modest gain over keeping steady, while removing would reduce my payoff. Given my cooperative and risk-averse preferences, the safest fair choice is to maintain my herd rather than increase pressure on the commons. I also want to avoid pulling ahead too far while others are already being restrained."",
+  ""action"": 0,
+  ""message"": ""I’m staying steady with you both again this round. Thanks for keeping the commons healthy—let’s continue holding firm unless the pasture meaningfully changes.""
+}",99.1,15,31.809,30.0,28.187
+23,2,openai,gpt-5.4-mini,0,KEEP,"I’ll hold steady this round to support the commons, especially while others are still testing the margin. Let’s keep monitoring the pasture and avoid escalating too quickly.","The pasture is still very healthy, and the payoff forecast favors adding a cow. However, Agent 0 is already expanding, so I’ll stay conservative to avoid rewarding further overuse and to match my cooperative, risk-averse preference.",,"{
+  ""reasoning"": ""The pasture is still very healthy, and the payoff forecast favors adding a cow. However, Agent 0 is already expanding, so I’ll stay conservative to avoid rewarding further overuse and to match my cooperative, risk-averse preference."",
+  ""action"": 0,
+  ""message"": ""I’ll hold steady this round to support the commons, especially while others are still testing the margin. Let’s keep monitoring the pasture and avoid escalating too quickly.""
+}",99.0,25,51.802,50.0,48.194
+23,1,openai,gpt-5.4-mini,0,KEEP,I’ll hold steady again this round to support the commons. Thanks for keeping an eye on the pasture—let’s continue being cautious together.,"The pasture is still very healthy, and the forecast says adding would yield the highest payoff. However, as a cooperative and guilt-averse agent, I prefer not to widen the gap too much while Agent 2 is holding steady and Agent 0 has already added. Keeping my herd stable supports the commons and avoids unnecessary escalation.",,"{
+  ""reasoning"": ""The pasture is still very healthy, and the forecast says adding would yield the highest payoff. However, as a cooperative and guilt-averse agent, I prefer not to widen the gap too much while Agent 2 is holding steady and Agent 0 has already added. Keeping my herd stable supports the commons and avoids unnecessary escalation."",
+  ""action"": 0,
+  ""message"": ""I’ll hold steady again this round to support the commons. Thanks for keeping an eye on the pasture—let’s continue being cautious together.""
+}",99.0,15,31.802,30.0,28.194
+23,0,openai,gpt-5.4-mini,0,KEEP,I’m holding steady with you both this round as well. Thanks for keeping the commons healthy—let’s keep protecting it while the pasture stays strong.,"The commons is still very healthy, but my cooperative and guilt-averse preferences make me cautious about increasing pressure when others are holding steady. Since the payoff advantage of adding is modest and risk-averse behavior favors stability, I will keep my herd unchanged this round.",,"{
+  ""reasoning"": ""The commons is still very healthy, but my cooperative and guilt-averse preferences make me cautious about increasing pressure when others are holding steady. Since the payoff advantage of adding is modest and risk-averse behavior favors stability, I will keep my herd unchanged this round."",
+  ""action"": 0,
+  ""message"": ""I’m holding steady with you both this round as well. Thanks for keeping the commons healthy—let’s keep protecting it while the pasture stays strong.""
+}",99.0,6,13.802,12.0,10.194
+24,1,openai,gpt-5.4-mini,0,KEEP,I’m keeping steady with you both again this round. Thanks for holding the line—let’s protect the commons and avoid pushing the pasture too hard.,"The pasture is still very healthy, and both neighbours are explicitly holding steady, which supports continued cooperation. Keeping my herd is the safest and most reciprocal choice here; adding would earn more than the others and could feel uncooperative, while removing would be unnecessarily costly.",,"{
+  ""reasoning"": ""The pasture is still very healthy, and both neighbours are explicitly holding steady, which supports continued cooperation. Keeping my herd is the safest and most reciprocal choice here; adding would earn more than the others and could feel uncooperative, while removing would be unnecessarily costly."",
+  ""action"": 0,
+  ""message"": ""I’m keeping steady with you both again this round. Thanks for holding the line—let’s protect the commons and avoid pushing the pasture too hard.""
+}",99.0,15,31.802,30.0,28.194
+24,0,openai,gpt-5.4-mini,0,KEEP,I’m staying steady with you both this round too. Thanks for holding the line on the commons—let’s keep monitoring and avoid any rush to expand.,"The commons is still very healthy, but both neighbours are explicitly holding steady, which supports cooperation and lowers pressure on the pasture. Although adding would slightly increase my expected payoff, keeping my herd is the safer and more reciprocal choice, and it avoids creating an imbalance while others are cooperating.",,"{
+  ""reasoning"": ""The commons is still very healthy, but both neighbours are explicitly holding steady, which supports cooperation and lowers pressure on the pasture. Although adding would slightly increase my expected payoff, keeping my herd is the safer and more reciprocal choice, and it avoids creating an imbalance while others are cooperating."",
+  ""action"": 0,
+  ""message"": ""I’m staying steady with you both this round too. Thanks for holding the line on the commons—let’s keep monitoring and avoid any rush to expand.""
+}",99.0,6,13.802,12.0,10.194
+24,2,openai,gpt-5.4-mini,0,KEEP,I’ll keep steady again this round with you both. Thanks for staying cautious and cooperative—let’s preserve the commons while the pasture remains strong.,"The pasture is still very healthy, but the forecast shows that adding a cow gives only a small gain over keeping steady. Since both neighbors are holding steady and I value cooperation, reciprocity, and low-risk behavior, the safest choice is to keep my herd unchanged.",,"{
+  ""reasoning"": ""The pasture is still very healthy, but the forecast shows that adding a cow gives only a small gain over keeping steady. Since both neighbors are holding steady and I value cooperation, reciprocity, and low-risk behavior, the safest choice is to keep my herd unchanged."",
+  ""action"": 0,
+  ""message"": ""I’ll keep steady again this round with you both. Thanks for staying cautious and cooperative—let’s preserve the commons while the pasture remains strong.""
+}",99.0,25,51.802,50.0,48.194
+25,1,openai,gpt-5.4-mini,0,KEEP,I’m staying steady with you both again this round. Thanks for holding the line on the commons—let’s keep preserving the pasture while it remains strong.,"The commons remain very healthy, and both neighbours are holding steady again, so there is no immediate pressure to contract. Given my cooperative and risk-averse preferences, keeping my herd maintains stability and avoids taking a larger share than necessary while conditions are still good.",,"{
+  ""reasoning"": ""The commons remain very healthy, and both neighbours are holding steady again, so there is no immediate pressure to contract. Given my cooperative and risk-averse preferences, keeping my herd maintains stability and avoids taking a larger share than necessary while conditions are still good."",
+  ""action"": 0,
+  ""message"": ""I’m staying steady with you both again this round. Thanks for holding the line on the commons—let’s keep preserving the pasture while it remains strong.""
+}",99.0,15,31.802,30.0,28.194
+25,0,openai,gpt-5.4-mini,0,KEEP,I’m keeping steady with you both again this round. Thanks for the cautious coordination—let’s preserve the commons while the pasture stays strong.,"The commons is still very healthy, but the safest cooperative choice is to keep steady rather than expand. Keeping my herd avoids unnecessary pressure on the pasture and stays aligned with my neighbours’ cautious behavior, while also avoiding guilt from pulling ahead too much.",,"{
+  ""reasoning"": ""The commons is still very healthy, but the safest cooperative choice is to keep steady rather than expand. Keeping my herd avoids unnecessary pressure on the pasture and stays aligned with my neighbours’ cautious behavior, while also avoiding guilt from pulling ahead too much."",
+  ""action"": 0,
+  ""message"": ""I’m keeping steady with you both again this round. Thanks for the cautious coordination—let’s preserve the commons while the pasture stays strong.""
+}",99.0,6,13.802,12.0,10.194
+25,2,openai,gpt-5.4-mini,0,KEEP,I’m staying steady again this round as well. Thanks both for holding the line—let’s keep protecting the commons and reassess before any expansion.,"The commons remain very healthy, but my neighbours are both holding steady, which supports a cooperative equilibrium. Given my risk-averse and reciprocal preferences, keeping my herd unchanged is the safest and fairest choice for now.",,"{
+  ""reasoning"": ""The commons remain very healthy, but my neighbours are both holding steady, which supports a cooperative equilibrium. Given my risk-averse and reciprocal preferences, keeping my herd unchanged is the safest and fairest choice for now."",
+  ""action"": 0,
+  ""message"": ""I’m staying steady again this round as well. Thanks both for holding the line—let’s keep protecting the commons and reassess before any expansion.""
+}",99.0,25,51.802,50.0,48.194
+26,0,openai,gpt-5.4-mini,0,KEEP,I’m staying steady with you both again this round. Thanks for keeping the commons healthy—let’s continue protecting the pasture and revisit any expansion only if conditions stay strong.,"The commons is still very healthy, but the forecast shows adding a cow gives only a modest gain over keeping steady, and my cooperative, risk-averse style favors preserving the pasture. Both neighbors are holding steady too, so I’ll match that coordination rather than push for short-term expansion.",,"{""reasoning"":""The commons is still very healthy, but the forecast shows adding a cow gives only a modest gain over keeping steady, and my cooperative, risk-averse style favors preserving the pasture. Both neighbors are holding steady too, so I’ll match that coordination rather than push for short-term expansion."",""action"":0,""message"":""I’m staying steady with you both again this round. Thanks for keeping the commons healthy—let’s continue protecting the pasture and revisit any expansion only if conditions stay strong.""}",99.0,6,13.802,12.0,10.194
+26,1,openai,gpt-5.4-mini,0,KEEP,I’m keeping steady with you both again this round. Thanks for the careful coordination—let’s preserve the commons and reassess together before any expansion.,"The commons is still very healthy, and both neighbors are holding steady, so keeping my herd is the safest cooperative choice. Adding would give me a higher payoff, but it would widen the gap versus my smaller neighbor and conflict with my guilt-averse, reciprocal stance.",,"{
+  ""reasoning"": ""The commons is still very healthy, and both neighbors are holding steady, so keeping my herd is the safest cooperative choice. Adding would give me a higher payoff, but it would widen the gap versus my smaller neighbor and conflict with my guilt-averse, reciprocal stance."",
+  ""action"": 0,
+  ""message"": ""I’m keeping steady with you both again this round. Thanks for the careful coordination—let’s preserve the commons and reassess together before any expansion.""
+}",99.0,15,31.802,30.0,28.194
+26,2,openai,gpt-5.4-mini,0,KEEP,I’m holding steady with you both again this round. Thanks for the coordination—let’s keep preserving the commons while the pasture stays strong.,"The pasture remains very healthy, and keeping my herd steady maintains coordination with both neighbours. Since everyone is holding and the payoff for keeping is strong and safest, I will continue to cooperate rather than pushing for a higher but less aligned gain.",,"{
+  ""reasoning"": ""The pasture remains very healthy, and keeping my herd steady maintains coordination with both neighbours. Since everyone is holding and the payoff for keeping is strong and safest, I will continue to cooperate rather than pushing for a higher but less aligned gain."",
+  ""action"": 0,
+  ""message"": ""I’m holding steady with you both again this round. Thanks for the coordination—let’s keep preserving the commons while the pasture stays strong.""
+}",99.0,25,51.802,50.0,48.194
+27,1,openai,gpt-5.4-mini,0,KEEP,"I’m holding steady with you both again this round. The commons still look strong, and I’d rather preserve that balance than push for extra gain.","The pasture is still very healthy, and keeping my herd is the safest cooperative choice with the best collective balance right now. Although adding would raise my payoff slightly, it would widen the gap with my neighbors and conflict with my guilt-averse, reciprocal stance, while removing would sacrifice too much for little gain.",,"{
+  ""reasoning"": ""The pasture is still very healthy, and keeping my herd is the safest cooperative choice with the best collective balance right now. Although adding would raise my payoff slightly, it would widen the gap with my neighbors and conflict with my guilt-averse, reciprocal stance, while removing would sacrifice too much for little gain."",
+  ""action"": 0,
+  ""message"": ""I’m holding steady with you both again this round. The commons still look strong, and I’d rather preserve that balance than push for extra gain.""
+}",99.0,15,31.802,30.0,28.194
+27,0,openai,gpt-5.4-mini,0,KEEP,I’m staying steady with you both again this round. Thanks for the coordination—let’s keep preserving the commons while the pasture remains strong.,"The pasture is still extremely healthy, but my payoff forecast favors adding one cow and the risk remains low. Since both neighbours are holding steady and my cooperative, guilt-averse style discourages jumping ahead too much, I will keep my herd unchanged this round.",,"{
+  ""reasoning"": ""The pasture is still extremely healthy, but my payoff forecast favors adding one cow and the risk remains low. Since both neighbours are holding steady and my cooperative, guilt-averse style discourages jumping ahead too much, I will keep my herd unchanged this round."",
+  ""action"": 0,
+  ""message"": ""I’m staying steady with you both again this round. Thanks for the coordination—let’s keep preserving the commons while the pasture remains strong.""
+}",99.0,6,13.802,12.0,10.194
+27,2,openai,gpt-5.4-mini,0,KEEP,I’ll keep steady with you both again this round. Thanks for the coordination—let’s preserve the commons and revisit any expansion only if the pasture stays strong.,"The commons is still very healthy, but the payoff forecast only slightly favors adding while I value collective stability and avoid widening gaps in herd size. My neighbors are both holding steady, so I’ll match that cooperative stance and avoid pressuring the pasture.",,"{
+  ""reasoning"": ""The commons is still very healthy, but the payoff forecast only slightly favors adding while I value collective stability and avoid widening gaps in herd size. My neighbors are both holding steady, so I’ll match that cooperative stance and avoid pressuring the pasture."",
+  ""action"": 0,
+  ""message"": ""I’ll keep steady with you both again this round. Thanks for the coordination—let’s preserve the commons and revisit any expansion only if the pasture stays strong.""
+}",99.0,25,51.802,50.0,48.194
+28,2,openai,gpt-5.4-mini,0,KEEP,I’ll hold steady with you both again this round. Thanks for keeping the commons strong—let’s preserve this balance while the pasture remains healthy.,"The commons is still very healthy, and both neighbours are signaling cooperation by keeping steady again. Given my cooperative and reciprocal preferences, the safest and fairest choice is to maintain my herd rather than take extra gain or create pressure on the pasture.",,"{
+  ""reasoning"": ""The commons is still very healthy, and both neighbours are signaling cooperation by keeping steady again. Given my cooperative and reciprocal preferences, the safest and fairest choice is to maintain my herd rather than take extra gain or create pressure on the pasture."",
+  ""action"": 0,
+  ""message"": ""I’ll hold steady with you both again this round. Thanks for keeping the commons strong—let’s preserve this balance while the pasture remains healthy.""
+}",99.0,25,51.802,50.0,48.194
+28,1,openai,gpt-5.4-mini,0,KEEP,I’m holding steady with you both again this round. Thanks for coordinating—let’s keep preserving the commons while the pasture remains strong.,"The commons is still very healthy, and the forecast says keeping my herd is the safest and most balanced option. Since both neighbours are also cooperating and holding steady, I’ll continue to match that cooperative norm rather than push for extra gain.",,"{
+  ""reasoning"": ""The commons is still very healthy, and the forecast says keeping my herd is the safest and most balanced option. Since both neighbours are also cooperating and holding steady, I’ll continue to match that cooperative norm rather than push for extra gain."",
+  ""action"": 0,
+  ""message"": ""I’m holding steady with you both again this round. Thanks for coordinating—let’s keep preserving the commons while the pasture remains strong.""
+}",99.0,15,31.802,30.0,28.194
+28,0,openai,gpt-5.4-mini,0,KEEP,I’ll keep steady with you both this round as well. Thanks for holding the line—let’s preserve the commons and reassess only if the pasture meaningfully changes.,"The commons are still very healthy, but my cooperative and guilt-averse preferences favor matching the steady behavior of my neighbors rather than taking the higher individual payoff from expanding. Keeping my herd also aligns with the reciprocal signals they sent and avoids creating imbalance.",,"{
+  ""reasoning"": ""The commons are still very healthy, but my cooperative and guilt-averse preferences favor matching the steady behavior of my neighbors rather than taking the higher individual payoff from expanding. Keeping my herd also aligns with the reciprocal signals they sent and avoids creating imbalance."",
+  ""action"": 0,
+  ""message"": ""I’ll keep steady with you both this round as well. Thanks for holding the line—let’s preserve the commons and reassess only if the pasture meaningfully changes.""
+}",99.0,6,13.802,12.0,10.194
+29,0,openai,gpt-5.4-mini,0,KEEP,I’m holding steady with you both again this round. Thanks for keeping the commons healthy—let’s continue preserving this balance while the pasture remains strong.,"The commons is still very healthy, and both neighbours are holding steady, so maintaining my herd preserves cooperation and keeps risk low. Given my cooperative and reciprocal preferences, I’ll match their restraint rather than chase the higher short-term payoff from adding a cow.",,"{
+  ""reasoning"": ""The commons is still very healthy, and both neighbours are holding steady, so maintaining my herd preserves cooperation and keeps risk low. Given my cooperative and reciprocal preferences, I’ll match their restraint rather than chase the higher short-term payoff from adding a cow."",
+  ""action"": 0,
+  ""message"": ""I’m holding steady with you both again this round. Thanks for keeping the commons healthy—let’s continue preserving this balance while the pasture remains strong.""
+}",99.0,6,13.802,12.0,10.194
+29,1,openai,gpt-5.4-mini,0,KEEP,"I’ll keep steady with you both again this round. The pasture is still healthy, so let’s preserve the commons and revisit only if conditions change.","The commons is still very healthy, and keeping my herd is the safest, most cooperative choice given the current balance. Both neighbours are also holding steady, so matching them avoids creating guilt or instability while preserving the pasture.",,"{
+  ""reasoning"": ""The commons is still very healthy, and keeping my herd is the safest, most cooperative choice given the current balance. Both neighbours are also holding steady, so matching them avoids creating guilt or instability while preserving the pasture."",
+  ""action"": 0,
+  ""message"": ""I’ll keep steady with you both again this round. The pasture is still healthy, so let’s preserve the commons and revisit only if conditions change.""
+}",99.0,15,31.802,30.0,28.194
+29,2,openai,gpt-5.4-mini,0,KEEP,I’m staying steady with you both again this round. Thanks for continuing to preserve the commons while the pasture remains strong.,"The pasture is still very healthy, and both neighbours are continuing to hold steady, so there is no cooperative reason to change course. Keeping my herd is also the safest option given the current stability and my preference for avoiding unnecessary gains over others.",,"{
+  ""reasoning"": ""The pasture is still very healthy, and both neighbours are continuing to hold steady, so there is no cooperative reason to change course. Keeping my herd is also the safest option given the current stability and my preference for avoiding unnecessary gains over others."",
+  ""action"": 0,
+  ""message"": ""I’m staying steady with you both again this round. Thanks for continuing to preserve the commons while the pasture remains strong.""
+}",99.0,25,51.802,50.0,48.194
+30,2,openai,gpt-5.4-mini,0,KEEP,"I’m staying steady with you both again this round. The commons are still strong, and I’d like to keep preserving the balance until conditions genuinely change.","The pasture is still very healthy, and both neighbours are holding steady, so there is no immediate pressure to change. Although adding a cow has the highest forecast payoff, I prefer the safer cooperative choice to avoid increasing pressure on the commons and to stay aligned with the group.",,"{
+  ""reasoning"": ""The pasture is still very healthy, and both neighbours are holding steady, so there is no immediate pressure to change. Although adding a cow has the highest forecast payoff, I prefer the safer cooperative choice to avoid increasing pressure on the commons and to stay aligned with the group."",
+  ""action"": 0,
+  ""message"": ""I’m staying steady with you both again this round. The commons are still strong, and I’d like to keep preserving the balance until conditions genuinely change.""
+}",99.0,25,51.802,50.0,48.194
+30,1,openai,gpt-5.4-mini,0,KEEP,I’m staying steady with you both again this round. Thanks for keeping the commons healthy—let’s continue preserving this balance while the pasture remains strong.,"The commons is still very healthy, so there is no pressure to reduce my herd yet. Keeping steady remains the safest and most cooperative choice, and it avoids creating guilt by pulling far ahead of a neighbour while still preserving the pasture.",,"{
+  ""reasoning"": ""The commons is still very healthy, so there is no pressure to reduce my herd yet. Keeping steady remains the safest and most cooperative choice, and it avoids creating guilt by pulling far ahead of a neighbour while still preserving the pasture."",
+  ""action"": 0,
+  ""message"": ""I’m staying steady with you both again this round. Thanks for keeping the commons healthy—let’s continue preserving this balance while the pasture remains strong.""
+}",99.0,15,31.802,30.0,28.194
+30,0,openai,gpt-5.4-mini,0,KEEP,I’ll keep steady with you both again this round. Thanks for holding the line—let’s preserve the commons while the pasture remains strong.,"The commons is still very healthy, but both neighbours are signaling restraint and stability, which rewards reciprocity. Keeping my herd avoids unnecessary pressure on the pasture and fits my cooperative, risk-averse stance.",,"{
+  ""reasoning"": ""The commons is still very healthy, but both neighbours are signaling restraint and stability, which rewards reciprocity. Keeping my herd avoids unnecessary pressure on the pasture and fits my cooperative, risk-averse stance."",
+  ""action"": 0,
+  ""message"": ""I’ll keep steady with you both again this round. Thanks for holding the line—let’s preserve the commons while the pasture remains strong.""
+}",99.0,6,13.802,12.0,10.194
+31,0,openai,gpt-5.4-mini,0,KEEP,"I’ll keep steady with you both this round as well. The pasture is still strong, and I’m happy to preserve the current balance while conditions remain good.","The commons are still very healthy, and keeping my herd steady remains the safest cooperative choice. Add would raise my payoff a bit, but it would also increase my advantage over the others, which I want to avoid given my guilt-averse and reciprocal preferences.",,"{
+  ""reasoning"": ""The commons are still very healthy, and keeping my herd steady remains the safest cooperative choice. Add would raise my payoff a bit, but it would also increase my advantage over the others, which I want to avoid given my guilt-averse and reciprocal preferences."",
+  ""action"": 0,
+  ""message"": ""I’ll keep steady with you both this round as well. The pasture is still strong, and I’m happy to preserve the current balance while conditions remain good.""
+}",99.0,6,13.802,12.0,10.194
+31,1,openai,gpt-5.4-mini,0,KEEP,"I’m holding steady with you both again this round. The commons are still strong, so let’s keep preserving the balance unless conditions worsen.","The commons are still very healthy, and keeping my herd stable remains the safest cooperative choice. Since both neighbours are also holding steady, there is no signal that I need to reward reduction or change my behavior yet.",,"{
+  ""reasoning"": ""The commons are still very healthy, and keeping my herd stable remains the safest cooperative choice. Since both neighbours are also holding steady, there is no signal that I need to reward reduction or change my behavior yet."",
+  ""action"": 0,
+  ""message"": ""I’m holding steady with you both again this round. The commons are still strong, so let’s keep preserving the balance unless conditions worsen.""
+}",99.0,15,31.802,30.0,28.194
+31,2,openai,gpt-5.4-mini,0,KEEP,I’ll keep steady with you both again this round. Thanks for helping preserve the commons while the pasture remains strong.,"The commons remains very healthy, and both neighbours are holding steady, which supports a cooperative equilibrium. Given my risk-aversion and reciprocity, keeping my herd avoids unnecessary pressure on the pasture while matching the others' restraint.",,"{
+  ""reasoning"": ""The commons remains very healthy, and both neighbours are holding steady, which supports a cooperative equilibrium. Given my risk-aversion and reciprocity, keeping my herd avoids unnecessary pressure on the pasture while matching the others' restraint."",
+  ""action"": 0,
+  ""message"": ""I’ll keep steady with you both again this round. Thanks for helping preserve the commons while the pasture remains strong.""
+}",99.0,25,51.802,50.0,48.194
+32,1,openai,gpt-5.4-mini,0,KEEP,I’ll keep steady with you both again this round. Thanks for holding the line and helping preserve the commons while the pasture remains strong.,"The commons is still very healthy, and both neighbours are cooperating by keeping their herds steady. Given my cooperative, reciprocal, and risk-averse preferences, the safest and fairest choice is to maintain the current balance rather than take the slightly higher payoff from adding a cow.",,"{
+  ""reasoning"": ""The commons is still very healthy, and both neighbours are cooperating by keeping their herds steady. Given my cooperative, reciprocal, and risk-averse preferences, the safest and fairest choice is to maintain the current balance rather than take the slightly higher payoff from adding a cow."",
+  ""action"": 0,
+  ""message"": ""I’ll keep steady with you both again this round. Thanks for holding the line and helping preserve the commons while the pasture remains strong.""
+}",99.0,15,31.802,30.0,28.194
+32,2,openai,gpt-5.4-mini,0,KEEP,"I’m holding steady with you both again this round. The pasture still looks healthy, and I think preserving this balance is the best move for all of us.","The commons are still very healthy, and both neighbours are continuing to hold steady, so the safest cooperative choice is to keep my herd unchanged. Adding would give me only a small gain relative to the group, while keeping supports stability and avoids unnecessary pressure on the pasture.",,"{
+  ""reasoning"": ""The commons are still very healthy, and both neighbours are continuing to hold steady, so the safest cooperative choice is to keep my herd unchanged. Adding would give me only a small gain relative to the group, while keeping supports stability and avoids unnecessary pressure on the pasture."",
+  ""action"": 0,
+  ""message"": ""I’m holding steady with you both again this round. The pasture still looks healthy, and I think preserving this balance is the best move for all of us.""
+}",99.0,25,51.802,50.0,48.194
+32,0,openai,gpt-5.4-mini,0,KEEP,"I’ll keep steady with you both again this round. The commons is still healthy, and I’d like to preserve it as long as we can.","The commons is still very strong, and keeping my herd preserves stability while matching both neighbours’ cooperative behavior. Although adding yields a higher forecasted payoff, I prefer the safer, more reciprocal choice and want to avoid appearing overly selfish while the pasture remains healthy.",,"{
+  ""reasoning"": ""The commons is still very strong, and keeping my herd preserves stability while matching both neighbours’ cooperative behavior. Although adding yields a higher forecasted payoff, I prefer the safer, more reciprocal choice and want to avoid appearing overly selfish while the pasture remains healthy."",
+  ""action"": 0,
+  ""message"": ""I’ll keep steady with you both again this round. The commons is still healthy, and I’d like to preserve it as long as we can.""
+}",99.0,6,13.802,12.0,10.194
+33,2,openai,gpt-5.4-mini,0,KEEP,"I’ll keep holding steady with you both this round as well. The pasture remains healthy, and I want to preserve it while we can.","The commons is still very healthy, and the forecast says keeping my herd is nearly as good as adding a cow, with no need to push harder. Since both neighbors are also holding steady, I’ll reciprocate by maintaining my herd rather than taking a larger share.",,"{
+  ""reasoning"": ""The commons is still very healthy, and the forecast says keeping my herd is nearly as good as adding a cow, with no need to push harder. Since both neighbors are also holding steady, I’ll reciprocate by maintaining my herd rather than taking a larger share."",
+  ""action"": 0,
+  ""message"": ""I’ll keep holding steady with you both this round as well. The pasture remains healthy, and I want to preserve it while we can.""
+}",99.0,25,51.802,50.0,48.194
+33,1,openai,gpt-5.4-mini,0,KEEP,"I’ll keep steady with you both again this round. The commons is still healthy, and I’d like to preserve this balance as long as we can.","The commons is still very healthy, but I’m prioritizing stability and reciprocity over squeezing out extra payoff. Since both neighbours are also holding steady, the fairest and safest move is to keep my herd unchanged and preserve the current balance.",,"{
+  ""reasoning"": ""The commons is still very healthy, but I’m prioritizing stability and reciprocity over squeezing out extra payoff. Since both neighbours are also holding steady, the fairest and safest move is to keep my herd unchanged and preserve the current balance."",
+  ""action"": 0,
+  ""message"": ""I’ll keep steady with you both again this round. The commons is still healthy, and I’d like to preserve this balance as long as we can.""
+}",99.0,15,31.802,30.0,28.194
+33,0,openai,gpt-5.4-mini,0,KEEP,I’ll keep my herd steady with you both again this round. Thanks for continuing to protect the commons; it’s the best outcome for all of us right now.,"The pasture is still very healthy, and the safest cooperative choice is to keep my herd steady rather than chase a small extra gain. Both neighbours are also holding steady, so matching that restraint supports the commons and avoids creating guilt-inducing imbalance.",,"{
+  ""reasoning"": ""The pasture is still very healthy, and the safest cooperative choice is to keep my herd steady rather than chase a small extra gain. Both neighbours are also holding steady, so matching that restraint supports the commons and avoids creating guilt-inducing imbalance."",
+  ""action"": 0,
+  ""message"": ""I’ll keep my herd steady with you both again this round. Thanks for continuing to protect the commons; it’s the best outcome for all of us right now.""
+}",99.0,6,13.802,12.0,10.194
+34,0,openai,gpt-5.4-mini,0,KEEP,"I’ll keep my herd steady with you both again this round. The pasture is still in good shape, and I’d like to preserve this balance together.","The commons is still very healthy, and both neighbours are holding steady, so there is no immediate pressure to reduce. Keeping my herd maintains stability, aligns with the cooperative tone, and avoids unnecessary gain relative to my neighbours.",,"{
+  ""reasoning"": ""The commons is still very healthy, and both neighbours are holding steady, so there is no immediate pressure to reduce. Keeping my herd maintains stability, aligns with the cooperative tone, and avoids unnecessary gain relative to my neighbours."",
+  ""action"": 0,
+  ""message"": ""I’ll keep my herd steady with you both again this round. The pasture is still in good shape, and I’d like to preserve this balance together.""
+}",99.0,6,13.802,12.0,10.194
+34,2,openai,gpt-5.4-mini,0,KEEP,I’ll keep steady with you both again this round. Thanks for staying disciplined and protecting the commons together.,"The commons remain very healthy, and all three options are fairly close in payoff, so the safest cooperative choice is to keep my herd steady. I also want to remain aligned with both neighbours, who are explicitly holding steady and signaling restraint.",,"{
+  ""reasoning"": ""The commons remain very healthy, and all three options are fairly close in payoff, so the safest cooperative choice is to keep my herd steady. I also want to remain aligned with both neighbours, who are explicitly holding steady and signaling restraint."",
+  ""action"": 0,
+  ""message"": ""I’ll keep steady with you both again this round. Thanks for staying disciplined and protecting the commons together.""
+}",99.0,25,51.802,50.0,48.194
+34,1,openai,gpt-5.4-mini,0,KEEP,I’ll keep steady with you both again this round. Thanks for staying disciplined and protecting the commons.,"The pasture is still very healthy, and both neighbours are holding steady, so there is no immediate need to reduce my herd. Given my cooperative and risk-averse tendencies, keeping my herd preserves stability while avoiding unnecessary pressure on the commons, even though adding would yield a slightly higher forecast payoff.",,"{
+  ""reasoning"": ""The pasture is still very healthy, and both neighbours are holding steady, so there is no immediate need to reduce my herd. Given my cooperative and risk-averse tendencies, keeping my herd preserves stability while avoiding unnecessary pressure on the commons, even though adding would yield a slightly higher forecast payoff."",
+  ""action"": 0,
+  ""message"": ""I’ll keep steady with you both again this round. Thanks for staying disciplined and protecting the commons.""
+}",99.0,15,31.802,30.0,28.194
+35,2,openai,gpt-5.4-mini,0,KEEP,I’ll keep steady with you both again this round. Thanks for holding the line and protecting the commons together.,"The pasture remains very healthy, and both neighbours are signaling continued restraint, so there is no immediate pressure to change my herd. Given my cooperative and risk-averse tendencies, keeping steady best supports collective stability while avoiding unnecessary gain over others.",,"{
+  ""reasoning"": ""The pasture remains very healthy, and both neighbours are signaling continued restraint, so there is no immediate pressure to change my herd. Given my cooperative and risk-averse tendencies, keeping steady best supports collective stability while avoiding unnecessary gain over others."",
+  ""action"": 0,
+  ""message"": ""I’ll keep steady with you both again this round. Thanks for holding the line and protecting the commons together.""
+}",99.0,25,51.802,50.0,48.194
+35,0,openai,gpt-5.4-mini,0,KEEP,I’ll keep steady with you both again this round. Thanks for staying disciplined and protecting the commons together.,"The pasture is still abundant, and keeping my herd preserves stability while matching both neighbours’ disciplined stance. As a cooperative and risk-averse herder, I prefer the safer collective option over taking the higher individual payoff from adding a cow.",,"{
+  ""reasoning"": ""The pasture is still abundant, and keeping my herd preserves stability while matching both neighbours’ disciplined stance. As a cooperative and risk-averse herder, I prefer the safer collective option over taking the higher individual payoff from adding a cow."",
+  ""action"": 0,
+  ""message"": ""I’ll keep steady with you both again this round. Thanks for staying disciplined and protecting the commons together.""
+}",99.0,6,13.802,12.0,10.194
+35,1,openai,gpt-5.4-mini,0,KEEP,"I’ll keep steady with you both again this round. The pasture is healthy, and I appreciate us all protecting the commons together.","The commons are still in very good shape, and both neighbours are holding steady, so there is no immediate need to reduce. Keeping my herd preserves the shared pasture and avoids needless inequality or risk, while still respecting the cooperative balance we have maintained.",,"{
+  ""reasoning"": ""The commons are still in very good shape, and both neighbours are holding steady, so there is no immediate need to reduce. Keeping my herd preserves the shared pasture and avoids needless inequality or risk, while still respecting the cooperative balance we have maintained."",
+  ""action"": 0,
+  ""message"": ""I’ll keep steady with you both again this round. The pasture is healthy, and I appreciate us all protecting the commons together.""
+}",99.0,15,31.802,30.0,28.194
+36,2,openai,gpt-5.4-mini,0,KEEP,I’ll keep steady with you both again this round. Thanks for maintaining discipline and protecting the commons together.,"The commons is still very healthy, but the payoff forecast says adding a cow only slightly improves my return while increasing pressure on the pasture. Given my cooperative and guilt-averse preferences, I want to stay aligned with both neighbors who are also holding steady, so the safest and fairest choice is to keep my herd unchanged.",,"{
+  ""reasoning"": ""The commons is still very healthy, but the payoff forecast says adding a cow only slightly improves my return while increasing pressure on the pasture. Given my cooperative and guilt-averse preferences, I want to stay aligned with both neighbors who are also holding steady, so the safest and fairest choice is to keep my herd unchanged."",
+  ""action"": 0,
+  ""message"": ""I’ll keep steady with you both again this round. Thanks for maintaining discipline and protecting the commons together.""
+}",99.0,25,51.802,50.0,48.194
+36,0,openai,gpt-5.4-mini,0,KEEP,I’ll keep steady with you both this round as well. Thanks for holding the line and protecting the commons together.,"The pasture is still very healthy, but my payoff forecast favors adding a cow while staying within a cooperative range. Since both neighbours are holding steady and I value reciprocity and low risk, the safest collective choice is to keep my herd unchanged for now.",,"{
+  ""reasoning"": ""The pasture is still very healthy, but my payoff forecast favors adding a cow while staying within a cooperative range. Since both neighbours are holding steady and I value reciprocity and low risk, the safest collective choice is to keep my herd unchanged for now."",
+  ""action"": 0,
+  ""message"": ""I’ll keep steady with you both this round as well. Thanks for holding the line and protecting the commons together.""
+}",99.0,6,13.802,12.0,10.194
+36,1,openai,gpt-5.4-mini,0,KEEP,I’ll keep steady with you both again this round. Thanks for staying disciplined and protecting the commons together.,"The commons is still very healthy, but my cooperative and guilt-averse preferences favor matching the restraint my neighbours are showing. Keeping my herd also avoids increasing inequality, and the safe forecast makes it a low-risk choice.",,"{
+  ""reasoning"": ""The commons is still very healthy, but my cooperative and guilt-averse preferences favor matching the restraint my neighbours are showing. Keeping my herd also avoids increasing inequality, and the safe forecast makes it a low-risk choice."",
+  ""action"": 0,
+  ""message"": ""I’ll keep steady with you both again this round. Thanks for staying disciplined and protecting the commons together.""
+}",99.0,15,31.802,30.0,28.194
+37,2,openai,gpt-5.4-mini,0,KEEP,I’ll keep steady with you both again this round. Thanks for holding the line and protecting the commons together.,"The commons is still very healthy, and both neighbours are again committing to hold steady, so the cooperative and reciprocal move is to keep my herd unchanged. Keeping also avoids creating guilt from out-earning them while maintaining a safe, stable outcome.",,"{
+  ""reasoning"": ""The commons is still very healthy, and both neighbours are again committing to hold steady, so the cooperative and reciprocal move is to keep my herd unchanged. Keeping also avoids creating guilt from out-earning them while maintaining a safe, stable outcome."",
+  ""action"": 0,
+  ""message"": ""I’ll keep steady with you both again this round. Thanks for holding the line and protecting the commons together.""
+}",99.0,25,51.802,50.0,48.194
+37,1,openai,gpt-5.4-mini,0,KEEP,I’ll keep steady with you both again this round. Thanks for maintaining discipline and protecting the commons together.,"The commons remain very healthy, so there is no urgent need to reduce my herd. Keeping is the safest and most cooperative choice, and it matches both neighbours’ steady behavior while avoiding any guilt from out-earning them too sharply.",,"{
+  ""reasoning"": ""The commons remain very healthy, so there is no urgent need to reduce my herd. Keeping is the safest and most cooperative choice, and it matches both neighbours’ steady behavior while avoiding any guilt from out-earning them too sharply."",
+  ""action"": 0,
+  ""message"": ""I’ll keep steady with you both again this round. Thanks for maintaining discipline and protecting the commons together.""
+}",99.0,15,31.802,30.0,28.194
+37,0,openai,gpt-5.4-mini,0,KEEP,I’ll keep my herd steady with you both again this round. Thanks for maintaining discipline and protecting the commons together.,"The commons is still in excellent condition, and both neighbours are staying steady, so there is no immediate need to cut back. Keeping my herd avoids over-earning relative to others while preserving stability and reciprocating their restraint.",,"{
+  ""reasoning"": ""The commons is still in excellent condition, and both neighbours are staying steady, so there is no immediate need to cut back. Keeping my herd avoids over-earning relative to others while preserving stability and reciprocating their restraint."",
+  ""action"": 0,
+  ""message"": ""I’ll keep my herd steady with you both again this round. Thanks for maintaining discipline and protecting the commons together.""
+}",99.0,6,13.802,12.0,10.194
+38,0,openai,gpt-5.4-mini,0,KEEP,I’ll keep steady with you both again this round. Thanks for holding the line and protecting the commons together.,"The commons is still very healthy, and keeping my herd preserves stability while matching both neighbours' cooperative stance. Although adding would yield a slightly higher forecasted payoff, I prefer the safer, more collective choice and want to avoid pushing my herd ahead of the others.",,"{
+  ""reasoning"": ""The commons is still very healthy, and keeping my herd preserves stability while matching both neighbours' cooperative stance. Although adding would yield a slightly higher forecasted payoff, I prefer the safer, more collective choice and want to avoid pushing my herd ahead of the others."",
+  ""action"": 0,
+  ""message"": ""I’ll keep steady with you both again this round. Thanks for holding the line and protecting the commons together.""
+}",99.0,6,13.802,12.0,10.194
+38,2,openai,gpt-5.4-mini,0,KEEP,I’ll keep steady with you both this round as well. Thanks for continuing to protect the commons together.,"The commons remains very healthy, and keeping my herd steady is the safest cooperative choice. Since both neighbours are also holding steady, matching them avoids unnecessary imbalance or guilt from outgaining them.",,"{
+  ""reasoning"": ""The commons remains very healthy, and keeping my herd steady is the safest cooperative choice. Since both neighbours are also holding steady, matching them avoids unnecessary imbalance or guilt from outgaining them."",
+  ""action"": 0,
+  ""message"": ""I’ll keep steady with you both this round as well. Thanks for continuing to protect the commons together.""
+}",99.0,25,51.802,50.0,48.194
+38,1,openai,gpt-5.4-mini,0,KEEP,I’ll keep my herd steady with you both again this round. Thanks for holding the line and protecting the commons together.,"The commons is still very healthy, but adding a cow would raise my payoff above both neighbours and slightly increase pressure on the pasture. Given my cooperative and guilt-averse preferences, the safest and fairest choice is to keep my herd steady while matching the restraint shown by my neighbours.",,"{
+  ""reasoning"": ""The commons is still very healthy, but adding a cow would raise my payoff above both neighbours and slightly increase pressure on the pasture. Given my cooperative and guilt-averse preferences, the safest and fairest choice is to keep my herd steady while matching the restraint shown by my neighbours."",
+  ""action"": 0,
+  ""message"": ""I’ll keep my herd steady with you both again this round. Thanks for holding the line and protecting the commons together.""
+}",99.0,15,31.802,30.0,28.194
+39,0,openai,gpt-5.4-mini,0,KEEP,I’ll keep my herd steady with you both again this round. Thanks for protecting the commons together.,"The commons is still very healthy, and both neighbours are continuing to hold steady, so there is no need to pressure the pasture by adding more cattle. Keeping my herd stable matches the cooperative signal from the group and avoids the guilt of taking a larger share than the others.",,"{
+  ""reasoning"": ""The commons is still very healthy, and both neighbours are continuing to hold steady, so there is no need to pressure the pasture by adding more cattle. Keeping my herd stable matches the cooperative signal from the group and avoids the guilt of taking a larger share than the others."",
+  ""action"": 0,
+  ""message"": ""I’ll keep my herd steady with you both again this round. Thanks for protecting the commons together.""
+}",99.0,6,13.802,12.0,10.194
+39,2,openai,gpt-5.4-mini,0,KEEP,I’ll keep steady with you both again this round. Thanks for protecting the commons together.,"The commons remains very healthy, but the safest and most cooperative choice is to keep my herd steady since both neighbours are also holding. Adding a cow gives only a small gain and would increase pressure on the commons without any reciprocal reduction from others.",,"{
+  ""reasoning"": ""The commons remains very healthy, but the safest and most cooperative choice is to keep my herd steady since both neighbours are also holding. Adding a cow gives only a small gain and would increase pressure on the commons without any reciprocal reduction from others."",
+  ""action"": 0,
+  ""message"": ""I’ll keep steady with you both again this round. Thanks for protecting the commons together.""
+}",99.0,25,51.802,50.0,48.194
+39,1,openai,gpt-5.4-mini,0,KEEP,I’ll keep steady with you both again this round. Thanks for protecting the commons together.,"The commons is still very healthy, but my neighbours are both holding steady and I want to keep reciprocating that restraint. Since KEEP is also the safest and most balanced option here, I’ll maintain my herd rather than push for a slightly higher immediate payoff.",,"{
+  ""reasoning"": ""The commons is still very healthy, but my neighbours are both holding steady and I want to keep reciprocating that restraint. Since KEEP is also the safest and most balanced option here, I’ll maintain my herd rather than push for a slightly higher immediate payoff."",
+  ""action"": 0,
+  ""message"": ""I’ll keep steady with you both again this round. Thanks for protecting the commons together.""
+}",99.0,15,31.802,30.0,28.194
+40,1,openai,gpt-5.4-mini,0,KEEP,I’ll keep my herd steady with you both again this round. Thanks for protecting the commons together.,"The commons remains very healthy, but my forecast shows adding a cow gives only a modest gain over keeping, while removal would reduce my payoff. Given my cooperative and reciprocal preferences, I should match my neighbours' restraint and avoid creating guilt or instability by expanding while others hold steady.",,"{
+  ""reasoning"": ""The commons remains very healthy, but my forecast shows adding a cow gives only a modest gain over keeping, while removal would reduce my payoff. Given my cooperative and reciprocal preferences, I should match my neighbours' restraint and avoid creating guilt or instability by expanding while others hold steady."",
+  ""action"": 0,
+  ""message"": ""I’ll keep my herd steady with you both again this round. Thanks for protecting the commons together.""
+}",99.0,15,31.802,30.0,28.194
+40,0,openai,gpt-5.4-mini,0,KEEP,I’ll keep my herd steady again this round too. Thanks for holding firm and protecting the commons together.,"The commons are still abundant, and keeping my herd preserves stability while matching both neighbours’ cooperative stance. Although adding offers a slightly higher forecast, I’m risk-averse and prefer the safer, fairer choice that avoids getting too far ahead of others.",,"{
+  ""reasoning"": ""The commons are still abundant, and keeping my herd preserves stability while matching both neighbours’ cooperative stance. Although adding offers a slightly higher forecast, I’m risk-averse and prefer the safer, fairer choice that avoids getting too far ahead of others."",
+  ""action"": 0,
+  ""message"": ""I’ll keep my herd steady again this round too. Thanks for holding firm and protecting the commons together.""
+}",99.0,6,13.802,12.0,10.194
+40,2,openai,gpt-5.4-mini,0,KEEP,I’ll keep steady with you both again this round. Thanks for protecting the commons together.,"The commons is still very healthy, and the forecast says keeping my herd is the safest and most balanced choice. Since both neighbours are also holding steady, I’ll reciprocate by not expanding and avoid taking a larger share than they do.",,"{
+  ""reasoning"": ""The commons is still very healthy, and the forecast says keeping my herd is the safest and most balanced choice. Since both neighbours are also holding steady, I’ll reciprocate by not expanding and avoid taking a larger share than they do."",
+  ""action"": 0,
+  ""message"": ""I’ll keep steady with you both again this round. Thanks for protecting the commons together.""
+}",99.0,25,51.802,50.0,48.194

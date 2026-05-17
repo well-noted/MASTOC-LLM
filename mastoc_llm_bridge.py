@@ -22,6 +22,15 @@ Called from NetLogo via the `py` extension:
 
 from __future__ import annotations
 
+import sys as _sys
+# NetLogo's py extension on Windows defaults to cp1252, which can't handle the
+# Unicode characters that LLMs routinely produce (smart quotes, em-dashes, etc.).
+# Reconfigure stdout/stderr to UTF-8 so print() never crashes pyext.py.
+if hasattr(_sys.stdout, "reconfigure"):
+    _sys.stdout.reconfigure(encoding="utf-8", errors="replace")
+if hasattr(_sys.stderr, "reconfigure"):
+    _sys.stderr.reconfigure(encoding="utf-8", errors="replace")
+
 import csv
 import json
 import os
@@ -182,7 +191,11 @@ def configure(
     _close_logs()
     _init_logs(log_path)
 
-    return f"Bridge ready | run_id={_run_id} | backend={backend} | condition={condition}"
+    backends_summary = ", ".join(
+        f"agent{i}:{_agent_backends_map[i]}/{_agent_models_map[i]}"
+        for i in sorted(_agent_backends_map)
+    )
+    return f"Bridge ready | run_id={_run_id} | condition={condition} | {backends_summary}"
 
 
 def init_agent(agent_id: int) -> None:
@@ -511,7 +524,7 @@ Classify each message for Ostrom-style institutional signals. Return ONLY valid 
 def _call_llm(
     system_prompt: str,
     user_prompt: str,
-    max_tokens: int = 4000,
+    max_tokens: int = 1200,
     agent_id: int = None,
 ) -> Tuple[str, str]:
     """Dispatch to the appropriate LLM backend for this agent. Returns (response_text, reasoning)."""
@@ -586,23 +599,32 @@ def _call_llm(
         native_base = _cfg.get("ollama_base_url", "http://localhost:11434").rstrip("/")
         if native_base.endswith("/v1"):
             native_base = native_base[:-3]
-        resp = _requests.post(
-            f"{native_base}/api/chat",
-            json={
-                "model": model,
-                "messages": [
-                    {"role": "system", "content": system_prompt},
-                    {"role": "user", "content": user_prompt},
-                ],
-                "stream": True,
-                "options": {"num_predict": max_tokens},
-            },
-            stream=True,
-            timeout=300,
-        )
-        resp.raise_for_status()
+        url = f"{native_base}/api/chat"
+        tag = f"agent {agent_id}" if agent_id is not None else "institution detector"
+        print(f"[{tag}] POST {url} model={model} ...", flush=True)
+        try:
+            resp = _requests.post(
+                url,
+                json={
+                    "model": model,
+                    "messages": [
+                        {"role": "system", "content": system_prompt},
+                        {"role": "user", "content": user_prompt},
+                    ],
+                    "stream": True,
+                    "options": {"num_predict": max_tokens},
+                },
+                stream=True,
+                timeout=(15, 600),  # 15s to connect, 10min to receive first token (covers prefill)
+            )
+            resp.raise_for_status()
+        except Exception as conn_err:
+            print(f"[{tag}] CONNECTION FAILED: {conn_err}", flush=True)
+            raise
+        print(f"[{tag}] connected, streaming response...", flush=True)
         content = ""
         thinking = ""
+        token_count = 0
         for raw_line in resp.iter_lines():
             if not raw_line:
                 continue
@@ -610,20 +632,40 @@ def _call_llm(
             msg = chunk.get("message", {})
             content  += msg.get("content",  "")
             thinking += msg.get("thinking", "")
+            token_count += 1
+            if _cfg.get("verbose") and token_count % 50 == 0:
+                print(f"[{tag}] ... {token_count} chunks received so far", flush=True)
             if chunk.get("done"):
                 break
+        print(f"[{tag}] done ({token_count} chunks, {len(content)} content chars, {len(thinking)} thinking chars)", flush=True)
         return content, thinking
 
     else:
         # openai / ollama / any OpenAI-compatible endpoint
-        response = client.chat.completions.create(
-            model=model,
-            messages=[
-                {"role": "system", "content": system_prompt},
-                {"role": "user", "content": user_prompt},
-            ],
-            max_tokens=max_tokens,
-        )
+        # Newer OpenAI models (o-series, gpt-4o and later) require max_completion_tokens;
+        # older models and local OpenAI-compat endpoints (Ollama) use max_tokens.
+        # Try max_completion_tokens first and fall back if the API rejects it.
+        try:
+            response = client.chat.completions.create(
+                model=model,
+                messages=[
+                    {"role": "system", "content": system_prompt},
+                    {"role": "user", "content": user_prompt},
+                ],
+                max_completion_tokens=max_tokens,
+            )
+        except Exception as e:
+            if "max_completion_tokens" in str(e) or "unsupported_parameter" in str(e).lower():
+                response = client.chat.completions.create(
+                    model=model,
+                    messages=[
+                        {"role": "system", "content": system_prompt},
+                        {"role": "user", "content": user_prompt},
+                    ],
+                    max_tokens=max_tokens,
+                )
+            else:
+                raise
         return response.choices[0].message.content, ""
 
 

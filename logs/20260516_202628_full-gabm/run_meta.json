@@ -1,26 +1,26 @@
 {
-  "run_id": "20260516_192600_full-gabm",
+  "run_id": "20260516_202628_full-gabm",
   "condition": "full-gabm",
   "agent_models": [
     {
-      "backend": "anthropic",
-      "model": "claude-sonnet-4-6"
+      "backend": "openai",
+      "model": "gpt-5.4-mini"
     },
     {
-      "backend": "anthropic",
-      "model": "claude-sonnet-4-6"
+      "backend": "openai",
+      "model": "gpt-5.4-mini"
     },
     {
-      "backend": "anthropic",
-      "model": "claude-sonnet-4-6"
+      "backend": "openai",
+      "model": "gpt-5.4-mini"
     }
   ],
   "memory_length": 5,
-  "started_at": "2026-05-16T19:26:02.765519",
+  "started_at": "2026-05-16T20:26:31.583433",
   "experiment_params": {
     "cooperation_level": 1,
-    "fairness_concerning_me": 0,
-    "fairness_concerning_others": 1,
+    "fairness_concerning_me": 1,
+    "fairness_concerning_others": 0.5,
     "positive_reciprocity": 1,
     "negative_reciprocity": 0,
     "risk_aversion_level": 1,
