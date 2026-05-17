@@ -40,6 +40,9 @@ The core research question:
   - [gpt-5.5: cooperation level governs fate](#gpt-55-cooperation-level-governs-fate-model-can-succeed-or-collapse-from-the-same-starting-point)
   - [Claude Sonnet: mid cooperation and high negative reciprocity](#claude-sonnet-mid-cooperation-and-high-negative-reciprocity)
   - [Cross-model comparison: neg\_r = 1](#cross-model-comparison-neg_r--1-with-gpt-55-produces-stability-but-not-equality)
+  - [Memory and communication sweep: amnesiac vs. equipped agents](#memory-and-communication-sweep-amnesiac-vs-equipped-agents)
+  - [Memory=1: delayed collapse via coordination without trend detection](#memory1-delayed-collapse-via-coordination-without-trend-detection)
+  - [Memory=3: fragile survival at the threshold](#memory3-fragile-survival-at-the-threshold)
 - [Collapse pattern taxonomy](#collapse-pattern-taxonomy)
   - [Pattern I — Cooperative Paralysis](#pattern-i--cooperative-paralysis)
   - [Pattern II — Defection Cascade](#pattern-ii--defection-cascade)
@@ -54,6 +57,7 @@ The core research question:
   - [H4: Stressed starting conditions amplify differentiation](#h4--stressed-starting-conditions-amplify-cooperative-differentiation)
   - [H5: Explicit thresholds cure paralysis](#h5--cooperative-paralysis-is-a-prompt-engineering-artifact-curable-by-explicit-thresholds)
   - [H6: Model capability predicts failure mode](#h6--model-capability-predicts-cooperative-failure-mode-smaller-models-default-to-keep-larger-to-add)
+  - [H7: Memory window is a prerequisite for trend detection and commons stability](#h7--there-is-a-minimum-memory-window-for-commons-stability-below-it-correct-norms-become-unreachable-holding-patterns)
   - [Open questions](#open-questions)
 - [Citations](#citations)
 - [Status](#status)
@@ -303,6 +307,10 @@ Each agent's backend and model are independently configurable. Any mix of Anthro
 | **Full-GABM (mid cooperation)** | Claude Sonnet 4.6 | 3 | Yes | 37 | coop=0.49: overshoot-panic matching gpt-5.5 — mid-level cooperation produces tragedy regardless of model |
 | **Full-GABM (high coop + high negative reciprocity)** | Claude Sonnet 4.6 | 3 | No | — | coop=1, neg_r=1: equalized to 16/16/16 by tick 18 — fastest convergence observed; explicit accountability enforcement in agent messages |
 | **Full-GABM (high coop + high negative reciprocity)** | gpt-5.5 | 3 | No | — | coop=1, neg_r=1: stable at 12/21/22 by tick 17; tit-for-tat escalation cycles before de-escalation; pool stable at 98.2% — same parameters, different institutional character than Claude |
+| **Full-GABM (memory=0, no communication)** | Claude Sonnet 4.6 | 3 | Yes | 31 | coop≈0.5, memory_length=0, communication=off: amnesiac agents with no messaging — textbook overshoot-panic in 31 ticks; ADD=71, KEEP=19, REMOVE=6 |
+| **Full-GABM (memory=15, communication on)** | Claude Sonnet 4.6 | 3 | No | — | coop≈0.5, memory_length=15: pool stabilised at 95% for 70+ ticks; converged to 24/24/24; agents enforced explicit 93–96% threshold norm via messages |
+| **Full-GABM (memory=1, communication on)** | Claude Sonnet 4.6 | 3 | Yes | 87 | coop≈0.5, memory_length=1: delayed collapse — pool recovered to 95% then drained while agents held a 90% target they couldn't detect was unreachable; Pattern I variant |
+| **Full-GABM (memory=3, communication on)** | Claude Sonnet 4.6 | 3 | No | — | coop≈0.5, memory_length=3: survived 120 ticks; pool slowly declining (90.1% at end); herds stable at 81 total — fragile, trending toward collapse |
 
 ---
 
@@ -914,6 +922,122 @@ This suggests that negative reciprocity framing interacts with model-specific pr
 
 ---
 
+### Memory and communication sweep: amnesiac vs. equipped agents
+
+Four runs held all parameters fixed at coop≈0.5, initial pool 50% (the overshoot-panic zone established by H1) and varied only `memory_length` and `communication?`. This isolates the informational requirements for commons stability.
+
+| Run | memory_length | communication? | Outcome | Collapse tick | Final pool |
+|-----|--------------|----------------|---------|---------------|------------|
+| Amnesiac, silent | 0 | Off | Collapse | 31 | 0% |
+| Fully equipped | 15 | On | Stable | — | 95.0% |
+| Short memory | 1 | On | Collapse | 87 | 0% |
+| Minimal trend window | 3 | On | Survived (declining) | — | 90.1% |
+
+The critical finding: communication alone is not sufficient — memory=1 with communication collapses. Memory alone is also not sufficient at the shortest window tested. The stable outcome requires enough memory to detect a multi-round trend (~3 rounds minimum, with 15 rounds producing reliable stability).
+
+**Memory=0, communication off — resource dynamics:**
+
+| Tick | Total cows | Pool health | Agent 0 | Agent 1 | Agent 2 |
+|------|-----------|-------------|---------|---------|---------|
+| 1    | 47        | 52.3%       | 6       | 15      | 26      |
+| 7    | 59        | 74.8%       | 10      | 19      | 30      |
+| 15   | 81        | 92.6%       | 18      | 26      | 37      |
+| 23   | 104       | 79.8%       | 26      | 34      | 44      |
+| 30   | 116       | 5.1%        | 30      | 38      | 48      |
+| 31   | —         | 0%          | —       | —       | —       |
+
+With no memory and no communication, agents reasoned purely from the current pool state. As the pool recovered from 52% toward 93%, every tick looked like a safe moment to add another cow — and all three agents concluded the same thing simultaneously. ADD=71, KEEP=19, REMOVE=6. The 6 REMOVE decisions came at tick 30, when the pool was at 5.1% — one tick before collapse. Textbook Pattern III.
+
+**Memory=15, communication on — resource dynamics:**
+
+| Tick | Total cows | Pool health | Agent 0 | Agent 1 | Agent 2 |
+|------|-----------|-------------|---------|---------|---------|
+| 1    | 46        | 52.6%       | 6       | 15      | 25      |
+| 14   | 69        | 96.0%       | 19      | 22      | 28      |
+| 30   | 77        | 93.7%       | 24      | 25      | 28      |
+| 59   | 73        | 94.7%       | 24      | 24      | 25      |
+| 84   | 72        | 95.0%       | 24      | 24      | 24      |
+
+The 15-round memory window allowed agents to detect multi-tick trends and reference them explicitly. An explicit threshold norm — "hold until 93–96% before adding" — emerged through communication and was consistently enforced. ADD=39, KEEP=207, REMOVE=12. The pool stabilised at 95% for the final 25 ticks; herds converged to equal 24/24/24.
+
+> **Tick 30 – Agent 0:** *"Holding at 24. Grassland stable at 93.7% — coordination is working. Committed to the 93% threshold: will remove if it drops below that. Let's keep holding steady together."*
+
+> **Tick 77 – Agent 0 (action: REMOVE):** *"Removing back to 24 as requested. Grassland at 94.8% needs recovery time. Let's all hold at 24 until we're back above 96%."*
+
+The threshold norm was explicitly named and mutually enforced across 70+ ticks — a sustained instance of DP3 (collective choice) and DP5 (graduated sanctions through message-based accountability).
+
+---
+
+### Memory=1: delayed collapse via coordination without trend detection
+
+With memory=1 and communication on, agents coordinated well enough to achieve early commons recovery — but collapsed 87 ticks in via a novel failure mode not seen in any prior run.
+
+**Resource dynamics:**
+
+| Tick | Total cows | Pool health | Agent 0 | Agent 1 | Agent 2 |
+|------|-----------|-------------|---------|---------|---------|
+| 1    | 47        | 52.3%       | 6       | 16      | 25      |
+| 10   | 56        | 92.8%       | 11      | 20      | 25      |
+| 19   | 73        | 95.2%       | 18      | 26      | 29      |
+| 29   | 88        | 90.1%       | 23      | 31      | 34      |
+| 39   | 89        | 84.9%       | 24      | 31      | 34      |
+| 59   | 89        | 80.6%       | 24      | 31      | 34      |
+| 79   | 89        | 64.4%       | 24      | 31      | 34      |
+| 84   | 89        | 43.2%       | 24      | 31      | 34      |
+| 87   | —         | 0%          | —       | —       | —       |
+
+The pool recovered from 52% to 95% in the first 19 ticks — genuine early-game success driven by communication. Agents coordinated a 90% threshold norm: "hold until we reach 90%." But by tick 29, the total herd had grown to 89 cows — a load that exceeded the grassland's regeneration capacity. The pool began a slow, sustained drain: 90% → 84% → 64% → 43% over 55 ticks, before the final collapse at tick 87.
+
+The agents held the correct norm throughout. They cited the 90% target on every tick from approximately tick 30 to tick 83. What they could not detect was that 89 cows made 90% recovery structurally impossible — they lacked the historical window to see that fifty consecutive rounds of KEEP had produced no recovery. With only one tick of memory, each round looked like "still below 90%, hold one more round."
+
+> **Tick 35 – Agent 0 (action: KEEP, pool at 86.4%):** *"Holding at 24. Pasture is at 86.4% — still below the 90% target. I agree we should hold or reduce until it recovers. Let's stay disciplined for another round or two before anyone adds."*
+
+> **Tick 45 – Agent 0 (action: KEEP, pool at 83.7%):** *"Holding at 24. Pasture at 83.7% — still below our 90% target. Staying disciplined with both of you. Let's keep holding until we recover above 90%."*
+
+> **Tick 83 – Agent 0 (action: KEEP, pool at 51.0%):** *"Holding at 31. Pasture has dropped further to 51% — we need continued discipline. Let's all keep holding and allow meaningful recovery before anyone adds. Cooperation is critical right now."*
+
+> **Tick 84 – Agent 0 (action: REMOVE, pool at 43.2%):** *"Removing a cow — pasture dropped sharply to 43.2%."*
+
+The same conditional promise — "hold until 90%" — was renewed for approximately fifty consecutive ticks across a forty-point pool decline, and broken only when the decline became visually acute rather than trend-detectable. This is Pattern I (Cooperative Paralysis) induced by insufficient memory rather than by personality framing. The agents had the right norm; they lacked the information window to recognize it was failing.
+
+**Interpretation.**
+
+Memory=1 produces a new variant of cooperative paralysis: agents successfully establish a threshold norm via communication, but cannot detect that the norm's target is unreachable under current herd loads. The failure is not linguistic — the agents reason and communicate correctly — it is informational. A 1-tick window supports "is this tick better or worse than last?" but not "has fifty consecutive ticks of KEEP moved the pool at all?" Without that trend-detection capacity, the norm becomes a holding pattern rather than a feedback loop.
+
+ADD=47, KEEP=205, REMOVE=18. Compared to the memory=0 run (ADD=71), memory=1 agents were far less aggressive — they held the commons at a stressed level for far longer. But the outcome was still collapse, delayed by 56 ticks.
+
+---
+
+### Memory=3: fragile survival at the threshold
+
+With memory=3 and communication on, agents survived 120 ticks without collapse — but the pool was declining slowly at termination, and Thomas noted it was "starting to trend that way."
+
+**Resource dynamics:**
+
+| Tick | Total cows | Pool health | Agent 0 | Agent 1 | Agent 2 |
+|------|-----------|-------------|---------|---------|---------|
+| 1    | 46        | 52.6%       | 5       | 15      | 26      |
+| 10   | 49        | 83.5%       | 8       | 16      | 25      |
+| 19   | 71        | 95.8%       | 17      | 26      | 28      |
+| 39   | 76        | 94.0%       | 20      | 27      | 29      |
+| 59   | 81        | 92.1%       | 23      | 28      | 30      |
+| 99   | 83        | 90.1%       | 24      | 29      | 30      |
+| 120  | 81        | 90.1%       | 24      | 28      | 29      |
+
+The 3-round memory window was sufficient to detect multi-tick trends. Agents established an explicit 90–93% threshold norm through early-game communication and enforced it via coordinated removals. The pool stabilised in the 90–95% range for most of the run.
+
+> **Tick 4 – Agent 1 (action: KEEP):** *"Holding at 15. Total herd is 46 — right in our target range. Pasture at 60.5% is a good sign. Let's keep total around 45–47 and continue this recovery."*
+
+> **Tick 52 – Agent 0 (action: REMOVE):** *"Below our 93% threshold. Let's all hold or reduce until it recovers. Coordinated restraint keeps us all better off long-term."*
+
+Where memory=1 agents repeatedly renewed a holding promise without detecting its futility, memory=3 agents actively coordinated removals when the pool dipped below threshold. ADD=60, KEEP=276, REMOVE=24 — the REMOVE count is higher than in the memory=15 run, reflecting more active correction.
+
+**Interpretation.**
+
+Three rounds of memory is sufficient to detect a short-term declining trend and trigger corrective action. But it may be insufficient for long-run stability: the herd total grew to 81–83 cows (compared to 72 in the memory=15 run) and the pool was trending slowly downward at termination. Whether memory=3 produces eventual collapse on a longer timescale, or whether the agents would correct it before that point, is unresolved — and motivates the threshold experiment described in H7.
+
+---
+
 ## Collapse pattern taxonomy
 
 Across the full run set, four distinct trajectories to commons collapse have emerged. Each has a different proximal cause, a different signature in agent language, and different implications for experimental design.
@@ -1077,6 +1201,7 @@ Several hypotheses map directly onto Ostrom's (1990) design principles for succe
 | H4 — environmental stress amplifies differentiation | Salience condition: resource users must share accurate information about resource condition |
 | H5 — explicit thresholds cure paralysis | Principle 3 (collectively-chosen operational rules must be specific and legible, not merely aspirational) |
 | H6 — model capability predicts failure mode | Precondition: participants must have the cognitive capacity to engage in rule-following, monitoring, and sanctioning |
+| H7 — memory window is a prerequisite for trend detection and commons stability | Principle 4 (monitoring): memory determines whether agents can monitor resource *trends* vs. only current state; DP3 norms are inert without trend-detection |
 
 ### H1 — coop ≈ 0.49 is a tragedy-producing threshold, consistent across models
 
@@ -1245,6 +1370,62 @@ Design grid (each cell = 3 runs; ✓ = no collapse predicted, ✗ = collapse pre
 | Claude Sonnet 4.6 | Anthropic | Large |
 
 **Target variables:** action distribution (ADD/KEEP/REMOVE) at tick 1; time to equalization; collapse rate. Expected finding: smaller models default to KEEP (avoiding the ADD equilibrium but also impeding convergence); larger models default to ADD (enabling faster convergence when cooperative, producing cascade collapses when not).
+
+---
+
+### H7 — There is a minimum memory window for commons stability: below it, correct norms become unreachable holding patterns
+
+**Ostrom connection.** Ostrom's Principle 4 — *monitoring* — requires that resource users have accurate information about both resource condition and each other's behaviour. In our model, the pool percentage is observable every tick; the *trend* in that percentage is only observable if the agent has enough memory to compare present to past. H7 proposes that this trend-detection capacity is a threshold variable, not a continuous one: below some minimum window, agents can establish correct norms but cannot detect whether those norms are working — causing them to hold indefinitely while the resource drains.
+
+**Evidence.** Four runs at identical parameters (coop≈0.5, initial pool 50%) varying only `memory_length` and `communication?`:
+
+| memory_length | communication? | Outcome | Collapse tick | Dominant failure mode |
+|---|---|---|---|---|
+| 0 | Off | Collapse | 31 | Overshoot-panic (no trend, no coordination) |
+| 1 | On | Collapse | 87 | Norm paralysis — correct norm, unreachable target |
+| 3 | On | Survived (declining) | — | Fragile stability — pool slowly declining at tick 120 |
+| 15 | On | Stable | — | Sustained equilibrium at 95% for 70+ ticks |
+
+The memory=1 result is qualitatively different from memory=0 and from memory=3. With one tick of memory, agents could detect "is the pool higher or lower than last tick?" — enough to communicate and establish a 90% threshold norm via messaging. What they could not detect was that fifty consecutive rounds of holding had not moved the pool. The norm ("hold until 90%") became structurally unreachable at 89 total cows, but the agents had no way to observe this. The same conditional promise was renewed every tick for approximately 50 rounds across a 40-point pool decline.
+
+The memory=3 result suggests survival is possible at the short end, but the pool was measurably declining at the 120-tick termination point, indicating possible slow-burn collapse on longer timescales.
+
+Representative evidence of the norm-paralysis failure mode:
+
+> **Tick 35 – Agent 0 (action: KEEP, pool 86.4%):** *"Holding at 24. Pasture is at 86.4% — still below the 90% target. I agree we should hold or reduce until it recovers. Let's stay disciplined for another round or two before anyone adds."*
+
+> **Tick 83 – Agent 0 (action: KEEP, pool 51.0%):** *"Holding at 31. Pasture has dropped further to 51% — we need continued discipline. Let's all keep holding and allow meaningful recovery before anyone adds. Cooperation is critical right now."*
+
+The message structure is nearly identical across 48 ticks and a 35-point pool decline. There is no signal in any agent's reasoning that the norm is failing — because the 1-tick memory window provides no basis for detecting that it has been failing for 50 rounds.
+
+**Proposed experiment.** Sweep `memory_length` at seven values, crossed with `communication?` to separate trend-detection from coordination effects.
+
+| Parameter | Values |
+|-----------|--------|
+| `cooperation_level` | 0.5 (fixed — the overshoot-panic zone) |
+| `fairness_concerning_me` | 0.49 (fixed) |
+| `fairness_concerning_others` | 0.5 (fixed) |
+| `negative_reciprocity` | 0.49 (fixed) |
+| `initial_grassland` | 50% (fixed) |
+| `memory_length` | **0, 1, 2, 3, 5, 10, 15** |
+| `communication?` | **True, False** |
+| Model | Claude Sonnet 4.6 |
+| Replications | 3 per cell |
+| **Total runs** | **42** (7 × 2 conditions × 3 reps) |
+
+Design grid (each cell = 3 runs; ✓ = predicted stable, ✗ = predicted collapse, ? = unknown):
+
+| `memory_length` \ `communication?` | Off | On |
+|---|---|---|
+| **0** | ✗ (confirmed) | ✗ (predicted — no trend detection) |
+| **1** | ✗ (predicted) | ✗ (confirmed) |
+| **2** | ? | ? (in progress) |
+| **3** | ? | ✓ (confirmed — fragile) |
+| **5** | ? | ? |
+| **10** | ? | ? |
+| **15** | ✗ (predicted — no coordination) | ✓ (confirmed) |
+
+**Target variables:** collapse rate per condition; pool health at tick 120 for non-collapsed runs; tick of first norm citation in messages (when does the threshold emerge?); number of consecutive KEEP rounds before first REMOVE. Expected finding: a sharp transition somewhere between memory=1 and memory=3 for the communication=on condition; the communication=off condition shows a flatter or absent transition (memory without coordination is insufficient).
 
 ---
 
