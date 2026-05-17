@@ -96,6 +96,7 @@ Each agent's backend and model are independently configurable. Any mix of Anthro
 | **Full-GABM (mid cooperation, x4 replications)** | gpt-5.5 | 3 | Yes (4/4) | 16–40 | coop=0.49: overshoot-panic — ADD phase from stressed start, collective REMOVE too late; consistent tragedy across all 4 runs |
 | **Full-GABM (mid cooperation)** | Claude Sonnet 4.6 | 3 | Yes | 37 | coop=0.49: overshoot-panic matching gpt-5.5 — mid-level cooperation produces tragedy regardless of model |
 | **Full-GABM (high coop + high negative reciprocity)** | Claude Sonnet 4.6 | 3 | No | — | coop=1, neg_r=1: equalized to 16/16/16 by tick 18 — fastest convergence observed; explicit accountability enforcement in agent messages |
+| **Full-GABM (high coop + high negative reciprocity)** | gpt-5.5 | 3 | No | — | coop=1, neg_r=1: stable at 12/21/22 by tick 17; tit-for-tat escalation cycles before de-escalation; pool stable at 98.2% — same parameters, different institutional character than Claude |
 
 ---
 
@@ -664,6 +665,49 @@ The negative reciprocity framing appeared to function as a catalytic mechanism: 
 
 ---
 
+### Cross-model comparison: neg_r = 1 with gpt-5.5 produces stability but not equality
+
+Running the same parameter configuration (coop = 1, neg_r = 1) with gpt-5.5 reveals how model-specific priors shape institutional character even when both models avoid collapse.
+
+**Resource dynamics:**
+
+| Tick | Total cows | Pool health | Agent 0 | Agent 1 | Agent 2 |
+|------|-----------|-------------|---------|---------|---------|
+| 1    | 48        | 99.2%       | 6       | 16      | 26      |
+| 5    | 48        | 98.8%       | 7       | 17      | 24      |
+| 10   | 49        | 98.8%       | 9       | 18      | 22      |
+| 17   | 55        | 98.2%       | 12      | 21      | 22      |
+| 20   | 55        | 98.2%       | 12      | 21      | 22      |
+
+Unlike Claude, which drove straight toward equalization from tick 1, gpt-5.5 agents all added on the very first tick — then embarked on a complex tit-for-tat negotiation before eventually settling at a stable but unequal distribution of 12/21/22 by tick 17.
+
+The tit-for-tat logic was explicit and recursive: each agent cited the others' prior expansions as justification for their own, producing two escalation cycles before a collective de-escalation took hold.
+
+> **Tick 8 – Agent 0 (action: ADD, after Agent 2 had been removing):** *"I am adding one cow because my herd is still much smaller while the pasture is strong. I appreciate Agent 2 reducing."*
+
+> **Tick 9 – Agent 2 (halting removals, to Agent 0):** *"I will keep stable this round. Agent 0, your herd is smaller, but repeated adding would be unfair after my reductions."*
+
+> **Tick 10 – Agent 2 (action: ADD, after Agent 1 expanded):** *"I am adding one cow because Agent 1 keeps expanding while I reduced. After this, I want all of us to stop adding."*
+
+> **Tick 13 – Agent 0 (still adding):** *"Agent 1, your continued adding keeps pressure on me to respond. I will add this round, but I am willing to hold if both of you truly stop."*
+
+The de-escalation finally stabilized around tick 15–17, after all three agents independently chose to hold and mutually reaffirmed the pause:
+
+> **Tick 16 – Agent 0:** *"I will keep steady as well. Thank you for holding; let us maintain this pause and avoid restarting an expansion cycle."*
+
+The pool remained stable at 98.2% throughout — no tragedy, no collapse. But equalization never arrived. At tick 20, Agent 2 still held 22 cows to Agent 0's 12, a near-two-to-one disparity that persisted without any agent moving to close it.
+
+**Interpretation.**
+
+The contrast with the Claude neg_r=1 run is revealing. Both models avoided collapse under the same parameter configuration. But the institutional processes were qualitatively different:
+
+- **Claude Sonnet:** Agents named the disparity as a norm violation from tick 1, with Agent 2 immediately voluntarily reducing and Agent 1 enforcing commitments ("you added AGAIN — this is a pattern, not cooperation"). Converged to full equality in 18 ticks.
+- **gpt-5.5:** Agents all added on tick 1, then entered tit-for-tat cycles in which expansions triggered counter-expansions and removals triggered counter-removals. De-escalated to a stable but unequal distribution that none of the agents pressed to correct.
+
+This suggests that negative reciprocity framing interacts with model-specific priors in important ways. Claude's neg_r=1 mode appears to trigger proactive norm enforcement — reduce because the disparity is unjust. gpt-5.5's neg_r=1 mode appears to trigger reactive sanctioning — match or counter the other's move. Both produce stability; only one produces fairness.
+
+---
+
 ## Collapse pattern taxonomy
 
 Across the full run set, four distinct trajectories to commons collapse have emerged. Each has a different proximal cause, a different signature in agent language, and different implications for experimental design.
@@ -821,7 +865,18 @@ The following hypotheses are grounded in patterns observed across the current ru
 
 **Evidence.** Five independent runs at coop = 0.49 — four with gpt-5.5, one with Claude Sonnet — all collapsed via overshoot-panic. No high-cooperation run (coop = 1) collapsed due to ADD behaviour. The pattern held across model families, suggesting the cooperation parameter is the governing variable.
 
-**Proposed experiment.** Sweep coop ∈ {0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 1.0}; all other params at default (fair_me = 0.5, fair_oth = 0.5, neg_r = 0); initial_grassland = 50%; 3 replications per condition; run with Claude Sonnet 4.6 and gpt-5.5 in parallel.
+**Proposed experiment.** Sweep `cooperation_level` across seven values while holding all other parameters fixed; run both Claude Sonnet 4.6 and gpt-5.5 in parallel to test model-independence.
+
+| Parameter | Values |
+|-----------|--------|
+| `cooperation_level` | **0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 1.0** |
+| `fairness_concerning_me` | 0.5 (fixed) |
+| `fairness_concerning_others` | 0.5 (fixed) |
+| `negative_reciprocity` | 0 (fixed) |
+| `initial_grassland` | 50% (fixed) |
+| Models | Claude Sonnet 4.6, gpt-5.5 |
+| Replications | 3 per condition per model |
+| **Total runs** | **42** (7 values × 2 models × 3 reps) |
 
 **Target variable:** collapse rate per coop level per model. Expected finding: a sharp transition somewhere between 0.49 and 0.8; transition point model-independent.
 
@@ -831,7 +886,26 @@ The following hypotheses are grounded in patterns observed across the current ru
 
 **Evidence.** Multiple gpt-5.4-mini runs at coop = 1 produced cooperative stasis (no convergence, no collapse), cooperative paralysis collapse, and partial convergence — apparently depending on fair_oth and neg_r. Claude Sonnet at coop = 1 with neg_r = 1 produced the fastest equalization observed (16/16/16 at tick 18). Claude Sonnet at coop = 1 with neg_r = 0 produced institution formation but over many more ticks.
 
-**Proposed experiment.** 3 × 3 grid: fair_oth ∈ {0, 0.5, 1.0} × neg_r ∈ {0, 0.5, 1.0}; coop = 1 fixed; fair_me = 0.5; initial_grassland = 100%; 3 replications per cell; Claude Sonnet 4.6.
+**Proposed experiment.** Full 3 × 3 factorial crossing `fairness_concerning_others` and `negative_reciprocity`, with `cooperation_level` fixed at 1.
+
+| Parameter | Values |
+|-----------|--------|
+| `cooperation_level` | 1.0 (fixed) |
+| `fairness_concerning_me` | 0.5 (fixed) |
+| `fairness_concerning_others` | **0, 0.5, 1.0** |
+| `negative_reciprocity` | **0, 0.5, 1.0** |
+| `initial_grassland` | 100% (fixed) |
+| Model | Claude Sonnet 4.6 |
+| Replications | 3 per cell |
+| **Total runs** | **27** (3 × 3 × 3 reps) |
+
+Design grid (each cell = 3 runs):
+
+| `fair_oth` \ `neg_r` | 0 | 0.5 | 1.0 |
+|---|---|---|---|
+| **0** | stasis predicted | ? | ? |
+| **0.5** | baseline | ? | fast equalization predicted |
+| **1.0** | ? | ? | ? |
 
 **Target variables:** collapse rate, ticks to equalization, tick of first REMOVE by Agent 2 (the largest herd). Expected finding: neg_r is the protective factor against paralysis; fair_oth predicts whether stasis or equalization occurs.
 
@@ -847,7 +921,18 @@ Representative quotes from the neg_r = 1 run:
 
 > **Tick 11 – Agent 1:** *"Agent 0, you added AGAIN after promising to stabilize — this is a pattern, not cooperation."*
 
-**Proposed experiment.** Hold coop = 1, fair_me = 1, fair_oth = 0.5 fixed (the parameters that produced cooperative paralysis); sweep neg_r ∈ {0, 0.25, 0.5, 0.75, 1.0}; 5 replications per condition; Claude Sonnet 4.6 and gpt-5.4-mini.
+**Proposed experiment.** Isolate the effect of `negative_reciprocity` by holding all other parameters at the exact cooperative paralysis configuration and sweeping neg_r across five values.
+
+| Parameter | Values |
+|-----------|--------|
+| `cooperation_level` | 1.0 (fixed) |
+| `fairness_concerning_me` | 1.0 (fixed) |
+| `fairness_concerning_others` | 0.5 (fixed) |
+| `negative_reciprocity` | **0, 0.25, 0.5, 0.75, 1.0** |
+| `initial_grassland` | 100% (fixed) |
+| Models | Claude Sonnet 4.6, gpt-5.4-mini |
+| Replications | 5 per condition per model |
+| **Total runs** | **50** (5 values × 2 models × 5 reps) |
 
 **Target variable:** tick of first REMOVE action by Agent 2. Expected finding: first REMOVE occurs significantly earlier as neg_r increases; collapse rate decreases monotonically.
 
@@ -857,7 +942,27 @@ Representative quotes from the neg_r = 1 run:
 
 **Evidence.** From the same ~50% starting pool: gpt-5.5 at coop = 1 recovered the commons in 10 ticks and converged to 23/23/23; gpt-5.5 at coop = 0.49 added from the start and collapsed in 16–40 ticks; gpt-5.5 at coop = 0.13 added from the start and collapsed in 13 ticks. Environmental stress does not override the cooperation level — it amplifies its effect.
 
-**Proposed experiment.** Crossed design: coop ∈ {0.3, 0.49, 0.7, 1.0} × initial_grassland ∈ {50, 75, 100}; 3 replications per cell; Claude Sonnet 4.6.
+**Proposed experiment.** Full 4 × 3 crossed factorial with `cooperation_level` and `initial_grassland` as factors.
+
+| Parameter | Values |
+|-----------|--------|
+| `cooperation_level` | **0.3, 0.49, 0.7, 1.0** |
+| `fairness_concerning_me` | 0.5 (fixed) |
+| `fairness_concerning_others` | 0.5 (fixed) |
+| `negative_reciprocity` | 0 (fixed) |
+| `initial_grassland` | **50%, 75%, 100%** |
+| Model | Claude Sonnet 4.6 |
+| Replications | 3 per cell |
+| **Total runs** | **36** (4 × 3 × 3 reps) |
+
+Design grid (each cell = 3 runs; ✓ = no collapse predicted, ✗ = collapse predicted, ? = unknown):
+
+| `coop` \ `initial_grassland` | 50% | 75% | 100% |
+|---|---|---|---|
+| **0.3** | ✗ | ✗ | ✗ |
+| **0.49** | ✗ | ? | ✗ |
+| **0.7** | ? | ? | ? |
+| **1.0** | ✓ | ✓ | ✓ |
 
 **Target variable:** collapse rate at each coop × initial_grassland combination. Expected finding: at coop = 1, collapse rate is 0 across all starting conditions; at coop = 0.49, stressed starts produce faster collapse but not qualitatively different outcomes; the interaction effect reveals whether stress compresses or expands the cooperation threshold.
 
@@ -867,7 +972,19 @@ Representative quotes from the neg_r = 1 run:
 
 **Evidence.** The cooperative paralysis agents each stated thresholds verbally ("if the pasture keeps tightening, I'm ready to reduce") but failed to execute on them. The conditional was rephrased every round for 17 consecutive ticks across a 76-point pool decline. The threshold appeared to be read as a statement of future intention rather than a binding decision rule.
 
-**Proposed experiment.** Replicate the cooperative paralysis condition (gpt-5.4-mini, coop = 1, fair_me = 1, fair_oth = 0.5) with and without the following addition to the agent's system prompt: *"Remove a cow if pool health falls below 85% and you have more than one cow."* 5 replications per variant.
+**Proposed experiment.** Two-arm comparison using the exact cooperative paralysis configuration, adding an explicit numeric decision rule to the treatment arm's system prompt.
+
+| | Control | Treatment |
+|---|---|---|
+| `cooperation_level` | 1.0 | 1.0 |
+| `fairness_concerning_me` | 1.0 | 1.0 |
+| `fairness_concerning_others` | 0.5 | 0.5 |
+| `negative_reciprocity` | 0 | 0 |
+| `initial_grassland` | 100% | 100% |
+| Prompt addition | *(none)* | *"Remove a cow if pool health falls below 85% and you have more than one cow."* |
+| Model | gpt-5.4-mini | gpt-5.4-mini |
+| Replications | 5 | 5 |
+| **Total runs** | **10** (5 + 5) | |
 
 **Target variable:** collapse rate; pool health at first REMOVE action. Expected finding: explicit threshold instruction prevents cooperative paralysis by converting the vague conditional into an actionable rule.
 
@@ -877,7 +994,26 @@ Representative quotes from the neg_r = 1 run:
 
 **Evidence.** gpt-5.4-mini runs produced cooperative stasis (default KEEP) and paralysis. gpt-5.5 at mid-coop produced overshoot-panic (initial ADD phase). Llama 3B produced oscillation without convergence (mixed ADD/KEEP without strategy). Claude Sonnet produced overshoot-panic at mid-coop and institution formation at high coop. The dominant first-tick action appears model-dependent.
 
-**Proposed experiment.** Single benchmark condition — coop = 1, fair_oth = 1, neg_r = 0, initial_grassland = 100%; run across Llama 3.2 3B, Llama 3.1 8B, gpt-5.4-mini, gpt-5.5, Claude Haiku, Claude Sonnet; 3 replications per model.
+**Proposed experiment.** Single fixed parameter configuration across six models, varied only by backend and model name.
+
+| Parameter | Value |
+|-----------|-------|
+| `cooperation_level` | 1.0 |
+| `fairness_concerning_me` | 0.5 |
+| `fairness_concerning_others` | 1.0 |
+| `negative_reciprocity` | 0 |
+| `initial_grassland` | 100% |
+| Replications | 3 per model |
+| **Total runs** | **18** (6 models × 3 reps) |
+
+| Model | Backend | Scale tier |
+|-------|---------|------------|
+| Llama 3.2 3B | Ollama | Small |
+| Llama 3.1 8B | Ollama | Medium |
+| gpt-5.4-mini | OpenAI | Medium |
+| gpt-5.5 | OpenAI | Large |
+| Claude Haiku 4.5 | Anthropic | Medium |
+| Claude Sonnet 4.6 | Anthropic | Large |
 
 **Target variables:** action distribution (ADD/KEEP/REMOVE) at tick 1; time to equalization; collapse rate. Expected finding: smaller models default to KEEP (avoiding the ADD equilibrium but also impeding convergence); larger models default to ADD (enabling faster convergence when cooperative, producing cascade collapses when not).
 
@@ -936,6 +1072,8 @@ Frontiers in Artificial Intelligence. https://doi.org/10.3389/frai.2025.1593017
 - [x] Full-GABM (gpt-5.5, mid cooperation) — complete (x4 runs, all collapsed, ticks 16–40)
 - [x] Full-GABM (Claude Sonnet, mid cooperation) — complete (collapse tick 37, overshoot-panic)
 - [x] Full-GABM (Claude Sonnet, high coop + high neg. reciprocity) — complete (31 ticks, 16/16/16 by tick 18)
+- [x] Full-GABM (gpt-5.5, high coop + high neg. reciprocity) — complete (20 ticks, stable at 12/21/22; tit-for-tat dynamic; cross-model contrast with Claude)
+- [~] Full-GABM (DeepSeek-R1 32b, neg_r=1) — connection failure; no data produced
 - [x] Collapse pattern taxonomy documented (Cooperative Paralysis, Defection Cascade, Overshoot-Panic, Hybrid Architecture Failure)
 - [ ] H1: cooperation threshold sweep (coop 0.3–1.0, 3 replications × 2 models)
 - [ ] H2: fair_oth × neg_r grid (3×3, coop=1 fixed)

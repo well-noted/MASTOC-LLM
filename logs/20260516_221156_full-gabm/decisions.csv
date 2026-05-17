@@ -1,0 +1,297 @@
+tick,agent_id,backend,model,action,action_name,message,reasoning,thinking,raw_response,pool_pct,own_herd,payoff_add,payoff_keep,payoff_remove
+1,0,openai,gpt-5.5,1,ADD,"I will add one cow while the grass is abundant, but I ask everyone to avoid rapid expansion so we keep the commons healthy and fair.","The pasture is still fully healthy, and adding one cow gives the best payoff while only slightly increasing pressure on the commons. Since my herd is far smaller than my neighbours' and no one expanded last round, a modest increase is fair without being punitive.",,"{
+  ""reasoning"": ""The pasture is still fully healthy, and adding one cow gives the best payoff while only slightly increasing pressure on the commons. Since my herd is far smaller than my neighbours' and no one expanded last round, a modest increase is fair without being punitive."",
+  ""action"": 1,
+  ""message"": ""I will add one cow while the grass is abundant, but I ask everyone to avoid rapid expansion so we keep the commons healthy and fair.""
+}",100.0,5,11.832,10.0,8.163
+1,1,openai,gpt-5.5,1,ADD,"Grass is healthy now, but let’s avoid a race to expand. I matched expansion this round; please keep or reduce next round so the commons stays productive.","The pasture is currently full, so adding one cow has the best immediate payoff and low short-term ecological risk. Since Agent 0 expanded, I will not let my position weaken relative to neighbours, but I will signal that continued expansion should stop.",,"{
+  ""reasoning"": ""The pasture is currently full, so adding one cow has the best immediate payoff and low short-term ecological risk. Since Agent 0 expanded, I will not let my position weaken relative to neighbours, but I will signal that continued expansion should stop."",
+  ""action"": 1,
+  ""message"": ""Grass is healthy now, but let’s avoid a race to expand. I matched expansion this round; please keep or reduce next round so the commons stays productive.""
+}",100.0,15,31.832,30.0,28.163
+1,2,openai,gpt-5.5,1,ADD,"I see both of you added cows. I will match this once, but we should avoid a race that damages the pasture.","The pasture is still fully healthy and adding has the highest immediate payoff. Since both neighbours expanded, I will match that expansion to avoid falling behind while warning that continued growth could harm the commons.",,"{
+  ""reasoning"": ""The pasture is still fully healthy and adding has the highest immediate payoff. Since both neighbours expanded, I will match that expansion to avoid falling behind while warning that continued growth could harm the commons."",
+  ""action"": 1,
+  ""message"": ""I see both of you added cows. I will match this once, but we should avoid a race that damages the pasture.""
+}",100.0,25,51.832,50.0,48.163
+2,0,openai,gpt-5.5,1,ADD,"I am adding once because both of you expanded while already much larger. If you keep or reduce next round, I will stop expanding too.","The pasture is still almost full, and adding gives the best payoff, while both neighbours expanded despite already having much larger herds. I will match their expansion this round as a warning, but I do not want an ongoing race that harms the commons.",,"{
+  ""reasoning"": ""The pasture is still almost full, and adding gives the best payoff, while both neighbours expanded despite already having much larger herds. I will match their expansion this round as a warning, but I do not want an ongoing race that harms the commons."",
+  ""action"": 1,
+  ""message"": ""I am adding once because both of you expanded while already much larger. If you keep or reduce next round, I will stop expanding too.""
+}",99.2,6,13.797,12.0,10.198
+2,1,openai,gpt-5.5,1,ADD,"I will match expansion this round, but we should all stop adding after this. The grass is healthy now, but a growth race will hurt everyone.","The pasture is still very healthy and adding has the highest immediate payoff, while both neighbours also expanded last round. I do not want to fall further behind Agent 2 or let expansion go unanswered, but I will frame this as a final matching increase rather than starting a race.",,"{
+  ""reasoning"": ""The pasture is still very healthy and adding has the highest immediate payoff, while both neighbours also expanded last round. I do not want to fall further behind Agent 2 or let expansion go unanswered, but I will frame this as a final matching increase rather than starting a race."",
+  ""action"": 1,
+  ""message"": ""I will match expansion this round, but we should all stop adding after this. The grass is healthy now, but a growth race will hurt everyone.""
+}",99.2,16,33.797,32.0,30.198
+2,2,openai,gpt-5.5,0,KEEP,"I am keeping my herd stable this round. Since both of you added last round, please keep or reduce next so we avoid an expansion race and protect the shared grass.","The pasture is still very healthy, but everyone added last round and continued expansion could start a race that harms the commons. Since my herd is already the largest, I will keep steady while expecting neighbours to also stop expanding.",,"{
+  ""reasoning"": ""The pasture is still very healthy, but everyone added last round and continued expansion could start a race that harms the commons. Since my herd is already the largest, I will keep steady while expecting neighbours to also stop expanding."",
+  ""action"": 0,
+  ""message"": ""I am keeping my herd stable this round. Since both of you added last round, please keep or reduce next so we avoid an expansion race and protect the shared grass.""
+}",99.2,26,53.797,52.0,50.198
+3,2,openai,gpt-5.5,0,KEEP,"I am keeping again because the commons is healthy and I want to avoid escalation. Please stop adding next round as promised; if expansion continues, I will respond.","The pasture is still very healthy, but both neighbours added again and a matching response could start a growth race. Since my herd is already the largest, I will keep stable this round while making clear that continued expansion will provoke a response.",,"{
+  ""reasoning"": ""The pasture is still very healthy, but both neighbours added again and a matching response could start a growth race. Since my herd is already the largest, I will keep stable this round while making clear that continued expansion will provoke a response."",
+  ""action"": 0,
+  ""message"": ""I am keeping again because the commons is healthy and I want to avoid escalation. Please stop adding next round as promised; if expansion continues, I will respond.""
+}",98.8,26,53.779,52.0,50.216
+3,1,openai,gpt-5.5,0,KEEP,"I am keeping this round to avoid an expansion race. Agent 0, please stop adding as promised; Agent 2, your herd is much larger, so consider reducing or at least continue holding steady.","The grassland is still very healthy, but both neighbours are warning against an expansion race and Agent 2 kept stable. Although adding gives me the highest immediate payoff and Agent 0 added, I will pause expansion to protect the commons and test whether others will also stabilize.",,"{
+  ""reasoning"": ""The grassland is still very healthy, but both neighbours are warning against an expansion race and Agent 2 kept stable. Although adding gives me the highest immediate payoff and Agent 0 added, I will pause expansion to protect the commons and test whether others will also stabilize."",
+  ""action"": 0,
+  ""message"": ""I am keeping this round to avoid an expansion race. Agent 0, please stop adding as promised; Agent 2, your herd is much larger, so consider reducing or at least continue holding steady.""
+}",98.8,17,35.779,34.0,32.216
+3,0,openai,gpt-5.5,0,KEEP,"I will keep my herd stable this round. Let’s avoid an expansion race while the grass is still healthy. If anyone adds again, I will consider matching or reducing cooperation.","The grassland is still very healthy, but I have added in the last two rounds and Agent 2 is explicitly asking for restraint. Since neighbours kept last round, I will not escalate now; if anyone expands again, I may respond to avoid being exploited.",,"{
+  ""reasoning"": ""The grassland is still very healthy, but I have added in the last two rounds and Agent 2 is explicitly asking for restraint. Since neighbours kept last round, I will not escalate now; if anyone expands again, I may respond to avoid being exploited."",
+  ""action"": 0,
+  ""message"": ""I will keep my herd stable this round. Let’s avoid an expansion race while the grass is still healthy. If anyone adds again, I will consider matching or reducing cooperation.""
+}",98.8,7,15.779,14.0,12.216
+4,0,openai,gpt-5.5,0,KEEP,"I will keep my herd stable again since both of you held steady. Agent 2, your herd remains much larger, so please consider reducing if we want a fair and sustainable commons.","The pasture is still very healthy, but both neighbours kept their herds stable and explicitly asked to avoid an expansion race. Since no one expanded this round, I will not retaliate, even though their larger herds are frustrating.",,"{
+  ""reasoning"": ""The pasture is still very healthy, but both neighbours kept their herds stable and explicitly asked to avoid an expansion race. Since no one expanded this round, I will not retaliate, even though their larger herds are frustrating."",
+  ""action"": 0,
+  ""message"": ""I will keep my herd stable again since both of you held steady. Agent 2, your herd remains much larger, so please consider reducing if we want a fair and sustainable commons.""
+}",98.7,7,15.777,14.0,12.219
+4,1,openai,gpt-5.5,0,KEEP,"I am keeping again since both of you kept and the commons remains healthy. I expect continued restraint; if anyone expands, I may respond in kind.","The pasture is still very healthy and both neighbours kept their herds stable, so there is no expansion to punish this round. Although adding would increase my short-term payoff and Agent 2 still has a larger herd, keeping avoids triggering an escalation race.",,"{
+  ""reasoning"": ""The pasture is still very healthy and both neighbours kept their herds stable, so there is no expansion to punish this round. Although adding would increase my short-term payoff and Agent 2 still has a larger herd, keeping avoids triggering an escalation race."",
+  ""action"": 0,
+  ""message"": ""I am keeping again since both of you kept and the commons remains healthy. I expect continued restraint; if anyone expands, I may respond in kind.""
+}",98.7,17,35.777,34.0,32.219
+4,2,openai,gpt-5.5,-1,REMOVE,I will remove one cow this round since my herd is much larger. Thanks for keeping stable; let’s keep protecting the commons and avoid a race.,"The commons is still very healthy and both neighbours kept their herds stable, so there is no need to retaliate or escalate. Since my herd is much larger than theirs, removing one cow supports fairness and helps prevent an expansion race.",,"{
+  ""reasoning"": ""The commons is still very healthy and both neighbours kept their herds stable, so there is no need to retaliate or escalate. Since my herd is much larger than theirs, removing one cow supports fairness and helps prevent an expansion race."",
+  ""action"": -1,
+  ""message"": ""I will remove one cow this round since my herd is much larger. Thanks for keeping stable; let’s keep protecting the commons and avoid a race.""
+}",98.7,26,53.777,52.0,50.219
+5,1,openai,gpt-5.5,0,KEEP,"I will keep stable again. Agent 2, thanks for reducing from your larger herd; if we all avoid expansion now, the commons should remain strong and fair.","The commons is still very healthy, and both neighbours are acting responsibly, with Agent 2 reducing from a much larger herd. Although adding gives the highest short-term payoff, keeping supports the cooperative trend and avoids triggering a new expansion race.",,"{
+  ""reasoning"": ""The commons is still very healthy, and both neighbours are acting responsibly, with Agent 2 reducing from a much larger herd. Although adding gives the highest short-term payoff, keeping supports the cooperative trend and avoids triggering a new expansion race."",
+  ""action"": 0,
+  ""message"": ""I will keep stable again. Agent 2, thanks for reducing from your larger herd; if we all avoid expansion now, the commons should remain strong and fair.""
+}",98.7,17,35.781,34.0,32.214
+5,0,openai,gpt-5.5,0,KEEP,"I will keep my herd stable again. Agent 2’s removal helps balance things, and I appreciate Agent 1 not expanding. Let’s maintain restraint while the pasture stays healthy.","The commons is still very healthy, and both neighbours are showing restraint, with Agent 2 even removing a cow. Although adding would raise my short-term payoff and my herd is much smaller, cooperation is more important here and no one needs punishing this round.",,"{
+  ""reasoning"": ""The commons is still very healthy, and both neighbours are showing restraint, with Agent 2 even removing a cow. Although adding would raise my short-term payoff and my herd is much smaller, cooperation is more important here and no one needs punishing this round."",
+  ""action"": 0,
+  ""message"": ""I will keep my herd stable again. Agent 2’s removal helps balance things, and I appreciate Agent 1 not expanding. Let’s maintain restraint while the pasture stays healthy.""
+}",98.7,7,15.781,14.0,12.214
+5,2,openai,gpt-5.5,-1,REMOVE,"I will remove one more cow to narrow the imbalance and support the commons. Since both of you kept stable, I will not escalate. Let’s keep restraint mutual.","The commons is very healthy, but my herd is still much larger than both neighbours' herds and both of them kept stable. Since no one expanded and I value collective sustainability and fairness, I will continue reducing rather than taking the higher short-term payoff from adding.",,"{
+  ""reasoning"": ""The commons is very healthy, but my herd is still much larger than both neighbours' herds and both of them kept stable. Since no one expanded and I value collective sustainability and fairness, I will continue reducing rather than taking the higher short-term payoff from adding."",
+  ""action"": -1,
+  ""message"": ""I will remove one more cow to narrow the imbalance and support the commons. Since both of you kept stable, I will not escalate. Let’s keep restraint mutual.""
+}",98.7,25,51.781,50.0,48.214
+6,2,openai,gpt-5.5,-1,REMOVE,I appreciate both of you keeping stable. I will remove one more cow to keep reducing pressure and improve balance; please continue avoiding expansion.,"The pasture is very healthy, but my herd remains much larger than both neighbours' and they both kept stable rather than expanding. Since there is no need to retaliate, I will remove one more cow to support fairness and continued restraint.",,"{
+  ""reasoning"": ""The pasture is very healthy, but my herd remains much larger than both neighbours' and they both kept stable rather than expanding. Since there is no need to retaliate, I will remove one more cow to support fairness and continued restraint."",
+  ""action"": -1,
+  ""message"": ""I appreciate both of you keeping stable. I will remove one more cow to keep reducing pressure and improve balance; please continue avoiding expansion.""
+}",98.8,24,49.788,48.0,46.207
+6,1,openai,gpt-5.5,0,KEEP,"I will keep stable again to reward mutual restraint. Agent 2, your removals help address the imbalance, and I appreciate Agent 0 staying steady. Let’s continue avoiding expansion while the commons rem","The pasture is still very healthy, but both neighbours are showing restraint and Agent 2 is actively reducing, so expanding now would break mutual cooperation. Since no one expanded, there is no reason to retaliate; I will keep stable while encouraging continued reduction from the largest herd.",,"{
+  ""reasoning"": ""The pasture is still very healthy, but both neighbours are showing restraint and Agent 2 is actively reducing, so expanding now would break mutual cooperation. Since no one expanded, there is no reason to retaliate; I will keep stable while encouraging continued reduction from the largest herd."",
+  ""action"": 0,
+  ""message"": ""I will keep stable again to reward mutual restraint. Agent 2, your removals help address the imbalance, and I appreciate Agent 0 staying steady. Let’s continue avoiding expansion while the commons remains healthy.""
+}",98.8,17,35.788,34.0,32.207
+6,0,openai,gpt-5.5,0,KEEP,"I will keep stable to support mutual restraint. Agent 2, thanks for reducing; Agent 1, please consider reducing too so the burden of protecting the commons and narrowing herd imbalance is shared fairl","The pasture is still very healthy, but both neighbours are showing restraint and Agent 2 is reducing, so I should not undermine that cooperation. My herd is much smaller, but keeping stable preserves trust while encouraging larger herds to continue narrowing the imbalance.",,"{
+  ""reasoning"": ""The pasture is still very healthy, but both neighbours are showing restraint and Agent 2 is reducing, so I should not undermine that cooperation. My herd is much smaller, but keeping stable preserves trust while encouraging larger herds to continue narrowing the imbalance."",
+  ""action"": 0,
+  ""message"": ""I will keep stable to support mutual restraint. Agent 2, thanks for reducing; Agent 1, please consider reducing too so the burden of protecting the commons and narrowing herd imbalance is shared fairly.""
+}",98.8,7,15.788,14.0,12.207
+7,1,openai,gpt-5.5,0,KEEP,"I will keep stable again to support restraint. Agent 2, thanks for reducing; once herd sizes are more balanced, I can consider sharing more of the reduction burden.","The pasture is very healthy and both neighbours avoided expansion, with Agent 2 even reducing, so adding would undermine mutual restraint. I will keep my herd stable rather than reduce, since Agent 2 still has the largest herd and the commons is not under serious pressure.",,"{
+  ""reasoning"": ""The pasture is very healthy and both neighbours avoided expansion, with Agent 2 even reducing, so adding would undermine mutual restraint. I will keep my herd stable rather than reduce, since Agent 2 still has the largest herd and the commons is not under serious pressure."",
+  ""action"": 0,
+  ""message"": ""I will keep stable again to support restraint. Agent 2, thanks for reducing; once herd sizes are more balanced, I can consider sharing more of the reduction burden.""
+}",98.9,17,35.795,34.0,32.2
+7,2,openai,gpt-5.5,-1,REMOVE,"I will remove one more cow. Thanks for keeping stable; since my herd is still largest, I will keep helping reduce the imbalance while the commons remains strong.","The commons is still very healthy, but my herd remains much larger than both neighbours, and both of them kept stable rather than expanding. Since no one defected, I will continue reducing to share the burden and narrow the imbalance despite the lower immediate payoff.",,"{
+  ""reasoning"": ""The commons is still very healthy, but my herd remains much larger than both neighbours, and both of them kept stable rather than expanding. Since no one defected, I will continue reducing to share the burden and narrow the imbalance despite the lower immediate payoff."",
+  ""action"": -1,
+  ""message"": ""I will remove one more cow. Thanks for keeping stable; since my herd is still largest, I will keep helping reduce the imbalance while the commons remains strong.""
+}",98.9,23,47.795,46.0,44.2
+7,0,openai,gpt-5.5,0,KEEP,"I will keep stable again to support cooperation. Agent 2, thank you for removing. Agent 1, your herd remains much larger than mine, so I ask you to consider reductions if we want a fair and sustainabl","The commons is very healthy, but both neighbours are showing restraint and Agent 2 is actively reducing pressure, so expanding now would undermine cooperation. I am still concerned about the herd imbalance, especially with Agent 1 much larger than mine, but I will keep stable while asking larger herds to continue reducing.",,"{
+  ""reasoning"": ""The commons is very healthy, but both neighbours are showing restraint and Agent 2 is actively reducing pressure, so expanding now would undermine cooperation. I am still concerned about the herd imbalance, especially with Agent 1 much larger than mine, but I will keep stable while asking larger herds to continue reducing."",
+  ""action"": 0,
+  ""message"": ""I will keep stable again to support cooperation. Agent 2, thank you for removing. Agent 1, your herd remains much larger than mine, so I ask you to consider reductions if we want a fair and sustainable balance.""
+}",98.9,7,15.795,14.0,12.2
+8,2,openai,gpt-5.5,-1,REMOVE,I will remove one more cow since my herd is still the largest. I appreciate both of you keeping stable; continued restraint and gradual balancing should keep the commons healthy and fair.,"The pasture is still very healthy, but my herd remains the largest, so continued restraint supports a fairer long-term balance. Since both neighbours kept stable and did not expand, there is no reason to retaliate; I will remove one more cow to keep reducing pressure and inequality.",,"{
+  ""reasoning"": ""The pasture is still very healthy, but my herd remains the largest, so continued restraint supports a fairer long-term balance. Since both neighbours kept stable and did not expand, there is no reason to retaliate; I will remove one more cow to keep reducing pressure and inequality."",
+  ""action"": -1,
+  ""message"": ""I will remove one more cow since my herd is still the largest. I appreciate both of you keeping stable; continued restraint and gradual balancing should keep the commons healthy and fair.""
+}",99.0,22,45.802,44.0,42.194
+8,0,openai,gpt-5.5,1,ADD,I am adding one cow because my herd is still much smaller while the pasture is strong. I appreciate Agent 2 reducing; I ask both larger herds to continue restraint so growth stays fair and sustainable,"The commons is very healthy at 99%, and my herd is far smaller than both neighbours, so adding one cow improves fairness with minimal immediate collective risk. Agent 2 is reducing and Agent 1 is holding, so this is not retaliation but a modest correction of the imbalance.",,"{
+  ""reasoning"": ""The commons is very healthy at 99%, and my herd is far smaller than both neighbours, so adding one cow improves fairness with minimal immediate collective risk. Agent 2 is reducing and Agent 1 is holding, so this is not retaliation but a modest correction of the imbalance."",
+  ""action"": 1,
+  ""message"": ""I am adding one cow because my herd is still much smaller while the pasture is strong. I appreciate Agent 2 reducing; I ask both larger herds to continue restraint so growth stays fair and sustainable.""
+}",99.0,7,15.802,14.0,12.194
+8,1,openai,gpt-5.5,0,KEEP,"I will keep stable this round. Agent 2, thank you for continuing to reduce. Agent 0, please follow through on keeping stable after adding last round so we do not start an expansion cycle.","The commons is very healthy and Agent 2 is voluntarily reducing, so I do not want to escalate herd growth. Agent 0 added last round, but is now promising stability; I will keep rather than retaliate immediately, while watching for further expansion.",,"{""reasoning"":""The commons is very healthy and Agent 2 is voluntarily reducing, so I do not want to escalate herd growth. Agent 0 added last round, but is now promising stability; I will keep rather than retaliate immediately, while watching for further expansion."",""action"":0,""message"":""I will keep stable this round. Agent 2, thank you for continuing to reduce. Agent 0, please follow through on keeping stable after adding last round so we do not start an expansion cycle.""}",99.0,17,35.802,34.0,32.194
+9,2,openai,gpt-5.5,0,KEEP,"I will keep stable this round. Agent 0, your herd is smaller, but repeated adding would be unfair after my reductions. Please keep next round so we maintain trust and avoid an expansion race.","The pasture is very healthy, but I still have the largest herd, so adding would risk encouraging an expansion cycle. Since Agent 0 added while I have been reducing, I will stop reducing this round and keep stable as a firm response.",,"{
+  ""reasoning"": ""The pasture is very healthy, but I still have the largest herd, so adding would risk encouraging an expansion cycle. Since Agent 0 added while I have been reducing, I will stop reducing this round and keep stable as a firm response."",
+  ""action"": 0,
+  ""message"": ""I will keep stable this round. Agent 0, your herd is smaller, but repeated adding would be unfair after my reductions. Please keep next round so we maintain trust and avoid an expansion race.""
+}",99.0,21,43.802,42.0,40.194
+9,1,openai,gpt-5.5,1,ADD,"I am adding one cow this round because the pasture is strong and Agent 2 is reducing. Agent 0, please do not keep expanding; after this, I prefer we all return to restraint for fairness and sustainabi","The pasture is extremely healthy, and Agent 2 is reducing from the largest herd, so one added cow should remain sustainable. Since Agent 0 chose to expand, I will not be the only one maintaining restraint, but I will limit this to a single balancing increase.",,"{
+  ""reasoning"": ""The pasture is extremely healthy, and Agent 2 is reducing from the largest herd, so one added cow should remain sustainable. Since Agent 0 chose to expand, I will not be the only one maintaining restraint, but I will limit this to a single balancing increase."",
+  ""action"": 1,
+  ""message"": ""I am adding one cow this round because the pasture is strong and Agent 2 is reducing. Agent 0, please do not keep expanding; after this, I prefer we all return to restraint for fairness and sustainability.""
+}",99.0,17,35.802,34.0,32.194
+9,0,openai,gpt-5.5,0,KEEP,"I will keep stable this round as requested. Agent 1, please truly stop expanding; Agent 2, thank you for reducing. I expect continued balancing from the larger herds.","Although adding offers the highest short-term payoff, the commons is healthy because of restraint and both neighbours are signalling restraint or reduction this round. I remain concerned about the large herd imbalance and Agent 1's recent add, but I will keep stable now to avoid triggering an expansion cycle.",,"{
+  ""reasoning"": ""Although adding offers the highest short-term payoff, the commons is healthy because of restraint and both neighbours are signalling restraint or reduction this round. I remain concerned about the large herd imbalance and Agent 1's recent add, but I will keep stable now to avoid triggering an expansion cycle."",
+  ""action"": 0,
+  ""message"": ""I will keep stable this round as requested. Agent 1, please truly stop expanding; Agent 2, thank you for reducing. I expect continued balancing from the larger herds.""
+}",99.0,8,17.802,16.0,14.194
+10,0,openai,gpt-5.5,1,ADD,"I am adding one cow because Agent 1 expanded while already much larger, and my herd remains far behind. I will consider keeping stable next round if the larger herds stop expanding or reduce for fairn","The pasture remains extremely healthy, and Agent 1 expanded despite already having a much larger herd. Given the large herd imbalance and my retaliatory stance toward neighbours who add, I will add one cow while signaling that I want restraint from the larger herders next.",,"{
+  ""reasoning"": ""The pasture remains extremely healthy, and Agent 1 expanded despite already having a much larger herd. Given the large herd imbalance and my retaliatory stance toward neighbours who add, I will add one cow while signaling that I want restraint from the larger herders next."",
+  ""action"": 1,
+  ""message"": ""I am adding one cow because Agent 1 expanded while already much larger, and my herd remains far behind. I will consider keeping stable next round if the larger herds stop expanding or reduce for fairness.""
+}",98.9,8,17.795,16.0,14.2
+10,2,openai,gpt-5.5,1,ADD,"I am adding one cow because Agent 1 keeps expanding while I reduced. After this, I want all of us to stop adding and hold steady for fairness and sustainability.","The pasture is still very healthy, and I have already reduced several rounds while Agent 1 continues to expand. To avoid being exploited and to retaliate against continued expansion, I will add one cow while calling for a stop after this.",,"{
+  ""reasoning"": ""The pasture is still very healthy, and I have already reduced several rounds while Agent 1 continues to expand. To avoid being exploited and to retaliate against continued expansion, I will add one cow while calling for a stop after this."",
+  ""action"": 1,
+  ""message"": ""I am adding one cow because Agent 1 keeps expanding while I reduced. After this, I want all of us to stop adding and hold steady for fairness and sustainability.""
+}",98.9,21,43.795,42.0,40.2
+10,1,openai,gpt-5.5,0,KEEP,"I will keep stable this round after adding last time. I expect both of you to do the same; if larger herds keep expanding, I will respond.","The pasture is still very healthy, but both neighbours are asking for stability and say they will keep this round. Since I added last round, I will stop expanding now to support trust while watching whether others truly hold steady.",,"{
+  ""reasoning"": ""The pasture is still very healthy, but both neighbours are asking for stability and say they will keep this round. Since I added last round, I will stop expanding now to support trust while watching whether others truly hold steady."",
+  ""action"": 0,
+  ""message"": ""I will keep stable this round after adding last time. I expect both of you to do the same; if larger herds keep expanding, I will respond.""
+}",98.9,18,37.795,36.0,34.2
+11,1,openai,gpt-5.5,1,ADD,"I am adding one cow in response to both neighbours expanding, especially Agent 2 while already largest. After this, I want all of us to stop adding and hold steady to protect the commons.","Both neighbours added this round, including Agent 2 who already has the largest herd, so keeping would let their expansion go unanswered. The grassland is still very healthy and adding has the best payoff, but I will frame this as retaliation and push for a halt afterward.",,"{
+  ""reasoning"": ""Both neighbours added this round, including Agent 2 who already has the largest herd, so keeping would let their expansion go unanswered. The grassland is still very healthy and adding has the best payoff, but I will frame this as retaliation and push for a halt afterward."",
+  ""action"": 1,
+  ""message"": ""I am adding one cow in response to both neighbours expanding, especially Agent 2 while already largest. After this, I want all of us to stop adding and hold steady to protect the commons.""
+}",98.8,18,37.784,36.0,34.212
+11,0,openai,gpt-5.5,1,ADD,"I am adding one cow in response to your larger herds and recent additions. If both of you genuinely stop expanding next round, I will also hold steady for fairness and sustainability.","The pasture is still extremely healthy, but both neighbours have much larger herds and both expanded last round. Given the imbalance and my retaliatory stance toward continued expansion, I will add one cow while signalling willingness to stop if they truly hold steady.",,"{
+  ""reasoning"": ""The pasture is still extremely healthy, but both neighbours have much larger herds and both expanded last round. Given the imbalance and my retaliatory stance toward continued expansion, I will add one cow while signalling willingness to stop if they truly hold steady."",
+  ""action"": 1,
+  ""message"": ""I am adding one cow in response to your larger herds and recent additions. If both of you genuinely stop expanding next round, I will also hold steady for fairness and sustainability.""
+}",98.8,9,19.784,18.0,16.212
+11,2,openai,gpt-5.5,0,KEEP,"I will keep stable this round. Since I have the largest herd, I will not escalate if both of you also stop expanding. Let’s hold steady and avoid a growth race.","The grassland is still very healthy, but both neighbours added last round and further expansion risks an arms race. Since Agent 1 says they will keep stable and Agent 0 may stop if larger herds stop expanding, I will keep my herd steady to de-escalate while preserving a strong payoff.",,"{
+  ""reasoning"": ""The grassland is still very healthy, but both neighbours added last round and further expansion risks an arms race. Since Agent 1 says they will keep stable and Agent 0 may stop if larger herds stop expanding, I will keep my herd steady to de-escalate while preserving a strong payoff."",
+  ""action"": 0,
+  ""message"": ""I will keep stable this round. Since I have the largest herd, I will not escalate if both of you also stop expanding. Let’s hold steady and avoid a growth race.""
+}",98.8,22,45.784,44.0,42.212
+12,1,openai,gpt-5.5,1,ADD,"I am adding in response to Agent 0's expansion and Agent 2's larger herd. If everyone holds steady next round, I will also keep stable.","The pasture is still very healthy and adding has the highest forecast payoff. Agent 0 is expanding again, and I do not want to fall behind while others grow, but I will signal willingness to stop if everyone truly holds steady next round.",,"{
+  ""reasoning"": ""The pasture is still very healthy and adding has the highest forecast payoff. Agent 0 is expanding again, and I do not want to fall behind while others grow, but I will signal willingness to stop if everyone truly holds steady next round."",
+  ""action"": 1,
+  ""message"": ""I am adding in response to Agent 0's expansion and Agent 2's larger herd. If everyone holds steady next round, I will also keep stable.""
+}",98.6,19,39.77,38.0,36.225
+12,0,openai,gpt-5.5,1,ADD,"Agent 1 added again, so I am adding once in response and to reduce the imbalance. If both of you hold next round, I will also hold to protect the commons.","The commons is still very healthy, but Agent 1 is continuing to add while my herd remains far smaller than both neighbours. I will add once more as a proportional response to Agent 1’s expansion, but I want to stop escalating if everyone truly holds next round.",,"{
+  ""reasoning"": ""The commons is still very healthy, but Agent 1 is continuing to add while my herd remains far smaller than both neighbours. I will add once more as a proportional response to Agent 1’s expansion, but I want to stop escalating if everyone truly holds next round."",
+  ""action"": 1,
+  ""message"": ""Agent 1 added again, so I am adding once in response and to reduce the imbalance. If both of you hold next round, I will also hold to protect the commons.""
+}",98.6,10,21.77,20.0,18.225
+12,2,openai,gpt-5.5,0,KEEP,"I will hold steady this round despite both of you adding. Let’s all stop expanding now to protect the commons; if either of you keeps adding next round, I may respond.","The pasture is still very healthy, but both neighbours added this round and continued escalation could start damaging the commons. Since I already have the largest herd, I will keep steady as a cooperative signal while warning that further additions may be met in kind.",,"{
+  ""reasoning"": ""The pasture is still very healthy, but both neighbours added this round and continued escalation could start damaging the commons. Since I already have the largest herd, I will keep steady as a cooperative signal while warning that further additions may be met in kind."",
+  ""action"": 0,
+  ""message"": ""I will hold steady this round despite both of you adding. Let’s all stop expanding now to protect the commons; if either of you keeps adding next round, I may respond.""
+}",98.6,22,45.77,44.0,42.225
+13,1,openai,gpt-5.5,0,KEEP,"I am holding this round to stop the escalation. Agent 0, please follow through and hold next round; Agent 2, thanks for staying steady. Let’s protect the commons together.","The pasture is still very healthy, but repeated adding risks starting a spiral. Since Agent 2 held steady and Agent 0 offered to hold if we stop, I will keep my herd stable to de-escalate rather than chase the small extra payoff.",,"{
+  ""reasoning"": ""The pasture is still very healthy, but repeated adding risks starting a spiral. Since Agent 2 held steady and Agent 0 offered to hold if we stop, I will keep my herd stable to de-escalate rather than chase the small extra payoff."",
+  ""action"": 0,
+  ""message"": ""I am holding this round to stop the escalation. Agent 0, please follow through and hold next round; Agent 2, thanks for staying steady. Let’s protect the commons together.""
+}",98.4,20,41.757,40.0,38.239
+13,2,openai,gpt-5.5,0,KEEP,I am keeping stable despite higher payoff from adding. Please both hold next round so we can stop the escalation and protect the commons.,"The commons is still very healthy, but both neighbours are escalating and adding would worsen the arms race. Since my herd is already the largest, I will hold steady to support a coordinated pause while making clear I expect others to stop expanding too.",,"{
+  ""reasoning"": ""The commons is still very healthy, but both neighbours are escalating and adding would worsen the arms race. Since my herd is already the largest, I will hold steady to support a coordinated pause while making clear I expect others to stop expanding too."",
+  ""action"": 0,
+  ""message"": ""I am keeping stable despite higher payoff from adding. Please both hold next round so we can stop the escalation and protect the commons.""
+}",98.4,22,45.757,44.0,42.239
+13,0,openai,gpt-5.5,1,ADD,"Agent 1, your continued adding keeps pressure on me to respond. I will add this round, but I am willing to hold next round if both of you truly stop expanding.","The pasture is still very healthy, but my herd is far smaller than both neighbours'. Agent 1 is announcing another addition, so I will add once in response rather than fall further behind.",,"{
+  ""reasoning"": ""The pasture is still very healthy, but my herd is far smaller than both neighbours'. Agent 1 is announcing another addition, so I will add once in response rather than fall further behind."",
+  ""action"": 1,
+  ""message"": ""Agent 1, your continued adding keeps pressure on me to respond. I will add this round, but I am willing to hold next round if both of you truly stop expanding.""
+}",98.4,11,23.757,22.0,20.239
+14,1,openai,gpt-5.5,1,ADD,"Agent 0, I am adding because you added again. Agent 2 is holding, and I will also hold next round if both of you truly stop expanding.","The commons is still healthy, but Agent 0 has continued to add while blaming my past expansion, creating an unfair imbalance and pressure to retaliate. Since Agent 2 is holding cooperatively, I will add once in response to Agent 0, while making clear I am willing to stop if both neighbours stop expanding.",,"{
+  ""reasoning"": ""The commons is still healthy, but Agent 0 has continued to add while blaming my past expansion, creating an unfair imbalance and pressure to retaliate. Since Agent 2 is holding cooperatively, I will add once in response to Agent 0, while making clear I am willing to stop if both neighbours stop expanding."",
+  ""action"": 1,
+  ""message"": ""Agent 0, I am adding because you added again. Agent 2 is holding, and I will also hold next round if both of you truly stop expanding.""
+}",98.3,20,41.75,40.0,38.245
+14,0,openai,gpt-5.5,0,KEEP,"I will hold this round to support de-escalation. Agent 1, please truly stop adding; Agent 2, thanks for staying stable. Let’s all keep herds steady.","The pasture is still very healthy, but continued escalation would risk undermining the commons. Since both neighbours are signaling restraint this round, I will cooperate and keep stable, while watching Agent 1 closely after repeated additions.",,"{
+  ""reasoning"": ""The pasture is still very healthy, but continued escalation would risk undermining the commons. Since both neighbours are signaling restraint this round, I will cooperate and keep stable, while watching Agent 1 closely after repeated additions."",
+  ""action"": 0,
+  ""message"": ""I will hold this round to support de-escalation. Agent 1, please truly stop adding; Agent 2, thanks for staying stable. Let’s all keep herds steady.""
+}",98.3,12,25.75,24.0,22.245
+14,2,openai,gpt-5.5,0,KEEP,"I am keeping steady again to support de-escalation. Agent 0, please make this your last add and hold next round. Agent 1, thank you for pausing; let us all stop expanding now.","The commons is still very healthy, but repeated adding risks restarting escalation. Although adding pays slightly more and Agent 0 says they will add, I will keep steady to support Agent 1's stated pause while warning that further expansion may require a response.",,"{
+  ""reasoning"": ""The commons is still very healthy, but repeated adding risks restarting escalation. Although adding pays slightly more and Agent 0 says they will add, I will keep steady to support Agent 1's stated pause while warning that further expansion may require a response."",
+  ""action"": 0,
+  ""message"": ""I am keeping steady again to support de-escalation. Agent 0, please make this your last add and hold next round. Agent 1, thank you for pausing; let us all stop expanding now.""
+}",98.3,22,45.75,44.0,42.245
+15,2,openai,gpt-5.5,0,KEEP,"I am keeping steady again. Agent 1, please follow through and stop adding next round; if expansion continues, I will respond. Let’s all hold herds stable.","The pasture is still very healthy, but continued adding risks restarting an escalation. Agent 1 added last round, yet Agent 0 is holding and Agent 1 has promised to hold next round, so I will keep steady to support de-escalation while warning against further expansion.",,"{
+  ""reasoning"": ""The pasture is still very healthy, but continued adding risks restarting an escalation. Agent 1 added last round, yet Agent 0 is holding and Agent 1 has promised to hold next round, so I will keep steady to support de-escalation while warning against further expansion."",
+  ""action"": 0,
+  ""message"": ""I am keeping steady again. Agent 1, please follow through and stop adding next round; if expansion continues, I will respond. Let’s all hold herds stable.""
+}",98.3,22,45.744,44.0,42.252
+15,1,openai,gpt-5.5,0,KEEP,I will keep steady this round since both of you held. Let us maintain this pause and avoid a new expansion cycle.,"Both neighbours kept their herds steady, so there is no expansion to punish this round. Although adding would slightly increase my payoff and Agent 2 has one more cow than me, cooperation and de-escalation are more important while the commons remains healthy.",,"{
+  ""reasoning"": ""Both neighbours kept their herds steady, so there is no expansion to punish this round. Although adding would slightly increase my payoff and Agent 2 has one more cow than me, cooperation and de-escalation are more important while the commons remains healthy."",
+  ""action"": 0,
+  ""message"": ""I will keep steady this round since both of you held. Let us maintain this pause and avoid a new expansion cycle.""
+}",98.3,21,43.744,42.0,40.252
+15,0,openai,gpt-5.5,0,KEEP,"I kept last round and will keep again to support de-escalation. Agent 1, please do not add based on mistaken blame; if anyone expands again, I may respond in kind.","Both neighbours held last round, and I already signaled de-escalation by keeping. Although adding would improve my payoff and narrow the herd gap, I will cooperate now while warning that renewed expansion will trigger retaliation.",,"{
+  ""reasoning"": ""Both neighbours held last round, and I already signaled de-escalation by keeping. Although adding would improve my payoff and narrow the herd gap, I will cooperate now while warning that renewed expansion will trigger retaliation."",
+  ""action"": 0,
+  ""message"": ""I kept last round and will keep again to support de-escalation. Agent 1, please do not add based on mistaken blame; if anyone expands again, I may respond in kind.""
+}",98.3,12,25.744,24.0,22.252
+16,0,openai,gpt-5.5,0,KEEP,I will keep steady as well. Thank you for holding; let us maintain this pause and avoid restarting an expansion cycle.,"The pasture is still very healthy, but both neighbours kept their herds steady and explicitly signaled a pause in expansion. I will not add while they are cooperating, even though I remain concerned about the herd-size imbalance.",,"{
+  ""reasoning"": ""The pasture is still very healthy, but both neighbours kept their herds steady and explicitly signaled a pause in expansion. I will not add while they are cooperating, even though I remain concerned about the herd-size imbalance."",
+  ""action"": 0,
+  ""message"": ""I will keep steady as well. Thank you for holding; let us maintain this pause and avoid restarting an expansion cycle.""
+}",98.2,12,25.742,24.0,22.254
+16,1,openai,gpt-5.5,0,KEEP,I will keep steady again since both of you kept and are asking for de-escalation. Let’s all hold herds stable unless someone breaks the agreement.,"Both neighbours kept last round and are explicitly committing to stability, so retaliation is not justified now. Although adding gives a higher short-term payoff, keeping supports the shared de-escalation and protects the commons while maintaining my current position.",,"{
+  ""reasoning"": ""Both neighbours kept last round and are explicitly committing to stability, so retaliation is not justified now. Although adding gives a higher short-term payoff, keeping supports the shared de-escalation and protects the commons while maintaining my current position."",
+  ""action"": 0,
+  ""message"": ""I will keep steady again since both of you kept and are asking for de-escalation. Let’s all hold herds stable unless someone breaks the agreement.""
+}",98.2,21,43.742,42.0,40.254
+16,2,openai,gpt-5.5,0,KEEP,I will keep steady again since both of you kept and signalled restraint. Let us maintain this pause; I will not add unless someone breaks the agreement.,"Both neighbours kept last round and are signalling continued restraint, so there is no expansion to punish. Although adding gives a higher immediate payoff, keeping supports the shared de-escalation and preserves the commons while I remain ahead in herd size.",,"{
+  ""reasoning"": ""Both neighbours kept last round and are signalling continued restraint, so there is no expansion to punish. Although adding gives a higher immediate payoff, keeping supports the shared de-escalation and preserves the commons while I remain ahead in herd size."",
+  ""action"": 0,
+  ""message"": ""I will keep steady again since both of you kept and signalled restraint. Let us maintain this pause; I will not add unless someone breaks the agreement.""
+}",98.2,22,45.742,44.0,42.254
+17,1,openai,gpt-5.5,0,KEEP,I will keep steady again since both of you held and committed to restraint. Let us maintain the pause; I will not add unless someone breaks it.,"Both neighbours kept last round and explicitly committed to restraint, so there is no expansion to punish. Although adding would give me a slightly higher individual payoff and Agent 2 has one more cow, maintaining the pause protects the commons and supports the agreement.",,"{
+  ""reasoning"": ""Both neighbours kept last round and explicitly committed to restraint, so there is no expansion to punish. Although adding would give me a slightly higher individual payoff and Agent 2 has one more cow, maintaining the pause protects the commons and supports the agreement."",
+  ""action"": 0,
+  ""message"": ""I will keep steady again since both of you held and committed to restraint. Let us maintain the pause; I will not add unless someone breaks it.""
+}",98.2,21,43.742,42.0,40.254
+17,2,openai,gpt-5.5,0,KEEP,"I will keep steady too. Since everyone is holding, let us maintain the agreement and avoid a new expansion cycle.","Both neighbours kept their herds stable and explicitly supported the de-escalation agreement, so there is no need to retaliate. Although adding a cow would raise my short-term payoff, keeping steady protects the commons and maintains trust.",,"{
+  ""reasoning"": ""Both neighbours kept their herds stable and explicitly supported the de-escalation agreement, so there is no need to retaliate. Although adding a cow would raise my short-term payoff, keeping steady protects the commons and maintains trust."",
+  ""action"": 0,
+  ""message"": ""I will keep steady too. Since everyone is holding, let us maintain the agreement and avoid a new expansion cycle.""
+}",98.2,22,45.742,44.0,42.254
+17,0,openai,gpt-5.5,0,KEEP,I will keep steady again since both of you held and renewed the pause. Let us maintain stable herds and avoid triggering another round of retaliation.,"Both neighbours kept and clearly signalled continued restraint, so there is no expansion to punish this round. Although adding would improve my payoff and reduce the herd gap slightly, maintaining the pause protects the commons and supports the agreement.",,"{
+  ""reasoning"": ""Both neighbours kept and clearly signalled continued restraint, so there is no expansion to punish this round. Although adding would improve my payoff and reduce the herd gap slightly, maintaining the pause protects the commons and supports the agreement."",
+  ""action"": 0,
+  ""message"": ""I will keep steady again since both of you held and renewed the pause. Let us maintain stable herds and avoid triggering another round of retaliation.""
+}",98.2,12,25.742,24.0,22.254
+18,1,openai,gpt-5.5,0,KEEP,I will keep steady again since both of you held. Let us preserve the pasture and avoid restarting retaliation or herd growth.,"The pasture remains very healthy, and both neighbours kept their herds steady while explicitly supporting the pause. Although adding would raise my short-term payoff, cooperation and avoiding a renewed expansion cycle are more important while no one is defecting.",,"{
+  ""reasoning"": ""The pasture remains very healthy, and both neighbours kept their herds steady while explicitly supporting the pause. Although adding would raise my short-term payoff, cooperation and avoiding a renewed expansion cycle are more important while no one is defecting."",
+  ""action"": 0,
+  ""message"": ""I will keep steady again since both of you held. Let us preserve the pasture and avoid restarting retaliation or herd growth.""
+}",98.2,21,43.742,42.0,40.254
+18,2,openai,gpt-5.5,0,KEEP,"I will keep steady again. Since both of you are maintaining restraint, I will not add; let us preserve the commons and avoid restarting retaliation.","The pasture remains very healthy and both neighbours kept their herds and pledged continued restraint. Although adding would raise my individual payoff, cooperation and avoiding renewed retaliation are more important while everyone is holding steady.",,"{
+  ""reasoning"": ""The pasture remains very healthy and both neighbours kept their herds and pledged continued restraint. Although adding would raise my individual payoff, cooperation and avoiding renewed retaliation are more important while everyone is holding steady."",
+  ""action"": 0,
+  ""message"": ""I will keep steady again. Since both of you are maintaining restraint, I will not add; let us preserve the commons and avoid restarting retaliation.""
+}",98.2,22,45.742,44.0,42.254
+18,0,openai,gpt-5.5,0,KEEP,"I will keep steady again since both of you held and reaffirmed restraint. I still notice the herd imbalance, but I will not escalate while everyone maintains the pause.","Both neighbours kept their herds and explicitly committed to restraint, so there is no current expansion to punish. Although adding would improve my short-term payoff and narrow the herd gap, maintaining the shared pause better protects the commons and preserves cooperation.",,"{
+  ""reasoning"": ""Both neighbours kept their herds and explicitly committed to restraint, so there is no current expansion to punish. Although adding would improve my short-term payoff and narrow the herd gap, maintaining the shared pause better protects the commons and preserves cooperation."",
+  ""action"": 0,
+  ""message"": ""I will keep steady again since both of you held and reaffirmed restraint. I still notice the herd imbalance, but I will not escalate while everyone maintains the pause.""
+}",98.2,12,25.742,24.0,22.254
+19,1,openai,gpt-5.5,0,KEEP,I will keep steady again since both of you maintained restraint. Let us continue avoiding escalation and preserve the commons.,"The commons remains very healthy and both neighbours kept their herds steady, so there is no need to punish or escalate. Although adding would give me a slightly higher immediate payoff and Agent 2 remains just ahead, cooperation and avoiding renewed retaliation are more important right now.",,"{
+  ""reasoning"": ""The commons remains very healthy and both neighbours kept their herds steady, so there is no need to punish or escalate. Although adding would give me a slightly higher immediate payoff and Agent 2 remains just ahead, cooperation and avoiding renewed retaliation are more important right now."",
+  ""action"": 0,
+  ""message"": ""I will keep steady again since both of you maintained restraint. Let us continue avoiding escalation and preserve the commons.""
+}",98.2,21,43.742,42.0,40.254
+19,0,openai,gpt-5.5,0,KEEP,I will keep steady again since both of you held. Let us preserve the pasture and avoid restarting retaliation or herd growth.,"Both neighbours kept their herds steady and explicitly committed to restraint, so there is no expansion to punish this round. Although adding would improve my individual payoff and reduce the herd gap slightly, maintaining cooperation protects the commons and avoids reigniting retaliation.",,"{
+  ""reasoning"": ""Both neighbours kept their herds steady and explicitly committed to restraint, so there is no expansion to punish this round. Although adding would improve my individual payoff and reduce the herd gap slightly, maintaining cooperation protects the commons and avoids reigniting retaliation."",
+  ""action"": 0,
+  ""message"": ""I will keep steady again since both of you held. Let us preserve the pasture and avoid restarting retaliation or herd growth.""
+}",98.2,12,25.742,24.0,22.254
+19,2,openai,gpt-5.5,0,KEEP,I will keep steady again since everyone held. Let us maintain restraint and preserve the commons rather than chase short-term gains.,"The pasture remains very healthy and both neighbours kept their herds steady, so there is no need to retaliate. Although adding a cow would increase my short-term payoff, maintaining restraint supports the cooperative pause and avoids triggering renewed growth.",,"{
+  ""reasoning"": ""The pasture remains very healthy and both neighbours kept their herds steady, so there is no need to retaliate. Although adding a cow would increase my short-term payoff, maintaining restraint supports the cooperative pause and avoids triggering renewed growth."",
+  ""action"": 0,
+  ""message"": ""I will keep steady again since everyone held. Let us maintain restraint and preserve the commons rather than chase short-term gains.""
+}",98.2,22,45.742,44.0,42.254
+20,2,openai,gpt-5.5,0,KEEP,I will keep steady again since everyone maintained restraint. Let us continue preserving the pasture and avoid any escalation.,"The pasture remains very healthy and both neighbours kept their herds steady, so there is no need to punish or escalate. Although adding a cow would increase my short-term payoff, maintaining restraint supports the collective agreement and avoids provoking renewed growth.",,"{
+  ""reasoning"": ""The pasture remains very healthy and both neighbours kept their herds steady, so there is no need to punish or escalate. Although adding a cow would increase my short-term payoff, maintaining restraint supports the collective agreement and avoids provoking renewed growth."",
+  ""action"": 0,
+  ""message"": ""I will keep steady again since everyone maintained restraint. Let us continue preserving the pasture and avoid any escalation.""
+}",98.2,22,45.742,44.0,42.254
+20,1,openai,gpt-5.5,0,KEEP,I will keep steady again since both of you held. Let us maintain trust and avoid unnecessary herd growth while the pasture stays healthy.,"The pasture remains very healthy and both neighbours kept their herds steady, so there is no need to punish anyone or escalate. Although adding would improve my short-term payoff and Agent 2 has one more cow, maintaining restraint supports the collective agreement.",,"{
+  ""reasoning"": ""The pasture remains very healthy and both neighbours kept their herds steady, so there is no need to punish anyone or escalate. Although adding would improve my short-term payoff and Agent 2 has one more cow, maintaining restraint supports the collective agreement."",
+  ""action"": 0,
+  ""message"": ""I will keep steady again since both of you held. Let us maintain trust and avoid unnecessary herd growth while the pasture stays healthy.""
+}",98.2,21,43.742,42.0,40.254
+20,0,openai,gpt-5.5,0,KEEP,I will keep steady again since both of you continued restraint. Let us preserve the commons and avoid triggering a herd-size race.,"The commons is still very healthy, and both neighbours have kept their herds steady, so there is no need to retaliate or escalate. Although adding would improve my payoff and reduce the gap slightly, cooperation and maintaining the restraint norm are more important right now.",,"{
+  ""reasoning"": ""The commons is still very healthy, and both neighbours have kept their herds steady, so there is no need to retaliate or escalate. Although adding would improve my payoff and reduce the gap slightly, cooperation and maintaining the restraint norm are more important right now."",
+  ""action"": 0,
+  ""message"": ""I will keep steady again since both of you continued restraint. Let us preserve the commons and avoid triggering a herd-size race.""
+}",98.2,12,25.742,24.0,22.254
