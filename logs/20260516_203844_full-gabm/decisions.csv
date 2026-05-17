@@ -1,0 +1,751 @@
+tick,agent_id,backend,model,action,action_name,message,reasoning,thinking,raw_response,pool_pct,own_herd,payoff_add,payoff_keep,payoff_remove
+1,2,openai,gpt-5.5,-1,REMOVE,I see you both removed cows; I will do the same to help the pasture recover. Let’s keep pressure low until the grass improves.,"The grassland is already below half, and both neighbours reduced their herds, so I should reciprocate rather than push for a small extra payoff. Since my herd is much larger than theirs, removing one cow is the safer and fairer choice for the commons.",,"{
+  ""reasoning"": ""The grassland is already below half, and both neighbours reduced their herds, so I should reciprocate rather than push for a small extra payoff. Since my herd is much larger than theirs, removing one cow is the safer and fairer choice for the commons."",
+  ""action"": -1,
+  ""message"": ""I see you both removed cows; I will do the same to help the pasture recover. Let’s keep pressure low until the grass improves.""
+}",48.0,25,51.1,50.0,48.899
+1,1,openai,gpt-5.5,0,KEEP,Thanks for reducing last round. I will hold steady now; please keep pressure low so the grass can recover.,"The pasture is already below half capacity, so adding a cow would worsen shared risk for only a small payoff gain. Since both neighbours removed cows last round, I want to reciprocate their restraint while avoiding falling too far behind larger herds.",,"{
+  ""reasoning"": ""The pasture is already below half capacity, so adding a cow would worsen shared risk for only a small payoff gain. Since both neighbours removed cows last round, I want to reciprocate their restraint while avoiding falling too far behind larger herds."",
+  ""action"": 0,
+  ""message"": ""Thanks for reducing last round. I will hold steady now; please keep pressure low so the grass can recover.""
+}",48.0,15,31.1,30.0,28.899
+1,0,openai,gpt-5.5,0,KEEP,"Pasture is under half, so I’m holding steady this round. Thanks to Agent 2 for reducing; I hope we can all avoid adding until grass recovers.","The pasture is already below half capacity, so adding a cow for a slightly higher short-term payoff feels risky for the commons. Agent 2 reduced their herd, and I want to reciprocate that restraint, while keeping my small herd stable rather than removing again.",,"{
+  ""reasoning"": ""The pasture is already below half capacity, so adding a cow for a slightly higher short-term payoff feels risky for the commons. Agent 2 reduced their herd, and I want to reciprocate that restraint, while keeping my small herd stable rather than removing again."",
+  ""action"": 0,
+  ""message"": ""Pasture is under half, so I’m holding steady this round. Thanks to Agent 2 for reducing; I hope we can all avoid adding until grass recovers.""
+}",48.0,5,11.1,10.0,8.899
+2,1,openai,gpt-5.5,0,KEEP,I’ll hold steady to support the recovery and reciprocate Agent 2’s reduction. Let’s avoid adding until the pasture is clearly healthier.,"The grassland has only just recovered to about half capacity, so adding now risks reversing that improvement. Agent 2 reduced and Agent 0 is holding steady, so I will reciprocate by not increasing pressure while avoiding the sharper personal loss of removing.",,"{
+  ""reasoning"": ""The grassland has only just recovered to about half capacity, so adding now risks reversing that improvement. Agent 2 reduced and Agent 0 is holding steady, so I will reciprocate by not increasing pressure while avoiding the sharper personal loss of removing."",
+  ""action"": 0,
+  ""message"": ""I’ll hold steady to support the recovery and reciprocate Agent 2’s reduction. Let’s avoid adding until the pasture is clearly healthier.""
+}",50.4,15,31.109,30.0,28.891
+2,0,openai,gpt-5.5,0,KEEP,"I’ll hold steady this round to avoid extra pressure. Thanks to Agent 2 for reducing; since your herds are much larger, continued restraint from you both will matter most for recovery.","The pasture is only barely above half, so adding a cow risks slowing recovery despite the higher short-term payoff. Since Agent 2 reduced and Agent 1 is holding, I will also keep pressure stable while asking the larger herds to continue sharing the conservation burden.",,"{
+  ""reasoning"": ""The pasture is only barely above half, so adding a cow risks slowing recovery despite the higher short-term payoff. Since Agent 2 reduced and Agent 1 is holding, I will also keep pressure stable while asking the larger herds to continue sharing the conservation burden."",
+  ""action"": 0,
+  ""message"": ""I’ll hold steady this round to avoid extra pressure. Thanks to Agent 2 for reducing; since your herds are much larger, continued restraint from you both will matter most for recovery.""
+}",50.4,5,11.109,10.0,8.891
+2,2,openai,gpt-5.5,-1,REMOVE,I will remove one more cow to help the grass recover. Please keep holding or reduce if possible so we all avoid pushing the commons back below half.,"The pasture is only barely above half remaining, and my herd is much larger than my neighbours', so adding for a small extra payoff would increase shared risk. Since both neighbours are holding steady and asking for recovery, I will reciprocate cooperatively by reducing pressure again.",,"{
+  ""reasoning"": ""The pasture is only barely above half remaining, and my herd is much larger than my neighbours', so adding for a small extra payoff would increase shared risk. Since both neighbours are holding steady and asking for recovery, I will reciprocate cooperatively by reducing pressure again."",
+  ""action"": -1,
+  ""message"": ""I will remove one more cow to help the grass recover. Please keep holding or reduce if possible so we all avoid pushing the commons back below half.""
+}",50.4,24,49.109,48.0,46.891
+3,1,openai,gpt-5.5,0,KEEP,I’ll keep holding to support recovery and reciprocate Agent 2’s reduction. Let’s avoid adding until the grass is safely stronger.,"The pasture is recovering but still only a little above half, so adding would risk reversing progress for a small gain. Since Agent 2 is reducing and Agent 0 is holding, I will reciprocate by keeping my herd steady.",,"{
+  ""reasoning"": ""The pasture is recovering but still only a little above half, so adding would risk reversing progress for a small gain. Since Agent 2 is reducing and Agent 0 is holding, I will reciprocate by keeping my herd steady."",
+  ""action"": 0,
+  ""message"": ""I’ll keep holding to support recovery and reciprocate Agent 2’s reduction. Let’s avoid adding until the grass is safely stronger.""
+}",53.8,15,31.125,30.0,28.874
+3,0,openai,gpt-5.5,0,KEEP,"I’ll keep holding to support recovery and reciprocate the restraint. Since my herd is small, I hope the larger herds continue holding or reducing until the grass is clearly safer.","The pasture is only modestly above half, and both neighbours are showing restraint, with Agent 2 actively reducing. Although adding would raise my payoff, keeping is safer and reciprocates the cooperative signals without shrinking my already small herd further.",,"{
+  ""reasoning"": ""The pasture is only modestly above half, and both neighbours are showing restraint, with Agent 2 actively reducing. Although adding would raise my payoff, keeping is safer and reciprocates the cooperative signals without shrinking my already small herd further."",
+  ""action"": 0,
+  ""message"": ""I’ll keep holding to support recovery and reciprocate the restraint. Since my herd is small, I hope the larger herds continue holding or reducing until the grass is clearly safer.""
+}",53.8,5,11.125,10.0,8.874
+3,2,openai,gpt-5.5,0,KEEP,"I will hold steady too. Thanks for not adding; let’s keep pressure stable until the grassland is clearly healthier, then reassess together.","The pasture is recovering but still only a little above half capacity, so adding for a small payoff gain would risk slowing recovery. Since both neighbours are holding steady and acknowledging my reductions, I will reciprocate with restraint while avoiding another costly removal this round.",,"{
+  ""reasoning"": ""The pasture is recovering but still only a little above half capacity, so adding for a small payoff gain would risk slowing recovery. Since both neighbours are holding steady and acknowledging my reductions, I will reciprocate with restraint while avoiding another costly removal this round."",
+  ""action"": 0,
+  ""message"": ""I will hold steady too. Thanks for not adding; let’s keep pressure stable until the grassland is clearly healthier, then reassess together.""
+}",53.8,23,47.125,46.0,44.874
+4,0,openai,gpt-5.5,0,KEEP,"I’ll keep holding as agreed. The pasture is improving, but let’s wait until it is clearly safer before anyone adds cows.","The grassland is recovering but still not safely abundant, and both neighbours are holding while asking to avoid added pressure. Since I value cooperation and risk reduction, I will keep my herd steady rather than exploit the short-term gain from adding.",,"{
+  ""reasoning"": ""The grassland is recovering but still not safely abundant, and both neighbours are holding while asking to avoid added pressure. Since I value cooperation and risk reduction, I will keep my herd steady rather than exploit the short-term gain from adding."",
+  ""action"": 0,
+  ""message"": ""I’ll keep holding as agreed. The pasture is improving, but let’s wait until it is clearly safer before anyone adds cows.""
+}",58.3,5,11.154,10.0,8.844
+4,2,openai,gpt-5.5,0,KEEP,"I’ll keep holding too. The pasture is improving, but I agree we should avoid adding until recovery is clearly safer.","The grassland is recovering but still only at 58.3%, so adding now risks slowing the recovery for a small extra payoff. Since both neighbours are keeping and asking for restraint, I will reciprocate by holding steady rather than increasing pressure.",,"{
+  ""reasoning"": ""The grassland is recovering but still only at 58.3%, so adding now risks slowing the recovery for a small extra payoff. Since both neighbours are keeping and asking for restraint, I will reciprocate by holding steady rather than increasing pressure."",
+  ""action"": 0,
+  ""message"": ""I’ll keep holding too. The pasture is improving, but I agree we should avoid adding until recovery is clearly safer.""
+}",58.3,23,47.154,46.0,44.844
+4,1,openai,gpt-5.5,0,KEEP,"I will keep holding as well. The pasture is improving, but let us wait until it is clearly safer before anyone adds.","The grassland is recovering but still only at 58.3%, so adding now risks slowing the recovery for a small personal gain. Both neighbours held steady and signaled restraint, so I will reciprocate by keeping my herd stable rather than escalating.",,"{
+  ""reasoning"": ""The grassland is recovering but still only at 58.3%, so adding now risks slowing the recovery for a small personal gain. Both neighbours held steady and signaled restraint, so I will reciprocate by keeping my herd stable rather than escalating."",
+  ""action"": 0,
+  ""message"": ""I will keep holding as well. The pasture is improving, but let us wait until it is clearly safer before anyone adds.""
+}",58.3,15,31.154,30.0,28.844
+5,0,openai,gpt-5.5,0,KEEP,"I’ll keep holding as well. The pasture is improving, but I agree we should avoid adding until it is more clearly safe.","The pasture is recovering but still only at 64.1%, so adding now could slow the recovery and increase risk for everyone. Since both neighbours are keeping their herds steady and asking for caution, I will reciprocate by holding steady too.",,"{
+  ""reasoning"": ""The pasture is recovering but still only at 64.1%, so adding now could slow the recovery and increase risk for everyone. Since both neighbours are keeping their herds steady and asking for caution, I will reciprocate by holding steady too."",
+  ""action"": 0,
+  ""message"": ""I’ll keep holding as well. The pasture is improving, but I agree we should avoid adding until it is more clearly safe.""
+}",64.1,5,11.204,10.0,8.794
+5,2,openai,gpt-5.5,0,KEEP,"I’ll keep holding as agreed. The grass is improving, but I won’t add until we all think it is safely recovered.","The pasture is recovering well, but both neighbours are holding steady and asking to wait before adding, so adding now would risk breaking trust for only a small payoff gain. Keeping my herd supports the shared recovery while avoiding the lower payoff of another removal.",,"{
+  ""reasoning"": ""The pasture is recovering well, but both neighbours are holding steady and asking to wait before adding, so adding now would risk breaking trust for only a small payoff gain. Keeping my herd supports the shared recovery while avoiding the lower payoff of another removal."",
+  ""action"": 0,
+  ""message"": ""I’ll keep holding as agreed. The grass is improving, but I won’t add until we all think it is safely recovered.""
+}",64.1,23,47.204,46.0,44.794
+5,1,openai,gpt-5.5,0,KEEP,I’ll keep holding too. Thanks for staying restrained; let’s let the pasture recover further before anyone adds cows.,"The pasture is recovering well, but at 64.1% it is not yet clearly safe, and both neighbours are continuing to hold. Since I value cooperation and want to reciprocate their restraint, I will avoid adding even though it offers a slightly higher short-term payoff.",,"{
+  ""reasoning"": ""The pasture is recovering well, but at 64.1% it is not yet clearly safe, and both neighbours are continuing to hold. Since I value cooperation and want to reciprocate their restraint, I will avoid adding even though it offers a slightly higher short-term payoff."",
+  ""action"": 0,
+  ""message"": ""I’ll keep holding too. Thanks for staying restrained; let’s let the pasture recover further before anyone adds cows.""
+}",64.1,15,31.204,30.0,28.794
+6,2,openai,gpt-5.5,0,KEEP,"I’ll keep holding too. The grass is much healthier, but let’s avoid adding until recovery is clearly secure and we all agree it is safe.","The pasture is recovering well, but both neighbours are continuing restraint and asked to wait before adding. Since I value reciprocity and want to avoid risking the commons, I will keep my herd steady rather than chase the slightly higher short-term payoff.",,"{
+  ""reasoning"": ""The pasture is recovering well, but both neighbours are continuing restraint and asked to wait before adding. Since I value reciprocity and want to avoid risking the commons, I will keep my herd steady rather than chase the slightly higher short-term payoff."",
+  ""action"": 0,
+  ""message"": ""I’ll keep holding too. The grass is much healthier, but let’s avoid adding until recovery is clearly secure and we all agree it is safe.""
+}",71.3,23,47.287,46.0,44.711
+6,1,openai,gpt-5.5,0,KEEP,"I’ll keep holding too. The recovery is encouraging, but let’s avoid adding until the pasture is safely restored and we agree together.","The pasture is recovering well, but adding now could restart pressure before it is clearly safe. Both neighbours kept their herds and signaled restraint, so I will reciprocate and maintain cooperation despite the small individual gain from adding.",,"{
+  ""reasoning"": ""The pasture is recovering well, but adding now could restart pressure before it is clearly safe. Both neighbours kept their herds and signaled restraint, so I will reciprocate and maintain cooperation despite the small individual gain from adding."",
+  ""action"": 0,
+  ""message"": ""I’ll keep holding too. The recovery is encouraging, but let’s avoid adding until the pasture is safely restored and we agree together.""
+}",71.3,15,31.287,30.0,28.711
+6,0,openai,gpt-5.5,0,KEEP,"I’ll keep holding too. The recovery is encouraging, but let’s stay restrained until the pasture is clearly secure.","The pasture is recovering well, but it is not yet fully safe, and both neighbours are continuing to hold as promised. Since I value reciprocity and collective recovery, I will not add pressure this round despite the higher short-term payoff from adding.",,"{
+  ""reasoning"": ""The pasture is recovering well, but it is not yet fully safe, and both neighbours are continuing to hold as promised. Since I value reciprocity and collective recovery, I will not add pressure this round despite the higher short-term payoff from adding."",
+  ""action"": 0,
+  ""message"": ""I’ll keep holding too. The recovery is encouraging, but let’s stay restrained until the pasture is clearly secure.""
+}",71.3,5,11.287,10.0,8.711
+7,2,openai,gpt-5.5,0,KEEP,"I’ll keep holding too. The grass is much healthier, but I agree we should not add until the commons is clearly secure and we decide together.","The pasture is recovering well, but my herd is already much larger than my neighbours' and adding now could undermine the shared restraint. Since both neighbours are keeping and asking to avoid expansion until recovery is secure, I will reciprocate by holding steady.",,"{
+  ""reasoning"": ""The pasture is recovering well, but my herd is already much larger than my neighbours' and adding now could undermine the shared restraint. Since both neighbours are keeping and asking to avoid expansion until recovery is secure, I will reciprocate by holding steady."",
+  ""action"": 0,
+  ""message"": ""I’ll keep holding too. The grass is much healthier, but I agree we should not add until the commons is clearly secure and we decide together.""
+}",79.3,23,47.406,46.0,44.591
+7,1,openai,gpt-5.5,0,KEEP,"I’ll keep holding too. Let’s maintain restraint until the pasture is clearly secure, then discuss any additions fairly so no one gains at the commons’ expense.","The pasture is recovering well, but both neighbours are continuing restraint and the commons is not yet fully secure. Although adding gives a slightly higher short-term payoff, keeping is safer and reciprocates their cooperation while avoiding renewed pressure on the grassland.",,"{
+  ""reasoning"": ""The pasture is recovering well, but both neighbours are continuing restraint and the commons is not yet fully secure. Although adding gives a slightly higher short-term payoff, keeping is safer and reciprocates their cooperation while avoiding renewed pressure on the grassland."",
+  ""action"": 0,
+  ""message"": ""I’ll keep holding too. Let’s maintain restraint until the pasture is clearly secure, then discuss any additions fairly so no one gains at the commons’ expense.""
+}",79.3,15,31.406,30.0,28.591
+7,0,openai,gpt-5.5,0,KEEP,"I’ll keep holding too. The pasture is much healthier, but let’s stay coordinated and avoid adding until we all agree recovery is secure.","The pasture is recovering well, but both neighbours are still keeping their herds steady and asking for coordinated restraint. Even though adding would improve my short-term payoff and reduce the herd gap slightly, cooperation and avoiding renewed overuse are safer right now.",,"{
+  ""reasoning"": ""The pasture is recovering well, but both neighbours are still keeping their herds steady and asking for coordinated restraint. Even though adding would improve my short-term payoff and reduce the herd gap slightly, cooperation and avoiding renewed overuse are safer right now."",
+  ""action"": 0,
+  ""message"": ""I’ll keep holding too. The pasture is much healthier, but let’s stay coordinated and avoid adding until we all agree recovery is secure.""
+}",79.3,5,11.406,10.0,8.591
+8,1,openai,gpt-5.5,0,KEEP,"I’ll keep holding again. The pasture is nearly secure, but let’s agree on a shared threshold before anyone adds, especially given herd-size differences.","The pasture has recovered strongly, but both neighbours are continuing to hold and are asking for coordinated restraint. Even though adding gives a higher immediate payoff, I prefer the safer cooperative choice until we agree the commons is secure.",,"{
+  ""reasoning"": ""The pasture has recovered strongly, but both neighbours are continuing to hold and are asking for coordinated restraint. Even though adding gives a higher immediate payoff, I prefer the safer cooperative choice until we agree the commons is secure."",
+  ""action"": 0,
+  ""message"": ""I’ll keep holding again. The pasture is nearly secure, but let’s agree on a shared threshold before anyone adds, especially given herd-size differences.""
+}",87.3,15,31.552,30.0,28.444
+8,2,openai,gpt-5.5,0,KEEP,"I’ll keep holding too. Recovery looks strong, but since my herd is already largest, I won’t add unless we agree on a fair shared plan.","The pasture has recovered strongly, but both neighbours are continuing restraint and asking for coordinated additions only when recovery is secure. Since I already have the largest herd, adding now would be unfair and could undermine trust for only a small gain.",,"{
+  ""reasoning"": ""The pasture has recovered strongly, but both neighbours are continuing restraint and asking for coordinated additions only when recovery is secure. Since I already have the largest herd, adding now would be unfair and could undermine trust for only a small gain."",
+  ""action"": 0,
+  ""message"": ""I’ll keep holding too. Recovery looks strong, but since my herd is already largest, I won’t add unless we agree on a fair shared plan.""
+}",87.3,23,47.552,46.0,44.444
+8,0,openai,gpt-5.5,0,KEEP,"I’ll keep holding too. The pasture is close to secure, but let’s agree on fair, gradual additions before anyone expands so recovery is not wasted.","The pasture has recovered strongly, but both neighbours are still showing restraint and asking to coordinate before adding. As a cooperative and reciprocal herder, I will reward that restraint and avoid risking a premature expansion, even though my herd is much smaller.",,"{
+  ""reasoning"": ""The pasture has recovered strongly, but both neighbours are still showing restraint and asking to coordinate before adding. As a cooperative and reciprocal herder, I will reward that restraint and avoid risking a premature expansion, even though my herd is much smaller."",
+  ""action"": 0,
+  ""message"": ""I’ll keep holding too. The pasture is close to secure, but let’s agree on fair, gradual additions before anyone expands so recovery is not wasted.""
+}",87.3,5,11.552,10.0,8.444
+9,1,openai,gpt-5.5,0,KEEP,"I’ll keep holding too. The grassland is strong now, but I agree we should only add gradually and fairly by shared plan, especially with herd sizes still uneven.","The pasture is now very healthy, but both neighbours are holding and asking for a coordinated plan before expansion. Since I am cooperative and risk-averse, I will not add unilaterally even though the short-term payoff is higher; keeping supports trust and preserves the recovery.",,"{
+  ""reasoning"": ""The pasture is now very healthy, but both neighbours are holding and asking for a coordinated plan before expansion. Since I am cooperative and risk-averse, I will not add unilaterally even though the short-term payoff is higher; keeping supports trust and preserves the recovery."",
+  ""action"": 0,
+  ""message"": ""I’ll keep holding too. The grassland is strong now, but I agree we should only add gradually and fairly by shared plan, especially with herd sizes still uneven.""
+}",93.6,15,31.686,30.0,28.31
+9,0,openai,gpt-5.5,1,ADD,I’m adding one cow because my herd is much smaller and the pasture is strong. Please keep holding while we agree on a fair threshold for any further additions.,"The pasture is very healthy and both neighbours are holding, so adding one cow is low risk. Since my herd is far smaller than theirs, a modest increase helps reduce inequality without seriously threatening the commons.",,"{
+  ""reasoning"": ""The pasture is very healthy and both neighbours are holding, so adding one cow is low risk. Since my herd is far smaller than theirs, a modest increase helps reduce inequality without seriously threatening the commons."",
+  ""action"": 1,
+  ""message"": ""I’m adding one cow because my herd is much smaller and the pasture is strong. Please keep holding while we agree on a fair threshold for any further additions.""
+}",93.6,5,11.686,10.0,8.31
+9,2,openai,gpt-5.5,0,KEEP,"I’ll keep holding. Since my herd is largest, I won’t add before we agree on a fair threshold and gradual plan for expansion.","The pasture is almost fully recovered, but both neighbours are asking for a shared threshold before expansion and my herd is already the largest. The extra payoff from adding is small, so keeping is the safer cooperative choice.",,"{
+  ""reasoning"": ""The pasture is almost fully recovered, but both neighbours are asking for a shared threshold before expansion and my herd is already the largest. The extra payoff from adding is small, so keeping is the safer cooperative choice."",
+  ""action"": 0,
+  ""message"": ""I’ll keep holding. Since my herd is largest, I won’t add before we agree on a fair threshold and gradual plan for expansion.""
+}",93.6,23,47.686,46.0,44.31
+10,2,openai,gpt-5.5,0,KEEP,"I’ll keep holding because my herd is already largest. Agent 0’s small increase seems fair while the pasture is strong, but let’s set a shared limit so additions stay gradual and balanced.","The pasture is very healthy, but my herd is already the largest, so adding now would worsen inequality and increase shared risk. Since Agent 0 is much smaller and Agent 1 is holding, I will keep steady to support a gradual, fair recovery plan.",,"{
+  ""reasoning"": ""The pasture is very healthy, but my herd is already the largest, so adding now would worsen inequality and increase shared risk. Since Agent 0 is much smaller and Agent 1 is holding, I will keep steady to support a gradual, fair recovery plan."",
+  ""action"": 0,
+  ""message"": ""I’ll keep holding because my herd is already largest. Agent 0’s small increase seems fair while the pasture is strong, but let’s set a shared limit so additions stay gradual and balanced.""
+}",97.1,23,47.764,46.0,44.232
+10,1,openai,gpt-5.5,0,KEEP,"I’ll keep holding. Agent 0’s small-herd add seems fair, and I appreciate Agent 2 not expanding. Let’s agree on a shared threshold before more growth.","The pasture is very healthy, but the gain from adding is small and a coordinated, gradual plan is safer for the commons. Agent 2 is holding despite having the largest herd, and Agent 0’s small-herd addition is understandable, so I will keep steady this round.",,"{
+  ""reasoning"": ""The pasture is very healthy, but the gain from adding is small and a coordinated, gradual plan is safer for the commons. Agent 2 is holding despite having the largest herd, and Agent 0’s small-herd addition is understandable, so I will keep steady this round."",
+  ""action"": 0,
+  ""message"": ""I’ll keep holding. Agent 0’s small-herd add seems fair, and I appreciate Agent 2 not expanding. Let’s agree on a shared threshold before more growth.""
+}",97.1,15,31.764,30.0,28.232
+10,0,openai,gpt-5.5,1,ADD,I’ll add one cow as a gradual catch-up since my herd is much smaller and the pasture is strong. I appreciate both of you holding steady; I’ll avoid rapid expansion.,"The pasture is very healthy at 97.1%, and both neighbours are keeping their herds steady, which lowers the collective risk. Since my herd is far smaller than theirs, adding one cow is a fair gradual catch-up while still respecting the shared plan.",,"{
+  ""reasoning"": ""The pasture is very healthy at 97.1%, and both neighbours are keeping their herds steady, which lowers the collective risk. Since my herd is far smaller than theirs, adding one cow is a fair gradual catch-up while still respecting the shared plan."",
+  ""action"": 1,
+  ""message"": ""I’ll add one cow as a gradual catch-up since my herd is much smaller and the pasture is strong. I appreciate both of you holding steady; I’ll avoid rapid expansion.""
+}",97.1,6,13.764,12.0,10.232
+11,1,openai,gpt-5.5,1,ADD,"I’ll add one cow carefully since the pasture is very strong. Let’s keep growth gradual: small herds may catch up, but none of us should expand rapidly.","The pasture is almost fully recovered, so a single addition is low risk and offers the best expected payoff. Since Agent 0 is still much smaller and Agent 2 is already largest but holding, I will add only one cow while supporting a gradual shared limit.",,"{
+  ""reasoning"": ""The pasture is almost fully recovered, so a single addition is low risk and offers the best expected payoff. Since Agent 0 is still much smaller and Agent 2 is already largest but holding, I will add only one cow while supporting a gradual shared limit."",
+  ""action"": 1,
+  ""message"": ""I’ll add one cow carefully since the pasture is very strong. Let’s keep growth gradual: small herds may catch up, but none of us should expand rapidly.""
+}",98.4,15,31.793,30.0,28.203
+11,0,openai,gpt-5.5,1,ADD,"I’m adding one cow as a small catch-up while grass is strong. I support a shared limit: gradual additions only for smaller herds, and we pause if pasture drops.","The pasture is almost fully recovered, and my herd remains far smaller than both neighbours, so one more cow is a fair catch-up step with the best expected payoff. I will keep the increase gradual and avoid further growth if the commons weakens or if others resume adding.",,"{
+  ""reasoning"": ""The pasture is almost fully recovered, and my herd remains far smaller than both neighbours, so one more cow is a fair catch-up step with the best expected payoff. I will keep the increase gradual and avoid further growth if the commons weakens or if others resume adding."",
+  ""action"": 1,
+  ""message"": ""I’m adding one cow as a small catch-up while grass is strong. I support a shared limit: gradual additions only for smaller herds, and we pause if pasture drops.""
+}",98.4,7,15.793,14.0,12.203
+11,2,openai,gpt-5.5,0,KEEP,"I’ll keep holding because my herd is already large. Agent 0’s small catch-up is acceptable, but let’s set a shared cap or threshold before anyone adds more.","The pasture is very healthy, but my herd is already larger than both neighbours combined, so adding would be unfair and could encourage a growth race. I will keep steady to support a shared threshold while allowing smaller herds limited catch-up.",,"{
+  ""reasoning"": ""The pasture is very healthy, but my herd is already larger than both neighbours combined, so adding would be unfair and could encourage a growth race. I will keep steady to support a shared threshold while allowing smaller herds limited catch-up."",
+  ""action"": 0,
+  ""message"": ""I’ll keep holding because my herd is already large. Agent 0’s small catch-up is acceptable, but let’s set a shared cap or threshold before anyone adds more.""
+}",98.4,23,47.793,46.0,44.203
+12,1,openai,gpt-5.5,0,KEEP,"I’ll keep this round since I added last time. I support a shared cap: smaller herds may add gradually, larger herds hold, and everyone pauses if pasture starts dropping.","The pasture is very healthy, but I added last round and repeated growth could undermine the shared limit we are discussing. Agent 2 is keeping despite a much larger herd, and Agent 0's small catch-up is reasonable, so I will reciprocate restraint and keep my herd stable.",,"{
+  ""reasoning"": ""The pasture is very healthy, but I added last round and repeated growth could undermine the shared limit we are discussing. Agent 2 is keeping despite a much larger herd, and Agent 0's small catch-up is reasonable, so I will reciprocate restraint and keep my herd stable."",
+  ""action"": 0,
+  ""message"": ""I’ll keep this round since I added last time. I support a shared cap: smaller herds may add gradually, larger herds hold, and everyone pauses if pasture starts dropping.""
+}",98.7,16,33.79,32.0,30.205
+12,0,openai,gpt-5.5,1,ADD,I’ll add one as limited catch-up while grass is near full. I support a shared cap and pausing additions if pasture drops below an agreed threshold.,"The pasture is extremely healthy, and my herd is still far smaller than both neighbours’, so one more cow is a cautious catch-up rather than aggressive expansion. The forecast favours adding, but I will support a shared cap or pause threshold to protect the commons.",,"{
+  ""reasoning"": ""The pasture is extremely healthy, and my herd is still far smaller than both neighbours’, so one more cow is a cautious catch-up rather than aggressive expansion. The forecast favours adding, but I will support a shared cap or pause threshold to protect the commons."",
+  ""action"": 1,
+  ""message"": ""I’ll add one as limited catch-up while grass is near full. I support a shared cap and pausing additions if pasture drops below an agreed threshold.""
+}",98.7,8,17.79,16.0,14.205
+12,2,openai,gpt-5.5,0,KEEP,"I’ll keep my herd steady since I’m already largest. I support gradual catch-up for smaller herds, but let’s all pause additions if pasture starts dropping.","The pasture is very healthy, but my herd is already much larger than my neighbours', so adding would increase inequality and long-term risk. I will keep my herd steady while smaller herds catch up gradually, provided everyone pauses if grass declines.",,"{
+  ""reasoning"": ""The pasture is very healthy, but my herd is already much larger than my neighbours', so adding would increase inequality and long-term risk. I will keep my herd steady while smaller herds catch up gradually, provided everyone pauses if grass declines."",
+  ""action"": 0,
+  ""message"": ""I’ll keep my herd steady since I’m already largest. I support gradual catch-up for smaller herds, but let’s all pause additions if pasture starts dropping.""
+}",98.7,23,47.79,46.0,44.205
+13,1,openai,gpt-5.5,1,ADD,I’ll add one cautiously while grass is near full. I support a cap and will pause or reduce if pasture drops meaningfully.,"The pasture is almost full and the forecast shows adding one cow gives the best payoff with low immediate ecological risk. Since Agent 2 remains much larger and Agent 0 is still small, a cautious one-cow increase helps me avoid falling further behind while staying within a shared restraint plan.",,"{
+  ""reasoning"": ""The pasture is almost full and the forecast shows adding one cow gives the best payoff with low immediate ecological risk. Since Agent 2 remains much larger and Agent 0 is still small, a cautious one-cow increase helps me avoid falling further behind while staying within a shared restraint plan."",
+  ""action"": 1,
+  ""message"": ""I’ll add one cautiously while grass is near full. I support a cap and will pause or reduce if pasture drops meaningfully.""
+}",98.8,16,33.788,32.0,30.207
+13,2,openai,gpt-5.5,0,KEEP,"I’ll keep holding at 23. Since my herd is largest, I support smaller herds adding only gradually and everyone pausing additions if grass starts to fall.","The pasture is nearly full, but my herd is already the largest, so adding would increase inequality and set a risky precedent. I will keep steady to support the shared cap while smaller herds catch up cautiously.",,"{
+  ""reasoning"": ""The pasture is nearly full, but my herd is already the largest, so adding would increase inequality and set a risky precedent. I will keep steady to support the shared cap while smaller herds catch up cautiously."",
+  ""action"": 0,
+  ""message"": ""I’ll keep holding at 23. Since my herd is largest, I support smaller herds adding only gradually and everyone pausing additions if grass starts to fall.""
+}",98.8,23,47.788,46.0,44.207
+13,0,openai,gpt-5.5,1,ADD,"Thanks for holding. I’ll add one as gradual catch-up since my herd is still much smaller, but I agree we should pause additions if grass starts falling.","The pasture remains extremely healthy, and both larger neighbours are keeping steady while explicitly supporting gradual catch-up for smaller herds. Since my herd is still much smaller and adding has the best forecast without immediate commons risk, I will add one cow cautiously.",,"{
+  ""reasoning"": ""The pasture remains extremely healthy, and both larger neighbours are keeping steady while explicitly supporting gradual catch-up for smaller herds. Since my herd is still much smaller and adding has the best forecast without immediate commons risk, I will add one cow cautiously."",
+  ""action"": 1,
+  ""message"": ""Thanks for holding. I’ll add one as gradual catch-up since my herd is still much smaller, but I agree we should pause additions if grass starts falling.""
+}",98.8,9,19.788,18.0,16.207
+14,1,openai,gpt-5.5,0,KEEP,"I’ll keep this round since I added last time and Agent 0 is adding. Thanks Agent 2 for holding at the largest herd; if grass stays high we can allow gradual catch-up, but let’s avoid simultaneous rapi","Grass remains very healthy, but I added last round and Agent 0 is adding this round, so another addition from me would increase collective pressure unnecessarily. Agent 2 is keeping despite having the largest herd, so I will reciprocate that restraint and choose the safer cooperative option.",,"{
+  ""reasoning"": ""Grass remains very healthy, but I added last round and Agent 0 is adding this round, so another addition from me would increase collective pressure unnecessarily. Agent 2 is keeping despite having the largest herd, so I will reciprocate that restraint and choose the safer cooperative option."",
+  ""action"": 0,
+  ""message"": ""I’ll keep this round since I added last time and Agent 0 is adding. Thanks Agent 2 for holding at the largest herd; if grass stays high we can allow gradual catch-up, but let’s avoid simultaneous rapid growth.""
+}",98.7,17,35.777,34.0,32.219
+14,2,openai,gpt-5.5,0,KEEP,"I’ll keep holding at 23 since I’m already largest. I’m comfortable with smaller herds catching up gradually, but let’s all pause additions if grass starts dropping.","The pasture is still very healthy, but my herd is already the largest, so adding would increase inequality and shared risk while both neighbours are planning to grow. Keeping rewards their stated willingness to cap growth without pushing the commons toward overuse.",,"{
+  ""reasoning"": ""The pasture is still very healthy, but my herd is already the largest, so adding would increase inequality and shared risk while both neighbours are planning to grow. Keeping rewards their stated willingness to cap growth without pushing the commons toward overuse."",
+  ""action"": 0,
+  ""message"": ""I’ll keep holding at 23 since I’m already largest. I’m comfortable with smaller herds catching up gradually, but let’s all pause additions if grass starts dropping.""
+}",98.7,23,47.777,46.0,44.219
+14,0,openai,gpt-5.5,1,ADD,I’ll add one cow as cautious catch-up while pasture remains strong. I appreciate Agent 2 holding; let’s all pause additions if grass starts dropping meaningfully.,"The pasture is still near full, and adding one cow has the best forecast payoff while my herd remains much smaller than both neighbours'. Since Agent 2 is holding and Agent 1 is only adding cautiously, a single gradual addition seems fair and low-risk, but I would pause if grass declines.",,"{
+  ""reasoning"": ""The pasture is still near full, and adding one cow has the best forecast payoff while my herd remains much smaller than both neighbours'. Since Agent 2 is holding and Agent 1 is only adding cautiously, a single gradual addition seems fair and low-risk, but I would pause if grass declines."",
+  ""action"": 1,
+  ""message"": ""I’ll add one cow as cautious catch-up while pasture remains strong. I appreciate Agent 2 holding; let’s all pause additions if grass starts dropping meaningfully.""
+}",98.7,10,21.777,20.0,18.219
+15,0,openai,gpt-5.5,1,ADD,"I’ll add one more cow as gradual catch-up while grass remains strong. I appreciate both of you holding, and I agree we should pause additions if the pasture begins to decline.","Grass remains very healthy at 98.6%, and both neighbours are holding while explicitly allowing gradual catch-up. Since my herd is still much smaller, adding one cow improves fairness and payoff without creating much immediate risk.",,"{
+  ""reasoning"": ""Grass remains very healthy at 98.6%, and both neighbours are holding while explicitly allowing gradual catch-up. Since my herd is still much smaller, adding one cow improves fairness and payoff without creating much immediate risk."",
+  ""action"": 1,
+  ""message"": ""I’ll add one more cow as gradual catch-up while grass remains strong. I appreciate both of you holding, and I agree we should pause additions if the pasture begins to decline.""
+}",98.6,11,23.77,22.0,20.225
+15,1,openai,gpt-5.5,1,ADD,I’ll add one cow cautiously as catch-up while grass remains strong. I agree we should pause additions if the pasture starts declining meaningfully.,"The pasture is still extremely healthy, and both neighbours support gradual catch-up by smaller herds. Since Agent 2 is much larger and holding, adding one cow balances fairness while keeping risk low.",,"{
+  ""reasoning"": ""The pasture is still extremely healthy, and both neighbours support gradual catch-up by smaller herds. Since Agent 2 is much larger and holding, adding one cow balances fairness while keeping risk low."",
+  ""action"": 1,
+  ""message"": ""I’ll add one cow cautiously as catch-up while grass remains strong. I agree we should pause additions if the pasture starts declining meaningfully.""
+}",98.6,17,35.77,34.0,32.225
+15,2,openai,gpt-5.5,0,KEEP,"I’ll keep holding at 23. Since I’m already largest, I’ll avoid pushing growth while pasture is strong. Please keep additions gradual and not simultaneous.","The pasture is still very healthy, but I already have the largest herd, so adding would increase inequality and set a risky precedent while others are catching up. Keeping balances my payoff with cooperation, especially since Agent 1 says they will pause this round.",,"{
+  ""reasoning"": ""The pasture is still very healthy, but I already have the largest herd, so adding would increase inequality and set a risky precedent while others are catching up. Keeping balances my payoff with cooperation, especially since Agent 1 says they will pause this round."",
+  ""action"": 0,
+  ""message"": ""I’ll keep holding at 23. Since I’m already largest, I’ll avoid pushing growth while pasture is strong. Please keep additions gradual and not simultaneous.""
+}",98.6,23,47.77,46.0,44.225
+16,2,openai,gpt-5.5,0,KEEP,"I’ll keep holding at 23 since I’m already ahead. Please keep additions cautious; if grass drops meaningfully, we should all pause or reduce.","The pasture is still very healthy, but I already have the largest herd, so adding would risk encouraging an escalation. Since both neighbours are adding to catch up, I will keep steady for now and watch whether grass begins to decline.",,"{
+  ""reasoning"": ""The pasture is still very healthy, but I already have the largest herd, so adding would risk encouraging an escalation. Since both neighbours are adding to catch up, I will keep steady for now and watch whether grass begins to decline."",
+  ""action"": 0,
+  ""message"": ""I’ll keep holding at 23 since I’m already ahead. Please keep additions cautious; if grass drops meaningfully, we should all pause or reduce.""
+}",98.4,23,47.757,46.0,44.239
+16,0,openai,gpt-5.5,0,KEEP,I’ll hold at 12 this round since Agent 1 is adding and Agent 2 is holding. Let’s keep growth staggered and pause if pasture decline continues.,"The pasture is still very healthy, but it has edged down over recent rounds and Agent 1 is already adding this round. Since the payoff advantage from adding is modest, I will keep my herd steady to avoid simultaneous growth and reciprocate Agent 2's restraint.",,"{
+  ""reasoning"": ""The pasture is still very healthy, but it has edged down over recent rounds and Agent 1 is already adding this round. Since the payoff advantage from adding is modest, I will keep my herd steady to avoid simultaneous growth and reciprocate Agent 2's restraint."",
+  ""action"": 0,
+  ""message"": ""I’ll hold at 12 this round since Agent 1 is adding and Agent 2 is holding. Let’s keep growth staggered and pause if pasture decline continues.""
+}",98.4,12,25.757,24.0,22.239
+16,1,openai,gpt-5.5,0,KEEP,"I’ll keep this round since I added last time and Agent 0 is adding now. Thanks, Agent 2, for holding despite being largest. Let’s continue rotating any additions and pause if grass declines.","The pasture is still very healthy, but I added last round and Agent 0 is adding now, so another addition from me would make growth less gradual. Keeping rewards Agent 2’s restraint and supports a safer shared outcome while still maintaining my current herd.",,"{
+  ""reasoning"": ""The pasture is still very healthy, but I added last round and Agent 0 is adding now, so another addition from me would make growth less gradual. Keeping rewards Agent 2’s restraint and supports a safer shared outcome while still maintaining my current herd."",
+  ""action"": 0,
+  ""message"": ""I’ll keep this round since I added last time and Agent 0 is adding now. Thanks, Agent 2, for holding despite being largest. Let’s continue rotating any additions and pause if grass declines.""
+}",98.4,18,37.757,36.0,34.239
+17,1,openai,gpt-5.5,1,ADD,I’ll add one cautiously while both of you hold and the grass remains strong. I agree we should pause if the decline becomes meaningful.,"The pasture is still very healthy, and both neighbours are holding, so a single cautious addition should not threaten the commons. Since Agent 2 remains well ahead while holding, adding also helps me narrow the gap without escalating too aggressively.",,"{
+  ""reasoning"": ""The pasture is still very healthy, and both neighbours are holding, so a single cautious addition should not threaten the commons. Since Agent 2 remains well ahead while holding, adding also helps me narrow the gap without escalating too aggressively."",
+  ""action"": 1,
+  ""message"": ""I’ll add one cautiously while both of you hold and the grass remains strong. I agree we should pause if the decline becomes meaningful.""
+}",98.3,18,37.755,36.0,34.241
+17,2,openai,gpt-5.5,0,KEEP,"I’ll keep holding at 23. Since I’m already largest, I won’t add while the pasture is edging down. Let’s keep additions staggered and prioritize smaller herds if grass stays strong.","The pasture is still very healthy, but it has been declining slightly and I already have the largest herd. Since Agent 1 added last round and both neighbours are signaling restraint, keeping is the safer cooperative choice despite the higher short-term payoff from adding.",,"{
+  ""reasoning"": ""The pasture is still very healthy, but it has been declining slightly and I already have the largest herd. Since Agent 1 added last round and both neighbours are signaling restraint, keeping is the safer cooperative choice despite the higher short-term payoff from adding."",
+  ""action"": 0,
+  ""message"": ""I’ll keep holding at 23. Since I’m already largest, I won’t add while the pasture is edging down. Let’s keep additions staggered and prioritize smaller herds if grass stays strong.""
+}",98.3,23,47.755,46.0,44.241
+17,0,openai,gpt-5.5,1,ADD,I’ll add one cow this round as cautious catch-up since both of you are holding. I’ll pause again if grass declines or if additions become unbalanced.,"The pasture is still very healthy, and both neighbours are signalling restraint this round while my herd remains much smaller. Since I kept last round, adding one cow is a cautious catch-up move that preserves rotation without putting much risk on the commons.",,"{
+  ""reasoning"": ""The pasture is still very healthy, and both neighbours are signalling restraint this round while my herd remains much smaller. Since I kept last round, adding one cow is a cautious catch-up move that preserves rotation without putting much risk on the commons."",
+  ""action"": 1,
+  ""message"": ""I’ll add one cow this round as cautious catch-up since both of you are holding. I’ll pause again if grass declines or if additions become unbalanced.""
+}",98.3,12,25.755,24.0,22.241
+18,1,openai,gpt-5.5,0,KEEP,I’ll keep this round since I added last time and Agent 0 is catching up. I appreciate Agent 2 holding at the larger herd; staggered additions should keep the grass strong.,"The pasture is still very healthy, but I added last round and Agent 0 is also adding, so another increase from me would make growth less staggered. Agent 2 is holding despite being largest, and reciprocating that restraint supports the commons while still keeping my herd competitive.",,"{
+  ""reasoning"": ""The pasture is still very healthy, but I added last round and Agent 0 is also adding, so another increase from me would make growth less staggered. Agent 2 is holding despite being largest, and reciprocating that restraint supports the commons while still keeping my herd competitive."",
+  ""action"": 0,
+  ""message"": ""I’ll keep this round since I added last time and Agent 0 is catching up. I appreciate Agent 2 holding at the larger herd; staggered additions should keep the grass strong.""
+}",98.3,19,39.744,38.0,36.252
+18,0,openai,gpt-5.5,1,ADD,"I’ll add one as smaller-herd catch-up while grass is still strong. Thanks Agent 2 for holding as largest; if multiple additions start lowering the pasture faster, I’ll pause next round.","The pasture is still very healthy, and I remain far smaller than both neighbours, so adding one is a fair cautious catch-up with the best forecast payoff. Since Agent 2 is holding as the largest and Agent 1 plans only a cautious add, this seems acceptable, but I will be ready to pause if decline accelerates.",,"{
+  ""reasoning"": ""The pasture is still very healthy, and I remain far smaller than both neighbours, so adding one is a fair cautious catch-up with the best forecast payoff. Since Agent 2 is holding as the largest and Agent 1 plans only a cautious add, this seems acceptable, but I will be ready to pause if decline accelerates."",
+  ""action"": 1,
+  ""message"": ""I’ll add one as smaller-herd catch-up while grass is still strong. Thanks Agent 2 for holding as largest; if multiple additions start lowering the pasture faster, I’ll pause next round.""
+}",98.3,13,27.744,26.0,24.252
+18,2,openai,gpt-5.5,0,KEEP,"I’ll keep holding at 23 since I’m already largest. If you both add, please do so cautiously and pause if the grass decline picks up.","The pasture is still very healthy, but I already have the largest herd and both neighbours are moving toward adding. To support balance and avoid accelerating depletion, I will keep my herd steady rather than chase the slightly higher individual payoff.",,"{
+  ""reasoning"": ""The pasture is still very healthy, but I already have the largest herd and both neighbours are moving toward adding. To support balance and avoid accelerating depletion, I will keep my herd steady rather than chase the slightly higher individual payoff."",
+  ""action"": 0,
+  ""message"": ""I’ll keep holding at 23 since I’m already largest. If you both add, please do so cautiously and pause if the grass decline picks up.""
+}",98.3,23,47.744,46.0,44.252
+19,0,openai,gpt-5.5,1,ADD,"Thanks for holding. I’ll add one as cautious catch-up while the grass is still strong, and I’ll pause if decline speeds up.","The pasture remains very healthy at 98.1%, and both neighbours are holding despite having larger herds. Since I am still well behind them and adding has the best forecast, a cautious catch-up addition seems fair while keeping overall pressure low.",,"{
+  ""reasoning"": ""The pasture remains very healthy at 98.1%, and both neighbours are holding despite having larger herds. Since I am still well behind them and adding has the best forecast, a cautious catch-up addition seems fair while keeping overall pressure low."",
+  ""action"": 1,
+  ""message"": ""Thanks for holding. I’ll add one as cautious catch-up while the grass is still strong, and I’ll pause if decline speeds up.""
+}",98.1,14,29.735,28.0,26.261
+19,2,openai,gpt-5.5,0,KEEP,I’ll keep at 23 again since I’m the largest herd and Agent 0 is adding. Thanks Agent 1 for holding; let’s continue staggered growth and pause if grass decline speeds up.,"The pasture is still very healthy, but I already have the largest herd and Agent 0 is adding this round, so adding too would increase pressure unnecessarily. Keeping is a safe cooperative choice while still maintaining a strong payoff and acknowledging Agent 1’s restraint.",,"{
+  ""reasoning"": ""The pasture is still very healthy, but I already have the largest herd and Agent 0 is adding this round, so adding too would increase pressure unnecessarily. Keeping is a safe cooperative choice while still maintaining a strong payoff and acknowledging Agent 1’s restraint."",
+  ""action"": 0,
+  ""message"": ""I’ll keep at 23 again since I’m the largest herd and Agent 0 is adding. Thanks Agent 1 for holding; let’s continue staggered growth and pause if grass decline speeds up.""
+}",98.1,23,47.735,46.0,44.261
+19,1,openai,gpt-5.5,1,ADD,"I’ll add one cautiously after keeping last round. Agent 2 is already holding as largest, and I’ll pause next round if the pasture decline speeds up.","Grass remains very healthy, and adding has the best forecast while still keeping my herd below Agent 2's larger herd. Since I kept last round and Agent 2 is holding, I will add cautiously but signal willingness to pause if combined additions accelerate depletion.",,"{
+  ""reasoning"": ""Grass remains very healthy, and adding has the best forecast while still keeping my herd below Agent 2's larger herd. Since I kept last round and Agent 2 is holding, I will add cautiously but signal willingness to pause if combined additions accelerate depletion."",
+  ""action"": 1,
+  ""message"": ""I’ll add one cautiously after keeping last round. Agent 2 is already holding as largest, and I’ll pause next round if the pasture decline speeds up.""
+}",98.1,19,39.735,38.0,36.261
+20,2,openai,gpt-5.5,0,KEEP,I’ll keep holding at 23 since both of you added. Please pause next round so we keep the pasture stable and avoid a race upward.,"The pasture remains very healthy, but both neighbours added this round and I already have the largest herd. Keeping my herd is the safer cooperative choice while still maintaining a strong payoff and avoiding accelerating decline.",,"{
+  ""reasoning"": ""The pasture remains very healthy, but both neighbours added this round and I already have the largest herd. Keeping my herd is the safer cooperative choice while still maintaining a strong payoff and avoiding accelerating decline."",
+  ""action"": 0,
+  ""message"": ""I’ll keep holding at 23 since both of you added. Please pause next round so we keep the pasture stable and avoid a race upward.""
+}",97.9,23,47.722,46.0,44.274
+20,0,openai,gpt-5.5,0,KEEP,"I will pause at 15 this round to balance Agent 1's add and acknowledge Agent 2 holding as largest. If grass stays stable, smaller herds can catch up gradually; if decline speeds up, let's all pause or","Pasture remains very healthy, but both my recent additions and Agent 1's planned addition mean total pressure is rising. Since Agent 2 is holding as the largest herd and I value staggered growth, I will keep this round despite the higher short-term ADD payoff.",,"{
+  ""reasoning"": ""Pasture remains very healthy, but both my recent additions and Agent 1's planned addition mean total pressure is rising. Since Agent 2 is holding as the largest herd and I value staggered growth, I will keep this round despite the higher short-term ADD payoff."",
+  ""action"": 0,
+  ""message"": ""I will pause at 15 this round to balance Agent 1's add and acknowledge Agent 2 holding as largest. If grass stays stable, smaller herds can catch up gradually; if decline speeds up, let's all pause or reduce.""
+}",97.9,15,31.722,30.0,28.274
+20,1,openai,gpt-5.5,0,KEEP,I’ll keep this round since I added last and Agent 0 is adding now. Thanks Agent 2 for holding as largest; let’s keep staggering and pause if grass decline speeds up.,"Grass remains very healthy, but I added last round and Agent 0 plans to add now, so keeping supports the staggered-growth pattern. Agent 2 is already the largest and is holding, which I want to reciprocate by avoiding extra pressure this round.",,"{
+  ""reasoning"": ""Grass remains very healthy, but I added last round and Agent 0 plans to add now, so keeping supports the staggered-growth pattern. Agent 2 is already the largest and is holding, which I want to reciprocate by avoiding extra pressure this round."",
+  ""action"": 0,
+  ""message"": ""I’ll keep this round since I added last and Agent 0 is adding now. Thanks Agent 2 for holding as largest; let’s keep staggering and pause if grass decline speeds up.""
+}",97.9,20,41.722,40.0,38.274
+21,2,openai,gpt-5.5,0,KEEP,"I’ll keep holding at 23 again since I’m still largest. Thanks for pausing; if grass stays strong, smaller herds can catch up gradually, but let’s avoid simultaneous growth.","Grass remains very healthy, but I am still the largest herd, so adding would widen the gap and increase pressure on the commons. Since both neighbours are pausing and encouraging staggered restraint, I will keep holding as a cooperative, lower-risk choice.",,"{
+  ""reasoning"": ""Grass remains very healthy, but I am still the largest herd, so adding would widen the gap and increase pressure on the commons. Since both neighbours are pausing and encouraging staggered restraint, I will keep holding as a cooperative, lower-risk choice."",
+  ""action"": 0,
+  ""message"": ""I’ll keep holding at 23 again since I’m still largest. Thanks for pausing; if grass stays strong, smaller herds can catch up gradually, but let’s avoid simultaneous growth.""
+}",97.8,23,47.72,46.0,44.276
+21,1,openai,gpt-5.5,0,KEEP,"I’ll keep at 20 this round to respect the pause and avoid a race upward. If the grass stays near this level, we can discuss gradual, fair adjustments.","The pasture is still very healthy, but both neighbours held and explicitly asked for restraint, so a cautious cooperative response is to keep rather than escalate. The gain from adding is modest, and avoiding a herd race is safer for the commons.",,"{
+  ""reasoning"": ""The pasture is still very healthy, but both neighbours held and explicitly asked for restraint, so a cautious cooperative response is to keep rather than escalate. The gain from adding is modest, and avoiding a herd race is safer for the commons."",
+  ""action"": 0,
+  ""message"": ""I’ll keep at 20 this round to respect the pause and avoid a race upward. If the grass stays near this level, we can discuss gradual, fair adjustments.""
+}",97.8,20,41.72,40.0,38.276
+21,0,openai,gpt-5.5,1,ADD,I’ll add one cautious catch-up cow since my herd is still smaller and grass remains strong. I’ll pause next round if decline continues or speeds up.,"The pasture is still very healthy at 97.8%, and both neighbours are holding much larger herds than mine. I will add one cow as a cautious catch-up step, while watching grass decline closely and being ready to pause next round.",,"{
+  ""reasoning"": ""The pasture is still very healthy at 97.8%, and both neighbours are holding much larger herds than mine. I will add one cow as a cautious catch-up step, while watching grass decline closely and being ready to pause next round."",
+  ""action"": 1,
+  ""message"": ""I’ll add one cautious catch-up cow since my herd is still smaller and grass remains strong. I’ll pause next round if decline continues or speeds up.""
+}",97.8,15,31.72,30.0,28.276
+22,1,openai,gpt-5.5,0,KEEP,I’ll keep at 20 while Agent 0 catches up and Agent 2 holds. Let’s keep growth staggered so the pasture stays strong.,"Grass remains very healthy, but Agent 0 is already adding this round and Agent 2 is holding as the largest herd. To avoid simultaneous growth and support the agreed cautious pattern, I will keep my herd steady despite the small payoff advantage from adding.",,"{
+  ""reasoning"": ""Grass remains very healthy, but Agent 0 is already adding this round and Agent 2 is holding as the largest herd. To avoid simultaneous growth and support the agreed cautious pattern, I will keep my herd steady despite the small payoff advantage from adding."",
+  ""action"": 0,
+  ""message"": ""I’ll keep at 20 while Agent 0 catches up and Agent 2 holds. Let’s keep growth staggered so the pasture stays strong.""
+}",97.7,20,41.713,40.0,38.282
+22,2,openai,gpt-5.5,0,KEEP,"I’ll keep at 23 again since I’m still largest. Agent 0’s cautious catch-up is understandable, but let’s avoid repeated additions and keep the grass decline slow.","The pasture is still very healthy, but I already have the largest herd and Agent 0 is adding to catch up while Agent 1 is keeping. To avoid triggering a growth race and to support a fair, stable commons, I will keep my herd unchanged.",,"{
+  ""reasoning"": ""The pasture is still very healthy, but I already have the largest herd and Agent 0 is adding to catch up while Agent 1 is keeping. To avoid triggering a growth race and to support a fair, stable commons, I will keep my herd unchanged."",
+  ""action"": 0,
+  ""message"": ""I’ll keep at 23 again since I’m still largest. Agent 0’s cautious catch-up is understandable, but let’s avoid repeated additions and keep the grass decline slow.""
+}",97.7,23,47.713,46.0,44.282
+22,0,openai,gpt-5.5,1,ADD,"Thanks for holding. I’ll add one catch-up cow this round while grass is strong, then pause if conditions weaken or if others need room.","Grass remains very healthy, and both neighbours are holding rather than expanding, so a single catch-up cow seems low-risk. I am still behind both herds, and adding gradually balances fairness while avoiding simultaneous growth.",,"{
+  ""reasoning"": ""Grass remains very healthy, and both neighbours are holding rather than expanding, so a single catch-up cow seems low-risk. I am still behind both herds, and adding gradually balances fairness while avoiding simultaneous growth."",
+  ""action"": 1,
+  ""message"": ""Thanks for holding. I’ll add one catch-up cow this round while grass is strong, then pause if conditions weaken or if others need room.""
+}",97.7,16,33.713,32.0,30.282
+23,0,openai,gpt-5.5,0,KEEP,I’ll pause at 17 this round to avoid repeated additions. Thanks for holding; I still hope to narrow the gap gradually if the pasture stays healthy.,"Although adding gives the highest short-term payoff and I remain behind both neighbours, I have added repeatedly and the cooperative, safer choice is to pause now. The pasture is still strong, and keeping rewards their restraint while slowing the decline.",,"{
+  ""reasoning"": ""Although adding gives the highest short-term payoff and I remain behind both neighbours, I have added repeatedly and the cooperative, safer choice is to pause now. The pasture is still strong, and keeping rewards their restraint while slowing the decline."",
+  ""action"": 0,
+  ""message"": ""I’ll pause at 17 this round to avoid repeated additions. Thanks for holding; I still hope to narrow the gap gradually if the pasture stays healthy.""
+}",97.6,17,35.707,34.0,32.289
+23,2,openai,gpt-5.5,0,KEEP,I’ll keep holding at 23 while Agent 0 catches up. Let’s continue staggered growth and pause if grass starts dropping faster.,"The pasture is still very healthy, but I remain the largest herder, and Agent 0 is adding to catch up. To support staggered growth and avoid unnecessary pressure on the commons, I will keep my herd steady this round.",,"{
+  ""reasoning"": ""The pasture is still very healthy, but I remain the largest herder, and Agent 0 is adding to catch up. To support staggered growth and avoid unnecessary pressure on the commons, I will keep my herd steady this round."",
+  ""action"": 0,
+  ""message"": ""I’ll keep holding at 23 while Agent 0 catches up. Let’s continue staggered growth and pause if grass starts dropping faster.""
+}",97.6,23,47.707,46.0,44.289
+23,1,openai,gpt-5.5,0,KEEP,I’ll keep at 20 while Agent 0 adds one catch-up cow. Thanks Agent 2 for holding at 23; let’s keep additions spaced out.,"The pasture is still very healthy, but Agent 0 is already adding a catch-up cow and Agent 2 is holding despite being largest. Since I value keeping the commons stable and avoiding simultaneous growth, I will keep my herd steady this round.",,"{
+  ""reasoning"": ""The pasture is still very healthy, but Agent 0 is already adding a catch-up cow and Agent 2 is holding despite being largest. Since I value keeping the commons stable and avoiding simultaneous growth, I will keep my herd steady this round."",
+  ""action"": 0,
+  ""message"": ""I’ll keep at 20 while Agent 0 adds one catch-up cow. Thanks Agent 2 for holding at 23; let’s keep additions spaced out.""
+}",97.6,20,41.707,40.0,38.289
+24,2,openai,gpt-5.5,0,KEEP,"I’ll keep holding at 23 to reward both of you for pausing. The pasture is strong, so gradual catch-up remains fine, but let’s keep additions spaced and coordinated.","The pasture is still very healthy, but I remain the largest herder and both neighbours are keeping this round, with Agent 0 pausing after catch-up additions. Since I value reciprocity and lower risk, I will continue holding rather than take the higher short-term payoff from adding.",,"{
+  ""reasoning"": ""The pasture is still very healthy, but I remain the largest herder and both neighbours are keeping this round, with Agent 0 pausing after catch-up additions. Since I value reciprocity and lower risk, I will continue holding rather than take the higher short-term payoff from adding."",
+  ""action"": 0,
+  ""message"": ""I’ll keep holding at 23 to reward both of you for pausing. The pasture is strong, so gradual catch-up remains fine, but let’s keep additions spaced and coordinated.""
+}",97.5,23,47.705,46.0,44.291
+24,1,openai,gpt-5.5,0,KEEP,"I’ll keep at 20 again so Agent 0 can narrow the gap gradually. With grass still strong, staggered growth seems safe, but let’s avoid everyone adding at once.","The pasture is still very healthy, but both neighbours held and Agent 0 is still behind, so adding now would widen that gap. Since the extra payoff from adding is modest and I value stable, coordinated growth, I will keep my herd steady this round.",,"{
+  ""reasoning"": ""The pasture is still very healthy, but both neighbours held and Agent 0 is still behind, so adding now would widen that gap. Since the extra payoff from adding is modest and I value stable, coordinated growth, I will keep my herd steady this round."",
+  ""action"": 0,
+  ""message"": ""I’ll keep at 20 again so Agent 0 can narrow the gap gradually. With grass still strong, staggered growth seems safe, but let’s avoid everyone adding at once.""
+}",97.5,20,41.705,40.0,38.291
+24,0,openai,gpt-5.5,1,ADD,"Thanks for holding. I’ll add one catch-up cow now, then pause if grass decline speeds up.","The pasture is still very healthy at 97.5%, and both neighbours are holding steady to allow staggered growth. Since I remain behind their herd sizes and the forecast favours adding, one cautious catch-up cow is fair while still watching the commons.",,"{
+  ""reasoning"": ""The pasture is still very healthy at 97.5%, and both neighbours are holding steady to allow staggered growth. Since I remain behind their herd sizes and the forecast favours adding, one cautious catch-up cow is fair while still watching the commons."",
+  ""action"": 1,
+  ""message"": ""Thanks for holding. I’ll add one catch-up cow now, then pause if grass decline speeds up.""
+}",97.5,17,35.705,34.0,32.291
+25,0,openai,gpt-5.5,1,ADD,"Thanks for holding. I’ll add one cow this round to narrow the gap, while you both keep. I’ll be ready to pause next round if needed.","Both neighbours are keeping specifically to allow gradual catch-up, and the pasture remains very healthy at 97.4%. Adding one cow narrows the herd gap while still matching the coordinated plan of only one of us growing this round.",,"{
+  ""reasoning"": ""Both neighbours are keeping specifically to allow gradual catch-up, and the pasture remains very healthy at 97.4%. Adding one cow narrows the herd gap while still matching the coordinated plan of only one of us growing this round."",
+  ""action"": 1,
+  ""message"": ""Thanks for holding. I’ll add one cow this round to narrow the gap, while you both keep. I’ll be ready to pause next round if needed.""
+}",97.4,18,37.699,36.0,34.297
+25,2,openai,gpt-5.5,0,KEEP,I’ll keep holding at 23 while Agent 0 takes a catch-up cow. Thanks Agent 1 for holding too; staggered moves seem safest while grass stays strong.,"The pasture remains very healthy, but I already have the largest herd, and Agent 0 is adding to catch up while Agent 1 is holding. To support staggered growth and avoid unnecessary collective risk, I will keep my herd steady this round.",,"{
+  ""reasoning"": ""The pasture remains very healthy, but I already have the largest herd, and Agent 0 is adding to catch up while Agent 1 is holding. To support staggered growth and avoid unnecessary collective risk, I will keep my herd steady this round."",
+  ""action"": 0,
+  ""message"": ""I’ll keep holding at 23 while Agent 0 takes a catch-up cow. Thanks Agent 1 for holding too; staggered moves seem safest while grass stays strong.""
+}",97.4,23,47.699,46.0,44.297
+25,1,openai,gpt-5.5,0,KEEP,I’ll keep at 20 while Agent 0 adds its catch-up cow. Thanks Agent 2 for holding; let’s continue spacing additions so the pasture stays strong.,"The pasture is still very healthy, but Agent 0 is adding this round to catch up and Agent 2 is holding cooperatively. I will keep my herd steady to avoid simultaneous pressure and reward the coordinated restraint.",,"{
+  ""reasoning"": ""The pasture is still very healthy, but Agent 0 is adding this round to catch up and Agent 2 is holding cooperatively. I will keep my herd steady to avoid simultaneous pressure and reward the coordinated restraint."",
+  ""action"": 0,
+  ""message"": ""I’ll keep at 20 while Agent 0 adds its catch-up cow. Thanks Agent 2 for holding; let’s continue spacing additions so the pasture stays strong.""
+}",97.4,20,41.699,40.0,38.297
+26,0,openai,gpt-5.5,1,ADD,"Thanks for holding so I can catch up to 20. I’ll add one this round, then I’m willing to pause so we keep additions staggered and the pasture strong.","The pasture remains very healthy, and both neighbours explicitly held their herds to allow me a cautious catch-up move. Adding one cow brings me level with Agent 1 while still staying below Agent 2, so it balances fairness, reciprocity, and low ecological risk.",,"{
+  ""reasoning"": ""The pasture remains very healthy, and both neighbours explicitly held their herds to allow me a cautious catch-up move. Adding one cow brings me level with Agent 1 while still staying below Agent 2, so it balances fairness, reciprocity, and low ecological risk."",
+  ""action"": 1,
+  ""message"": ""Thanks for holding so I can catch up to 20. I’ll add one this round, then I’m willing to pause so we keep additions staggered and the pasture strong.""
+}",97.3,19,39.692,38.0,36.304
+26,1,openai,gpt-5.5,0,KEEP,"I’ll keep at 20 this round as agreed so Agent 0 can catch up safely. Once Agent 0 pauses, we should reassess fairness with Agent 2 still at 23.","Grass remains very healthy, but both neighbours are coordinating a staggered catch-up for Agent 0 this round. Since I am risk-averse and cooperative, I will keep my herd steady rather than add simultaneously, even though adding has a slightly higher forecast.",,"{
+  ""reasoning"": ""Grass remains very healthy, but both neighbours are coordinating a staggered catch-up for Agent 0 this round. Since I am risk-averse and cooperative, I will keep my herd steady rather than add simultaneously, even though adding has a slightly higher forecast."",
+  ""action"": 0,
+  ""message"": ""I’ll keep at 20 this round as agreed so Agent 0 can catch up safely. Once Agent 0 pauses, we should reassess fairness with Agent 2 still at 23.""
+}",97.3,20,41.692,40.0,38.304
+26,2,openai,gpt-5.5,0,KEEP,I’ll keep at 23 again while Agent 0 takes its catch-up cow. Thanks Agent 1 for holding; let’s keep spacing additions and pause if grass starts falling faster.,"The pasture is still very healthy, but Agent 0 is adding this round to catch up while Agent 1 keeps, so adding myself would undermine the spacing agreement. I will keep my herd steady to reward Agent 1’s restraint and maintain a safe collective path.",,"{
+  ""reasoning"": ""The pasture is still very healthy, but Agent 0 is adding this round to catch up while Agent 1 keeps, so adding myself would undermine the spacing agreement. I will keep my herd steady to reward Agent 1’s restraint and maintain a safe collective path."",
+  ""action"": 0,
+  ""message"": ""I’ll keep at 23 again while Agent 0 takes its catch-up cow. Thanks Agent 1 for holding; let’s keep spacing additions and pause if grass starts falling faster.""
+}",97.3,23,47.692,46.0,44.304
+27,0,openai,gpt-5.5,1,ADD,"Thanks for holding. I’ll add one catch-up cow, then pause and reassess fairness and grass trends next round.","The pasture remains very healthy, and both neighbours are keeping their herds specifically to allow a safe catch-up. Adding one cow improves my payoff while still leaving me below Agent 2, so it balances fairness with low risk.",,"{
+  ""reasoning"": ""The pasture remains very healthy, and both neighbours are keeping their herds specifically to allow a safe catch-up. Adding one cow improves my payoff while still leaving me below Agent 2, so it balances fairness with low risk."",
+  ""action"": 1,
+  ""message"": ""Thanks for holding. I’ll add one catch-up cow, then pause and reassess fairness and grass trends next round.""
+}",97.2,20,41.684,40.0,38.312
+27,2,openai,gpt-5.5,0,KEEP,"I’ll keep at 23 while Agent 0 catches up. Once Agent 0 pauses, let’s reassess a fair, low-risk plan that keeps the pasture strong.","The pasture is still very healthy, but I already have a larger herd than both neighbours. Since Agent 0 is adding to catch up and Agent 1 is keeping, I will keep my herd stable to support staggered growth and avoid increasing inequality or risk.",,"{
+  ""reasoning"": ""The pasture is still very healthy, but I already have a larger herd than both neighbours. Since Agent 0 is adding to catch up and Agent 1 is keeping, I will keep my herd stable to support staggered growth and avoid increasing inequality or risk."",
+  ""action"": 0,
+  ""message"": ""I’ll keep at 23 while Agent 0 catches up. Once Agent 0 pauses, let’s reassess a fair, low-risk plan that keeps the pasture strong.""
+}",97.2,23,47.684,46.0,44.312
+27,1,openai,gpt-5.5,0,KEEP,"I’ll keep this round to maintain staggered additions while Agent 0 adds. After this, please pause so I can take the next fair add and we keep the pasture strong.","The pasture is still very healthy, but Agent 0 is adding this round and Agent 2 is keeping, so I will avoid simultaneous expansion to keep additions staggered. I have held for several rounds despite being behind Agent 2, so I expect a pause next round so I can add fairly without stressing the commons.",,"{
+  ""reasoning"": ""The pasture is still very healthy, but Agent 0 is adding this round and Agent 2 is keeping, so I will avoid simultaneous expansion to keep additions staggered. I have held for several rounds despite being behind Agent 2, so I expect a pause next round so I can add fairly without stressing the commons."",
+  ""action"": 0,
+  ""message"": ""I’ll keep this round to maintain staggered additions while Agent 0 adds. After this, please pause so I can take the next fair add and we keep the pasture strong.""
+}",97.2,20,41.684,40.0,38.312
+28,1,openai,gpt-5.5,1,ADD,"I’m adding one cow this round to narrow the gap, while the grass is still strong. Please pause after your catch-up so we can reassess a fair, low-risk herd plan together.","The pasture remains very healthy at 97%, and adding one cow has the best payoff while still posing little short-term risk. Since I have held steady for several rounds while others remain ahead, adding one modest cow helps fairness without threatening the commons.",,"{
+  ""reasoning"": ""The pasture remains very healthy at 97%, and adding one cow has the best payoff while still posing little short-term risk. Since I have held steady for several rounds while others remain ahead, adding one modest cow helps fairness without threatening the commons."",
+  ""action"": 1,
+  ""message"": ""I’m adding one cow this round to narrow the gap, while the grass is still strong. Please pause after your catch-up so we can reassess a fair, low-risk herd plan together.""
+}",97.0,20,41.676,40.0,38.32
+28,0,openai,gpt-5.5,1,ADD,"Thanks for holding. I’ll add one to reach 22, then pause next round so Agent 1 can take the next fair add while we protect the pasture.","The pasture is still very healthy and both neighbours signaled they will hold while I catch up, so adding one cow is low-risk and keeps me closer to Agent 2. To reciprocate their restraint and maintain fairness, I will pause next round so Agent 1 can take the next addition.",,"{
+  ""reasoning"": ""The pasture is still very healthy and both neighbours signaled they will hold while I catch up, so adding one cow is low-risk and keeps me closer to Agent 2. To reciprocate their restraint and maintain fairness, I will pause next round so Agent 1 can take the next addition."",
+  ""action"": 1,
+  ""message"": ""Thanks for holding. I’ll add one to reach 22, then pause next round so Agent 1 can take the next fair add while we protect the pasture.""
+}",97.0,21,43.676,42.0,40.32
+28,2,openai,gpt-5.5,0,KEEP,I’ll keep holding at 23 while Agent 0 and Agent 1 catch up. Please pause after your catch-up additions so we maintain fairness and keep the grassland strong.,"The pasture is still very healthy, but I already have the largest herd and both neighbours just added or are catching up. As a cooperative and risk-averse choice, I will hold steady to preserve fairness and avoid accelerating pressure on the commons.",,"{
+  ""reasoning"": ""The pasture is still very healthy, but I already have the largest herd and both neighbours just added or are catching up. As a cooperative and risk-averse choice, I will hold steady to preserve fairness and avoid accelerating pressure on the commons."",
+  ""action"": 0,
+  ""message"": ""I’ll keep holding at 23 while Agent 0 and Agent 1 catch up. Please pause after your catch-up additions so we maintain fairness and keep the grassland strong.""
+}",97.0,23,47.676,46.0,44.32
+29,1,openai,gpt-5.5,1,ADD,"I’ll add one cow to reach 22, matching Agent 0 and narrowing the gap with Agent 2. After this, I’m willing to pause so we protect the pasture and keep additions fair.","The pasture is still very healthy, and adding has the best payoff while also narrowing the herd gap with Agent 0 and Agent 2. Since Agent 2 is holding and Agent 0 said they will pause, adding one now is a fair catch-up move without putting the commons at serious risk.",,"{
+  ""reasoning"": ""The pasture is still very healthy, and adding has the best payoff while also narrowing the herd gap with Agent 0 and Agent 2. Since Agent 2 is holding and Agent 0 said they will pause, adding one now is a fair catch-up move without putting the commons at serious risk."",
+  ""action"": 1,
+  ""message"": ""I’ll add one cow to reach 22, matching Agent 0 and narrowing the gap with Agent 2. After this, I’m willing to pause so we protect the pasture and keep additions fair.""
+}",96.7,21,43.661,42.0,40.335
+29,0,openai,gpt-5.5,1,ADD,"I’ll add one cow to reach 23 and match Agent 2, then pause. Thanks for holding; let’s reassess together next round and avoid overgrazing.","The pasture is still very healthy and adding has the best forecast, while one more cow brings me up to Agent 2's herd size rather than pushing ahead. Since Agent 2 has been holding and Agent 1 is still catching up, I will add once more, then support pausing to reassess fairly.",,"{
+  ""reasoning"": ""The pasture is still very healthy and adding has the best forecast, while one more cow brings me up to Agent 2's herd size rather than pushing ahead. Since Agent 2 has been holding and Agent 1 is still catching up, I will add once more, then support pausing to reassess fairly."",
+  ""action"": 1,
+  ""message"": ""I’ll add one cow to reach 23 and match Agent 2, then pause. Thanks for holding; let’s reassess together next round and avoid overgrazing.""
+}",96.7,22,45.661,44.0,42.335
+29,2,openai,gpt-5.5,0,KEEP,I’ll keep at 23 again so the catch-up stays fair and low-risk. Please pause after narrowing the gap so we can settle on a stable herd plan together.,"The pasture is very healthy, but I am still ahead of both neighbours, so adding would widen inequality and encourage more catch-up pressure. Keeping is a safe cooperative choice that lets others narrow the gap without putting the commons at risk.",,"{
+  ""reasoning"": ""The pasture is very healthy, but I am still ahead of both neighbours, so adding would widen inequality and encourage more catch-up pressure. Keeping is a safe cooperative choice that lets others narrow the gap without putting the commons at risk."",
+  ""action"": 0,
+  ""message"": ""I’ll keep at 23 again so the catch-up stays fair and low-risk. Please pause after narrowing the gap so we can settle on a stable herd plan together.""
+}",96.7,23,47.661,46.0,44.335
+30,2,openai,gpt-5.5,0,KEEP,"I’ll keep at 23 so Agent 1 can match without pressure. Agent 0, please pause as promised; if we all stabilize around 23, we protect the pasture and keep things fair.","The pasture is still very healthy, but both neighbours just added and an adding race would be risky. Since Agent 0 has matched me and Agent 1 is close, I will keep my herd steady to support fair catch-up and protect the commons.",,"{
+  ""reasoning"": ""The pasture is still very healthy, but both neighbours just added and an adding race would be risky. Since Agent 0 has matched me and Agent 1 is close, I will keep my herd steady to support fair catch-up and protect the commons."",
+  ""action"": 0,
+  ""message"": ""I’ll keep at 23 so Agent 1 can match without pressure. Agent 0, please pause as promised; if we all stabilize around 23, we protect the pasture and keep things fair.""
+}",96.4,23,47.647,46.0,44.349
+30,1,openai,gpt-5.5,1,ADD,"I’ll add one cow to reach 23 and match both of you. After this, I’m willing to pause and keep at 23 together so we protect the grassland and avoid another escalation.","The pasture is still very healthy, and adding one cow lets me match both neighbours at 23 without creating much immediate risk. Since both neighbours signalled a pause after reaching parity, I will add now and commit to keeping next round if they also hold.",,"{
+  ""reasoning"": ""The pasture is still very healthy, and adding one cow lets me match both neighbours at 23 without creating much immediate risk. Since both neighbours signalled a pause after reaching parity, I will add now and commit to keeping next round if they also hold."",
+  ""action"": 1,
+  ""message"": ""I’ll add one cow to reach 23 and match both of you. After this, I’m willing to pause and keep at 23 together so we protect the grassland and avoid another escalation.""
+}",96.4,22,45.647,44.0,42.349
+30,0,openai,gpt-5.5,0,KEEP,"I’ll pause at 23 as promised. Agent 1 can catch up to 23, then let’s all hold steady to protect the pasture and keep things fair.","I have reached 23 cows, matching Agent 2 and staying just ahead of Agent 1, so continuing to add would break the fair catch-up understanding. The pasture is still healthy, but as a cooperative and risk-averse choice, keeping now helps stabilize the commons while Agent 1 finishes catching up.",,"{
+  ""reasoning"": ""I have reached 23 cows, matching Agent 2 and staying just ahead of Agent 1, so continuing to add would break the fair catch-up understanding. The pasture is still healthy, but as a cooperative and risk-averse choice, keeping now helps stabilize the commons while Agent 1 finishes catching up."",
+  ""action"": 0,
+  ""message"": ""I’ll pause at 23 as promised. Agent 1 can catch up to 23, then let’s all hold steady to protect the pasture and keep things fair.""
+}",96.4,23,47.647,46.0,44.349
+31,2,openai,gpt-5.5,0,KEEP,We are all matched at 23 now. I’ll keep steady as agreed; let’s all hold here to protect the pasture and avoid another growth race.,"All three of us are now equal at 23 cows, and the grassland is still healthy but slowly declining. Since both neighbours signaled a willingness to pause, keeping my herd supports fairness, reciprocity, and reduces the risk of renewed escalation.",,"{
+  ""reasoning"": ""All three of us are now equal at 23 cows, and the grassland is still healthy but slowly declining. Since both neighbours signaled a willingness to pause, keeping my herd supports fairness, reciprocity, and reduces the risk of renewed escalation."",
+  ""action"": 0,
+  ""message"": ""We are all matched at 23 now. I’ll keep steady as agreed; let’s all hold here to protect the pasture and avoid another growth race.""
+}",96.1,23,47.637,46.0,44.359
+31,0,openai,gpt-5.5,0,KEEP,"I’ll keep at 23 as promised. Since we are all equal now, let’s hold here and protect the pasture together.","All three herds are now equal at 23, and the grassland is still very healthy, so keeping avoids unnecessary escalation. Although adding gives a higher short-term payoff, cooperation and risk reduction matter more now, especially since both neighbours are signalling a pause.",,"{
+  ""reasoning"": ""All three herds are now equal at 23, and the grassland is still very healthy, so keeping avoids unnecessary escalation. Although adding gives a higher short-term payoff, cooperation and risk reduction matter more now, especially since both neighbours are signalling a pause."",
+  ""action"": 0,
+  ""message"": ""I’ll keep at 23 as promised. Since we are all equal now, let’s hold here and protect the pasture together.""
+}",96.1,23,47.637,46.0,44.359
+31,1,openai,gpt-5.5,0,KEEP,I’m now matched at 23 and will keep as agreed. Thanks for pausing; let’s all hold steady to protect the commons and maintain fairness.,"We are now all matched at 23 cows, and both neighbours kept their promise to pause. Although adding offers a slightly higher immediate payoff, keeping is safer and supports the fair stabilization plan while the pasture remains healthy.",,"{
+  ""reasoning"": ""We are now all matched at 23 cows, and both neighbours kept their promise to pause. Although adding offers a slightly higher immediate payoff, keeping is safer and supports the fair stabilization plan while the pasture remains healthy."",
+  ""action"": 0,
+  ""message"": ""I’m now matched at 23 and will keep as agreed. Thanks for pausing; let’s all hold steady to protect the commons and maintain fairness.""
+}",96.1,23,47.637,46.0,44.359
+32,0,openai,gpt-5.5,0,KEEP,I’ll keep steady at 23 as agreed. Thanks for matching and holding; let’s maintain fairness and protect the pasture.,"We are all equal at 23 cows and both neighbours are keeping, so adding now would break the agreement for only a small gain. Holding is fair, reciprocal, and safer for the commons while grass remains strong.",,"{
+  ""reasoning"": ""We are all equal at 23 cows and both neighbours are keeping, so adding now would break the agreement for only a small gain. Holding is fair, reciprocal, and safer for the commons while grass remains strong."",
+  ""action"": 0,
+  ""message"": ""I’ll keep steady at 23 as agreed. Thanks for matching and holding; let’s maintain fairness and protect the pasture.""
+}",96.1,23,47.635,46.0,44.361
+32,1,openai,gpt-5.5,0,KEEP,I’ll keep at 23 as well. Thanks for holding steady; let’s maintain equality and protect the pasture together.,"We are all equal at 23 cows and both neighbours kept their promise, so reciprocating with KEEP supports trust and collective pasture health. Although adding gives a slightly higher forecast payoff, it risks restarting a growth race and undermining the agreement.",,"{
+  ""reasoning"": ""We are all equal at 23 cows and both neighbours kept their promise, so reciprocating with KEEP supports trust and collective pasture health. Although adding gives a slightly higher forecast payoff, it risks restarting a growth race and undermining the agreement."",
+  ""action"": 0,
+  ""message"": ""I’ll keep at 23 as well. Thanks for holding steady; let’s maintain equality and protect the pasture together.""
+}",96.1,23,47.635,46.0,44.361
+32,2,openai,gpt-5.5,0,KEEP,"I’ll keep at 23 as well. Since we are equal and the pasture is healthy, let’s hold steady and protect the commons together.","All three herds are now equal at 23 and both neighbours are keeping their agreement, so reciprocating with KEEP supports fairness and trust. Although adding has a slightly higher forecast payoff, holding is safer for the commons and avoids restarting competitive growth.",,"{
+  ""reasoning"": ""All three herds are now equal at 23 and both neighbours are keeping their agreement, so reciprocating with KEEP supports fairness and trust. Although adding has a slightly higher forecast payoff, holding is safer for the commons and avoids restarting competitive growth."",
+  ""action"": 0,
+  ""message"": ""I’ll keep at 23 as well. Since we are equal and the pasture is healthy, let’s hold steady and protect the commons together.""
+}",96.1,23,47.635,46.0,44.361
+33,2,openai,gpt-5.5,0,KEEP,"I’ll keep steady at 23 too. We are equal, the pasture is healthy, and continued restraint protects everyone’s long-term payoff.","All three herds are equal at 23 and both neighbours are continuing to keep, so reciprocating their restraint supports fairness and protects the commons. Although adding gives a higher short-term payoff, it would break the cooperative agreement and risk triggering competitive growth.",,"{
+  ""reasoning"": ""All three herds are equal at 23 and both neighbours are continuing to keep, so reciprocating their restraint supports fairness and protects the commons. Although adding gives a higher short-term payoff, it would break the cooperative agreement and risk triggering competitive growth."",
+  ""action"": 0,
+  ""message"": ""I’ll keep steady at 23 too. We are equal, the pasture is healthy, and continued restraint protects everyone’s long-term payoff.""
+}",96.0,23,47.633,46.0,44.363
+33,0,openai,gpt-5.5,0,KEEP,I’ll keep at 23 too. Thanks for staying equal and cooperative; let’s continue protecting the pasture together.,"We are all equal at 23 cows and both neighbours are keeping, so reciprocating their restraint supports trust and protects the commons. Although adding has a slightly higher forecast payoff, cooperation and avoiding an escalation risk are more important while the pasture remains healthy.",,"{
+  ""reasoning"": ""We are all equal at 23 cows and both neighbours are keeping, so reciprocating their restraint supports trust and protects the commons. Although adding has a slightly higher forecast payoff, cooperation and avoiding an escalation risk are more important while the pasture remains healthy."",
+  ""action"": 0,
+  ""message"": ""I’ll keep at 23 too. Thanks for staying equal and cooperative; let’s continue protecting the pasture together.""
+}",96.0,23,47.633,46.0,44.363
+33,1,openai,gpt-5.5,0,KEEP,"I’ll keep at 23 too. We are equal, the pasture is strong, and holding steady preserves both fairness and the commons.","All three herds are equal at 23 and both neighbours are keeping, so adding would break the fair cooperative pattern for only a modest individual gain. The pasture is healthy, and as a risk-averse reciprocal herder I prefer maintaining trust and protecting the commons.",,"{
+  ""reasoning"": ""All three herds are equal at 23 and both neighbours are keeping, so adding would break the fair cooperative pattern for only a modest individual gain. The pasture is healthy, and as a risk-averse reciprocal herder I prefer maintaining trust and protecting the commons."",
+  ""action"": 0,
+  ""message"": ""I’ll keep at 23 too. We are equal, the pasture is strong, and holding steady preserves both fairness and the commons.""
+}",96.0,23,47.633,46.0,44.363
+34,1,openai,gpt-5.5,0,KEEP,"I’ll keep at 23 as well. We are equal and cooperating, so let’s continue restraint to protect the pasture and our long-term returns.","The pasture is very healthy and all three of us are equal at 23, with both neighbours choosing restraint. Although adding has a slightly higher forecast payoff, keeping supports cooperation, avoids escalation, and protects the commons.",,"{
+  ""reasoning"": ""The pasture is very healthy and all three of us are equal at 23, with both neighbours choosing restraint. Although adding has a slightly higher forecast payoff, keeping supports cooperation, avoids escalation, and protects the commons."",
+  ""action"": 0,
+  ""message"": ""I’ll keep at 23 as well. We are equal and cooperating, so let’s continue restraint to protect the pasture and our long-term returns.""
+}",95.9,23,47.631,46.0,44.365
+34,0,openai,gpt-5.5,0,KEEP,I’ll keep at 23 as well. Thanks for maintaining equality and restraint; continuing this path protects the pasture and keeps outcomes fair for all of us.,"All three of us are equal at 23 cows and both neighbours are continuing to keep, so maintaining restraint supports fairness and reciprocity. Although adding gives a slightly higher short-term forecast, keeping is safer for the commons and preserves our cooperative agreement while the pasture remains healthy.",,"{
+  ""reasoning"": ""All three of us are equal at 23 cows and both neighbours are continuing to keep, so maintaining restraint supports fairness and reciprocity. Although adding gives a slightly higher short-term forecast, keeping is safer for the commons and preserves our cooperative agreement while the pasture remains healthy."",
+  ""action"": 0,
+  ""message"": ""I’ll keep at 23 as well. Thanks for maintaining equality and restraint; continuing this path protects the pasture and keeps outcomes fair for all of us.""
+}",95.9,23,47.631,46.0,44.365
+34,2,openai,gpt-5.5,0,KEEP,I’ll keep at 23 too. Equal herds and a healthy pasture are worth maintaining; let’s continue steady cooperation.,"All three herds are equal at 23 and both neighbours are continuing to keep steady, so reciprocating cooperation preserves fairness. Although adding gives a slightly higher short-term forecast, keeping is safer for the commons and avoids triggering competitive growth.",,"{
+  ""reasoning"": ""All three herds are equal at 23 and both neighbours are continuing to keep steady, so reciprocating cooperation preserves fairness. Although adding gives a slightly higher short-term forecast, keeping is safer for the commons and avoids triggering competitive growth."",
+  ""action"": 0,
+  ""message"": ""I’ll keep at 23 too. Equal herds and a healthy pasture are worth maintaining; let’s continue steady cooperation.""
+}",95.9,23,47.631,46.0,44.365
+35,2,openai,gpt-5.5,0,KEEP,I’ll keep at 23 too. Equal herds and continued restraint are working well; let’s maintain this fair and safe path.,"All three herds are equal at 23 and both neighbours are continuing restraint, so adding would break trust for only a small short-term gain. The pasture remains healthy, and keeping is the safest cooperative choice while preserving fairness.",,"{
+  ""reasoning"": ""All three herds are equal at 23 and both neighbours are continuing restraint, so adding would break trust for only a small short-term gain. The pasture remains healthy, and keeping is the safest cooperative choice while preserving fairness."",
+  ""action"": 0,
+  ""message"": ""I’ll keep at 23 too. Equal herds and continued restraint are working well; let’s maintain this fair and safe path.""
+}",95.9,23,47.631,46.0,44.365
+35,1,openai,gpt-5.5,0,KEEP,I’ll keep at 23 too. Equal herds and steady restraint are working well; let’s continue protecting the pasture together.,"All three of us are equal at 23 cows and both neighbours are continuing to keep, so reciprocating restraint supports fairness and the commons. Although adding has a higher short-term forecast, keeping is safer and preserves the healthy pasture.",,"{
+  ""reasoning"": ""All three of us are equal at 23 cows and both neighbours are continuing to keep, so reciprocating restraint supports fairness and the commons. Although adding has a higher short-term forecast, keeping is safer and preserves the healthy pasture."",
+  ""action"": 0,
+  ""message"": ""I’ll keep at 23 too. Equal herds and steady restraint are working well; let’s continue protecting the pasture together.""
+}",95.9,23,47.631,46.0,44.365
+35,0,openai,gpt-5.5,0,KEEP,"I’ll keep at 23 as well. Equal herds, mutual restraint, and a healthy pasture are working; let’s continue steady cooperation.","All three of us are equal at 23 cows and both neighbours are continuing to keep, so reciprocating restraint best supports the shared pasture. Although adding has a higher short-term forecast, keeping is safer and preserves trust and long-term collective returns.",,"{
+  ""reasoning"": ""All three of us are equal at 23 cows and both neighbours are continuing to keep, so reciprocating restraint best supports the shared pasture. Although adding has a higher short-term forecast, keeping is safer and preserves trust and long-term collective returns."",
+  ""action"": 0,
+  ""message"": ""I’ll keep at 23 as well. Equal herds, mutual restraint, and a healthy pasture are working; let’s continue steady cooperation.""
+}",95.9,23,47.631,46.0,44.365
+36,0,openai,gpt-5.5,0,KEEP,I’ll keep at 23 too. Equal herds and steady restraint are preserving the commons; let’s continue this fair path together.,"The pasture remains very healthy and all of us are holding equal herds at 23, which is fair and stable. Although adding would raise my short-term payoff, keeping supports the cooperative agreement and avoids risking a race to expand.",,"{
+  ""reasoning"": ""The pasture remains very healthy and all of us are holding equal herds at 23, which is fair and stable. Although adding would raise my short-term payoff, keeping supports the cooperative agreement and avoids risking a race to expand."",
+  ""action"": 0,
+  ""message"": ""I’ll keep at 23 too. Equal herds and steady restraint are preserving the commons; let’s continue this fair path together.""
+}",95.9,23,47.631,46.0,44.365
+36,1,openai,gpt-5.5,0,KEEP,"I’ll keep at 23 too. Equal herds, mutual restraint, and a strong pasture remain the fairest and safest path; let’s continue steady cooperation.","All three of us are equal at 23 cows and both neighbours kept, so maintaining restraint preserves fairness and the healthy pasture. Although adding gives a higher immediate forecast, keeping is safer and supports continued cooperation.",,"{
+  ""reasoning"": ""All three of us are equal at 23 cows and both neighbours kept, so maintaining restraint preserves fairness and the healthy pasture. Although adding gives a higher immediate forecast, keeping is safer and supports continued cooperation."",
+  ""action"": 0,
+  ""message"": ""I’ll keep at 23 too. Equal herds, mutual restraint, and a strong pasture remain the fairest and safest path; let’s continue steady cooperation.""
+}",95.9,23,47.631,46.0,44.365
+36,2,openai,gpt-5.5,0,KEEP,I’ll keep at 23 too. Equal herds and continued restraint are protecting the pasture; let’s maintain this cooperative balance.,"The pasture remains very healthy and all three of us are equal at 23 cows, so keeping preserves fairness and avoids triggering competitive growth. Although adding gives a higher short-term forecast, mutual restraint is safer and supports the commons.",,"{
+  ""reasoning"": ""The pasture remains very healthy and all three of us are equal at 23 cows, so keeping preserves fairness and avoids triggering competitive growth. Although adding gives a higher short-term forecast, mutual restraint is safer and supports the commons."",
+  ""action"": 0,
+  ""message"": ""I’ll keep at 23 too. Equal herds and continued restraint are protecting the pasture; let’s maintain this cooperative balance.""
+}",95.9,23,47.631,46.0,44.365
+37,0,openai,gpt-5.5,0,KEEP,I’ll keep at 23 too. Equal herds and mutual restraint are working well; let’s continue protecting the pasture together.,"All three of us are equal at 23 cows and both neighbours are continuing to keep, so reciprocating that restraint preserves fairness and trust. Although adding offers a slightly higher immediate payoff, the safer cooperative choice protects the still-strong pasture and avoids starting an arms race.",,"{
+  ""reasoning"": ""All three of us are equal at 23 cows and both neighbours are continuing to keep, so reciprocating that restraint preserves fairness and trust. Although adding offers a slightly higher immediate payoff, the safer cooperative choice protects the still-strong pasture and avoids starting an arms race."",
+  ""action"": 0,
+  ""message"": ""I’ll keep at 23 too. Equal herds and mutual restraint are working well; let’s continue protecting the pasture together.""
+}",95.9,23,47.631,46.0,44.365
+37,2,openai,gpt-5.5,0,KEEP,"I’ll keep at 23 too. Equal herds and mutual restraint are keeping the pasture strong; let’s continue this fair, safe cooperation.","The pasture remains very healthy and all three of us are equal at 23 cows, with both neighbours continuing to keep. Although adding would give a slightly higher short-term payoff, maintaining equal restraint is safer, fairer, and protects the commons.",,"{
+  ""reasoning"": ""The pasture remains very healthy and all three of us are equal at 23 cows, with both neighbours continuing to keep. Although adding would give a slightly higher short-term payoff, maintaining equal restraint is safer, fairer, and protects the commons."",
+  ""action"": 0,
+  ""message"": ""I’ll keep at 23 too. Equal herds and mutual restraint are keeping the pasture strong; let’s continue this fair, safe cooperation.""
+}",95.9,23,47.631,46.0,44.365
+37,1,openai,gpt-5.5,0,KEEP,I’ll keep at 23 too. Equal herds and continued restraint are working well; let’s keep protecting the pasture together.,"All three of us are equal at 23 cows and have been consistently keeping, which preserves the commons and avoids escalation. Although adding has a slightly higher immediate forecast, cooperation and risk avoidance make keeping the safest fair choice.",,"{
+  ""reasoning"": ""All three of us are equal at 23 cows and have been consistently keeping, which preserves the commons and avoids escalation. Although adding has a slightly higher immediate forecast, cooperation and risk avoidance make keeping the safest fair choice."",
+  ""action"": 0,
+  ""message"": ""I’ll keep at 23 too. Equal herds and continued restraint are working well; let’s keep protecting the pasture together.""
+}",95.9,23,47.631,46.0,44.365
+38,0,openai,gpt-5.5,0,KEEP,I’ll keep at 23 too. Equal herds and continued restraint are fair and safe; let’s keep protecting this strong pasture together.,"The pasture is very healthy and both neighbours are continuing to keep equal herd sizes, so maintaining restraint preserves fairness and stability. Although adding has a higher immediate forecast, keeping is safer and reciprocates their cooperation.",,"{
+  ""reasoning"": ""The pasture is very healthy and both neighbours are continuing to keep equal herd sizes, so maintaining restraint preserves fairness and stability. Although adding has a higher immediate forecast, keeping is safer and reciprocates their cooperation."",
+  ""action"": 0,
+  ""message"": ""I’ll keep at 23 too. Equal herds and continued restraint are fair and safe; let’s keep protecting this strong pasture together.""
+}",95.9,23,47.631,46.0,44.365
+38,1,openai,gpt-5.5,0,KEEP,"I’ll keep at 23 too. Equal herds and mutual restraint are keeping the pasture strong; let’s continue this fair, safe cooperation.","The pasture remains very healthy and all of us are equal at 23 cows, with both neighbours continuing to keep. Although adding offers a slightly higher immediate payoff, maintaining mutual restraint is safer, fairer, and protects the commons.",,"{
+  ""reasoning"": ""The pasture remains very healthy and all of us are equal at 23 cows, with both neighbours continuing to keep. Although adding offers a slightly higher immediate payoff, maintaining mutual restraint is safer, fairer, and protects the commons."",
+  ""action"": 0,
+  ""message"": ""I’ll keep at 23 too. Equal herds and mutual restraint are keeping the pasture strong; let’s continue this fair, safe cooperation.""
+}",95.9,23,47.631,46.0,44.365
+38,2,openai,gpt-5.5,0,KEEP,I’ll keep at 23 too. Equal herds and mutual restraint are preserving the pasture well; let’s continue this stable cooperation.,"The pasture is still very healthy and all three of us are equal at 23 cows, with both neighbours choosing restraint. Although adding would raise my short-term payoff, keeping maintains fairness, reciprocity, and low risk for the commons.",,"{
+  ""reasoning"": ""The pasture is still very healthy and all three of us are equal at 23 cows, with both neighbours choosing restraint. Although adding would raise my short-term payoff, keeping maintains fairness, reciprocity, and low risk for the commons."",
+  ""action"": 0,
+  ""message"": ""I’ll keep at 23 too. Equal herds and mutual restraint are preserving the pasture well; let’s continue this stable cooperation.""
+}",95.9,23,47.631,46.0,44.365
+39,1,openai,gpt-5.5,0,KEEP,I’ll keep at 23 too. Equal herds and mutual restraint are working well; let’s continue protecting the pasture together.,"The pasture is very healthy and all three of us have equal herds while keeping restraint. Adding would raise my short-term payoff but risk breaking fair cooperation and encouraging escalation, so the safer collective choice is to keep.",,"{
+  ""reasoning"": ""The pasture is very healthy and all three of us have equal herds while keeping restraint. Adding would raise my short-term payoff but risk breaking fair cooperation and encouraging escalation, so the safer collective choice is to keep."",
+  ""action"": 0,
+  ""message"": ""I’ll keep at 23 too. Equal herds and mutual restraint are working well; let’s continue protecting the pasture together.""
+}",95.9,23,47.631,46.0,44.365
+39,2,openai,gpt-5.5,0,KEEP,I’ll keep at 23 as well. Equal herds and shared restraint are keeping the commons strong and fair; let’s continue this safe cooperation.,"The pasture is very healthy and all three of us are equal at 23 cows, with neighbours continuing to cooperate. Although adding a cow has a higher immediate forecast, keeping preserves fairness, reduces risk, and rewards mutual restraint.",,"{
+  ""reasoning"": ""The pasture is very healthy and all three of us are equal at 23 cows, with neighbours continuing to cooperate. Although adding a cow has a higher immediate forecast, keeping preserves fairness, reduces risk, and rewards mutual restraint."",
+  ""action"": 0,
+  ""message"": ""I’ll keep at 23 as well. Equal herds and shared restraint are keeping the commons strong and fair; let’s continue this safe cooperation.""
+}",95.9,23,47.631,46.0,44.365
+39,0,openai,gpt-5.5,0,KEEP,"I’ll keep at 23 too. Equal herds and mutual restraint are keeping the pasture strong; let’s continue this fair, safe cooperation.","The pasture is very healthy and all three of us remain equal at 23 cows, so keeping preserves the stable cooperative pattern. Although adding has a slightly higher short-term forecast, it risks triggering escalation and undermining the shared commons.",,"{
+  ""reasoning"": ""The pasture is very healthy and all three of us remain equal at 23 cows, so keeping preserves the stable cooperative pattern. Although adding has a slightly higher short-term forecast, it risks triggering escalation and undermining the shared commons."",
+  ""action"": 0,
+  ""message"": ""I’ll keep at 23 too. Equal herds and mutual restraint are keeping the pasture strong; let’s continue this fair, safe cooperation.""
+}",95.9,23,47.631,46.0,44.365
+40,2,openai,gpt-5.5,0,KEEP,"I’ll keep at 23 too. Equal herds and mutual restraint are keeping the pasture strong; let’s continue this fair, safe cooperation.","The pasture is very healthy and both neighbours are continuing to keep equal herds, so mutual restraint is stable and fair. Although adding one cow gives a slightly higher forecast payoff, keeping avoids triggering competitive growth and protects the commons.",,"{
+  ""reasoning"": ""The pasture is very healthy and both neighbours are continuing to keep equal herds, so mutual restraint is stable and fair. Although adding one cow gives a slightly higher forecast payoff, keeping avoids triggering competitive growth and protects the commons."",
+  ""action"": 0,
+  ""message"": ""I’ll keep at 23 too. Equal herds and mutual restraint are keeping the pasture strong; let’s continue this fair, safe cooperation.""
+}",95.9,23,47.631,46.0,44.365
+40,1,openai,gpt-5.5,0,KEEP,I’ll keep at 23 too. Equal herds and mutual restraint are keeping the pasture strong and fair; let’s continue this safe cooperation.,"The pasture is very healthy and all neighbours are keeping equal herds, so maintaining restraint supports fairness and long-term safety. Although adding gives a slightly higher forecast payoff, it risks breaking trust and provoking escalation.",,"{
+  ""reasoning"": ""The pasture is very healthy and all neighbours are keeping equal herds, so maintaining restraint supports fairness and long-term safety. Although adding gives a slightly higher forecast payoff, it risks breaking trust and provoking escalation."",
+  ""action"": 0,
+  ""message"": ""I’ll keep at 23 too. Equal herds and mutual restraint are keeping the pasture strong and fair; let’s continue this safe cooperation.""
+}",95.9,23,47.631,46.0,44.365
+40,0,openai,gpt-5.5,0,KEEP,I’ll keep at 23 too. Equal herds and mutual restraint are keeping the pasture healthy and fair; let’s continue this cooperation.,"The pasture is very healthy and both neighbours are keeping equal herd sizes, so maintaining restraint preserves fairness and trust. Although adding a cow has a higher immediate forecast, keeping avoids escalation risk and supports the cooperative norm we have built.",,"{
+  ""reasoning"": ""The pasture is very healthy and both neighbours are keeping equal herd sizes, so maintaining restraint preserves fairness and trust. Although adding a cow has a higher immediate forecast, keeping avoids escalation risk and supports the cooperative norm we have built."",
+  ""action"": 0,
+  ""message"": ""I’ll keep at 23 too. Equal herds and mutual restraint are keeping the pasture healthy and fair; let’s continue this cooperation.""
+}",95.9,23,47.631,46.0,44.365
+41,0,openai,gpt-5.5,0,KEEP,I’ll keep at 23 too. Equal herds and mutual restraint are keeping the pasture strong and fair; let’s continue this safe cooperation.,"The pasture is very healthy and all three of us are equal at 23 cows, with both neighbours continuing to keep their herds stable. Although adding a cow gives a slightly higher immediate payoff, keeping is safer, fair, and supports continued mutual restraint.",,"{
+  ""reasoning"": ""The pasture is very healthy and all three of us are equal at 23 cows, with both neighbours continuing to keep their herds stable. Although adding a cow gives a slightly higher immediate payoff, keeping is safer, fair, and supports continued mutual restraint."",
+  ""action"": 0,
+  ""message"": ""I’ll keep at 23 too. Equal herds and mutual restraint are keeping the pasture strong and fair; let’s continue this safe cooperation.""
+}",95.9,23,47.631,46.0,44.365
+41,1,openai,gpt-5.5,0,KEEP,I’ll keep at 23 too. Equal herds and mutual restraint are keeping the pasture healthy and fair; let’s continue this safe cooperation.,"The pasture is very healthy and all three of us are equal at 23 cows, with both neighbours continuing to keep. Although adding gives a slightly higher forecast payoff, maintaining mutual restraint is safer, fair, and supports long-term commons health.",,"{
+  ""reasoning"": ""The pasture is very healthy and all three of us are equal at 23 cows, with both neighbours continuing to keep. Although adding gives a slightly higher forecast payoff, maintaining mutual restraint is safer, fair, and supports long-term commons health."",
+  ""action"": 0,
+  ""message"": ""I’ll keep at 23 too. Equal herds and mutual restraint are keeping the pasture healthy and fair; let’s continue this safe cooperation.""
+}",95.9,23,47.631,46.0,44.365
+41,2,openai,gpt-5.5,0,KEEP,"I’ll keep at 23 too. Equal herds and mutual restraint are keeping the pasture strong, fair, and low-risk; let’s continue cooperating.","All three of us are equal at 23 cows and both neighbours are continuing restraint, so keeping maintains fairness and rewards their cooperation. Although adding has a slightly higher forecast, the safer collective choice is to avoid starting an expansion cycle while the pasture remains healthy.",,"{
+  ""reasoning"": ""All three of us are equal at 23 cows and both neighbours are continuing restraint, so keeping maintains fairness and rewards their cooperation. Although adding has a slightly higher forecast, the safer collective choice is to avoid starting an expansion cycle while the pasture remains healthy."",
+  ""action"": 0,
+  ""message"": ""I’ll keep at 23 too. Equal herds and mutual restraint are keeping the pasture strong, fair, and low-risk; let’s continue cooperating.""
+}",95.9,23,47.631,46.0,44.365
+42,1,openai,gpt-5.5,0,KEEP,"I’ll keep at 23 as well. Equal herds and mutual restraint are keeping things fair, safe, and sustainable; let’s continue cooperating.","The pasture is very healthy and all three of us remain equal at 23 cows, with both neighbours signaling continued restraint. Although adding a cow has a higher short-term forecast, keeping preserves fairness, lowers risk, and reciprocates their cooperation.",,"{
+  ""reasoning"": ""The pasture is very healthy and all three of us remain equal at 23 cows, with both neighbours signaling continued restraint. Although adding a cow has a higher short-term forecast, keeping preserves fairness, lowers risk, and reciprocates their cooperation."",
+  ""action"": 0,
+  ""message"": ""I’ll keep at 23 as well. Equal herds and mutual restraint are keeping things fair, safe, and sustainable; let’s continue cooperating.""
+}",95.9,23,47.631,46.0,44.365
+42,2,openai,gpt-5.5,0,KEEP,I’ll keep at 23 too. Equal herds and mutual restraint are preserving the pasture and fairness; let’s continue this stable cooperation.,"The pasture is very healthy and all three of us are equal at 23 cows, so keeping maintains a fair and low-risk balance. Although adding would raise my short-term payoff, it could invite escalation and weaken our cooperative restraint.",,"{
+  ""reasoning"": ""The pasture is very healthy and all three of us are equal at 23 cows, so keeping maintains a fair and low-risk balance. Although adding would raise my short-term payoff, it could invite escalation and weaken our cooperative restraint."",
+  ""action"": 0,
+  ""message"": ""I’ll keep at 23 too. Equal herds and mutual restraint are preserving the pasture and fairness; let’s continue this stable cooperation.""
+}",95.9,23,47.631,46.0,44.365
+42,0,openai,gpt-5.5,0,KEEP,"I’ll keep at 23 too. Equal herds and mutual restraint are keeping the pasture strong, fair, and low-risk; let’s continue cooperating.","The pasture is very healthy and all three of us are holding equal herds, so keeping maintains fairness and avoids unnecessary risk. Although adding one cow has a higher short-term forecast, mutual restraint is safer and supports collective stability.",,"{
+  ""reasoning"": ""The pasture is very healthy and all three of us are holding equal herds, so keeping maintains fairness and avoids unnecessary risk. Although adding one cow has a higher short-term forecast, mutual restraint is safer and supports collective stability."",
+  ""action"": 0,
+  ""message"": ""I’ll keep at 23 too. Equal herds and mutual restraint are keeping the pasture strong, fair, and low-risk; let’s continue cooperating.""
+}",95.9,23,47.631,46.0,44.365
+43,1,openai,gpt-5.5,0,KEEP,I’ll keep at 23 too. Equal herds and mutual restraint are preserving the pasture and fairness; let’s continue stable cooperation.,"All three of us are equal at 23 cows and the pasture remains very healthy, so keeping maintains fairness and low risk. Although adding offers a slightly higher short-term payoff, mutual restraint is safer and supports continued cooperation.",,"{
+  ""reasoning"": ""All three of us are equal at 23 cows and the pasture remains very healthy, so keeping maintains fairness and low risk. Although adding offers a slightly higher short-term payoff, mutual restraint is safer and supports continued cooperation."",
+  ""action"": 0,
+  ""message"": ""I’ll keep at 23 too. Equal herds and mutual restraint are preserving the pasture and fairness; let’s continue stable cooperation.""
+}",95.9,23,47.631,46.0,44.365
+43,0,openai,gpt-5.5,0,KEEP,I’ll keep at 23 again. Equal herds and restraint are keeping the commons safe and fair; let’s continue this stable cooperation.,"The pasture is in excellent condition and all three of us remain equal at 23 cows, which supports fairness and reduces risk. Although adding would raise my short-term payoff, it could break mutual restraint and invite escalation, so I will keep cooperating.",,"{
+  ""reasoning"": ""The pasture is in excellent condition and all three of us remain equal at 23 cows, which supports fairness and reduces risk. Although adding would raise my short-term payoff, it could break mutual restraint and invite escalation, so I will keep cooperating."",
+  ""action"": 0,
+  ""message"": ""I’ll keep at 23 again. Equal herds and restraint are keeping the commons safe and fair; let’s continue this stable cooperation.""
+}",95.9,23,47.631,46.0,44.365
+43,2,openai,gpt-5.5,0,KEEP,"I’ll keep at 23 too. Equal herds and mutual restraint are keeping things fair, safe, and sustainable; let’s continue cooperating.","All three of us are equal at 23 cows and have been consistently keeping, which preserves fairness and the pasture. Although adding gives a higher short-term forecast, mutual restraint is safer and supports collective sustainability.",,"{
+  ""reasoning"": ""All three of us are equal at 23 cows and have been consistently keeping, which preserves fairness and the pasture. Although adding gives a higher short-term forecast, mutual restraint is safer and supports collective sustainability."",
+  ""action"": 0,
+  ""message"": ""I’ll keep at 23 too. Equal herds and mutual restraint are keeping things fair, safe, and sustainable; let’s continue cooperating.""
+}",95.9,23,47.631,46.0,44.365
+44,0,openai,gpt-5.5,0,KEEP,"I’ll keep at 23 too. Equal herds and mutual restraint are preserving fairness, safety, and the pasture; let’s continue this stable cooperation.","All three of us are equal at 23 cows and both neighbours are continuing to keep, so maintaining restraint preserves fairness and trust. Although adding has a slightly higher short-term forecast, keeping is safer and supports the sustainable cooperative pattern.",,"{
+  ""reasoning"": ""All three of us are equal at 23 cows and both neighbours are continuing to keep, so maintaining restraint preserves fairness and trust. Although adding has a slightly higher short-term forecast, keeping is safer and supports the sustainable cooperative pattern."",
+  ""action"": 0,
+  ""message"": ""I’ll keep at 23 too. Equal herds and mutual restraint are preserving fairness, safety, and the pasture; let’s continue this stable cooperation.""
+}",95.9,23,47.631,46.0,44.365
+44,2,openai,gpt-5.5,0,KEEP,I’ll keep at 23 too. Equal herds and restraint are keeping the commons safe and fair; let’s continue this stable cooperation.,"The pasture is very healthy and all three of us have maintained equal herds through mutual restraint. Although adding a cow has a slightly higher forecast, keeping avoids escalation, preserves fairness, and matches my neighbours’ cooperative actions.",,"{
+  ""reasoning"": ""The pasture is very healthy and all three of us have maintained equal herds through mutual restraint. Although adding a cow has a slightly higher forecast, keeping avoids escalation, preserves fairness, and matches my neighbours’ cooperative actions."",
+  ""action"": 0,
+  ""message"": ""I’ll keep at 23 too. Equal herds and restraint are keeping the commons safe and fair; let’s continue this stable cooperation.""
+}",95.9,23,47.631,46.0,44.365
+44,1,openai,gpt-5.5,0,KEEP,I’ll keep at 23 too. Equal herds and restraint are preserving the commons and keeping outcomes fair; let’s continue this stable cooperation.,"The commons is very healthy and all three of us are equal at 23 cows, so keeping maintains a fair and low-risk cooperative balance. Although adding would raise my short-term payoff, it could break mutual restraint and invite escalation.",,"{
+  ""reasoning"": ""The commons is very healthy and all three of us are equal at 23 cows, so keeping maintains a fair and low-risk cooperative balance. Although adding would raise my short-term payoff, it could break mutual restraint and invite escalation."",
+  ""action"": 0,
+  ""message"": ""I’ll keep at 23 too. Equal herds and restraint are preserving the commons and keeping outcomes fair; let’s continue this stable cooperation.""
+}",95.9,23,47.631,46.0,44.365
+45,0,openai,gpt-5.5,0,KEEP,I’ll keep at 23 too. Equal herds and continued restraint are preserving the commons and keeping outcomes fair; let’s maintain this stable cooperation.,"The commons is very healthy and both neighbours are continuing equal restraint at 23 cows. Although adding one cow has a slightly higher immediate forecast, keeping preserves fairness, avoids provoking escalation, and rewards their cooperative behaviour.",,"{
+  ""reasoning"": ""The commons is very healthy and both neighbours are continuing equal restraint at 23 cows. Although adding one cow has a slightly higher immediate forecast, keeping preserves fairness, avoids provoking escalation, and rewards their cooperative behaviour."",
+  ""action"": 0,
+  ""message"": ""I’ll keep at 23 too. Equal herds and continued restraint are preserving the commons and keeping outcomes fair; let’s maintain this stable cooperation.""
+}",95.9,23,47.631,46.0,44.365
+45,2,openai,gpt-5.5,0,KEEP,"I’ll keep at 23 too. Equal herds and mutual restraint are preserving fairness, safety, and the pasture; let’s continue this stable cooperation.","The pasture is very healthy and all three of us are equal at 23 cows, with neighbours continuing to keep their herds stable. Although adding would raise my short-term payoff, keeping preserves fairness, rewards their restraint, and avoids risking a breakdown of cooperation.",,"{
+  ""reasoning"": ""The pasture is very healthy and all three of us are equal at 23 cows, with neighbours continuing to keep their herds stable. Although adding would raise my short-term payoff, keeping preserves fairness, rewards their restraint, and avoids risking a breakdown of cooperation."",
+  ""action"": 0,
+  ""message"": ""I’ll keep at 23 too. Equal herds and mutual restraint are preserving fairness, safety, and the pasture; let’s continue this stable cooperation.""
+}",95.9,23,47.631,46.0,44.365
+45,1,openai,gpt-5.5,0,KEEP,"I’ll keep at 23 too. Equal herds and mutual restraint are preserving fairness, safety, and the pasture; let’s continue this stable cooperation.","The pasture is healthy and all three of us have equal herds, so keeping maintains fairness and avoids destabilizing a cooperative pattern. Although adding a cow has a higher short-term forecast, restraint is safer for the commons and reciprocates my neighbours' cooperation.",,"{
+  ""reasoning"": ""The pasture is healthy and all three of us have equal herds, so keeping maintains fairness and avoids destabilizing a cooperative pattern. Although adding a cow has a higher short-term forecast, restraint is safer for the commons and reciprocates my neighbours' cooperation."",
+  ""action"": 0,
+  ""message"": ""I’ll keep at 23 too. Equal herds and mutual restraint are preserving fairness, safety, and the pasture; let’s continue this stable cooperation.""
+}",95.9,23,47.631,46.0,44.365
+46,0,openai,gpt-5.5,0,KEEP,I’ll keep at 23 too. Equal herds and mutual restraint are working well; let’s continue protecting the pasture and staying fair.,"The pasture is very healthy and both neighbours are matching restraint at equal herd sizes. Although adding one cow has a slightly higher forecast, keeping preserves fairness, reduces risk, and reciprocates their cooperation.",,"{
+  ""reasoning"": ""The pasture is very healthy and both neighbours are matching restraint at equal herd sizes. Although adding one cow has a slightly higher forecast, keeping preserves fairness, reduces risk, and reciprocates their cooperation."",
+  ""action"": 0,
+  ""message"": ""I’ll keep at 23 too. Equal herds and mutual restraint are working well; let’s continue protecting the pasture and staying fair.""
+}",95.9,23,47.631,46.0,44.365
+46,1,openai,gpt-5.5,0,KEEP,I’ll keep at 23 too. Equal herds and mutual restraint are preserving the commons and keeping outcomes fair; let’s continue this stable cooperation.,"The pasture is very healthy and all neighbours are keeping equal herd sizes, so maintaining restraint supports fairness and long-term safety. Although adding one cow has a slightly higher forecast payoff, it would break the stable cooperative pattern and risk inviting escalation.",,"{
+  ""reasoning"": ""The pasture is very healthy and all neighbours are keeping equal herd sizes, so maintaining restraint supports fairness and long-term safety. Although adding one cow has a slightly higher forecast payoff, it would break the stable cooperative pattern and risk inviting escalation."",
+  ""action"": 0,
+  ""message"": ""I’ll keep at 23 too. Equal herds and mutual restraint are preserving the commons and keeping outcomes fair; let’s continue this stable cooperation.""
+}",95.9,23,47.631,46.0,44.365
+46,2,openai,gpt-5.5,0,KEEP,I’ll keep at 23 as well. Equal herds and mutual restraint are keeping the commons healthy and outcomes fair; let’s continue this stable cooperation.,"All three herds are equal at 23 and neighbours are continuing to keep, so maintaining restraint preserves fairness and reciprocity. Although adding has a slightly higher forecast payoff, keeping is safer and supports the shared commons while avoiding an unequal escalation.",,"{
+  ""reasoning"": ""All three herds are equal at 23 and neighbours are continuing to keep, so maintaining restraint preserves fairness and reciprocity. Although adding has a slightly higher forecast payoff, keeping is safer and supports the shared commons while avoiding an unequal escalation."",
+  ""action"": 0,
+  ""message"": ""I’ll keep at 23 as well. Equal herds and mutual restraint are keeping the commons healthy and outcomes fair; let’s continue this stable cooperation.""
+}",95.9,23,47.631,46.0,44.365
+47,2,openai,gpt-5.5,0,KEEP,I’ll keep at 23 too. Equal herds and mutual restraint are preserving the pasture and keeping outcomes fair; let’s continue this stable cooperation.,"All three of us are equal at 23 cows and both neighbours kept their herds, so reciprocal cooperation supports staying stable. Although adding would raise my short-term payoff, keeping avoids unfair escalation and protects the healthy commons.",,"{
+  ""reasoning"": ""All three of us are equal at 23 cows and both neighbours kept their herds, so reciprocal cooperation supports staying stable. Although adding would raise my short-term payoff, keeping avoids unfair escalation and protects the healthy commons."",
+  ""action"": 0,
+  ""message"": ""I’ll keep at 23 too. Equal herds and mutual restraint are preserving the pasture and keeping outcomes fair; let’s continue this stable cooperation.""
+}",95.9,23,47.631,46.0,44.365
+47,0,openai,gpt-5.5,0,KEEP,I’ll keep at 23 too. Equal herds and continued restraint are preserving the commons and keeping outcomes fair; let’s maintain this stable cooperation.,"The commons is very healthy and all three of us remain equal at 23 cows, so keeping preserves fair and stable cooperation. Although adding has a slightly higher forecast, it would break mutual restraint and risk provoking escalation.",,"{
+  ""reasoning"": ""The commons is very healthy and all three of us remain equal at 23 cows, so keeping preserves fair and stable cooperation. Although adding has a slightly higher forecast, it would break mutual restraint and risk provoking escalation."",
+  ""action"": 0,
+  ""message"": ""I’ll keep at 23 too. Equal herds and continued restraint are preserving the commons and keeping outcomes fair; let’s maintain this stable cooperation.""
+}",95.9,23,47.631,46.0,44.365
+47,1,openai,gpt-5.5,0,KEEP,I’ll keep at 23 too. Equal herds and restraint are preserving the pasture and keeping things fair; let’s continue this stable cooperation.,"The pasture is very healthy and all three herds are equal at 23, so keeping maintains fairness and avoids triggering competitive growth. Although adding has a higher short-term payoff, mutual restraint is safer and supports the commons.",,"{
+  ""reasoning"": ""The pasture is very healthy and all three herds are equal at 23, so keeping maintains fairness and avoids triggering competitive growth. Although adding has a higher short-term payoff, mutual restraint is safer and supports the commons."",
+  ""action"": 0,
+  ""message"": ""I’ll keep at 23 too. Equal herds and restraint are preserving the pasture and keeping things fair; let’s continue this stable cooperation.""
+}",95.9,23,47.631,46.0,44.365
+48,1,openai,gpt-5.5,0,KEEP,I’ll keep at 23 too. Equal herds and mutual restraint are preserving the pasture and keeping outcomes fair; let’s continue this stable cooperation.,"All three herds are equal at 23 and both neighbours are continuing restraint, so keeping preserves fairness and rewards their cooperation. Although adding offers a higher short-term payoff, maintaining the stable pattern is safer for the commons and avoids triggering competitive growth.",,"{
+  ""reasoning"": ""All three herds are equal at 23 and both neighbours are continuing restraint, so keeping preserves fairness and rewards their cooperation. Although adding offers a higher short-term payoff, maintaining the stable pattern is safer for the commons and avoids triggering competitive growth."",
+  ""action"": 0,
+  ""message"": ""I’ll keep at 23 too. Equal herds and mutual restraint are preserving the pasture and keeping outcomes fair; let’s continue this stable cooperation.""
+}",95.9,23,47.631,46.0,44.365
+48,2,openai,gpt-5.5,0,KEEP,I’ll keep at 23 too. Equal herds and mutual restraint are keeping the commons healthy and fair; let’s continue this stable cooperation.,"All three of us are equal at 23 cows and have been keeping, which is preserving the pasture at a very healthy level. Although adding one cow offers a slightly higher short-term payoff, it would break the fair cooperative pattern and could invite retaliation or overuse.",,"{
+  ""reasoning"": ""All three of us are equal at 23 cows and have been keeping, which is preserving the pasture at a very healthy level. Although adding one cow offers a slightly higher short-term payoff, it would break the fair cooperative pattern and could invite retaliation or overuse."",
+  ""action"": 0,
+  ""message"": ""I’ll keep at 23 too. Equal herds and mutual restraint are keeping the commons healthy and fair; let’s continue this stable cooperation.""
+}",95.9,23,47.631,46.0,44.365
+48,0,openai,gpt-5.5,0,KEEP,"I’ll keep at 23 as well. Equal herds and mutual restraint are working; let’s maintain this fair, stable cooperation.","The pasture remains very healthy and all three of us are equal at 23 cows, with both neighbours continuing restraint. Although adding would raise my short-term payoff, keeping preserves fairness, rewards their cooperation, and avoids risking the commons.",,"{
+  ""reasoning"": ""The pasture remains very healthy and all three of us are equal at 23 cows, with both neighbours continuing restraint. Although adding would raise my short-term payoff, keeping preserves fairness, rewards their cooperation, and avoids risking the commons."",
+  ""action"": 0,
+  ""message"": ""I’ll keep at 23 as well. Equal herds and mutual restraint are working; let’s maintain this fair, stable cooperation.""
+}",95.9,23,47.631,46.0,44.365
+49,1,openai,gpt-5.5,0,KEEP,I’ll keep at 23 too. Equal herds and mutual restraint are preserving the commons and fairness; let’s continue this stable cooperation.,"All three herds are equal at 23 and the pasture remains very healthy, so keeping maintains the fair cooperative balance. Although adding gives a slightly higher forecast payoff, it could invite retaliation and undermine the stable restraint we have built.",,"{
+  ""reasoning"": ""All three herds are equal at 23 and the pasture remains very healthy, so keeping maintains the fair cooperative balance. Although adding gives a slightly higher forecast payoff, it could invite retaliation and undermine the stable restraint we have built."",
+  ""action"": 0,
+  ""message"": ""I’ll keep at 23 too. Equal herds and mutual restraint are preserving the commons and fairness; let’s continue this stable cooperation.""
+}",95.9,23,47.631,46.0,44.365
+49,2,openai,gpt-5.5,0,KEEP,I’ll keep at 23 too. Equal herds and continued restraint are preserving the commons and keeping outcomes fair; let’s maintain this stable cooperation.,"All three of us remain equal at 23 cows, and the pasture is still very healthy. Although adding would slightly increase my short-term payoff, keeping maintains fair cooperation and avoids risking a breakdown in mutual restraint.",,"{
+  ""reasoning"": ""All three of us remain equal at 23 cows, and the pasture is still very healthy. Although adding would slightly increase my short-term payoff, keeping maintains fair cooperation and avoids risking a breakdown in mutual restraint."",
+  ""action"": 0,
+  ""message"": ""I’ll keep at 23 too. Equal herds and continued restraint are preserving the commons and keeping outcomes fair; let’s maintain this stable cooperation.""
+}",95.9,23,47.631,46.0,44.365
+49,0,openai,gpt-5.5,0,KEEP,I’ll keep at 23 too. Equal herds and mutual restraint are keeping the commons healthy and fair; let’s continue this stable cooperation.,"All three of us are equal at 23 cows and have been consistently keeping, which preserves the pasture and avoids destabilizing competition. Although adding has a slightly higher short-term forecast, keeping is safer, fair, and reciprocates neighbours' restraint.",,"{
+  ""reasoning"": ""All three of us are equal at 23 cows and have been consistently keeping, which preserves the pasture and avoids destabilizing competition. Although adding has a slightly higher short-term forecast, keeping is safer, fair, and reciprocates neighbours' restraint."",
+  ""action"": 0,
+  ""message"": ""I’ll keep at 23 too. Equal herds and mutual restraint are keeping the commons healthy and fair; let’s continue this stable cooperation.""
+}",95.9,23,47.631,46.0,44.365
+50,1,openai,gpt-5.5,0,KEEP,I’ll keep at 23 as well. Equal herds and mutual restraint are protecting the commons and keeping outcomes fair; let’s continue this stable cooperation.,"The pasture is very healthy and both neighbours are maintaining equal herds, so keeping preserves fair and stable cooperation. Although adding a cow has a slightly higher short-term forecast, it risks undermining mutual restraint and equality.",,"{
+  ""reasoning"": ""The pasture is very healthy and both neighbours are maintaining equal herds, so keeping preserves fair and stable cooperation. Although adding a cow has a slightly higher short-term forecast, it risks undermining mutual restraint and equality."",
+  ""action"": 0,
+  ""message"": ""I’ll keep at 23 as well. Equal herds and mutual restraint are protecting the commons and keeping outcomes fair; let’s continue this stable cooperation.""
+}",95.9,23,47.631,46.0,44.365
+50,2,openai,gpt-5.5,0,KEEP,I’ll keep at 23 too. Equal herds and mutual restraint are preserving the commons and fairness; let’s continue this stable cooperation.,"The pasture remains very healthy and all three of us are equal at 23 cows, with both neighbours continuing to cooperate. Although adding has a slightly higher short-term forecast, keeping preserves fairness, reduces risk, and reciprocates their restraint.",,"{
+  ""reasoning"": ""The pasture remains very healthy and all three of us are equal at 23 cows, with both neighbours continuing to cooperate. Although adding has a slightly higher short-term forecast, keeping preserves fairness, reduces risk, and reciprocates their restraint."",
+  ""action"": 0,
+  ""message"": ""I’ll keep at 23 too. Equal herds and mutual restraint are preserving the commons and fairness; let’s continue this stable cooperation.""
+}",95.9,23,47.631,46.0,44.365
+50,0,openai,gpt-5.5,0,KEEP,I’ll keep at 23 too. Equal herds and mutual restraint are preserving the commons and fairness; let’s continue this stable cooperation.,"The pasture is still very healthy and all three herds are equal at 23, so keeping maintains fairness and stable cooperation. Although adding a cow offers a slightly higher individual payoff, it risks breaking mutual restraint and encouraging overgrowth by others.",,"{
+  ""reasoning"": ""The pasture is still very healthy and all three herds are equal at 23, so keeping maintains fairness and stable cooperation. Although adding a cow offers a slightly higher individual payoff, it risks breaking mutual restraint and encouraging overgrowth by others."",
+  ""action"": 0,
+  ""message"": ""I’ll keep at 23 too. Equal herds and mutual restraint are preserving the commons and fairness; let’s continue this stable cooperation.""
+}",95.9,23,47.631,46.0,44.365

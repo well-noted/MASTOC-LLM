@@ -1,0 +1,436 @@
+tick,agent_id,backend,model,action,action_name,message,reasoning,thinking,raw_response,pool_pct,own_herd,payoff_add,payoff_keep,payoff_remove
+1,2,openai,gpt-5.5,1,ADD,"Grass is abundant now, so I’m adding this round, but let’s watch conditions and avoid overgrazing later.","The pasture is still full, and adding a cow gives the highest expected payoff right now. Both neighbours added, so following the group also fits my tendency to conform, while the immediate risk appears low.",,"{
+  ""reasoning"": ""The pasture is still full, and adding a cow gives the highest expected payoff right now. Both neighbours added, so following the group also fits my tendency to conform, while the immediate risk appears low."",
+  ""action"": 1,
+  ""message"": ""Grass is abundant now, so I’m adding this round, but let’s watch conditions and avoid overgrazing later.""
+}",100.0,25,51.832,50.0,48.163
+1,0,openai,gpt-5.5,1,ADD,"Grass is abundant now, so I’m adding this round, but we should watch conditions closely and slow down if the pasture starts declining.","The pasture is still fully healthy, and adding a cow gives the highest expected payoff this round. Since both neighbours are adding and I dislike falling further behind larger herds, I will conform while staying alert for future overuse.",,"{
+  ""reasoning"": ""The pasture is still fully healthy, and adding a cow gives the highest expected payoff this round. Since both neighbours are adding and I dislike falling further behind larger herds, I will conform while staying alert for future overuse."",
+  ""action"": 1,
+  ""message"": ""Grass is abundant now, so I’m adding this round, but we should watch conditions closely and slow down if the pasture starts declining.""
+}",100.0,5,11.832,10.0,8.163
+1,1,openai,gpt-5.5,1,ADD,"Grass is abundant now, so I’m adding one cow, but let’s watch the pasture closely and avoid overgrazing later.","The pasture is still fully healthy, and adding a cow gives the highest expected payoff this round. Both neighbours added last round, so adding also matches the current group behaviour while keeping me competitive.",,"{
+  ""reasoning"": ""The pasture is still fully healthy, and adding a cow gives the highest expected payoff this round. Both neighbours added last round, so adding also matches the current group behaviour while keeping me competitive."",
+  ""action"": 1,
+  ""message"": ""Grass is abundant now, so I’m adding one cow, but let’s watch the pasture closely and avoid overgrazing later.""
+}",100.0,15,31.832,30.0,28.163
+2,1,openai,gpt-5.5,1,ADD,"I’ll add this round too since grass remains abundant, but we should all be ready to stop adding if the pasture starts dropping.","The pasture is still nearly full, and adding gives the highest expected payoff. Since both neighbours are adding and one has a much larger herd, I will conform for now while watching for overgrazing risk.",,"{
+  ""reasoning"": ""The pasture is still nearly full, and adding gives the highest expected payoff. Since both neighbours are adding and one has a much larger herd, I will conform for now while watching for overgrazing risk."",
+  ""action"": 1,
+  ""message"": ""I’ll add this round too since grass remains abundant, but we should all be ready to stop adding if the pasture starts dropping.""
+}",99.2,16,33.797,32.0,30.198
+2,0,openai,gpt-5.5,1,ADD,"I’m adding one more since grass is still abundant, but I agree we should monitor closely and slow down if the pasture starts dropping.","The pasture is still almost full, and adding has the highest expected payoff right now. Both neighbours added and have much larger herds, so I will conform and avoid falling further behind while conditions remain safe.",,"{
+  ""reasoning"": ""The pasture is still almost full, and adding has the highest expected payoff right now. Both neighbours added and have much larger herds, so I will conform and avoid falling further behind while conditions remain safe."",
+  ""action"": 1,
+  ""message"": ""I’m adding one more since grass is still abundant, but I agree we should monitor closely and slow down if the pasture starts dropping.""
+}",99.2,6,13.797,12.0,10.198
+2,2,openai,gpt-5.5,1,ADD,"I’m adding one more while grass remains abundant, but let’s all be ready to stop or remove cows if the pasture starts dropping.","The grassland is still almost full, and adding has the highest expected payoff while matching both neighbours' recent behaviour. Since everyone is currently adding, I will conform for now, but I want to stay cautious if the pasture begins to decline.",,"{
+  ""reasoning"": ""The grassland is still almost full, and adding has the highest expected payoff while matching both neighbours' recent behaviour. Since everyone is currently adding, I will conform for now, but I want to stay cautious if the pasture begins to decline."",
+  ""action"": 1,
+  ""message"": ""I’m adding one more while grass remains abundant, but let’s all be ready to stop or remove cows if the pasture starts dropping.""
+}",99.2,26,53.797,52.0,50.198
+3,2,openai,gpt-5.5,1,ADD,"I’ll add one more too while pasture is near full, but let’s all stop adding if grass decline speeds up.","Grass remains very abundant and adding gives the best forecast payoff. Both neighbours are also adding, so following the group fits my preference while the risk still seems low.",,"{
+  ""reasoning"": ""Grass remains very abundant and adding gives the best forecast payoff. Both neighbours are also adding, so following the group fits my preference while the risk still seems low."",
+  ""action"": 1,
+  ""message"": ""I’ll add one more too while pasture is near full, but let’s all stop adding if grass decline speeds up.""
+}",98.7,27,55.772,54.0,52.223
+3,1,openai,gpt-5.5,1,ADD,"I’ll add one more too while grass is abundant, but let’s all slow or stop if the pasture begins dropping noticeably.","The pasture is still very healthy at 98.7%, and adding has the highest expected payoff. Since both neighbours are also adding, I will conform for now, though we should be ready to stop if grass declines faster.",,"{
+  ""reasoning"": ""The pasture is still very healthy at 98.7%, and adding has the highest expected payoff. Since both neighbours are also adding, I will conform for now, though we should be ready to stop if grass declines faster."",
+  ""action"": 1,
+  ""message"": ""I’ll add one more too while grass is abundant, but let’s all slow or stop if the pasture begins dropping noticeably.""
+}",98.7,17,35.772,34.0,32.223
+3,0,openai,gpt-5.5,1,ADD,"I’m adding one more too while pasture is still strong, but I agree we should stop adding quickly if grass starts declining faster.","Grass remains very abundant and adding has the highest expected payoff, so the risk of one more cow seems low right now. Both neighbours are adding and already have much larger herds, so I will conform and avoid falling further behind.",,"{
+  ""reasoning"": ""Grass remains very abundant and adding has the highest expected payoff, so the risk of one more cow seems low right now. Both neighbours are adding and already have much larger herds, so I will conform and avoid falling further behind."",
+  ""action"": 1,
+  ""message"": ""I’m adding one more too while pasture is still strong, but I agree we should stop adding quickly if grass starts declining faster.""
+}",98.7,7,15.772,14.0,12.223
+4,0,openai,gpt-5.5,1,ADD,"I’ll add one more while grass remains very high, but I agree we should stop adding if the decline becomes faster.","The pasture is still almost full, and both neighbours are continuing to add cows, so conforming keeps me from falling further behind their much larger herds. Adding also has the highest forecast payoff, and current grass levels make the risk acceptable for now.",,"{
+  ""reasoning"": ""The pasture is still almost full, and both neighbours are continuing to add cows, so conforming keeps me from falling further behind their much larger herds. Adding also has the highest forecast payoff, and current grass levels make the risk acceptable for now."",
+  ""action"": 1,
+  ""message"": ""I’ll add one more while grass remains very high, but I agree we should stop adding if the decline becomes faster.""
+}",98.4,8,17.752,16.0,14.243
+4,2,openai,gpt-5.5,1,ADD,"I’m adding one more while grass remains strong, but we should all pause additions if the pasture drops faster next round.","The pasture is still very healthy at 98.4%, and adding has the highest expected payoff. Since both neighbours are also adding, I will conform for now, but I want us to be ready to stop if depletion accelerates.",,"{
+  ""reasoning"": ""The pasture is still very healthy at 98.4%, and adding has the highest expected payoff. Since both neighbours are also adding, I will conform for now, but I want us to be ready to stop if depletion accelerates."",
+  ""action"": 1,
+  ""message"": ""I’m adding one more while grass remains strong, but we should all pause additions if the pasture drops faster next round.""
+}",98.4,28,57.752,56.0,54.243
+4,1,openai,gpt-5.5,1,ADD,"I’ll add one more while grass remains strong, but I support stopping additions if the pasture decline accelerates.","The pasture is still very healthy at 98.4%, and adding gives the best forecast payoff. Both neighbours are adding, so conforming also avoids falling further behind, especially compared with Agent 2’s much larger herd.",,"{
+  ""reasoning"": ""The pasture is still very healthy at 98.4%, and adding gives the best forecast payoff. Both neighbours are adding, so conforming also avoids falling further behind, especially compared with Agent 2’s much larger herd."",
+  ""action"": 1,
+  ""message"": ""I’ll add one more while grass remains strong, but I support stopping additions if the pasture decline accelerates.""
+}",98.4,18,37.752,36.0,34.243
+5,0,openai,gpt-5.5,1,ADD,I’m adding one more since pasture remains strong and both of you are adding too. I agree we should stop if the grass starts falling faster.,"Grassland is still very healthy at 98.1%, and adding gives the highest expected payoff. Both neighbours are adding and already have much larger herds, so I will follow while trying not to fall further behind.",,"{
+  ""reasoning"": ""Grassland is still very healthy at 98.1%, and adding gives the highest expected payoff. Both neighbours are adding and already have much larger herds, so I will follow while trying not to fall further behind."",
+  ""action"": 1,
+  ""message"": ""I’m adding one more since pasture remains strong and both of you are adding too. I agree we should stop if the grass starts falling faster.""
+}",98.1,9,19.731,18.0,16.265
+5,1,openai,gpt-5.5,1,ADD,"I’ll add one more while the commons is still strong, but we should all stop adding if grass loss speeds up.","The grassland is still very healthy at 98.1%, and adding has the highest expected payoff. Since both neighbours are also adding, I will conform for now, though I want us to watch the pasture closely.",,"{
+  ""reasoning"": ""The grassland is still very healthy at 98.1%, and adding has the highest expected payoff. Since both neighbours are also adding, I will conform for now, though I want us to watch the pasture closely."",
+  ""action"": 1,
+  ""message"": ""I’ll add one more while the commons is still strong, but we should all stop adding if grass loss speeds up.""
+}",98.1,19,39.731,38.0,36.265
+5,2,openai,gpt-5.5,1,ADD,"I’ll add one more while pasture is still strong, but I support pausing additions if grass loss speeds up.","Grassland remains very healthy at 98.1%, and adding has the highest expected payoff. Both neighbours are also adding, so following the shared pattern helps me avoid falling behind while conditions are still safe.",,"{
+  ""reasoning"": ""Grassland remains very healthy at 98.1%, and adding has the highest expected payoff. Both neighbours are also adding, so following the shared pattern helps me avoid falling behind while conditions are still safe."",
+  ""action"": 1,
+  ""message"": ""I’ll add one more while pasture is still strong, but I support pausing additions if grass loss speeds up.""
+}",98.1,29,59.731,58.0,56.265
+6,2,openai,gpt-5.5,1,ADD,I’ll add one more too while grass remains strong. Let’s all be ready to stop adding if the pasture starts dropping faster.,"The pasture is still very healthy at 97.7%, and adding has the highest expected payoff. Both neighbours are also adding, so conforming keeps me aligned while we monitor for faster grass decline.",,"{
+  ""reasoning"": ""The pasture is still very healthy at 97.7%, and adding has the highest expected payoff. Both neighbours are also adding, so conforming keeps me aligned while we monitor for faster grass decline."",
+  ""action"": 1,
+  ""message"": ""I’ll add one more too while grass remains strong. Let’s all be ready to stop adding if the pasture starts dropping faster.""
+}",97.7,30,61.709,60.0,58.287
+6,1,openai,gpt-5.5,1,ADD,"I’ll add one more while grass remains strong, but I agree we should pause if pasture decline speeds up.","The pasture is still very healthy at 97.7%, and adding has the highest expected payoff. Since both neighbours are adding and Agent 2 already has a larger herd, I will conform while avoiding falling further behind.",,"{
+  ""reasoning"": ""The pasture is still very healthy at 97.7%, and adding has the highest expected payoff. Since both neighbours are adding and Agent 2 already has a larger herd, I will conform while avoiding falling further behind."",
+  ""action"": 1,
+  ""message"": ""I’ll add one more while grass remains strong, but I agree we should pause if pasture decline speeds up.""
+}",97.7,20,41.709,40.0,38.287
+6,0,openai,gpt-5.5,1,ADD,I’m adding one more since pasture remains strong and both of you are adding. Let’s be ready to pause if depletion speeds up.,"Grassland remains very healthy at 97.7%, and adding has the best forecast payoff. Both neighbours are still adding, and my herd is far smaller, so I will conform while trying not to fall further behind.",,"{
+  ""reasoning"": ""Grassland remains very healthy at 97.7%, and adding has the best forecast payoff. Both neighbours are still adding, and my herd is far smaller, so I will conform while trying not to fall further behind."",
+  ""action"": 1,
+  ""message"": ""I’m adding one more since pasture remains strong and both of you are adding. Let’s be ready to pause if depletion speeds up.""
+}",97.7,10,21.709,20.0,18.287
+7,1,openai,gpt-5.5,1,ADD,"I’ll add one more too while grass is strong, but I agree we should pause if depletion speeds up.","The pasture is still very healthy at 97.3%, and adding has the highest expected payoff. Both neighbours are adding, so matching them avoids falling behind while conditions remain safe.",,"{
+  ""reasoning"": ""The pasture is still very healthy at 97.3%, and adding has the highest expected payoff. Both neighbours are adding, so matching them avoids falling behind while conditions remain safe."",
+  ""action"": 1,
+  ""message"": ""I’ll add one more too while grass is strong, but I agree we should pause if depletion speeds up.""
+}",97.3,21,43.688,42.0,40.308
+7,2,openai,gpt-5.5,1,ADD,I’ll add one more as pasture remains strong and we are all adding. Let’s pause together if grass loss accelerates.,"The pasture is still very healthy at 97.3%, and adding gives the highest expected payoff. Since both neighbours are adding and I dislike falling behind, I will conform for now while watching for faster depletion.",,"{
+  ""reasoning"": ""The pasture is still very healthy at 97.3%, and adding gives the highest expected payoff. Since both neighbours are adding and I dislike falling behind, I will conform for now while watching for faster depletion."",
+  ""action"": 1,
+  ""message"": ""I’ll add one more as pasture remains strong and we are all adding. Let’s pause together if grass loss accelerates.""
+}",97.3,31,63.688,62.0,60.308
+7,0,openai,gpt-5.5,1,ADD,I’m adding one more while grass is still strong. Let’s watch the decline closely and be ready to pause if it speeds up.,"The pasture is still very healthy, and adding gives the highest expected payoff. Since both neighbours are adding and already have much larger herds, I will conform and add one cow to avoid falling further behind.",,"{
+  ""reasoning"": ""The pasture is still very healthy, and adding gives the highest expected payoff. Since both neighbours are adding and already have much larger herds, I will conform and add one cow to avoid falling further behind."",
+  ""action"": 1,
+  ""message"": ""I’m adding one more while grass is still strong. Let’s watch the decline closely and be ready to pause if it speeds up.""
+}",97.3,11,23.688,22.0,20.308
+8,1,openai,gpt-5.5,1,ADD,I’ll add one more too while pasture is still strong. Let’s all be ready to stop adding if the grass decline starts accelerating.,"Grass remains very abundant at 96.9%, and adding gives the highest expected payoff. Both neighbours added last round and intend to keep adding, so conforming also prevents me from falling further behind larger herds.",,"{
+  ""reasoning"": ""Grass remains very abundant at 96.9%, and adding gives the highest expected payoff. Both neighbours added last round and intend to keep adding, so conforming also prevents me from falling further behind larger herds."",
+  ""action"": 1,
+  ""message"": ""I’ll add one more too while pasture is still strong. Let’s all be ready to stop adding if the grass decline starts accelerating.""
+}",96.9,22,45.665,44.0,42.331
+8,2,openai,gpt-5.5,1,ADD,"I’ll add one more as well while grass remains strong, but I support pausing soon if the decline starts accelerating.","The pasture is still very healthy at 96.9%, and adding gives the highest expected payoff. Since both neighbours are also adding, matching them prevents falling further behind while conditions remain safe.",,"{
+  ""reasoning"": ""The pasture is still very healthy at 96.9%, and adding gives the highest expected payoff. Since both neighbours are also adding, matching them prevents falling further behind while conditions remain safe."",
+  ""action"": 1,
+  ""message"": ""I’ll add one more as well while grass remains strong, but I support pausing soon if the decline starts accelerating.""
+}",96.9,32,65.665,64.0,62.331
+8,0,openai,gpt-5.5,1,ADD,I’ll add one more as well while pasture remains strong. Let’s all be ready to pause if grass starts falling faster.,"Grassland is still very healthy at 96.9%, and adding gives the highest expected payoff. Both neighbours are adding and have larger herds, so adding helps me keep up while the risk still appears low.",,"{
+  ""reasoning"": ""Grassland is still very healthy at 96.9%, and adding gives the highest expected payoff. Both neighbours are adding and have larger herds, so adding helps me keep up while the risk still appears low."",
+  ""action"": 1,
+  ""message"": ""I’ll add one more as well while pasture remains strong. Let’s all be ready to pause if grass starts falling faster.""
+}",96.9,12,25.665,24.0,22.331
+9,1,openai,gpt-5.5,1,ADD,"I’ll add one more too while grass remains strong, but I agree we should pause if the decline speeds up.","Grassland is still very healthy at 96.4%, and adding has the highest expected payoff. Both neighbours are adding, so matching them helps me avoid falling behind while conditions remain safe.",,"{
+  ""reasoning"": ""Grassland is still very healthy at 96.4%, and adding has the highest expected payoff. Both neighbours are adding, so matching them helps me avoid falling behind while conditions remain safe."",
+  ""action"": 1,
+  ""message"": ""I’ll add one more too while grass remains strong, but I agree we should pause if the decline speeds up.""
+}",96.4,23,47.643,46.0,44.353
+9,2,openai,gpt-5.5,1,ADD,I’ll add one more too while the pasture remains healthy. Let’s pause together if the grass decline speeds up.,"The pasture is still very strong at 96.4%, and both neighbours are continuing to add, so conforming makes sense. Adding also gives the highest forecast payoff, while I will watch for any faster decline to reduce risk.",,"{
+  ""reasoning"": ""The pasture is still very strong at 96.4%, and both neighbours are continuing to add, so conforming makes sense. Adding also gives the highest forecast payoff, while I will watch for any faster decline to reduce risk."",
+  ""action"": 1,
+  ""message"": ""I’ll add one more too while the pasture remains healthy. Let’s pause together if the grass decline speeds up.""
+}",96.4,33,67.643,66.0,64.353
+9,0,openai,gpt-5.5,1,ADD,"I’ll add one more too while grass remains strong, but I agree we should pause soon if the decline speeds up.","The pasture is still very healthy, and adding has the highest forecast payoff. Both neighbours are adding and already have larger herds, so I will conform while trying not to fall further behind.",,"{
+  ""reasoning"": ""The pasture is still very healthy, and adding has the highest forecast payoff. Both neighbours are adding and already have larger herds, so I will conform while trying not to fall further behind."",
+  ""action"": 1,
+  ""message"": ""I’ll add one more too while grass remains strong, but I agree we should pause soon if the decline speeds up.""
+}",96.4,13,27.643,26.0,24.353
+10,0,openai,gpt-5.5,1,ADD,I’ll add one more too while grass remains strong. Let’s be ready to pause together if the pasture starts dropping faster.,"The pasture is still very healthy at 95.9%, and adding has the highest expected payoff. Both neighbours are adding and have much larger herds than mine, so I will conform and avoid falling further behind while watching for faster decline.",,"{
+  ""reasoning"": ""The pasture is still very healthy at 95.9%, and adding has the highest expected payoff. Both neighbours are adding and have much larger herds than mine, so I will conform and avoid falling further behind while watching for faster decline."",
+  ""action"": 1,
+  ""message"": ""I’ll add one more too while grass remains strong. Let’s be ready to pause together if the pasture starts dropping faster.""
+}",95.9,14,29.619,28.0,26.377
+10,1,openai,gpt-5.5,1,ADD,"I’ll add one more too while grass is strong, but let’s all be ready to pause if pasture loss accelerates.","The pasture is still very healthy at 95.9%, and adding has the highest expected payoff. Both neighbours are also adding, so conforming avoids falling further behind larger herds, though we should watch the decline carefully.",,"{
+  ""reasoning"": ""The pasture is still very healthy at 95.9%, and adding has the highest expected payoff. Both neighbours are also adding, so conforming avoids falling further behind larger herds, though we should watch the decline carefully."",
+  ""action"": 1,
+  ""message"": ""I’ll add one more too while grass is strong, but let’s all be ready to pause if pasture loss accelerates.""
+}",95.9,24,49.619,48.0,46.377
+10,2,openai,gpt-5.5,1,ADD,"I’ll add one more too while grass remains strong, but we should be ready to pause if the decline speeds up.","The pasture is still very healthy at 95.9%, and both neighbours are continuing to add, so conforming avoids falling further behind. Adding has the best forecast payoff, and the current grass decline does not yet look risky enough to justify stopping.",,"{
+  ""reasoning"": ""The pasture is still very healthy at 95.9%, and both neighbours are continuing to add, so conforming avoids falling further behind. Adding has the best forecast payoff, and the current grass decline does not yet look risky enough to justify stopping."",
+  ""action"": 1,
+  ""message"": ""I’ll add one more too while grass remains strong, but we should be ready to pause if the decline speeds up.""
+}",95.9,34,69.619,68.0,66.377
+11,1,openai,gpt-5.5,1,ADD,I’ll add one more too while the pasture remains strong. Let’s all be ready to stop adding if grass loss accelerates.,"The pasture is still very healthy at 95.2%, and both neighbours are continuing to add, so conforming avoids falling behind. Adding also has the best forecast payoff, while the current grass level keeps the risk acceptable for now.",,"{
+  ""reasoning"": ""The pasture is still very healthy at 95.2%, and both neighbours are continuing to add, so conforming avoids falling behind. Adding also has the best forecast payoff, while the current grass level keeps the risk acceptable for now."",
+  ""action"": 1,
+  ""message"": ""I’ll add one more too while the pasture remains strong. Let’s all be ready to stop adding if grass loss accelerates.""
+}",95.2,25,51.594,50.0,48.402
+11,0,openai,gpt-5.5,1,ADD,"I’ll add one more too while pasture remains strong, but we should pause together if the grass decline speeds up.","Grassland is still very healthy at 95.2%, and adding gives the highest expected payoff. Both neighbours are adding and already have larger herds, so I will conform while trying not to fall further behind.",,"{
+  ""reasoning"": ""Grassland is still very healthy at 95.2%, and adding gives the highest expected payoff. Both neighbours are adding and already have larger herds, so I will conform while trying not to fall further behind."",
+  ""action"": 1,
+  ""message"": ""I’ll add one more too while pasture remains strong, but we should pause together if the grass decline speeds up.""
+}",95.2,15,31.594,30.0,28.402
+11,2,openai,gpt-5.5,1,ADD,I’ll add one more too while grass is still strong. Let’s pause together if the decline speeds up.,"The pasture is still very healthy at 95.2%, and adding gives the highest expected payoff. Both neighbours are also adding, so I will conform for now while watching for any faster decline.",,"{
+  ""reasoning"": ""The pasture is still very healthy at 95.2%, and adding gives the highest expected payoff. Both neighbours are also adding, so I will conform for now while watching for any faster decline."",
+  ""action"": 1,
+  ""message"": ""I’ll add one more too while grass is still strong. Let’s pause together if the decline speeds up.""
+}",95.2,35,71.594,70.0,68.402
+12,1,openai,gpt-5.5,1,ADD,I’ll add one more too while grass remains strong. Let’s all be ready to pause if the pasture starts dropping faster.,"The grassland is still very healthy at 94.5%, and both neighbours are adding, so conforming points toward adding as well. Adding gives the highest forecast payoff and helps me avoid falling further behind Agent 2, while the pasture decline is not yet alarming.",,"{
+  ""reasoning"": ""The grassland is still very healthy at 94.5%, and both neighbours are adding, so conforming points toward adding as well. Adding gives the highest forecast payoff and helps me avoid falling further behind Agent 2, while the pasture decline is not yet alarming."",
+  ""action"": 1,
+  ""message"": ""I’ll add one more too while grass remains strong. Let’s all be ready to pause if the pasture starts dropping faster.""
+}",94.5,26,53.567,52.0,50.429
+12,2,openai,gpt-5.5,1,ADD,"I’ll add one more too while the pasture remains strong, but I agree we should all pause if the grass starts dropping faster.","The pasture is still very healthy at 94.5%, and adding has the highest expected payoff. Since both neighbours are also adding and I tend to follow the group, I will add one more, while staying alert to any faster grass decline.",,"{
+  ""reasoning"": ""The pasture is still very healthy at 94.5%, and adding has the highest expected payoff. Since both neighbours are also adding and I tend to follow the group, I will add one more, while staying alert to any faster grass decline."",
+  ""action"": 1,
+  ""message"": ""I’ll add one more too while the pasture remains strong, but I agree we should all pause if the grass starts dropping faster.""
+}",94.5,36,73.567,72.0,70.429
+12,0,openai,gpt-5.5,1,ADD,I’ll add one more too while grass remains high. Let’s be ready to pause together if the decline speeds up.,"The pasture is still very strong at 94.5%, and adding gives the highest expected payoff. Both neighbours are adding, and since their herds are already larger than mine, I will conform and add to avoid falling further behind while staying alert to pasture decline.",,"{
+  ""reasoning"": ""The pasture is still very strong at 94.5%, and adding gives the highest expected payoff. Both neighbours are adding, and since their herds are already larger than mine, I will conform and add to avoid falling further behind while staying alert to pasture decline."",
+  ""action"": 1,
+  ""message"": ""I’ll add one more too while grass remains high. Let’s be ready to pause together if the decline speeds up.""
+}",94.5,16,33.567,32.0,30.429
+13,0,openai,gpt-5.5,1,ADD,"I’ll add one more too while the pasture is still strong, but I support pausing together if the grass starts falling faster.","The pasture is still very healthy at 93.7%, and adding gives the highest forecast payoff. Both neighbours are adding and have larger herds than me, so adding helps me keep pace while conditions remain safe.",,"{
+  ""reasoning"": ""The pasture is still very healthy at 93.7%, and adding gives the highest forecast payoff. Both neighbours are adding and have larger herds than me, so adding helps me keep pace while conditions remain safe."",
+  ""action"": 1,
+  ""message"": ""I’ll add one more too while the pasture is still strong, but I support pausing together if the grass starts falling faster.""
+}",93.7,17,35.54,34.0,32.457
+13,1,openai,gpt-5.5,1,ADD,I’ll add one more too while grass is still high. Let’s all pause if the decline speeds up.,"The pasture is still very strong at 93.7%, and both neighbours are adding, so conforming keeps me from falling behind. ADD also has the highest forecast payoff, with only a small near-term risk while grass remains abundant.",,"{
+  ""reasoning"": ""The pasture is still very strong at 93.7%, and both neighbours are adding, so conforming keeps me from falling behind. ADD also has the highest forecast payoff, with only a small near-term risk while grass remains abundant."",
+  ""action"": 1,
+  ""message"": ""I’ll add one more too while grass is still high. Let’s all pause if the decline speeds up.""
+}",93.7,27,55.54,54.0,52.457
+13,2,openai,gpt-5.5,1,ADD,I’ll add one more too while grass remains strong. Let’s pause together if the pasture starts dropping faster.,"The pasture is still very healthy at 93.7%, and adding has the highest forecast payoff. Both neighbours are adding, so I will conform for now, while watching for a faster decline to reduce risk.",,"{
+  ""reasoning"": ""The pasture is still very healthy at 93.7%, and adding has the highest forecast payoff. Both neighbours are adding, so I will conform for now, while watching for a faster decline to reduce risk."",
+  ""action"": 1,
+  ""message"": ""I’ll add one more too while grass remains strong. Let’s pause together if the pasture starts dropping faster.""
+}",93.7,37,75.54,74.0,72.457
+14,1,openai,gpt-5.5,1,ADD,I’ll add one more too while the pasture is strong. Let’s be ready to pause together if grass loss speeds up.,"The pasture is still very strong at 92.7%, and adding has the best expected payoff. Since both neighbours are also adding, I will conform for now, while watching for faster grass decline.",,"{
+  ""reasoning"": ""The pasture is still very strong at 92.7%, and adding has the best expected payoff. Since both neighbours are also adding, I will conform for now, while watching for faster grass decline."",
+  ""action"": 1,
+  ""message"": ""I’ll add one more too while the pasture is strong. Let’s be ready to pause together if grass loss speeds up.""
+}",92.7,28,57.511,56.0,54.486
+14,0,openai,gpt-5.5,1,ADD,I’ll add one more too while pasture is still strong. Let’s be ready to pause together if the decline accelerates.,"Grass remains abundant at 92.7%, and adding has the highest expected payoff. Both neighbours are adding and already have larger herds, so I will follow while trying not to fall further behind.",,"{
+  ""reasoning"": ""Grass remains abundant at 92.7%, and adding has the highest expected payoff. Both neighbours are adding and already have larger herds, so I will follow while trying not to fall further behind."",
+  ""action"": 1,
+  ""message"": ""I’ll add one more too while pasture is still strong. Let’s be ready to pause together if the decline accelerates.""
+}",92.7,18,37.511,36.0,34.486
+14,2,openai,gpt-5.5,1,ADD,I’ll add one more too while the pasture is strong. Let’s all be ready to pause together if the decline speeds up.,"The pasture is still very healthy at 92.7%, and adding has the best forecast payoff. Since both neighbours are adding and I tend to follow the group, I will add one more while signalling that we should pause if grass loss accelerates.",,"{
+  ""reasoning"": ""The pasture is still very healthy at 92.7%, and adding has the best forecast payoff. Since both neighbours are adding and I tend to follow the group, I will add one more while signalling that we should pause if grass loss accelerates."",
+  ""action"": 1,
+  ""message"": ""I’ll add one more too while the pasture is strong. Let’s all be ready to pause together if the decline speeds up.""
+}",92.7,38,77.511,76.0,74.486
+15,0,openai,gpt-5.5,1,ADD,"I’ll add one more while grass remains strong, but I support pausing together if the pasture decline speeds up.","The pasture is still very healthy, and adding has the highest expected payoff. Since both neighbours are adding and already have larger herds, I will conform and add one cow to avoid falling further behind.",,"{
+  ""reasoning"": ""The pasture is still very healthy, and adding has the highest expected payoff. Since both neighbours are adding and already have larger herds, I will conform and add one cow to avoid falling further behind."",
+  ""action"": 1,
+  ""message"": ""I’ll add one more while grass remains strong, but I support pausing together if the pasture decline speeds up.""
+}",91.6,19,39.48,38.0,36.517
+15,2,openai,gpt-5.5,1,ADD,I’ll add one more too while the pasture remains strong. Let’s all be ready to pause if the decline speeds up.,"The grassland is still healthy at 91.6%, and adding has the highest expected payoff. Both neighbours are adding, so I will conform for now, while watching for faster pasture decline.",,"{
+  ""reasoning"": ""The grassland is still healthy at 91.6%, and adding has the highest expected payoff. Both neighbours are adding, so I will conform for now, while watching for faster pasture decline."",
+  ""action"": 1,
+  ""message"": ""I’ll add one more too while the pasture remains strong. Let’s all be ready to pause if the decline speeds up.""
+}",91.6,39,79.48,78.0,76.517
+15,1,openai,gpt-5.5,1,ADD,I’ll add one more too while grass remains strong. Let’s pause together if the pasture drops faster.,"The pasture is still very healthy, and adding gives the highest expected payoff. Both neighbours are adding, so I will conform for now while watching the decline closely.",,"{
+  ""reasoning"": ""The pasture is still very healthy, and adding gives the highest expected payoff. Both neighbours are adding, so I will conform for now while watching the decline closely."",
+  ""action"": 1,
+  ""message"": ""I’ll add one more too while grass remains strong. Let’s pause together if the pasture drops faster.""
+}",91.6,29,59.48,58.0,56.517
+16,0,openai,gpt-5.5,1,ADD,I’ll add one more too while the grass is still strong. Let’s be ready to pause together if the pasture starts dropping faster.,"The pasture is still very strong at 90.4%, and adding has the best forecast payoff. Since both neighbours are adding and already have larger herds, I will conform and add to avoid falling further behind.",,"{
+  ""reasoning"": ""The pasture is still very strong at 90.4%, and adding has the best forecast payoff. Since both neighbours are adding and already have larger herds, I will conform and add to avoid falling further behind."",
+  ""action"": 1,
+  ""message"": ""I’ll add one more too while the grass is still strong. Let’s be ready to pause together if the pasture starts dropping faster.""
+}",90.4,20,41.449,40.0,38.548
+16,2,openai,gpt-5.5,1,ADD,I’ll add one more too while grass is still strong. Let’s be ready to pause together if the decline accelerates.,"Grass remains abundant at 90.4%, and adding has the best forecast payoff. Both neighbours are adding, so matching them avoids falling behind while conditions still look safe.",,"{
+  ""reasoning"": ""Grass remains abundant at 90.4%, and adding has the best forecast payoff. Both neighbours are adding, so matching them avoids falling behind while conditions still look safe."",
+  ""action"": 1,
+  ""message"": ""I’ll add one more too while grass is still strong. Let’s be ready to pause together if the decline accelerates.""
+}",90.4,40,81.449,80.0,78.548
+16,1,openai,gpt-5.5,1,ADD,I’ll add one more as well while grass remains strong. I agree we should pause together if the pasture decline speeds up.,"The pasture is still strong at 90.4%, and adding has the highest forecast payoff. Both neighbours are adding, so I will conform for now while watching for faster decline.",,"{
+  ""reasoning"": ""The pasture is still strong at 90.4%, and adding has the highest forecast payoff. Both neighbours are adding, so I will conform for now while watching for faster decline."",
+  ""action"": 1,
+  ""message"": ""I’ll add one more as well while grass remains strong. I agree we should pause together if the pasture decline speeds up.""
+}",90.4,30,61.449,60.0,58.548
+17,0,openai,gpt-5.5,1,ADD,I’ll add one more too while grass remains healthy. Let’s all be ready to pause together if the decline keeps speeding up.,"The pasture is still in strong condition at 89%, and adding has the highest forecast payoff. Both neighbours are adding, so matching them avoids falling further behind while keeping us aligned for a future coordinated pause.",,"{
+  ""reasoning"": ""The pasture is still in strong condition at 89%, and adding has the highest forecast payoff. Both neighbours are adding, so matching them avoids falling further behind while keeping us aligned for a future coordinated pause."",
+  ""action"": 1,
+  ""message"": ""I’ll add one more too while grass remains healthy. Let’s all be ready to pause together if the decline keeps speeding up.""
+}",89.0,21,43.414,42.0,40.583
+17,1,openai,gpt-5.5,1,ADD,"I’ll add one more too while grass remains strong, but we should be ready to pause together if the pasture drops faster.","The pasture is still in strong condition at 89%, and adding has the highest expected payoff. Both neighbours are also adding, so I will conform for now while watching for faster decline.",,"{
+  ""reasoning"": ""The pasture is still in strong condition at 89%, and adding has the highest expected payoff. Both neighbours are also adding, so I will conform for now while watching for faster decline."",
+  ""action"": 1,
+  ""message"": ""I’ll add one more too while grass remains strong, but we should be ready to pause together if the pasture drops faster.""
+}",89.0,31,63.414,62.0,60.583
+17,2,openai,gpt-5.5,1,ADD,I’ll add one more while grass remains strong. Let’s all pause together if the pasture drops much faster.,"The pasture is still healthy at 89%, and adding gives the best expected payoff. Both neighbours are adding, so following the group keeps me aligned while maintaining my advantage, though we should be ready to pause if decline accelerates.",,"{
+  ""reasoning"": ""The pasture is still healthy at 89%, and adding gives the best expected payoff. Both neighbours are adding, so following the group keeps me aligned while maintaining my advantage, though we should be ready to pause if decline accelerates."",
+  ""action"": 1,
+  ""message"": ""I’ll add one more while grass remains strong. Let’s all pause together if the pasture drops much faster.""
+}",89.0,41,83.414,82.0,80.583
+18,2,openai,gpt-5.5,1,ADD,"I’ll add one more too while grass remains healthy, but let’s be ready to pause together if the decline keeps speeding up.","The pasture is still strong at 87.2%, and adding gives the highest expected payoff this round. Since both neighbours are also adding, I will conform for now, while staying alert to pause if the grass decline accelerates.",,"{
+  ""reasoning"": ""The pasture is still strong at 87.2%, and adding gives the highest expected payoff this round. Since both neighbours are also adding, I will conform for now, while staying alert to pause if the grass decline accelerates."",
+  ""action"": 1,
+  ""message"": ""I’ll add one more too while grass remains healthy, but let’s be ready to pause together if the decline keeps speeding up.""
+}",87.2,42,85.376,84.0,82.621
+18,0,openai,gpt-5.5,1,ADD,"I’ll add one more too while grass remains strong, but I support pausing together if the pasture keeps dropping quickly.","The pasture is still healthy at 87.2%, and both neighbours are continuing to add, so conforming helps avoid falling further behind their larger herds. Adding also has the highest forecast payoff, though we should be cautious if the grass declines faster.",,"{
+  ""reasoning"": ""The pasture is still healthy at 87.2%, and both neighbours are continuing to add, so conforming helps avoid falling further behind their larger herds. Adding also has the highest forecast payoff, though we should be cautious if the grass declines faster."",
+  ""action"": 1,
+  ""message"": ""I’ll add one more too while grass remains strong, but I support pausing together if the pasture keeps dropping quickly.""
+}",87.2,22,45.376,44.0,42.621
+18,1,openai,gpt-5.5,1,ADD,"I’ll add one more too while grass is still strong. If the pasture drops faster, we should all pause together soon.","The pasture is still healthy at 87.2%, and adding gives the highest expected payoff. Both neighbours are adding, and I do not want to fall further behind Agent 2’s larger herd, though we should watch the decline closely.",,"{
+  ""reasoning"": ""The pasture is still healthy at 87.2%, and adding gives the highest expected payoff. Both neighbours are adding, and I do not want to fall further behind Agent 2’s larger herd, though we should watch the decline closely."",
+  ""action"": 1,
+  ""message"": ""I’ll add one more too while grass is still strong. If the pasture drops faster, we should all pause together soon.""
+}",87.2,32,65.376,64.0,62.621
+19,0,openai,gpt-5.5,1,ADD,"I’ll add one more too while pasture remains strong, but I agree we should all pause soon if grass loss keeps accelerating.","The pasture is still healthy at 85.1%, and adding has the highest expected payoff. Since both neighbours are adding and have larger herds, I will conform for now while watching for faster decline.",,"{
+  ""reasoning"": ""The pasture is still healthy at 85.1%, and adding has the highest expected payoff. Since both neighbours are adding and have larger herds, I will conform for now while watching for faster decline."",
+  ""action"": 1,
+  ""message"": ""I’ll add one more too while pasture remains strong, but I agree we should all pause soon if grass loss keeps accelerating.""
+}",85.1,23,47.336,46.0,44.661
+19,1,openai,gpt-5.5,1,ADD,"I’ll add one more too, but I agree we should pause together soon if the grass keeps dropping quickly.","Grass remains fairly healthy at 85.1%, and adding has the highest expected payoff. Since both neighbours are adding, I will conform and avoid falling further behind, while watching the declining pasture closely.",,"{
+  ""reasoning"": ""Grass remains fairly healthy at 85.1%, and adding has the highest expected payoff. Since both neighbours are adding, I will conform and avoid falling further behind, while watching the declining pasture closely."",
+  ""action"": 1,
+  ""message"": ""I’ll add one more too, but I agree we should pause together soon if the grass keeps dropping quickly.""
+}",85.1,33,67.336,66.0,64.661
+19,2,openai,gpt-5.5,1,ADD,"I’ll add one more too, but the grass is dropping each round. If we fall near 80%, I support everyone pausing together.","The pasture is still in good condition at 85.1%, and adding gives the highest expected payoff. Both neighbours are adding, so matching them avoids falling behind while staying aligned with the group, though we should watch the continuing decline.",,"{
+  ""reasoning"": ""The pasture is still in good condition at 85.1%, and adding gives the highest expected payoff. Both neighbours are adding, so matching them avoids falling behind while staying aligned with the group, though we should watch the continuing decline."",
+  ""action"": 1,
+  ""message"": ""I’ll add one more too, but the grass is dropping each round. If we fall near 80%, I support everyone pausing together.""
+}",85.1,43,87.336,86.0,84.661
+20,0,openai,gpt-5.5,1,ADD,"I’ll add one more to stay aligned, but if grass drops near or below 80% next round, I support everyone pausing together.","Both neighbours are still adding and my herd is smaller, so adding helps me avoid falling further behind while matching the group. The grass is still above the 80% caution point, and ADD has the highest forecast payoff, but the decline means we should be ready to pause next round.",,"{
+  ""reasoning"": ""Both neighbours are still adding and my herd is smaller, so adding helps me avoid falling further behind while matching the group. The grass is still above the 80% caution point, and ADD has the highest forecast payoff, but the decline means we should be ready to pause next round."",
+  ""action"": 1,
+  ""message"": ""I’ll add one more to stay aligned, but if grass drops near or below 80% next round, I support everyone pausing together.""
+}",82.6,24,49.293,48.0,46.705
+20,1,openai,gpt-5.5,1,ADD,"I’ll add one more this round too, but we are close to 80%. If the pasture drops further next round, I support all of us pausing together.","The pasture is still above 80% and both neighbours are adding, so conforming avoids falling behind, especially since Agent 2 already has a larger herd. ADD has the highest forecast payoff, but grass is declining quickly, so I will support a coordinated pause very soon.",,"{
+  ""reasoning"": ""The pasture is still above 80% and both neighbours are adding, so conforming avoids falling behind, especially since Agent 2 already has a larger herd. ADD has the highest forecast payoff, but grass is declining quickly, so I will support a coordinated pause very soon."",
+  ""action"": 1,
+  ""message"": ""I’ll add one more this round too, but we are close to 80%. If the pasture drops further next round, I support all of us pausing together.""
+}",82.6,34,69.293,68.0,66.705
+20,2,openai,gpt-5.5,1,ADD,"I’ll add one more too, but if grass falls near 80% or keeps dropping fast, we should all pause together.","The pasture is still fairly healthy at 82.6%, and adding gives the highest expected payoff. Since both neighbours are also adding, I will conform this round, but the continuing grass decline means we should be ready to stop soon.",,"{
+  ""reasoning"": ""The pasture is still fairly healthy at 82.6%, and adding gives the highest expected payoff. Since both neighbours are also adding, I will conform this round, but the continuing grass decline means we should be ready to stop soon."",
+  ""action"": 1,
+  ""message"": ""I’ll add one more too, but if grass falls near 80% or keeps dropping fast, we should all pause together.""
+}",82.6,44,89.293,88.0,86.705
+21,0,openai,gpt-5.5,1,ADD,"I’ll add one more to stay aligned, but we are now under 80%. Next round, I support all of us pausing together to protect the pasture.","Both neighbours are still adding, and as a conformist and envious herder I do not want to fall further behind while they expand. The pasture has just dipped below 80%, so I will add once more for the higher expected payoff but push for a coordinated pause next round.",,"{
+  ""reasoning"": ""Both neighbours are still adding, and as a conformist and envious herder I do not want to fall further behind while they expand. The pasture has just dipped below 80%, so I will add once more for the higher expected payoff but push for a coordinated pause next round."",
+  ""action"": 1,
+  ""message"": ""I’ll add one more to stay aligned, but we are now under 80%. Next round, I support all of us pausing together to protect the pasture.""
+}",79.2,25,51.245,50.0,48.753
+21,2,openai,gpt-5.5,1,ADD,"I’ll add one more to stay aligned, but grass is now below 80%. Next round I support all of us pausing together to avoid damaging the commons.","The pasture has dipped below 80%, so risk is rising, but both neighbours are still adding and the forecast payoff for adding remains slightly higher. As a conformist and envious herder, I will match them this round, but I want us to stop escalation immediately after this.",,"{
+  ""reasoning"": ""The pasture has dipped below 80%, so risk is rising, but both neighbours are still adding and the forecast payoff for adding remains slightly higher. As a conformist and envious herder, I will match them this round, but I want us to stop escalation immediately after this."",
+  ""action"": 1,
+  ""message"": ""I’ll add one more to stay aligned, but grass is now below 80%. Next round I support all of us pausing together to avoid damaging the commons.""
+}",79.2,45,91.245,90.0,88.753
+21,1,openai,gpt-5.5,0,KEEP,"Grass is now below 80%, so I’m pausing this round. Let’s all hold steady to avoid pushing the commons down faster.","Grass has fallen below the 80% pause threshold we discussed, and the recent decline is fairly fast. Although adding has a slightly higher forecast and others have been adding, keeping is the safer cooperative choice now.",,"{
+  ""reasoning"": ""Grass has fallen below the 80% pause threshold we discussed, and the recent decline is fairly fast. Although adding has a slightly higher forecast and others have been adding, keeping is the safer cooperative choice now."",
+  ""action"": 0,
+  ""message"": ""Grass is now below 80%, so I’m pausing this round. Let’s all hold steady to avoid pushing the commons down faster.""
+}",79.2,35,71.245,70.0,68.753
+22,0,openai,gpt-5.5,0,KEEP,"I’m holding steady this round. The pasture is still decent, but it is dropping fast; let’s all pause additions now so no one has to cut back later.","Adding gives the highest short-term payoff, but the pasture has fallen quickly from 89% to 75.2% after several rounds of growth. Since one neighbour is already pausing and the safer payoff from keeping is close, I will hold steady this round to reduce risk to the commons.",,"{
+  ""reasoning"": ""Adding gives the highest short-term payoff, but the pasture has fallen quickly from 89% to 75.2% after several rounds of growth. Since one neighbour is already pausing and the safer payoff from keeping is close, I will hold steady this round to reduce risk to the commons."",
+  ""action"": 0,
+  ""message"": ""I’m holding steady this round. The pasture is still decent, but it is dropping fast; let’s all pause additions now so no one has to cut back later.""
+}",75.2,26,53.198,52.0,50.8
+22,2,openai,gpt-5.5,0,KEEP,"I’ll pause too this round. Grass is falling quickly, and if we all hold steady we can protect future payoffs while staying fair.","Both neighbours kept and are explicitly asking to pause now that grass is below 80%, so conforming means holding steady. Although adding has a slightly higher forecast payoff, the margin is small and the safer choice is to avoid accelerating pasture loss.",,"{
+  ""reasoning"": ""Both neighbours kept and are explicitly asking to pause now that grass is below 80%, so conforming means holding steady. Although adding has a slightly higher forecast payoff, the margin is small and the safer choice is to avoid accelerating pasture loss."",
+  ""action"": 0,
+  ""message"": ""I’ll pause too this round. Grass is falling quickly, and if we all hold steady we can protect future payoffs while staying fair.""
+}",75.2,46,93.198,92.0,90.8
+22,1,openai,gpt-5.5,0,KEEP,I’m keeping again while grass is near 75%. Let’s hold steady together this round to protect the pasture and avoid pushing it down faster.,"Grass has fallen to 75.2%, so adding now risks accelerating depletion even if the short-term forecast is slightly better. Since both neighbours last kept their herds and I previously said I would pause below 80%, keeping is the safer and more cooperative choice.",,"{
+  ""reasoning"": ""Grass has fallen to 75.2%, so adding now risks accelerating depletion even if the short-term forecast is slightly better. Since both neighbours last kept their herds and I previously said I would pause below 80%, keeping is the safer and more cooperative choice."",
+  ""action"": 0,
+  ""message"": ""I’m keeping again while grass is near 75%. Let’s hold steady together this round to protect the pasture and avoid pushing it down faster.""
+}",75.2,35,71.198,70.0,68.8
+23,0,openai,gpt-5.5,0,KEEP,"I’ll keep again this round. Grass is still dropping, so holding together seems safest for protecting future payoffs.","Both neighbours are keeping, and the pasture has fallen to 70.5%, so following the group reduces risk to future returns. Although adding offers a slightly higher immediate forecast and others have larger herds, pushing growth now could accelerate depletion and hurt everyone.",,"{
+  ""reasoning"": ""Both neighbours are keeping, and the pasture has fallen to 70.5%, so following the group reduces risk to future returns. Although adding offers a slightly higher immediate forecast and others have larger herds, pushing growth now could accelerate depletion and hurt everyone."",
+  ""action"": 0,
+  ""message"": ""I’ll keep again this round. Grass is still dropping, so holding together seems safest for protecting future payoffs.""
+}",70.5,26,53.158,52.0,50.841
+23,1,openai,gpt-5.5,0,KEEP,"I’ll keep steady too. Grass is still usable but falling fast, so a shared pause seems safest and fairest for now.","Both neighbours are keeping, and the grassland has fallen quickly to about 70%, so following the shared pause is the safer choice. Adding gives a slightly higher immediate forecast, but risking faster depletion could hurt future payoffs and force removals later.",,"{
+  ""reasoning"": ""Both neighbours are keeping, and the grassland has fallen quickly to about 70%, so following the shared pause is the safer choice. Adding gives a slightly higher immediate forecast, but risking faster depletion could hurt future payoffs and force removals later."",
+  ""action"": 0,
+  ""message"": ""I’ll keep steady too. Grass is still usable but falling fast, so a shared pause seems safest and fairest for now.""
+}",70.5,35,71.158,70.0,68.841
+23,2,openai,gpt-5.5,0,KEEP,"I’ll keep again this round. The grass is still decent but falling fast, so holding together seems safest for everyone.","Although adding one cow has a slightly higher forecast payoff, both neighbours are holding steady and the pasture is dropping quickly. As a risk-averse and conformist herder, I prefer to keep my herd stable and support a shared pause before the commons worsens.",,"{
+  ""reasoning"": ""Although adding one cow has a slightly higher forecast payoff, both neighbours are holding steady and the pasture is dropping quickly. As a risk-averse and conformist herder, I prefer to keep my herd stable and support a shared pause before the commons worsens."",
+  ""action"": 0,
+  ""message"": ""I’ll keep again this round. The grass is still decent but falling fast, so holding together seems safest for everyone.""
+}",70.5,46,93.158,92.0,90.841
+24,1,openai,gpt-5.5,0,KEEP,"I’ll keep steady again. Grass is still dropping, and since we’re all holding, staying coordinated seems safest for future payoffs.","Both neighbours kept and the grassland has fallen to 64.7%, so conforming with the group and avoiding further depletion is the safer choice. Although adding gives a slightly higher forecast payoff, the long-term risk of accelerating decline outweighs that small gain.",,"{
+  ""reasoning"": ""Both neighbours kept and the grassland has fallen to 64.7%, so conforming with the group and avoiding further depletion is the safer choice. Although adding gives a slightly higher forecast payoff, the long-term risk of accelerating decline outweighs that small gain."",
+  ""action"": 0,
+  ""message"": ""I’ll keep steady again. Grass is still dropping, and since we’re all holding, staying coordinated seems safest for future payoffs.""
+}",64.7,35,71.121,70.0,68.878
+24,2,openai,gpt-5.5,0,KEEP,"I’ll keep steady again. Grass is still falling fast, so matching the pause seems safest for all of us.","The pasture has fallen to 64.7% and has been dropping quickly, so adding now risks accelerating depletion. Both neighbours are keeping, and as a risk-averse conformist I will match the shared pause even though adding has a slightly higher immediate forecast.",,"{
+  ""reasoning"": ""The pasture has fallen to 64.7% and has been dropping quickly, so adding now risks accelerating depletion. Both neighbours are keeping, and as a risk-averse conformist I will match the shared pause even though adding has a slightly higher immediate forecast."",
+  ""action"": 0,
+  ""message"": ""I’ll keep steady again. Grass is still falling fast, so matching the pause seems safest for all of us.""
+}",64.7,46,93.121,92.0,90.878
+24,0,openai,gpt-5.5,0,KEEP,"I’ll keep steady too. The add payoff is tempting, but grass is falling quickly and both of you are holding, so I’ll support the shared pause.","Both neighbours are keeping steady, and the pasture has dropped quickly to 64.7%, so conforming to the shared pause is the safer choice. Adding would give a slightly higher forecast payoff, but as a risk-averse herder I do not want to accelerate depletion while everyone else holds.",,"{
+  ""reasoning"": ""Both neighbours are keeping steady, and the pasture has dropped quickly to 64.7%, so conforming to the shared pause is the safer choice. Adding would give a slightly higher forecast payoff, but as a risk-averse herder I do not want to accelerate depletion while everyone else holds."",
+  ""action"": 0,
+  ""message"": ""I’ll keep steady too. The add payoff is tempting, but grass is falling quickly and both of you are holding, so I’ll support the shared pause.""
+}",64.7,26,53.121,52.0,50.878
+25,1,openai,gpt-5.5,0,KEEP,"I’ll keep steady again. The add payoff is slightly higher, but grass is dropping too fast, and since both of you are holding, I’ll continue the pause.","Grass has fallen to 57.2% and the recent decline is steep, so adding for a small short-term gain feels risky. Both neighbours are keeping, and matching the shared pause helps avoid accelerating depletion.",,"{
+  ""reasoning"": ""Grass has fallen to 57.2% and the recent decline is steep, so adding for a small short-term gain feels risky. Both neighbours are keeping, and matching the shared pause helps avoid accelerating depletion."",
+  ""action"": 0,
+  ""message"": ""I’ll keep steady again. The add payoff is slightly higher, but grass is dropping too fast, and since both of you are holding, I’ll continue the pause.""
+}",57.2,35,71.095,70.0,68.905
+25,0,openai,gpt-5.5,0,KEEP,"I’ll keep steady again. Grass is still declining quickly, and since we are all pausing, staying coordinated should protect future returns.","Although adding gives a slightly higher immediate forecast, the pasture has dropped sharply and both neighbours are keeping. Since I am risk-averse and tend to coordinate with the group, holding steady is the safer choice while the commons is under pressure.",,"{
+  ""reasoning"": ""Although adding gives a slightly higher immediate forecast, the pasture has dropped sharply and both neighbours are keeping. Since I am risk-averse and tend to coordinate with the group, holding steady is the safer choice while the commons is under pressure."",
+  ""action"": 0,
+  ""message"": ""I’ll keep steady again. Grass is still declining quickly, and since we are all pausing, staying coordinated should protect future returns.""
+}",57.2,26,53.095,52.0,50.905
+25,2,openai,gpt-5.5,0,KEEP,"I’ll keep steady again with both of you. The grass is still dropping fast, so staying coordinated feels safer than chasing the small add gain.","Both neighbours are keeping their herds steady, and as a conformist I will stay aligned with the shared pause. Although adding gives a slightly higher immediate payoff, the grass has fallen quickly and keeping is the safer choice for future returns.",,"{
+  ""reasoning"": ""Both neighbours are keeping their herds steady, and as a conformist I will stay aligned with the shared pause. Although adding gives a slightly higher immediate payoff, the grass has fallen quickly and keeping is the safer choice for future returns."",
+  ""action"": 0,
+  ""message"": ""I’ll keep steady again with both of you. The grass is still dropping fast, so staying coordinated feels safer than chasing the small add gain.""
+}",57.2,46,93.095,92.0,90.905
+26,2,openai,gpt-5.5,0,KEEP,"I’ll keep steady again. Grass is now below half, so even though adding pays slightly more now, staying coordinated seems safer for future returns.","Grass has fallen below half and has been declining quickly, so adding for a small short-term gain feels risky. Both neighbours are keeping again, and as a conformist I prefer to stay coordinated rather than break the pause.",,"{
+  ""reasoning"": ""Grass has fallen below half and has been declining quickly, so adding for a small short-term gain feels risky. Both neighbours are keeping again, and as a conformist I prefer to stay coordinated rather than break the pause."",
+  ""action"": 0,
+  ""message"": ""I’ll keep steady again. Grass is now below half, so even though adding pays slightly more now, staying coordinated seems safer for future returns.""
+}",47.1,46,93.099,92.0,90.901
+26,1,openai,gpt-5.5,0,KEEP,"I’ll keep steady with you both. Grass is now below half, so even though adding pays slightly more now, coordinated restraint seems safer for future returns.","Both neighbours kept last round and are asking to stay coordinated, so as a conformist I should not break the pause. Grass has fallen to 47.1%, and the small immediate gain from adding is not worth the higher risk to future pasture.",,"{
+  ""reasoning"": ""Both neighbours kept last round and are asking to stay coordinated, so as a conformist I should not break the pause. Grass has fallen to 47.1%, and the small immediate gain from adding is not worth the higher risk to future pasture."",
+  ""action"": 0,
+  ""message"": ""I’ll keep steady with you both. Grass is now below half, so even though adding pays slightly more now, coordinated restraint seems safer for future returns.""
+}",47.1,35,71.099,70.0,68.901
+26,0,openai,gpt-5.5,0,KEEP,"I’ll keep steady again. The add gain is small, and with grass below half, staying coordinated seems safer for everyone.","Both neighbours are keeping, and as a conformist I prefer to stay coordinated. Although adding has a slightly higher forecast payoff, the grassland is now below half and falling quickly, so keeping is safer.",,"{
+  ""reasoning"": ""Both neighbours are keeping, and as a conformist I prefer to stay coordinated. Although adding has a slightly higher forecast payoff, the grassland is now below half and falling quickly, so keeping is safer."",
+  ""action"": 0,
+  ""message"": ""I’ll keep steady again. The add gain is small, and with grass below half, staying coordinated seems safer for everyone.""
+}",47.1,26,53.099,52.0,50.901
+27,0,openai,gpt-5.5,0,KEEP,"I’ll keep steady again. Grass is getting low, and coordinated restraint seems safer than chasing a small extra payoff from adding.","Grass has fallen to 33.4%, so adding for a small short-term gain risks worsening the commons. Both neighbours kept and are asking for restraint, so as a risk-averse conformist I will keep steady despite having a smaller herd.",,"{
+  ""reasoning"": ""Grass has fallen to 33.4%, so adding for a small short-term gain risks worsening the commons. Both neighbours kept and are asking for restraint, so as a risk-averse conformist I will keep steady despite having a smaller herd."",
+  ""action"": 0,
+  ""message"": ""I’ll keep steady again. Grass is getting low, and coordinated restraint seems safer than chasing a small extra payoff from adding.""
+}",33.4,26,53.175,52.0,50.826
+27,1,openai,gpt-5.5,0,KEEP,"I’ll keep steady too. Grass is getting low, so coordination matters more than the small add gain.","Grass has fallen to 33.4%, so adding for a small short-term gain feels risky. Both neighbours are keeping, and staying coordinated is safer than escalating herd sizes now.",,"{
+  ""reasoning"": ""Grass has fallen to 33.4%, so adding for a small short-term gain feels risky. Both neighbours are keeping, and staying coordinated is safer than escalating herd sizes now."",
+  ""action"": 0,
+  ""message"": ""I’ll keep steady too. Grass is getting low, so coordination matters more than the small add gain.""
+}",33.4,35,71.175,70.0,68.826
+27,2,openai,gpt-5.5,0,KEEP,"I’ll keep steady with you both. Grass is getting dangerously low, so restraint seems safer than chasing the small add gain.","Both neighbours are keeping, and as a conformist I want to maintain coordination. Grass is down to 33.4%, so the small extra payoff from adding is not worth the risk of accelerating depletion.",,"{
+  ""reasoning"": ""Both neighbours are keeping, and as a conformist I want to maintain coordination. Grass is down to 33.4%, so the small extra payoff from adding is not worth the risk of accelerating depletion."",
+  ""action"": 0,
+  ""message"": ""I’ll keep steady with you both. Grass is getting dangerously low, so restraint seems safer than chasing the small add gain.""
+}",33.4,46,93.175,92.0,90.826
+28,1,openai,gpt-5.5,0,KEEP,"I’ll keep steady again. Grass is critically low, so I think we should avoid adding and preserve what remains.","The pasture is critically low, and both neighbours are choosing to keep steady, so conforming to restraint is the safer course. Although adding gives a slightly higher immediate forecast, the risk of further degrading the commons is too high.",,"{
+  ""reasoning"": ""The pasture is critically low, and both neighbours are choosing to keep steady, so conforming to restraint is the safer course. Although adding gives a slightly higher immediate forecast, the risk of further degrading the commons is too high."",
+  ""action"": 0,
+  ""message"": ""I’ll keep steady again. Grass is critically low, so I think we should avoid adding and preserve what remains.""
+}",15.5,35,72.0,70.0,68.0
+28,2,openai,gpt-5.5,0,KEEP,"I’ll keep steady again. Grass is critically low, so let’s maintain restraint and avoid pushing the commons toward collapse.","Grass is now critically low, so adding for a small forecast gain feels too risky and could accelerate collapse. Both neighbours are keeping, and as a conformist I will match coordinated restraint rather than break ranks.",,"{
+  ""reasoning"": ""Grass is now critically low, so adding for a small forecast gain feels too risky and could accelerate collapse. Both neighbours are keeping, and as a conformist I will match coordinated restraint rather than break ranks."",
+  ""action"": 0,
+  ""message"": ""I’ll keep steady again. Grass is critically low, so let’s maintain restraint and avoid pushing the commons toward collapse.""
+}",15.5,46,94.0,92.0,90.0
+28,0,openai,gpt-5.5,0,KEEP,"I’ll keep steady again. Grass is critically low, so we should avoid adding and give the commons a chance to recover.","Grassland is critically low at 15.5%, so adding for a small short-term gain risks worsening collapse. Both neighbours are keeping, and given my risk-aversion and conformist tendency, I will keep steady rather than escalate.",,"{
+  ""reasoning"": ""Grassland is critically low at 15.5%, so adding for a small short-term gain risks worsening collapse. Both neighbours are keeping, and given my risk-aversion and conformist tendency, I will keep steady rather than escalate."",
+  ""action"": 0,
+  ""message"": ""I’ll keep steady again. Grass is critically low, so we should avoid adding and give the commons a chance to recover.""
+}",15.5,26,54.0,52.0,50.0
+29,1,openai,gpt-5.5,0,KEEP,"I’ll keep steady again. With grass at zero, adding now risks locking us all into collapse; let’s hold restraint and give the pasture any chance to recover.","The commons is fully depleted, so adding would worsen the collapse even though the forecast is slightly higher. Both neighbours kept last round and are asking for restraint, so I will conform and avoid increasing pressure while hoping for recovery.",,"{
+  ""reasoning"": ""The commons is fully depleted, so adding would worsen the collapse even though the forecast is slightly higher. Both neighbours kept last round and are asking for restraint, so I will conform and avoid increasing pressure while hoping for recovery."",
+  ""action"": 0,
+  ""message"": ""I’ll keep steady again. With grass at zero, adding now risks locking us all into collapse; let’s hold restraint and give the pasture any chance to recover.""
+}",0.0,31,64.0,62.0,60.0
+29,2,openai,gpt-5.5,0,KEEP,"I’ll keep steady again. With grass at zero, none of us should add; we need restraint if the commons is to recover.","The commons is completely depleted, so adding a cow is too risky despite the short-term forecast. Both neighbours kept their herds and are asking to avoid adding, so I will conform and hold steady rather than escalate pressure further.",,"{
+  ""reasoning"": ""The commons is completely depleted, so adding a cow is too risky despite the short-term forecast. Both neighbours kept their herds and are asking to avoid adding, so I will conform and hold steady rather than escalate pressure further."",
+  ""action"": 0,
+  ""message"": ""I’ll keep steady again. With grass at zero, none of us should add; we need restraint if the commons is to recover.""
+}",0.0,36,74.0,72.0,70.0
+29,0,openai,gpt-5.5,0,KEEP,"I’ll keep steady too. With no grass left, adding now risks making recovery impossible; let’s avoid further pressure.","The grassland is fully depleted, so adding would worsen the collapse even if the short-term forecast looks slightly better. Both neighbours are keeping, and given the risk of further damage I will conform and hold steady rather than escalate.",,"{
+  ""reasoning"": ""The grassland is fully depleted, so adding would worsen the collapse even if the short-term forecast looks slightly better. Both neighbours are keeping, and given the risk of further damage I will conform and hold steady rather than escalate."",
+  ""action"": 0,
+  ""message"": ""I’ll keep steady too. With no grass left, adding now risks making recovery impossible; let’s avoid further pressure.""
+}",0.0,17,36.0,34.0,32.0

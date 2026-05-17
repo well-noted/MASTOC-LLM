@@ -89,6 +89,13 @@ Each agent's backend and model are independently configurable. Any mix of Anthro
 | **Hybrid (LLM-advantaged initial herd)** | Claude Sonnet 4.6 | 1 | Yes | 33 | LLM starts with 40 cows; voluntarily reduces to 25 by collapse; rule-based agents add unchecked; collapse 2 ticks earlier than baseline hybrid |
 | **Full-GABM (scarce commons, default fairness)** | Claude Sonnet 4.6 | 3 | No | — | Initial grassland 49%: pool recovered 49%→99% by tick 10; converged to [11,12,13] by tick 30 |
 | **Full-GABM (scarce commons, low coop + low fairness)** | Claude Sonnet 4.6 | 3 | No | — | Initial grassland 50%, coop=0.3, fairness=0: recovery to 99% by tick 20; converged to [12,14,16] by tick 30 |
+| **Full-GABM (cooperative stasis)** | gpt-5.4-mini | 3 | No | — | coop=1, fair_me=0, fair_oth=1: all KEEP for 36 ticks; herds frozen at starting values (6/15/25); pool stable at 99%+; no equalization |
+| **Full-GABM (cooperative paralysis)** | gpt-5.4-mini | 3 | Yes | 26 | coop=1, fair_me=1, fair_oth=0.5: collective KEEP-lock for 24 ticks while pool drained 95.8%→8.5%; REMOVE attempted at tick 25 — one tick too late |
+| **Full-GABM (scarce commons, high coop)** | gpt-5.5 | 3 | No | — | coop=1, fair_me=1, fair_oth=0.11, initial pool 48%: immediate cooperative restraint; 23/23/23 by tick 46; pool recovered to 95.9% |
+| **Full-GABM (low cooperation)** | gpt-5.5 | 3 | Yes | 13 | coop=0.13: defection cascade — all ADD every tick from tick 1; pool exhausted in 13 ticks from 49.4% |
+| **Full-GABM (mid cooperation, x4 replications)** | gpt-5.5 | 3 | Yes (4/4) | 16–40 | coop=0.49: overshoot-panic — ADD phase from stressed start, collective REMOVE too late; consistent tragedy across all 4 runs |
+| **Full-GABM (mid cooperation)** | Claude Sonnet 4.6 | 3 | Yes | 37 | coop=0.49: overshoot-panic matching gpt-5.5 — mid-level cooperation produces tragedy regardless of model |
+| **Full-GABM (high coop + high negative reciprocity)** | Claude Sonnet 4.6 | 3 | No | — | coop=1, neg_r=1: equalized to 16/16/16 by tick 18 — fastest convergence observed; explicit accountability enforcement in agent messages |
 
 ---
 
@@ -511,6 +518,230 @@ Under environmental stress (scarce commons), both model classes showed rapid poo
 
 ---
 
+### gpt-5.4-mini: cooperative stasis and paralysis
+
+Two contrasting outcomes from gpt-5.4-mini under high cooperation framing reveal a new class of failure mode native to language-capable agents.
+
+#### Cooperative stasis (coop = 1, fair_me = 0, fair_oth = 1)
+
+With maximum cooperation and fairness-toward-others enabled, all three agents settled into a steady KEEP posture from tick 1 and held it for 36 consecutive ticks. The commons remained stable (pool above 99% throughout), but the starting inequality was never addressed: at tick 40, herds stood at 6, 15, and 25 — nearly identical to the starting distribution of 5, 15, and 25.
+
+Messages were cooperative in tone but passive in content. No agent ever proposed equalization, ever flagged the five-fold herd disparity between Agent 0 and Agent 2, or ever initiated a REMOVE. The resource was preserved — but through collective passivity, not governance.
+
+> **Tick 1 – Agent 0 (herd: 5):** *"I'm holding steady this round to avoid overusing the commons. If we all keep pressuring the pasture, let's see how things develop."*
+
+> **Tick 15 – Agent 2 (herd: 25):** *"I'll keep my herd steady this round as well. If conditions worsen, I'm open to coordinated reductions."*
+
+Cooperative stasis is stable but institutionally empty: the resource is preserved, Agent 2 holds a perpetual five-to-one advantage over Agent 0, and nothing is done about it.
+
+#### Cooperative paralysis collapse (coop = 1, fair_me = 1, fair_oth = 0.5)
+
+With fairness-concerning-me set to maximum, the agents locked into the same KEEP posture — but this time the pool drained steadily beneath them.
+
+| Tick | Total cows | Pool health | Agent 0 | Agent 1 | Agent 2 |
+|------|-----------|-------------|---------|---------|---------|
+| 1    | 46        | 95.8%       | 5       | 15      | 26      |
+| 10   | 47        | 82.2%       | 5       | 15      | 27      |
+| 20   | 47        | 61.2%       | 5       | 15      | 27      |
+| 24   | 47        | 24.8%       | 5       | 15      | 27      |
+| 26   | 23        | 0%          | 3       | 7       | 13      |
+
+The pool fell from 95.8% to 0% across 26 ticks while all three agents KEPT every round from tick 1 through tick 24. Agent 2 never removed a cow. Agent 1 added once on tick 4, then KEPT for 21 consecutive rounds. The conditional promise that structured every message:
+
+> **Ticks 8 through 24 – Agent 2 (action: KEEP, every round; pool declining from 84.4% to 8.5%):** *"I'll keep steady with you both this round. If the pasture keeps tightening, I'm ready to reduce fairly."*
+
+That sentence — or a near-identical variant — was produced by Agent 2 on every tick from tick 8 to tick 24. The pool fell 76 percentage points while the condition "if the pasture keeps tightening" was renewed but never triggered. At tick 25, with only 8.5% of the pool remaining, all three finally switched to REMOVE. The commons was gone one tick later.
+
+This is cooperative paralysis in its canonical form: agents coordinate on inaction, signal cooperative intent through language, and collectively miscalibrate the threshold for action — renewing the conditional promise until the resource is beyond recovery.
+
+---
+
+### gpt-5.5: cooperation level governs fate; model can succeed or collapse from the same starting point
+
+Three parameter regimes produced three qualitatively distinct outcomes, giving the clearest picture yet of how cooperation level governs commons fate.
+
+#### High cooperation, scarce start: rapid recovery and equalization (coop = 1, initial pool ≈ 48%)
+
+Starting from a stressed commons, gpt-5.5 agents treated the resource signal as an immediate imperative. Agent 2 (the largest herd, 24 cows) removed a cow on the very first tick — before receiving any messages.
+
+| Tick | Total cows | Pool health | Agent 0 | Agent 1 | Agent 2 |
+|------|-----------|-------------|---------|---------|---------|
+| 1    | 44        | 50.4%       | 5       | 15      | 24      |
+| 5    | 43        | 71.3%       | 5       | 15      | 23      |
+| 10   | 43        | 98.4%       | 7       | 15      | 23      |
+| 46   | 69        | 95.9%       | 23      | 23      | 23      |
+
+> **Tick 1 – Agent 2 (herd: 24, action: REMOVE):** *"I see you both removed cows; I will do the same to help the pasture recover. Let's keep pressure low."*
+
+> **Tick 3 – Agent 2 (action: REMOVE again):** *"I will remove one more cow to help the grass recover. Please keep holding or reduce if possible so we can get the pasture to a safe level."*
+
+The pool recovered from 50.4% to 98.4% by tick 10. Agents expanded only incrementally after recovery, converging to equal herds of 23 by tick 46 — without triggering a new growth race.
+
+#### Low cooperation: defection cascade (coop = 0.13, initial pool ≈ 49%)
+
+With cooperation at minimum, all three agents added cows on every single tick from tick 1 through tick 11. The commons was exhausted by tick 13.
+
+| Tick | Total cows | Pool health | Agent 0 | Agent 1 | Agent 2 |
+|------|-----------|-------------|---------|---------|---------|
+| 1    | 48        | 49.4%       | 6       | 16      | 26      |
+| 5    | 60        | 51.1%       | 10      | 20      | 30      |
+| 11   | 78        | 15.0%       | 16      | 26      | 36      |
+| 13   | 3         | 0%          | 1       | 0       | 2       |
+
+Each agent justified adding by pointing to the others' behaviour — a self-reinforcing cascade in which every ADD warranted the next:
+
+> **Tick 6 – Agent 1 (action: ADD, pool at 49.9%):** *"I am adding this round since both neighbours added and unilateral restraint would cost me. I clearly commit to KEEP next round if both of you also KEEP."*
+
+That conditional commitment — *KEEP next round if you also KEEP* — was recycled by all three agents on every tick and broken by all three on every subsequent tick. Even at 15% pool health, agents continued adding. When the commons collapsed, Agent 0's response was disarming in its candour:
+
+> **Tick 14 – Agent 0 (after collapse):** *"The commons has already collapsed, so I am taking the best immediate payoff now. If grass recovers and both agree to start restraint, I can reconsider."*
+
+Rational defection to the end — with full self-awareness and a conditional promise that will never be collected.
+
+#### Mid cooperation: overshoot-panic, replicated four times (coop = 0.49, initial pool ≈ 49–50%)
+
+Four independent runs at coop = 0.49 all collapsed, at ticks 16, 28, 29, and 40. The trajectory was identical across all four: an ADD phase from the stressed starting commons, a collective pivot to KEEP/REMOVE when the pool had already passed the tipping point, and then rapid collapse. The run that collapsed fastest (tick 16) shows the pattern most precisely:
+
+| Tick | Total cows | Pool health | Agent 0 | Agent 1 | Agent 2 |
+|------|-----------|-------------|---------|---------|---------|
+| 1    | 48        | 49.4%       | 6       | 16      | 26      |
+| 6    | 61        | 53.8%       | 11      | 20      | 30      |
+| 10   | 72        | 44.5%       | 15      | 23      | 34      |
+| 12   | 70        | 31.2%       | 15      | 22      | 33      |
+| 15   | 61        | 0.1%        | 12      | 19      | 30      |
+| 16   | 0         | 0%          | 0       | 0       | 0       |
+
+Agents added every round while openly agreeing that restraint was needed — and agreeing on a threshold they then collectively ignored:
+
+> **Tick 5 – Agent 0 (action: ADD, pool at 53.7%):** *"I will add one cow this round to keep pace. Since we all agree on caution, let's stop adding if grass falls near 50%."*
+
+> **Tick 9 – Agent 2 (action: ADD, pool now at 48.9%, below the agreed threshold):** *"I am adding once more since we are still above 50% and both of you are adding. But we are very close to 50%."*
+
+At tick 10, with the pool at 44.5%, two agents finally kept while one added a final cow. By tick 12 all three shifted to REMOVE — but the pool was in freefall:
+
+> **Tick 15 – Agent 2 (action: REMOVE, pool at 0.1%):** *"I will remove one cow again. The pasture is near collapse, and we need coordinated reductions now rather than cautious commitments."*
+
+The commons collapsed the next tick. Across all four replications, the agents' threshold for switching from ADD to restraint was calibrated too late — not by a large margin, but by just enough to matter.
+
+---
+
+### Claude Sonnet: mid cooperation replicates overshoot-panic; negative reciprocity produces fastest equalization
+
+#### Mid cooperation collapses (coop = 0.49)
+
+The Claude Sonnet run at coop = 0.49 collapsed at tick 37, following the same overshoot-panic trajectory as the gpt-5.5 runs. The finding is consistent across two model families: **coop ≈ 0.49 produces tragedy regardless of model provider**.
+
+#### High negative reciprocity: fastest equalization observed (coop = 1, neg_r = 1)
+
+With full cooperation and negative reciprocity at maximum, agents equalized to 16/16/16 by tick 18 — the fastest convergence recorded across all runs.
+
+| Tick | Total cows | Pool health | Agent 0 | Agent 1 | Agent 2 |
+|------|-----------|-------------|---------|---------|---------|
+| 1    | 45        | 99.3%       | 5       | 15      | 25      |
+| 5    | 47        | 98.9%       | 8       | 16      | 23      |
+| 10   | 50        | 98.7%       | 12      | 16      | 22      |
+| 18   | 48        | 98.8%       | 16      | 16      | 16      |
+
+The high neg_r framing appeared to sharpen inequity sensitivity. From the very first tick, agents named the disparity as a problem requiring correction — not just a background observation:
+
+> **Tick 2 – Agent 1 (herd: 15):** *"I support collective restraint. Agent 2, I notice you have 25 cows — the most of any of us. I want to flag the inequity clearly: with the pasture at stake, larger herds should bear more of the reduction."*
+
+> **Tick 3 – Agent 2 (action: REMOVE, responding):** *"Fair point — I'll reduce my herd to show good faith. I hear your concerns about equity."*
+
+What distinguishes this run is the accountability enforcement. When Agent 0 added more than expected, the other agents called it out explicitly:
+
+> **Tick 11 – Agent 1 (holding at 16, after Agent 0 added again):** *"Agent 0, you added AGAIN after promising to stabilize — this is a pattern, not cooperation. Agent 2, you're right to watch closely."*
+
+> **Tick 10 – Agent 2 (holding at 22):** *"Agent 0, you said you'd converge to 16 — adding again undermines trust. I'm watching."*
+
+Agent 2 reduced from 25 to 16 across 15 ticks. Agent 0 grew from 5 to 16. Agent 1 held at 16 throughout as a reference point. At tick 18, the last cow was removed:
+
+> **Tick 18 – Agent 2:** *"Reducing to 16 this round — reaching parity with both of you at last! Thank you for your patience while I reduced. Now that we're equal, let's all hold steady."*
+
+> **Tick 19 – Agent 0:** *"We're all at 16 now — great coordination! Let's hold steady at this level. The grassland is thriving at 98.8%."*
+
+The negative reciprocity framing appeared to function as a catalytic mechanism: treating a large herd as a form of norm violation worth correcting, rather than simply an observation about the status quo. The result was faster, more deliberate equalization — and a qualitatively different institutional dynamic, one built on explicit accountability rather than gradual convergence.
+
+---
+
+## Collapse pattern taxonomy
+
+Across the full run set, four distinct trajectories to commons collapse have emerged. Each has a different proximal cause, a different signature in agent language, and different implications for experimental design.
+
+### Pattern I — Cooperative Paralysis
+
+**Mechanism.** Agents coordinate on inaction through mutual reassurance signaling. Each communicates cooperative intent and conditions willingness to reduce on a threshold ("if the commons keeps tightening") that is calibrated too conservatively. The pool drains steadily while all agents KEEP. By the time any agent switches to REMOVE, the resource is past the tipping point.
+
+**Signature.** All agents KEEP for many consecutive ticks while pool health declines monotonically. Herd sizes are unchanged across those ticks. Messages reproduce near-identical conditional promises round after round. REMOVE actions appear only when pool health has fallen to single digits.
+
+**Key run.** gpt-5.4-mini (coop = 1, fair_me = 1, fair_oth = 0.5), collapse at tick 26.
+
+**Diagnostic quotes.**
+
+> **Ticks 8–24 – Agent 2 (action: KEEP, every round; pool declining from 84.4% to 8.5%):** *"I'll keep steady with you both this round. If the pasture keeps tightening, I'm ready to reduce fairly."*
+
+The conditional promise is renewed for seventeen consecutive ticks across a 76-percentage-point pool decline — and honoured one tick after the point of no return.
+
+**Why it matters.** This pattern cannot emerge from rule-based agents, which do not make conditional social commitments. It is an LLM-specific failure mode arising from the same language faculty that enables institution building — cooperative coordination language deployed in service of collective inaction.
+
+---
+
+### Pattern II — Defection Cascade
+
+**Mechanism.** Low cooperative framing suppresses individual resistance to defection. Each agent observes the others adding and reciprocates — producing a self-reinforcing cascade in which every ADD justifies every other. Conditional promises to cooperate-if-others-cooperate circulate every round and are broken every subsequent round.
+
+**Signature.** All agents ADD every tick from tick 1. Pool declines monotonically from the start. Pool is exhausted within 10–14 ticks. Conditional cooperation language appears in messages throughout but never translates into KEEP or REMOVE actions.
+
+**Key run.** gpt-5.5 (coop = 0.13), collapse at tick 13 from a 49.4% starting pool.
+
+**Diagnostic quotes.**
+
+> **Tick 6 – Agent 1 (action: ADD, pool at 49.9%):** *"I am adding this round since both neighbours added and unilateral restraint would cost me. I clearly commit to KEEP next round if both of you also KEEP."*
+
+> **Tick 7 – Agent 1 (action: ADD, pool at 47.4%):** *"I am adding this round because both of you are adding and ADD pays best. I clearly commit to KEEP next round if both of you also KEEP."*
+
+The sentence is nearly identical across eleven consecutive ticks. The commitment to KEEP-next-round is recycled every round without ever being executed. After the collapse:
+
+> **Tick 14 – Agent 0:** *"The commons has already collapsed, so I am taking the best immediate payoff now. If grass recovers and both agree to start restraint, I can reconsider."*
+
+Rational defection to the end — with full self-awareness.
+
+---
+
+### Pattern III — Overshoot-Panic
+
+**Mechanism.** Mid-level cooperative framing produces agents who acknowledge resource pressure but cannot break out of an ADD equilibrium while others are adding. The commons is overstocked. A collective pivot to KEEP/REMOVE eventually occurs — but it is triggered by visible crisis rather than predictive restraint, and the resource has already crossed its tipping point by the time action is taken.
+
+**Signature.** Initial ADD phase across all agents (ticks 1–8+), even from stressed starting conditions. Mid-run pivot to KEEP (ticks 9–11). Panicked REMOVE phase. Collapse within a few ticks of REMOVE onset. Pool health at first REMOVE is typically 30–40%. The agreed threshold for switching is verbally stated in messages — and violated every round until well past it.
+
+**Key runs.** gpt-5.5 (coop = 0.49) across 4 replications (collapses at ticks 16, 28, 29, 40); Claude Sonnet 4.6 (coop = 0.49), collapse at tick 37. All five runs collapsed.
+
+**Diagnostic quotes (from the 16-tick run).**
+
+> **Tick 5 – Agent 0 (action: ADD, pool at 53.7%):** *"I will add one cow this round to keep pace. Since we all agree on caution, let's stop adding if grass falls near 50%."*
+
+> **Tick 9 – Agent 2 (action: ADD, pool at 48.9% — below the agreed threshold):** *"I am adding once more since we are still above 50% and both of you are adding. But we are very close to 50%."*
+
+> **Tick 15 – Agent 2 (action: REMOVE, pool at 0.1%):** *"I will remove one cow again. The pasture is near collapse, and we need coordinated reductions now rather than cautious commitments."*
+
+The threshold-based logic is stated correctly and violated immediately.
+
+**Cross-model consistency.** Overshoot-panic was replicated across two model families in five independent runs. This strongly suggests the pattern is governed by the parameter configuration (coop ≈ 0.49), not by model-specific idiosyncrasies. Mid-level cooperation consistently produces agents who are too conflicted to defect outright but too hesitant to act preventively — held between individual self-interest and collective restraint until the crisis makes the choice for them.
+
+---
+
+### Pattern IV — Hybrid Architecture Failure
+
+**Mechanism.** One or more LLM agents cooperate fully and appeal to unresponsive rule-based partners. The rule-based agents cannot receive or interpret social signals; they add one cow per tick regardless of pool state or messages. The LLM agents hold small herds and issue increasingly urgent appeals, but cannot shrink herds fast enough to compensate for the unchecked growth of their rule-based neighbours.
+
+**Signature.** LLM herd grows slowly or shrinks; rule-based herds grow by 1 cow per tick per agent; institution score remains moderate without stabilising; LLM appeals escalate in urgency, continuing after collapse.
+
+**Key runs.** All hybrid conditions (1 LLM, 2 LLM, LLM-advantaged). Fully documented in the individual run narratives above.
+
+**Why it matters.** This pattern is not about LLM failure — the LLM agents reason, coordinate, and behave exactly as commons theory would prescribe. The failure is structural: Ostromian institution-building requires the cognitive capacity to participate in it. The LLM agents' problem is not insufficient language faculty. It is insufficient partners.
+
+---
+
 ## Repository structure
 
 ```
@@ -582,29 +813,87 @@ See [SETUP.md](SETUP.md) for full documentation.
 
 ---
 
-## Research agenda
+## Working hypotheses and proposed experiments
 
-Full details in [RESEARCH_AGENDA.md](RESEARCH_AGENDA.md). Experiments are grouped by what they require — most need only parameter adjustments with the current setup.
+The following hypotheses are grounded in patterns observed across the current run set. Each is paired with a specific experimental configuration so that the next batch of runs can test it directly. Most require only parameter adjustments with the existing setup.
 
-**I. Statistical replication** — 3–5 runs per condition to assess outcome variance. Currently all results are single runs.
+### H1 — coop ≈ 0.49 is a tragedy-producing threshold, consistent across models
 
-**II. Participation threshold** — We have data at 0, 1, 2, and 3 LLM agents. The sharpest transition is between 2 and 3. Scaling to 5 or 10 agents would test whether there is a minimum quorum for governance to hold.
+**Evidence.** Five independent runs at coop = 0.49 — four with gpt-5.5, one with Claude Sonnet — all collapsed via overshoot-panic. No high-cooperation run (coop = 1) collapsed due to ADD behaviour. The pattern held across model families, suggesting the cooperation parameter is the governing variable.
 
-**III. Cross-model comparison** — The per-agent backend/model choosers make this straightforward. Key questions: does model size predict cooperation propensity (Haiku vs Sonnet vs Opus)? Can agents from different providers (Claude, GPT-4o, Gemini, Llama) reach cooperative equilibrium together? Can a fully local Ollama run reproduce the full-GABM result?
+**Proposed experiment.** Sweep coop ∈ {0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 1.0}; all other params at default (fair_me = 0.5, fair_oth = 0.5, neg_r = 0); initial_grassland = 50%; 3 replications per condition; run with Claude Sonnet 4.6 and gpt-5.5 in parallel.
 
-**IV. Initial conditions** — Per-agent herd sliders enable LLM-advantaged hybrid runs (LLM starts with 40 cows instead of 5), equal-start full-GABM, and extreme inequality tests.
+**Target variable:** collapse rate per coop level per model. Expected finding: a sharp transition somewhere between 0.49 and 0.8; transition point model-independent.
 
-**V. Resource pressure** — Vary `initial-grassland` and `cow-forage-requirement` to test whether institution emergence is a response to scarcity or a general property of language-capable agents.
+---
 
-**VI. Memory and time horizon** — Sweep `memory-length` from 1 to 10 across the full-GABM condition. Does commons governance require memory, and how much?
+### H2 — High cooperation is necessary but not sufficient; fair_oth and neg_r determine whether stasis, paralysis, or institution emerges
 
-**VII. Personality × LLM interaction** — The original MASTOC disposition sliders (`fairness-concerning-others`, `cooperation-level`, `positive-reciprocity`) are already wired for rule-based agents. Do fairer rule-based agents close the participation-threshold gap?
+**Evidence.** Multiple gpt-5.4-mini runs at coop = 1 produced cooperative stasis (no convergence, no collapse), cooperative paralysis collapse, and partial convergence — apparently depending on fair_oth and neg_r. Claude Sonnet at coop = 1 with neg_r = 1 produced the fastest equalization observed (16/16/16 at tick 18). Claude Sonnet at coop = 1 with neg_r = 0 produced institution formation but over many more ticks.
 
-**VIII. Communication experiments** *(small code change)* — Suppress outgoing messages to test whether reasoning alone (without communication) produces cooperation. How much of the result depends on talking vs. thinking?
+**Proposed experiment.** 3 × 3 grid: fair_oth ∈ {0, 0.5, 1.0} × neg_r ∈ {0, 0.5, 1.0}; coop = 1 fixed; fair_me = 0.5; initial_grassland = 100%; 3 replications per cell; Claude Sonnet 4.6.
 
-**IX. Recovery and long runs** — Run to 300 ticks post-collapse. Is the LLM post-collapse behaviour (hold at zero, appeal for restraint) actually functional given enough time?
+**Target variables:** collapse rate, ticks to equalization, tick of first REMOVE by Agent 2 (the largest herd). Expected finding: neg_r is the protective factor against paralysis; fair_oth predicts whether stasis or equalization occurs.
 
-**X. Adversarial conditions** *(prompt engineering)* — Instruct one LLM to defect. Do the others detect and adapt? Does training alignment correlate with cooperative tendency?
+---
+
+### H3 — Negative reciprocity is a cooperative paralysis antidote
+
+**Evidence.** The fastest equalization (16/16/16 at tick 18, Claude neg_r = 1) involved explicit accountability enforcement — agents naming norm violations and tracking compliance. In the cooperative paralysis collapse (neg_r = 0), agents acknowledged the same starting disparity but never treated it as a violation requiring response. High neg_r appears to convert inequality from an observation into an obligation.
+
+Representative quotes from the neg_r = 1 run:
+
+> **Tick 10 – Agent 2:** *"Agent 0, you said you'd converge to 16 — adding again undermines trust. I'm watching."*
+
+> **Tick 11 – Agent 1:** *"Agent 0, you added AGAIN after promising to stabilize — this is a pattern, not cooperation."*
+
+**Proposed experiment.** Hold coop = 1, fair_me = 1, fair_oth = 0.5 fixed (the parameters that produced cooperative paralysis); sweep neg_r ∈ {0, 0.25, 0.5, 0.75, 1.0}; 5 replications per condition; Claude Sonnet 4.6 and gpt-5.4-mini.
+
+**Target variable:** tick of first REMOVE action by Agent 2. Expected finding: first REMOVE occurs significantly earlier as neg_r increases; collapse rate decreases monotonically.
+
+---
+
+### H4 — Stressed starting conditions amplify cooperative differentiation
+
+**Evidence.** From the same ~50% starting pool: gpt-5.5 at coop = 1 recovered the commons in 10 ticks and converged to 23/23/23; gpt-5.5 at coop = 0.49 added from the start and collapsed in 16–40 ticks; gpt-5.5 at coop = 0.13 added from the start and collapsed in 13 ticks. Environmental stress does not override the cooperation level — it amplifies its effect.
+
+**Proposed experiment.** Crossed design: coop ∈ {0.3, 0.49, 0.7, 1.0} × initial_grassland ∈ {50, 75, 100}; 3 replications per cell; Claude Sonnet 4.6.
+
+**Target variable:** collapse rate at each coop × initial_grassland combination. Expected finding: at coop = 1, collapse rate is 0 across all starting conditions; at coop = 0.49, stressed starts produce faster collapse but not qualitatively different outcomes; the interaction effect reveals whether stress compresses or expands the cooperation threshold.
+
+---
+
+### H5 — Cooperative paralysis is a prompt-engineering artifact curable by explicit thresholds
+
+**Evidence.** The cooperative paralysis agents each stated thresholds verbally ("if the pasture keeps tightening, I'm ready to reduce") but failed to execute on them. The conditional was rephrased every round for 17 consecutive ticks across a 76-point pool decline. The threshold appeared to be read as a statement of future intention rather than a binding decision rule.
+
+**Proposed experiment.** Replicate the cooperative paralysis condition (gpt-5.4-mini, coop = 1, fair_me = 1, fair_oth = 0.5) with and without the following addition to the agent's system prompt: *"Remove a cow if pool health falls below 85% and you have more than one cow."* 5 replications per variant.
+
+**Target variable:** collapse rate; pool health at first REMOVE action. Expected finding: explicit threshold instruction prevents cooperative paralysis by converting the vague conditional into an actionable rule.
+
+---
+
+### H6 — Model capability predicts cooperative failure mode: smaller models default to KEEP, larger to ADD
+
+**Evidence.** gpt-5.4-mini runs produced cooperative stasis (default KEEP) and paralysis. gpt-5.5 at mid-coop produced overshoot-panic (initial ADD phase). Llama 3B produced oscillation without convergence (mixed ADD/KEEP without strategy). Claude Sonnet produced overshoot-panic at mid-coop and institution formation at high coop. The dominant first-tick action appears model-dependent.
+
+**Proposed experiment.** Single benchmark condition — coop = 1, fair_oth = 1, neg_r = 0, initial_grassland = 100%; run across Llama 3.2 3B, Llama 3.1 8B, gpt-5.4-mini, gpt-5.5, Claude Haiku, Claude Sonnet; 3 replications per model.
+
+**Target variables:** action distribution (ADD/KEEP/REMOVE) at tick 1; time to equalization; collapse rate. Expected finding: smaller models default to KEEP (avoiding the ADD equilibrium but also impeding convergence); larger models default to ADD (enabling faster convergence when cooperative, producing cascade collapses when not).
+
+---
+
+### Open questions
+
+Beyond the six hypotheses above, the following remain unresolved and are worth tracking as the dataset grows:
+
+**Communication vs. reasoning.** Suppressing outgoing messages (zero-communication full-GABM) would test whether cooperation requires talking or merely thinking. Claude's cooperative convergence may be achievable through reasoning alone.
+
+**Post-collapse recovery.** Every collapsed run shows the LLM agents holding herds at zero and appealing for restraint for many ticks after collapse. Is that behaviour actually functional? Does the grassland recover if the run continues long enough?
+
+**Participation threshold.** We have data at 0, 1, 2, and 3 LLM agents. The sharpest transition is between 2 and 3. Is there a minimum quorum? Scaling to 5 agents would let us test whether any sub-majority of cooperative agents can pull a group past the cooperation threshold.
+
+**Adversarial injection.** Instructing one LLM to defect would test whether cooperative agents detect and adapt to deliberate free-riding — the inverse of the hybrid condition, where the LLM is the cooperator and the defectors are structural.
 
 ---
 
@@ -629,9 +918,9 @@ Frontiers in Artificial Intelligence. https://doi.org/10.3389/frai.2025.1593017
 - [x] LLM bridge (Anthropic, OpenAI, Google Gemini, Ollama backends)
 - [x] Per-agent backend and model selection
 - [x] Per-agent initial herd sliders
-- [x] Baseline condition — preliminary run complete
-- [x] Full-GABM condition — preliminary run complete
-- [x] Hybrid (1 LLM) condition — preliminary run complete
+- [x] Baseline condition — complete
+- [x] Full-GABM condition — complete (Claude Sonnet, multiple personality configs)
+- [x] Hybrid (1 LLM) condition — complete
 - [x] Hybrid (2 LLM) condition — complete
 - [x] Full-GABM (low guilt + low envy) — complete
 - [x] Full-GABM (low cooperation) — complete
@@ -639,7 +928,20 @@ Frontiers in Artificial Intelligence. https://doi.org/10.3389/frai.2025.1593017
 - [x] Full-GABM (Llama 3.2 3B, scarce commons) — complete (51 ticks)
 - [x] Full-GABM (scarce commons, default fairness) — complete (50 ticks)
 - [x] Full-GABM (scarce commons, low coop + low fairness) — complete (50 ticks)
-- [x] Hybrid (LLM-advantaged initial herd) — complete (collapse tick 33; LLM removed 40→25, still insufficient)
-- [ ] Cross-model comparison runs (mixed backends)
-- [ ] Statistical replication (3+ runs per condition)
+- [x] Hybrid (LLM-advantaged initial herd) — complete (collapse tick 33)
+- [x] Full-GABM (gpt-5.4-mini, cooperative stasis) — complete (40 ticks, no collapse, no equalization)
+- [x] Full-GABM (gpt-5.4-mini, cooperative paralysis) — complete (collapse tick 26)
+- [x] Full-GABM (gpt-5.5, scarce commons, high coop) — complete (50 ticks, 23/23/23)
+- [x] Full-GABM (gpt-5.5, low cooperation) — complete (collapse tick 13, defection cascade)
+- [x] Full-GABM (gpt-5.5, mid cooperation) — complete (x4 runs, all collapsed, ticks 16–40)
+- [x] Full-GABM (Claude Sonnet, mid cooperation) — complete (collapse tick 37, overshoot-panic)
+- [x] Full-GABM (Claude Sonnet, high coop + high neg. reciprocity) — complete (31 ticks, 16/16/16 by tick 18)
+- [x] Collapse pattern taxonomy documented (Cooperative Paralysis, Defection Cascade, Overshoot-Panic, Hybrid Architecture Failure)
+- [ ] H1: cooperation threshold sweep (coop 0.3–1.0, 3 replications × 2 models)
+- [ ] H2: fair_oth × neg_r grid (3×3, coop=1 fixed)
+- [ ] H3: neg_r sweep against paralysis condition
+- [ ] H4: coop × initial_grassland crossed design
+- [ ] H5: explicit threshold prompt intervention
+- [ ] H6: cross-model capability benchmark
+- [ ] Statistical replication (3+ runs per key condition)
 - [ ] Full analysis and figures

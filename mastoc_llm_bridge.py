@@ -22,15 +22,6 @@ Called from NetLogo via the `py` extension:
 
 from __future__ import annotations
 
-import sys as _sys
-# NetLogo's py extension on Windows defaults to cp1252, which can't handle the
-# Unicode characters that LLMs routinely produce (smart quotes, em-dashes, etc.).
-# Reconfigure stdout/stderr to UTF-8 so print() never crashes pyext.py.
-if hasattr(_sys.stdout, "reconfigure"):
-    _sys.stdout.reconfigure(encoding="utf-8", errors="replace")
-if hasattr(_sys.stderr, "reconfigure"):
-    _sys.stderr.reconfigure(encoding="utf-8", errors="replace")
-
 import csv
 import json
 import os
@@ -40,6 +31,10 @@ from collections import defaultdict, deque
 from datetime import datetime
 from pathlib import Path
 from typing import Any, Dict, List, Optional, Tuple
+
+def _say(msg: str) -> None:
+    """Print msg safely on Windows, replacing any characters cp1252 can't encode."""
+    print(msg.encode("cp1252", errors="replace").decode("cp1252"), flush=True)
 
 # ── Load .env file from the project directory (if present) ───────────────────
 # This lets API keys live in a local .env file rather than requiring system-wide
@@ -220,7 +215,7 @@ def log_params(params: dict) -> None:
         with open(meta_path, "w", encoding="utf-8") as f:
             json.dump(meta, f, indent=2)
     except Exception as exc:
-        print(f"[log_params] Warning: could not write params to run_meta.json: {exc}")
+        _say(f"[log_params] Warning: could not write params to run_meta.json: {exc}")
 
 
 # ──────────────────────────────────────────────────────────────────────────────
@@ -297,10 +292,10 @@ def decide_from_context(ctx: list) -> int:
     system_prompt = _system_prompt()
     user_prompt = _user_prompt(context)
     if _cfg.get("verbose"):
-        print(f"[tick {tick}] agent {agent_id} -> calling LLM...", flush=True)
+        _say(f"[tick {tick}] agent {agent_id} -> calling LLM...")
     response_text, thinking = _call_llm(system_prompt, user_prompt, agent_id=agent_id)
     if _cfg.get("verbose"):
-        print(f"[tick {tick}] agent {agent_id} -> response received", flush=True)
+        _say(f"[tick {tick}] agent {agent_id} -> response received")
     _call_count += 1
 
     # For thinking models (e.g. Gemma4 via ollama-native), the JSON reply sometimes
@@ -601,7 +596,7 @@ def _call_llm(
             native_base = native_base[:-3]
         url = f"{native_base}/api/chat"
         tag = f"agent {agent_id}" if agent_id is not None else "institution detector"
-        print(f"[{tag}] POST {url} model={model} ...", flush=True)
+        _say(f"[{tag}] POST {url} model={model} ...")
         try:
             resp = _requests.post(
                 url,
@@ -619,9 +614,9 @@ def _call_llm(
             )
             resp.raise_for_status()
         except Exception as conn_err:
-            print(f"[{tag}] CONNECTION FAILED: {conn_err}", flush=True)
+            _say(f"[{tag}] CONNECTION FAILED: {conn_err}")
             raise
-        print(f"[{tag}] connected, streaming response...", flush=True)
+        _say(f"[{tag}] connected, streaming response...")
         content = ""
         thinking = ""
         token_count = 0
@@ -634,10 +629,10 @@ def _call_llm(
             thinking += msg.get("thinking", "")
             token_count += 1
             if _cfg.get("verbose") and token_count % 50 == 0:
-                print(f"[{tag}] ... {token_count} chunks received so far", flush=True)
+                _say(f"[{tag}] ... {token_count} chunks received so far")
             if chunk.get("done"):
                 break
-        print(f"[{tag}] done ({token_count} chunks, {len(content)} content chars, {len(thinking)} thinking chars)", flush=True)
+        _say(f"[{tag}] done ({token_count} chunks, {len(content)} content chars, {len(thinking)} thinking chars)")
         return content, thinking
 
     else:
@@ -758,7 +753,7 @@ def _parse_response(text: str) -> Tuple[int, str, str]:
 
     # Fallback: find first standalone -1, 0, or 1
     # Log a warning so format failures are visible rather than silent
-    print(f"[_parse_response] WARNING: JSON parse failed, falling back to regex. Raw response: {text[:200]!r}")
+    _say(f"[_parse_response] WARNING: JSON parse failed, falling back to regex. Raw response: {text[:200]!r}")
     nums = re.findall(r'(?<![0-9])(-1|0|1)(?![0-9])', text)
     action = int(nums[0]) if nums else 0
     return action, "", ""

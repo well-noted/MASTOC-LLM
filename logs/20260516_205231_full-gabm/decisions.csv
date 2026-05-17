@@ -1,0 +1,211 @@
+tick,agent_id,backend,model,action,action_name,message,reasoning,thinking,raw_response,pool_pct,own_herd,payoff_add,payoff_keep,payoff_remove
+1,0,openai,gpt-5.5,1,ADD,"I am adding one cow this round, but I will reconsider if the grassland keeps falling. Thanks to Agent 2 for reducing.","Adding a cow gives the highest expected payoff and helps narrow the herd-size gap with larger neighbours. Although the pasture is only at 48%, Agent 2 already removed a cow, so I will take a modest gain while watching for further decline.",,"{
+  ""reasoning"": ""Adding a cow gives the highest expected payoff and helps narrow the herd-size gap with larger neighbours. Although the pasture is only at 48%, Agent 2 already removed a cow, so I will take a modest gain while watching for further decline."",
+  ""action"": 1,
+  ""message"": ""I am adding one cow this round, but I will reconsider if the grassland keeps falling. Thanks to Agent 2 for reducing.""
+}",48.0,5,11.1,10.0,8.899
+1,2,openai,gpt-5.5,1,ADD,"Grass is under pressure; if others begin reducing, I will consider matching restraint in future rounds.","Adding gives the highest expected payoff this round, and my herd is large enough that maintaining profit matters. The grassland is below half remaining, but neighbours are not reducing, so I will not sacrifice payoff alone.",,"{
+  ""reasoning"": ""Adding gives the highest expected payoff this round, and my herd is large enough that maintaining profit matters. The grassland is below half remaining, but neighbours are not reducing, so I will not sacrifice payoff alone."",
+  ""action"": 1,
+  ""message"": ""Grass is under pressure; if others begin reducing, I will consider matching restraint in future rounds.""
+}",48.0,25,51.1,50.0,48.899
+1,1,openai,gpt-5.5,1,ADD,"I am adding this round because both of you added. If others start reducing to protect the pasture, I will consider matching that restraint.","Adding gives the highest expected payoff, and both neighbours are adding, so keeping or removing would leave me further behind. The grassland is already below half, but without reciprocal restraint from others, I will protect my own position this round.",,"{
+  ""reasoning"": ""Adding gives the highest expected payoff, and both neighbours are adding, so keeping or removing would leave me further behind. The grassland is already below half, but without reciprocal restraint from others, I will protect my own position this round."",
+  ""action"": 1,
+  ""message"": ""I am adding this round because both of you added. If others start reducing to protect the pasture, I will consider matching that restraint.""
+}",48.0,15,31.1,30.0,28.899
+2,0,openai,gpt-5.5,1,ADD,"I am adding because both larger herds are still adding. If you actually reduce next round, I will seriously consider matching restraint.","Adding gives the highest expected payoff, and both neighbours are still adding despite having much larger herds than mine. Since no one has reduced yet, I will not unilaterally sacrifice profit while falling further behind, though the pasture level is becoming concerning.",,"{
+  ""reasoning"": ""Adding gives the highest expected payoff, and both neighbours are still adding despite having much larger herds than mine. Since no one has reduced yet, I will not unilaterally sacrifice profit while falling further behind, though the pasture level is becoming concerning."",
+  ""action"": 1,
+  ""message"": ""I am adding because both larger herds are still adding. If you actually reduce next round, I will seriously consider matching restraint.""
+}",49.4,6,13.103,12.0,10.897
+2,1,openai,gpt-5.5,1,ADD,"I am adding this round since both neighbours added and unilateral restraint would cost me. If grass keeps falling, I will consider reducing if others do too.","Adding gives the highest forecast payoff, and both neighbours also added last round, so there is no reciprocal reason for me to restrain alone. The grassland is below half, which is risky, but I do not want to fall further behind Agent 2 while others keep expanding.",,"{
+  ""reasoning"": ""Adding gives the highest forecast payoff, and both neighbours also added last round, so there is no reciprocal reason for me to restrain alone. The grassland is below half, which is risky, but I do not want to fall further behind Agent 2 while others keep expanding."",
+  ""action"": 1,
+  ""message"": ""I am adding this round since both neighbours added and unilateral restraint would cost me. If grass keeps falling, I will consider reducing if others do too.""
+}",49.4,16,33.103,32.0,30.897
+2,2,openai,gpt-5.5,1,ADD,"I am adding this round since both neighbours are adding too. If the grassland keeps falling, I am open to coordinated restraint, but I will not reduce alone.","Adding gives the highest expected payoff, and both neighbours are also adding, so restraint now would leave me bearing the cost alone. The pasture is still under pressure, so I will watch closely and consider holding or removing if others do the same.",,"{
+  ""reasoning"": ""Adding gives the highest expected payoff, and both neighbours are also adding, so restraint now would leave me bearing the cost alone. The pasture is still under pressure, so I will watch closely and consider holding or removing if others do the same."",
+  ""action"": 1,
+  ""message"": ""I am adding this round since both neighbours are adding too. If the grassland keeps falling, I am open to coordinated restraint, but I will not reduce alone.""
+}",49.4,26,53.103,52.0,50.897
+3,0,openai,gpt-5.5,1,ADD,"I am adding this round because both larger herds are adding. If grass falls further, I support a coordinated freeze or reduction, but I will not be the only one to sacrifice.","Adding gives the highest expected payoff, and both neighbours with much larger herds are still adding, so holding back alone would widen the gap. The pasture is only around half remaining, which is risky, but I will not reduce unless others also show restraint.",,"{
+  ""reasoning"": ""Adding gives the highest expected payoff, and both neighbours with much larger herds are still adding, so holding back alone would widen the gap. The pasture is only around half remaining, which is risky, but I will not reduce unless others also show restraint."",
+  ""action"": 1,
+  ""message"": ""I am adding this round because both larger herds are adding. If grass falls further, I support a coordinated freeze or reduction, but I will not be the only one to sacrifice.""
+}",50.5,7,15.104,14.0,12.895
+3,2,openai,gpt-5.5,1,ADD,"I am adding again because both of you are adding. If the grass starts dropping sharply or either of you removes, I will consider matching restraint.","Adding gives the highest expected payoff, and both neighbours are still adding, so unilateral restraint would reduce my relative position. The grassland is just above half and has improved slightly, so the immediate risk does not outweigh the personal gain.",,"{
+  ""reasoning"": ""Adding gives the highest expected payoff, and both neighbours are still adding, so unilateral restraint would reduce my relative position. The grassland is just above half and has improved slightly, so the immediate risk does not outweigh the personal gain."",
+  ""action"": 1,
+  ""message"": ""I am adding again because both of you are adding. If the grass starts dropping sharply or either of you removes, I will consider matching restraint.""
+}",50.5,27,55.104,54.0,52.895
+3,1,openai,gpt-5.5,1,ADD,"I will add again because no one is restraining yet. If both neighbours commit to keeping or reducing next round, I am willing to stop adding too.","Adding gives the highest forecast payoff and the grassland has slightly recovered rather than collapsed. Since both neighbours are still adding, reducing alone would cost me profit and leave me further behind Agent 2.",,"{
+  ""reasoning"": ""Adding gives the highest forecast payoff and the grassland has slightly recovered rather than collapsed. Since both neighbours are still adding, reducing alone would cost me profit and leave me further behind Agent 2."",
+  ""action"": 1,
+  ""message"": ""I will add again because no one is restraining yet. If both neighbours commit to keeping or reducing next round, I am willing to stop adding too.""
+}",50.5,17,35.104,34.0,32.895
+4,1,openai,gpt-5.5,1,ADD,"I am adding because both neighbours are adding and unilateral restraint would be costly. I support a coordinated freeze or reduction next round if all agree, especially if grass starts falling.","Adding gives the highest forecast payoff, and both neighbours are still adding, so unilateral restraint would leave me worse off while Agent 2 remains far ahead. Grass is still just above half and has not collapsed this round, so I will add but signal willingness to coordinate restraint if everyone participates.",,"{
+  ""reasoning"": ""Adding gives the highest forecast payoff, and both neighbours are still adding, so unilateral restraint would leave me worse off while Agent 2 remains far ahead. Grass is still just above half and has not collapsed this round, so I will add but signal willingness to coordinate restraint if everyone participates."",
+  ""action"": 1,
+  ""message"": ""I am adding because both neighbours are adding and unilateral restraint would be costly. I support a coordinated freeze or reduction next round if all agree, especially if grass starts falling.""
+}",51.2,18,37.105,36.0,34.894
+4,0,openai,gpt-5.5,1,ADD,"I am adding again because both larger herds are still adding. If you both keep or reduce next round, I am willing to stop adding and match restraint.","Adding gives the highest forecast payoff and both neighbours are still increasing much larger herds, so holding back would leave me further behind without protecting the commons. Grass remains just above half, so I will add now but watch for a decline or reciprocal restraint.",,"{
+  ""reasoning"": ""Adding gives the highest forecast payoff and both neighbours are still increasing much larger herds, so holding back would leave me further behind without protecting the commons. Grass remains just above half, so I will add now but watch for a decline or reciprocal restraint."",
+  ""action"": 1,
+  ""message"": ""I am adding again because both larger herds are still adding. If you both keep or reduce next round, I am willing to stop adding and match restraint.""
+}",51.2,8,17.105,16.0,14.894
+4,2,openai,gpt-5.5,1,ADD,I will add this round since both of you are adding. I support a coordinated KEEP next round if both of you commit clearly; I will not reduce alone while others expand.,"Adding gives the highest forecast payoff and both neighbours are still adding, so removing or keeping would leave me sacrificing alone while they gain. The grassland is only slightly above half remaining, so I am willing to coordinate a freeze next round if both neighbours genuinely commit.",,"{
+  ""reasoning"": ""Adding gives the highest forecast payoff and both neighbours are still adding, so removing or keeping would leave me sacrificing alone while they gain. The grassland is only slightly above half remaining, so I am willing to coordinate a freeze next round if both neighbours genuinely commit."",
+  ""action"": 1,
+  ""message"": ""I will add this round since both of you are adding. I support a coordinated KEEP next round if both of you commit clearly; I will not reduce alone while others expand.""
+}",51.2,28,57.105,56.0,54.894
+5,0,openai,gpt-5.5,1,ADD,I am adding this round because both larger herds are still expanding. I will commit to KEEP next round if both of you also clearly commit to KEEP.,"Adding gives the highest expected payoff and both larger neighbours are still adding, so removing or freezing alone would leave me further behind. The pasture is still slightly improving, but I am risk-averse and would support a coordinated KEEP next round if everyone commits.",,"{
+  ""reasoning"": ""Adding gives the highest expected payoff and both larger neighbours are still adding, so removing or freezing alone would leave me further behind. The pasture is still slightly improving, but I am risk-averse and would support a coordinated KEEP next round if everyone commits."",
+  ""action"": 1,
+  ""message"": ""I am adding this round because both larger herds are still expanding. I will commit to KEEP next round if both of you also clearly commit to KEEP.""
+}",51.5,9,19.104,18.0,16.895
+5,1,openai,gpt-5.5,1,ADD,I am adding this round because both of you added. I will commit to KEEP next round if both of you clearly do the same; I will not be the only one to restrain.,"Adding gives the highest forecast payoff and both neighbours are still expanding, so reducing or keeping would leave me falling behind, especially Agent 2. The pasture is just above half remaining, so I will add now but support a coordinated stop next round to limit risk.",,"{
+  ""reasoning"": ""Adding gives the highest forecast payoff and both neighbours are still expanding, so reducing or keeping would leave me falling behind, especially Agent 2. The pasture is just above half remaining, so I will add now but support a coordinated stop next round to limit risk."",
+  ""action"": 1,
+  ""message"": ""I am adding this round because both of you added. I will commit to KEEP next round if both of you clearly do the same; I will not be the only one to restrain.""
+}",51.5,19,39.104,38.0,36.895
+5,2,openai,gpt-5.5,1,ADD,I am adding this round because both of you added and payoff favors it. I will consider keeping next round if both of you also commit to stopping additions.,"Adding gives the highest expected payoff, and both neighbours continued adding, so unilateral restraint would leave me worse off while they gain. Grassland is still slightly improving, so the immediate risk of one more cow appears acceptable.",,"{
+  ""reasoning"": ""Adding gives the highest expected payoff, and both neighbours continued adding, so unilateral restraint would leave me worse off while they gain. Grassland is still slightly improving, so the immediate risk of one more cow appears acceptable."",
+  ""action"": 1,
+  ""message"": ""I am adding this round because both of you added and payoff favors it. I will consider keeping next round if both of you also commit to stopping additions.""
+}",51.5,29,59.104,58.0,56.895
+6,1,openai,gpt-5.5,1,ADD,I am adding this round since both of you are adding and the payoff favors it. I will commit to KEEP next round if both of you also clearly commit to KEEP.,"Adding gives the highest forecast payoff, and both neighbours are still adding, including Agent 2 with a much larger herd. I do not want to fall further behind while others keep expanding, though I am open to a mutual stop next round.",,"{
+  ""reasoning"": ""Adding gives the highest forecast payoff, and both neighbours are still adding, including Agent 2 with a much larger herd. I do not want to fall further behind while others keep expanding, though I am open to a mutual stop next round."",
+  ""action"": 1,
+  ""message"": ""I am adding this round since both of you are adding and the payoff favors it. I will commit to KEEP next round if both of you also clearly commit to KEEP.""
+}",51.1,20,41.101,40.0,38.898
+6,2,openai,gpt-5.5,1,ADD,I am adding because both of you added and ADD has the best payoff. I will commit to KEEP next round if both of you also clearly KEEP.,"Adding gives the highest expected payoff, and both neighbours are also adding, so restraining alone would reduce my position without protecting the commons. Grass remains just above half, but continued expansion is risky, so I am willing to coordinate a pause if everyone follows through next round.",,"{
+  ""reasoning"": ""Adding gives the highest expected payoff, and both neighbours are also adding, so restraining alone would reduce my position without protecting the commons. Grass remains just above half, but continued expansion is risky, so I am willing to coordinate a pause if everyone follows through next round."",
+  ""action"": 1,
+  ""message"": ""I am adding because both of you added and ADD has the best payoff. I will commit to KEEP next round if both of you also clearly KEEP.""
+}",51.1,30,61.101,60.0,58.898
+6,0,openai,gpt-5.5,1,ADD,I am adding this round because both larger herds are still adding. I will consider KEEP next round only if both of you clearly commit to stopping additions together.,"Adding gives the highest expected payoff, and both neighbours are still adding with much larger herds, so restraining alone would leave me further behind. The grassland has slipped slightly but remains near 51%, so the immediate risk does not outweigh the payoff and equity concerns.",,"{
+  ""reasoning"": ""Adding gives the highest expected payoff, and both neighbours are still adding with much larger herds, so restraining alone would leave me further behind. The grassland has slipped slightly but remains near 51%, so the immediate risk does not outweigh the payoff and equity concerns."",
+  ""action"": 1,
+  ""message"": ""I am adding this round because both larger herds are still adding. I will consider KEEP next round only if both of you clearly commit to stopping additions together.""
+}",51.1,10,21.101,20.0,18.898
+7,1,openai,gpt-5.5,1,ADD,I am adding this round because both of you are adding and ADD pays best. I clearly commit to KEEP next round if both of you also KEEP.,"ADD gives the highest expected payoff this round, and both neighbours are still adding, so holding back alone would leave me worse off while Agent 2 already has a much larger herd. However, the pasture is below 50%, so continued growth is risky and I would support a mutual stop if both clearly commit.",,"{
+  ""reasoning"": ""ADD gives the highest expected payoff this round, and both neighbours are still adding, so holding back alone would leave me worse off while Agent 2 already has a much larger herd. However, the pasture is below 50%, so continued growth is risky and I would support a mutual stop if both clearly commit."",
+  ""action"": 1,
+  ""message"": ""I am adding this round because both of you are adding and ADD pays best. I clearly commit to KEEP next round if both of you also KEEP.""
+}",49.9,21,43.096,42.0,40.903
+7,2,openai,gpt-5.5,1,ADD,"I will add this round, but I am willing to KEEP next round if both of you also commit to KEEP. We should stop simultaneous growth before the pasture drops further.","Adding gives the highest immediate expected payoff, and both neighbours are still adding rather than reducing. Since the grassland is near 50%, I do not want to keep escalating indefinitely, but I also will not unilaterally slow down while others continue to grow.",,"{
+  ""reasoning"": ""Adding gives the highest immediate expected payoff, and both neighbours are still adding rather than reducing. Since the grassland is near 50%, I do not want to keep escalating indefinitely, but I also will not unilaterally slow down while others continue to grow."",
+  ""action"": 1,
+  ""message"": ""I will add this round, but I am willing to KEEP next round if both of you also commit to KEEP. We should stop simultaneous growth before the pasture drops further.""
+}",49.9,31,63.096,62.0,60.903
+7,0,openai,gpt-5.5,1,ADD,I am adding this round because both of you added and my herd is much smaller. I clearly commit to KEEP next round if both of you also KEEP.,"ADD has the highest expected payoff, and my herd is far smaller than both neighbours while they continue adding. The pasture is near half remaining, so I will not unilaterally reduce, but I am willing to stop escalation if both neighbours follow through on a mutual KEEP commitment next round.",,"{
+  ""reasoning"": ""ADD has the highest expected payoff, and my herd is far smaller than both neighbours while they continue adding. The pasture is near half remaining, so I will not unilaterally reduce, but I am willing to stop escalation if both neighbours follow through on a mutual KEEP commitment next round."",
+  ""action"": 1,
+  ""message"": ""I am adding this round because both of you added and my herd is much smaller. I clearly commit to KEEP next round if both of you also KEEP.""
+}",49.9,11,23.096,22.0,20.903
+8,0,openai,gpt-5.5,1,ADD,I am adding this round because both of you are adding and remain much larger. I will KEEP next round if both of you also KEEP as committed.,"Adding gives the highest expected payoff, and both neighbours are still adding while holding much larger herds than mine. I am concerned about the pasture falling below half, but I will not unilaterally fall further behind unless others actually stop growing.",,"{
+  ""reasoning"": ""Adding gives the highest expected payoff, and both neighbours are still adding while holding much larger herds than mine. I am concerned about the pasture falling below half, but I will not unilaterally fall further behind unless others actually stop growing."",
+  ""action"": 1,
+  ""message"": ""I am adding this round because both of you are adding and remain much larger. I will KEEP next round if both of you also KEEP as committed.""
+}",47.4,12,25.092,24.0,22.908
+8,1,openai,gpt-5.5,1,ADD,I am adding because both of you are adding too. I commit to KEEP next round if both of you also KEEP.,"Adding gives the highest expected payoff, and both neighbours are also adding, so keeping would leave me further behind, especially compared with Agent 2. The pasture is declining, so I am willing to stop growth next round if everyone actually keeps.",,"{
+  ""reasoning"": ""Adding gives the highest expected payoff, and both neighbours are also adding, so keeping would leave me further behind, especially compared with Agent 2. The pasture is declining, so I am willing to stop growth next round if everyone actually keeps."",
+  ""action"": 1,
+  ""message"": ""I am adding because both of you are adding too. I commit to KEEP next round if both of you also KEEP.""
+}",47.4,22,45.092,44.0,42.908
+8,2,openai,gpt-5.5,1,ADD,I am adding because both of you are adding and ADD pays best. I will KEEP next round if both of you also KEEP as promised.,"ADD has the highest forecast payoff, and both neighbours are adding this round, so removing or keeping would leave me falling behind while they expand. Although the grassland is below half and risk is rising, I will match their behaviour now and support a coordinated KEEP next round if they follow through.",,"{
+  ""reasoning"": ""ADD has the highest forecast payoff, and both neighbours are adding this round, so removing or keeping would leave me falling behind while they expand. Although the grassland is below half and risk is rising, I will match their behaviour now and support a coordinated KEEP next round if they follow through."",
+  ""action"": 1,
+  ""message"": ""I am adding because both of you are adding and ADD pays best. I will KEEP next round if both of you also KEEP as promised.""
+}",47.4,32,65.092,64.0,62.908
+9,0,openai,gpt-5.5,1,ADD,I am adding this round because both of you added and remain much larger. I will KEEP next round if both of you also KEEP as promised.,"ADD has the highest forecast payoff, and both neighbours are still adding while holding much larger herds, so I do not want to fall further behind. The pasture is declining, but I will only shift to restraint if they actually stop adding too.",,"{
+  ""reasoning"": ""ADD has the highest forecast payoff, and both neighbours are still adding while holding much larger herds, so I do not want to fall further behind. The pasture is declining, but I will only shift to restraint if they actually stop adding too."",
+  ""action"": 1,
+  ""message"": ""I am adding this round because both of you added and remain much larger. I will KEEP next round if both of you also KEEP as promised.""
+}",43.3,13,27.093,26.0,24.907
+9,2,openai,gpt-5.5,1,ADD,I am adding this round since both of you added too. I will KEEP next round if both of you also KEEP as promised.,"Adding gives the highest expected payoff this round, and both neighbours are still adding, so reducing now would sacrifice profit without being reciprocated. However, the grassland is falling quickly, so I want to coordinate a safer pause next round if everyone follows through.",,"{
+  ""reasoning"": ""Adding gives the highest expected payoff this round, and both neighbours are still adding, so reducing now would sacrifice profit without being reciprocated. However, the grassland is falling quickly, so I want to coordinate a safer pause next round if everyone follows through."",
+  ""action"": 1,
+  ""message"": ""I am adding this round since both of you added too. I will KEEP next round if both of you also KEEP as promised.""
+}",43.3,33,67.093,66.0,64.907
+9,1,openai,gpt-5.5,1,ADD,I am adding because both of you are adding and ADD pays best. I will KEEP next round if both of you also KEEP.,"ADD has the highest forecast payoff, and both neighbours are still adding, so reducing or keeping would leave me behind, especially relative to Agent 2's larger herd. The grassland is declining, but I will not be the only one to restrain while others expand.",,"{
+  ""reasoning"": ""ADD has the highest forecast payoff, and both neighbours are still adding, so reducing or keeping would leave me behind, especially relative to Agent 2's larger herd. The grassland is declining, but I will not be the only one to restrain while others expand."",
+  ""action"": 1,
+  ""message"": ""I am adding because both of you are adding and ADD pays best. I will KEEP next round if both of you also KEEP.""
+}",43.3,23,47.093,46.0,44.907
+10,2,openai,gpt-5.5,1,ADD,I am adding because both of you are adding and it pays best now. I will KEEP next round if both of you also KEEP.,"Adding gives the highest forecast payoff, and both neighbours are still adding, so I will not be the only one to restrain while others expand. The grassland is getting low, so I want a mutual KEEP next round to reduce risk.",,"{
+  ""reasoning"": ""Adding gives the highest forecast payoff, and both neighbours are still adding, so I will not be the only one to restrain while others expand. The grassland is getting low, so I want a mutual KEEP next round to reduce risk."",
+  ""action"": 1,
+  ""message"": ""I am adding because both of you are adding and it pays best now. I will KEEP next round if both of you also KEEP.""
+}",36.9,34,69.112,68.0,66.889
+10,0,openai,gpt-5.5,1,ADD,"I am adding this round since you both are adding. If both of you KEEP next round as promised, I will also KEEP.","Adding gives the highest expected payoff and both neighbours are still adding, so keeping or removing would leave me further behind while they expand. The pasture is declining, so I want to avoid continued escalation and will consider keeping only if they actually keep as promised.",,"{
+  ""reasoning"": ""Adding gives the highest expected payoff and both neighbours are still adding, so keeping or removing would leave me further behind while they expand. The pasture is declining, so I want to avoid continued escalation and will consider keeping only if they actually keep as promised."",
+  ""action"": 1,
+  ""message"": ""I am adding this round since you both are adding. If both of you KEEP next round as promised, I will also KEEP.""
+}",36.9,14,29.112,28.0,26.889
+10,1,openai,gpt-5.5,1,ADD,"I am adding because both of you are adding again. The pasture is falling fast, so I will KEEP next round if both of you also KEEP.","Adding gives the highest immediate payoff, and both neighbours are still adding, including Agent 2 with a much larger herd. The grassland is getting risky, but I do not want to fall further behind while others keep expanding.",,"{
+  ""reasoning"": ""Adding gives the highest immediate payoff, and both neighbours are still adding, including Agent 2 with a much larger herd. The grassland is getting risky, but I do not want to fall further behind while others keep expanding."",
+  ""action"": 1,
+  ""message"": ""I am adding because both of you are adding again. The pasture is falling fast, so I will KEEP next round if both of you also KEEP.""
+}",36.9,24,49.112,48.0,46.889
+11,0,openai,gpt-5.5,1,ADD,I am adding because both of you are still adding and my herd is smaller. The pasture is getting dangerous; I will KEEP next round if both of you also KEEP.,"The pasture is in serious decline, but both neighbours are still adding and have much larger herds than mine. Since adding has the highest forecast payoff and unilateral restraint would leave me further behind, I will add once more while signalling willingness to coordinate on keeping next round.",,"{
+  ""reasoning"": ""The pasture is in serious decline, but both neighbours are still adding and have much larger herds than mine. Since adding has the highest forecast payoff and unilateral restraint would leave me further behind, I will add once more while signalling willingness to coordinate on keeping next round."",
+  ""action"": 1,
+  ""message"": ""I am adding because both of you are still adding and my herd is smaller. The pasture is getting dangerous; I will KEEP next round if both of you also KEEP.""
+}",27.6,15,31.175,30.0,28.827
+11,1,openai,gpt-5.5,1,ADD,"I am adding this round because both of you are adding. If both of you KEEP next round, I will also KEEP.","Adding gives the highest forecast payoff, and both neighbours are still adding, so reducing or holding now would leave me behind while the commons is being further exploited. I am concerned about the low grassland level, but I will only switch to restraint if the others actually do so too.",,"{
+  ""reasoning"": ""Adding gives the highest forecast payoff, and both neighbours are still adding, so reducing or holding now would leave me behind while the commons is being further exploited. I am concerned about the low grassland level, but I will only switch to restraint if the others actually do so too."",
+  ""action"": 1,
+  ""message"": ""I am adding this round because both of you are adding. If both of you KEEP next round, I will also KEEP.""
+}",27.6,25,51.175,50.0,48.827
+11,2,openai,gpt-5.5,1,ADD,"I am adding this round because both of you are adding. The pasture is now very low; if both of you KEEP next round, I will also KEEP.","Adding gives the highest expected payoff this round, and both neighbours are still adding, so removing or keeping would leave me behind while the pasture cost is shared. The grassland is now dangerously low, so I will only continue restraint if both neighbours actually stop adding next round.",,"{
+  ""reasoning"": ""Adding gives the highest expected payoff this round, and both neighbours are still adding, so removing or keeping would leave me behind while the pasture cost is shared. The grassland is now dangerously low, so I will only continue restraint if both neighbours actually stop adding next round."",
+  ""action"": 1,
+  ""message"": ""I am adding this round because both of you are adding. The pasture is now very low; if both of you KEEP next round, I will also KEEP.""
+}",27.6,35,71.175,70.0,68.827
+12,0,openai,gpt-5.5,0,KEEP,"I am KEEPING this round to break the cycle. If you both KEEP next round, I will also KEEP; if you reduce, I will reciprocate.","Adding offers only a small immediate gain, but with the grassland down to 15% it risks pushing the commons toward collapse. Since both neighbours expressed willingness to KEEP if others do, I will KEEP now to signal coordination without unilaterally shrinking my herd.",,"{
+  ""reasoning"": ""Adding offers only a small immediate gain, but with the grassland down to 15% it risks pushing the commons toward collapse. Since both neighbours expressed willingness to KEEP if others do, I will KEEP now to signal coordination without unilaterally shrinking my herd."",
+  ""action"": 0,
+  ""message"": ""I am KEEPING this round to break the cycle. If you both KEEP next round, I will also KEEP; if you reduce, I will reciprocate.""
+}",15.0,16,33.325,32.0,30.677
+12,1,openai,gpt-5.5,0,KEEP,"I will KEEP this round. The grass is near collapse; if both of you KEEP next round, I will keep cooperating. Agent 2 especially needs to stop adding.","The pasture is critically low, and the gain from adding is small compared with the risk of collapse. I will KEEP to test the neighbours' stated willingness to stop expanding, while not rewarding Agent 2 with a herd reduction while they continue to add.",,"{
+  ""reasoning"": ""The pasture is critically low, and the gain from adding is small compared with the risk of collapse. I will KEEP to test the neighbours' stated willingness to stop expanding, while not rewarding Agent 2 with a herd reduction while they continue to add."",
+  ""action"": 0,
+  ""message"": ""I will KEEP this round. The grass is near collapse; if both of you KEEP next round, I will keep cooperating. Agent 2 especially needs to stop adding.""
+}",15.0,26,53.325,52.0,50.677
+12,2,openai,gpt-5.5,0,KEEP,"I will KEEP this round. The pasture is too low for more additions; if we all keep now, we may preserve future payoffs.","The pasture is critically low at 15%, so adding for a small extra forecast payoff risks destroying future returns. Since both neighbours kept last round and are signalling willingness to coordinate, I will keep rather than escalate further.",,"{
+  ""reasoning"": ""The pasture is critically low at 15%, so adding for a small extra forecast payoff risks destroying future returns. Since both neighbours kept last round and are signalling willingness to coordinate, I will keep rather than escalate further."",
+  ""action"": 0,
+  ""message"": ""I will KEEP this round. The pasture is too low for more additions; if we all keep now, we may preserve future payoffs.""
+}",15.0,36,73.325,72.0,70.677
+13,2,openai,gpt-5.5,0,KEEP,"I will KEEP again. The commons is almost gone; adding now risks total collapse. If either of you removes cows, I will reciprocate reductions.","The pasture is effectively exhausted, so adding for a small short-term gain is too risky and may trigger retaliation. Since both neighbours are keeping, I will also keep rather than escalate, while watching for any real reductions to reciprocate.",,"{
+  ""reasoning"": ""The pasture is effectively exhausted, so adding for a small short-term gain is too risky and may trigger retaliation. Since both neighbours are keeping, I will also keep rather than escalate, while watching for any real reductions to reciprocate."",
+  ""action"": 0,
+  ""message"": ""I will KEEP again. The commons is almost gone; adding now risks total collapse. If either of you removes cows, I will reciprocate reductions.""
+}",0.6,36,74.0,72.0,70.0
+13,1,openai,gpt-5.5,0,KEEP,"I will KEEP again. The grass is almost gone, and adding now risks destroying future payoffs for all of us.","The pasture is essentially exhausted, and the small extra forecast from adding is not worth the collapse risk. Both neighbours kept and signaled restraint, so I will reciprocate by not increasing pressure this round.",,"{
+  ""reasoning"": ""The pasture is essentially exhausted, and the small extra forecast from adding is not worth the collapse risk. Both neighbours kept and signaled restraint, so I will reciprocate by not increasing pressure this round."",
+  ""action"": 0,
+  ""message"": ""I will KEEP again. The grass is almost gone, and adding now risks destroying future payoffs for all of us.""
+}",0.6,26,54.0,52.0,50.0
+13,0,openai,gpt-5.5,0,KEEP,"I will KEEP again. The pasture is almost gone, and adding now is reckless. I will consider removing only if larger herds also start reducing.","Adding gives only a small short-term gain, but with just 0.6% grass left it risks total collapse. Since both neighbours are keeping but not reducing, I will also keep rather than sacrifice herd size while they remain much larger.",,"{
+  ""reasoning"": ""Adding gives only a small short-term gain, but with just 0.6% grass left it risks total collapse. Since both neighbours are keeping but not reducing, I will also keep rather than sacrifice herd size while they remain much larger."",
+  ""action"": 0,
+  ""message"": ""I will KEEP again. The pasture is almost gone, and adding now is reckless. I will consider removing only if larger herds also start reducing.""
+}",0.6,16,34.0,32.0,30.0
+14,1,openai,gpt-5.5,1,ADD,"I have no cows while you both still have herds, so I am adding one to avoid falling further behind. If you begin removing, I will consider reciprocating.","With no cows, keeping gives me nothing while both neighbours still have herds. The grassland is already depleted, and the forecast says adding is the only action with positive payoff, so I will add despite the poor commons state.",,"{
+  ""reasoning"": ""With no cows, keeping gives me nothing while both neighbours still have herds. The grassland is already depleted, and the forecast says adding is the only action with positive payoff, so I will add despite the poor commons state."",
+  ""action"": 1,
+  ""message"": ""I have no cows while you both still have herds, so I am adding one to avoid falling further behind. If you begin removing, I will consider reciprocating.""
+}",0.0,0,2.0,0.0,-2.0
+14,2,openai,gpt-5.5,-1,REMOVE,"I will REMOVE one cow. The grass is gone, and as the largest herd I will start reducing to support recovery. I expect others to avoid adding and consider reductions too.","The pasture is completely depleted, so adding for a short-term gain is risky and could keep future payoffs at zero. Since I have the largest herd, removing one cow may help recovery and may encourage Agent 0 to reduce as promised.",,"{
+  ""reasoning"": ""The pasture is completely depleted, so adding for a short-term gain is risky and could keep future payoffs at zero. Since I have the largest herd, removing one cow may help recovery and may encourage Agent 0 to reduce as promised."",
+  ""action"": -1,
+  ""message"": ""I will REMOVE one cow. The grass is gone, and as the largest herd I will start reducing to support recovery. I expect others to avoid adding and consider reductions too.""
+}",0.0,2,6.0,4.0,2.0
+14,0,openai,gpt-5.5,1,ADD,"The commons has already collapsed, so I am taking the best immediate payoff now. If grass recovers and others genuinely reduce, I can reconsider cooperation.","The pasture is already at zero, so the cooperative future benefit of holding back is effectively gone this round. Adding gives the highest expected payoff and helps me avoid falling behind neighbours who may still benefit from larger herds.",,"{
+  ""reasoning"": ""The pasture is already at zero, so the cooperative future benefit of holding back is effectively gone this round. Adding gives the highest expected payoff and helps me avoid falling behind neighbours who may still benefit from larger herds."",
+  ""action"": 1,
+  ""message"": ""The commons has already collapsed, so I am taking the best immediate payoff now. If grass recovers and others genuinely reduce, I can reconsider cooperation.""
+}",0.0,1,4.0,2.0,0.0

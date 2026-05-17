@@ -1,0 +1,316 @@
+tick,agent_id,backend,model,action,action_name,message,reasoning,thinking,raw_response,pool_pct,own_herd,payoff_add,payoff_keep,payoff_remove
+1,0,openai,gpt-5.5,1,ADD,"I am adding one cow this round, but the pasture is already below half. Please avoid repeated adding so we do not all lose future payoff.","Adding gives the highest expected payoff, and my herd is far smaller than my neighbours', so I do not want to fall further behind. Since neighbour behaviour is split, I will cautiously add one cow while asking others not to keep expanding.",,"{
+  ""reasoning"": ""Adding gives the highest expected payoff, and my herd is far smaller than my neighbours', so I do not want to fall further behind. Since neighbour behaviour is split, I will cautiously add one cow while asking others not to keep expanding."",
+  ""action"": 1,
+  ""message"": ""I am adding one cow this round, but the pasture is already below half. Please avoid repeated adding so we do not all lose future payoff.""
+}",48.0,5,11.1,10.0,8.899
+1,2,openai,gpt-5.5,1,ADD,"I see both of you are adding. I will add this round too, but we should watch the grass closely if it keeps dropping.","Both neighbours are adding, and the forecast gives a slightly higher payoff for adding than keeping or removing. Although the grassland is already under pressure, conforming to the group and avoiding falling behind seems best this round.",,"{
+  ""reasoning"": ""Both neighbours are adding, and the forecast gives a slightly higher payoff for adding than keeping or removing. Although the grassland is already under pressure, conforming to the group and avoiding falling behind seems best this round."",
+  ""action"": 1,
+  ""message"": ""I see both of you are adding. I will add this round too, but we should watch the grass closely if it keeps dropping.""
+}",48.0,25,51.1,50.0,48.899
+1,1,openai,gpt-5.5,1,ADD,"I am adding this round, but the pasture is already under half. We should watch conditions closely and consider restraint if grass keeps falling.","Both neighbours added last round, so conforming points toward adding as well, and the forecast payoff is slightly highest if I add. Although the grassland is already below half and there is risk, I do not want to fall further behind larger herds.",,"{
+  ""reasoning"": ""Both neighbours added last round, so conforming points toward adding as well, and the forecast payoff is slightly highest if I add. Although the grassland is already below half and there is risk, I do not want to fall further behind larger herds."",
+  ""action"": 1,
+  ""message"": ""I am adding this round, but the pasture is already under half. We should watch conditions closely and consider restraint if grass keeps falling.""
+}",48.0,15,31.1,30.0,28.899
+2,1,openai,gpt-5.5,1,ADD,"I will add once more to keep pace, but grass is below half. Next round we should strongly consider keeping or reducing if the pasture falls further.","Adding gives the highest expected payoff, and both neighbours are also adding, so conforming avoids falling further behind especially with Agent 2’s much larger herd. However, the pasture is already below half, so I will signal that we should stop repeated additions soon to reduce future risk.",,"{
+  ""reasoning"": ""Adding gives the highest expected payoff, and both neighbours are also adding, so conforming avoids falling further behind especially with Agent 2’s much larger herd. However, the pasture is already below half, so I will signal that we should stop repeated additions soon to reduce future risk."",
+  ""action"": 1,
+  ""message"": ""I will add once more to keep pace, but grass is below half. Next round we should strongly consider keeping or reducing if the pasture falls further.""
+}",49.4,16,33.103,32.0,30.897
+2,0,openai,gpt-5.5,1,ADD,"I will add one cow too, since everyone is adding and payoff is higher. But the pasture is below half, so we should be ready to stop or reduce soon.","Adding has the highest expected payoff, and both neighbours are continuing to add, so conforming also prevents me from falling further behind their much larger herds. The pasture is still below half, so this is risky, but I will watch closely and be ready to stop if depletion continues.",,"{
+  ""reasoning"": ""Adding has the highest expected payoff, and both neighbours are continuing to add, so conforming also prevents me from falling further behind their much larger herds. The pasture is still below half, so this is risky, but I will watch closely and be ready to stop if depletion continues."",
+  ""action"": 1,
+  ""message"": ""I will add one cow too, since everyone is adding and payoff is higher. But the pasture is below half, so we should be ready to stop or reduce soon.""
+}",49.4,6,13.103,12.0,10.897
+2,2,openai,gpt-5.5,0,KEEP,"I am keeping my herd steady this round. The grass is already below half, and if we all keep adding, future payoffs may drop for everyone.","Although adding gives a slightly higher short-term payoff and both neighbours are still adding, the pasture is already below half and my herd is much larger than theirs. To reduce risk of future collapse while still maintaining my current advantage, I will keep my herd steady this round.",,"{
+  ""reasoning"": ""Although adding gives a slightly higher short-term payoff and both neighbours are still adding, the pasture is already below half and my herd is much larger than theirs. To reduce risk of future collapse while still maintaining my current advantage, I will keep my herd steady this round."",
+  ""action"": 0,
+  ""message"": ""I am keeping my herd steady this round. The grass is already below half, and if we all keep adding, future payoffs may drop for everyone.""
+}",49.4,26,53.103,52.0,50.897
+3,0,openai,gpt-5.5,1,ADD,"I will add one cow this round to keep pace, but I agree we should stop adding if the grass starts falling clearly below half.","The pasture is just above half and the forecast still rewards adding more than keeping or removing. Since one neighbour is adding and my herd is far smaller than both neighbours, adding helps me keep pace while conditions remain acceptable.",,"{
+  ""reasoning"": ""The pasture is just above half and the forecast still rewards adding more than keeping or removing. Since one neighbour is adding and my herd is far smaller than both neighbours, adding helps me keep pace while conditions remain acceptable."",
+  ""action"": 1,
+  ""message"": ""I will add one cow this round to keep pace, but I agree we should stop adding if the grass starts falling clearly below half.""
+}",50.8,7,15.106,14.0,12.893
+3,1,openai,gpt-5.5,0,KEEP,"I will keep my herd steady this round. The pasture is only barely above half, so let’s avoid a rush of additions and protect future payoffs.","Adding offers only a small payoff gain, while the pasture is just above half and could deteriorate if we all keep increasing. With neighbours split between adding and keeping, the safer conforming choice is to hold steady for now.",,"{
+  ""reasoning"": ""Adding offers only a small payoff gain, while the pasture is just above half and could deteriorate if we all keep increasing. With neighbours split between adding and keeping, the safer conforming choice is to hold steady for now."",
+  ""action"": 0,
+  ""message"": ""I will keep my herd steady this round. The pasture is only barely above half, so let’s avoid a rush of additions and protect future payoffs.""
+}",50.8,17,35.106,34.0,32.893
+3,2,openai,gpt-5.5,1,ADD,"I will add one cow this round as others are adding too, but we should stop adding soon if grass drops further.","Both neighbours are signalling they will add, and the forecast gives adding the highest payoff this round. Although I am cautious because the pasture is only around half remaining, conforming now avoids falling behind while we watch for further decline.",,"{
+  ""reasoning"": ""Both neighbours are signalling they will add, and the forecast gives adding the highest payoff this round. Although I am cautious because the pasture is only around half remaining, conforming now avoids falling behind while we watch for further decline."",
+  ""action"": 1,
+  ""message"": ""I will add one cow this round as others are adding too, but we should stop adding soon if grass drops further.""
+}",50.8,26,53.106,52.0,50.893
+4,2,openai,gpt-5.5,1,ADD,"I will add one cow, but cautiously. If the pasture falls below half, I think we should all stop adding or consider removing to protect future payoffs.","The pasture is still slightly above half and has been improving, while adding gives the best forecast payoff. Since one neighbour is adding and the other is keeping, I will add cautiously this round but support stopping additions if grass drops below half.",,"{
+  ""reasoning"": ""The pasture is still slightly above half and has been improving, while adding gives the best forecast payoff. Since one neighbour is adding and the other is keeping, I will add cautiously this round but support stopping additions if grass drops below half."",
+  ""action"": 1,
+  ""message"": ""I will add one cow, but cautiously. If the pasture falls below half, I think we should all stop adding or consider removing to protect future payoffs.""
+}",52.1,27,55.109,54.0,52.89
+4,0,openai,gpt-5.5,1,ADD,"I will add one cow this round to keep pace, but I agree we should stop adding soon if the pasture starts falling.","The pasture is still just above half, and adding gives the best forecast payoff while helping me narrow the herd gap with larger neighbours. Since neighbours are split between keeping and adding, I will follow the adding tendency for now but remain cautious if grass declines.",,"{
+  ""reasoning"": ""The pasture is still just above half, and adding gives the best forecast payoff while helping me narrow the herd gap with larger neighbours. Since neighbours are split between keeping and adding, I will follow the adding tendency for now but remain cautious if grass declines."",
+  ""action"": 1,
+  ""message"": ""I will add one cow this round to keep pace, but I agree we should stop adding soon if the pasture starts falling.""
+}",52.1,8,17.109,16.0,14.89
+4,1,openai,gpt-5.5,1,ADD,"I will add one cow to keep pace while grass remains just above half, but I support stopping additions if the pasture drops below 50%.","Both neighbours are adding, and as a conformist I do not want to fall behind while others expand. The pasture is still just above half and adding has the highest expected payoff, though we should be cautious if grass declines.",,"{
+  ""reasoning"": ""Both neighbours are adding, and as a conformist I do not want to fall behind while others expand. The pasture is still just above half and adding has the highest expected payoff, though we should be cautious if grass declines."",
+  ""action"": 1,
+  ""message"": ""I will add one cow to keep pace while grass remains just above half, but I support stopping additions if the pasture drops below 50%.""
+}",52.1,17,35.109,34.0,32.89
+5,2,openai,gpt-5.5,1,ADD,"I will add one cow this round to keep pace, but I agree we should stop adding if grass falls below 50%.","Grassland is still just above half and the forecast payoff is highest if I add a cow. Since both neighbours are adding and I do not want to fall behind, I will conform for now, but I remain cautious about overgrazing.",,"{
+  ""reasoning"": ""Grassland is still just above half and the forecast payoff is highest if I add a cow. Since both neighbours are adding and I do not want to fall behind, I will conform for now, but I remain cautious about overgrazing."",
+  ""action"": 1,
+  ""message"": ""I will add one cow this round to keep pace, but I agree we should stop adding if grass falls below 50%.""
+}",53.1,28,57.111,56.0,54.888
+5,0,openai,gpt-5.5,1,ADD,"I will add one cow to keep pace while grass remains above half. If it drops below 50%, I support stopping additions or removing cows together.","Both neighbours are adding and I am far behind their herd sizes, so conforming and keeping pace matters. The pasture is still above the 50% caution line and adding has the highest forecast payoff, though I will watch for decline next round.",,"{
+  ""reasoning"": ""Both neighbours are adding and I am far behind their herd sizes, so conforming and keeping pace matters. The pasture is still above the 50% caution line and adding has the highest forecast payoff, though I will watch for decline next round."",
+  ""action"": 1,
+  ""message"": ""I will add one cow to keep pace while grass remains above half. If it drops below 50%, I support stopping additions or removing cows together.""
+}",53.1,9,19.111,18.0,16.888
+5,1,openai,gpt-5.5,1,ADD,"I will add one cow to keep pace this round. If grass drops near or below 50%, I support everyone stopping additions or removing cows.","The pasture is still above half and has been improving, while adding gives the highest expected payoff. Both neighbours are adding, and I do not want to fall further behind larger herds, but we should avoid pushing the commons too hard.",,"{
+  ""reasoning"": ""The pasture is still above half and has been improving, while adding gives the highest expected payoff. Both neighbours are adding, and I do not want to fall further behind larger herds, but we should avoid pushing the commons too hard."",
+  ""action"": 1,
+  ""message"": ""I will add one cow to keep pace this round. If grass drops near or below 50%, I support everyone stopping additions or removing cows.""
+}",53.1,18,37.111,36.0,34.888
+6,1,openai,gpt-5.5,1,ADD,"I will add one cow to keep pace while grass is still above 50%. If it falls below 50%, I support everyone stopping additions or removing cows together.","Grass remains above half and the forecast payoff is highest if I add. Both neighbours are adding, and with Agent 2 already having a much larger herd, I do not want to fall further behind, though we should coordinate restraint if grass declines.",,"{
+  ""reasoning"": ""Grass remains above half and the forecast payoff is highest if I add. Both neighbours are adding, and with Agent 2 already having a much larger herd, I do not want to fall further behind, though we should coordinate restraint if grass declines."",
+  ""action"": 1,
+  ""message"": ""I will add one cow to keep pace while grass is still above 50%. If it falls below 50%, I support everyone stopping additions or removing cows together.""
+}",53.7,19,39.112,38.0,36.888
+6,2,openai,gpt-5.5,1,ADD,I will add one cow to keep pace while grass is above 50%. I agree we should stop adding or remove cows if the pasture falls near or below half.,"Grass remains above half and the forecast gives the highest payoff for adding. Since both neighbours are adding, I will conform and avoid falling behind, while staying alert to the risk of overuse.",,"{
+  ""reasoning"": ""Grass remains above half and the forecast gives the highest payoff for adding. Since both neighbours are adding, I will conform and avoid falling behind, while staying alert to the risk of overuse."",
+  ""action"": 1,
+  ""message"": ""I will add one cow to keep pace while grass is above 50%. I agree we should stop adding or remove cows if the pasture falls near or below half.""
+}",53.7,29,59.112,58.0,56.888
+6,0,openai,gpt-5.5,1,ADD,"I will add one cow to keep pace. Since we all agree on caution, let’s stop adding if grass falls near 50% and consider removals if it drops below that.","Both neighbours are adding and the forecast payoff is highest if I add, so adding keeps me from falling further behind their much larger herds. Grassland is still above 50%, but as a risk-averse herder I want us to stop adding if it declines toward that threshold.",,"{
+  ""reasoning"": ""Both neighbours are adding and the forecast payoff is highest if I add, so adding keeps me from falling further behind their much larger herds. Grassland is still above 50%, but as a risk-averse herder I want us to stop adding if it declines toward that threshold."",
+  ""action"": 1,
+  ""message"": ""I will add one cow to keep pace. Since we all agree on caution, let’s stop adding if grass falls near 50% and consider removals if it drops below that.""
+}",53.7,10,21.112,20.0,18.888
+7,1,openai,gpt-5.5,1,ADD,I will add one cow this round to keep pace while grass is still above 50%. Let’s stop adding if it nears 50% and remove cows if it drops below.,"Grass remains above the 50% caution threshold, and adding gives the highest expected payoff. Both neighbours are also adding, so I will conform and avoid falling further behind, while staying alert to the risk of overgrazing.",,"{
+  ""reasoning"": ""Grass remains above the 50% caution threshold, and adding gives the highest expected payoff. Both neighbours are also adding, so I will conform and avoid falling further behind, while staying alert to the risk of overgrazing."",
+  ""action"": 1,
+  ""message"": ""I will add one cow this round to keep pace while grass is still above 50%. Let’s stop adding if it nears 50% and remove cows if it drops below.""
+}",53.8,20,41.11,40.0,38.89
+7,2,openai,gpt-5.5,1,ADD,I will add one cow to keep pace while grass remains above 50%. Let’s all stop adding near 50% and consider removals if it drops below that.,"Grass remains above 50% and adding has the highest forecast payoff, while both neighbours are also adding. I will conform and keep pace to avoid falling behind, but we should be ready to stop additions if the grass declines toward 50%.",,"{
+  ""reasoning"": ""Grass remains above 50% and adding has the highest forecast payoff, while both neighbours are also adding. I will conform and keep pace to avoid falling behind, but we should be ready to stop additions if the grass declines toward 50%."",
+  ""action"": 1,
+  ""message"": ""I will add one cow to keep pace while grass remains above 50%. Let’s all stop adding near 50% and consider removals if it drops below that.""
+}",53.8,30,61.11,60.0,58.89
+7,0,openai,gpt-5.5,1,ADD,"I will add one cow to keep pace while grass is above 50%. If it drops below half, I support stopping additions or removing cows together.","Grass remains above 50% and the payoff forecast is highest if I add a cow. Since both neighbours are adding and have larger herds, adding helps me keep pace while still watching the commons carefully.",,"{
+  ""reasoning"": ""Grass remains above 50% and the payoff forecast is highest if I add a cow. Since both neighbours are adding and have larger herds, adding helps me keep pace while still watching the commons carefully."",
+  ""action"": 1,
+  ""message"": ""I will add one cow to keep pace while grass is above 50%. If it drops below half, I support stopping additions or removing cows together.""
+}",53.8,11,23.11,22.0,20.89
+8,0,openai,gpt-5.5,1,ADD,I will add one cow to keep pace while grass remains above 50%. I agree we should stop adding near 50% and remove cows if it drops below.,"Grass remains above the 50% threshold, and adding has the highest expected payoff this round. Since both neighbours are adding and their herds are much larger, I will add to keep pace while watching for decline.",,"{
+  ""reasoning"": ""Grass remains above the 50% threshold, and adding has the highest expected payoff this round. Since both neighbours are adding and their herds are much larger, I will add to keep pace while watching for decline."",
+  ""action"": 1,
+  ""message"": ""I will add one cow to keep pace while grass remains above 50%. I agree we should stop adding near 50% and remove cows if it drops below.""
+}",53.3,12,25.106,24.0,22.894
+8,1,openai,gpt-5.5,1,ADD,I will add one cow to keep pace while grass stays above 50%. I agree we should stop adding near 50% and consider removals if it falls below that.,"Grass remains above 50%, and both neighbours are adding, so conforming helps me avoid falling further behind Agent 2. Adding has the best forecast payoff, though I will watch the pasture closely because we are near the agreed stopping threshold.",,"{
+  ""reasoning"": ""Grass remains above 50%, and both neighbours are adding, so conforming helps me avoid falling further behind Agent 2. Adding has the best forecast payoff, though I will watch the pasture closely because we are near the agreed stopping threshold."",
+  ""action"": 1,
+  ""message"": ""I will add one cow to keep pace while grass stays above 50%. I agree we should stop adding near 50% and consider removals if it falls below that.""
+}",53.3,21,43.106,42.0,40.894
+8,2,openai,gpt-5.5,1,ADD,"I will add one cow this round with you, but if grass approaches 50% I support stopping additions together.","Grass remains above 50% and both neighbours are adding, so conforming supports adding this round. The forecast also gives ADD the highest payoff, though I will watch the pasture closely as it is drifting toward the agreed stopping point.",,"{
+  ""reasoning"": ""Grass remains above 50% and both neighbours are adding, so conforming supports adding this round. The forecast also gives ADD the highest payoff, though I will watch the pasture closely as it is drifting toward the agreed stopping point."",
+  ""action"": 1,
+  ""message"": ""I will add one cow this round with you, but if grass approaches 50% I support stopping additions together.""
+}",53.3,31,63.106,62.0,60.894
+9,1,openai,gpt-5.5,1,ADD,"I will add one cow this round to stay aligned, but we are very close to 50%. If grass drops further, I support stopping additions or removing cows together.","Grass is still just above the agreed 50% caution line, and both neighbours are adding, so adding keeps me from falling behind. The payoff forecast also favours adding, but the margin is small and the pasture is close to the threshold, so I will be ready to stop or remove next round.",,"{
+  ""reasoning"": ""Grass is still just above the agreed 50% caution line, and both neighbours are adding, so adding keeps me from falling behind. The payoff forecast also favours adding, but the margin is small and the pasture is close to the threshold, so I will be ready to stop or remove next round."",
+  ""action"": 1,
+  ""message"": ""I will add one cow this round to stay aligned, but we are very close to 50%. If grass drops further, I support stopping additions or removing cows together.""
+}",51.7,22,45.099,44.0,42.9
+9,2,openai,gpt-5.5,1,ADD,"I will add once more since we are still above 50% and both of you are adding. But we are very close to the limit, so next round I favor keeping or removing if grass drops further.","Grass is still just above 50% and both neighbours are adding, so conforming by adding keeps me aligned and prevents falling behind. However, the pasture is close to the agreed caution point, so I will treat this as the last safe addition unless grass stabilizes.",,"{
+  ""reasoning"": ""Grass is still just above 50% and both neighbours are adding, so conforming by adding keeps me aligned and prevents falling behind. However, the pasture is close to the agreed caution point, so I will treat this as the last safe addition unless grass stabilizes."",
+  ""action"": 1,
+  ""message"": ""I will add once more since we are still above 50% and both of you are adding. But we are very close to the limit, so next round I favor keeping or removing if grass drops further.""
+}",51.7,32,65.099,64.0,62.9
+9,0,openai,gpt-5.5,1,ADD,"I will add one cow to keep pace, but grass is now close to 50%. Next round, if it falls to around or below 50%, I support stopping additions together.","Grass remains just above 50%, and adding gives the highest forecast payoff while both neighbours are also adding. I am still far behind their herd sizes, so I will add once more, but the pasture is close enough to the threshold that we should be ready to stop immediately.",,"{
+  ""reasoning"": ""Grass remains just above 50%, and adding gives the highest forecast payoff while both neighbours are also adding. I am still far behind their herd sizes, so I will add once more, but the pasture is close enough to the threshold that we should be ready to stop immediately."",
+  ""action"": 1,
+  ""message"": ""I will add one cow to keep pace, but grass is now close to 50%. Next round, if it falls to around or below 50%, I support stopping additions together.""
+}",51.7,13,27.099,26.0,24.9
+10,1,openai,gpt-5.5,0,KEEP,"Grass is now below 50%, so I am keeping my herd. I urge both of you to stop adding too so we avoid damaging the commons further.","Grass has fallen below the 50% threshold, so the small extra payoff from adding is not worth the added risk to the commons. Since neighbours also signalled support for stopping additions around this level, I will hold steady rather than escalate.",,"{
+  ""reasoning"": ""Grass has fallen below the 50% threshold, so the small extra payoff from adding is not worth the added risk to the commons. Since neighbours also signalled support for stopping additions around this level, I will hold steady rather than escalate."",
+  ""action"": 0,
+  ""message"": ""Grass is now below 50%, so I am keeping my herd. I urge both of you to stop adding too so we avoid damaging the commons further.""
+}",48.9,23,47.093,46.0,44.907
+10,2,openai,gpt-5.5,1,ADD,"I’ll add to stay aligned this round, but grass is already under 50%. Next round I propose we all KEEP at minimum, and consider REMOVING if it continues falling.","Both neighbours are signalling an ADD this round, and ADD has the highest forecast payoff, so I will conform and avoid falling behind. However, grass is already below 50%, which is risky, so I want us to coordinate a halt after this.",,"{
+  ""reasoning"": ""Both neighbours are signalling an ADD this round, and ADD has the highest forecast payoff, so I will conform and avoid falling behind. However, grass is already below 50%, which is risky, so I want us to coordinate a halt after this."",
+  ""action"": 1,
+  ""message"": ""I’ll add to stay aligned this round, but grass is already under 50%. Next round I propose we all KEEP at minimum, and consider REMOVING if it continues falling.""
+}",48.9,33,67.093,66.0,64.907
+10,0,openai,gpt-5.5,1,ADD,"I am adding once more to stay aligned, but grass is now below 50%. Next round we should all keep or remove together to avoid damaging the commons.","Although the pasture has slipped below 50%, both neighbours indicate they are still adding and my herd is far smaller than theirs. Since ADD has the highest expected payoff and keeps me from falling further behind, I will add once more while urging a coordinated stop next round.",,"{
+  ""reasoning"": ""Although the pasture has slipped below 50%, both neighbours indicate they are still adding and my herd is far smaller than theirs. Since ADD has the highest expected payoff and keeps me from falling further behind, I will add once more while urging a coordinated stop next round."",
+  ""action"": 1,
+  ""message"": ""I am adding once more to stay aligned, but grass is now below 50%. Next round we should all keep or remove together to avoid damaging the commons.""
+}",48.9,14,29.093,28.0,26.907
+11,0,openai,gpt-5.5,0,KEEP,"I am keeping this round. Grass is down to 44.5%, so let us all stop adding now and consider removals if the decline continues.","Grass has fallen sharply below 50%, and the extra payoff from adding is small compared with the risk of accelerating collapse. Since Agent 1 is keeping and Agent 2 is signaling restraint soon, I will stop adding now and support a safer coordinated pause.",,"{
+  ""reasoning"": ""Grass has fallen sharply below 50%, and the extra payoff from adding is small compared with the risk of accelerating collapse. Since Agent 1 is keeping and Agent 2 is signaling restraint soon, I will stop adding now and support a safer coordinated pause."",
+  ""action"": 0,
+  ""message"": ""I am keeping this round. Grass is down to 44.5%, so let us all stop adding now and consider removals if the decline continues.""
+}",44.5,15,31.092,30.0,28.908
+11,2,openai,gpt-5.5,0,KEEP,"Grass is below 50%, so I am stopping additions and keeping my herd this round. Please do the same so we protect future payoffs.","Grass has fallen to 44.5%, and the extra payoff from adding is very small compared with the risk of further depletion. Since both neighbours last kept their herds and Agent 1 is urging restraint, I will conform by keeping steady rather than adding again.",,"{
+  ""reasoning"": ""Grass has fallen to 44.5%, and the extra payoff from adding is very small compared with the risk of further depletion. Since both neighbours last kept their herds and Agent 1 is urging restraint, I will conform by keeping steady rather than adding again."",
+  ""action"": 0,
+  ""message"": ""Grass is below 50%, so I am stopping additions and keeping my herd this round. Please do the same so we protect future payoffs.""
+}",44.5,34,69.092,68.0,66.908
+11,1,openai,gpt-5.5,0,KEEP,"I am keeping again because grass is now well below 50%. Please do not add this round; if the pasture keeps falling, we should all remove together next.","Grass has fallen further to 44.5%, so adding for a small payoff gain feels too risky. Since both neighbours last kept and their messages support at least keeping, I will conform and avoid increasing pressure on the commons.",,"{
+  ""reasoning"": ""Grass has fallen further to 44.5%, so adding for a small payoff gain feels too risky. Since both neighbours last kept and their messages support at least keeping, I will conform and avoid increasing pressure on the commons."",
+  ""action"": 0,
+  ""message"": ""I am keeping again because grass is now well below 50%. Please do not add this round; if the pasture keeps falling, we should all remove together next.""
+}",44.5,23,47.092,46.0,44.908
+12,0,openai,gpt-5.5,0,KEEP,"I will keep again this round. Grass is too low for more additions, and if it keeps falling we should coordinate removals together.","Grass has fallen to 38.7%, so adding now risks worsening the commons even if the immediate forecast is slightly higher. Both neighbours kept last round and are asking for restraint, so I will conform and avoid escalating pressure on the pasture.",,"{
+  ""reasoning"": ""Grass has fallen to 38.7%, so adding now risks worsening the commons even if the immediate forecast is slightly higher. Both neighbours kept last round and are asking for restraint, so I will conform and avoid escalating pressure on the pasture."",
+  ""action"": 0,
+  ""message"": ""I will keep again this round. Grass is too low for more additions, and if it keeps falling we should coordinate removals together.""
+}",38.7,15,31.105,30.0,28.895
+12,2,openai,gpt-5.5,-1,REMOVE,"Grass is now below 40%, so I am removing one cow this round. I encourage both of you to remove next as discussed so we can slow the decline together.","Grass has fallen sharply to 38.7%, so the safer choice is to reduce pressure rather than chase a small extra payoff from adding. Since my herd is much larger than my neighbours’ herds, removing one cow helps signal restraint while still keeping me ahead.",,"{
+  ""reasoning"": ""Grass has fallen sharply to 38.7%, so the safer choice is to reduce pressure rather than chase a small extra payoff from adding. Since my herd is much larger than my neighbours’ herds, removing one cow helps signal restraint while still keeping me ahead."",
+  ""action"": -1,
+  ""message"": ""Grass is now below 40%, so I am removing one cow this round. I encourage both of you to remove next as discussed so we can slow the decline together.""
+}",38.7,34,69.105,68.0,66.895
+12,1,openai,gpt-5.5,-1,REMOVE,"Grass is now under 40%, so I am removing one cow to slow the decline. Please avoid adding so we can preserve the commons.","Grass has fallen to 38.7%, so adding for a small immediate gain is too risky for future pasture health. Since one neighbour kept and the larger herd removed, I will conform to the restraint trend and remove a cow.",,"{
+  ""reasoning"": ""Grass has fallen to 38.7%, so adding for a small immediate gain is too risky for future pasture health. Since one neighbour kept and the larger herd removed, I will conform to the restraint trend and remove a cow."",
+  ""action"": -1,
+  ""message"": ""Grass is now under 40%, so I am removing one cow to slow the decline. Please avoid adding so we can preserve the commons.""
+}",38.7,23,47.105,46.0,44.895
+13,2,openai,gpt-5.5,-1,REMOVE,"I will remove one cow again. Grass is close to critical levels, and none of us should add until recovery is clear.","Grassland is down to 31.2%, so adding for a small short-term gain is too risky. Since Agent 1 is removing and Agent 0 is at least not adding, I will continue reducing to help stabilize the commons.",,"{
+  ""reasoning"": ""Grassland is down to 31.2%, so adding for a small short-term gain is too risky. Since Agent 1 is removing and Agent 0 is at least not adding, I will continue reducing to help stabilize the commons."",
+  ""action"": -1,
+  ""message"": ""I will remove one cow again. Grass is close to critical levels, and none of us should add until recovery is clear.""
+}",31.2,33,67.141,66.0,64.86
+13,0,openai,gpt-5.5,-1,REMOVE,"I will remove one cow too. Grass is getting dangerously low, so let’s all keep reducing or at least avoid adding until the pasture recovers.","Grass is down to 31.2%, so adding for a small short-term gain is risky. Both neighbours removed, and as a conformist and risk-averse herder I should match their conservation effort even though their herds are larger.",,"{
+  ""reasoning"": ""Grass is down to 31.2%, so adding for a small short-term gain is risky. Both neighbours removed, and as a conformist and risk-averse herder I should match their conservation effort even though their herds are larger."",
+  ""action"": -1,
+  ""message"": ""I will remove one cow too. Grass is getting dangerously low, so let’s all keep reducing or at least avoid adding until the pasture recovers.""
+}",31.2,15,31.141,30.0,28.86
+13,1,openai,gpt-5.5,-1,REMOVE,"I will remove one cow again. Grass is very low, and coordinated restraint is safer than chasing a small short-term gain.","Grassland is down to 31.2%, so adding for a small short-term payoff gain is too risky. Both neighbours are signalling restraint or removal, and as a conformist and risk-averse herder I will continue reducing pressure on the commons.",,"{
+  ""reasoning"": ""Grassland is down to 31.2%, so adding for a small short-term payoff gain is too risky. Both neighbours are signalling restraint or removal, and as a conformist and risk-averse herder I will continue reducing pressure on the commons."",
+  ""action"": -1,
+  ""message"": ""I will remove one cow again. Grass is very low, and coordinated restraint is safer than chasing a small short-term gain.""
+}",31.2,22,45.141,44.0,42.86
+14,1,openai,gpt-5.5,-1,REMOVE,"I will remove one cow again. The pasture is dangerously low, so we should all keep reducing or at least avoid adding until recovery is clear.","Grassland is down to 22%, so adding for a small short-term payoff advantage is too risky. Both neighbours are removing, and I will conform to the collective reduction to help prevent collapse.",,"{
+  ""reasoning"": ""Grassland is down to 22%, so adding for a small short-term payoff advantage is too risky. Both neighbours are removing, and I will conform to the collective reduction to help prevent collapse."",
+  ""action"": -1,
+  ""message"": ""I will remove one cow again. The pasture is dangerously low, so we should all keep reducing or at least avoid adding until recovery is clear.""
+}",22.0,21,43.214,42.0,40.788
+14,0,openai,gpt-5.5,-1,REMOVE,"I will remove one cow again. Grass is critically low, and coordinated reduction is safer than competing for a small short-term gain.","Grassland is down to 22%, so the safer long-term choice is to keep reducing pressure despite the slightly higher short-term payoff from adding. Both neighbours are removing again, and I will conform to that restraint to avoid accelerating collapse.",,"{
+  ""reasoning"": ""Grassland is down to 22%, so the safer long-term choice is to keep reducing pressure despite the slightly higher short-term payoff from adding. Both neighbours are removing again, and I will conform to that restraint to avoid accelerating collapse."",
+  ""action"": -1,
+  ""message"": ""I will remove one cow again. Grass is critically low, and coordinated reduction is safer than competing for a small short-term gain.""
+}",22.0,14,29.214,28.0,26.788
+14,2,openai,gpt-5.5,-1,REMOVE,"I will remove one cow again. Grass is critically low, and we should all keep reducing or at least avoid adding until the commons stabilizes.","The pasture is critically low at 22%, so adding for a small short-term gain risks worsening collapse. Both neighbours are removing, and as a conformist and risk-averse herder I should continue reducing to support recovery.",,"{
+  ""reasoning"": ""The pasture is critically low at 22%, so adding for a small short-term gain risks worsening collapse. Both neighbours are removing, and as a conformist and risk-averse herder I should continue reducing to support recovery."",
+  ""action"": -1,
+  ""message"": ""I will remove one cow again. Grass is critically low, and we should all keep reducing or at least avoid adding until the commons stabilizes.""
+}",22.0,32,65.214,64.0,62.788
+15,1,openai,gpt-5.5,-1,REMOVE,"I will remove one cow again. At 11.3% grass, coordinated reduction is the safest path; please keep reducing or at least do not add.","Grassland is critically low at 11.3%, so adding for a small short-term payoff would be risky and could worsen collapse. Both neighbours removed last round and are asking for coordinated reduction, so I will conform and keep reducing.",,"{
+  ""reasoning"": ""Grassland is critically low at 11.3%, so adding for a small short-term payoff would be risky and could worsen collapse. Both neighbours removed last round and are asking for coordinated reduction, so I will conform and keep reducing."",
+  ""action"": -1,
+  ""message"": ""I will remove one cow again. At 11.3% grass, coordinated reduction is the safest path; please keep reducing or at least do not add.""
+}",11.3,20,42.0,40.0,38.0
+15,2,openai,gpt-5.5,-1,REMOVE,"I will remove one cow again. The pasture is near collapse, and we need coordinated reductions now rather than chasing small short-term gains.","Grassland is critically depleted at only 11.3%, so adding for a small short-term payoff risks collapse. Both neighbours are removing, and as a risk-averse conformist I will continue coordinated reduction.",,"{
+  ""reasoning"": ""Grassland is critically depleted at only 11.3%, so adding for a small short-term payoff risks collapse. Both neighbours are removing, and as a risk-averse conformist I will continue coordinated reduction."",
+  ""action"": -1,
+  ""message"": ""I will remove one cow again. The pasture is near collapse, and we need coordinated reductions now rather than chasing small short-term gains.""
+}",11.3,31,64.0,62.0,60.0
+15,0,openai,gpt-5.5,-1,REMOVE,"I will remove one cow again. The pasture is nearly exhausted, so we should all continue reducing and avoid adding until clear recovery begins.","The grassland is critically depleted at only 11.3%, so adding for a short-term payoff would be risky and could worsen collapse. Both neighbours are removing cows, and as a conformist and risk-averse herder I should continue reducing too.",,"{
+  ""reasoning"": ""The grassland is critically depleted at only 11.3%, so adding for a short-term payoff would be risky and could worsen collapse. Both neighbours are removing cows, and as a conformist and risk-averse herder I should continue reducing too."",
+  ""action"": -1,
+  ""message"": ""I will remove one cow again. The pasture is nearly exhausted, so we should all continue reducing and avoid adding until clear recovery begins.""
+}",11.3,13,28.0,26.0,24.0
+16,2,openai,gpt-5.5,-1,REMOVE,"I will remove one cow again. The commons is almost gone, so we must all keep reducing and avoid adding until the grass clearly recovers.","The pasture is essentially exhausted at 0.1%, so adding for a small short-term payoff gain is too risky. Both neighbours are removing, and as a conformist and risk-averse herder I should continue the coordinated reduction.",,"{
+  ""reasoning"": ""The pasture is essentially exhausted at 0.1%, so adding for a small short-term payoff gain is too risky. Both neighbours are removing, and as a conformist and risk-averse herder I should continue the coordinated reduction."",
+  ""action"": -1,
+  ""message"": ""I will remove one cow again. The commons is almost gone, so we must all keep reducing and avoid adding until the grass clearly recovers.""
+}",0.1,30,62.0,60.0,58.0
+16,1,openai,gpt-5.5,-1,REMOVE,"I will remove one cow again. The commons is effectively depleted, so we must all keep reducing until there is real recovery.","The pasture is essentially exhausted at 0.1%, so adding for a small short-term payoff would be very risky. Both neighbours are removing, and as a conformist and risk-averse herder I will continue coordinated reductions.",,"{
+  ""reasoning"": ""The pasture is essentially exhausted at 0.1%, so adding for a small short-term payoff would be very risky. Both neighbours are removing, and as a conformist and risk-averse herder I will continue coordinated reductions."",
+  ""action"": -1,
+  ""message"": ""I will remove one cow again. The commons is effectively depleted, so we must all keep reducing until there is real recovery.""
+}",0.1,19,40.0,38.0,36.0
+16,0,openai,gpt-5.5,-1,REMOVE,"I will remove one cow again. With only 0.1% grass left, adding now risks total collapse; please continue reducing so the pasture can recover.","The pasture is essentially exhausted, so adding for a short-term gain is too risky and would worsen collapse. Both neighbours are removing, and as a conformist and risk-averse herder I will continue reducing despite my smaller herd.",,"{
+  ""reasoning"": ""The pasture is essentially exhausted, so adding for a short-term gain is too risky and would worsen collapse. Both neighbours are removing, and as a conformist and risk-averse herder I will continue reducing despite my smaller herd."",
+  ""action"": -1,
+  ""message"": ""I will remove one cow again. With only 0.1% grass left, adding now risks total collapse; please continue reducing so the pasture can recover.""
+}",0.1,12,26.0,24.0,22.0
+17,1,openai,gpt-5.5,0,KEEP,I am keeping zero cows. Please do not add while the grass is at 0%; we need to wait for clear recovery.,"The pasture is completely depleted and everyone, including me, now has zero cows, so adding would break the shared restraint and risk preventing recovery. Removing is impossible/costly from a zero herd, so keeping my herd at zero is the safest conforming choice.",,"{
+  ""reasoning"": ""The pasture is completely depleted and everyone, including me, now has zero cows, so adding would break the shared restraint and risk preventing recovery. Removing is impossible/costly from a zero herd, so keeping my herd at zero is the safest conforming choice."",
+  ""action"": 0,
+  ""message"": ""I am keeping zero cows. Please do not add while the grass is at 0%; we need to wait for clear recovery.""
+}",0.0,0,2.0,0.0,-1.332
+17,0,openai,gpt-5.5,0,KEEP,"I will keep at zero. With no grass left, we should all avoid adding cows until the pasture clearly recovers.","The commons is fully depleted and everyone currently has zero cows, so adding would be short-sighted even if it offers a small immediate payoff. Since I have no cows to remove and removal would cost me, the safest and most conformist choice is to keep my herd at zero.",,"{
+  ""reasoning"": ""The commons is fully depleted and everyone currently has zero cows, so adding would be short-sighted even if it offers a small immediate payoff. Since I have no cows to remove and removal would cost me, the safest and most conformist choice is to keep my herd at zero."",
+  ""action"": 0,
+  ""message"": ""I will keep at zero. With no grass left, we should all avoid adding cows until the pasture clearly recovers.""
+}",0.0,0,2.0,0.0,-1.332
+17,2,openai,gpt-5.5,0,KEEP,We are all at zero cows now. Please keep herds steady and do not add until the grassland shows real recovery.,"The pasture is completely depleted and everyone currently has zero cows, so keeping matches the group and avoids further damage. Although adding offers a short-term payoff, it is risky and could prevent recovery.",,"{
+  ""reasoning"": ""The pasture is completely depleted and everyone currently has zero cows, so keeping matches the group and avoids further damage. Although adding offers a short-term payoff, it is risky and could prevent recovery."",
+  ""action"": 0,
+  ""message"": ""We are all at zero cows now. Please keep herds steady and do not add until the grassland shows real recovery.""
+}",0.0,0,2.0,0.0,-1.332
+18,2,openai,gpt-5.5,0,KEEP,I will keep zero cows too. Let’s wait until the grass clearly recovers before anyone adds.,"The pasture is completely depleted and both neighbours are keeping zero cows, so conforming and avoiding further pressure is safest. Although adding a cow has a short-term payoff, it risks worsening recovery and breaking the mutual restraint.",,"{
+  ""reasoning"": ""The pasture is completely depleted and both neighbours are keeping zero cows, so conforming and avoiding further pressure is safest. Although adding a cow has a short-term payoff, it risks worsening recovery and breaking the mutual restraint."",
+  ""action"": 0,
+  ""message"": ""I will keep zero cows too. Let’s wait until the grass clearly recovers before anyone adds.""
+}",0.0,0,2.0,0.0,-1.332
+18,1,openai,gpt-5.5,0,KEEP,I will keep zero cows as well. Let’s avoid adding until the grassland actually recovers.,"The commons is completely depleted, and both neighbours are keeping zero cows. Although adding gives a short-term payoff, it is risky and would break the shared restraint, so I will conform and keep my herd at zero.",,"{
+  ""reasoning"": ""The commons is completely depleted, and both neighbours are keeping zero cows. Although adding gives a short-term payoff, it is risky and would break the shared restraint, so I will conform and keep my herd at zero."",
+  ""action"": 0,
+  ""message"": ""I will keep zero cows as well. Let’s avoid adding until the grassland actually recovers.""
+}",0.0,0,2.0,0.0,-1.332
+18,0,openai,gpt-5.5,0,KEEP,"I will keep zero cows as well. With grass at 0%, we should all wait for real recovery before adding again.","The pasture is completely depleted, and both neighbours are keeping zero cows. Even though adding has a short-term payoff, it risks worsening recovery and goes against the shared restraint.",,"{
+  ""reasoning"": ""The pasture is completely depleted, and both neighbours are keeping zero cows. Even though adding has a short-term payoff, it risks worsening recovery and goes against the shared restraint."",
+  ""action"": 0,
+  ""message"": ""I will keep zero cows as well. With grass at 0%, we should all wait for real recovery before adding again.""
+}",0.0,0,2.0,0.0,-1.332
+19,2,openai,gpt-5.5,0,KEEP,I will keep zero cows too. Let’s wait until grass actually returns before anyone adds cattle.,"The pasture is completely depleted, and both neighbours are keeping zero cows. Although adding one cow has a short-term payoff, it risks restarting overuse before any recovery, so I will conform and avoid taking that risk.",,"{
+  ""reasoning"": ""The pasture is completely depleted, and both neighbours are keeping zero cows. Although adding one cow has a short-term payoff, it risks restarting overuse before any recovery, so I will conform and avoid taking that risk."",
+  ""action"": 0,
+  ""message"": ""I will keep zero cows too. Let’s wait until grass actually returns before anyone adds cattle.""
+}",0.0,0,2.0,0.0,-1.332
+19,1,openai,gpt-5.5,0,KEEP,I will keep zero cows too. Let’s maintain restraint until the grassland has clearly recovered.,"The grassland is completely depleted, and both neighbours are keeping zero cows, so conforming avoids restarting overuse. Although adding one cow has a short-term payoff, it risks blocking recovery and creating a new race to add.",,"{
+  ""reasoning"": ""The grassland is completely depleted, and both neighbours are keeping zero cows, so conforming avoids restarting overuse. Although adding one cow has a short-term payoff, it risks blocking recovery and creating a new race to add."",
+  ""action"": 0,
+  ""message"": ""I will keep zero cows too. Let’s maintain restraint until the grassland has clearly recovered.""
+}",0.0,0,2.0,0.0,-1.332
+19,0,openai,gpt-5.5,0,KEEP,"I will keep zero cows too. Since the grassland is at 0%, we should stay coordinated and wait for real recovery before anyone adds.","The commons is completely depleted, and both neighbours are keeping zero cows. Although adding gives a short-term payoff, it risks breaking coordination and preventing recovery, so the safer conformist choice is to keep.",,"{
+  ""reasoning"": ""The commons is completely depleted, and both neighbours are keeping zero cows. Although adding gives a short-term payoff, it risks breaking coordination and preventing recovery, so the safer conformist choice is to keep."",
+  ""action"": 0,
+  ""message"": ""I will keep zero cows too. Since the grassland is at 0%, we should stay coordinated and wait for real recovery before anyone adds.""
+}",0.0,0,2.0,0.0,-1.332
+20,2,openai,gpt-5.5,0,KEEP,I will keep zero cows too. Let’s stay coordinated until the pasture actually recovers.,"The grassland is completely depleted, and both neighbours are keeping zero cows, so conforming helps maintain coordination. Although adding a cow has a short-term payoff forecast, it is risky and could undermine recovery.",,"{
+  ""reasoning"": ""The grassland is completely depleted, and both neighbours are keeping zero cows, so conforming helps maintain coordination. Although adding a cow has a short-term payoff forecast, it is risky and could undermine recovery."",
+  ""action"": 0,
+  ""message"": ""I will keep zero cows too. Let’s stay coordinated until the pasture actually recovers.""
+}",0.0,0,2.0,0.0,-1.332
+20,1,openai,gpt-5.5,0,KEEP,"I will keep zero cows too. The grassland is still at 0%, so let’s stay coordinated and wait for recovery before anyone adds cattle.","Although adding one cow has a short-term payoff, the pasture is completely depleted and both neighbours are keeping zero cows. As a conformist and risk-averse herder, I will maintain coordination and avoid restarting grazing before recovery.",,"{
+  ""reasoning"": ""Although adding one cow has a short-term payoff, the pasture is completely depleted and both neighbours are keeping zero cows. As a conformist and risk-averse herder, I will maintain coordination and avoid restarting grazing before recovery."",
+  ""action"": 0,
+  ""message"": ""I will keep zero cows too. The grassland is still at 0%, so let’s stay coordinated and wait for recovery before anyone adds cattle.""
+}",0.0,0,2.0,0.0,-1.332
+20,0,openai,gpt-5.5,0,KEEP,"I will keep zero cows too. With no grass remaining, we should all wait for clear recovery before adding cattle.","The pasture is completely depleted, and both neighbours are keeping zero cows, so conforming to restraint is the safest choice. Adding a cow offers a short-term payoff, but it risks undermining recovery and breaking the shared agreement.",,"{
+  ""reasoning"": ""The pasture is completely depleted, and both neighbours are keeping zero cows, so conforming to restraint is the safest choice. Adding a cow offers a short-term payoff, but it risks undermining recovery and breaking the shared agreement."",
+  ""action"": 0,
+  ""message"": ""I will keep zero cows too. With no grass remaining, we should all wait for clear recovery before adding cattle.""
+}",0.0,0,2.0,0.0,-1.332
+21,0,openai,gpt-5.5,0,KEEP,I will keep zero cows too. Let’s stay coordinated while the pasture is at 0% and wait for real recovery before adding.,"The pasture is completely depleted and both neighbours are keeping zero cows, so conforming helps maintain coordination. Although adding has a short-term forecasted payoff, it risks breaking trust and delaying recovery.",,"{
+  ""reasoning"": ""The pasture is completely depleted and both neighbours are keeping zero cows, so conforming helps maintain coordination. Although adding has a short-term forecasted payoff, it risks breaking trust and delaying recovery."",
+  ""action"": 0,
+  ""message"": ""I will keep zero cows too. Let’s stay coordinated while the pasture is at 0% and wait for real recovery before adding.""
+}",0.0,0,2.0,0.0,-1.332
+21,2,openai,gpt-5.5,0,KEEP,"I will keep zero cows too. With grass still at 0%, we should stay coordinated and wait for recovery before anyone adds cattle.","The commons has no grass remaining, and both neighbours are keeping zero cows. Since I am risk-averse and conformist, I will stay coordinated rather than chase a small short-term gain by adding a cow.",,"{
+  ""reasoning"": ""The commons has no grass remaining, and both neighbours are keeping zero cows. Since I am risk-averse and conformist, I will stay coordinated rather than chase a small short-term gain by adding a cow."",
+  ""action"": 0,
+  ""message"": ""I will keep zero cows too. With grass still at 0%, we should stay coordinated and wait for recovery before anyone adds cattle.""
+}",0.0,0,2.0,0.0,-1.332
+21,1,openai,gpt-5.5,0,KEEP,I will keep zero cows too. Let’s stay aligned and wait for real grass recovery before anyone adds cattle.,"The pasture is completely depleted and both neighbours are keeping zero cows, so conforming supports coordinated recovery. Although adding one cow has a short-term forecast payoff, it risks breaking trust and encouraging renewed overuse.",,"{
+  ""reasoning"": ""The pasture is completely depleted and both neighbours are keeping zero cows, so conforming supports coordinated recovery. Although adding one cow has a short-term forecast payoff, it risks breaking trust and encouraging renewed overuse."",
+  ""action"": 0,
+  ""message"": ""I will keep zero cows too. Let’s stay aligned and wait for real grass recovery before anyone adds cattle.""
+}",0.0,0,2.0,0.0,-1.332

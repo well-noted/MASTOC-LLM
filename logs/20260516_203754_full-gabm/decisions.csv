@@ -1,0 +1,31 @@
+tick,agent_id,backend,model,action,action_name,message,reasoning,thinking,raw_response,pool_pct,own_herd,payoff_add,payoff_keep,payoff_remove
+1,0,openai,gpt-5.5,1,ADD,"Pasture is healthy, but we should avoid everyone expanding at once. Thanks to Agent 2 for reducing; Agent 1, please consider holding steady next round.","The pasture is still fully healthy, and adding one cow gives the best payoff while my herd remains much smaller than my neighbours'. I appreciate Agent 2 reducing, but Agent 1 is still adding, so I will add cautiously while encouraging restraint next round.",,"{
+  ""reasoning"": ""The pasture is still fully healthy, and adding one cow gives the best payoff while my herd remains much smaller than my neighbours'. I appreciate Agent 2 reducing, but Agent 1 is still adding, so I will add cautiously while encouraging restraint next round."",
+  ""action"": 1,
+  ""message"": ""Pasture is healthy, but we should avoid everyone expanding at once. Thanks to Agent 2 for reducing; Agent 1, please consider holding steady next round.""
+}",100.0,5,11.832,10.0,8.163
+1,1,openai,gpt-5.5,0,KEEP,I’m keeping my herd stable this round to support restraint. Thanks to Agent 2 for reducing; I hope we can avoid a race to add cows.,"The pasture is still healthy, but adding now would increase pressure on the commons and may encourage escalation. Since Agent 2 removed a cow, I will reciprocate that restraint by keeping my herd stable rather than chasing the highest short-term payoff.",,"{
+  ""reasoning"": ""The pasture is still healthy, but adding now would increase pressure on the commons and may encourage escalation. Since Agent 2 removed a cow, I will reciprocate that restraint by keeping my herd stable rather than chasing the highest short-term payoff."",
+  ""action"": 0,
+  ""message"": ""I’m keeping my herd stable this round to support restraint. Thanks to Agent 2 for reducing; I hope we can avoid a race to add cows.""
+}",100.0,15,31.832,30.0,28.163
+1,2,openai,gpt-5.5,0,KEEP,"The pasture is full now, but let’s avoid rapid expansion. I’m keeping my herd steady this round to protect long-term payoffs for everyone.","The pasture is currently healthy, but my herd is already larger than my neighbours', so adding more could encourage a race to expand. Keeping balances a solid payoff with lower risk to the shared grassland.",,"{
+  ""reasoning"": ""The pasture is currently healthy, but my herd is already larger than my neighbours', so adding more could encourage a race to expand. Keeping balances a solid payoff with lower risk to the shared grassland."",
+  ""action"": 0,
+  ""message"": ""The pasture is full now, but let’s avoid rapid expansion. I’m keeping my herd steady this round to protect long-term payoffs for everyone.""
+}",100.0,25,51.832,50.0,48.163
+2,2,openai,gpt-5.5,0,KEEP,"I will keep my herd stable again. The pasture is healthy, but since my herd is already large, I do not want to trigger a race to add cows.","The pasture is still very healthy, but I already have a much larger herd than my neighbours, so adding could encourage an arms race. Keeping balances a strong payoff with restraint and supports Agent 1's stable behaviour while not rewarding Agent 0's expansion.",,"{
+  ""reasoning"": ""The pasture is still very healthy, but I already have a much larger herd than my neighbours, so adding could encourage an arms race. Keeping balances a strong payoff with restraint and supports Agent 1's stable behaviour while not rewarding Agent 0's expansion."",
+  ""action"": 0,
+  ""message"": ""I will keep my herd stable again. The pasture is healthy, but since my herd is already large, I do not want to trigger a race to add cows.""
+}",99.3,25,51.809,50.0,48.187
+2,1,openai,gpt-5.5,0,KEEP,I’ll hold steady this round to avoid triggering overexpansion. Let’s keep the pasture healthy and coordinate before anyone grows further.,"The pasture is still very healthy, but both neighbours are asking for restraint and rapid expansion could start a harmful pattern. Although adding would raise my immediate payoff, I will keep steady to support cooperation and reduce risk.",,"{
+  ""reasoning"": ""The pasture is still very healthy, but both neighbours are asking for restraint and rapid expansion could start a harmful pattern. Although adding would raise my immediate payoff, I will keep steady to support cooperation and reduce risk."",
+  ""action"": 0,
+  ""message"": ""I’ll hold steady this round to avoid triggering overexpansion. Let’s keep the pasture healthy and coordinate before anyone grows further.""
+}",99.3,15,31.809,30.0,28.187
+2,0,openai,gpt-5.5,0,KEEP,"I’ll keep my herd stable too. Since everyone is showing restraint, let’s protect the pasture and avoid turning this into a race to add cows.","The pasture is still very healthy, but both neighbours are keeping their herds stable and asking to avoid rapid expansion. Even though adding gives a higher short-term payoff and my herd is smaller, cooperation and risk avoidance make restraint the better long-term choice.",,"{
+  ""reasoning"": ""The pasture is still very healthy, but both neighbours are keeping their herds stable and asking to avoid rapid expansion. Even though adding gives a higher short-term payoff and my herd is smaller, cooperation and risk avoidance make restraint the better long-term choice."",
+  ""action"": 0,
+  ""message"": ""I’ll keep my herd stable too. Since everyone is showing restraint, let’s protect the pasture and avoid turning this into a race to add cows.""
+}",99.3,6,13.809,12.0,10.187
