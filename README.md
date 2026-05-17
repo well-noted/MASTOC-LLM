@@ -94,6 +94,154 @@ A secondary LLM pass runs every 5 ticks to classify agent messages for Ostrom in
 
 ---
 
+## Glossary
+
+### Acronyms and abbreviations
+
+| Term | Definition |
+|------|------------|
+| **ABM** | Agent-Based Model — a computational model in which individual agents follow local rules and interact to produce emergent system-level behaviour |
+| **CPR** | Common-Pool Resource — a resource that is *rivalrous* (one person's use reduces availability for others) but *non-excludable* (difficult to prevent access); Ostrom's unit of analysis |
+| **GABM** | Generative Agent-Based Model — an ABM in which agents are powered by generative AI (LLMs) rather than hand-coded rules; the approach developed in Jimenez-Romero et al. (2025) and extended here |
+| **LLM** | Large Language Model — a neural language model (e.g. Claude, GPT-5.5, Llama) used here to generate agent decisions, reasoning, and natural-language messages |
+| **MASTOC** | Multi-Agent System Tragedy of the Commons — the original NetLogo model (Bais et al., 2023) on which this project is based |
+| **MASTOC-LLM** | This project — MASTOC extended with LLM-powered agents |
+
+---
+
+### Model parameters and variables
+
+The following parameters are set in the NetLogo interface before each run and logged in `run_meta.json`.
+
+| Parameter | Symbol | Range | Description |
+|-----------|--------|-------|-------------|
+| `cooperation_level` | α_c | [0, 1] | Weight on collective vs. individual payoff in the utility function. At 0, agents maximise own earnings only; at 1, they maximise the group's total earnings |
+| `fairness_concerning_me` | α_f | [0, 1] | Envy weight — disutility experienced when others earn *more* than the agent (Fehr & Schmidt, 1999) |
+| `fairness_concerning_others` | β_f | [0, 1] | Guilt weight — disutility experienced when the agent earns *more* than others |
+| `positive_reciprocity` | ρ_+ | [0, 1] | Strength of reward-for-cooperation: agents applying this parameter gain additional utility from REMOVE when neighbours previously REMOVED |
+| `negative_reciprocity` | ρ_− | [0, 1] | Strength of punishment-for-defection: agents applying this parameter gain additional utility from ADD when neighbours previously ADDED; also activates social sanctioning language in messages |
+| `risk_aversion_level` | — | [0, 1] | Not yet systematically varied; modulates how conservatively agents interpret payoff uncertainty |
+| `initial_grassland` | V_0 | [0, 100] | Starting pool health as percentage of maximum vegetation patches |
+| `initial_grass_growth_rate` | r | (0, 1) | Logistic growth rate of the grassland (default: 0.001) |
+| `cow_forage_requirement` | f | ≥ 1 | Grass patches each cow consumes per tick (default: 2) |
+| `memory_length` | — | ≥ 1 | Number of past rounds included in each agent's rolling memory (default: 5) |
+| `hybrid_fraction` | — | [0, 1] | Share of agents using LLM reasoning, rounded to the nearest whole agent |
+
+**State variables (updated each tick):**
+
+| Variable | Symbol | Description |
+|----------|--------|-------------|
+| `ki` | k_i | Current herd size of agent i (number of cows) |
+| `K` | K | Total cows across all agents: K = Σ k_i |
+| `Veg` | V | Current number of green grass patches |
+| `pressure` | — | Grazing pressure: bare patches / total patches |
+| `xi` | x_i | Agent i's action this tick: +1 (ADD), 0 (KEEP), −1 (REMOVE) |
+| `d` | d | Net herd change: d = Σ x_i |
+
+---
+
+### The utility function
+
+Each tick, the model computes an estimated utility for each possible action (ADD / KEEP / REMOVE) for each agent. This utility is passed to the LLM as context — the agent sees payoff estimates, not just raw resource numbers. The utility has four components:
+
+**1. Material payoff**
+
+$$\pi_i(x_i) = (k_i + x_i) \cdot P - C(K,\; K+d)$$
+
+where P = 2 (fixed price per grass unit) and C is the cost function below.
+
+**2. Cooperation-adjusted payoff**
+
+$$\pi_{\text{coop},i} = (1 - \alpha_c)\cdot\pi_i + \alpha_c \cdot \left[(K+d)\cdot P - \sum_j C_j\right]$$
+
+At α_c = 0 the agent is purely self-interested; at α_c = 1 it weights only the group's collective payoff.
+
+**3. Fairness adjustment (Fehr & Schmidt, 1999)**
+
+$$F_i = \frac{\alpha_f}{n-1}\sum_{j \neq i}\max(\pi_j - \pi_i,\; 0) \;+\; \frac{\beta_f}{n-1}\sum_{j \neq i}\max(\pi_i - \pi_j,\; 0)$$
+
+The first term is envy (α_f = `fairness_concerning_me`); the second is guilt (β_f = `fairness_concerning_others`). Both are scaled by the agent's own payoff relative to the group total.
+
+**4. Reciprocity adjustment**
+
+Let d_+, d_−, d_0 be the number of other agents who ADDED, REMOVED, and KEPT on the *previous* tick.
+
+$$R_i(x_i) = \pi_i \cdot \begin{cases} \rho_- \cdot \dfrac{d_+ + 0.5\,d_0}{n-1} & \text{if } x_i = +1 \text{ (ADD)} \\[6pt] \rho_+ \cdot \dfrac{d_- + 0.5\,d_0}{n-1} & \text{if } x_i = -1 \text{ (REMOVE)} \\[6pt] \tfrac{1}{2}\left[\rho_- \cdot \dfrac{d_+ + 0.5\,d_0}{n-1} + \rho_+ \cdot \dfrac{d_- + 0.5\,d_0}{n-1}\right] & \text{if } x_i = 0 \text{ (KEEP)} \end{cases}$$
+
+Adding produces utility when others are also adding (negative reciprocity / punishment logic); removing produces utility when others are also removing (positive reciprocity / reward logic).
+
+**Total utility:**
+
+$$U_i(x_i) = \pi_{\text{coop},i} - F_i + R_i$$
+
+---
+
+### The cost function and grassland dynamics
+
+**Cost function** — the opportunity cost of changing herd size:
+
+$$C(K, K') = \frac{G(V - K \cdot f) - G(V - K' \cdot f)}{f \cdot n} \cdot P$$
+
+where G(v) is the *next-tick* grass level at vegetation level v:
+
+$$G(v) = \max(0,\; v) \cdot \left[1 + r \cdot v \cdot \left(1 - \frac{v}{V_{\max}}\right)\right]$$
+
+V_max = 1089 (the 33 × 33 patch grid). The cost function captures the marginal impact of adding or removing cows on the resource's next-period recovery — the mechanism through which herd decisions propagate to the commons.
+
+**Grass regrowth** — logistic dynamics:
+
+$$V(t+1) = V(t) + r \cdot V(t) \cdot \left(1 - \frac{V(t)}{V_{\max}}\right) - \sum_i k_i \cdot f$$
+
+Each tick, cows graze first (each consuming f patches), then surviving grass regrows logistically. Cows that cannot find f patches die.
+
+---
+
+### Collapse patterns
+
+Four distinct trajectories to commons collapse have been identified in this dataset. See the [Collapse pattern taxonomy](#collapse-pattern-taxonomy) section for full descriptions.
+
+| Pattern | Trigger | Signature |
+|---------|---------|-----------|
+| **Cooperative Paralysis** | High cooperation + vague conditional commitments | All KEEP while pool drains; REMOVE triggered too late |
+| **Defection Cascade** | Low cooperation + mutual-ADD equilibrium | All ADD every tick; pool exhausted in 10–14 ticks |
+| **Overshoot-Panic** | Mid cooperation + stressed start | ADD phase → belated KEEP/REMOVE → collapse |
+| **Hybrid Architecture Failure** | Structural mismatch: LLM + rule-based agents | LLM cooperates and appeals; rule-based agents add unchecked |
+
+---
+
+### Ostrom framework
+
+Key terms from Ostrom (1990), *Governing the Commons*, as used in this paper.
+
+| Term | Definition |
+|------|------------|
+| **Common-Pool Resource (CPR)** | A resource that is rivalrous and non-excludable — excludable enough that exclusion is costly, rivalrous enough that overuse is possible. The grassland in MASTOC is a CPR |
+| **Appropriation** | Withdrawal of resource units from a CPR. In MASTOC: adding cows (each cow consumes grass units per tick) |
+| **Provision** | Maintenance of or investment in a CPR. In MASTOC: removing cows (reducing pressure on the grassland) |
+| **Second-order collective action problem** | The problem of enforcing rules about commons use — who monitors, who sanctions, and who bears the cost of doing so |
+| **Design principles** | Eight structural features observed in long-surviving CPR institutions (Ostrom, 1990, pp. 90–102). See the table below |
+| **Graduated sanctions** | Penalties for rule violations that escalate with repeat offences — starting with low-cost social censure and rising to exclusion. Operationalised here as `negative_reciprocity` |
+| **Monitoring** | Active observation of both resource condition and other users' behaviour by participants or designated monitors |
+| **Operational rules** | Day-to-day rules governing who may appropriate, how much, and when. Distinguished from *collective choice rules* (who may change the operational rules) and *constitutional rules* (who may change the collective choice rules) |
+| **Proportional equivalence** | Design principle 2 — rules distributing costs and benefits should be proportional to each user's situation. Operationalised here as `fairness_concerning_others` |
+| **Polycentric governance** | Multiple overlapping governance systems at different scales; the broader framework Ostrom developed beyond the eight principles |
+| **Institutional entrepreneur** | An actor who incurs personal costs to build or maintain collective institutions; corresponds to the cooperative LLM agent in hybrid conditions |
+
+**Ostrom's eight design principles**, as referenced in this paper:
+
+| # | Principle | Relevance to MASTOC-LLM |
+|---|-----------|------------------------|
+| 1 | Clearly defined boundaries | Fixed in our model (3 agents, closed grassland) |
+| 2 | Proportional equivalence between costs and benefits | Tested via `fairness_concerning_others` |
+| 3 | Collective choice arrangements (users participate in rule-making) | Tested in H5: do specific operational rules prevent paralysis? |
+| 4 | Monitoring of resource and users | Operationalised by agents observing pool health and neighbour actions each tick |
+| 5 | Graduated sanctions | Tested via `negative_reciprocity`; activated in H3 |
+| 6 | Conflict resolution mechanisms | Emergent in 2-LLM hybrid (coalition ultimatums); absent in 1-LLM hybrid |
+| 7 | Minimal recognition of rights to organise | Fixed: all LLM agents have equal standing |
+| 8 | Nested enterprises | Not tested; relevant to future multi-scale extensions |
+
+---
+
 ## Experimental conditions
 
 | Condition | Agents | Description |
