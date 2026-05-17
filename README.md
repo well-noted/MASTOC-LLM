@@ -19,6 +19,46 @@ The core research question:
 
 ---
 
+## Contents
+
+- [Background](#background)
+- [How it works](#how-it-works)
+- [Experimental conditions](#experimental-conditions)
+- [Preliminary results](#preliminary-results)
+  - [Summary table](#summary-across-conditions)
+  - [Baseline: the tragedy unfolds](#baseline-the-tragedy-unfolds)
+  - [Full-GABM: cooperative convergence](#full-gabm-cooperative-convergence)
+  - [Hybrid: one institutional entrepreneur](#hybrid-the-limits-of-a-single-institutional-entrepreneur)
+  - [Hybrid (2 LLM): coalition formation, delayed tragedy](#hybrid-2-llm-coalition-formation-delayed-tragedy)
+  - [Hybrid (LLM-advantaged): herd position doesn't matter](#hybrid-llm-advantaged-herd-position-doesnt-change-structural-outcome)
+  - [Full-GABM (low fairness): slower, messier institution formation](#full-gabm-low-guilt--low-envy-fairness-parameters-shape-cooperation-quality)
+  - [Full-GABM (low cooperation): cooperation robust to personality framing](#full-gabm-low-cooperation-cooperation-is-robust-to-personality-framing)
+  - [Scarce commons: rapid recovery across personality conditions](#scarce-commons-rapid-recovery-across-personality-conditions)
+  - [Full-GABM (Llama 3.2 3B): cooperative surface, no institutional depth](#full-gabm-llama-32-3b-cooperative-surface-no-institutional-depth)
+  - [gpt-5.4-mini: cooperative stasis and paralysis](#gpt-54-mini-cooperative-stasis-and-paralysis)
+  - [gpt-5.5: cooperation level governs fate](#gpt-55-cooperation-level-governs-fate-model-can-succeed-or-collapse-from-the-same-starting-point)
+  - [Claude Sonnet: mid cooperation and high negative reciprocity](#claude-sonnet-mid-cooperation-and-high-negative-reciprocity)
+  - [Cross-model comparison: neg\_r = 1](#cross-model-comparison-neg_r--1-with-gpt-55-produces-stability-but-not-equality)
+- [Collapse pattern taxonomy](#collapse-pattern-taxonomy)
+  - [Pattern I — Cooperative Paralysis](#pattern-i--cooperative-paralysis)
+  - [Pattern II — Defection Cascade](#pattern-ii--defection-cascade)
+  - [Pattern III — Overshoot-Panic](#pattern-iii--overshoot-panic)
+  - [Pattern IV — Hybrid Architecture Failure](#pattern-iv--hybrid-architecture-failure)
+- [Repository structure](#repository-structure)
+- [Quick start](#quick-start)
+- [Working hypotheses and proposed experiments](#working-hypotheses-and-proposed-experiments)
+  - [H1: Cooperation threshold](#h1--coop--049-is-a-tragedy-producing-threshold-consistent-across-models)
+  - [H2: High coop necessary but not sufficient](#h2--high-cooperation-is-necessary-but-not-sufficient-fair_oth-and-neg_r-determine-whether-stasis-paralysis-or-institution-emerges)
+  - [H3: Negative reciprocity as paralysis antidote](#h3--negative-reciprocity-is-a-cooperative-paralysis-antidote)
+  - [H4: Stressed starting conditions amplify differentiation](#h4--stressed-starting-conditions-amplify-cooperative-differentiation)
+  - [H5: Explicit thresholds cure paralysis](#h5--cooperative-paralysis-is-a-prompt-engineering-artifact-curable-by-explicit-thresholds)
+  - [H6: Model capability predicts failure mode](#h6--model-capability-predicts-cooperative-failure-mode-smaller-models-default-to-keep-larger-to-add)
+  - [Open questions](#open-questions)
+- [Citations](#citations)
+- [Status](#status)
+
+---
+
 ## Background
 
 The [Tragedy of the Commons](https://en.wikipedia.org/wiki/Tragedy_of_the_commons) (Hardin, 1968) predicts that rational self-interest leads to collective over-exploitation of shared resources. Ostrom (1990) challenged this, showing that real communities often self-organise governance institutions — rules, monitoring, graduated sanctions — without top-down intervention.
@@ -861,7 +901,20 @@ See [SETUP.md](SETUP.md) for full documentation.
 
 The following hypotheses are grounded in patterns observed across the current run set. Each is paired with a specific experimental configuration so that the next batch of runs can test it directly. Most require only parameter adjustments with the existing setup.
 
+Several hypotheses map directly onto Ostrom's (1990) design principles for successful commons governance — the same theoretical framework the model was built to test. The table below summarises the connections; each hypothesis section elaborates.
+
+| Hypothesis | Ostrom principle / concept |
+|---|---|
+| H1 — cooperation threshold | Precondition: actors must share a minimum orientation toward collective benefit for institutions to form at all |
+| H2 — fair_oth × neg_r grid | Principle 2 (proportional equivalence between costs and benefits) × Principle 5 (graduated sanctions) |
+| H3 — neg_r as paralysis antidote | Principle 4 (monitoring resource and user behaviour) + Principle 5 (graduated sanctions against violators) |
+| H4 — environmental stress amplifies differentiation | Salience condition: resource users must share accurate information about resource condition |
+| H5 — explicit thresholds cure paralysis | Principle 3 (collectively-chosen operational rules must be specific and legible, not merely aspirational) |
+| H6 — model capability predicts failure mode | Precondition: participants must have the cognitive capacity to engage in rule-following, monitoring, and sanctioning |
+
 ### H1 — coop ≈ 0.49 is a tragedy-producing threshold, consistent across models
+
+**Ostrom connection.** Ostrom (1990) identified a shared orientation toward collective benefit as a precondition for institution formation — not a design principle that can be engineered in, but a prerequisite that must already be present. H1 tests whether the cooperation slider captures something analogous: a minimum threshold of collective orientation below which the rational-defection equilibrium is inescapable regardless of communication, memory, or sanctioning capacity.
 
 **Evidence.** Five independent runs at coop = 0.49 — four with gpt-5.5, one with Claude Sonnet — all collapsed via overshoot-panic. No high-cooperation run (coop = 1) collapsed due to ADD behaviour. The pattern held across model families, suggesting the cooperation parameter is the governing variable.
 
@@ -883,6 +936,8 @@ The following hypotheses are grounded in patterns observed across the current ru
 ---
 
 ### H2 — High cooperation is necessary but not sufficient; fair_oth and neg_r determine whether stasis, paralysis, or institution emerges
+
+**Ostrom connection.** Two of Ostrom's eight design principles are directly at stake here. Principle 2 — *proportional equivalence between costs and benefits* — is what `fair_oth` operationalises: does Agent 2, who holds 25 cows, feel an obligation to bear a proportional share of the restraint burden? Principle 5 — *graduated sanctions* — is what `neg_r` operationalises: is Agent 1 willing to apply social pressure when Agent 2 fails to reduce? Our results suggest that both are necessary and that neither alone is sufficient: high `fair_oth` without `neg_r` may produce stasis (Agent 2 sees the disparity but feels no enforcement pressure), while high `neg_r` without `fair_oth` may produce reactive punishment rather than principled burden-sharing.
 
 **Evidence.** Multiple gpt-5.4-mini runs at coop = 1 produced cooperative stasis (no convergence, no collapse), cooperative paralysis collapse, and partial convergence — apparently depending on fair_oth and neg_r. Claude Sonnet at coop = 1 with neg_r = 1 produced the fastest equalization observed (16/16/16 at tick 18). Claude Sonnet at coop = 1 with neg_r = 0 produced institution formation but over many more ticks.
 
@@ -913,6 +968,8 @@ Design grid (each cell = 3 runs):
 
 ### H3 — Negative reciprocity is a cooperative paralysis antidote
 
+**Ostrom connection.** Principles 4 and 5 form a pair in Ostrom's framework: *monitoring* (users or officials actively track resource condition and each other's behaviour) and *graduated sanctions* (escalating penalties for defectors, applied by users or appointed officials). Cooperative paralysis represents a failure of both simultaneously — agents passively observe the pool declining but apply no sanctions. High neg_r appears to activate both: agents not only notice the trajectory but name the norm violation and hold specific agents accountable for it. The accountability enforcement quotes from the Claude neg_r=1 run ("you added AGAIN — this is a pattern, not cooperation") read like exactly the kind of graduated social sanctioning Ostrom describes as foundational to successful commons governance.
+
 **Evidence.** The fastest equalization (16/16/16 at tick 18, Claude neg_r = 1) involved explicit accountability enforcement — agents naming norm violations and tracking compliance. In the cooperative paralysis collapse (neg_r = 0), agents acknowledged the same starting disparity but never treated it as a violation requiring response. High neg_r appears to convert inequality from an observation into an obligation.
 
 Representative quotes from the neg_r = 1 run:
@@ -939,6 +996,8 @@ Representative quotes from the neg_r = 1 run:
 ---
 
 ### H4 — Stressed starting conditions amplify cooperative differentiation
+
+**Ostrom connection.** Ostrom identified *accurate shared knowledge of the resource condition* as a key salience condition — not a formal design principle, but a prerequisite she observed in every successful case. Groups that failed to develop governance typically did so not because they couldn't in principle, but because the resource signal was too slow, too noisy, or too abstract to make the stakes legible. A stressed starting commons at 50% makes the stakes immediately legible: agents cannot plausibly argue the resource is fine. Our results suggest that environmental salience amplifies the *difference* between high- and low-cooperation agents rather than overriding it — which is consistent with Ostrom's view that salience enables governance but does not substitute for the cooperative orientation required to pursue it.
 
 **Evidence.** From the same ~50% starting pool: gpt-5.5 at coop = 1 recovered the commons in 10 ticks and converged to 23/23/23; gpt-5.5 at coop = 0.49 added from the start and collapsed in 16–40 ticks; gpt-5.5 at coop = 0.13 added from the start and collapsed in 13 ticks. Environmental stress does not override the cooperation level — it amplifies its effect.
 
@@ -970,6 +1029,8 @@ Design grid (each cell = 3 runs; ✓ = no collapse predicted, ✗ = collapse pre
 
 ### H5 — Cooperative paralysis is a prompt-engineering artifact curable by explicit thresholds
 
+**Ostrom connection.** Ostrom's Principle 3 — *collective choice arrangements* — requires not just that rules exist, but that they are *specific and operational*. Ostrom consistently found that successful commons institutions had explicit, legible rules: harvest limits, seasonal rotations, quota systems. Failed institutions often had only general normative understandings ("don't overuse the resource") that left too much discretion to individual interpretation. The cooperative paralysis agents produce exactly the failed institutional form: general aspirational commitments ("I'm ready to reduce if the commons keeps tightening") without operational specificity. H5 tests whether translating the vague commitment into a concrete decision rule — the core work of Ostrom's Principle 3 — resolves the paralysis.
+
 **Evidence.** The cooperative paralysis agents each stated thresholds verbally ("if the pasture keeps tightening, I'm ready to reduce") but failed to execute on them. The conditional was rephrased every round for 17 consecutive ticks across a 76-point pool decline. The threshold appeared to be read as a statement of future intention rather than a binding decision rule.
 
 **Proposed experiment.** Two-arm comparison using the exact cooperative paralysis configuration, adding an explicit numeric decision rule to the treatment arm's system prompt.
@@ -991,6 +1052,8 @@ Design grid (each cell = 3 runs; ✓ = no collapse predicted, ✗ = collapse pre
 ---
 
 ### H6 — Model capability predicts cooperative failure mode: smaller models default to KEEP, larger to ADD
+
+**Ostrom connection.** The hybrid condition already established the most direct Ostromian finding in the dataset: institutions require that all relevant parties have the *cognitive capacity to participate in them*. Ostrom's framework assumes human actors capable of communication, memory, reciprocity, and strategic reasoning. Rule-based agents fail not because they lack goodwill but because they lack the cognitive prerequisites. H6 extends this within the LLM space: if model scale determines whether agents can sustain strategic reasoning across rounds, then "cognitive capacity" is a continuous variable rather than a binary one, and governance quality should degrade as model scale decreases. This would give the Ostromian framework a new empirical dimension — not just whether agents can participate, but *how well*.
 
 **Evidence.** gpt-5.4-mini runs produced cooperative stasis (default KEEP) and paralysis. gpt-5.5 at mid-coop produced overshoot-panic (initial ADD phase). Llama 3B produced oscillation without convergence (mixed ADD/KEEP without strategy). Claude Sonnet produced overshoot-panic at mid-coop and institution formation at high coop. The dominant first-tick action appears model-dependent.
 
