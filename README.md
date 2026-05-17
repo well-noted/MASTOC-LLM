@@ -440,7 +440,7 @@ Recovery was nearly as fast (99%+ by tick 20) and herds converged to [12, 14, 16
 
 **Interpretation:**
 
-Taken together, these runs add a third axis to the personality-parameter findings. Earlier results showed that the cooperation slider had almost no effect on outcome, and that fairness sliders affected convergence speed and equilibrium herd size. These scarce-commons runs reveal that **environmental stress is itself a coordination accelerant**:
+Taken together, these runs add a third axis to the personality-parameter findings. Earlier results showed that the cooperation slider had almost no effect on outcome, and that fairness sliders affected convergence speed and equilibrium herd size. These scarce-commons runs suggest that **environmental stress is itself a coordination accelerant**:
 
 - In the default full-GABM (normal commons), agents converged to 13/13/13 by tick 22.
 - In the scarce-commons default-fairness run, agents converged to 11/12/13 by tick 30 — from a more difficult starting position, and through an initial *reduction* phase rather than equalization.
