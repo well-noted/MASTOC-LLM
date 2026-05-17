@@ -43,6 +43,7 @@ The core research question:
   - [Memory and communication sweep: amnesiac vs. equipped agents](#memory-and-communication-sweep-amnesiac-vs-equipped-agents)
   - [Memory=1: delayed collapse via coordination without trend detection](#memory1-delayed-collapse-via-coordination-without-trend-detection)
   - [Memory=3: fragile survival at the threshold](#memory3-fragile-survival-at-the-threshold)
+  - [Memory=2: oscillating dynamics and the stochastic boundary](#memory2-oscillating-dynamics-and-the-stochastic-boundary)
 - [Collapse pattern taxonomy](#collapse-pattern-taxonomy)
   - [Pattern I — Cooperative Paralysis](#pattern-i--cooperative-paralysis)
   - [Pattern II — Defection Cascade](#pattern-ii--defection-cascade)
@@ -310,6 +311,7 @@ Each agent's backend and model are independently configurable. Any mix of Anthro
 | **Full-GABM (memory=0, no communication)** | Claude Sonnet 4.6 | 3 | Yes | 31 | coop≈0.5, memory_length=0, communication=off: amnesiac agents with no messaging — textbook overshoot-panic in 31 ticks; ADD=71, KEEP=19, REMOVE=6 |
 | **Full-GABM (memory=15, communication on)** | Claude Sonnet 4.6 | 3 | No | — | coop≈0.5, memory_length=15: pool stabilised at 95% for 70+ ticks; converged to 24/24/24; agents enforced explicit 93–96% threshold norm via messages |
 | **Full-GABM (memory=1, communication on)** | Claude Sonnet 4.6 | 3 | Yes | 87 | coop≈0.5, memory_length=1: delayed collapse — pool recovered to 95% then drained while agents held a 90% target they couldn't detect was unreachable; Pattern I variant |
+| **Full-GABM (memory=2, communication on)** | Claude Sonnet 4.6 | 3 | No (oscillating) | — | coop≈0.5, memory_length=2: oscillating grow/correct cycles; achieved 25/25/25 equalization at tick 75; new growth phase began at tick 111; pool declining at termination (90.2%); highly variable across replications |
 | **Full-GABM (memory=3, communication on)** | Claude Sonnet 4.6 | 3 | No | — | coop≈0.5, memory_length=3: survived 120 ticks; pool slowly declining (90.1% at end); herds stable at 81 total — fragile, trending toward collapse |
 
 ---
@@ -1038,6 +1040,59 @@ Three rounds of memory is sufficient to detect a short-term declining trend and 
 
 ---
 
+### Memory=2: oscillating dynamics and the stochastic boundary
+
+Memory=2 produced the most complex behaviour in the sweep — not a clean collapse, not stable equilibrium, but multiple oscillating cycles of growth and correction that converged on a period of perfect equalization before starting again.
+
+**Resource dynamics:**
+
+| Tick | Total cows | Pool health | Agent 0 | Agent 1 | Agent 2 |
+|------|-----------|-------------|---------|---------|---------|
+| 1    | 45        | 52.9%       | 5       | 15      | 25      |
+| 13   | 66        | 96.7%       | 14      | 24      | 28      |
+| 25   | 84        | 91.6%       | 21      | 30      | 33      |
+| 35   | 89        | 89.1%       | 23      | 32      | 34      |
+| 44   | 77        | 91.0%       | 20      | 27      | 30      |
+| 58   | 92        | 88.8%       | 26      | 33      | 33      |
+| 75   | 75        | 92.9%       | 25      | 25      | 25      |
+| 84   | 75        | 94.1%       | 25      | 25      | 25      |
+| 111  | 76        | 94.0%       | 27      | 25      | 25      |
+| 120  | 85        | 90.2%       | 29      | 28      | 28      |
+
+Five distinct phases are visible in this single run.
+
+**Phase 1 — Recovery (ticks 1–13).** Agents cooperated to let the pool recover from 52.9% to 96.7%, growing herds moderately from 45 to 66 total cows.
+
+**Phase 2 — First overshoot (ticks 14–35).** The healthy pool prompted continued adding. Total cows grew to 89 while the pool slid from 97% to 89%. Agents communicated concern but kept adding, each citing the pool as "still above threshold" — the same threshold slippage seen in Pattern III.
+
+**Phase 3 — First correction (ticks 36–44).** With 2 ticks of memory, agents detected the declining trend and began removing. Total cows fell from 89 to 77; the pool partially recovered to 91%.
+
+**Phase 4 — Second overshoot and correction (ticks 45–75).** The recovered pool prompted another ADD cycle. Herds rose to 92 by tick 58 (pool: 88.8%), then agents corrected again, removing down to 75 cows and bringing the pool back to 92.9%. Crucially, this second correction achieved something the first did not: **perfect equalization at 25/25/25**, maintained from tick 75 through tick 110.
+
+**Phase 5 — Stable hold then new growth (ticks 76–120).** For 35 ticks all three agents held at 25/25/25, coordinating around a 95% pool target they kept falling just short of. At tick 111, Agent 0 defected from the hold:
+
+> **Tick 111 – Agent 0 (action: ADD, pool 94.0%):** *"Pasture at 94% looks healthy. I'm adding one cow given the strong conditions — still well within sustainable range. Let's monitor together."*
+
+Agent 1 immediately flagged it:
+
+> **Tick 111 – Agent 1 (action: KEEP):** *"Holding at 25. Pasture still at 94% — let's stay disciplined and reach 95%. Agent 0, noticed you added despite our coordination goal. Please consider holding so we can hit our target together."*
+
+But Agent 0 continued adding, and by tick 112–113 the others followed, citing the pool as "still above threshold." The pool was declining from 94% toward 90.2% at the 120-tick termination — a third oscillation cycle beginning.
+
+**The 2-tick detection mechanism in action.**
+
+Unlike memory=1 agents, who renewed "hold until 90%" for fifty consecutive ticks without detecting its failure, memory=2 agents could see when the pool declined *across the two most recent ticks* and adjust. This is visible in agent reasoning at the correction phases:
+
+> **Tick 113 – Agent 1 (action: KEEP, pool 93.5%):** *"Pasture has dipped to 93.5% — trending down slightly. Agent 0, you committed to holding below 92%, but I'd prefer we stabilize now before it gets there."*
+
+The phrase "trending down" appears at the correction points — agents explicitly reasoning from a 2-tick comparison. The same phrase is absent from the memory=1 logs, where agents only observed the current state.
+
+**Why the variability.** The oscillating pattern is inherently sensitive to initial conditions at each cycle's peak. Whether agents collectively detect the overshoot in time depends on whether the pool decline in the specific 2-tick window before their decision is large enough to trigger restraint. In some runs, the timing works and corrections succeed; in others, an overshoot is too large to reverse and ends in collapse. This makes memory=2 a stochastic boundary — the threshold between the collapse regime (memory ≤ 1) and the survival regime (memory ≥ 3), where the outcome of any individual run is sensitive to the trajectory of the ADD phase.
+
+**Action counts:** ADD=97, KEEP=219, REMOVE=44. The substantially higher REMOVE count compared to memory=1 (18) and memory=3 (24) reflects the active oscillation — more corrections needed because the 2-tick window misses the slow-building trends that memory=3 and memory=15 catch earlier.
+
+---
+
 ## Collapse pattern taxonomy
 
 Across the full run set, four distinct trajectories to commons collapse have emerged. Each has a different proximal cause, a different signature in agent language, and different implications for experimental design.
@@ -1419,7 +1474,7 @@ Design grid (each cell = 3 runs; ✓ = predicted stable, ✗ = predicted collaps
 |---|---|---|
 | **0** | ✗ (confirmed) | ✗ (predicted — no trend detection) |
 | **1** | ✗ (predicted) | ✗ (confirmed) |
-| **2** | ? | ? (in progress) |
+| **2** | ? | ~ (oscillating — survived 120 ticks; variable across replications) |
 | **3** | ? | ✓ (confirmed — fragile) |
 | **5** | ? | ? |
 | **10** | ? | ? |
@@ -1440,6 +1495,8 @@ Beyond the six hypotheses above, the following remain unresolved and are worth t
 **Participation threshold.** We have data at 0, 1, 2, and 3 LLM agents. The sharpest transition is between 2 and 3. Is there a minimum quorum? Scaling to 5 agents would let us test whether any sub-majority of cooperative agents can pull a group past the cooperation threshold.
 
 **Adversarial injection.** Instructing one LLM to defect would test whether cooperative agents detect and adapt to deliberate free-riding — the inverse of the hybrid condition, where the LLM is the cooperator and the defectors are structural.
+
+**Longer run horizons.** All current runs terminate at 120 ticks, which may be insufficient to distinguish genuinely stable equilibria from slow-burn trajectories toward eventual collapse. The memory=3 run showed a slowly declining pool at termination; the memory=2 run ended mid-oscillation with a new growth phase just beginning. Whether these represent long-run stability or delayed tragedy is unknown, and resolving it requires significantly longer simulation horizons (500–1000+ ticks). This is compute-intensive but would substantially strengthen the interpretation of the memory threshold results — particularly whether memory=3 eventually collapses, and whether memory=2's oscillations dampen or amplify over time.
 
 ---
 
