@@ -291,7 +291,13 @@ Each agent's backend and model are independently configurable. Any mix of Anthro
 
 > ⚠️ These are single-run results from an ongoing experiment. Replications and full statistical analysis are in progress.
 
-**Convergence is highly parameter-dependent.** The runs below span a wide range of outcomes: cooperative convergence, delayed collapse, oscillating dynamics, and immediate tragedy. The first full-GABM results documented here used high-cooperation default settings (coop=1, memory_length=5, communication=on), which reliably produce cooperative outcomes across models. Subsequent parameter sweeps tell a more mixed story. Mid-level cooperation (coop≈0.5) consistently collapsed in the runs tested — six independent runs across two models — and short memory windows (memory_length ≤ 1) produced collapse in the mid-cooperation regime (memory=1, coop=0.5: collapse at tick 87; memory=0, coop=0.5: collapse at tick 31). High-cooperation runs with short memory windows that have been logged so far did *not* collapse over their 10–50 tick horizons, but those runs are too short to draw a firm conclusion. A meaningful fraction of full-GABM runs in this dataset end in collapse, with the highest collapse rates concentrated in the mid-cooperation parameter region. The cooperative-convergence cases shown first are not the modal outcome across the full parameter space — they represent performance under near-ideal conditions.
+**Convergence is highly parameter-dependent.** The runs below span a wide range of outcomes: cooperative convergence, delayed collapse, oscillating dynamics, and immediate tragedy. The first full-GABM results documented here used high-cooperation default settings (coop=1, memory_length=5, communication=on), which reliably produce cooperative outcomes across models. Subsequent parameter sweeps tell a more mixed story.
+
+Mid-level cooperation (coop≈0.5) consistently collapsed in the runs tested — six independent runs across two models — and short memory windows (memory_length ≤ 1) produced collapse in the mid-cooperation regime (memory=1, coop=0.5: collapse at tick 87; memory=0, coop=0.5: collapse at tick 31). 
+
+High-cooperation runs with short memory windows that have been logged so far did *not* collapse over their 10–50 tick horizons, but those runs are too short to draw a firm conclusion. 
+
+A meaningful fraction of full-GABM runs in this dataset end in collapse, with the highest collapse rates concentrated in the mid-cooperation parameter region. The cooperative-convergence cases shown first are not the modal outcome across the full parameter space — they represent performance under near-ideal conditions.
 
 ### Summary across conditions
 
@@ -548,7 +554,9 @@ Agents grew their herds aggressively from tick 1, peaking at 91 total cows befor
 | 36–75 | 5–9         | COORDINATION, NORM_PROPOSAL (with intermittent DEFECTION) |
 | 76–120 | 8–9        | COORDINATION, NORM_PROPOSAL, TRUST_BUILDING |
 
-DEFECTION appeared as a recurring signal at ticks 5, 10, 20, 40, 55, and 75 — six separate DEFECTION ticks in a single run. Agents made explicit coordination agreements and broke them. The classifier described "conditional cooperation with partial defection," agents "deflecting accountability through comparative grievance," and "Agent 1 defects despite prior stability agreements, then appeals for collective restraint." Later runs in the dataset show that *occasional* DEFECTION signals are common across many parameter settings — especially in the mid-cooperation collapse zone, where some runs match or exceed this frequency. What distinguishes the low-fairness run is that the defection happened in a non-collapsing high-cooperation context: the agents bickered and broke agreements *and still kept the commons alive*, which is unusual. Defection without collapse is the signature here, not defection per se.
+DEFECTION appeared as a recurring signal at ticks 5, 10, 20, 40, 55, and 75 — six separate DEFECTION ticks in a single run. Agents made explicit coordination agreements and broke them. The classifier described "conditional cooperation with partial defection," agents "deflecting accountability through comparative grievance," and "Agent 1 defects despite prior stability agreements, then appeals for collective restraint." 
+
+Later runs in the dataset show that *occasional* DEFECTION signals are common across many parameter settings — especially in the mid-cooperation collapse zone, where some runs match or exceed this frequency. What distinguishes the low-fairness run is that the defection happened in a non-collapsing high-cooperation context: the agents bickered and broke agreements *and still kept the commons alive*, which is unusual. Defection without collapse is the signature here, not defection per se.
 
 **What the agents said:**
 
