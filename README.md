@@ -22,6 +22,7 @@ The core research question:
 ## Contents
 
 - [Background](#background)
+  - [Ostrom's Design Principles — applicability to this model](#ostroms-design-principles--applicability-to-this-model)
 - [How it works](#how-it-works)
 - [Experimental conditions](#experimental-conditions)
 - [Preliminary results](#preliminary-results)
@@ -64,6 +65,23 @@ The core research question:
 The [Tragedy of the Commons](https://en.wikipedia.org/wiki/Tragedy_of_the_commons) (Hardin, 1968) predicts that rational self-interest leads to collective over-exploitation of shared resources. Ostrom (1990) challenged this, showing that real communities often self-organise governance institutions — rules, monitoring, graduated sanctions — without top-down intervention.
 
 MASTOC (Bais et al., 2023) is a NetLogo ABM that reproduces the tragedy under classical rational-agent assumptions. MASTOC-LLM asks: what happens when agents can reason, remember, and talk?
+
+### Ostrom's Design Principles — applicability to this model
+
+Ostrom (1990) identified eight design principles shared by long-lived, self-governing commons institutions. The table below maps each principle to its status in MASTOC-LLM. The key experimental levers — `memory_length` and `communication?` — directly control whether the emergent principles are possible at all.
+
+| # | Principle | Status | Observable signal |
+|---|-----------|--------|-------------------|
+| DP1 | **Clear boundaries** — who may use the resource is well-defined | ✅ Baked in by design | Fixed 3-agent structure; no entry/exit dynamics |
+| DP2 | **Rules fit local conditions** — appropriation rules match the specific resource context | 🟡 Partially emergent | Agents adapt personal thresholds to current pool %; not negotiated collectively |
+| DP3 | **Collective choice** — those affected by the rules participate in modifying them | 🔬 Experimentally variable | Norm proposals and threshold agreements in agent messages — *only possible when `communication?` is on* |
+| DP4 | **Monitoring** — resource state and user behaviour are observable | ✅ Baked in by design | Pool % is globally visible every tick; a structural advantage real commons rarely have |
+| DP5 | **Graduated sanctions** — rule-breakers face escalating consequences applied by peers | 🔬 Experimentally variable | Social pressure via messages ("you should reduce"); true enforcement absent — itself a finding. *Only possible when `communication?` is on* |
+| DP6 | **Conflict resolution** — low-cost mechanisms for dispute resolution exist | ❌ Not present | No arbitration mechanism; disagreements play out through action choices alone |
+| DP7 | **External recognition** — outside authorities recognise the community's right to self-govern | ➖ Not applicable | Single-environment lab model; no external authority modelled |
+| DP8 | **Nested governance** — institutions are organised in nested layers for larger systems | ➖ Not applicable | 3-agent model; no hierarchy to nest |
+
+The primary contribution of this project is to DP3 and DP5: testing whether language-capable agents spontaneously reconstruct collective choice and graduated sanctions under resource pressure, and identifying the conditions (`memory_length`, `communication?`) that make this possible.
 
 ---
 
