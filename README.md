@@ -291,25 +291,27 @@ Each agent's backend and model are independently configurable. Any mix of Anthro
 
 > ⚠️ These are single-run results from an ongoing experiment. Replications and full statistical analysis are in progress.
 
-### Summary across conditions
+**Convergence is highly parameter-dependent.** The runs below span a wide range of outcomes: cooperative convergence, delayed collapse, oscillating dynamics, and immediate tragedy. The first full-GABM results documented here used high-cooperation default settings (coop=1, memory_length=5, communication=on), which reliably produce cooperative outcomes across models. Subsequent parameter sweeps reveal a different picture: mid-level cooperation (coop≈0.5) collapses consistently across both models and replications (6/6 runs), and short memory windows (memory_length ≤ 1) produce collapse even under high-cooperation conditions. Across all full-GABM runs in this log, roughly half end in collapse. The cooperative-convergence cases shown first are not the modal outcome — they represent performance under near-ideal conditions.
 
-> ⚠️ These are single-run results from an ongoing experiment. Replications and full statistical analysis are in progress.
+### Summary across conditions
 
 | Condition | Model | LLMs | Collapse? | Collapse tick | Key finding |
 |-----------|-------|------|-----------|---------------|-------------|
 | **Baseline** | — | 0 | Yes | ~36 | Classical tragedy reproduced |
-| **Full-GABM** | Claude Sonnet 4.6| 3 | No | — | Cooperative convergence to 13/13/13; institution score 10/10 by tick 91 |
-| **Full-GABM (low cooperation)** | Claude Sonnet 4.6| 3 | No | — | Self-interested framing: *faster* convergence (tick 16) to higher-yield 20/20/20; cooperation robust to personality override |
-| **Full-GABM (low guilt + low envy)** | Claude Sonnet 4.6| 3 | No | — | Fairness-parameter prompts zeroed: repeated defection, slow convergence (~tick 107), higher herd load (84 cows), commons stressed to 86.7% |
-| **Hybrid (1 LLM)** | Claude Sonnet 4.6| 1 | Yes | 35 | One LLM cannot shift the equilibrium alone |
-| **Hybrid (2 LLM)** | Claude Sonnet 4.6| 2 | Yes | 58 | Coalition formed, tragedy delayed 23 ticks, but overwhelmed by one defector |
-| **Full-GABM (Llama 3.2 3B)** | Llama 3.2 3B | 3 | No | — | Pool maintained at 99.4% but herds oscillated without convergence; cooperative messaging but no institution formation |
-| **Full-GABM (Llama 3.2 3B, scarce commons)** | Llama 3.2 3B | 3 | No | — | Initial grassland 48%: pool recovered 48%→99% by tick 17; herds oscillated without convergence throughout all 51 ticks |
-| **Hybrid (LLM-advantaged initial herd)** | Claude Sonnet 4.6 | 1 | Yes | 33 | LLM starts with 40 cows; voluntarily reduces to 25 by collapse; rule-based agents add unchecked; collapse 2 ticks earlier than baseline hybrid |
-| **Full-GABM (scarce commons, default fairness)** | Claude Sonnet 4.6 | 3 | No | — | Initial grassland 49%: pool recovered 49%→99% by tick 10; converged to [11,12,13] by tick 30 |
+| **Full-GABM** | Claude Sonnet 4.6| 3 | No | — | **coop=1, fair_me=0, fair_oth=1, memory=5, comm=on (defaults):** cooperative convergence to 13/13/13; institution score 10/10 by tick 91 |
+| **Full-GABM (low cooperation)** | Claude Sonnet 4.6| 3 | No | — | **coop=min, fair_me=0, fair_oth=1, memory=5, comm=on:** self-interested framing yields *faster* convergence (tick 16) to higher-yield 20/20/20; cooperation robust to personality override |
+| **Full-GABM (low guilt + low envy)** | Claude Sonnet 4.6| 3 | No | — | **coop=1, fair_me=0, fair_oth=0, memory=5, comm=on:** fairness parameters zeroed; repeated defection, slow convergence (~tick 107), higher herd load (84 cows), commons stressed to 86.7% |
+| **Hybrid (1 LLM)** | Claude Sonnet 4.6| 1 | Yes | 35 | **coop=1, fair_me=0, fair_oth=1, memory=5, comm=on (defaults):** one LLM cannot shift the equilibrium alone |
+| **Hybrid (2 LLM)** | Claude Sonnet 4.6| 2 | Yes | 58 | **coop=1, fair_me=0, fair_oth=1, memory=5, comm=on (defaults):** coalition formed, tragedy delayed 23 ticks, but overwhelmed by one defector |
+| **Full-GABM (Llama 3.2 3B)** | Llama 3.2 3B | 3 | No | — | **coop=1, fair_me=0, fair_oth=1, memory=5, comm=on:** pool maintained at 99.4% but herds oscillated without convergence; cooperative messaging but no institution formation |
+| **Full-GABM (Llama 3.2 3B, scarce commons)** | Llama 3.2 3B | 3 | No | — | **coop=1, fair_me=0, fair_oth=1, memory=5, initial_grassland=48%, comm=on:** pool recovered 48%→99% by tick 17; herds oscillated without convergence throughout all 51 ticks |
+| **Hybrid (LLM-advantaged initial herd)** | Claude Sonnet 4.6 | 1 | Yes | 33 | **coop=1, fair_me=0, fair_oth=1, memory=5, comm=on; Agent 1 (LLM) starts with 40 cows:** voluntarily reduces to 25 by collapse; rule-based agents add unchecked; collapse 2 ticks earlier than baseline hybrid |
+| **Full-GABM (scarce commons, default fairness)** | Claude Sonnet 4.6 | 3 | No | — | **coop=1, fair_me=0, fair_oth=1, memory=5, initial_grassland=49%, comm=on:** pool recovered 49%→99% by tick 10; converged to [11,12,13] by tick 30 |
 | **Full-GABM (scarce commons, low coop + low fairness)** | Claude Sonnet 4.6 | 3 | No | — | Initial grassland 50%, coop=0.3, fairness=0: recovery to 99% by tick 20; converged to [12,14,16] by tick 30 |
-| **Full-GABM (cooperative stasis)** | gpt-5.4-mini | 3 | No | — | coop=1, fair_me=0, fair_oth=1: all KEEP for 36 ticks; herds frozen at starting values (6/15/25); pool stable at 99%+; no equalization |
-| **Full-GABM (cooperative paralysis)** | gpt-5.4-mini | 3 | Yes | 26 | coop=1, fair_me=1, fair_oth=0.5: collective KEEP-lock for 24 ticks while pool drained 95.8%→8.5%; REMOVE attempted at tick 25 — one tick too late |
+| **Full-GABM (cooperative stasis)** | gpt-5.4-mini | 3 | No | — | coop=1, fair_me=0, fair_oth=1, memory=5, forage=2: all KEEP for 36 ticks; herds frozen at starting values (6/15/25); pool stable at 99%+; no equalization |
+| **Full-GABM (universal stasis)** | gpt-5.4-mini | 3 | No | — | coop=1, fair_me=0.5, fair_oth=0.5, memory=5, initial=50%: all 90 decisions are KEEP — zero ADD or REMOVE; herds 5/15/25 unchanged through tick 30; pool 99.1%. More rigid than cooperative stasis |
+| **Full-GABM (cooperative paralysis)** | gpt-5.4-mini | 3 | Yes | 26 | coop=1, fair_me=1, fair_oth=0.5, memory=5, forage=4: KEEP-lock for 24 ticks while pool drained 95.8%→8.5%; REMOVE attempted at tick 25 — one tick too late; fast drain driven by forage=4 |
+| **Full-GABM (asymmetric growth)** | gpt-5.4-mini | 3 | No (declining) | — | coop=1, fair_me=1, fair_oth=0.5, memory=5, forage=2: Agent 0 (5 cows) KEEP-locked all 39 ticks; Agents 1+2 add 14 and 12 times → herds grow 15→27 and 25→33; pool declining (95.8% at tick 39); no collapse but trajectory unsustainable |
 | **Full-GABM (scarce commons, high coop)** | gpt-5.5 | 3 | No | — | coop=1, fair_me=1, fair_oth=0.11, initial pool 48%: immediate cooperative restraint; 23/23/23 by tick 46; pool recovered to 95.9% |
 | **Full-GABM (low cooperation)** | gpt-5.5 | 3 | Yes | 13 | coop=0.13: defection cascade — all ADD every tick from tick 1; pool exhausted in 13 ticks from 49.4% |
 | **Full-GABM (mid cooperation, x4 replications)** | gpt-5.5 | 3 | Yes (4/4) | 16–40 | coop=0.49: overshoot-panic — ADD phase from stressed start, collective REMOVE too late; consistent tragedy across all 4 runs |
@@ -330,9 +332,9 @@ With rule-based best-response agents, the commons collapsed as expected. Herds g
 
 ---
 
-### Full-GABM: cooperative convergence
+### Full-GABM: cooperative convergence (coop=1, defaults)
 
-With all three agents using LLM reasoning and communication, the outcome was strikingly different.
+With all three agents using LLM reasoning and communication under default parameters (coop=1, fair_me=0, fair_oth=1, memory_length=5), the outcome was strikingly different from the baseline.
 
 **Resource dynamics:**
 
@@ -743,11 +745,11 @@ Under environmental stress (scarce commons), both model classes showed rapid poo
 
 ---
 
-### gpt-5.4-mini: cooperative stasis and paralysis
+### gpt-5.4-mini: KEEP-dominance as a model-size signature
 
-Two contrasting outcomes from gpt-5.4-mini under high cooperation framing reveal a new class of failure mode native to language-capable agents.
+Four runs of gpt-5.4-mini reveal a consistent behavioral signature that appears model-size-dependent: the model defaults to KEEP regardless of the resource state, cannot implement graduated herd management, and is unable to escape that posture when the commons degrades. Across different fairness configurations, the outcome shifts between frozen-but-safe, frozen-while-collapsing, and asymmetrically growing — but the KEEP-dominant baseline is present in all cases.
 
-#### Cooperative stasis (coop = 1, fair_me = 0, fair_oth = 1)
+#### Run 1 — Cooperative stasis (coop = 1, fair_me = 0, fair_oth = 1, forage = 2)
 
 With maximum cooperation and fairness-toward-others enabled, all three agents settled into a steady KEEP posture from tick 1 and held it for 36 consecutive ticks. The commons remained stable (pool above 99% throughout), but the starting inequality was never addressed: at tick 40, herds stood at 6, 15, and 25 — nearly identical to the starting distribution of 5, 15, and 25.
 
@@ -759,7 +761,13 @@ Messages were cooperative in tone but passive in content. No agent ever proposed
 
 Cooperative stasis is stable but institutionally empty: the resource is preserved, Agent 2 holds a perpetual five-to-one advantage over Agent 0, and nothing is done about it.
 
-#### Cooperative paralysis collapse (coop = 1, fair_me = 1, fair_oth = 0.5)
+#### Run 2 — Universal stasis (coop = 1, fair_me = 0.5, fair_oth = 0.5, initial_grassland = 50%)
+
+With medium fairness parameters, all three agents produced zero ADD or REMOVE decisions across 30 ticks — 90 KEEP out of 90 decisions. Herds were 5/15/25 at tick 1 and identical at tick 30. The pool was healthy (99.1%) throughout, which means the stasis was not ecologically harmful, but also perfectly invisible to the model: with no deviation from the status quo, the starting inequality was simply held in place indefinitely.
+
+This is a more extreme version of Run 1. Fair_me=0.5 produces a slightly less guilt-suppressive framing, yet the KEEP-lock tightened rather than loosened. This rules out the interpretation that stasis in Run 1 was driven by a specific fairness parameter value — it is robust across the tested range.
+
+#### Run 3 — Cooperative paralysis collapse (coop = 1, fair_me = 1, fair_oth = 0.5, forage = 4)
 
 With fairness-concerning-me set to maximum, the agents locked into the same KEEP posture — but this time the pool drained steadily beneath them.
 
@@ -777,7 +785,22 @@ The pool fell from 95.8% to 0% across 26 ticks while all three agents KEPT every
 
 That sentence — or a near-identical variant — was produced by Agent 2 on every tick from tick 8 to tick 24. The pool fell 76 percentage points while the condition "if the pasture keeps tightening" was renewed but never triggered. At tick 25, with only 8.5% of the pool remaining, all three finally switched to REMOVE. The commons was gone one tick later.
 
-This is cooperative paralysis in its canonical form: agents coordinate on inaction, signal cooperative intent through language, and collectively miscalibrate the threshold for action — renewing the conditional promise until the resource is beyond recovery.
+This is cooperative paralysis in its canonical form: agents coordinate on inaction, signal cooperative intent through language, and collectively miscalibrate the threshold for action — renewing the conditional promise until the resource is beyond recovery. The fast drain is exacerbated by forage=4 (double the default), which makes the pool unusually sensitive to even a small fixed herd. With forage=2, the same KEEP-dominant posture produces a different outcome:
+
+#### Run 4 — Asymmetric growth (coop = 1, fair_me = 1, fair_oth = 0.5, forage = 2)
+
+With standard forage and the same fairness parameters as Run 3, the pool did not drain fast enough to force a response — so the KEEP-lock held, but only in Agent 0. Agents 1 and 2 added periodically throughout the 39-tick run.
+
+| Tick | Total cows | Pool health | Agent 0 | Agent 1 | Agent 2 |
+|------|-----------|-------------|---------|---------|---------|
+| 1    | 45        | 99.3%       | 5       | 15      | 25      |
+| 10   | 49        | 97.9%       | 5       | 19      | 25      |
+| 25   | 59        | 96.5%       | 5       | 24      | 30      |
+| 39   | 65        | 95.8%       | 5       | 27      | 33      |
+
+Decision breakdown: Agent 0 = 39 KEEP, 0 ADD; Agent 1 = 25 KEEP, 14 ADD; Agent 2 = 27 KEEP, 12 ADD. The agent that started smallest is locked in place while both larger-herd agents grow unchecked. The resource is not yet collapsed at tick 39 but the trajectory is structurally unfair and ecologically unsustainable — a slow-motion inequality trap.
+
+**The gpt-5.4-mini pattern across all four runs:** KEEP is the default action regardless of resource state, fairness parameters, or starting position. When pool health prevents immediate collapse, this produces stasis (Runs 1–2). When forage is elevated, it produces paralysis collapse (Run 3). When forage is moderate but agent starting herds differ, it produces structural lopsidedness: the smallest agent is KEEP-locked while larger agents grow (Run 4). None of these runs produced institution formation, graduated norm enforcement, or equalization — behaviors that appeared consistently in Claude Sonnet and gpt-5.5 under comparable conditions. Model size appears to be a genuine confound in GABM studies of commons governance.
 
 ---
 
@@ -1547,8 +1570,10 @@ Frontiers in Artificial Intelligence. https://doi.org/10.3389/frai.2025.1593017
 - [x] Full-GABM (scarce commons, default fairness) — complete (50 ticks)
 - [x] Full-GABM (scarce commons, low coop + low fairness) — complete (50 ticks)
 - [x] Hybrid (LLM-advantaged initial herd) — complete (collapse tick 33)
-- [x] Full-GABM (gpt-5.4-mini, cooperative stasis) — complete (40 ticks, no collapse, no equalization)
-- [x] Full-GABM (gpt-5.4-mini, cooperative paralysis) — complete (collapse tick 26)
+- [x] Full-GABM (gpt-5.4-mini, cooperative stasis) — complete (40 ticks, no collapse, no equalization; fair_me=0)
+- [x] Full-GABM (gpt-5.4-mini, universal stasis) — complete (30 ticks, complete KEEP-lock; fair_me=0.5)
+- [x] Full-GABM (gpt-5.4-mini, cooperative paralysis) — complete (collapse tick 26; forage=4)
+- [x] Full-GABM (gpt-5.4-mini, asymmetric growth) — complete (39 ticks, pool declining; Agent 0 KEEP-locked, Agents 1+2 growing)
 - [x] Full-GABM (gpt-5.5, scarce commons, high coop) — complete (50 ticks, 23/23/23)
 - [x] Full-GABM (gpt-5.5, low cooperation) — complete (collapse tick 13, defection cascade)
 - [x] Full-GABM (gpt-5.5, mid cooperation) — complete (x4 runs, all collapsed, ticks 16–40)
