@@ -562,7 +562,15 @@ def _call_llm(
         # Use Ollama's native /api/chat endpoint directly.
         # The OpenAI-compat shim drops content for thinking-format models (e.g. gemma4);
         # the native endpoint returns it correctly, plus a separate "thinking" field.
+        #
+        # IMPORTANT: use stream=True so that the timeout applies per-chunk, not to
+        # the entire response. Thinking-format models (gemma4, deepseek-r1) can
+        # generate thousands of thinking tokens before the visible reply; with
+        # stream=False Ollama buffers everything and the connection silently hangs
+        # well past any reasonable read-timeout. Streaming keeps the socket alive
+        # and lets us accumulate content as it arrives.
         import requests as _requests
+        import json as _json
         native_base = _cfg.get("ollama_base_url", "http://localhost:11434").rstrip("/")
         if native_base.endswith("/v1"):
             native_base = native_base[:-3]
@@ -574,15 +582,24 @@ def _call_llm(
                     {"role": "system", "content": system_prompt},
                     {"role": "user", "content": user_prompt},
                 ],
-                "stream": False,
+                "stream": True,
                 "options": {"num_predict": max_tokens},
             },
-            timeout=120,
+            stream=True,
+            timeout=300,
         )
         resp.raise_for_status()
-        data = resp.json()
-        content = data.get("message", {}).get("content", "")
-        thinking = data.get("message", {}).get("thinking", "")
+        content = ""
+        thinking = ""
+        for raw_line in resp.iter_lines():
+            if not raw_line:
+                continue
+            chunk = _json.loads(raw_line)
+            msg = chunk.get("message", {})
+            content  += msg.get("content",  "")
+            thinking += msg.get("thinking", "")
+            if chunk.get("done"):
+                break
         return content, thinking
 
     else:

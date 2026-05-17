@@ -247,7 +247,7 @@ to simulation
       ")")
   ]
 
-  if ticks >= 120 [ close-bridge stop ]
+  if (not run-indefinitely) and (ticks >= num-rounds) [ close-bridge stop ]
 end
 
 
@@ -1209,6 +1209,42 @@ http://localhost:11434/v1
 0
 0
 String
+
+TEXTBOX
+8
+1150
+216
+1168
+Simulation parameters:
+11
+0.0
+1
+
+SLIDER
+8
+1175
+216
+1208
+num-rounds
+num-rounds
+1
+500
+120
+1
+1
+rounds
+HORIZONTAL
+
+SWITCH
+8
+1215
+216
+1248
+run-indefinitely
+run-indefinitely
+1
+1
+-1000
 
 @#$#@#$#@
 WHAT IS IT?
