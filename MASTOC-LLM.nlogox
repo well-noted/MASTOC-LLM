@@ -828,52 +828,78 @@ end
   </widgets>
   <info><![CDATA[WHAT IS IT?
 -----------
-MASTOC-LLM is an extension of the MASTOC model (Multi-Agent System Tragedy of the Commons) that replaces the Nash-equilibrium decision mechanism with LLM-based reasoning for some or all agents.
+MASTOC-LLM is an extension of the MASTOC model (Multi-Agent System Tragedy of the Commons) that replaces the Nash-equilibrium decision mechanism with LLM-based reasoning for some or all agents, creating a Generative Agent-Based Model (GABM).
 
 Scientific question: Do Ostrom-style commons institutions (communication norms, graduated sanctions, coordination rules) emerge spontaneously from language-capable agents under resource pressure, without being hard-coded?
 
 Three experimental conditions:
   1. Baseline    — rule-based best-response heuristic (reproduces classical tragedy as control)
-  2. Full GABM   — all agents reason via LLM (Anthropic or Ollama)
+  2. Full GABM   — all agents reason via LLM
   3. Hybrid      — a minority of LLM agents among rule-based majority
 
 HOW IT WORKS
 ------------
 Each tick:
-1. Payoff matrix is computed for all action combinations (inherits MASTOC's socio-psychological disposition parameters: fairness, cooperation, reciprocity, conformity, risk-aversion).
+1. Payoff matrix is computed for all action combinations (inherits MASTOC's socio-psychological
+   disposition parameters: fairness, cooperation, reciprocity, conformity, risk-aversion).
 2. Each agent decides:
-   - LLM agents: send resource state + memory + neighbour messages to the LLM bridge; parse back action (-1/0/+1) and optional message.
+   - LLM agents: send resource state + rolling memory + neighbour messages to the LLM bridge;
+     parse back action (-1/0/+1) and optional message.
    - Rule-based agents: myopic best-response (choose action with highest expected payoff).
-3. LLM agents broadcast messages to neighbours (communication layer).
-4. Actions are executed (cows added/removed), grazing occurs, grass regrows.
-5. End-of-round: resource state and agent decisions logged; optional Ostrom institution detection classifies messages.
+3. If communication is enabled, LLM agents broadcast messages to neighbours.
+4. Actions are executed (cows added/removed), grazing occurs, grass regrows logistically.
+5. End-of-round: resource state and agent decisions logged; optional Ostrom institution
+   detection classifies messages.
+
+Key parameters:
+  - memory-length  — rolling rounds of history each agent sees (0 = amnesiac, 1-15)
+  - communication? — if OFF, agents receive no neighbour messages and send none; isolates
+                     pure LLM reasoning from social coordination
 
 HOW TO USE IT
 -------------
 SETUP:
-  1. Install NetLogo 6.2+ (https://netlogoweb.org)
-  2. Install Python 3.9+ with: pip install anthropic openai
-  3. Set ANTHROPIC_API_KEY environment variable (or start Ollama locally)
-  4. Place MASTOC-LLM.nlogo and mastoc_llm_bridge.py in the same directory
-  5. Create Data/ directory in the same folder
-  6. Open MASTOC-LLM.nlogo in NetLogo
+  1. Install NetLogo 7 (https://ccl.northwestern.edu/netlogo/)
+  2. Install Python 3.9+ and the required packages for your chosen backend:
+       Anthropic:    pip install anthropic
+       OpenAI:       pip install openai
+       Google:       pip install google-generativeai
+       Ollama:       install Ollama locally (https://ollama.com), no pip package needed
+  3. Set the relevant API key as an environment variable:
+       ANTHROPIC_API_KEY, OPENAI_API_KEY, or GOOGLE_API_KEY
+  4. Place MASTOC-LLM.nlogox and mastoc_llm_bridge.py in the same directory
+  5. Open MASTOC-LLM.nlogox in NetLogo 7
 
 RUNNING:
   - Select a condition from the Condition chooser
+  - Select a backend (anthropic / openai / google / ollama / ollama-native) and model
+    for each agent independently using the per-agent backend choosers and model inputboxes
+  - Adjust memory-length and communication? as desired
   - Click Setup, then Simulation
   - CSV logs are written to logs/<run_id>/
 
 OUTPUTS:
-  - logs/<run_id>/resources.csv   — pool size, cow counts, pressure per tick
-  - logs/<run_id>/decisions.csv   — agent decisions, reasoning, messages per tick
-  - logs/<run_id>/institutions.csv — Ostrom institution detection scores per detected round
-  - Data/Sensitivity-pressure.txt — grazing pressure time series (MASTOC-compatible)
+  - logs/<run_id>/run_meta.json     — all experiment parameters for reproducibility
+  - logs/<run_id>/resources.csv    — pool size, cow counts, pressure per tick
+  - logs/<run_id>/decisions.csv    — agent decisions, reasoning, messages per tick
+  - logs/<run_id>/institutions.csv — Ostrom institution detection scores per round
+  - Data/Sensitivity-pressure.txt  — grazing pressure time series (MASTOC-compatible)
+
+SUPPORTED BACKENDS
+------------------
+  anthropic    — Claude models via Anthropic API (ANTHROPIC_API_KEY)
+  openai       — GPT models via OpenAI API (OPENAI_API_KEY)
+  google       — Gemini models via Google AI API (GOOGLE_API_KEY)
+  ollama       — Any locally-running Ollama model via OpenAI-compatible endpoint
+  ollama-native — Ollama models via Ollama's native API (supports reasoning/thinking models)
+
+Each of the three agents can use a different backend and model, enabling cross-model comparison
+within a single run.
 
 CREDITS
 -------
 Based on MASTOC v1.1.0 by Bais et al. (CoMSES model #2283).
-LLM bridge architecture inspired by swarm_gpt (Jimenez-Romero et al. 2025).
-Extended for CAS 520 at Arizona State University.]]></info>
+LLM bridge architecture inspired by swarm_gpt (Jimenez-Romero et al. 2025).]]></info>
   <turtleShapes>
     <shape name="default" rotatable="true" editableColorIndex="0">
       <polygon color="-1920102913" filled="true" marked="true">
