@@ -2,7 +2,7 @@
 
 **Multi-Agent System Tragedy of the Commons — with Large Language Model Agents**
 
-> CAS 520 · Agent-Based Modeling · Arizona State University  
+> 
 > Extending [MASTOC v1.1.0](https://www.comses.net/codebases/2283/releases/1.1.0/) (Bais et al., 2023)
 
 ---
