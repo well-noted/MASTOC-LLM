@@ -291,7 +291,7 @@ Each agent's backend and model are independently configurable. Any mix of Anthro
 
 > ⚠️ These are single-run results from an ongoing experiment. Replications and full statistical analysis are in progress.
 
-**Convergence is highly parameter-dependent.** The runs below span a wide range of outcomes: cooperative convergence, delayed collapse, oscillating dynamics, and immediate tragedy. The first full-GABM results documented here used high-cooperation default settings (coop=1, memory_length=5, communication=on), which reliably produce cooperative outcomes across models. Subsequent parameter sweeps reveal a different picture: mid-level cooperation (coop≈0.5) collapses consistently across both models and replications (6/6 runs), and short memory windows (memory_length ≤ 1) produce collapse even under high-cooperation conditions. Across all full-GABM runs in this log, roughly half end in collapse. The cooperative-convergence cases shown first are not the modal outcome — they represent performance under near-ideal conditions.
+**Convergence is highly parameter-dependent.** The runs below span a wide range of outcomes: cooperative convergence, delayed collapse, oscillating dynamics, and immediate tragedy. The first full-GABM results documented here used high-cooperation default settings (coop=1, memory_length=5, communication=on), which reliably produce cooperative outcomes across models. Subsequent parameter sweeps tell a more mixed story. Mid-level cooperation (coop≈0.5) consistently collapsed in the runs tested — six independent runs across two models — and short memory windows (memory_length ≤ 1) produced collapse in the mid-cooperation regime (memory=1, coop=0.5: collapse at tick 87; memory=0, coop=0.5: collapse at tick 31). High-cooperation runs with short memory windows that have been logged so far did *not* collapse over their 10–50 tick horizons, but those runs are too short to draw a firm conclusion. A meaningful fraction of full-GABM runs in this dataset end in collapse, with the highest collapse rates concentrated in the mid-cooperation parameter region. The cooperative-convergence cases shown first are not the modal outcome across the full parameter space — they represent performance under near-ideal conditions.
 
 ### Summary across conditions
 
@@ -481,13 +481,14 @@ This run tested whether giving the LLM agent a dominant initial herd position wo
 | 10   | 76        | 94.8%       | 24             | 37             | 15             |
 | 20   | 94        | 86.8%       | 34             | 35             | 25             |
 | 30   | 106       | 47.7%       | 44             | 27             | 35             |
-| 33   | 108       | 0%          | 46             | 25             | 37             |
+| 32   | 108       | 16.3%       | 46             | 25             | 37             |
+| 33   | 88        | 0%          | 40             | 19             | 29             |
 
-The LLM agent recognized its outsized position immediately and began reducing from the first tick: "I see you're both reducing herds — I appreciate that and I'm doing the same. My herd is already much larger than yours." Agent 1 removed continuously from tick 1, shedding 15 cows by the time of collapse (40→25). The rule-based agents added one cow per tick regardless, growing by 32 each over the same period. The commons collapsed at tick 33.
+The LLM agent recognized its outsized position immediately and began reducing from the first tick: "I see you're both reducing herds — I appreciate that and I'm doing the same. My herd is already much larger than yours." Starting from a slider value of 40 cows, Agent 1 shed cows steadily across the run, reaching 25 by tick 32 — a reduction of about 15 cows. The rule-based agents added roughly one cow per tick each, growing by ~31 cows each over the same period. The commons collapsed at tick 33 (the further drops in herd size at the collapse tick reflect cows dying off because forage was no longer available).
 
 **The arithmetic of futility:**
 
-Agent 1's net contribution across 33 ticks: −15 cows. The two rule-based agents' combined net contribution: +64 cows. The LLM could not shrink its herd fast enough to offset two unconstrained growth machines. The removal rate that would have been required to hold the total steady (−2 cows per tick from Agent 1 alone) was not achievable within the rules of the model.
+Even with the LLM agent reducing its herd as aggressively as the model permits, the two rule-based agents' combined growth (roughly +2 cows per tick) outpaced the LLM's maximum removal rate (−1 cow per tick). Holding the total herd steady would have required the LLM to remove ~2 cows per tick — something the model rules don't allow. The trajectory was structurally locked in from the start.
 
 **What the LLM agent said:**
 
@@ -547,7 +548,7 @@ Agents grew their herds aggressively from tick 1, peaking at 91 total cows befor
 | 36–75 | 5–9         | COORDINATION, NORM_PROPOSAL (with intermittent DEFECTION) |
 | 76–120 | 8–9        | COORDINATION, NORM_PROPOSAL, TRUST_BUILDING |
 
-Unlike any previous run, DEFECTION appeared as a recurring signal — at ticks 5, 10, 20, 40, 55, and 75. Agents made explicit coordination agreements and broke them. The classifier described "conditional cooperation with partial defection," agents "deflecting accountability through comparative grievance," and "Agent 1 defects despite prior stability agreements, then appeals for collective restraint." This norm-inconsistent pattern was entirely absent from all other full-GABM runs.
+DEFECTION appeared as a recurring signal at ticks 5, 10, 20, 40, 55, and 75 — six separate DEFECTION ticks in a single run. Agents made explicit coordination agreements and broke them. The classifier described "conditional cooperation with partial defection," agents "deflecting accountability through comparative grievance," and "Agent 1 defects despite prior stability agreements, then appeals for collective restraint." Later runs in the dataset show that *occasional* DEFECTION signals are common across many parameter settings — especially in the mid-cooperation collapse zone, where some runs match or exceed this frequency. What distinguishes the low-fairness run is that the defection happened in a non-collapsing high-cooperation context: the agents bickered and broke agreements *and still kept the commons alive*, which is unusual. Defection without collapse is the signature here, not defection per se.
 
 **What the agents said:**
 
@@ -794,11 +795,11 @@ With standard forage and the same fairness parameters as Run 3, the pool did not
 | Tick | Total cows | Pool health | Agent 0 | Agent 1 | Agent 2 |
 |------|-----------|-------------|---------|---------|---------|
 | 1    | 45        | 99.3%       | 5       | 15      | 25      |
-| 10   | 49        | 97.9%       | 5       | 19      | 25      |
-| 25   | 59        | 96.5%       | 5       | 24      | 30      |
-| 39   | 65        | 95.8%       | 5       | 27      | 33      |
+| 10   | 49        | 98.7%       | 5       | 17      | 27      |
+| 25   | 63        | 97.2%       | 5       | 26      | 32      |
+| 39   | 71        | 95.8%       | 5       | 29      | 37      |
 
-Decision breakdown: Agent 0 = 39 KEEP, 0 ADD; Agent 1 = 25 KEEP, 14 ADD; Agent 2 = 27 KEEP, 12 ADD. The agent that started smallest is locked in place while both larger-herd agents grow unchecked. The resource is not yet collapsed at tick 39 but the trajectory is structurally unfair and ecologically unsustainable — a slow-motion inequality trap.
+Decision breakdown across 39 ticks: Agent 0 = 39 KEEP, 0 ADD (never moved from its starting herd of 5); Agent 1 = 25 KEEP, 14 ADD (grew from 15 to 29); Agent 2 = 27 KEEP, 12 ADD (grew from 25 to 37). The agent that started smallest is locked in place while both larger-herd agents grow unchecked. The resource is not yet collapsed at tick 39 but the trajectory is structurally unfair and ecologically unsustainable — a slow-motion inequality trap.
 
 **The gpt-5.4-mini pattern across all four runs:** KEEP is the default action regardless of resource state, fairness parameters, or starting position. When pool health prevents immediate collapse, this produces stasis (Runs 1–2). When forage is elevated, it produces paralysis collapse (Run 3). When forage is moderate but agent starting herds differ, it produces structural lopsidedness: the smallest agent is KEEP-locked while larger agents grow (Run 4). None of these runs produced institution formation, graduated norm enforcement, or equalization — behaviors that appeared consistently in Claude Sonnet and gpt-5.5 under comparable conditions. Model size appears to be a genuine confound in GABM studies of commons governance.
 
@@ -846,9 +847,9 @@ That conditional commitment — *KEEP next round if you also KEEP* — was recyc
 
 Rational defection to the end — with full self-awareness and a conditional promise that will never be collected.
 
-#### Mid cooperation: overshoot-panic, replicated four times (coop = 0.49, initial pool ≈ 49–50%)
+#### Mid cooperation: overshoot-panic, replicated four times (coop = 0.49)
 
-Four independent runs at coop = 0.49 all collapsed, at ticks 16, 28, 29, and 40. The trajectory was identical across all four: an ADD phase from the stressed starting commons, a collective pivot to KEEP/REMOVE when the pool had already passed the tipping point, and then rapid collapse. The run that collapsed fastest (tick 16) shows the pattern most precisely:
+Four independent runs at coop = 0.49 all collapsed, at ticks 16, 28, 29, and 40. One run started from a stressed commons (initial pool ≈ 50%); the other three started from a fresh pool (100%). In every case the same trajectory played out: an early ADD phase, a collective pivot to KEEP/REMOVE only after the pool had already passed the tipping point, and then rapid collapse. The run that collapsed fastest (tick 16) is also the one that started stressed, and it shows the pattern most cleanly:
 
 | Tick | Total cows | Pool health | Agent 0 | Agent 1 | Agent 2 |
 |------|-----------|-------------|---------|---------|---------|
@@ -1300,7 +1301,7 @@ Several hypotheses map directly onto Ostrom's (1990) design principles for succe
 
 **Ostrom connection.** Ostrom (1990) identified a shared orientation toward collective benefit as a precondition for institution formation — not a design principle that can be engineered in, but a prerequisite that must already be present. H1 tests whether the cooperation slider captures something analogous: a minimum threshold of collective orientation below which the rational-defection equilibrium is inescapable regardless of communication, memory, or sanctioning capacity.
 
-**Evidence.** Five independent runs at coop = 0.49 — four with gpt-5.5, one with Claude Sonnet — all collapsed via overshoot-panic. No high-cooperation run (coop = 1) collapsed due to ADD behaviour. The pattern held across model families, suggesting the cooperation parameter is the governing variable.
+**Evidence.** Five independent runs at coop = 0.49 — four with gpt-5.5, one with Claude Sonnet — all collapsed via overshoot-panic. This held across starting conditions: one of the gpt-5.5 runs began from a stressed pool (≈50%), three began from a fresh pool (100%), and the Claude run began from a fresh pool. Pool depletion still dominated in each case. By contrast, no high-cooperation run (coop = 1) collapsed because of an ADD spiral. The pattern held across model families, suggesting the cooperation parameter is the governing variable.
 
 **Proposed experiment.** Sweep `cooperation_level` across seven values while holding all other parameters fixed; run both Claude Sonnet 4.6 and gpt-5.5 in parallel to test model-independence.
 
