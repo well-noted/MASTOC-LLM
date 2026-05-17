@@ -29,10 +29,10 @@ The core research question:
   - [Summary table](#summary-across-conditions)
   - [Baseline: the tragedy unfolds](#baseline-the-tragedy-unfolds)
   - [Full-GABM: cooperative convergence](#full-gabm-cooperative-convergence)
-  - [Hybrid: one institutional entrepreneur](#hybrid-the-limits-of-a-single-institutional-entrepreneur)
+  - [Hybrid: the limits of a single institutional entrepreneur](#hybrid-the-limits-of-a-single-institutional-entrepreneur)
   - [Hybrid (2 LLM): coalition formation, delayed tragedy](#hybrid-2-llm-coalition-formation-delayed-tragedy)
   - [Hybrid (LLM-advantaged): herd position doesn't matter](#hybrid-llm-advantaged-herd-position-doesnt-change-structural-outcome)
-  - [Full-GABM (low fairness): slower, messier institution formation](#full-gabm-low-guilt--low-envy-fairness-parameters-shape-cooperation-quality)
+  - [Full-GABM (low guilt + low envy): fairness parameters shape cooperation quality](#full-gabm-low-guilt--low-envy-fairness-parameters-shape-cooperation-quality)
   - [Full-GABM (low cooperation): cooperation robust to personality framing](#full-gabm-low-cooperation-cooperation-is-robust-to-personality-framing)
   - [Scarce commons: rapid recovery across personality conditions](#scarce-commons-rapid-recovery-across-personality-conditions)
   - [Full-GABM (Llama 3.2 3B): cooperative surface, no institutional depth](#full-gabm-llama-32-3b-cooperative-surface-no-institutional-depth)
@@ -108,10 +108,10 @@ NetLogo  ←  action (−1 / 0 / +1)  +  outgoing message → neighbours
 
 Each tick, every LLM agent:
 1. Receives the current pool health, own herd size, neighbour herd sizes and last actions, and estimated payoffs for each possible action
-2. Reads its rolling 5-round memory
-3. Reads any messages sent by neighbours this round
+2. Reads its rolling memory of past rounds (configurable via `memory_length`, default 5; 0 = no memory)
+3. Reads any messages sent by neighbours this round (suppressed when `communication?` is off)
 4. Calls the LLM, which returns a structured JSON decision with reasoning and an optional 60-word message to send to neighbours
-5. Acts on the decision; the message is delivered to all neighbours before their next decision
+5. Acts on the decision; the message is delivered to all neighbours before their next decision (no-op when `communication?` is off)
 
 A secondary LLM pass runs every 5 ticks to classify agent messages for Ostrom institutional signals (norm proposals, sanctions, coordination, trust-building, defection).
 
@@ -147,7 +147,8 @@ The following parameters are set in the NetLogo interface before each run and lo
 | `initial_grassland` | V_0 | [0, 100] | Starting pool health as percentage of maximum vegetation patches |
 | `initial_grass_growth_rate` | r | (0, 1) | Logistic growth rate of the grassland (default: 0.001) |
 | `cow_forage_requirement` | f | ≥ 1 | Grass patches each cow consumes per tick (default: 2) |
-| `memory_length` | — | ≥ 1 | Number of past rounds included in each agent's rolling memory (default: 5) |
+| `memory_length` | — | ≥ 0 | Number of past rounds included in each agent's rolling memory (default: 5); 0 = amnesiac agents with no history |
+| `communication?` | — | on / off | When off, suppresses all inter-agent messaging — agents decide from resource state and memory alone, with no outgoing messages and incoming inboxes cleared |
 | `hybrid_fraction` | — | [0, 1] | Share of agents using LLM reasoning, rounded to the nearest whole agent |
 
 **State variables (updated each tick):**
@@ -1097,6 +1098,13 @@ The phrase "trending down" appears at the correction points — agents explicitl
 
 Across the full run set, four distinct trajectories to commons collapse have emerged. Each has a different proximal cause, a different signature in agent language, and different implications for experimental design.
 
+| Pattern | Mechanism | Signature | Key run(s) |
+|---------|-----------|-----------|------------|
+| **I — Cooperative Paralysis** | Agents coordinate on inaction via mutual reassurance; threshold for action calibrated too conservatively | All agents KEEP for many ticks while pool drains; near-identical conditional promises repeated round after round; REMOVE only at single-digit pool health | gpt-5.4-mini (coop=1, fair_oth=0.5), collapse tick 26; memory=1 variant (pool drained over 50 ticks while agents held the 90% norm) |
+| **II — Defection Cascade** | Low cooperative framing suppresses resistance to defection; each ADD justifies the next | All agents ADD every tick from tick 1; pool exhausted within 10–14 ticks; conditional cooperation language circulates but never executes | gpt-5.5 (coop=0.13), collapse tick 13 |
+| **III — Overshoot-Panic** | Mid-level cooperation produces agents too conflicted to defect but too hesitant to act preventively | ADD phase from stressed start; belated pivot to KEEP/REMOVE triggered by visible crisis; agreed threshold stated and violated simultaneously | gpt-5.5 and Claude Sonnet (coop=0.49), 6 independent replications, collapses ticks 16–40; memory=0 (collapse tick 31) |
+| **IV — Hybrid Architecture Failure** | LLM agents cooperate fully; rule-based agents add unchecked and are unreachable by social signals | LLM herd stable or shrinking; rule-based herds grow +1/tick; institution score moderate but not stabilising; LLM appeals escalate and continue after collapse | All hybrid conditions (1 LLM: tick 35; 2 LLM: tick 58; LLM-advantaged: tick 33) |
+
 ### Pattern I — Cooperative Paralysis
 
 **Mechanism.** Agents coordinate on inaction through mutual reassurance signaling. Each communicates cooperative intent and conditions willingness to reduce on a threshold ("if the commons keeps tightening") that is calibrated too conservatively. The pool drains steadily while all agents KEEP. By the time any agent switches to REMOVE, the resource is past the tipping point.
@@ -1486,7 +1494,7 @@ Design grid (each cell = 3 runs; ✓ = predicted stable, ✗ = predicted collaps
 
 ### Open questions
 
-Beyond the six hypotheses above, the following remain unresolved and are worth tracking as the dataset grows:
+Beyond the seven hypotheses above, the following remain unresolved and are worth tracking as the dataset grows:
 
 **Communication vs. reasoning.** Suppressing outgoing messages (zero-communication full-GABM) would test whether cooperation requires talking or merely thinking. Claude's cooperative convergence may be achievable through reasoning alone.
 
