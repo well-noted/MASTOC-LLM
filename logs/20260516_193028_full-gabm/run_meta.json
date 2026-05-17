@@ -1,22 +1,22 @@
 {
-  "run_id": "20260516_184343_full-gabm",
+  "run_id": "20260516_193028_full-gabm",
   "condition": "full-gabm",
   "agent_models": [
     {
-      "backend": "ollama",
+      "backend": "ollama-native",
       "model": "deepseek-r1:32b"
     },
     {
-      "backend": "ollama",
+      "backend": "ollama-native",
       "model": "deepseek-r1:32b"
     },
     {
-      "backend": "ollama",
+      "backend": "ollama-native",
       "model": "deepseek-r1:32b"
     }
   ],
   "memory_length": 5,
-  "started_at": "2026-05-16T18:43:51.291853",
+  "started_at": "2026-05-16T19:30:28.179487",
   "experiment_params": {
     "cooperation_level": 1,
     "fairness_concerning_me": 0,
@@ -31,6 +31,6 @@
     "initial_cows_agent0": 5,
     "initial_cows_agent1": 15,
     "initial_cows_agent2": 25,
-    "ollama_base_url": "http://100.122.63.83:11434/v1"
+    "ollama_base_url": "http://localhost:11435/v1"
   }
 }

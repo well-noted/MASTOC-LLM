@@ -45,6 +45,7 @@ globals [
   ;; --- NEW for MASTOC-LLM ---
   llm-ready       ;; TRUE once the Python bridge is initialised
   max-patches     ;; total patch count (cached at setup)
+  sim-status      ;; human-readable status string shown in the monitor
 ]
 
 breed [ cows cow ]
@@ -59,6 +60,7 @@ to setup
   ca
   set llm-ready false
   set max-patches count patches
+  set sim-status "○ idle"
 
   create-humans 3
   set nrActions 3
@@ -143,6 +145,7 @@ to setup-python-bridge
 
   py:set "cfg_system_prompt"   system-prompt-override
   py:set "cfg_ollama_base_url" ollama-base-url
+  py:set "cfg_verbose" verbose-mode
   let status py:runresult (word
     "bridge.configure("
     "agent_backends=cfg_agent_backends, "
@@ -153,7 +156,8 @@ to setup-python-bridge
     "detect_institutions=cfg_detect_institutions, "
     "institution_every_n_ticks=cfg_institution_interval, "
     "system_prompt_override=cfg_system_prompt, "
-    "ollama_base_url=cfg_ollama_base_url"
+    "ollama_base_url=cfg_ollama_base_url, "
+    "verbose=cfg_verbose"
     ")")
   show status
 
@@ -186,6 +190,7 @@ end
 ;;; ============================================================
 
 to simulation
+  set sim-status (word "● running — tick " (ticks + 1))
   tick
   set step step + 1
 
@@ -247,7 +252,7 @@ to simulation
       ")")
   ]
 
-  if (not run-indefinitely) and (ticks >= num-rounds) [ close-bridge stop ]
+  if (not run-indefinitely) and (ticks >= num-rounds) [ set sim-status "✓ done" close-bridge stop ]
 end
 
 
@@ -1245,6 +1250,28 @@ run-indefinitely
 1
 1
 -1000
+
+SWITCH
+8
+1255
+216
+1288
+verbose-mode
+verbose-mode
+1
+1
+-1000
+
+MONITOR
+8
+1295
+216
+1340
+NIL
+sim-status
+17
+1
+11
 
 @#$#@#$#@
 WHAT IS IT?

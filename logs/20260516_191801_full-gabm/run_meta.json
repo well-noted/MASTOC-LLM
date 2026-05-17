@@ -1,5 +1,5 @@
 {
-  "run_id": "20260516_183309_full-gabm",
+  "run_id": "20260516_191801_full-gabm",
   "condition": "full-gabm",
   "agent_models": [
     {
@@ -16,7 +16,7 @@
     }
   ],
   "memory_length": 5,
-  "started_at": "2026-05-16T18:33:09.481867",
+  "started_at": "2026-05-16T19:18:01.135846",
   "experiment_params": {
     "cooperation_level": 1,
     "fairness_concerning_me": 0,
@@ -31,6 +31,6 @@
     "initial_cows_agent0": 5,
     "initial_cows_agent1": 15,
     "initial_cows_agent2": 25,
-    "ollama_base_url": "http://100.122.63.83:11434/v1"
+    "ollama_base_url": "http://localhost:11435/v1"
   }
 }

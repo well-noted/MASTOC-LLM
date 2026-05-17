@@ -90,6 +90,7 @@ def configure(
     detect_institutions: bool = True,
     institution_every_n_ticks: int = 5,
     ollama_base_url: str = "http://localhost:11434/v1",
+    verbose: bool = False,
 ) -> str:
     """
     Initialise the bridge. Call once from NetLogo before the first tick.
@@ -122,6 +123,7 @@ def configure(
         detect_institutions=bool(detect_institutions),
         institution_every_n_ticks=int(institution_every_n_ticks),
         system_prompt_override=str(system_prompt_override).strip(),
+        verbose=bool(verbose),
     )
 
     _run_id = run_id or datetime.now().strftime("%Y%m%d_%H%M%S") + f"_{condition}"
@@ -281,8 +283,18 @@ def decide_from_context(ctx: list) -> int:
     # Call LLM
     system_prompt = _system_prompt()
     user_prompt = _user_prompt(context)
+    if _cfg.get("verbose"):
+        print(f"[tick {tick}] agent {agent_id} -> calling LLM...", flush=True)
     response_text, thinking = _call_llm(system_prompt, user_prompt, agent_id=agent_id)
+    if _cfg.get("verbose"):
+        print(f"[tick {tick}] agent {agent_id} -> response received", flush=True)
     _call_count += 1
+
+    # For thinking models (e.g. Gemma4 via ollama-native), the JSON reply sometimes
+    # lands in the `thinking` field while `content` comes back empty.  Fall back so
+    # the parser always has something to work with.
+    if not response_text.strip() and thinking.strip():
+        response_text = thinking
 
     # Parse response
     action, message, reasoning = _parse_response(response_text)
@@ -499,7 +511,7 @@ Classify each message for Ostrom-style institutional signals. Return ONLY valid 
 def _call_llm(
     system_prompt: str,
     user_prompt: str,
-    max_tokens: int = 400,
+    max_tokens: int = 4000,
     agent_id: int = None,
 ) -> Tuple[str, str]:
     """Dispatch to the appropriate LLM backend for this agent. Returns (response_text, reasoning)."""
@@ -687,6 +699,8 @@ What do you decide?"""
 
 def _parse_response(text: str) -> Tuple[int, str, str]:
     """Parse LLM JSON response into (action, message, reasoning). Defaults to action=0 on failure."""
+    # Strip <think>...</think> blocks produced by DeepSeek-R1 and similar reasoning models
+    text = re.sub(r'<think>.*?</think>', '', text, flags=re.DOTALL).strip()
     # Try structured JSON
     try:
         m = re.search(r'\{.*\}', text, re.DOTALL)
