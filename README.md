@@ -3,7 +3,7 @@
 **Multi-Agent System Tragedy of the Commons — with Large Language Model Agents**
 
 > 
-> Extending [MASTOC v1.1.0](https://www.comses.net/codebases/2283/releases/1.1.0/) (Bais et al., 2023)
+> Extending [MASTOC v1.1.0](https://www.comses.net/codebases/2283/releases/1.1.0/) (Schindler, 2013)
 
 ---
 
@@ -78,7 +78,7 @@ The core research question:
 
 The [Tragedy of the Commons](https://en.wikipedia.org/wiki/Tragedy_of_the_commons) (Hardin, 1968) predicts that rational self-interest leads to collective over-exploitation of shared resources. Ostrom (1990) challenged this, showing that real communities often self-organise governance institutions — rules, monitoring, graduated sanctions — without top-down intervention.
 
-MASTOC (Bais et al., 2023) is a NetLogo ABM that reproduces the tragedy under classical rational-agent assumptions. MASTOC-LLM asks: what happens when agents can reason, remember, and talk?
+MASTOC (Schindler, 2013) is a NetLogo ABM that reproduces the tragedy under classical rational-agent assumptions. MASTOC-LLM asks: what happens when agents can reason, remember, and talk?
 
 ### Ostrom's Design Principles — applicability to this model
 
@@ -136,7 +136,7 @@ A secondary LLM pass runs every 5 ticks to classify agent messages for Ostrom in
 | **CPR** | Common-Pool Resource — a resource that is *rivalrous* (one person's use reduces availability for others) but *non-excludable* (difficult to prevent access); Ostrom's unit of analysis |
 | **GABM** | Generative Agent-Based Model — an ABM in which agents are powered by generative AI (LLMs) rather than hand-coded rules; the approach developed in Jimenez-Romero et al. (2025) and extended here |
 | **LLM** | Large Language Model — a neural language model (e.g. Claude, GPT-5.5, Llama) used here to generate agent decisions, reasoning, and natural-language messages |
-| **MASTOC** | Multi-Agent System Tragedy of the Commons — the original NetLogo model (Bais et al., 2023) on which this project is based |
+| **MASTOC** | Multi-Agent System Tragedy of the Commons — the original NetLogo model (Schindler, 2013) on which this project is based |
 | **MASTOC-LLM** | This project — MASTOC extended with LLM-powered agents |
 | **Post-training** | The full set of techniques applied *after* pre-training (next-token prediction on raw text) to make a model useful, safe, and aligned with human intent. Typically begins with **SFT** (Supervised Fine-Tuning on curated instruction/dialogue examples), followed by one or more alignment techniques such as RLHF, Constitutional AI, DPO, or GRPO (see entries below). The specific post-training objective — what behaviors are rewarded and how — shapes the model's emergent capabilities in ways that may extend well beyond the intended task. Our results suggest post-training objective may be a meaningful predictor of commons-governance capacity in GABM settings, though this hypothesis is untested. |
 | **RLHF** | Reinforcement Learning from Human Feedback — the dominant post-training alignment technique ([Christiano et al., 2017](https://arxiv.org/abs/1706.03741)). Human evaluators compare pairs of model outputs; their preferences train a reward model, which guides further policy optimisation. Because the reward signal reflects what humans prefer — helpfulness, social nuance, cooperative framing — it may incidentally shape social-coordination capacities that extend beyond the intended training objective. Anthropic's variant, **Constitutional AI**, adds a self-critique loop against a written set of principles ([Bai et al., 2022](https://arxiv.org/abs/2212.08073)). Citations for specific model training approaches appear in the relevant results sections. |
@@ -1676,8 +1676,7 @@ Beyond the seven hypotheses above, the following remain unresolved and are worth
 Bai, Y. et al. (2022). Constitutional AI: Harmlessness from AI feedback. Anthropic.
 https://arxiv.org/abs/2212.08073
 
-Bais, A. et al. (2023). MASTOC v1.1.0. CoMSES Computational Model Library.
-https://www.comses.net/codebases/2283/releases/1.1.0/
+Julia Schindler (2013, April 27). “MASTOC - A Multi-Agent System of the Tragedy Of The Commons” (Version 1.1.0). CoMSES Computational Model Library. Retrieved from: https://www.comses.net/codebases/2283/releases/1.1.0/
 
 Christiano, P. et al. (2017). Deep reinforcement learning from human preferences. NeurIPS.
 https://arxiv.org/abs/1706.03741
