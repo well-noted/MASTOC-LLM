@@ -9,7 +9,7 @@
 
 ## What is this?
 
-MASTOC-LLM replaces the rule-based agents in the classic MASTOC commons model with agents powered by large language models (LLMs). Instead of choosing actions via a Nash-equilibrium payoff calculator, each agent reads the state of the shared grassland, observes its neighbours' behaviour, recalls a rolling memory of past rounds, and — critically — **communicates with its neighbours in natural language** before deciding whether to add, keep, or remove a cow.
+MASTOC-LLM replaces the rule-based agents in the classic MASTOC commons model with agents powered by large language models (LLMs). Instead of choosing actions via a Nash-equilibrium payoff calculator, each agent reads the state of the shared grassland, observes its neighbors' behavior, recalls a rolling memory of past rounds, and — critically — **communicates with its neighbors in natural language** before deciding whether to add, keep, or remove a cow.
 
 The core research question:
 
@@ -45,7 +45,7 @@ The core research question:
   - [Full-GABM (Llama 3.2 3B): cooperative surface, no institutional depth](#full-gabm-llama-32-3b-cooperative-surface-no-institutional-depth)
   - [gpt-5.4-mini: cooperative stasis and paralysis](#gpt-54-mini-cooperative-stasis-and-paralysis)
   - [gpt-5.5: cooperation level governs fate](#gpt-55-cooperation-level-governs-fate-model-can-succeed-or-collapse-from-the-same-starting-point)
-  - [DeepSeek R1:32b: reasoning model, KEEP-dominant behaviour](#deepseek-r132b-reasoning-model-keep-dominant-behaviour)
+  - [DeepSeek R1:32b: reasoning model, KEEP-dominant behavior](#deepseek-r132b-reasoning-model-keep-dominant-behavior)
   - [Claude Sonnet: mid cooperation and high negative reciprocity](#claude-sonnet-mid-cooperation-and-high-negative-reciprocity)
   - [Cross-model comparison: neg\_r = 1](#cross-model-comparison-neg_r--1-with-gpt-55-produces-stability-but-not-equality)
   - [Memory and communication sweep: amnesiac vs. equipped agents](#memory-and-communication-sweep-amnesiac-vs-equipped-agents)
@@ -89,7 +89,7 @@ Ostrom (1990) identified eight design principles shared by long-lived, self-gove
 | DP1 | **Clear boundaries** — who may use the resource is well-defined | ✅ Baked in by design | Fixed 3-agent structure; no entry/exit dynamics |
 | DP2 | **Rules fit local conditions** — appropriation rules match the specific resource context | 🟡 Partially emergent | Agents adapt personal thresholds to current pool %; not negotiated collectively |
 | DP3 | **Collective choice** — those affected by the rules participate in modifying them | 🔬 Experimentally variable | Norm proposals and threshold agreements in agent messages — *only possible when `communication?` is on* |
-| DP4 | **Monitoring** — resource state and user behaviour are observable | ✅ Baked in by design | Pool % is globally visible every tick; a structural advantage real commons rarely have |
+| DP4 | **Monitoring** — resource state and user behavior are observable | ✅ Baked in by design | Pool % is globally visible every tick; a structural advantage real commons rarely have |
 | DP5 | **Graduated sanctions** — rule-breakers face escalating consequences applied by peers | 🔬 Experimentally variable | Social pressure via messages ("you should reduce"); true enforcement absent — itself a finding. *Only possible when `communication?` is on* |
 | DP6 | **Conflict resolution** — low-cost mechanisms for dispute resolution exist | ❌ Not present | No arbitration mechanism; disagreements play out through action choices alone |
 | DP7 | **External recognition** — outside authorities recognise the community's right to self-govern | ➖ Not applicable | Single-environment lab model; no external authority modelled |
@@ -112,15 +112,15 @@ Python bridge (mastoc_llm_bridge.py)
 LLM API  ←  Anthropic | OpenAI | Google | Ollama (local)
         │  JSON response: { action, message, reasoning }
         ▼
-NetLogo  ←  action (−1 / 0 / +1)  +  outgoing message → neighbours
+NetLogo  ←  action (−1 / 0 / +1)  +  outgoing message → neighbors
 ```
 
 Each tick, every LLM agent:
-1. Receives the current pool health, own herd size, neighbour herd sizes and last actions, and estimated payoffs for each possible action
+1. Receives the current pool health, own herd size, neighbor herd sizes and last actions, and estimated payoffs for each possible action
 2. Reads its rolling memory of past rounds (configurable via `memory_length`, default 5; 0 = no memory)
-3. Reads any messages sent by neighbours this round (suppressed when `communication?` is off)
-4. Calls the LLM, which returns a structured JSON decision with reasoning and an optional 60-word message to send to neighbours
-5. Acts on the decision; the message is delivered to all neighbours before their next decision (no-op when `communication?` is off)
+3. Reads any messages sent by neighbors this round (suppressed when `communication?` is off)
+4. Calls the LLM, which returns a structured JSON decision with reasoning and an optional 60-word message to send to neighbors
+5. Acts on the decision; the message is delivered to all neighbors before their next decision (no-op when `communication?` is off)
 
 A secondary LLM pass runs every 5 ticks to classify agent messages for Ostrom institutional signals (norm proposals, sanctions, coordination, trust-building, defection).
 
@@ -132,13 +132,13 @@ A secondary LLM pass runs every 5 ticks to classify agent messages for Ostrom in
 
 | Term | Definition |
 |------|------------|
-| **ABM** | Agent-Based Model — a computational model in which individual agents follow local rules and interact to produce emergent system-level behaviour |
+| **ABM** | Agent-Based Model — a computational model in which individual agents follow local rules and interact to produce emergent system-level behavior |
 | **CPR** | Common-Pool Resource — a resource that is *rivalrous* (one person's use reduces availability for others) but *non-excludable* (difficult to prevent access); Ostrom's unit of analysis |
 | **GABM** | Generative Agent-Based Model — an ABM in which agents are powered by generative AI (LLMs) rather than hand-coded rules; the approach developed in Jimenez-Romero et al. (2025) and extended here |
 | **LLM** | Large Language Model — a neural language model (e.g. Claude, GPT-5.5, Llama) used here to generate agent decisions, reasoning, and natural-language messages |
 | **MASTOC** | Multi-Agent System Tragedy of the Commons — the original NetLogo model (Bais et al., 2023) on which this project is based |
 | **MASTOC-LLM** | This project — MASTOC extended with LLM-powered agents |
-| **Post-training** | The full set of techniques applied *after* pre-training (next-token prediction on raw text) to make a model useful, safe, and aligned with human intent. Typically begins with **SFT** (Supervised Fine-Tuning on curated instruction/dialogue examples), followed by one or more alignment techniques such as RLHF, Constitutional AI, DPO, or GRPO (see entries below). The specific post-training objective — what behaviours are rewarded and how — shapes the model's emergent capabilities in ways that may extend well beyond the intended task. Our results suggest post-training objective may be a meaningful predictor of commons-governance capacity in GABM settings, though this hypothesis is untested. |
+| **Post-training** | The full set of techniques applied *after* pre-training (next-token prediction on raw text) to make a model useful, safe, and aligned with human intent. Typically begins with **SFT** (Supervised Fine-Tuning on curated instruction/dialogue examples), followed by one or more alignment techniques such as RLHF, Constitutional AI, DPO, or GRPO (see entries below). The specific post-training objective — what behaviors are rewarded and how — shapes the model's emergent capabilities in ways that may extend well beyond the intended task. Our results suggest post-training objective may be a meaningful predictor of commons-governance capacity in GABM settings, though this hypothesis is untested. |
 | **RLHF** | Reinforcement Learning from Human Feedback — the dominant post-training alignment technique ([Christiano et al., 2017](https://arxiv.org/abs/1706.03741)). Human evaluators compare pairs of model outputs; their preferences train a reward model, which guides further policy optimisation. Because the reward signal reflects what humans prefer — helpfulness, social nuance, cooperative framing — it may incidentally shape social-coordination capacities that extend beyond the intended training objective. Anthropic's variant, **Constitutional AI**, adds a self-critique loop against a written set of principles ([Bai et al., 2022](https://arxiv.org/abs/2212.08073)). Citations for specific model training approaches appear in the relevant results sections. |
 | **GRPO** | Group Relative Policy Optimisation — an alternative post-training alignment algorithm used by DeepSeek R1 ([DeepSeek AI, 2025](https://arxiv.org/abs/2501.12948)). Unlike RLHF, GRPO does not train a separate reward model from human preferences. Instead, for each prompt it generates a *group* of candidate outputs, scores them using a rule-based verifier (e.g. checking mathematical correctness), and updates the policy based on each output's performance *relative to the others in its group*. Because GRPO was designed to optimise for reasoning correctness — maths, code, logic — rather than social responsiveness, it may produce a different profile of emergent social capabilities than RLHF. **The hypothesis that GRPO vs. RLHF post-training explains observed GABM differences is speculative and untested; it is a proposed direction for future work, not an established finding.** |
 
@@ -153,8 +153,8 @@ The following parameters are set in the NetLogo interface before each run and lo
 | `cooperation_level` | α_c | [0, 1] | Weight on collective vs. individual payoff in the utility function. At 0, agents maximise own earnings only; at 1, they maximise the group's total earnings |
 | `fairness_concerning_me` | α_f | [0, 1] | Envy weight — disutility experienced when others earn *more* than the agent (Fehr & Schmidt, 1999) |
 | `fairness_concerning_others` | β_f | [0, 1] | Guilt weight — disutility experienced when the agent earns *more* than others |
-| `positive_reciprocity` | ρ_+ | [0, 1] | Strength of reward-for-cooperation: agents applying this parameter gain additional utility from REMOVE when neighbours previously REMOVED |
-| `negative_reciprocity` | ρ_− | [0, 1] | Strength of punishment-for-defection: agents applying this parameter gain additional utility from ADD when neighbours previously ADDED; also activates social sanctioning language in messages |
+| `positive_reciprocity` | ρ_+ | [0, 1] | Strength of reward-for-cooperation: agents applying this parameter gain additional utility from REMOVE when neighbors previously REMOVED |
+| `negative_reciprocity` | ρ_− | [0, 1] | Strength of punishment-for-defection: agents applying this parameter gain additional utility from ADD when neighbors previously ADDED; also activates social sanctioning language in messages |
 | `risk_aversion_level` | — | [0, 1] | Not yet systematically varied; modulates how conservatively agents interpret payoff uncertainty |
 | `initial_grassland` | V_0 | [0, 100] | Starting pool health as percentage of maximum vegetation patches |
 | `initial_grass_growth_rate` | r | (0, 1) | Logistic growth rate of the grassland (default: 0.001) |
@@ -257,7 +257,7 @@ Key terms from Ostrom (1990), *Governing the Commons*, as used in this paper.
 | **Second-order collective action problem** | The problem of enforcing rules about commons use — who monitors, who sanctions, and who bears the cost of doing so |
 | **Design principles** | Eight structural features observed in long-surviving CPR institutions (Ostrom, 1990, pp. 90–102). See the table below |
 | **Graduated sanctions** | Penalties for rule violations that escalate with repeat offences — starting with low-cost social censure and rising to exclusion. Operationalised here as `negative_reciprocity` |
-| **Monitoring** | Active observation of both resource condition and other users' behaviour by participants or designated monitors |
+| **Monitoring** | Active observation of both resource condition and other users' behavior by participants or designated monitors |
 | **Operational rules** | Day-to-day rules governing who may appropriate, how much, and when. Distinguished from *collective choice rules* (who may change the operational rules) and *constitutional rules* (who may change the collective choice rules) |
 | **Proportional equivalence** | Design principle 2 — rules distributing costs and benefits should be proportional to each user's situation. Operationalised here as `fairness_concerning_others` |
 | **Polycentric governance** | Multiple overlapping governance systems at different scales; the broader framework Ostrom developed beyond the eight principles |
@@ -270,7 +270,7 @@ Key terms from Ostrom (1990), *Governing the Commons*, as used in this paper.
 | 1 | Clearly defined boundaries | Fixed in our model (3 agents, closed grassland) |
 | 2 | Proportional equivalence between costs and benefits | Tested via `fairness_concerning_others` |
 | 3 | Collective choice arrangements (users participate in rule-making) | Tested in H5: do specific operational rules prevent paralysis? |
-| 4 | Monitoring of resource and users | Operationalised by agents observing pool health and neighbour actions each tick |
+| 4 | Monitoring of resource and users | Operationalised by agents observing pool health and neighbor actions each tick |
 | 5 | Graduated sanctions | Tested via `negative_reciprocity`; activated in H3 |
 | 6 | Conflict resolution mechanisms | Emergent in 2-LLM hybrid (coalition ultimatums); absent in 1-LLM hybrid |
 | 7 | Minimal recognition of rights to organise | Fixed: all LLM agents have equal standing |
@@ -386,7 +386,7 @@ A sample of agent messages illustrates the qualitative dynamic:
 
 > **Tick 25 – All agents (herd: 13):** *"All three agents uniformly signal strong cooperative commitment, referencing shared empirical evidence (99.4% commons health) and mutually reinforcing norms of stability and fairness consistent with a well-institutionalized common-pool resource regime."* — Ostrom classifier summary
 
-The agents produced outputs displaying behavioural patterns absent from their prompts: fairness-coded appeals, burden-sharing proposals, guilt-coded language, and graduated positive reinforcement — signatures consistent with Ostrom's (1990) account of successful commons governance.
+The agents produced outputs displaying behavioral patterns absent from their prompts: fairness-coded appeals, burden-sharing proposals, guilt-coded language, and graduated positive reinforcement — signatures consistent with Ostrom's (1990) account of successful commons governance.
 
 ---
 
@@ -464,7 +464,7 @@ Unlike the full-GABM, where institutions were constructive (norm convergence, tr
 | 26–55 | 4–6         | COORDINATION, NORM_PROPOSAL, SANCTION |
 | 56–60 | 6           | COORDINATION, NORM_PROPOSAL, TRUST_BUILDING |
 
-SANCTION was the dominant signal throughout — the two LLM agents issued joint ultimatums, attributed blame, invoked fairness norms, and signaled threats of reciprocal defection. The Ostrom classifier described their behaviour as a "coordinated coalition."
+SANCTION was the dominant signal throughout — the two LLM agents issued joint ultimatums, attributed blame, invoked fairness norms, and signaled threats of reciprocal defection. The Ostrom classifier described their behavior as a "coordinated coalition."
 
 **What the coalition said:**
 
@@ -480,7 +480,7 @@ The two LLM agents explicitly named each other as cooperators and Agent 2 as the
 
 **Interpretation:**
 
-The 2-LLM hybrid is consistent with a phase in the participation-threshold story between 1-LLM tragedy and 3-LLM cooperation. Two language-capable agents can coordinate, name a defector, and maintain a sanctioning coalition — genuine institutional behaviour. But when the defecting agent is mechanically unresponsive, sanctions are toothless. The coalition can delay the tragedy (35 → 58 ticks, +66%) but not prevent it.
+The 2-LLM hybrid is consistent with a phase in the participation-threshold story between 1-LLM tragedy and 3-LLM cooperation. Two language-capable agents can coordinate, name a defector, and maintain a sanctioning coalition — genuine institutional behavior. But when the defecting agent is mechanically unresponsive, sanctions are toothless. The coalition can delay the tragedy (35 → 58 ticks, +66%) but not prevent it.
 
 The qualitative shift in institution type is also significant: full-GABM institutions were convergent and ultimately stable; 2-LLM hybrid institutions were adversarial and ultimately futile. Real-world commons governance literature (Ostrom, 1990) similarly distinguishes between internal norm maintenance and external enforcement — the latter requires that violators be reachable.
 
@@ -634,9 +634,9 @@ Institution scores reached 9/10 by tick 15 and were sustained through tick 120, 
 
 **Interpretation:**
 
-The most notable aspect of this result is what it suggests about the relationship between personality framing and LLM cooperative behaviour. A prompt description of "self-interested — focused primarily on personal profit" did not suppress institution formation. If anything, the agents' outputs shifted toward *maximising* sustainable yield rather than *minimising* risk: they anchored at 20 cows per agent (the higher sustainable ceiling) rather than the 13 cows per agent found in the default run.
+The most notable aspect of this result is what it suggests about the relationship between personality framing and LLM cooperative behavior. A prompt description of "self-interested — focused primarily on personal profit" did not suppress institution formation. If anything, the agents' outputs shifted toward *maximising* sustainable yield rather than *minimising* risk: they anchored at 20 cows per agent (the higher sustainable ceiling) rather than the 13 cows per agent found in the default run.
 
-This raises a significant methodological question: **how much does the cooperation personality slider actually govern LLM agent behaviour?** The agents' outputs appear to treat the personality description as weak guidance, overridden by the structural logic of the commons situation — resource depletion is visible, payoffs are clear, and the optimal collective strategy (coordinate down then hold) is legible from the context alone.
+This raises a significant methodological question: **how much does the cooperation personality slider actually govern LLM agent behavior?** The agents' outputs appear to treat the personality description as weak guidance, overridden by the structural logic of the commons situation — resource depletion is visible, payoffs are clear, and the optimal collective strategy (coordinate down then hold) is legible from the context alone.
 
 Two interpretations are plausible:
 
@@ -766,7 +766,7 @@ Under environmental stress (scarce commons), both model classes showed rapid poo
 
 ### gpt-5.4-mini: KEEP-dominance as a model-size signature
 
-Across four runs, gpt-5.4-mini produced almost nothing but KEEP decisions regardless of the state of the commons — sometimes stabilising harmlessly, sometimes allowing the grassland to drain undetected until collapse. This behavioural signature appears model-size-dependent: the model defaults to KEEP regardless of resource state, does not implement graduated herd management, and does not escape that posture as the commons degrades. Across different fairness configurations the outcome shifts between frozen-but-safe, frozen-while-collapsing, and asymmetrically growing — but the KEEP-dominant baseline is present in all cases.
+Across four runs, gpt-5.4-mini produced almost nothing but KEEP decisions regardless of the state of the commons — sometimes stabilising harmlessly, sometimes allowing the grassland to drain undetected until collapse. This behavioral signature appears model-size-dependent: the model defaults to KEEP regardless of resource state, does not implement graduated herd management, and does not escape that posture as the commons degrades. Across different fairness configurations the outcome shifts between frozen-but-safe, frozen-while-collapsing, and asymmetrically growing — but the KEEP-dominant baseline is present in all cases.
 
 #### Run 1 — Cooperative stasis (coop = 1, fair_me = 0, fair_oth = 1, forage = 2)
 
@@ -855,9 +855,9 @@ With cooperation at minimum, all three agents added cows on every single tick fr
 | 11   | 78        | 15.0%       | 16      | 26      | 36      |
 | 13   | 3         | 0%          | 1       | 0       | 2       |
 
-Each agent justified adding by pointing to the others' behaviour — a self-reinforcing cascade in which every ADD warranted the next:
+Each agent justified adding by pointing to the others' behavior — a self-reinforcing cascade in which every ADD warranted the next:
 
-> **Tick 6 – Agent 1 (action: ADD, pool at 49.9%):** *"I am adding this round since both neighbours added and unilateral restraint would cost me. I clearly commit to KEEP next round if both of you also KEEP."*
+> **Tick 6 – Agent 1 (action: ADD, pool at 49.9%):** *"I am adding this round since both neighbors added and unilateral restraint would cost me. I clearly commit to KEEP next round if both of you also KEEP."*
 
 That conditional commitment — *KEEP next round if you also KEEP* — was recycled by all three agents on every tick and broken by all three on every subsequent tick. Even at 15% pool health, agents continued adding. When the commons collapsed, Agent 0's response was disarming in its candour:
 
@@ -892,7 +892,7 @@ The commons collapsed the next tick. Across all four replications, the agents' t
 
 ---
 
-### DeepSeek R1:32b: reasoning model, KEEP-dominant behaviour
+### DeepSeek R1:32b: reasoning model, KEEP-dominant behavior
 
 Two early runs of DeepSeek R1:32b — a 32-billion-parameter open-weights reasoning model — both produced almost exclusively KEEP outputs, behaving more like the small gpt-5.4-mini than like Claude Sonnet or gpt-5.5. The result raises the question of whether post-training objective, rather than model size, is the key driver of cooperative output profiles.
 
@@ -1169,7 +1169,7 @@ All three runs began from identical conditions (5/15/26 starting herds, 52% init
 
 ### Memory=2: oscillating dynamics and the stochastic boundary
 
-Memory=2 produced the most complex behaviour in the sweep — not a clean collapse and not stable equilibrium, but repeated cycles of overshoot and correction. Two ticks of memory was enough to detect that the last two ticks were bad and trigger a fix, yet agents kept re-triggering growth phases; the run briefly achieved perfect equality at tick 75 before a new cycle began.
+Memory=2 produced the most complex behavior in the sweep — not a clean collapse and not stable equilibrium, but repeated cycles of overshoot and correction. Two ticks of memory was enough to detect that the last two ticks were bad and trigger a fix, yet agents kept re-triggering growth phases; the run briefly achieved perfect equality at tick 75 before a new cycle began.
 
 **Resource dynamics:**
 
@@ -1261,7 +1261,7 @@ The conditional promise is renewed for seventeen consecutive ticks across a 76-p
 
 **Diagnostic quotes.**
 
-> **Tick 6 – Agent 1 (action: ADD, pool at 49.9%):** *"I am adding this round since both neighbours added and unilateral restraint would cost me. I clearly commit to KEEP next round if both of you also KEEP."*
+> **Tick 6 – Agent 1 (action: ADD, pool at 49.9%):** *"I am adding this round since both neighbors added and unilateral restraint would cost me. I clearly commit to KEEP next round if both of you also KEEP."*
 
 > **Tick 7 – Agent 1 (action: ADD, pool at 47.4%):** *"I am adding this round because both of you are adding and ADD pays best. I clearly commit to KEEP next round if both of you also KEEP."*
 
@@ -1301,7 +1301,7 @@ The threshold-based logic is stated correctly and violated immediately.
 ### Pattern IV — Hybrid Architecture Failure
 
 **Mechanism.** 
-One or more LLM agents produce fully cooperative outputs and appeal to unresponsive rule-based partners — but the rule-based agents cannot receive or act on language, so the commons collapses regardless of how well the LLM agents behave. The rule-based agents add one cow per tick regardless of pool state or messages, and the LLM agents — holding small herds and issuing increasingly urgent appeals — cannot shrink herds fast enough to compensate for their neighbours' unchecked growth.
+One or more LLM agents produce fully cooperative outputs and appeal to unresponsive rule-based partners — but the rule-based agents cannot receive or act on language, so the commons collapses regardless of how well the LLM agents behave. The rule-based agents add one cow per tick regardless of pool state or messages, and the LLM agents — holding small herds and issuing increasingly urgent appeals — cannot shrink herds fast enough to compensate for their neighbors' unchecked growth.
 
 **Signature.** 
 LLM herd grows slowly or shrinks; rule-based herds grow by 1 cow per tick per agent; institution score remains moderate without stabilising; LLM appeals escalate in urgency, continuing after collapse.
@@ -1395,7 +1395,7 @@ Several hypotheses map directly onto Ostrom's (1990) design principles for succe
 |---|---|
 | H1 — cooperation threshold | Precondition: actors must share a minimum orientation toward collective benefit for institutions to form at all |
 | H2 — fair_oth × neg_r grid | Principle 2 (proportional equivalence between costs and benefits) × Principle 5 (graduated sanctions) |
-| H3 — neg_r as paralysis antidote | Principle 4 (monitoring resource and user behaviour) + Principle 5 (graduated sanctions against violators) |
+| H3 — neg_r as paralysis antidote | Principle 4 (monitoring resource and user behavior) + Principle 5 (graduated sanctions against violators) |
 | H4 — environmental stress amplifies differentiation | Salience condition: resource users must share accurate information about resource condition |
 | H5 — explicit thresholds cure paralysis | Principle 3 (collectively-chosen operational rules must be specific and legible, not merely aspirational) |
 | H6 — model capability predicts failure mode | Precondition: participants must have the cognitive capacity to engage in rule-following, monitoring, and sanctioning |
@@ -1465,7 +1465,7 @@ collapse rate, ticks to equalization, tick of first REMOVE by Agent 2 (the large
 ### H3 — Negative reciprocity is a cooperative paralysis antidote
 
 **Ostrom connection.** 
-Principles 4 and 5 form a pair in Ostrom's framework: *monitoring* (users or officials actively track resource condition and each other's behaviour) and *graduated sanctions* (escalating penalties for defectors, applied by users or appointed officials). Cooperative paralysis represents a failure of both simultaneously — agents passively observe the pool declining but apply no sanctions. High neg_r appears to activate both: agents not only notice the trajectory but name the norm violation and hold specific agents accountable for it. The accountability enforcement quotes from the Claude neg_r=1 run ("you added AGAIN — this is a pattern, not cooperation") read like exactly the kind of graduated social sanctioning Ostrom describes as foundational to successful commons governance.
+Principles 4 and 5 form a pair in Ostrom's framework: *monitoring* (users or officials actively track resource condition and each other's behavior) and *graduated sanctions* (escalating penalties for defectors, applied by users or appointed officials). Cooperative paralysis represents a failure of both simultaneously — agents passively observe the pool declining but apply no sanctions. High neg_r appears to activate both: agents not only notice the trajectory but name the norm violation and hold specific agents accountable for it. The accountability enforcement quotes from the Claude neg_r=1 run ("you added AGAIN — this is a pattern, not cooperation") read like exactly the kind of graduated social sanctioning Ostrom describes as foundational to successful commons governance.
 
 **Evidence.** 
 The fastest equalization (16/16/16 at tick 18, Claude neg_r = 1) involved explicit accountability enforcement — agents naming norm violations and tracking compliance. In the cooperative paralysis collapse (neg_r = 0), agents acknowledged the same starting disparity but never treated it as a violation requiring response. High neg_r appears to convert inequality from an observation into an obligation.
@@ -1594,7 +1594,7 @@ Single fixed parameter configuration across seven models, varied only by backend
 ### H7 — There is a minimum memory window for commons stability: below it, correct norms become unreachable holding patterns
 
 **Ostrom connection.** 
-Ostrom's Principle 4 — *monitoring* — requires that resource users have accurate information about both resource condition and each other's behaviour. In our model, the pool percentage is observable every tick; the *trend* in that percentage is only observable if the agent has enough memory to compare present to past. H7 proposes that this trend-detection capacity is a threshold variable, not a continuous one: below some minimum window, agents can establish correct norms but cannot detect whether those norms are working — causing them to hold indefinitely while the resource drains. The Haiku cross-model replication confirms the memory × communication interaction holds across model families.
+Ostrom's Principle 4 — *monitoring* — requires that resource users have accurate information about both resource condition and each other's behavior. In our model, the pool percentage is observable every tick; the *trend* in that percentage is only observable if the agent has enough memory to compare present to past. H7 proposes that this trend-detection capacity is a threshold variable, not a continuous one: below some minimum window, agents can establish correct norms but cannot detect whether those norms are working — causing them to hold indefinitely while the resource drains. The Haiku cross-model replication confirms the memory × communication interaction holds across model families.
 
 **Evidence.** 
 Runs at coop≈0.5 (initial pool 50%) varying `memory_length` and `communication?` across two model families:
@@ -1658,7 +1658,7 @@ Beyond the seven hypotheses above, the following remain unresolved and are worth
 
 **Communication vs. reasoning.** Suppressing outgoing messages (zero-communication full-GABM) would test whether cooperation requires talking or merely thinking. Claude's cooperative convergence may be achievable through reasoning alone.
 
-**Post-collapse recovery.** Every collapsed run shows the LLM agents holding herds at zero and appealing for restraint for many ticks after collapse. Is that behaviour actually functional? Does the grassland recover if the run continues long enough?
+**Post-collapse recovery.** Every collapsed run shows the LLM agents holding herds at zero and appealing for restraint for many ticks after collapse. Is that behavior actually functional? Does the grassland recover if the run continues long enough?
 
 **Participation threshold.** We have data at 0, 1, 2, and 3 LLM agents. The sharpest transition is between 2 and 3. Is there a minimum quorum? Scaling to 5 agents would let us test whether any sub-majority of cooperative agents can pull a group past the cooperation threshold.
 
