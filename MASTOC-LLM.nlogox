@@ -121,8 +121,8 @@ to setup
     set list-of-calc-agent-payoffs []
   ]
 
-  ;; Initialise Python bridge (only needed for non-baseline conditions)
-  if condition != "baseline" [ setup-python-bridge ]
+  ;; Initialise Python bridge for all conditions — baseline runs use it for logging only
+  setup-python-bridge
 
   reset-ticks
   generate-payoffs
@@ -248,7 +248,7 @@ to simulation
   export-data
 
   ;; ── End-of-round logging via bridge ──────────────────────────────────────
-  if condition != "baseline" and llm-ready [
+  if llm-ready [
     let _status py:runresult (word
       "bridge.end_round("
       ticks ", "
@@ -387,7 +387,7 @@ end
 ;;; ============================================================
 
 to close-bridge
-  if condition != "baseline" and llm-ready [
+  if llm-ready [
     let _msg py:runresult "bridge.close()"
     show _msg
   ]

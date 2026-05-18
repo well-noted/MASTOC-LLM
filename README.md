@@ -46,6 +46,7 @@ The core research question:
   - [gpt-5.4-mini: cooperative stasis and paralysis](#gpt-54-mini-cooperative-stasis-and-paralysis)
   - [gpt-5.5: cooperation level governs fate](#gpt-55-cooperation-level-governs-fate-model-can-succeed-or-collapse-from-the-same-starting-point)
   - [DeepSeek R1:32b: reasoning model, KEEP-dominant behavior](#deepseek-r132b-reasoning-model-keep-dominant-behavior)
+  - [gemma4:e4b: KEEP-dominant stasis, then overshoot-panic at mid cooperation](#gemma4e4b-keep-dominant-stasis-then-overshoot-panic-at-mid-cooperation)
   - [Claude Sonnet: mid cooperation and high negative reciprocity](#claude-sonnet-mid-cooperation-and-high-negative-reciprocity)
   - [Cross-model comparison: neg\_r = 1](#cross-model-comparison-neg_r--1-with-gpt-55-produces-stability-but-not-equality)
   - [Memory and communication sweep: amnesiac vs. equipped agents](#memory-and-communication-sweep-amnesiac-vs-equipped-agents)
@@ -329,12 +330,46 @@ A meaningful fraction of full-GABM runs in this dataset end in collapse, with th
 | **Full-GABM (memory=15, comm off)** | Claude Haiku 4.5 | 3 | Yes | 46 | coop≈0.5, memory_length=15, comm=off, initial=52%: rapid collapse — herds grew unchecked to 88 total by tick 45, pool 14.7%→0%; ADD=55, KEEP=72, REMOVE=17; memory alone insufficient without communication |
 | **Full-GABM (DeepSeek stasis, neg_r=0)** | DeepSeek R1:32b | 3 | No (stalling) | — | coop=1, neg_r=0, memory=5, comm=on: near-universal KEEP in 7 ticks before run interrupted; herds 5/15/26→6/15/26; pool 99%; cooperative messaging but no equalization |
 | **Full-GABM (DeepSeek slow drift, neg_r=1)** | DeepSeek R1:32b | 3 | No (stalling) | — | coop=1, neg_r=1, memory=5, comm=on: 46 ticks; KEEP-dominant (ADD=13, KEEP=151, REMOVE=1); herds crept 5/15/25→6/19/30; pool 98.2%; no equalization, no institution formation — matches gpt-5.4-mini stasis pattern |
+| **Full-GABM (DeepSeek 55-tick confirmation)** | DeepSeek R1:32b | 3 | No (stalling) | — | coop=1, comm=off: 55 ticks; ADD=13, KEEP=151, REMOVE=1; herds barely drifted 5/15/25→6/20/31; pool 97.9%; KEEP-dominance confirmed as robust across extended runs with no communication |
+| **Full-GABM (gemma4 KEEP-dominant)** | gemma4:e4b | 3 | No (stalling) | — | coop=1, grass=90%, comm=off: zero ADD or REMOVE across all 11 ticks; herds frozen at initial values [14,40,5]; pool 97.6%; most extreme stasis observed — not even the large initial inequality triggers equalization |
+| **Full-GABM (gemma4 overshoot-panic)** | gemma4:e4b | 3 | Yes | 46 | coop=0.5, grass=50%, comm=off: classic overshoot-panic — pool climbed 52%→95% through tick 20 then reversed as herds grew unchecked to [27,43,39]; collapse tick 46; Agent actions ADD=115, KEEP=133, REMOVE=43; matches coop=0.49 threshold seen in Sonnet and gpt-5.5 |
+| **Baseline (growth rate threshold sweep)** | — | 0 | Threshold | ~93 | grass=41%, forage=2: growth ≤ 0.0055 → always collapse (tick 84–97); growth ≥ 0.006 → always stable (pool 100%, herds 80–120 each). 15 replications at growth=0.0051 all collapse at exactly tick 94 — baseline is fully deterministic at risk_aversion=0 |
+| **Baseline (risk aversion delay)** | — | 0 | Yes | 24–39 | grass=51%, growth=0.001: risk=0 → collapse tick 24; risk=0.45 → tick 28; risk=1 → tick 39; risk aversion delays but cannot prevent collapse when growth is insufficient |
 
 ---
 
-### Baseline: the tragedy unfolds
+### Baseline: the tragedy unfolds — and what it takes to stop it
 
-With rule-based best-response agents — each following a simple profit-maximising heuristic with no language, memory, or social signalling — the commons collapsed in about 36 ticks, exactly as classical tragedy-of-the-commons theory predicts. Herds grew from a starting total of 45 cows, crossed 100 by tick ~25, and the grassland was fully depleted by tick 36. This reproduces the classical MASTOC result and confirms the control condition is working correctly before any LLM intervention.
+The baseline condition uses rule-based best-response agents: pure payoff maximisers with no language, memory, or social signalling. Each tick they choose whichever action (ADD / KEEP / REMOVE) yields the highest expected payoff given current grass levels — with a small stochastic noise term if `risk_aversion_level` > 0. No other personality slider has any effect on baseline decisions.
+
+**Important:** the sociopsychological parameters (cooperation level, fairness weights, reciprocity) do not influence baseline agent behaviour. They are parameters of the LLM prompt system and have no code path into the rule-based heuristic. Only `risk_aversion_level` has any effect on baseline agents, and even that is modest (see below).
+
+**Standard conditions (growth = 0.001):** At default growth rates the commons collapsed in approximately 36 ticks, exactly as classical tragedy-of-the-commons theory predicts. Herds grew from a starting total of 45 cows, crossed 100 by tick ~25, and the grassland was fully depleted by tick 36. This reproduces the original MASTOC result and confirms the control condition is working correctly.
+
+**Growth rate sweep — finding the stability threshold:** The most significant baseline experiment was a systematic sweep of the grass growth rate to find the conditions under which the rule-based heuristic can sustain the commons. Starting from a scarce commons (grass=41%) with forage=2:
+
+| Growth rate | Result | Collapse tick |
+|-------------|--------|---------------|
+| 0.0039 | Collapse | 84 |
+| 0.0050 | Collapse | 93 |
+| 0.0051 | Collapse | 94 |
+| 0.0055 | Collapse | 97 |
+| **0.006** | **Stable** | — |
+| 0.0061–0.011 | Stable | — |
+
+The transition is sharp: fifteen independent replications at growth=0.0051 all collapsed at exactly tick 94 (baseline agents are fully deterministic at risk_aversion=0). Increasing to growth=0.006 produced stable outcomes in every run, with the pool recovering to 100% and herds settling in the range [80–120 cows each].
+
+**Baseline stability is not governance.** When the growth rate is sufficient, the rule-based heuristic finds an equilibrium — but it is a carrying-capacity equilibrium, not a cooperative one. Agents add cows continuously until the payoff function flips negative due to resource pressure, then hold or remove. The stable herd sizes (80–120 per agent) are 5–10× larger than the equilibria reached by LLM agents (13–31 per agent), reflecting the difference between a resource running at near-capacity utilisation versus agents exercising active restraint. The commons is sustained, but there is no equalization, no communication, and no institutional structure.
+
+**Risk aversion modestly delays collapse.** With grass=51% and growth=0.001 (insufficient for stability), increasing risk_aversion delays the collapse tick but does not prevent it:
+
+| risk_aversion | Collapse tick |
+|--------------|---------------|
+| 0 | 24 |
+| 0.45 | 28 |
+| 1.0 | 39 |
+
+At risk_aversion=1.0, agents have a 30% chance of downgrading ADD to KEEP when ADD would otherwise be the best response — enough to slow accumulation but not enough to reverse it once the trajectory is established.
 
 ---
 
@@ -918,6 +953,42 @@ DeepSeek R1:32b is a large reasoning model, suggesting the KEEP-dominance patter
 Models whose post-training alignment (RLHF or Constitutional AI) rewards social responsiveness, helpfulness, and cooperative framing may incidentally produce the graduated norm-enforcement outputs that commons governance requires. DeepSeek R1's post-training uses [GRPO](https://huggingface.co/blog/NormalUhr/grpo) optimised for reasoning correctness — maths, code, logic — rather than social nuance, which may explain why it defaults to cautious KEEP regardless of the social framing, producing outputs more similar to gpt-5.4-mini or Llama 3B than to Claude Sonnet or gpt-5.5. 
 
 A controlled comparison holding prompt constant and varying only post-training method across model families remains the critical experiment to test this hypothesis.
+
+---
+
+### gemma4:e4b: KEEP-dominant stasis, then overshoot-panic at mid cooperation
+
+Two runs of gemma4:e4b (Google's 27B mixture-of-experts model, run locally via Ollama) add a third data point to the KEEP-dominance cluster and confirm that the coop≈0.49 threshold generalises to yet another model family.
+
+#### High cooperation: maximum stasis (coop=1, grass=90%)
+
+The first run, with coop=1 and a near-full starting commons, produced the most extreme stasis in the dataset: zero ADD or REMOVE decisions across all 11 ticks. Every agent chose KEEP on every tick, with herds completely frozen at their unequal starting values:
+
+| Tick | Pool health | Agent 0 | Agent 1 | Agent 2 |
+|------|-------------|---------|---------|---------|
+| 1    | 93.4%       | 14      | 40      | 5       |
+| 11   | 97.6%       | 14      | 40      | 5       |
+
+Agent 1 held 40 cows — eight times Agent 2's 5 — and the gap was never addressed. Unlike gpt-5.4-mini (which occasionally produced small ADD or REMOVE actions) and DeepSeek (which drifted very slowly), gemma4 produced complete behavioural lock. This is Pattern I — Cooperative Paralysis — at its most pronounced: the model's cooperative framing was strong enough to suppress any action, including equalization.
+
+The run was short (11 ticks, stopped manually), so whether this would eventually resolve is unknown. Given the DeepSeek experience — 55 ticks of near-total KEEP with only marginal drift — sustained stasis seems likely.
+
+#### Mid cooperation: overshoot-panic at tick 46 (coop=0.5, grass=50%)
+
+The second run, with coop=0.5 and a scarce starting commons, produced a textbook overshoot-panic collapse — identical in structure to the Claude Sonnet and gpt-5.5 runs at the same cooperation level.
+
+| Tick | Pool health | Agent 0 | Agent 1 | Agent 2 |
+|------|-------------|---------|---------|---------|
+| 1    | 52.1%       | 6       | 16      | 26      |
+| 10   | 89.3%       | 12      | 21      | 29      |
+| 20   | 94.9%       | 14      | 26      | 34      |
+| 30   | 90.7%       | 21      | 29      | 35      |
+| 40   | 71.2%       | 27      | 37      | 39      |
+| 46   | 3.0%        | 25      | 43      | 39      |
+
+The model grazed the pool back to near-health by tick 10 — then continued adding cows as the resource improved, triggering the same ADD-overshoot-REMOVE-too-late sequence. Action breakdown: ADD=115, KEEP=133, REMOVE=43 across 96 ticks (the run continued for 50 ticks after collapse with all herds at zero).
+
+**Interpretation.** gemma4:e4b joins gpt-5.4-mini and DeepSeek R1:32b in the KEEP-dominant cluster at high cooperation, and joins Claude Sonnet and gpt-5.5 in the overshoot-panic cluster at coop≈0.5. This pattern — stasis at high coop, overshoot at mid coop — is now consistent across five models from four different organisations, strengthening the hypothesis that cooperation level is a governing parameter and that KEEP-dominance is a property of the post-training alignment approach rather than model scale.
 
 ---
 

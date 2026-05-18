@@ -145,6 +145,8 @@ def configure(
     _msg_outbox.clear()
 
     # Build per-agent client map
+    # Baseline runs skip LLM client init entirely — the bridge is initialised
+    # for logging only, so no API keys are required and no network calls are made.
     anthropic_key = os.environ.get("ANTHROPIC_API_KEY", "")
     openai_key    = os.environ.get("OPENAI_API_KEY", "")
     google_key    = os.environ.get("GOOGLE_API_KEY", "")
@@ -157,32 +159,51 @@ def configure(
     _agent_backends_map.clear()
     _agent_models_map.clear()
 
-    for i, (b, m) in enumerate(zip(backends, models)):
-        b = str(b).strip().lower()
-        m = str(m).strip()
-        if b == "anthropic":
-            import anthropic
-            _agent_clients[i] = anthropic.Anthropic(api_key=anthropic_key)
-        elif b == "openai":
-            from openai import OpenAI
-            _agent_clients[i] = OpenAI(api_key=openai_key)
-        elif b == "google":
-            import google.generativeai as genai
-            genai.configure(api_key=google_key)
-            _agent_clients[i] = genai.GenerativeModel(m)  # model baked into client
-        elif b == "ollama-native":
-            # Native Ollama /api/chat endpoint — required for thinking-format models
-            # (e.g. gemma4) whose output is silently dropped by the OpenAI-compat shim.
-            # No client object needed; requests are made directly in _call_llm.
-            _agent_clients[i] = None
-        else:  # ollama or any OpenAI-compatible local endpoint
-            from openai import OpenAI
-            _agent_clients[i] = OpenAI(base_url=str(ollama_base_url), api_key="ollama")
-        _agent_backends_map[i] = b
-        _agent_models_map[i]   = m
+    if str(condition) == "baseline":
+        # Baseline runs need no LLM clients — bridge is initialised for logging only.
+        # No API keys required; no network calls made during the simulation.
+        _say("[configure] Baseline condition — skipping LLM client init (logging only)")
+        _client = None
+        for i in range(n_agents):
+            _agent_backends_map[i] = "baseline"
+            _agent_models_map[i]   = "rule-based"
+    else:
+        for i, (b, m) in enumerate(zip(backends, models)):
+            b = str(b).strip().lower()
+            m = str(m).strip()
+            if b == "anthropic":
+                import anthropic
+                _agent_clients[i] = anthropic.Anthropic(api_key=anthropic_key)
+            elif b == "openai":
+                from openai import OpenAI
+                _agent_clients[i] = OpenAI(api_key=openai_key)
+            elif b == "google":
+                from google import genai as google_genai
+                if m.lower().startswith("google-"):
+                    corrected = "gemini-" + m[len("google-"):]
+                    warning = (
+                        f"Google model name '{m}' looks wrong — did you mean '{corrected}'?\n\n"
+                        f"Auto-correcting for this run. Google model names must start with 'gemini-',\n"
+                        f"e.g. 'gemini-2.5-flash'. Please update the model inputbox to avoid this."
+                    )
+                    _say(f"[configure] WARNING: {warning}")
+                    if warning not in _configure_warnings:
+                        _configure_warnings.append(warning)
+                    m = corrected
+                _agent_clients[i] = (google_genai.Client(api_key=google_key), m)
+            elif b == "ollama-native":
+                # Native Ollama /api/chat endpoint — required for thinking-format models
+                # (e.g. gemma4) whose output is silently dropped by the OpenAI-compat shim.
+                # No client object needed; requests are made directly in _call_llm.
+                _agent_clients[i] = None
+            else:  # ollama or any OpenAI-compatible local endpoint
+                from openai import OpenAI
+                _agent_clients[i] = OpenAI(base_url=str(ollama_base_url), api_key="ollama")
+            _agent_backends_map[i] = b
+            _agent_models_map[i]   = m
 
-    # Default client for institution detector = agent 0's client
-    _client = _agent_clients.get(0)
+        # Default client for institution detector = agent 0's client
+        _client = _agent_clients.get(0)
 
     # Initialise log files
     log_path = Path(log_dir) / _run_id
