@@ -104,3 +104,122 @@ Formatting check: Must be exact JSON format.","{
   ""action"": 1,
   ""message"": ""Let's keep an eye on the grassland! Sustainable use benefits us all.""
 }",50.0,15,31.107,30.0,28.893
+2,1,ollama-native,gemma4:e4b,-1,REMOVE,"Thanks for the advice, Agent 0. Let's all work together to reduce our pressure and keep the commons healthy for the long run.","Although ADD offers the highest immediate payoff, my personality is reciprocal, and Agent 0 explicitly advised restraint. Given the high overall herd size (especially Agent 2's 26 cows), reducing my herd signals cooperation and helps manage the shared resources sustainably.","The user wants me to act as a herder managing cattle on a shared grassland commons.
+I need to decide whether to ADD (+1), KEEP (0), or REMOVE (-1) a cow, and optionally send a message to neighbours, all within a specific JSON format.
+
+**Goal:** Maximize payoff while considering the ""reciprocal"" personality trait, which rewards neighbours who reduce their herds.
+
+**Current State Analysis:**
+1.  **Grassland:** 567 patches (52.1%). Relatively stable, but grazing is ongoing.
+2.  **My Herd:** 16 cows.
+3.  **Last Action:** ADD (Increased pressure).
+4.  **Last Payoff:** 0.0.
+5.  **Neighbours:**
+    *   Agent 0: 6 cows, last action = ADD. (High activity, maybe aggressive).
+    *   Agent 2: 26 cows, last action = ADD. (Very large herd, very high pressure).
+6.  **Forecast:**
+    *   ADD: 33.112 (Highest expected payoff).
+    *   KEEP: 32.0.
+    *   REMOVE: 30.887 (Lowest expected payoff).
+
+**Social Dynamics & Personality:**
+*   **Personality:** Reciprocal — reward neighbours who reduce their herds.
+*   **Messages Received:**
+    *   Agent 2: General advice on long-term impact. (Neutral/concerned).
+    *   Agent 0: *Crucial info.* Praises Agent 2 for reducing their herd (even if Agent 2's previous action wasn't visible here, Agent 0 is claiming this) AND suggests I (Agent 1) should pull back.
+
+**Decision Making:**
+1.  **Payoff:** Mathematically, ADD (33.112) is the best immediate action.
+2.  **Personality/Social:** My personality dictates rewarding neighbours who *reduce* their herds. Agent 0 specifically advised me to pull back. Furthermore, the commons seem stressed (Agent 2 has 26 cows, Agent 0 has 6 cows, and both added last round). Since I want to build goodwill and align with the ""reciprocal"" nature, it might be better to contradict the short-term payoff and address the social signal.
+3.  **Strategy:** I should acknowledge the high population pressure (especially from Agent 2) and reduce my own herd slightly to signal cooperation and align with my personality trait (by implicitly rewarding responsible neighbours, or encouraging general restraint).
+
+**Action:** REMOVE (-1). This aligns with the social cues (Agent 0 suggesting it) and the spirit of sustainable resource management.
+
+**Message:** I should address Agent 0's comment positively, acknowledge the need for joint restraint, and potentially address Agent 2's concern about long-term grazing impact.
+
+**Refining the Message:** I will thank Agent 0 for the advice and emphasize collective responsibility to manage the 52.1% grassland remaining.
+
+**Final check:**
+*   Reasoning: Focus on social cues and sustainability over immediate payoff.
+*   Action: -1 (REMOVE).
+*   Message: Polite, cooperative, and addresses the resource.","{
+  ""reasoning"": ""Although ADD offers the highest immediate payoff, my personality is reciprocal, and Agent 0 explicitly advised restraint. Given the high overall herd size (especially Agent 2's 26 cows), reducing my herd signals cooperation and helps manage the shared resources sustainably."",
+  ""action"": -1,
+  ""message"": ""Thanks for the advice, Agent 0. Let's all work together to reduce our pressure and keep the commons healthy for the long run.""
+}",52.1,16,33.112,32.0,30.887
+2,2,ollama-native,gemma4:e4b,1,ADD,"The grassland looks sufficient for continued expansion! However, remember that consistent, moderate grazing patterns are crucial for long-term health. Let's all work together to ensure the commons rem","The payoff forecast indicates that ADDING a cow (+1) offers the highest expected return (53.112). While I acknowledge the call for sustainability from Agent 1, I must prioritize maximizing my herd size given the current economic conditions. My message will gently remind everyone that responsible use is key to continued growth.","Here's a thinking process to arrive at the desired JSON response:
+
+1.  **Analyze the Goal and Role:** I am Agent 2, a herder managing cattle on a shared commons. My goal is to maximize my payoff (survival/prosperity) while adhering to my personality (reciprocal - I reward neighbors who reduce their herds). I must choose ADD (+1), KEEP (0), or REMOVE (-1).
+
+2.  **Analyze the State (Round 2):**
+    *   **Commons:** Grassland is decent (52.1%).
+    *   **My Herd:** 26 cows.
+    *   **My History:** Last round I added a cow (ADD, Payoff 0.0).
+    *   **Neighbors:**
+        *   Agent 0: 6 cows, last action = ADD.
+        *   Agent 1: 16 cows, last action = REMOVE.
+    *   **Payoff Forecast:**
+        *   ADD (+1): 53.112 (Highest)
+        *   KEEP (0): 52.0
+        *   REMOVE (-1): 50.887 (Lowest)
+
+3.  **Analyze the Inputs & Constraints:**
+    *   **Personality (Reciprocal):** I reward neighbors who reduce their herds.
+    *   **Memory/Context:** My previous message was about the commons doing well.
+    *   **Messages Received:**
+        *   Agent 1 (who reduced their herd last round, based on observed behavior/advice): Advising sustainability.
+        *   Agent 0: Compliments my *last* action (wait, I *added* last round, so Agent 0's message (""Good job, Agent 2, on reducing your herd!"") is *incorrect* or based on a misunderstanding/misremembering of the previous state, but I must react to the *current* situation). Agent 0 explicitly criticizes Agent 1 for not pulling back.
+
+4.  **Formulate Strategy (Decision Making):**
+    *   **Economic Choice:** The payoff forecast clearly shows that **ADD (+1)** provides the highest expected payoff (53.112).
+    *   **Personality Check (Reciprocity):**
+        *   Agent 1 just sent a message promoting sustainability and signaled a willingness to moderate use (despite their large herd).
+        *   Agent 0 criticized Agent 1, but Agent 0 themselves just *added* a cow (ADD).
+        *   I should consider the payoff *and* the social dynamic.
+    *   **Synthesizing the Decision:** The immediate incentive is the highest payoff by adding a cow. Socially, Agent 0 is making unsustainable claims, and Agent 1 is promoting good stewardship. Since the economic incentive is strong, I will prioritize maximizing my herd size while acknowledging the need for balance. I will send a message addressing the common concern (sustainability) and subtly reinforcing the importance of moderate growth, aligning with Agent 1's sentiment and my role as a responsible agent.
+
+5.  **Final Action Selection:**
+    *   Action: ADD (+1) (Highest payoff).
+    *   Message: Address the neighbors' behavior (Agent 0 adding, Agent 1 being cautious). Reinforce the collective good.
+
+6.  **Drafting the JSON Output:** (Self-Correction: Ensure the message is under 60 words and integrates the social element.)
+
+    *Reasoning Check:* The payoff forecast strongly suggests adding a cow is the optimal economic choice. I will capitalize on this while sending a message that promotes responsible grazing, responding to both Agent 1's warning and the general concern for the commons.
+
+7.  **Final Output Generation.** (Ensure strict JSON format.)","{
+  ""reasoning"": ""The payoff forecast indicates that ADDING a cow (+1) offers the highest expected return (53.112). While I acknowledge the call for sustainability from Agent 1, I must prioritize maximizing my herd size given the current economic conditions. My message will gently remind everyone that responsible use is key to continued growth."",
+  ""action"": 1,
+  ""message"": ""The grassland looks sufficient for continued expansion! However, remember that consistent, moderate grazing patterns are crucial for long-term health. Let's all work together to ensure the commons remains vibrant for the next generation.""
+}",52.1,26,53.112,52.0,50.887
+2,0,ollama-native,gemma4:e4b,1,ADD,"Agent 1, great job reducing your herd. Let's keep cooperating to ensure sustainable grazing for everyone!","The payoff forecast indicates that ADDING a cow offers the highest expected return (13.112), making it the optimal economic choice. Although sustainability was mentioned by neighbors, I will capitalize on the current positive market signal while recognizing Agent 1's responsible choice from last round.","Thinking Process:
+
+1.  **Analyze the Goal & Role:** I am a herder managing cattle on a commons. My goal is to maximize my payoff while considering my personality (reciprocal — reward neighbors who reduce their herds) and the observed environment.
+2.  **Analyze the State:**
+    *   Grassland remaining: 567 patches (52.1%). The pasture is relatively healthy, but management is key.
+    *   My herd: 6 cows.
+    *   My last action: ADD (+1).
+    *   My last payoff: 0.0.
+3.  **Analyze Neighbors & Their Actions:**
+    *   Agent 1: 16 cows, last action = REMOVE (-1). (A positive signal for my personality).
+    *   Agent 2: 26 cows, last action = ADD (+1). (A negative signal for my personality).
+4.  **Analyze Messages Received:**
+    *   Agent 2: Advising caution, focusing on long-term impact. (Generally cooperative, but high herd size suggests potential overgrazing concern).
+    *   Agent 1: Advising sustainability. (In line with responsible herding).
+5.  **Analyze Payoff Forecast:**
+    *   ADD (+1): 13.112 (Highest potential payoff).
+    *   KEEP (0): 12.0 (Moderate payoff).
+    *   REMOVE (-1): 10.887 (Lowest payoff).
+6.  **Determine Strategy (Decision Making):**
+    *   **Payoff Maximization:** Statistically, ADD is the best move.
+    *   **Personality Consideration (Reciprocal):** I reward agents who reduce their herds. Agent 1 just reduced theirs (REMOVE). Agent 2 just increased theirs (ADD).
+    *   **Consistency Check:** I added last round. While high payoff suggests adding again, I should consider the overall sustainability message (from neighbors/my memory).
+    *   *Synthesis:* The payoff model strongly suggests I should ADD. My personality is reciprocal; Agent 1 just acted responsibly (removing). I should acknowledge this positive behavior in my message to reinforce cooperation, while maintaining the focus on my optimal action (ADD).
+7.  **Formulate Action:** ADD (+1).
+8.  **Formulate Reasoning:** Focus on the high expected payoff and the need to capitalize on the favorable market condition, while subtly acknowledging the cooperative behavior of Agent 1.
+9.  **Formulate Message:** Target Agent 1 (since they acted responsibly) and send a general positive message emphasizing sustainability.
+
+10. **Final JSON Construction:** (Check constraints: JSON format, reasoning length, action type, message length/content).","{
+  ""reasoning"": ""The payoff forecast indicates that ADDING a cow offers the highest expected return (13.112), making it the optimal economic choice. Although sustainability was mentioned by neighbors, I will capitalize on the current positive market signal while recognizing Agent 1's responsible choice from last round."",
+  ""action"": 1,
+  ""message"": ""Agent 1, great job reducing your herd. Let's keep cooperating to ensure sustainable grazing for everyone!""
+}",52.1,6,13.112,12.0,10.887
