@@ -597,12 +597,10 @@ def _call_llm(
         # The OpenAI-compat shim drops content for thinking-format models (e.g. gemma4);
         # the native endpoint returns it correctly, plus a separate "thinking" field.
         #
-        # IMPORTANT: use stream=True so that the timeout applies per-chunk, not to
-        # the entire response. Thinking-format models (gemma4, deepseek-r1) can
-        # generate thousands of thinking tokens before the visible reply; with
-        # stream=False Ollama buffers everything and the connection silently hangs
-        # well past any reasonable read-timeout. Streaming keeps the socket alive
-        # and lets us accumulate content as it arrives.
+        # stream=True: keeps the socket alive tick-by-tick. stream=False causes Ollama
+        # to buffer the entire response (including long thinking traces) before sending
+        # anything — which can hang over WAN connections. Accept the per-token streaming
+        # overhead rather than risk a multi-minute buffer stall.
         import requests as _requests
         import json as _json
         native_base = _cfg.get("ollama_base_url", "http://localhost:11434").rstrip("/")
@@ -624,7 +622,7 @@ def _call_llm(
                     "options": {"num_predict": max_tokens},
                 },
                 stream=True,
-                timeout=(15, 600),  # 15s to connect, 10min to receive first token (covers prefill)
+                timeout=(15, 600),  # 15s to connect, 10min between chunks
             )
             resp.raise_for_status()
         except Exception as conn_err:
@@ -634,19 +632,32 @@ def _call_llm(
         content = ""
         thinking = ""
         token_count = 0
+        verbose = _cfg.get("verbose")
+        t_start = time.time()
+        t_first_thinking = None
+        t_first_content = None
         for raw_line in resp.iter_lines():
             if not raw_line:
                 continue
             chunk = _json.loads(raw_line)
             msg = chunk.get("message", {})
-            content  += msg.get("content",  "")
-            thinking += msg.get("thinking", "")
+            new_thinking = msg.get("thinking", "")
+            new_content  = msg.get("content",  "")
+            if verbose:
+                if new_thinking and t_first_thinking is None:
+                    t_first_thinking = time.time() - t_start
+                    _say(f"[{tag}] ✦ first thinking token  ({t_first_thinking:.1f}s)")
+                if new_content and t_first_content is None:
+                    t_first_content = time.time() - t_start
+                    _say(f"[{tag}] ✦ first response token  ({t_first_content:.1f}s)")
+            thinking += new_thinking
+            content  += new_content
             token_count += 1
-            if _cfg.get("verbose") and token_count % 50 == 0:
+            if verbose and token_count % 50 == 0:
                 _say(f"[{tag}] ... {token_count} chunks received so far")
             if chunk.get("done"):
                 break
-        _say(f"[{tag}] done ({token_count} chunks, {len(content)} content chars, {len(thinking)} thinking chars)")
+        _say(f"[{tag}] done ({token_count} chunks, {len(content)} content chars, {len(thinking)} thinking chars, {time.time() - t_start:.1f}s total)")
         return content, thinking
 
     else:

@@ -48,6 +48,7 @@ globals [
   llm-ready       ;; TRUE once the Python bridge is initialised
   max-patches     ;; total patch count (cached at setup)
   sim-status      ;; human-readable status string shown in the monitor
+  sim-started?    ;; TRUE after the first tick fires (used to print "Simulation started" once)
 ]
 
 breed [ cows cow ]
@@ -63,6 +64,7 @@ to setup
   set llm-ready false
   set max-patches count patches
   set sim-status "○ idle"
+  set sim-started? false
 
   create-humans 3
   set nrActions 3
@@ -194,6 +196,10 @@ end
 ;;; ============================================================
 
 to simulation
+  if not sim-started? [
+    print (word "▶ Simulation started — " date-and-time)
+    set sim-started? true
+  ]
   set sim-status (word "● running — tick " (ticks + 1))
   tick
   set step step + 1
@@ -256,7 +262,12 @@ to simulation
       ")")
   ]
 
-  if (not run-indefinitely) and (ticks >= num-rounds) [ set sim-status "✓ done" close-bridge stop ]
+  if (not run-indefinitely) and (ticks >= num-rounds) [
+    set sim-status "✓ done"
+    print (word "■ Simulation stopped — " num-rounds " rounds complete — " date-and-time)
+    close-bridge
+    stop
+  ]
 end
 
 
