@@ -534,12 +534,14 @@ def _generate_figures(resources_rows: list, institution_rows: list) -> None:
     # ── Figure 3: Individual herds per agent (full-gabm runs) ────────────────
     gabm_runs = [(k, v) for k, v in res_by_run.items() if k[0] == "full-gabm"]
     if gabm_runs:
-        # Collect per-agent herd data
-        agent_data: dict = defaultdict(lambda: {"tick": [], **{f"a{i}": [] for i in range(3)}})
+        # Collect per-agent herd data (only runs with actual data)
+        agent_data: dict = {}
         for row in resources_rows:
             if row.get("condition") != "full-gabm":
                 continue
             rid = row["run_id"]
+            if rid not in agent_data:
+                agent_data[rid] = {"tick": [], "a0": [], "a1": [], "a2": []}
             try:
                 agent_data[rid]["tick"].append(int(row["tick"]))
                 for i in range(3):
@@ -547,27 +549,44 @@ def _generate_figures(resources_rows: list, institution_rows: list) -> None:
             except (ValueError, KeyError):
                 pass
 
-        n_runs = len(agent_data)
-        fig3, axes3 = plt.subplots(1, max(n_runs, 1), figsize=(6 * max(n_runs, 1), 4),
-                                   squeeze=False)
-        agent_colors = ["#1f77b4", "#ff7f0e", "#2ca02c"]
-        for col, (rid, data) in enumerate(agent_data.items()):
-            ax = axes3[0][col]
-            for i in range(3):
-                ax.plot(data["tick"], data[f"a{i}"],
-                        color=agent_colors[i], linewidth=1.5, label=f"Agent {i}")
-            ax.set_xlabel("Tick")
-            ax.set_ylabel("Cows")
-            ax.set_title(f"Herd convergence\n({rid})")
-            ax.legend(fontsize=8)
-            ax.grid(True, alpha=0.3)
+        # Drop runs with fewer than 2 ticks (empty / aborted)
+        agent_data = {rid: d for rid, d in agent_data.items() if len(d["tick"]) >= 2}
 
-        plt.suptitle("Full-GABM: Individual Agent Herds", fontsize=13, fontweight="bold")
-        plt.tight_layout()
-        out3 = figures_dir / "agent_herds.png"
-        plt.savefig(out3, dpi=150)
-        plt.close()
-        print(f"Saved: {out3}")
+        if agent_data:
+            n_runs = len(agent_data)
+            n_cols = min(n_runs, 4)           # max 4 panels per row
+            n_rows = (n_runs + n_cols - 1) // n_cols
+            fig3, axes3 = plt.subplots(
+                n_rows, n_cols,
+                figsize=(5 * n_cols, 4 * n_rows),
+                squeeze=False
+            )
+            agent_colors = ["#1f77b4", "#ff7f0e", "#2ca02c"]
+            for idx, (rid, data) in enumerate(agent_data.items()):
+                row_i, col_i = divmod(idx, n_cols)
+                ax = axes3[row_i][col_i]
+                for i in range(3):
+                    ax.plot(data["tick"], data[f"a{i}"],
+                            color=agent_colors[i], linewidth=1.5, label=f"Agent {i}")
+                ax.set_xlabel("Tick")
+                ax.set_ylabel("Cows")
+                # Truncate run_id label so long IDs don't overflow
+                label = rid if len(rid) <= 22 else rid[:10] + "…" + rid[-10:]
+                ax.set_title(label, fontsize=7)
+                ax.legend(fontsize=7)
+                ax.grid(True, alpha=0.3)
+
+            # Hide any unused subplot cells
+            for idx in range(n_runs, n_rows * n_cols):
+                row_i, col_i = divmod(idx, n_cols)
+                axes3[row_i][col_i].set_visible(False)
+
+            plt.suptitle("Full-GABM: Individual Agent Herds", fontsize=13, fontweight="bold")
+            plt.tight_layout()
+            out3 = figures_dir / "agent_herds.png"
+            plt.savefig(out3, dpi=120)
+            plt.close()
+            print(f"Saved: {out3}  ({n_runs} runs, {n_rows}×{n_cols} grid)")
 
 
 # ──────────────────────────────────────────────────────────────────────────────
