@@ -50,6 +50,7 @@ The core research question:
   - [Memory and communication sweep: amnesiac vs. equipped agents](#memory-and-communication-sweep-amnesiac-vs-equipped-agents)
   - [Memory=1: delayed collapse via coordination without trend detection](#memory1-delayed-collapse-via-coordination-without-trend-detection)
   - [Memory=3: fragile survival at the threshold](#memory3-fragile-survival-at-the-threshold)
+  - [Claude Haiku: memory × communication interaction](#claude-haiku-memory--communication-interaction)
   - [Memory=2: oscillating dynamics and the stochastic boundary](#memory2-oscillating-dynamics-and-the-stochastic-boundary)
 - [Collapse pattern taxonomy](#collapse-pattern-taxonomy)
   - [Pattern I — Cooperative Paralysis](#pattern-i--cooperative-paralysis)
@@ -329,6 +330,9 @@ A meaningful fraction of full-GABM runs in this dataset end in collapse, with th
 | **Full-GABM (memory=1, communication on)** | Claude Sonnet 4.6 | 3 | Yes | 87 | coop≈0.5, memory_length=1: delayed collapse — pool recovered to 95% then drained while agents held a 90% target they couldn't detect was unreachable; Pattern I variant |
 | **Full-GABM (memory=2, communication on)** | Claude Sonnet 4.6 | 3 | No (oscillating) | — | coop≈0.5, memory_length=2: oscillating grow/correct cycles; achieved 25/25/25 equalization at tick 75; new growth phase began at tick 111; pool declining at termination (90.2%); highly variable across replications |
 | **Full-GABM (memory=3, communication on)** | Claude Sonnet 4.6 | 3 | No | — | coop≈0.5, memory_length=3: survived 120 ticks; pool slowly declining (90.1% at end); herds stable at 81 total — fragile, trending toward collapse |
+| **Full-GABM (memory=5, comm on)** | Claude Haiku 4.5 | 3 | Yes | 99 | coop≈0.5, memory_length=5, comm=on, initial=52%: initial recovery to 99%, then overshoot-panic; herds reached 67 total by tick 45, pool crashed; ADD=57, KEEP=231, REMOVE=9 |
+| **Full-GABM (memory=15, comm on)** | Claude Haiku 4.5 | 3 | No | — | coop≈0.5, memory_length=15, comm=on, initial=52%: survived 120 ticks; converged to 24/24/24; pool stable at 95% — same outcome as Claude Sonnet memory=15 |
+| **Full-GABM (memory=15, comm off)** | Claude Haiku 4.5 | 3 | Yes | 46 | coop≈0.5, memory_length=15, comm=off, initial=52%: rapid collapse — herds grew unchecked to 88 total by tick 45, pool 14.7%→0%; ADD=55, KEEP=72, REMOVE=17; memory alone insufficient without communication |
 
 ---
 
@@ -1077,6 +1081,28 @@ Where memory=1 agents repeatedly renewed a holding promise without detecting its
 **Interpretation.**
 
 Three rounds of memory is sufficient to detect a short-term declining trend and trigger corrective action. But it may be insufficient for long-run stability: the herd total grew to 81–83 cows (compared to 72 in the memory=15 run) and the pool was trending slowly downward at termination. Whether memory=3 produces eventual collapse on a longer timescale, or whether the agents would correct it before that point, is unresolved — and motivates the threshold experiment described in H7.
+
+---
+
+### Claude Haiku: memory × communication interaction
+
+Three runs with Claude Haiku 4.5 at coop≈0.5 (initial pool 52%) replicate and extend the Sonnet memory sweep — and reveal that memory and communication are jointly necessary, not individually sufficient.
+
+All three runs began from identical conditions (5/15/26 starting herds, 52% initial pool). Memory was held at either 5 or 15 ticks; communication was on or off.
+
+| Condition | Collapse? | Collapse tick | Pool at end | Final herds |
+|-----------|-----------|---------------|-------------|-------------|
+| memory=5, comm=on | **Yes** | 99 | 0% | — |
+| memory=15, comm=on | No | — | 95.0% | 24/24/24 |
+| memory=15, comm=off | **Yes** | 46 | 0% | — |
+
+**Memory=5, comm=on (collapse tick 99):** Agents recovered the pool to 99% by tick 10, then gradually expanded herds. By tick 45 total cows had reached 67; the pool eroded steadily and crashed at tick 99. The pattern matches the Sonnet memory=5 baseline — a 5-tick window cannot detect gradual multi-decade trends.
+
+**Memory=15, comm=on (survives, 24/24/24 by tick 120):** Agents converged to equal herds of 24 and held the pool at 95% — the same outcome achieved by Claude Sonnet under memory=15. The behavioral signature is shared across model generations at this memory length.
+
+**Memory=15, comm=off (collapse tick 46):** With communication disabled, the same 15-tick memory was insufficient. Agents added continuously — herds reached 88 total by tick 45 — with no coordination to arrest the growth phase. The pool fell from 52% to 14.7% between ticks 1 and 45, and collapsed at tick 46. Empty message logs confirm communication was inactive.
+
+**Interpretation.** Long memory without communication produces collapse just as fast as short memory with it. Agents can observe a 15-tick trend in isolation but cannot translate that observation into collective restraint without a channel to signal intentions and establish norms. Neither informational capacity alone is sufficient — what is required is the combination: a memory long enough to detect multi-tick trends *and* communication capable of converting that detection into coordinated action. This is consistent with Ostrom's DP3 (collective choice rules) and DP4 (monitoring): monitoring alone does not prevent tragedy; it must feed into a governance mechanism capable of collective response.
 
 ---
 

@@ -8,7 +8,7 @@
 ;;; Conditions:
 ;;;   "baseline"  — rule-based best-response heuristic (approximates original Nash)
 ;;;   "full-gabm" — all agents use LLM
-;;;   "hybrid"    — hybrid-fraction agents use LLM; rest use best-response
+;;;   "hybrid"    — num-llm-agents agents use LLM (1–3); rest use best-response
 ;;;
 ;;; Requires NetLogo 6.2+ with the py extension.
 ;;; Python bridge: mastoc_llm_bridge.py (must be in the same directory)
@@ -78,10 +78,10 @@ to setup
     ask humans [ set is-llm-agent true ]
   ] [
     ifelse condition = "hybrid" [
-      ;; Designate hybrid-fraction of agents (rounded) as LLM agents
+      ;; Designate num-llm-agents agents as LLM agents (1–3)
       ;; Initialise all to false first so none carry a numeric 0 default
       ask humans [ set is-llm-agent false ]
-      let n-llm max (list 1 round (count humans * hybrid-fraction))
+      let n-llm num-llm-agents
       ask n-of n-llm humans [ set is-llm-agent true ]
     ] [
       ;; baseline — no LLM agents
@@ -806,7 +806,7 @@ end
       <choice type="string" value="full-gabm"></choice>
       <choice type="string" value="hybrid"></choice>
     </chooser>
-    <slider x="461" step="0.01" y="685" max="1" width="208" display="hybrid-fraction" height="50" min="0" direction="Horizontal" default="0.33" variable="hybrid-fraction"></slider>
+    <slider x="461" step="1" y="685" max="3" width="208" display="num-llm-agents" height="50" min="1" direction="Horizontal" default="1" variable="num-llm-agents"></slider>
     <slider x="680" step="1" y="684" max="15" width="208" display="memory-length" height="50" min="0" direction="Horizontal" default="5.0" variable="memory-length" units="rounds"></slider>
     <switch x="247" y="753" height="40" on="true" variable="detect-institutions" width="208" display="detect-institutions"></switch>
     <slider x="243" step="1" y="812" max="20" width="208" display="institution-check-interval" height="50" min="1" direction="Horizontal" default="5.0" variable="institution-check-interval" units="ticks"></slider>
@@ -1689,8 +1689,8 @@ LLM bridge architecture inspired by swarm_gpt (Jimenez-Romero et al. 2025).]]></
         <enumeratedValueSet variable="condition">
           <value value="&quot;baseline&quot;"></value>
         </enumeratedValueSet>
-        <enumeratedValueSet variable="hybrid-fraction">
-          <value value="0"></value>
+        <enumeratedValueSet variable="num-llm-agents">
+          <value value="1"></value>
         </enumeratedValueSet>
       </constants>
     </experiment>
@@ -1772,8 +1772,8 @@ LLM bridge architecture inspired by swarm_gpt (Jimenez-Romero et al. 2025).]]></
         <enumeratedValueSet variable="condition">
           <value value="&quot;full-gabm&quot;"></value>
         </enumeratedValueSet>
-        <enumeratedValueSet variable="hybrid-fraction">
-          <value value="0"></value>
+        <enumeratedValueSet variable="num-llm-agents">
+          <value value="1"></value>
         </enumeratedValueSet>
       </constants>
     </experiment>
@@ -1855,8 +1855,8 @@ LLM bridge architecture inspired by swarm_gpt (Jimenez-Romero et al. 2025).]]></
         <enumeratedValueSet variable="condition">
           <value value="&quot;hybrid&quot;"></value>
         </enumeratedValueSet>
-        <enumeratedValueSet variable="hybrid-fraction">
-          <value value="0.33"></value>
+        <enumeratedValueSet variable="num-llm-agents">
+          <value value="1"></value>
         </enumeratedValueSet>
       </constants>
     </experiment>

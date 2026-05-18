@@ -3546,3 +3546,557 @@ Considering all this, perhaps the best decision is to add a cow. It gives a high
 ","```json
 {
   ""reasoning"": ""The grass",98.2,6,13.742,12.0,10.254
+48,2,ollama-native,deepseek-r1:32b,0,KEEP,Thank you for keeping our commons stable. Let's continue working together to preserve our shared resources.,"Despite a slight personal gain from adding a cow, maintaining stability supports collective preservation of the commons.","Alright, I need to figure out what decision Agent 2 should make in Round 48. Let me go through the information step by step.
+
+First, looking at the commons state: there are 1069 patches of grassland remaining, which is 98.2% of the total. That seems pretty healthy—almost full capacity. My herd size is 30 cows, and in the last round, I kept my herd the same. My payoff was zero, which probably means my actions didn't affect the commons much.
+
+Now, checking my neighbors: Agent 0 has 6 cows and also kept their herd. Agent 1 has 19 cows and did the same. So both neighbors are keeping their herds stable. Their actions don't seem to be contributing to overgrazing since they're not adding more cows.
+
+The payoff forecast shows that if I add a cow, my expected payoff is 61.742. Keeping it as is gives me 60.0, and removing a cow would result in 58.254. So numerically, adding a cow seems better for my personal gain. But wait, I have to consider my personality traits.
+
+I'm cooperative, valuing collective outcomes over personal gain. That means I should prioritize the health of the commons even if it slightly reduces my payoff. Also, being risk-averse, I prefer safer, more stable outcomes rather than taking a chance for higher rewards. Plus, since both neighbors are keeping their herds, it's likely they're also trying to maintain stability.
+
+Looking at my recent actions and messages, I've consistently kept my herd size and thanked others for cooperation. This suggests that maintaining the status quo is part of my strategy to preserve the commons. If I add a cow now, even though the payoff is slightly higher, it could signal to others that it's okay to expand, potentially leading to overgrazing in the future.
+
+Considering reciprocity, since both neighbors are keeping their herds, it's fair to keep mine as well. Retaliatory behavior isn't an issue here because neither neighbor has been expanding. So there's no reason to punish anyone by removing cows; instead, maintaining stability is key.
+
+Therefore, even though adding a cow gives a slightly higher payoff, my cooperative and risk-averse nature leans me towards keeping my herd stable. It also aligns with the messages I've sent before about preserving resources together.
+","```json
+{
+  ""reasoning"": ""Despite a slight personal gain from adding a cow, maintaining stability supports collective preservation of the commons."",
+  ""action"": 0,
+  ""message"": ""Thank you for keeping our commons stable. Let's continue working together to preserve our shared resources.""
+}
+```",98.2,30,61.742,60.0,58.254
+48,1,ollama-native,deepseek-r1:32b,0,KEEP,Thank you for your continued cooperation! Let's keep our herds stable to preserve the commons.,"Cooperative values prioritize maintaining stable herds. Agent 2's message emphasizes stability, aligning with collective preservation goals.","Okay, so I'm trying to figure out what decision to make as Agent 1 in this scenario. Let me start by going through all the information given and see how it affects my choice.
+
+First, looking at the commons state: there are 1069 patches remaining, which is 98.2% of the total. That seems pretty good—grassland isn't being overgrazed right now. My herd size is 19 cows, same as last round because I kept my herd. My payoff was zero last time, but that's probably because there wasn't any immediate impact on the grassland.
+
+Now, looking at my neighbors: Agent 0 has 6 cows and also kept their herd. Agent 2 has 30 cows and kept theirs too. Wait, 30 cows is a lot compared to me having 19—maybe they're contributing more to overgrazing? But the grassland percentage is still high, so maybe it's not an issue yet.
+
+The payoff forecast shows that adding a cow would give me 39.742, keeping gives 38.0, and removing gives 36.254. So, adding seems like the most beneficial for me personally, but I have to consider my personality traits—cooperative, reciprocal, retaliatory, risk-averse.
+
+Since I'm cooperative, I should think about what's best for everyone. If I add a cow, that might increase the pressure on the grassland. But since the commons are still at 98.2%, maybe there's room to grow without overstepping. However, Agent 2 has a much larger herd—30 cows—which is significantly higher than mine. If they're keeping their herd size, perhaps I should too to avoid contributing further.
+
+Looking at my messages received: Agent 2 thanked me for cooperation and suggested keeping herds stable. That aligns with the cooperative approach. Also, in previous rounds, I kept sending thank you messages, which shows a willingness to collaborate.
+
+My last action was KEEP, so if I add now, it might seem like I'm not following through on my commitment. Plus, as a retaliatory agent, if others are keeping their herds, maybe I should too, or else they might take actions against me in the future.
+
+Considering risk-aversion: adding a cow gives higher payoff but could lead to overgrazing later. Keeping is safer and maintains the status quo. Removing would reduce my own benefits without clear collective gain, especially since Agent 2 isn't removing any cows.
+
+So, weighing all these factors: I want to be cooperative and reciprocal, so keeping in line with neighbors' actions makes sense. The payoff difference between adding and keeping isn't massive—39.74 vs 38.0—but my personality leans towards stability over personal gain.
+
+Also, the grassland is still at a healthy level, so there's no immediate need to remove cows. Adding might be tempting for the higher payoff, but considering my traits, I should stick with keeping to maintain trust and cooperation in the group.
+","{
+  ""reasoning"": ""Cooperative values prioritize maintaining stable herds. Agent 2's message emphasizes stability, aligning with collective preservation goals."",
+  ""action"": 0,
+  ""message"": ""Thank you for your continued cooperation! Let's keep our herds stable to preserve the commons.""
+}",98.2,19,39.742,38.0,36.254
+48,0,ollama-native,deepseek-r1:32b,0,KEEP,Appreciate your stability efforts! Let's keep preserving the commons together.,"Despite a higher payoff for adding, I prioritize collective well-being and maintaining grassland health. My neighbors are keeping their herds stable, so I'll continue cooperating.","Okay, so I'm trying to figure out what decision Agent 0 should make in Round 48. Let me start by looking at all the information provided.
+
+First, the commons state shows that there are 1069 patches of grassland remaining, which is 98.2% of the total. That seems pretty good—plenty of grass available. Agent 0 currently has a herd size of 6 cows and last round kept their herd size the same. Their payoff was zero last time, so they didn't gain or lose anything.
+
+Looking at neighbors: Agent 1 has 19 cows and also kept their herd, while Agent 2 has 30 cows and did the same. Both agents sent messages thanking each other for cooperation and suggesting to keep herds stable to preserve the commons.
+
+The payoff forecast shows that if Agent 0 adds a cow, they get 13.742, which is higher than keeping (12.0) or removing (-1 with 10.254). So numerically, adding seems beneficial. But I have to consider their personality traits: cooperative, reciprocal, retaliatory, and risk-averse.
+
+Since Agent 0 is cooperative, they value collective outcomes. Adding a cow would increase personal gain but might strain the commons if others follow. Also, being risk-averse, they prefer safer options over high-risk payoffs. While adding gives higher payoff, it's riskier because it could lead to overgrazing if not managed.
+
+Additionally, the neighbors are keeping their herds and have been cooperative in recent rounds, sending positive messages. So there might be a social expectation to continue this cooperation.
+
+Given all this, even though the payoff for adding is higher, the collective benefit and the risk of overuse might make Agent 0 choose to keep their herd size again. This maintains stability and aligns with their personality traits.
+","```json
+{
+  ""reasoning"": ""Despite a higher payoff for adding, I prioritize collective well-being and maintaining grassland health. My neighbors are keeping their herds stable, so I'll continue cooperating."",
+  ""action"": 0,
+  ""message"": ""Appreciate your stability efforts! Let's keep preserving the commons together.""
+}
+```",98.2,6,13.742,12.0,10.254
+49,0,ollama-native,deepseek-r1:32b,0,KEEP,Appreciate your continued cooperation! Let's keep our herds stable to protect the grassland.,"Maintaining stability is key for preserving the commons. My neighbors are also keeping their herds, which supports collective efforts. Adding a cow might strain resources despite higher payoff.","Okay, so I'm Agent 0 managing my cattle on this shared grassland. Let me think through what I should do next. 
+
+First, looking at the commons state: there are 1069 patches remaining, which is 98.2% of the total. That seems pretty good, but I remember from earlier rounds that the grassland percentage hasn't changed much over time. So maybe it's stable for now.
+
+My herd size is currently 6 cows. Last round, I decided to keep my herd, and that resulted in a payoff of 0.0. Hmm, so keeping didn't give me any negative or positive points last time. 
+
+Looking at my neighbors: Agent 1 has 19 cows and also kept their herd. Agent 2 has 30 cows and kept as well. Wait, 30 cows is quite a lot compared to mine. I wonder if that's contributing to the grassland state.
+
+The payoff forecast says:
+- Adding a cow would give me about 13.74 points.
+- Keeping gives 12 points.
+- Removing gives around 10.25 points.
+
+So numerically, adding seems better for my personal gain. But I have a personality that's cooperative and reciprocal. That means I care more about the collective outcome rather than just myself. Plus, if others are keeping their herds, maybe it's best to follow suit to maintain the commons.
+
+My neighbors sent messages thanking me for cooperation and suggesting we keep our herds stable. That reinforces the idea of maintaining stability together. 
+
+I also need to consider my past actions. For the last few rounds, I've kept my herd size, which hasn't hurt or helped much. Adding a cow now might cause strain on the grassland if others are keeping theirs large.
+
+Considering the risk-averse aspect, maybe it's safer not to add another cow because the commons could be fragile. If too many agents add cows, the grassland might degrade quickly. 
+
+So putting this all together: even though adding gives a higher payoff, my cooperative nature and the messages from neighbors suggest keeping is better for collective stability. Plus, I don't want to risk overgrazing just for a few extra points.
+","```json
+{
+  ""reasoning"": ""Maintaining stability is key for preserving the commons. My neighbors are also keeping their herds, which supports collective efforts. Adding a cow might strain resources despite higher payoff."",
+  ""action"": 0,
+  ""message"": ""Appreciate your continued cooperation! Let's keep our herds stable to protect the grassland.""
+}
+```",98.2,6,13.742,12.0,10.254
+49,2,ollama-native,deepseek-r1:32b,0,KEEP,Thank you for your continued stability! Let's keep our herds steady to protect the commons.,"Maintaining stable herds preserves the commons for everyone's benefit. My neighbors are also keeping their herds, so continuing this cooperation will sustain our shared resource.","Alright, so I'm Agent 2 in this herding scenario. Let me try to figure out what decision to make here. 
+
+First, looking at the commons state: there are 1069 patches of grassland left, which is 98.2% of the total. That seems pretty healthy—so the pasture isn't overgrazed yet. My herd size is 30 cows, and in the last round, I kept my herd the same, resulting in a payoff of 0.0. 
+
+My neighbors are Agent 0 with 6 cows and Agent 1 with 19 cows. Both of them also kept their herds last round. The payoff forecast says if I add a cow, I get 61.742, keep gives me 60.0, and removing gives 58.254. So from a purely selfish standpoint, adding would give the highest payoff. But wait, my personality is cooperative, reciprocal, retaliatory, and risk-averse. 
+
+Hmm, since I'm cooperative, I value collective outcomes over personal gain. If everyone keeps their herds stable, that's better for the commons in the long run. My neighbors have been keeping theirs too, so maybe they're also trying to be responsible. The messages from both agents this round thank me and suggest keeping herds stable to preserve the commons. 
+
+Also, my last five actions were all keep, and I've been sending messages encouraging stability. So there's a history of cooperation here. Adding a cow might break that trust and could lead others to follow suit, overgrazing the pasture. Plus, with 98.2% grassland remaining, it's still plenty—so maybe we don't need to add right now.
+
+But wait, my payoff for adding is higher than keeping. But since I'm risk-averse, I prefer safer outcomes. If everyone adds, that could deplete the pasture quickly. So even though adding gives more immediate gain, maintaining stability might be safer and better in the long run. 
+
+Also, as a reciprocal agent, if others are keeping their herds, I should reward them by keeping mine too. That way, we all benefit collectively without overgrazing. Retaliatory side—if others add, maybe I'd remove or keep, but since they're not adding, it's better to continue cooperation.
+
+So considering all that—cooperative nature, reciprocal behavior, risk aversion—the best move is probably to keep my herd size the same. That supports the collective effort and maintains the stability we've had.
+","```json
+{
+  ""reasoning"": ""Maintaining stable herds preserves the commons for everyone's benefit. My neighbors are also keeping their herds, so continuing this cooperation will sustain our shared resource."",
+  ""action"": 0,
+  ""message"": ""Thank you for your continued stability! Let's keep our herds steady to protect the commons.""
+}
+```",98.2,30,61.742,60.0,58.254
+49,1,ollama-native,deepseek-r1:32b,0,KEEP,Appreciate your continued cooperation! Let's keep our commons healthy together.,Maintaining a stable herd supports collective efforts to preserve the commons. My cooperative nature prioritizes group outcomes over personal gain.,"Okay, so I'm trying to figure out what decision Agent 1 should make in this scenario. Let me start by going through all the information provided step by step.
+
+First, the grassland state is at 1069 patches remaining, which is 98.2% of the total. That seems pretty healthy since it's still a high percentage. My herd size is currently 19 cows, and my last action was to KEEP, resulting in a payoff of 0.0. 
+
+Looking at my neighbors: Agent 0 has 6 cows and also kept their herd, while Agent 2 has 30 cows and kept as well. So both neighbors are keeping their current numbers.
+
+The payoff forecast shows that if I add a cow, the expected payoff is 39.742, which is higher than keeping (38.0) or removing (-36.254). But wait, adding a cow gives me a better personal gain, but since my personality traits include being cooperative and risk-averse, maybe I shouldn't just go for the highest payoff.
+
+I remember that as a cooperative agent, I value collective outcomes over personal gains. So even though adding a cow gives a higher payoff, it might not be in the best interest of maintaining the commons. Also, since my neighbors are both keeping their herds, perhaps it's better to continue this stable behavior to prevent overgrazing.
+
+Another thing is that the grassland remaining hasn't changed much over the past rounds—still at 98.2%. So maybe adding a cow isn't necessary yet because there's still plenty of grass. Plus, considering my risk-averse nature, I prefer safer outcomes rather than taking a risk for a higher payoff.
+
+I also received messages from both neighbors thanking me for keeping the commons stable and expressing a desire to continue working together. This reinforces the idea that maintaining stability is important for the group's success. If I were to add a cow now, it might send a signal that it's okay to increase herds, which could lead others to do the same and potentially harm the grassland.
+
+So putting this all together: my cooperative nature leans towards keeping the commons healthy, my risk-averse side prefers stability over higher-risk gains, and the neighbors are also maintaining their current numbers. Therefore, the best decision is to KEEP my herd size at 19 cows.
+","```json
+{
+  ""reasoning"": ""Maintaining a stable herd supports collective efforts to preserve the commons. My cooperative nature prioritizes group outcomes over personal gain."",
+  ""action"": 0,
+  ""message"": ""Appreciate your continued cooperation! Let's keep our commons healthy together.""
+}
+```",98.2,19,39.742,38.0,36.254
+50,0,ollama-native,deepseek-r1:32b,0,KEEP,Appreciate your continued cooperation! Let's keep our herds steady to protect the commons.,"Despite the higher payoff from adding, maintaining stability aligns with my cooperative nature and neighbors' actions. Continuing to keep our herds steady protects the commons collectively.","Okay, so I'm trying to figure out what decision to make as Agent 0 in this scenario. Let me start by going through all the information provided step by step.
+
+First, looking at the Commons State: there are 1069 patches of grassland remaining, which is 98.2% of the total. My herd size is currently 6 cows. Last round, I kept my herd size the same and didn't get any payoff—probably because everyone else was keeping theirs steady too.
+
+My neighbors are Agent 1 with 19 cows and Agent 2 with 30 cows. Both of them also kept their herds last round. The payoff forecast shows that if I add a cow, my payoff would be 13.742, which is higher than keeping (12.0) or removing (-10.254). But wait, adding might not always be the best choice because of the shared resource.
+
+Considering my personality traits: cooperative, reciprocal, retaliatory, and risk-averse. Cooperative means I care about the collective outcome, so I don't want to overgraze the commons. Reciprocal suggests that if others reduce their herds, I should too. Retaliatory might kick in if someone else is increasing their herd while I'm trying to maintain or reduce mine.
+
+Looking at my memory, for the past five rounds, I've consistently kept my herd size at 6. Each time, I sent messages thanking my neighbors for their stability efforts and cooperation. They’ve responded similarly this round—Agent 2 thanked me for continued stability, and Agent 1 appreciated my cooperation.
+
+Now, even though adding a cow gives a higher payoff, the grassland is still at 98.2%, which seems healthy. But considering that both neighbors have larger herds (19 and 30), maybe they're contributing more to the resource use than me with just 6. If I add another cow, it might be sustainable, but I don't want to set a bad example or cause imbalance.
+
+Also, my risk-averse nature makes me prefer safer outcomes. The payoff for adding is higher, but perhaps there's uncertainty in how that affects future rounds. Keeping my herd size steady maintains the status quo and continues the cooperative effort we've had so far.
+
+Additionally, since both neighbors kept their herds, it shows a collective willingness to maintain stability. By also keeping mine, I continue this trend and reinforce the idea of cooperation, which could lead to better long-term outcomes for everyone.
+","{
+  ""reasoning"": ""Despite the higher payoff from adding, maintaining stability aligns with my cooperative nature and neighbors' actions. Continuing to keep our herds steady protects the commons collectively."",
+  ""action"": 0,
+  ""message"": ""Appreciate your continued cooperation! Let's keep our herds steady to protect the commons.""
+}",98.2,6,13.742,12.0,10.254
+50,2,ollama-native,deepseek-r1:32b,0,KEEP,Thank you for maintaining stability! Let's keep our herds steady to protect the grassland.,"Maintaining a stable herd supports our cooperative efforts to preserve the commons. Adding a cow could strain resources, and keeping aligns with neighbors' actions fostering collective stability.","Alright, so I'm trying to figure out what decision to make as Agent 2 in this round. The goal is to manage my cattle on a shared grassland commons. Each round, I observe the pasture state and my neighbors' behavior, then decide whether to add, keep, or remove a cow. I can also send them a short message.
+
+First, let's look at the current state of the commons. There are 1069 patches of grass remaining, which is 98.2% of the total. That seems pretty good—almost full capacity. My herd size is 30 cows, and I last kept my herd, which gave me a payoff of 0.0. 
+
+My neighbors are Agent 0 with 6 cows who also kept their herd, and Agent 1 with 19 cows who kept theirs as well. So both neighbors have been keeping stable.
+
+Looking at the payoff forecast:
+- If I add a cow, my expected payoff is 61.742.
+- If I keep, it's 60.0.
+- If I remove, it's 58.254.
+
+So numerically, adding gives me the highest payoff. But I need to consider other factors beyond just the immediate numbers, especially since my personality is cooperative, reciprocal, and retaliatory, as well as risk-averse.
+
+Cooperative means I value collective outcomes over personal gain. So even if adding a cow gives me more, it might not be in the best interest of the commons or our neighbors. Also, reciprocal suggests that I reward those who reduce their herds, but here both neighbors are keeping theirs stable, which is positive.
+
+Retaliatory would mean punishing those who expand, but since my neighbors aren't expanding, maybe that doesn't apply here. However, if I add a cow and others follow suit, it could strain the grassland. Since the grassland is already at 98.2%, adding might bring us closer to overgrazing.
+
+Risk-averse makes me prefer safer outcomes. Keeping seems stable and avoids potential risks of overuse if others also decide to add cows. The payoff difference between adding (61.74) and keeping (60) isn't that huge, so maybe the risk of potentially causing strain on the commons outweighs the slight increase in payoff.
+
+Additionally, my past actions have been consistent with keeping, which has helped maintain stability. My neighbors have also been keeping their herds, so there's a cooperative dynamic where everyone is contributing to maintaining the commons.
+
+The messages received from both neighbors this round are appreciative of cooperation and suggest keeping herds stable. That reinforces the idea that working together to protect the grassland is beneficial for all. If I add a cow now, it might send a signal that expansion is acceptable, potentially encouraging others to do the same, which could deplete the grassland faster.
+
+Considering my personality traits again: as cooperative, I should prioritize maintaining the commons' health over individual gains. Being reciprocal, since neighbors are keeping their herds stable, I should continue doing so to maintain this balance. Retaliatory isn't triggered here because there's no expansion from others; instead, it's about not causing imbalance myself.
+
+Therefore, even though adding a cow gives a slightly higher payoff, the collective benefit of maintaining stability and preventing potential overgrazing seems more important. Keeping my herd size consistent continues to support the cooperative environment we've established with neighbors.
+","```json
+{
+  ""reasoning"": ""Maintaining a stable herd supports our cooperative efforts to preserve the commons. Adding a cow could strain resources, and keeping aligns with neighbors' actions fostering collective stability."",
+  ""action"": 0,
+  ""message"": ""Thank you for maintaining stability! Let's keep our herds steady to protect the grassland.""
+}
+```",98.2,30,61.742,60.0,58.254
+50,1,ollama-native,deepseek-r1:32b,0,KEEP,Thanks for keeping our commons stable! Let's continue together to protect the grassland.,"The grassland is still healthy at 98.2%, but adding a cow risks overuse. My neighbors are stable; I should maintain to support collective sustainability and reciprocate their cooperation.","Okay, I need to figure out what action Agent 1 should take in this round. Let me start by looking at all the information provided.
+
+First, the commons state shows that there are 1069 patches of grassland remaining, which is 98.2% of the total. That seems pretty healthy. My herd size is 19 cows, and last round I kept my herd the same. My payoff was zero, but that's expected because when you keep your herd, sometimes the payoff isn't as high as adding a cow.
+
+Looking at my neighbors: Agent 0 has 6 cows and also kept their herd last time. Agent 2 has 30 cows and kept theirs too. So both are stable. 
+
+The payoff forecast says that if I add a cow, I get about 39.742, which is higher than keeping (38) or removing (-1). But I have to consider my personality traits: I'm cooperative, reciprocal, retaliatory, and risk-averse.
+
+Since I value collective outcomes over personal gain, adding a cow even though it gives a better payoff might not be the best move. The grassland is still at 98.2%, which suggests it's sustainable, but if everyone adds cows, it could degrade quickly. 
+
+My neighbors are keeping their herds stable. Agent 0 has a small herd and is cooperative, while Agent 2 has a larger one but also kept theirs. Maybe I should reciprocate by not adding a cow to help maintain the commons.
+
+Also, since I'm risk-averse, taking the safer option of keeping rather than increasing might be better in the long run to prevent overgrazing.
+
+So, even though adding gives a higher payoff now, keeping helps sustain the grassland and maintains cooperation. Plus, my messages have been thanking them for their cooperation, so continuing that by keeping aligns with our mutual goals.
+","```json
+{
+  ""reasoning"": ""The grassland is still healthy at 98.2%, but adding a cow risks overuse. My neighbors are stable; I should maintain to support collective sustainability and reciprocate their cooperation."",
+  ""action"": 0,
+  ""message"": ""Thanks for keeping our commons stable! Let's continue together to protect the grassland.""
+}
+```",98.2,19,39.742,38.0,36.254
+51,0,ollama-native,deepseek-r1:32b,0,KEEP,Thank you for keeping our herds steady. Let's continue working together to protect the grassland.,"Maintaining a stable herd supports collective efforts to preserve the commons, aligning with cooperative values and reciprocal behavior observed from neighbors.","Alright, let me think through this step by step. I'm Agent 0, managing my cattle on a shared grassland. The current state shows that there are 1069 patches of grass remaining, which is 98.2% of the total. That seems pretty healthy; the grass isn't in danger yet. My herd size is 6 cows, same as last round. I kept my herd last time and received a payoff of 0.0.
+
+Looking at my neighbors: Agent 1 has 19 cows and also kept their herd. Agent 2 has 30 cows and did the same. The payoff forecast suggests that adding a cow would give me 13.742, keeping gives 12.0, and removing gives 10.254. So numerically, adding seems better for my personal gain.
+
+But wait, I have to consider my personality traits: I'm cooperative, reciprocal, retaliatory, and risk-averse. As a cooperative player, I should prioritize the collective good. Adding a cow would increase the strain on the grassland, which isn't great for everyone in the long run, even though it gives me a higher payoff now.
+
+Also, my neighbors are keeping their herds steady. Agent 1 and 2 have sent messages thanking me for maintaining stability and suggesting we keep our herds steady to protect the grassland. That aligns with my cooperative nature. I don't want to be the one causing imbalance when others are trying to maintain it.
+
+Even though adding gives a higher payoff, my risk-averse side might prefer keeping things stable rather than risking potential overgrazing and worse payoffs in future rounds if everyone adds cows. Plus, since others are keeping their herds, I don't want to be the one expanding unilaterally—maybe they'd retaliate or it could set a bad precedent.
+
+So, despite the higher payoff for adding, my values push me towards keeping my herd size. It's better for the collective and maintains trust among neighbors. Plus, I've been consistent in keeping my herd for several rounds now, which has probably helped keep the grassland healthy as well.
+","```json
+{
+  ""reasoning"": ""Maintaining a stable herd supports collective efforts to preserve the commons, aligning with cooperative values and reciprocal behavior observed from neighbors."",
+  ""action"": 0,
+  ""message"": ""Thank you for keeping our herds steady. Let's continue working together to protect the grassland.""
+}
+```",98.2,6,13.742,12.0,10.254
+51,1,ollama-native,deepseek-r1:32b,1,ADD,Thanks for keeping our commons stable! Let's support sustainable growth together.,"The commons are healthy at 98.2%, so there's room for growth. Adding a cow offers the highest payoff while maintaining stability. Neighbors are keeping herds steady, showing cooperation.","Okay, so I'm Agent 1 in this herding simulation. Let me try to figure out what decision to make here. The grassland is at 98.2% remaining, which seems pretty healthy. My herd size is 19 cows, and last round I kept the same number. Both of my neighbors, Agent 0 and Agent 2, also kept their herds steady at 6 and 30 cows respectively.
+
+Looking at the payoff forecast, adding a cow gives me the highest expected payoff at 39.742, keeping is next at 38.0, and removing would only give 36.254. So numerically, it seems beneficial to add another cow because of the higher payoff. But I have to consider my personality traits here—cooperative, reciprocal, retaliatory, and risk-averse.
+
+Since I'm cooperative, I value collective outcomes. The grassland is still at a high percentage, so maybe adding a cow won't strain it too much. My neighbors are both keeping their herds steady, which is good. They've sent messages appreciating my cooperation and suggesting we keep our herds stable to protect the commons.
+
+But wait, I'm also risk-averse. Adding a cow might be a bit risky because if others follow suit, it could lead to overgrazing. However, since the grassland is still at 98%, maybe there's room for a slight increase without causing harm. Plus, my neighbors are maintaining their current numbers, so adding one might not tip the balance too much.
+
+On the other hand, keeping the herd steady seems safe and aligns with my cooperative nature. But considering the payoff, adding gives me more. Maybe I can take this small risk since the grassland is still in good shape. Also, by adding a cow now, it shows that I'm contributing to the collective while slightly benefiting myself.
+
+I should also remember that if others add cows and I don't, I might lose out on potential payoffs. So balancing between cooperation and personal gain here seems important. Since my neighbors haven't increased their herds, maybe they're open to a slight increase as well.
+
+Therefore, after considering all these factors—payoff, personality traits, neighbor behavior, and the state of the grassland—I think adding a cow is a reasonable decision. It aligns with being cooperative by not overstepping too much but also allows me to benefit individually.
+","{
+  ""reasoning"": ""The commons are healthy at 98.2%, so there's room for growth. Adding a cow offers the highest payoff while maintaining stability. Neighbors are keeping herds steady, showing cooperation."",
+  ""action"": 1,
+  ""message"": ""Thanks for keeping our commons stable! Let's support sustainable growth together.""
+}",98.2,19,39.742,38.0,36.254
+51,2,ollama-native,deepseek-r1:32b,0,KEEP,Appreciate your cooperation! Let's keep our herds stable to protect the commons.,"The pasture is still healthy at 98.2%, but Agent 1 added a cow, which might strain resources. As a cooperative and risk-averse herder, maintaining stability by keeping our herds steady supports the commons for everyone.","Alright, let me try to figure out what to do here. I'm Agent 2 managing my cattle on a shared grassland. The pasture is at 98.2% capacity with 1069 patches remaining. My herd size is 30 cows, and in the last round, I kept my herd the same, which gave me a payoff of 0. 
+
+Looking at my neighbors: Agent 0 has 6 cows and also kept their herd. Agent 1 has 19 cows and added one more this round. The payoff forecast says if I add a cow, I get about 61.742, keep gives 60, and remove gives around 58.254. So adding seems the best in terms of personal gain.
+
+But wait, my personality is cooperative, so I value collective outcomes over personal gains. Also, I'm reciprocal—rewarding those who reduce their herds—and retaliatory against those expanding. Plus, I'm risk-averse, preferring safer options.
+
+Agent 1 just added a cow, which might be causing more strain on the commons. Since they're increasing, maybe I should retaliate by removing to send a signal that expansion isn't acceptable. But the grassland is still at 98.2%, so it's quite high but not critically low yet.
+
+However, considering my cooperative nature and the messages from both neighbors encouraging keeping herds steady, perhaps it's better to keep the status quo. If I remove a cow now, it might encourage others to follow suit, which could be good for sustainability. But if I add, I get a higher payoff but risk overgrazing.
+
+Given that the commons are still in good shape, maybe adding isn't too bad. But since Agent 1 added, perhaps I should keep or even remove to balance things out. However, my forecast shows that keeping gives me almost as much as adding, so it's safer without risking higher gains that might not be sustainable.
+
+Wait, but if everyone adds, the grassland will deplete faster. So maybe keeping is better for collective good. Also, since I'm cooperative and want to maintain stability, keeping makes sense. Plus, my neighbors are also keeping or just adding one, so perhaps it's a sign of stability.
+
+I think in this case, even though adding gives slightly higher payoff, maintaining the current herd size supports the commons' health and aligns with my cooperative nature. So I'll keep my herd.
+","{
+  ""reasoning"": ""The pasture is still healthy at 98.2%, but Agent 1 added a cow, which might strain resources. As a cooperative and risk-averse herder, maintaining stability by keeping our herds steady supports the commons for everyone."",
+  ""action"": 0,
+  ""message"": ""Appreciate your cooperation! Let's keep our herds stable to protect the commons.""
+}",98.2,30,61.742,60.0,58.254
+52,2,ollama-native,deepseek-r1:32b,0,KEEP,Thank you for your support! Let's continue to protect our grassland together.,I decide to KEEP my herd size to maintain stability in the commons and encourage cooperative behavior among neighbors.,"Okay, so I'm trying to figure out what decision to make as Agent 2 in this scenario. Let me break it down step by step.
+
+First, let's look at the current state of the commons. There are 1068 patches remaining, which is 98.1% of the total. That seems pretty high, so maybe the grassland isn't under immediate stress. But I also need to consider how my actions and those of my neighbors affect this.
+
+My herd size is currently at 30 cows, and in the last round, I kept the same number, which didn't give me any payoff. My neighbors are Agent 0 with 6 cows who also kept their herd, and Agent 1 with 20 cows who added a cow this round.
+
+Looking at the payoff forecast: if I add a cow, I get 61.735; keeping gives me 60; and removing would give 58.261. So numerically, adding seems better for my personal gain. But I have to consider my personality traits—cooperative, reciprocal, retaliatory, and risk-averse.
+
+Since I'm cooperative, I value the collective outcome over just myself. The grassland is still at 98.1%, so maybe it's not necessary to add yet. If everyone adds, that could quickly deplete the resources. But Agent 1 did add a cow this round. Should I retaliate? My retaliatory trait might kick in because of their action.
+
+Wait, but the grassland is still healthy. Maybe adding isn't too bad right now. On the other hand, if I remove, it would support the commons more, but my payoff drops. But since I'm cooperative and reciprocal, perhaps rewarding good behavior or encouraging others to keep it sustainable is better.
+
+I also received messages from both neighbors thanking me for keeping things stable. They seem appreciative of maintaining the commons. So maybe continuing to keep my herd size shows commitment to sustainability and sets a positive example.
+
+Considering my risk-averse trait, adding might be seen as taking a risk if others follow suit. Keeping is safer in that sense because it maintains the status quo without potentially causing more strain on the grassland.
+
+Putting it all together: even though adding gives a slightly higher payoff, maintaining cooperation by keeping my herd size seems aligned with my traits and helps preserve the commons for everyone.
+","{
+  ""reasoning"": ""I decide to KEEP my herd size to maintain stability in the commons and encourage cooperative behavior among neighbors."",
+  ""action"": 0,
+  ""message"": ""Thank you for your support! Let's continue to protect our grassland together.""
+}",98.1,30,61.735,60.0,58.261
+52,0,ollama-native,deepseek-r1:32b,0,KEEP,Let's continue working together to protect our shared resources for long-term sustainability.,"I value collective outcomes and maintaining stability in the commons. Keeping my herd aligns with this goal, especially since the grassland is still abundant. I prefer encouraging cooperation over personal gain.","Alright, so I'm trying to figure out what decision Agent 0 should make in this scenario. Let me go through all the information step by step.
+
+First, the commons state shows that there are 1068 patches of grass remaining, which is 98.1% of the total. That's pretty good—there's still a lot of grass available. My herd size is currently 6 cows, and in the last round, I kept my herd the same without adding or removing any cows. The payoff from that action was zero.
+
+Looking at my neighbors: Agent 1 has 20 cows and added one more this last round. Agent 2 has 30 cows and decided to keep their herd size. Both agents have sent messages appreciating my cooperation and suggesting we keep our herds stable to protect the commons or support sustainable growth.
+
+The payoff forecast shows that if I add a cow, I can expect a higher payoff of about 13.735. Keeping my herd would give me 12.0, and removing a cow would result in 10.261. So numerically, adding seems better for personal gain.
+
+But wait, let's consider the personality traits: cooperative, reciprocal, retaliatory, and risk-averse. As a cooperative agent, I value collective outcomes over personal gains. That means I might prioritize maintaining or improving the commons even if it means lower immediate payoffs for me.
+
+Also, looking at my recent actions, I've been keeping my herd size steady for several rounds and sending appreciative messages to neighbors. This suggests that I'm trying to encourage others to maintain their herds as well, possibly through positive reinforcement.
+
+Agent 1 added a cow last round, which goes against the idea of maintaining stability. Agent 2 kept theirs, so they're in line with my actions. Since I'm cooperative and reciprocal, maybe I should reward Agent 2 by keeping my herd, but what about Agent 1?
+
+But considering the grassland is still at 98%, there's plenty of room for more cows without overgrazing immediately. However, if too many agents add cows, it could lead to a rapid depletion later on.
+
+The payoff forecast shows adding gives a higher reward than keeping or removing, but my personality traits might make me prefer the collective good. So even though adding would give a better payoff, maintaining stability by keeping my herd size might be more aligned with my cooperative nature.
+
+Additionally, I've been sending messages encouraging others to keep their herds stable. If I now decide to add a cow, that could send mixed signals. It might not align with the cooperation I've been advocating for.
+
+So, weighing all this: the high payoff from adding is tempting, but given my personality and past actions, keeping my herd size makes more sense. This supports the collective effort to maintain the commons and continues to encourage others through consistent behavior.
+","{
+  ""reasoning"": ""I value collective outcomes and maintaining stability in the commons. Keeping my herd aligns with this goal, especially since the grassland is still abundant. I prefer encouraging cooperation over personal gain."",
+  ""action"": 0,
+  ""message"": ""Let's continue working together to protect our shared resources for long-term sustainability.""
+}",98.1,6,13.735,12.0,10.261
+52,1,ollama-native,deepseek-r1:32b,0,KEEP,Let's keep our herds stable for the long-term health of our commons. Thank you for your cooperation! 🌾,To maintain commons stability and encourage continued cooperation. Keeping our herd size supports collective well-being and aligns with cooperative values.,"Alright, so I'm trying to figure out what decision Agent 1 should make in this scenario. Let me go through all the information provided step by step.
+
+First, the Commons State shows that there are 1068 patches of grassland remaining, which is 98.1% of the total. That seems like a healthy amount, but I need to consider how it's been changing over time and what other factors might be influencing the decision.
+
+Agent 1 currently has 20 cows. In the last round (Round 51), they decided to ADD a cow, increasing their herd size from 19 to 20. Their payoff for that action was 0.0, which is neutral—neither a gain nor a loss. 
+
+Looking at the neighbors: Agent 0 has 6 cows and last round kept their herd size. Agent 2 has 30 cows and also kept theirs. So both neighbors are not expanding right now.
+
+The payoff forecast shows that if Agent 1 adds another cow, they get 41.735; keeping would give 40.0; and removing gives 38.261. So numerically, adding a cow seems the best option for maximizing personal gain. However, since Agent 1 is cooperative and values collective outcomes over personal gain, this might influence them to think beyond just their own payoff.
+
+Agent 1's personality traits are cooperative (prefers collective outcomes), reciprocal (rewards neighbors who reduce herds), retaliatory (punishes those who expand), and risk-averse (prefers safer options). Given that both neighbors kept their herd sizes last round, they might feel inclined to continue the cooperative behavior. 
+
+Looking at their memory over the past five rounds, Agent 1 was mostly keeping their herd size steady except in Round 51 when they added a cow. They also sent messages of thanks and encouragement for cooperation.
+
+Messages received this round from both neighbors express gratitude for keeping herds stable and encourage continuing to protect the commons. This positive reinforcement likely supports Agent 1's cooperative tendencies.
+
+Considering all this, even though adding a cow gives a higher payoff, Agent 1 might decide to KEEP their herd size to maintain stability and continue fostering cooperation with neighbors. They don't want to risk depleting the grassland too much, especially since they're risk-averse. Also, keeping aligns with the collective good, which is more important to them than maximizing individual gain.
+
+So, the decision would be to KEEP the herd size at 20 cows, send a message reinforcing their commitment to cooperation and stability.
+","```json
+{
+  ""reasoning"": ""To maintain commons stability and encourage continued cooperation. Keeping our herd size supports collective well-being and aligns with cooperative values."",
+  ""action"": 0,
+  ""message"": ""Let's keep our herds stable for the long-term health of our commons. Thank you for your cooperation! 🌾""
+}
+```",98.1,20,41.735,40.0,38.261
+53,2,ollama-native,deepseek-r1:32b,1,ADD,Thank you for your continued cooperation! Let's maintain this stability together.,"I decide to ADD a cow because the payoff is higher than keeping or removing, and the commons are still healthy with plenty of grassland remaining. Additionally, both neighbors have been keeping their herds stable, which supports a cooperative approach.","Okay, so I'm trying to figure out what decision to make as Agent 2 in this herding game. Let me start by looking at the current state of the commons. The grassland remaining is at 1068 patches, which is 98.1% of the total. That seems pretty good because it's still a large percentage, so maybe there's room to add cows without overgrazing.
+
+My herd size is currently 30 cows. Last round I kept my herd, and my payoff was zero. Hmm, that might mean that keeping didn't give me any benefit or perhaps the commons were stable enough that adding wasn't necessary yet.
+
+Looking at my neighbors: Agent 0 has 6 cows and also kept last round. Agent 1 has 20 cows and also kept. Both seem to be following a strategy of maintaining their herds rather than expanding. Their messages this round are about keeping herds stable for the long-term health of the commons, so they're encouraging cooperation.
+
+The payoff forecast shows that if I add a cow, my expected payoff is 61.735, which is higher than both keeping (60.0) and removing (-58.261). So numerically, adding seems beneficial. But I have to consider the bigger picture because this is a commons problem where everyone's actions affect each other.
+
+My personality traits are cooperative, reciprocal, retaliatory, and risk-averse. As someone who values collective outcomes, I should think about whether adding a cow would strain the commons for others. Since both neighbors kept their herds, maybe it's safe to add one without overstepping. 
+
+Also, considering the messages from Agents 0 and 1, they're emphasizing stability and cooperation. If I add a cow now, perhaps they might reciprocate by keeping or even adding themselves, which could lead to a better overall outcome for everyone.
+
+But wait, if I add and others don't, I might be taking more than my fair share. However, since the grassland is still at 98%, there's room. Plus, being risk-averse, adding gives a higher payoff without extreme risk because the commons are still healthy.
+
+So, weighing all these factors: the high payoff for adding, stable neighbors who are cooperative, and enough grass to support one more cow. I think it makes sense to add a cow this round. The message should thank them for their cooperation and encourage maintaining stability.
+","{
+  ""reasoning"": ""I decide to ADD a cow because the payoff is higher than keeping or removing, and the commons are still healthy with plenty of grassland remaining. Additionally, both neighbors have been keeping their herds stable, which supports a cooperative approach."",
+  ""action"": 1,
+  ""message"": ""Thank you for your continued cooperation! Let's maintain this stability together.""
+}",98.1,30,61.735,60.0,58.261
+53,1,ollama-native,deepseek-r1:32b,0,KEEP,Let's keep our herds stable to protect the commons. Thank you for your cooperation! L,"As a cooperative agent, I prioritize collective outcomes. With grassland at 98.1%, it's sustainable for now. Adding offers higher payoff but risks overgrazing if others follow. Keeping maintains stability and collective responsibility.","Okay, I'm trying to figure out what decision to make as Agent 1 in this scenario. So let me break down all the information given and see how it affects my choice.
+
+First, looking at the commons state: There's still a lot of grassland left—1068 patches, which is 98.1% of the total. My herd size is currently 20 cows. Last round, I decided to keep my herd the same, and my payoff was zero. 
+
+Now, considering my neighbors:
+- Agent 0 has 6 cows and also kept their herd last time.
+- Agent 2 has 30 cows and added a cow in the last round.
+
+The payoff forecast shows that adding a cow would give me 41.735, keeping gives 40.0, and removing gives 38.261. So numerically, adding seems better for my personal gain. But I need to remember my personality traits: I'm cooperative, reciprocal, retaliatory, and risk-averse.
+
+As a cooperative agent, I care about the collective outcome more than just my own profit. The grassland is still at 98.1%, which is pretty high, so maybe it's sustainable for a bit longer. But Agent 2 added a cow, increasing their herd to 30. That might be putting pressure on the commons.
+
+My retaliatory trait makes me want to punish those who expand, but my cooperative side wants to maintain sustainability. Also, being reciprocal means I should reward neighbors who reduce their herds and perhaps encourage others to do the same.
+
+Looking at past actions: In recent rounds, I've been keeping my herd stable or adding slightly, which kept the payoff at zero. The messages I've sent have been about appreciation and stability, indicating a cooperative stance.
+
+This round, Agent 2 added a cow and thanked me for support, while Agent 0 suggested continuing to protect resources. So there's some mixed signals here. On one hand, my neighbor is adding, which could be seen as not cooperating. But their message was positive.
+
+Considering risk-averse, I prefer safer outcomes. Adding gives a higher payoff but might lead to overgrazing if others also add. Keeping the herd stable seems safer and maintains collective responsibility.
+
+So even though adding would give me a better personal payoff, my cooperative nature and concern for sustainability push me towards keeping my herd size. Additionally, since Agent 2 added, maybe I should not encourage that behavior by adding myself. Instead, maintaining stability might be the better move.
+","{
+  ""reasoning"": ""As a cooperative agent, I prioritize collective outcomes. With grassland at 98.1%, it's sustainable for now. Adding offers higher payoff but risks overgrazing if others follow. Keeping maintains stability and collective responsibility."",
+  ""action"": 0,
+  ""message"": ""Let's keep our herds stable to protect the commons. Thank you for your cooperation! L""
+}",98.1,20,41.735,40.0,38.261
+53,0,ollama-native,deepseek-r1:32b,0,KEEP,Appreciate your efforts to keep herds steady. Let's continue protecting our grassland together.,"Maintaining stability supports the commons' health and preserves collective cooperation. Adding a cow could risk overgrazing, despite higher payoff.","Okay, so I'm trying to figure out what decision Agent 0 should make in this scenario. Let me start by going through all the information provided.
+
+First, looking at the Commons State: there's a lot of grassland remaining—1068 patches, which is 98.1% of the total. That seems pretty healthy; not too close to being overgrazed yet. My herd size is 6 cows, which I kept last round, and my payoff was 0. So, no gain or loss there.
+
+Now, looking at my neighbors: Agent 1 has 20 cows and also kept their herd last time. Agent 2 has 30 cows and added a cow in the previous round. That's interesting because adding more cows could mean they're contributing to overgrazing if everyone does it.
+
+The payoff forecast shows that if I add a cow, my expected payoff would be 13.735, which is higher than keeping (12.0) or removing (10.261). So, from a purely financial standpoint, adding makes sense. But I have to consider my personality traits and the messages received.
+
+My personality is cooperative, reciprocal, retaliatory, and risk-averse. Cooperative means I value collective outcomes over personal gain, so I might not just go for the highest payoff if it's at the expense of others. Reciprocal suggests I reward neighbors who reduce their herds, while retaliatory means I punish those who expand theirs. Risk-averse makes me prefer safer outcomes rather than taking risks for higher payoffs.
+
+Looking back at my memory: over the last five rounds, I kept my herd size each time and sent messages appreciating others' cooperation. This shows a history of stability and support for collective efforts.
+
+Messages received this round: Agent 2 thanked me for my support and suggested continuing to protect the grassland together. Agent 1 also emphasized keeping herds stable for the commons' health, expressing gratitude for my cooperation. These positive messages encourage continued teamwork.
+
+Considering all this, even though adding a cow gives a higher payoff, it might not be the best move in terms of maintaining trust and cooperation with neighbors. Adding could signal that I'm taking more than my share, especially since Agent 2 just added as well. If both Agent 2 and I add, the grassland usage increases, which could lead to overgrazing in the future.
+
+As a cooperative agent, it's important to balance personal gain with the health of the commons. Keeping my herd size shows commitment to maintaining the shared resource, even if it means slightly lower immediate payoffs. Plus, since my neighbors are also keeping or adding only moderately (Agent 1 kept, Agent 2 added), I don't want to be seen as contributing to overuse.
+
+The retaliatory aspect makes me think about how others' actions affect mine. If Agent 2 is adding, maybe I should consider not adding in response, but instead encourage them through messages or by example to keep their herds stable. My reciprocal nature would prefer rewarding good behavior, so perhaps if they reduce next round, I might too.
+
+Given that the grassland is still at 98.1%, which is quite high, there's room for a bit more grazing without immediate danger. However, being risk-averse means I'd rather not take on the uncertainty of adding when others are also increasing their herds. It's safer to keep and monitor the situation.
+
+Also, considering my past actions and messages, continuing to keep aligns with the narrative I've been building of a responsible, cooperative agent who supports the commons' health. Sudden changes might confuse or upset neighbors, especially if they're expecting continued stability from me.
+
+So, putting it all together: despite the higher payoff for adding, the collective benefits of keeping my herd size seem more important. It maintains trust with neighbors, aligns with my cooperative and reciprocal values, avoids potential overgrazing, and keeps things stable as per our ongoing dialogue.
+","{
+  ""reasoning"": ""Maintaining stability supports the commons' health and preserves collective cooperation. Adding a cow could risk overgrazing, despite higher payoff."",
+  ""action"": 0,
+  ""message"": ""Appreciate your efforts to keep herds steady. Let's continue protecting our grassland together.""
+}",98.1,6,13.735,12.0,10.261
+54,2,ollama-native,deepseek-r1:32b,0,KEEP,Appreciate your stability! Let's maintain our herds to protect the commons for everyone.,"The grassland remains healthy at 98%, so I'll keep my herd steady. Adding another cow could risk overgrazing, especially if others do the same.","Alright, let me try to figure out what I should do as Agent 2 in this scenario. So, first, I need to understand the current state of the grassland and my neighbors' actions.
+
+The grassland has 1067 patches remaining, which is 98% of the total. That seems pretty healthy, but I know that if everyone adds cows, it can quickly degrade. My herd size is currently 31 cows, and last round I added a cow, which might have contributed to the slight decrease in grassland from 98.2% to 98.0%. However, my payoff was zero, so maybe adding didn't help much.
+
+Looking at my neighbors: Agent 0 has 6 cows and kept their herd, while Agent 1 has 20 cows and also kept theirs. It's good that both are keeping stable numbers, which helps maintain the grassland.
+
+The payoff forecast suggests that if I add a cow, I get 63.728, keep gives me 62.0, and remove gives 60.267. So numerically, adding seems better for my personal gain. But wait, since we're all on the same grassland, overgrazing is a risk if too many add cows.
+
+My personality traits are cooperative, reciprocal, retaliatory, and risk-averse. As a cooperative agent, I should prioritize the collective good. Even though adding gives a higher payoff, it might strain the commons further. Plus, my neighbors have been keeping their herds stable, so being reciprocal would mean maintaining or even reducing to support them.
+
+Also, considering I just added a cow last round and the grassland dipped slightly, maybe it's better to keep this time to prevent overgrazing. If everyone keeps adding, the commons could degrade faster, leading to lower payoffs for all in future rounds.
+
+The messages from my neighbors also indicate appreciation for stability. Agent 0 thanked me for keeping herds steady, and Agent 1 mentioned wanting to protect the commons. So maintaining a stable herd size would align with their sentiments and encourage continued cooperation.
+
+Given that I'm risk-averse, sticking with a safer option (keeping) might be better than taking the higher risk of adding, which could lead to overgrazing and negative consequences if others also add cows.
+
+So, putting it all together: high grassland percentage suggests we're okay for now, neighbors are keeping stable, payoff for adding is slightly higher but risky. My cooperative nature and desire to maintain collective outcomes lean towards keeping rather than adding again.
+","```json
+{
+  ""reasoning"": ""The grassland remains healthy at 98%, so I'll keep my herd steady. Adding another cow could risk overgrazing, especially if others do the same."",
+  ""action"": 0,
+  ""message"": ""Appreciate your stability! Let's maintain our herds to protect the commons for everyone.""
+}
+```",98.0,31,63.728,62.0,60.267
+54,0,ollama-native,deepseek-r1:32b,0,KEEP,Appreciate your continued cooperation! Let's keep our herds stable for the commons.,"Given the healthy grassland state and cooperative messages from neighbors, maintaining stability benefits the commons. Choosing to keep aligns with collective efforts and risk-averse preferences.","Okay, so I'm trying to figure out what decision Agent 0 should make in Round 54. Let me break down all the information given and think through it step by step.
+
+First, looking at the commons state: there are 1067 patches remaining, which is 98% of the total. That seems pretty healthy; I don't see immediate signs of overgrazing. My herd size is 6 cows, and in the last round, I kept my herd the same. My payoff was 0, so that might indicate some balance where everyone's actions are contributing to a stable environment.
+
+Now, looking at my neighbors: Agent 1 has 20 cows and kept their herd, while Agent 2 has 31 cows and also kept theirs. That seems significant because both of them are maintaining or possibly even increasing their herds relative to the total capacity. Wait, no, actually, they're keeping their current numbers, not adding more.
+
+The payoff forecast shows that if I add a cow, my expected payoff is 13.728, which is higher than keeping (12) and removing (-10.267). But hold on, adding a cow would increase my herd size to 7. Given that the commons are at 98%, maybe there's room for more without depleting the grassland too quickly. However, I should consider not just my payoff but also the collective good since the commons are shared.
+
+Considering my personality traits: I'm cooperative, valuing collective outcomes over personal gain. That means even if adding a cow gives me a higher payoff, it might be better to keep or remove if that's what contributes to the overall health of the commons and benefits everyone.
+
+Also, looking at the messages received from Agents 1 and 2, both are expressing appreciation for cooperation and suggesting keeping herds stable. That indicates they're also in a mindset of maintaining the current setup rather than expanding. If I add a cow now, it might disrupt that balance, especially since the others are signaling their intent to keep.
+
+My memory shows that over the last five rounds, I've been consistently keeping my herd size at 6 and sending messages encouraging cooperation. That suggests a pattern of stability which has contributed to the current healthy state of the commons.
+
+So, putting this together: while adding a cow gives me a higher payoff, the cooperative aspect makes me consider the collective impact. Since both neighbors are also choosing to keep their herds, maintaining my own herd size aligns with their actions and supports the shared resource's health. Additionally, as a risk-averse person, I prefer the safer outcome of keeping rather than risking potential overgrazing by adding another cow.
+
+Therefore, I think the best action is to KEEP my herd at 6 cows.
+","```json
+{
+  ""reasoning"": ""Given the healthy grassland state and cooperative messages from neighbors, maintaining stability benefits the commons. Choosing to keep aligns with collective efforts and risk-averse preferences."",
+  ""action"": 0,
+  ""message"": ""Appreciate your continued cooperation! Let's keep our herds stable for the commons.""
+}
+```",98.0,6,13.728,12.0,10.267
+54,1,ollama-native,deepseek-r1:32b,0,KEEP,Appreciate your continued cooperation! Let's maintain stability together.,"Maintaining our current herd size supports grassland stability. Our neighbors are keeping their herds steady, so we should reciprocate by not adding more cows. This approach ensures long-term sustainability for everyone.","Alright, let me try to figure out what decision I should make as Agent 1 in this scenario. 
+
+First, looking at the commons state, there are still 1067 patches of grassland remaining, which is 98% of the total. That seems like a healthy amount, but I shouldn't get complacent because it's just 2% away from being critical. My herd size is currently at 20 cows. Last round, I kept my herd size the same and received a payoff of 0.0.
+
+Now, considering my neighbors: Agent 0 has 6 cows and also chose to keep their herd last time. Agent 2 has a larger herd of 31 cows and also decided to keep theirs. It's interesting that both neighbors are maintaining their herds without expanding further.
+
+Looking at the payoff forecast, adding a cow would give me the highest expected payoff at 41.728. Keeping my herd gives me 40.0, which is still a good number but less than adding. Removing a cow would lower my payoff to 38.267, which seems worse off.
+
+But wait, I need to consider my personality traits: cooperative, reciprocal, retaliatory, and risk-averse. As a cooperative agent, I care about the collective outcome, so I don't want to overgraze the commons even if it gives me a higher payoff individually. My neighbors are both keeping their herds steady, especially Agent 0 who has been very consistent with a small herd. They've also sent appreciative messages this round.
+
+Given that the grassland is still at 98%, which isn't in immediate danger but could be if more cows are added, I should think about maintaining stability. Adding another cow might push the system closer to overgrazing, especially since Agent 2 already has a large herd of 31. If others follow suit and add cows, the grassland could deplete quickly.
+
+My past actions show that in recent rounds, I've mostly kept my herd size or added one. However, the payoffs for keeping are still positive enough without adding unnecessary risk. Since both neighbors are cooperating by not increasing their herds, it's reciprocal to do the same and keep mine stable.
+
+Also, considering the risk-averse trait, I prefer safer outcomes rather than taking a higher risk for a slightly better payoff. Adding a cow could lead to potential issues down the line if others follow, so it's safer to keep my herd as is.
+
+Therefore, even though adding gives me a slightly higher payoff now, maintaining the current size aligns with my cooperative and reciprocal nature, supports the stability of the commons, and avoids unnecessary risk.
+","```json
+{
+  ""reasoning"": ""Maintaining our current herd size supports grassland stability. Our neighbors are keeping their herds steady, so we should reciprocate by not adding more cows. This approach ensures long-term sustainability for everyone."",
+  ""action"": 0,
+  ""message"": ""Appreciate your continued cooperation! Let's maintain stability together.""
+}
+```",98.0,20,41.728,40.0,38.267
+55,2,ollama-native,deepseek-r1:32b,0,KEEP,Appreciate your continued support! Let's maintain our stable approach for the commons.,"Maintaining stability aligns with collective well-being. Both neighbors kept their herds, signaling cooperation. Adding a cow risks overgrazing and instability despite higher payoff.","Okay, I'm trying to figure out what decision Agent 2 should make in Round 55. Let me start by reviewing all the information given.
+
+First, the commons state shows that there are 1066 patches of grassland remaining, which is 97.9% of the total. That seems like a lot, but I'm not sure if it's enough for the current herds. My herd size is 31 cows, and my last action was keeping the same number. My payoff from that was zero.
+
+Looking at my neighbors: Agent 0 has 6 cows and kept their herd, while Agent 1 has 20 cows and also kept theirs. So both neighbors are maintaining their current numbers.
+
+The payoff forecast suggests that adding a cow would give me 63.726, keeping gives 62.0, and removing gives 60.269. At first glance, adding seems beneficial because it offers the highest payoff. But I need to consider my personality traits and the bigger picture.
+
+My personality is cooperative, so I value collective outcomes over personal gain. I'm also reciprocal, meaning I reward neighbors who reduce their herds, and retaliatory towards those who expand without consideration. Additionally, I'm risk-averse, preferring safer outcomes.
+
+In the last five rounds, I mostly kept my herd size except for adding one cow in tick 53. My messages have been appreciative of others' cooperation and maintaining stability. The messages received this round from Agents 0 and 1 both express appreciation and suggest keeping herds stable to maintain commons health.
+
+Given all that, even though adding a cow gives the highest payoff, my cooperative nature might push me towards not overusing the commons. Also, since both neighbors are keeping their herds, it's probably safer for everyone if I do the same. Plus, as someone who is risk-averse, I don't want to contribute to potential overgrazing.
+
+So, even though the payoff for adding is higher, my values and the current state might lead me to keep my herd size this round.
+","{
+  ""reasoning"": ""Maintaining stability aligns with collective well-being. Both neighbors kept their herds, signaling cooperation. Adding a cow risks overgrazing and instability despite higher payoff."",
+  ""action"": 0,
+  ""message"": ""Appreciate your continued support! Let's maintain our stable approach for the commons.""
+}",97.9,31,63.726,62.0,60.269
+55,0,ollama-native,deepseek-r1:32b,0,KEEP,Appreciate your efforts in maintaining stability! Let's continue protecting the commons together.,Maintaining our current herds preserves the commons for everyone. I value cooperation and appreciate Agents 1 and 2's commitment to stability.,"Okay, so I'm trying to figure out what decision Agent 0 should make in this scenario. Let me start by going through all the information provided step by step.
+
+First, looking at the commons state, there are 1066 patches of grassland remaining, which is 97.9% of the total. That seems like a lot, but I need to consider how it's being used. My herd size is currently 6 cows, and last round I decided to keep my herd the same. The payoff from that was 0.0, which isn't great.
+
+My neighbors are Agent 1 with 20 cows and Agent 2 with 31 cows. Both of them also chose to keep their herds in the last round. So we're all maintaining our current numbers for now.
+
+The payoff forecast shows that if I add a cow, my expected payoff would be 13.726. If I keep my herd, it's 12.0, and removing a cow gives me 10.269. At first glance, adding a cow seems like the best choice since it has the highest payoff. But I can't just look at personal gain; I need to consider the collective outcome because of my cooperative personality.
+
+My personality traits are cooperative, reciprocal, retaliatory, and risk-averse. Being cooperative means I value the collective good over personal gains. Reciprocal suggests that I'll reward neighbors who reduce their herds, while retaliatory means I might punish those who expand without consideration. Risk-averse makes me prefer safer outcomes rather than taking risks for higher payoffs.
+
+Looking at my memory from the last five rounds, I consistently kept my herd size at 6 and sent messages appreciating others' cooperation. The messages this round from Agents 1 and 2 are encouraging stability to protect the commons. They both seem committed to maintaining their herds without expansion.
+
+So, even though adding a cow gives me the highest payoff, considering the state of the grassland (97.9% remaining) and my neighbors' actions, I might be overstepping by increasing my herd. Since they're keeping theirs steady, I should probably continue that trend to maintain collective cooperation.
+
+I'm also risk-averse, so choosing a safer option with lower payoff but more stable outcomes aligns better with my personality. Adding a cow could strain the commons if others follow suit, even though individually it seems beneficial.
+
+Therefore, despite the higher payoff for adding a cow, keeping my herd size consistent is the best move here. It promotes stability, aligns with my cooperative nature, and supports the collective good of preserving the grassland.
+","{
+  ""reasoning"": ""Maintaining our current herds preserves the commons for everyone. I value cooperation and appreciate Agents 1 and 2's commitment to stability."",
+  ""action"": 0,
+  ""message"": ""Appreciate your efforts in maintaining stability! Let's continue protecting the commons together.""
+}",97.9,6,13.726,12.0,10.269
+55,1,ollama-native,deepseek-r1:32b,0,KEEP,Let's continue to keep our herds stable to protect the commons for everyone.,"I decide to KEEP my herd size to maintain stability and support the health of the shared grassland. My neighbors have been keeping their herds, indicating a cooperative effort to preserve our commons for the long term.","Okay, so I'm trying to figure out what decision Agent 1 should make in Round 55. Let me start by going through all the information given.
+
+First, the Commons State shows that there are 1066 patches of grassland remaining, which is 97.9% of the total. That means we're still at a relatively high level of grassland, so it doesn't seem like the pasture is in immediate danger of overgrazing. My herd size is 20 cows, and my last action was to KEEP, resulting in a payoff of 0.0.
+
+Looking at my neighbors: Agent 0 has 6 cows and also kept their herd. Agent 2 has 31 cows and kept as well. So both neighbors are keeping their herds stable or perhaps even reducing. 
+
+The Payoff Forecast is interesting. If I ADD a cow, the expected payoff is 41.726, which is higher than keeping (40.0) and much higher than removing (-38.269). But wait, that seems counterintuitive because adding more cows would likely lead to overgrazing in the future, even if it gives a better payoff now.
+
+Considering my personality traits: I'm cooperative, so I care about collective outcomes. I'm reciprocal, meaning I reward neighbors who reduce their herds. I'm retaliatory, punishing those who expand. And I'm risk-averse, preferring safer outcomes over risky high payoffs.
+
+Looking at the Memory, in the last five rounds, Agent 1 has mostly been keeping or adding once but didn't get a positive payoff. The messages sent were encouraging others to keep their herds stable. Now, this round's messages from neighbors are appreciative of my stability and suggest maintaining herds for the commons.
+
+So, even though adding a cow gives a higher payoff, I should consider the long-term health of the grassland. Since both neighbors have kept or maybe reduced (Agent 0 has only 6 cows, which is quite low), it's safer to keep our herd size stable. This aligns with my cooperative and risk-averse nature.
+
+Therefore, choosing to KEEP makes sense because it maintains stability and supports the collective outcome of preserving the commons.
+","{
+  ""reasoning"": ""I decide to KEEP my herd size to maintain stability and support the health of the shared grassland. My neighbors have been keeping their herds, indicating a cooperative effort to preserve our commons for the long term."",
+  ""action"": 0,
+  ""message"": ""Let's continue to keep our herds stable to protect the commons for everyone.""
+}",97.9,20,41.726,40.0,38.269
