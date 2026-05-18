@@ -176,43 +176,31 @@ The following parameters are set in the NetLogo interface before each run and lo
 
 ---
 
-### The utility function
+### How personality parameters reach the LLM
 
-Each tick, the model computes an estimated utility for each possible action (ADD / KEEP / REMOVE) for each agent. This utility is passed to the LLM as context — the agent sees payoff estimates, not just raw resource numbers. The utility has four components:
+The personality sliders do not feed into a utility formula that the simulation computes. Instead, the Python bridge (`mastoc_llm_bridge.py`) translates each parameter's value into a plain-English personality trait that is included in the agent's system prompt. The LLM reads this description and makes decisions accordingly — the behavioral logic lives in language, not in equations.
 
-**1. Material payoff**
+The translation works as a set of threshold checks. For each parameter, a trait phrase is added to the agent's personality description when the value crosses 0.5 (or 0.3 for self-interest). The resulting description is injected into the prompt as a single sentence:
 
-$$\pi_i(x_i) = (k_i + x_i) \cdot P - C(K,\; K+d)$$
+| Parameter value | Phrase added to prompt |
+|----------------|------------------------|
+| `cooperation_level` > 0.6 | *"cooperative — values collective outcomes over personal gain"* |
+| `cooperation_level` < 0.3 | *"self-interested — focused primarily on personal profit"* |
+| `fairness_concerning_me` > 0.5 | *"envious — bothered when others earn more than you"* |
+| `fairness_concerning_others` > 0.5 | *"guilt-averse — uncomfortable earning much more than others"* |
+| `positive_reciprocity` > 0.5 | *"reciprocal — you reward neighbours who reduce their herds"* |
+| `negative_reciprocity` > 0.5 | *"retaliatory — you punish neighbours who expand their herds"* |
+| `risk_aversion_level` > 0.5 | *"risk-averse — you prefer safer outcomes over risky high payoffs"* |
 
-where P = 2 (fixed price per grass unit) and C is the cost function below.
+A run at default settings (coop=1, fairness=0.5, neg_r=0, pos_r=0) would produce: *"cooperative — values collective outcomes over personal gain; guilt-averse — uncomfortable earning much more than others."*
 
-**2. Cooperation-adjusted payoff**
-
-$$\pi_{\text{coop},i} = (1 - \alpha_c)\cdot\pi_i + \alpha_c \cdot \left[(K+d)\cdot P - \sum_j C_j\right]$$
-
-At α_c = 0 the agent is purely self-interested; at α_c = 1 it weights only the group's collective payoff.
-
-**3. Fairness adjustment (Fehr & Schmidt, 1999)**
-
-$$F_i = \frac{\alpha_f}{n-1}\sum_{j \neq i}\max(\pi_j - \pi_i,\; 0) \;+\; \frac{\beta_f}{n-1}\sum_{j \neq i}\max(\pi_i - \pi_j,\; 0)$$
-
-The first term is envy (α_f = `fairness_concerning_me`); the second is guilt (β_f = `fairness_concerning_others`). Both are scaled by the agent's own payoff relative to the group total.
-
-**4. Reciprocity adjustment**
-
-Let d_+, d_−, d_0 be the number of other agents who ADDED, REMOVED, and KEPT on the *previous* tick.
-
-$$R_i(x_i) = \pi_i \cdot \begin{cases} \rho_- \cdot \dfrac{d_+ + 0.5\,d_0}{n-1} & \text{if } x_i = +1 \text{ (ADD)} \\[6pt] \rho_+ \cdot \dfrac{d_- + 0.5\,d_0}{n-1} & \text{if } x_i = -1 \text{ (REMOVE)} \\[6pt] \tfrac{1}{2}\left[\rho_- \cdot \dfrac{d_+ + 0.5\,d_0}{n-1} + \rho_+ \cdot \dfrac{d_- + 0.5\,d_0}{n-1}\right] & \text{if } x_i = 0 \text{ (KEEP)} \end{cases}$$
-
-Adding produces utility when others are also adding (negative reciprocity / punishment logic); removing produces utility when others are also removing (positive reciprocity / reward logic).
-
-**Total utility:**
-
-$$U_i(x_i) = \pi_{\text{coop},i} - F_i + R_i$$
+Alongside the personality description, each agent also receives three numerical payoff estimates — the expected net gain from adding a cow, keeping the herd steady, or removing a cow — computed by NetLogo from current grass levels and herd sizes. These give the LLM a quantitative signal about the current state of the commons without requiring it to derive the numbers itself.
 
 ---
 
 ### The cost function and grassland dynamics
+
+The following equations describe what NetLogo actually computes each tick — the payoff estimates passed to the LLM and the grass regrowth that drives resource dynamics. This is the simulation's numerical core; the personality system above sits on top of it.
 
 **Cost function** — the opportunity cost of changing herd size:
 
@@ -256,7 +244,7 @@ Key terms from Ostrom (1990), *Governing the Commons*, as used in this paper.
 | **Provision** | Maintenance of or investment in a CPR. In MASTOC: removing cows (reducing pressure on the grassland) |
 | **Second-order collective action problem** | The problem of enforcing rules about commons use — who monitors, who sanctions, and who bears the cost of doing so |
 | **Design principles** | Eight structural features observed in long-surviving CPR institutions (Ostrom, 1990, pp. 90–102). See the table below |
-| **Graduated sanctions** | Penalties for rule violations that escalate with repeat offences — starting with low-cost social censure and rising to exclusion. Operationalised here as `negative_reciprocity` |
+| **Graduated sanctions** | Penalties for rule violations that escalate with repeat offences — starting with low-cost social censure and rising to exclusion. Partially operationalised here via `negative_reciprocity`, which works at two levels: (1) a behavioral tendency to match a neighbour's ADD with an ADD of your own (retaliatory defection rather than true peer sanctioning), and (2) activation of social sanctioning language in messages when communication is on. The second level is closer to Ostrom's intent; the first is a proxy. True graduated sanctions — where one agent imposes an escalating cost *on another* — are not structurally enforceable in this model, and that gap is itself a finding. |
 | **Monitoring** | Active observation of both resource condition and other users' behavior by participants or designated monitors |
 | **Operational rules** | Day-to-day rules governing who may appropriate, how much, and when. Distinguished from *collective choice rules* (who may change the operational rules) and *constitutional rules* (who may change the collective choice rules) |
 | **Proportional equivalence** | Design principle 2 — rules distributing costs and benefits should be proportional to each user's situation. Operationalised here as `fairness_concerning_others` |
@@ -1401,13 +1389,16 @@ Several hypotheses map directly onto Ostrom's (1990) design principles for succe
 | H6 — model capability predicts failure mode | Precondition: participants must have the cognitive capacity to engage in rule-following, monitoring, and sanctioning |
 | H7 — memory window is a prerequisite for trend detection and commons stability | Principle 4 (monitoring): memory determines whether agents can monitor resource *trends* vs. only current state; DP3 norms are inert without trend-detection |
 
-### H1 — coop ≈ 0.49 is a tragedy-producing threshold, consistent across models
+### H1 — coop ≈ 0.49 is a tragedy-producing threshold at standard starting conditions, consistent across models
 
 **Ostrom connection.** 
 Ostrom (1990) identified a shared orientation toward collective benefit as a precondition for institution formation — not a design principle that can be engineered in, but a prerequisite that must already be present. H1 tests whether the cooperation slider captures something analogous: a minimum threshold of collective orientation below which the rational-defection equilibrium is inescapable regardless of communication, memory, or sanctioning capacity.
 
 **Evidence.** 
 Five independent runs at coop = 0.49 — four with gpt-5.5, one with Claude Sonnet — all collapsed via overshoot-panic. This held across starting conditions: one of the gpt-5.5 runs began from a stressed pool (≈50%), three began from a fresh pool (100%), and the Claude run began from a fresh pool. Pool depletion still dominated in each case. By contrast, no high-cooperation run (coop = 1) collapsed because of an ADD spiral. The pattern held across model families, suggesting the cooperation parameter is the governing variable.
+
+**Important caveat — starting conditions interact with cooperation level.**
+One run at coop = 0.3 (below the proposed threshold) with a scarce starting commons (50% initial grass) *did not* collapse — agents converged to a stable equilibrium by tick 30. This does not contradict H1 but qualifies it: a severely stressed starting condition makes the case for restraint immediately legible, apparently overriding the weak cooperation framing. H1 therefore applies specifically to runs at standard or lightly stressed starting conditions. The relationship between cooperation level and starting condition is explored in H4.
 
 **Proposed experiment.** 
 Sweep `cooperation_level` across seven values while holding all other parameters fixed; run both Claude Sonnet 4.6 and gpt-5.5 in parallel to test model-independence.

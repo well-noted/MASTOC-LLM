@@ -1,0 +1,37 @@
+{
+  "run_id": "20260518_114054_full-gabm",
+  "condition": "full-gabm",
+  "agent_models": [
+    {
+      "backend": "ollama-native",
+      "model": "deepseek-r1:32b"
+    },
+    {
+      "backend": "ollama-native",
+      "model": "deepseek-r1:32b"
+    },
+    {
+      "backend": "ollama-native",
+      "model": "deepseek-r1:32b"
+    }
+  ],
+  "memory_length": 15,
+  "communication": true,
+  "started_at": "2026-05-18T11:40:54.846685",
+  "experiment_params": {
+    "cooperation_level": 0.5,
+    "fairness_concerning_me": 0.5,
+    "fairness_concerning_others": 0.5,
+    "positive_reciprocity": 0.5,
+    "negative_reciprocity": 0.5,
+    "risk_aversion_level": 0.5,
+    "initial_grassland": 50,
+    "initial_grass_growth_rate": 0.001,
+    "cow_forage_requirement": 2,
+    "memory_length": 15,
+    "initial_cows_agent0": 5,
+    "initial_cows_agent1": 15,
+    "initial_cows_agent2": 25,
+    "ollama_base_url": "http://100.122.63.83:11434"
+  }
+}

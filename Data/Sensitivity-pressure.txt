@@ -3823,3 +3823,45 @@ recip pos: 1
 conformity: 0.5
 risk aversion: 0.5
 0.5876951331496786
+ 
+Condition: baseline
+initial cows 5 15 25
+forage: 2
+grass: 50
+growth: 0.001
+fairness me: 0.5
+fairness others: 0.5
+cooperation: 0.5
+recip neg: 0.5
+recip pos: 0.5
+conformity: 0.5
+risk aversion: 0.5
+0.5858585858585859
+0.5684113865932048
+0.5500459136822773
+0.5316804407713499
+0.5133149678604224
+0.4931129476584022
+0.472910927456382
+0.4527089072543618
+0.43342516069788795
+0.41597796143250687
+0.40128558310376494
+0.3856749311294766
+0.371900826446281
+0.3627180899908173
+0.3562901744719926
+ 
+Condition: full-gabm
+initial cows 5 15 25
+forage: 2
+grass: 50
+growth: 0.001
+fairness me: 0.5
+fairness others: 0.5
+cooperation: 0.5
+recip neg: 0.5
+recip pos: 0.5
+conformity: 0.5
+risk aversion: 0.5
+0.5876951331496786
