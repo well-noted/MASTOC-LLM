@@ -34,7 +34,7 @@ The core research question:
 - [Experimental conditions](#experimental-conditions)
 - [Preliminary results](#preliminary-results)
   - [Summary table](#summary-across-conditions)
-  - [Baseline: the tragedy unfolds](#baseline-the-tragedy-unfolds)
+  - [Baseline: the tragedy unfolds — and what it takes to stop it](#baseline-the-tragedy-unfolds--and-what-it-takes-to-stop-it)
   - [Full-GABM: cooperative convergence](#full-gabm-cooperative-convergence)
   - [Hybrid: the limits of a single institutional entrepreneur](#hybrid-the-limits-of-a-single-institutional-entrepreneur)
   - [Hybrid (2 LLM): coalition formation, delayed tragedy](#hybrid-2-llm-coalition-formation-delayed-tragedy)
@@ -1752,7 +1752,7 @@ Quarterly Journal of Economics, 114(3), 817–868.
 
 Hardin, G. (1968). The Tragedy of the Commons. Science, 162(3859), 1243–1248.
 
-Jimenez-Romero, C. et al. (2025). Multi-agent systems powered by large language models.
+Jimenez-Romero, C. et al. (2025). Multi-agent systems powered by large language models: applications in swarm intelligence.
 Frontiers in Artificial Intelligence. https://doi.org/10.3389/frai.2025.1593017
 
 Ostrom, E. (1990). Governing the Commons. Cambridge University Press.
