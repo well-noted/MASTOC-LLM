@@ -27,7 +27,7 @@ The core research question:
 - [Glossary](#glossary)
   - [Acronyms and abbreviations](#acronyms-and-abbreviations)
   - [Model parameters and variables](#model-parameters-and-variables)
-  - [The utility function](#the-utility-function)
+  - [How personality parameters reach the LLM](#how-personality-parameters-reach-the-llm)
   - [The cost function and grassland dynamics](#the-cost-function-and-grassland-dynamics)
   - [Collapse patterns](#collapse-patterns)
   - [Ostrom framework](#ostrom-framework)
@@ -150,7 +150,7 @@ The following parameters are set in the NetLogo interface before each run and lo
 
 | Parameter | Symbol | Range | Description |
 |-----------|--------|-------|-------------|
-| `cooperation_level` | α_c | [0, 1] | Weight on collective vs. individual payoff in the utility function. At 0, agents maximise own earnings only; at 1, they maximise the group's total earnings |
+| `cooperation_level` | α_c | [0, 1] | How much agents weight collective vs. individual outcomes. At 0, the agent's prompt frames it as purely self-interested; at 1, it is framed as prioritising the group's total earnings |
 | `fairness_concerning_me` | α_f | [0, 1] | Envy weight — disutility experienced when others earn *more* than the agent (Fehr & Schmidt, 1999) |
 | `fairness_concerning_others` | β_f | [0, 1] | Guilt weight — disutility experienced when the agent earns *more* than others |
 | `positive_reciprocity` | ρ_+ | [0, 1] | Strength of reward-for-cooperation: agents applying this parameter gain additional utility from REMOVE when neighbors previously REMOVED |
