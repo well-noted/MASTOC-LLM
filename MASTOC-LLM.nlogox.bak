@@ -6,7 +6,7 @@
 ;;; with LLM-based agent decision-making
 ;;;
 ;;; Conditions:
-;;;   "baseline"  — psychosocially-adjusted best-response (faithful to original MASTOC)
+;;;   "baseline"  — rule-based best-response heuristic (approximates original Nash)
 ;;;   "full-gabm" — all agents use LLM
 ;;;   "hybrid"    — num-llm-agents agents use LLM (1–3); rest use best-response
 ;;;
@@ -25,7 +25,6 @@ turtles-own [
   payoff-total3 xi C payoff-total-coop add-fairness previous-action d-neg d-pos d-zero
   add-reciprocity list-of-agent-actions minus-counter equal-counter plus-counter
   add-conformity add-a-cow-payoff-list remove-a-cow-payoff-list let-equal-payoff-list
-  add-a-cow-adj-list let-equal-adj-list remove-a-cow-adj-list
   add-a-cow-minimum-payoff let-equal-minimum-payoff remove-a-cow-minimum-payoff-perc
   let-equal-minimum-payoff-perc add-a-cow-minimum-payoff-perc remove-a-cow-minimum-payoff
   list-of-agent-payoffs list-of-calc-agent-payoffs current-value list-of-final-agent-payoffs
@@ -118,9 +117,6 @@ to setup
     set add-a-cow-payoff-list []
     set let-equal-payoff-list []
     set remove-a-cow-payoff-list []
-    set add-a-cow-adj-list []
-    set let-equal-adj-list []
-    set remove-a-cow-adj-list []
     set list-of-agent-payoffs []
     set list-of-calc-agent-payoffs []
   ]
@@ -213,9 +209,6 @@ to simulation
     set add-a-cow-payoff-list []
     set let-equal-payoff-list []
     set remove-a-cow-payoff-list []
-    set add-a-cow-adj-list []
-    set let-equal-adj-list []
-    set remove-a-cow-adj-list []
     set list-of-agent-payoffs []
     set list-of-calc-agent-payoffs []
   ]
@@ -335,17 +328,12 @@ to rule-based-decide
                   [ min remove-a-cow-payoff-list ] [ 0 ])
 
   ifelse condition = "baseline" [
-    ;; Best-response over psychosocially-adjusted payoffs — faithful to original MASTOC.
-    ;; All sliders (cooperation, fairness, reciprocity, conformity) are now active:
-    ;; calculate-payoff applies them before accumulating into the adj lists below.
-    ;; Risk-aversion retains its original role: conservative agents downgrade ADD→KEEP.
-    let pa (ifelse-value (length add-a-cow-adj-list    > 0) [ min add-a-cow-adj-list    ] [ 0 ])
-    let pk (ifelse-value (length let-equal-adj-list    > 0) [ min let-equal-adj-list    ] [ 0 ])
-    let pr (ifelse-value (length remove-a-cow-adj-list > 0) [ min remove-a-cow-adj-list ] [ 0 ])
+    ;; Pure NetLogo best-response — no Python call needed for baseline
     let best-action 0
-    let best-payoff pk
-    if pa > best-payoff [ set best-action  1  set best-payoff pa ]
-    if pr > best-payoff [ set best-action -1 ]
+    let best-payoff p-keep
+    if p-add > best-payoff [ set best-action 1  set best-payoff p-add ]
+    if p-remove > best-payoff [ set best-action -1 ]
+    ;; Risk-aversion noise: risk-averse agents occasionally prefer KEEP over ADD
     if best-action = 1 and random-float 1 < risk-aversion-level * 0.3 [
       set best-action 0
     ]
@@ -615,10 +603,6 @@ to calculate-payoff [ payoffs ]
   ;; Final payoff with all adjustments
   ask humans [
     set payoff-total payoff-total-coop - add-fairness + add-reciprocity + add-conformity
-    ;; Accumulate per-action adjusted payoffs for faithful baseline best-response
-    if xi = -1 [ set remove-a-cow-adj-list lput payoff-total remove-a-cow-adj-list ]
-    if xi = 0  [ set let-equal-adj-list    lput payoff-total let-equal-adj-list    ]
-    if xi = 1  [ set add-a-cow-adj-list    lput payoff-total add-a-cow-adj-list    ]
   ]
   foreach sort humans [ h ->
     ask h [

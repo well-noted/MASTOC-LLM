@@ -271,7 +271,7 @@ Key terms from Ostrom (1990), *Governing the Commons*, as used in this paper.
 
 | Condition | Agents | Description |
 |---|---|---|
-| **baseline** | 3 rule-based | Myopic best-response heuristic — reproduces classical tragedy |
+| **baseline** | 3 rule-based | Psychosocially-adjusted best-response (faithful to original MASTOC) — reproduces classical tragedy |
 | **full-gabm** | 3 LLM | All agents use language reasoning and communication |
 | **hybrid** | mix of LLM + rule-based | Controlled by `num-llm-agents` slider — 1, 2, or 3 LLM agents paired with rule-based agents |
 
@@ -340,9 +340,11 @@ A meaningful fraction of full-GABM runs in this dataset end in collapse, with th
 
 ### Baseline: the tragedy unfolds — and what it takes to stop it
 
-The baseline condition uses rule-based best-response agents: pure payoff maximisers with no language, memory, or social signalling. Each tick they choose whichever action (ADD / KEEP / REMOVE) yields the highest expected payoff given current grass levels — with a small stochastic noise term if `risk_aversion_level` > 0. No other personality slider has any effect on baseline decisions.
+The baseline condition uses rule-based best-response agents with no language, memory, or social signaling. Each tick they evaluate all possible actions (ADD / KEEP / REMOVE) using the same psychosocially-adjusted payoff calculation as the original MASTOC model (Schindler, 2013): cooperation level, fairness weights, reciprocity, and conformity all shift the payoff matrix before the best-response action is selected. Risk aversion additionally introduces a stochastic downgrade from ADD to KEEP proportional to `risk_aversion_level`.
 
-**Important:** the sociopsychological parameters (cooperation level, fairness weights, reciprocity) do not influence baseline agent behaviour. They are parameters of the LLM prompt system and have no code path into the rule-based heuristic. Only `risk_aversion_level` has any effect on baseline agents, and even that is modest (see below).
+This makes the baseline a faithful computational replication of the original MASTOC agent, rather than a simplified pure payoff maximizer. The key difference from the LLM conditions remains: baseline agents have no language, no memory of prior rounds, and cannot send or receive messages — they respond only to the current payoff matrix.
+
+**Note on existing data:** The growth rate sweep and risk aversion tables below were collected under the previous pure payoff maximizer implementation. They remain valid as control results and their qualitative conclusions hold, but they do not reflect the psychosocially-adjusted baseline introduced in v1.1.0. New baseline runs at non-zero personality parameters may produce modestly different collapse trajectories.
 
 **Standard conditions (growth = 0.001):** At default growth rates the commons collapsed in approximately 36 ticks, exactly as classical tragedy-of-the-commons theory predicts. Herds grew from a starting total of 45 cows, crossed 100 by tick ~25, and the grassland was fully depleted by tick 36. This reproduces the original MASTOC result and confirms the control condition is working correctly.
 
