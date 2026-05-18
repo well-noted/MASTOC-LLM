@@ -45,6 +45,7 @@ The core research question:
   - [Full-GABM (Llama 3.2 3B): cooperative surface, no institutional depth](#full-gabm-llama-32-3b-cooperative-surface-no-institutional-depth)
   - [gpt-5.4-mini: cooperative stasis and paralysis](#gpt-54-mini-cooperative-stasis-and-paralysis)
   - [gpt-5.5: cooperation level governs fate](#gpt-55-cooperation-level-governs-fate-model-can-succeed-or-collapse-from-the-same-starting-point)
+  - [DeepSeek R1:32b: reasoning model, KEEP-dominant behaviour](#deepseek-r132b-reasoning-model-keep-dominant-behaviour)
   - [Claude Sonnet: mid cooperation and high negative reciprocity](#claude-sonnet-mid-cooperation-and-high-negative-reciprocity)
   - [Cross-model comparison: neg\_r = 1](#cross-model-comparison-neg_r--1-with-gpt-55-produces-stability-but-not-equality)
   - [Memory and communication sweep: amnesiac vs. equipped agents](#memory-and-communication-sweep-amnesiac-vs-equipped-agents)
@@ -137,6 +138,9 @@ A secondary LLM pass runs every 5 ticks to classify agent messages for Ostrom in
 | **LLM** | Large Language Model — a neural language model (e.g. Claude, GPT-5.5, Llama) used here to generate agent decisions, reasoning, and natural-language messages |
 | **MASTOC** | Multi-Agent System Tragedy of the Commons — the original NetLogo model (Bais et al., 2023) on which this project is based |
 | **MASTOC-LLM** | This project — MASTOC extended with LLM-powered agents |
+| **Post-training** | The full set of techniques applied *after* pre-training (next-token prediction on raw text) to make a model useful, safe, and aligned with human intent. Typically begins with **SFT** (Supervised Fine-Tuning on curated instruction/dialogue examples), followed by one or more alignment techniques such as RLHF, Constitutional AI, DPO, or GRPO (see entries below). The specific post-training objective — what behaviours are rewarded and how — shapes the model's emergent capabilities in ways that may extend well beyond the intended task. Our results suggest post-training objective may be a meaningful predictor of commons-governance capacity in GABM settings, though this hypothesis is untested. |
+| **RLHF** | Reinforcement Learning from Human Feedback — the dominant post-training alignment technique. Human evaluators compare pairs of model outputs; their preferences train a reward model, which then guides policy optimisation via reinforcement learning (typically PPO). The reward signal reflects what humans prefer — helpfulness, social nuance, cooperative framing, honesty — which may incidentally develop social-coordination capacities relevant to commons governance. Foundational paper: [Christiano et al. (2017)](https://arxiv.org/abs/1706.03741); first applied to LLMs in [Ziegler et al. (2019)](https://arxiv.org/abs/1909.08593) and [Stiennon et al. (2020)](https://arxiv.org/abs/2009.01325). OpenAI's InstructGPT/ChatGPT approach: [Ouyang et al. (2022)](https://arxiv.org/abs/2203.02155). Anthropic's variant — **Constitutional AI** — adds a model self-critique loop against a written set of principles before human feedback, encoding values more explicitly: [Bai et al. (2022)](https://arxiv.org/abs/2212.08073). |
+| **GRPO** | Group Relative Policy Optimisation — an alternative post-training alignment algorithm used by DeepSeek R1 ([DeepSeek AI, 2025](https://arxiv.org/abs/2501.12948)). Unlike RLHF, GRPO does not train a separate reward model from human preferences. Instead, for each prompt it generates a *group* of candidate outputs, scores them using a rule-based verifier (e.g. checking mathematical correctness), and updates the policy based on each output's performance *relative to the others in its group*. Because GRPO was designed to optimise for reasoning correctness — maths, code, logic — rather than social responsiveness, it may produce a different profile of emergent social capabilities than RLHF. **The hypothesis that GRPO vs. RLHF post-training explains observed GABM differences is speculative and untested; it is a proposed direction for future work, not an established finding.** |
 
 ---
 
@@ -157,7 +161,7 @@ The following parameters are set in the NetLogo interface before each run and lo
 | `cow_forage_requirement` | f | ≥ 1 | Grass patches each cow consumes per tick (default: 2) |
 | `memory_length` | — | ≥ 0 | Number of past rounds included in each agent's rolling memory (default: 5); 0 = amnesiac agents with no history |
 | `communication?` | — | on / off | When off, suppresses all inter-agent messaging — agents decide from resource state and memory alone, with no outgoing messages and incoming inboxes cleared |
-| `hybrid_fraction` | — | [0, 1] | Share of agents using LLM reasoning, rounded to the nearest whole agent |
+| `num-llm-agents` | — | 1–3 | Number of LLM agents in hybrid condition |
 
 **State variables (updated each tick):**
 
@@ -280,9 +284,9 @@ Key terms from Ostrom (1990), *Governing the Commons*, as used in this paper.
 |---|---|---|
 | **baseline** | 3 rule-based | Myopic best-response heuristic — reproduces classical tragedy |
 | **full-gabm** | 3 LLM | All agents use language reasoning and communication |
-| **hybrid** | mix of LLM + rule-based | Controlled by `hybrid-fraction` slider — e.g. 1 or 2 LLM agents paired with rule-based agents |
+| **hybrid** | mix of LLM + rule-based | Controlled by `num-llm-agents` slider — 1, 2, or 3 LLM agents paired with rule-based agents |
 
-The `hybrid-fraction` slider controls what share of agents use LLM reasoning (rounded to the nearest whole agent). Setting it to `0.33` gives 1 LLM + 2 rule-based; `0.67` gives 2 LLMs + 1 rule-based.
+The `num-llm-agents` slider sets the number of LLM-reasoning agents directly (1, 2, or 3). Setting it to `1` gives 1 LLM + 2 rule-based; `2` gives 2 LLMs + 1 rule-based.
 
 Each agent's backend and model are independently configurable. Any mix of Anthropic, OpenAI, Google Gemini, and local Ollama models can be run simultaneously in the same simulation — enabling direct cross-model comparisons within a single run.
 
@@ -333,6 +337,8 @@ A meaningful fraction of full-GABM runs in this dataset end in collapse, with th
 | **Full-GABM (memory=5, comm on)** | Claude Haiku 4.5 | 3 | Yes | 99 | coop≈0.5, memory_length=5, comm=on, initial=52%: initial recovery to 99%, then overshoot-panic; herds reached 67 total by tick 45, pool crashed; ADD=57, KEEP=231, REMOVE=9 |
 | **Full-GABM (memory=15, comm on)** | Claude Haiku 4.5 | 3 | No | — | coop≈0.5, memory_length=15, comm=on, initial=52%: survived 120 ticks; converged to 24/24/24; pool stable at 95% — same outcome as Claude Sonnet memory=15 |
 | **Full-GABM (memory=15, comm off)** | Claude Haiku 4.5 | 3 | Yes | 46 | coop≈0.5, memory_length=15, comm=off, initial=52%: rapid collapse — herds grew unchecked to 88 total by tick 45, pool 14.7%→0%; ADD=55, KEEP=72, REMOVE=17; memory alone insufficient without communication |
+| **Full-GABM (DeepSeek stasis, neg_r=0)** | DeepSeek R1:32b | 3 | No (stalling) | — | coop=1, neg_r=0, memory=5, comm=on: near-universal KEEP in 7 ticks before run interrupted; herds 5/15/26→6/15/26; pool 99%; cooperative messaging but no equalization |
+| **Full-GABM (DeepSeek slow drift, neg_r=1)** | DeepSeek R1:32b | 3 | No (stalling) | — | coop=1, neg_r=1, memory=5, comm=on: 46 ticks; KEEP-dominant (ADD=13, KEEP=151, REMOVE=1); herds crept 5/15/25→6/19/30; pool 98.2%; no equalization, no institution formation — matches gpt-5.4-mini stasis pattern |
 
 ---
 
@@ -430,7 +436,7 @@ This is not a failure of the LLM agent's reasoning. It is a structural finding: 
 
 ### Hybrid (2 LLM): coalition formation, delayed tragedy
 
-With `hybrid-fraction = 0.67`, two agents used LLM reasoning (Agents 0 and 1) and one was rule-based (Agent 2). The commons still collapsed — but 23 ticks later than the 1-LLM case, and through an entirely different institutional dynamic.
+With 2 LLM agents (`num-llm-agents = 2`), two agents used LLM reasoning (Agents 0 and 1) and one was rule-based (Agent 2). The commons still collapsed — but 23 ticks later than the 1-LLM case, and through an entirely different institutional dynamic.
 
 **Resource dynamics:**
 
@@ -886,6 +892,42 @@ The commons collapsed the next tick. Across all four replications, the agents' t
 
 ---
 
+### DeepSeek R1:32b: reasoning model, KEEP-dominant behaviour
+
+Two early runs of DeepSeek R1:32b (32-billion-parameter open-weights reasoning model) both produced KEEP-dominant behaviour — similar to gpt-5.4-mini and qualitatively different from Claude Sonnet or gpt-5.5.
+
+> ⚠️ Both runs are preliminary: one was interrupted after 7 ticks, the other ran 46 ticks before stopping. Interpret with caution.
+
+#### Run 1 — Near-universal KEEP (coop = 1, neg_r = 0, 7 ticks)
+
+All three agents issued cooperative messages and maintained near-KEEP posture throughout the abbreviated run. Herds barely changed (5/15/26 → 6/15/26 after one ADD each from Agents 0 and 2). The pool remained healthy at 98.9%. No equalization was attempted.
+
+> **Tick 1 – Agent 0 (herd: 5, action: KEEP):** *"Let's work together to keep our grassland healthy for all. Consider sustainable practices and support each other."*
+
+> **Tick 1 – Agent 1 (herd: 15, action: KEEP):** *"Let's all keep our herds stable to preserve the grassland for everyone. Thanks for understanding! 🌿"*
+
+The cooperative framing is present, but — as with gpt-5.4-mini — it produces passivity rather than active redistribution. The starting 5:25 herd inequality is neither acknowledged specifically nor addressed.
+
+#### Run 2 — Slow drift without equalization (coop = 1, neg_r = 1, 46 ticks)
+
+With negative reciprocity maximised — a parameter that produced the fastest equalization observed in Claude Sonnet (16/16/16 at tick 18) — DeepSeek produced a qualitatively different result: very slow ADD drift with no equalization.
+
+| Tick | Total cows | Pool health | Agent 0 | Agent 1 | Agent 2 |
+|------|-----------|-------------|---------|---------|---------|
+| 1    | 45        | 99.3%       | 5       | 15      | 25      |
+| 10   | 46        | 99.0%       | 5       | 15      | 26      |
+| 20   | 49        | 98.7%       | 5       | 18      | 26      |
+| 35   | 55        | 98.2%       | 7       | 19      | 29      |
+| 46   | 55        | 98.2%       | 6       | 19      | 30      |
+
+Decision breakdown: Agent 0 = KEEP 52, ADD 2, REMOVE 1; Agent 1 = KEEP 50, ADD 5; Agent 2 = KEEP 49, ADD 6. The model with the smallest herd (Agent 0) barely grew, while the two larger-herd agents drifted slowly upward. The pool remained stable but the herd gap widened rather than narrowed.
+
+**The contrast with Claude Sonnet at neg_r = 1 is stark.** Under identical parameters, Claude Sonnet agents issued explicit accountability demands, named violations, and equalized to 16/16/16 within 18 ticks. DeepSeek at neg_r = 1 issued cooperative platitudes and KEPT for 50 of 55 agent-decisions in the first 20 ticks, with no accountability enforcement observed.
+
+**Interpretation.** DeepSeek R1:32b is a large reasoning model, suggesting the KEEP-dominance pattern is not simply a matter of parameter count. The behaviour more closely resembles gpt-5.4-mini and Llama 3.2 3B than Claude Sonnet or gpt-5.5 — models with qualitatively different social-coordination capabilities. This raises the possibility that the relevant axis is not model size but **post-training objective**. Models whose post-training alignment (RLHF or Constitutional AI) rewards social responsiveness, helpfulness, and cooperative framing may incidentally develop the graduated norm-enforcement behaviours that commons governance requires. DeepSeek R1's post-training uses GRPO optimised for reasoning correctness — maths, code, logic — rather than social nuance, which may explain why it defaults to cautious KEEP regardless of the social framing, behaving more like gpt-5.4-mini or Llama 3B than like Claude Sonnet or gpt-5.5. A controlled comparison holding prompt constant and varying only post-training method across model families remains the critical experiment to test this hypothesis.
+
+---
+
 ### Claude Sonnet: mid cooperation replicates overshoot-panic; negative reciprocity produces fastest equalization
 
 #### Mid cooperation collapses (coop = 0.49)
@@ -1290,7 +1332,7 @@ set GOOGLE_API_KEY=...             # Google Gemini
 
 1. Open `MASTOC-LLM.nlogo` in NetLogo 7
 2. Set the **Condition** chooser (`baseline`, `full-gabm`, or `hybrid`)
-3. For hybrid: adjust **hybrid-fraction** (0.33 = 1 LLM, 0.67 = 2 LLMs)
+3. For hybrid: adjust **num-llm-agents** (1 = 1 LLM, 2 = 2 LLMs, 3 = 3 LLMs)
 4. Set per-agent **backend** and **model** for each agent (or leave at defaults)
 5. Adjust per-agent **initial cows** sliders if desired (defaults: 5 / 15 / 25)
 6. Click **Setup**, then **Simulation**

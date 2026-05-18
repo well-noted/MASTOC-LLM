@@ -425,9 +425,15 @@ def analyse_results(log_dir: str, data_dir: str = "Data") -> None:
 def _write_csv(filename: str, rows: list[dict]) -> None:
     if not rows:
         return
-    fieldnames = list(rows[0].keys())
+    # Union all keys across all rows — some runs log extra fields (e.g. backend, model)
+    # that are absent from earlier log formats; preserve insertion order.
+    seen: dict = {}
+    for row in rows:
+        for k in row:
+            seen.setdefault(k, None)
+    fieldnames = list(seen.keys())
     with open(filename, "w", newline="", encoding="utf-8") as f:
-        writer = csv.DictWriter(f, fieldnames=fieldnames)
+        writer = csv.DictWriter(f, fieldnames=fieldnames, extrasaction="ignore")
         writer.writeheader()
         writer.writerows(rows)
 
