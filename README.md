@@ -1676,7 +1676,8 @@ Beyond the seven hypotheses above, the following remain unresolved and are worth
 Bai, Y. et al. (2022). Constitutional AI: Harmlessness from AI feedback. Anthropic.
 https://arxiv.org/abs/2212.08073
 
-Julia Schindler (2013, April 27). “MASTOC - A Multi-Agent System of the Tragedy Of The Commons” (Version 1.1.0). CoMSES Computational Model Library. Retrieved from: https://www.comses.net/codebases/2283/releases/1.1.0/
+Julia Schindler (2013, April 27). “MASTOC - A Multi-Agent System of the Tragedy Of The Commons” (Version 1.1.0). CoMSES Computational Model Library.
+Retrieved from: https://www.comses.net/codebases/2283/releases/1.1.0/
 
 Christiano, P. et al. (2017). Deep reinforcement learning from human preferences. NeurIPS.
 https://arxiv.org/abs/1706.03741
