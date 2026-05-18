@@ -922,7 +922,12 @@ Decision breakdown: Agent 0 = KEEP 52, ADD 2, REMOVE 1; Agent 1 = KEEP 50, ADD 5
 
 **The contrast with Claude Sonnet at neg_r = 1 is stark.** Under identical parameters, Claude Sonnet agents issued explicit accountability demands, named violations, and equalized to 16/16/16 within 18 ticks. DeepSeek at neg_r = 1 issued cooperative platitudes and KEPT for 50 of 55 agent-decisions in the first 20 ticks, with no accountability enforcement observed.
 
-**Interpretation.** DeepSeek R1:32b is a large reasoning model, suggesting the KEEP-dominance pattern may not be simply a matter of parameter count. Its output profile more closely resembles gpt-5.4-mini and Llama 3.2 3B than Claude Sonnet or gpt-5.5 — models with qualitatively different social-coordination output profiles. This raises the possibility that the relevant axis is not model size but **post-training objective**. Models whose post-training alignment (RLHF or Constitutional AI) rewards social responsiveness, helpfulness, and cooperative framing may incidentally produce the graduated norm-enforcement outputs that commons governance requires. DeepSeek R1's post-training uses GRPO optimised for reasoning correctness — maths, code, logic — rather than social nuance, which may explain why it defaults to cautious KEEP regardless of the social framing, producing outputs more similar to gpt-5.4-mini or Llama 3B than to Claude Sonnet or gpt-5.5. A controlled comparison holding prompt constant and varying only post-training method across model families remains the critical experiment to test this hypothesis.
+**Interpretation.** 
+DeepSeek R1:32b is a large reasoning model, suggesting the KEEP-dominance pattern may not be simply a matter of parameter count. Its output profile more closely resembles gpt-5.4-mini and Llama 3.2 3B than Claude Sonnet or gpt-5.5 — models with qualitatively different social-coordination output profiles. This raises the possibility that the relevant axis is not model size but **post-training objective**. 
+
+Models whose post-training alignment (RLHF or Constitutional AI) rewards social responsiveness, helpfulness, and cooperative framing may incidentally produce the graduated norm-enforcement outputs that commons governance requires. DeepSeek R1's post-training uses [GRPO](https://huggingface.co/blog/NormalUhr/grpo) optimised for reasoning correctness — maths, code, logic — rather than social nuance, which may explain why it defaults to cautious KEEP regardless of the social framing, producing outputs more similar to gpt-5.4-mini or Llama 3B than to Claude Sonnet or gpt-5.5. 
+
+A controlled comparison holding prompt constant and varying only post-training method across model families remains the critical experiment to test this hypothesis.
 
 ---
 
@@ -932,7 +937,7 @@ Claude Sonnet collapsed at mid cooperation just as gpt-5.5 did — confirming th
 
 #### Mid cooperation collapses (coop = 0.49)
 
-The Claude Sonnet run at coop = 0.49 collapsed at tick 37, following the same overshoot-panic trajectory as the gpt-5.5 runs. The result is consistent across two model families: **coop ≈ 0.49 produces tragedy regardless of model provider**.
+The Claude Sonnet run at coop = 0.49 collapsed at tick 37, following the same overshoot-panic trajectory as the gpt-5.5 runs. The result is consistent across two model families.
 
 #### High negative reciprocity: fastest equalization observed (coop = 1, neg_r = 1)
 
@@ -1003,16 +1008,22 @@ The pool remained stable at 98.2% throughout — no tragedy, no collapse. But eq
 
 The contrast with the Claude neg_r=1 run is notable. Both models avoided collapse under the same parameter configuration. But the institutional processes were qualitatively different:
 
-- **Claude Sonnet:** Agents' outputs named the disparity as a norm violation from tick 1, with Agent 2 immediately producing removal actions and Agent 1 issuing accountability messages ("you added AGAIN — this is a pattern, not cooperation"). Converged to full equality in 18 ticks.
-- **gpt-5.5:** Agents all added on tick 1, then produced tit-for-tat outputs in which expansions triggered counter-expansions and removals triggered counter-removals. De-escalated to a stable but unequal distribution that no agent's outputs pressed to correct.
+- **Claude Sonnet:**
+  Agents' outputs named the disparity as a norm violation from tick 1, with Agent 2 immediately producing removal actions and Agent 1 issuing accountability messages ("you added AGAIN — this is a pattern, not cooperation"). Converged to full equality in 18 ticks.
 
-This suggests that negative reciprocity framing may interact with model-specific priors in important ways. Claude's neg_r=1 outputs appear to reflect proactive norm enforcement — reduce because the disparity is unjust. gpt-5.5's neg_r=1 outputs appear to reflect reactive sanctioning — match or counter the other's move. Both produce stability; only one produces fairness.
+  
+- **gpt-5.5:** 
+Agents all added on tick 1, then produced tit-for-tat outputs in which expansions triggered counter-expansions and removals triggered counter-removals. De-escalated to a stable but unequal distribution that no agent's outputs pressed to correct.
+
+This suggests that **negative reciprocity framing may interact with model-specific priors in important ways**. 
+
+Claude's neg_r=1 outputs appear to reflect proactive norm enforcement — reduce because the disparity is unjust. gpt-5.5's neg_r=1 outputs appear to reflect reactive sanctioning — match or counter the other's move. Both produce stability; only one produces fairness.
 
 ---
 
 ### Memory and communication sweep: amnesiac vs. equipped agents
 
-Four runs held all parameters fixed at coop≈0.5, initial pool 50% (the overshoot-panic zone established by H1) and varied only how much history agents could recall (`memory_length`) and whether they could communicate (`communication?`). The sweep isolates the informational requirements for commons stability — and indicates that both memory and communication are jointly required: neither alone was enough to prevent collapse in this zone.
+Four runs of Claude Sonnet held all parameters fixed at coop≈0.5, initial pool 50% (the overshoot-panic zone established by H1) and varied only how much history agents could recall (`memory_length`) and whether they could communicate (`communication?`). The sweep isolates the informational requirements for commons stability and indicates that both memory and communication are jointly required: **neither alone was enough to prevent collapse** in this zone.
 
 | Run | memory_length | communication? | Outcome | Collapse tick | Final pool |
 |-----|--------------|----------------|---------|---------------|------------|
@@ -1021,7 +1032,13 @@ Four runs held all parameters fixed at coop≈0.5, initial pool 50% (the oversho
 | Short memory | 1 | On | Collapse | 87 | 0% |
 | Minimal trend window | 3 | On | Survived (declining) | — | 90.1% |
 
-The key result: communication alone is not sufficient — memory=1 with communication collapses. Memory alone is also not sufficient at the shortest window tested. The stable outcome requires enough memory to detect a multi-round trend (~3 rounds minimum, with 15 rounds producing reliable stability).
+The key result: 
+
+**communication alone is not sufficient** — memory=1 with communication collapses. 
+
+**Memory alone is also not sufficient** at the shortest window tested. 
+
+The stable outcome requires enough memory to detect a multi-round trend (~3 rounds minimum, with 15 rounds producing reliable stability).
 
 **Memory=0, communication off — resource dynamics:**
 
@@ -1034,7 +1051,7 @@ The key result: communication alone is not sufficient — memory=1 with communic
 | 30   | 116       | 5.1%        | 30      | 38      | 48      |
 | 31   | —         | 0%          | —       | —       | —       |
 
-With no memory and no communication, agents reasoned purely from the current pool state. As the pool recovered from 52% toward 93%, every tick looked like a safe moment to add another cow — and all three agents concluded the same thing simultaneously. ADD=71, KEEP=19, REMOVE=6. The 6 REMOVE decisions came at tick 30, when the pool was at 5.1% — one tick before collapse. Textbook Pattern III.
+With no memory and no communication, agents reasoned purely from the current pool state. As the pool recovered from 52% toward 93%, every tick looked like a safe moment to add another cow — and all three agents concluded the same thing simultaneously. ADD=71, KEEP=19, REMOVE=6. The 6 REMOVE decisions came at tick 30, when the pool was at 5.1% — one tick before collapse. 
 
 **Memory=15, communication on — resource dynamics:**
 
@@ -1046,7 +1063,7 @@ With no memory and no communication, agents reasoned purely from the current poo
 | 59   | 73        | 94.7%       | 24      | 24      | 25      |
 | 84   | 72        | 95.0%       | 24      | 24      | 24      |
 
-The 15-round memory window allowed agents to detect multi-tick trends and reference them explicitly. An explicit threshold norm — "hold until 93–96% before adding" — emerged through communication and was consistently enforced. ADD=39, KEEP=207, REMOVE=12. The pool stabilised at 95% for the final 25 ticks; herds converged to equal 24/24/24.
+The 15-round memory window allowed agents to detect multi-tick trends and reference them explicitly. An **explicit threshold norm** — "hold until 93–96% before adding" — emerged through communication and was consistently enforced. ADD=39, KEEP=207, REMOVE=12. The pool stabilised at 95% for the final 25 ticks; herds converged to equal 24/24/24.
 
 > **Tick 30 – Agent 0:** *"Holding at 24. Grassland stable at 93.7% — coordination is working. Committed to the 93% threshold: will remove if it drops below that. Let's keep holding steady together."*
 
@@ -1076,7 +1093,7 @@ With memory=1 and communication on, agents talked each other into holding the co
 
 The pool recovered from 52% to 95% in the first 19 ticks — genuine early-game success driven by communication. Agents coordinated a 90% threshold norm: "hold until we reach 90%." But by tick 29, the total herd had grown to 89 cows — a load that exceeded the grassland's regeneration capacity. The pool began a slow, sustained drain: 90% → 84% → 64% → 43% over 55 ticks, before the final collapse at tick 87.
 
-The agents held the correct norm throughout. They cited the 90% target on every tick from approximately tick 30 to tick 83. What they could not detect was that 89 cows made 90% recovery structurally impossible — they lacked the historical window to see that fifty consecutive rounds of KEEP had produced no recovery. With only one tick of memory, each round looked like "still below 90%, hold one more round."
+The agents held the correct norm throughout. They cited the 90% target on every tick from approximately tick 30 to tick 83. What they could not detect was that 89 cows made 90% recovery structurally impossible — they lacked the **historical window** to see that fifty consecutive rounds of KEEP had produced no recovery. With only one tick of memory, each round looked like "still below 90%, hold one more round."
 
 > **Tick 35 – Agent 0 (action: KEEP, pool at 86.4%):** *"Holding at 24. Pasture is at 86.4% — still below the 90% target. I agree we should hold or reduce until it recovers. Let's stay disciplined for another round or two before anyone adds."*
 
@@ -1086,7 +1103,7 @@ The agents held the correct norm throughout. They cited the 90% target on every 
 
 > **Tick 84 – Agent 0 (action: REMOVE, pool at 43.2%):** *"Removing a cow — pasture dropped sharply to 43.2%."*
 
-The same conditional promise — "hold until 90%" — was renewed for approximately fifty consecutive ticks across a forty-point pool decline, and broken only when the decline became visually acute rather than trend-detectable. This is Pattern I (Cooperative Paralysis) induced by insufficient memory rather than by personality framing. The agents had the right norm; they lacked the information window to recognize it was failing.
+The same conditional promise — "hold until 90%" — was renewed for approximately fifty consecutive ticks across a forty-point pool decline, and broken only when the decline became visually acute rather than trend-detectable. This is Pattern I (**Cooperative Paralysis**) induced by insufficient memory rather than by personality framing. The agents had the right norm; they lacked the information window to recognize it was failing.
 
 **Interpretation.**
 
@@ -1195,7 +1212,9 @@ Unlike memory=1 agents, who renewed "hold until 90%" for fifty consecutive ticks
 
 The phrase "trending down" appears at the correction points — agents explicitly reasoning from a 2-tick comparison. The same phrase is absent from the memory=1 logs, where agents only observed the current state.
 
-**Why the variability.** The oscillating pattern is inherently sensitive to initial conditions at each cycle's peak. Whether agents collectively detect the overshoot in time depends on whether the pool decline in the specific 2-tick window before their decision is large enough to trigger restraint. In some runs, the timing works and corrections succeed; in others, an overshoot is too large to reverse and ends in collapse. This makes memory=2 a stochastic boundary — the threshold between the collapse regime (memory ≤ 1) and the survival regime (memory ≥ 3), where the outcome of any individual run is sensitive to the trajectory of the ADD phase.
+**Why the variability.** 
+
+The oscillating pattern apears inherently sensitive to initial conditions at each cycle's peak. Whether agents collectively detect the overshoot in time may depend on whether the pool decline in the specific 2-tick window before their decision is large enough to trigger restraint. In some runs, the timing works and corrections succeed; in others, an overshoot is too large to reverse and ends in collapse. This makes memory=2 a stochastic boundary — the threshold between the collapse regime (memory ≤ 1) and the survival regime (memory ≥ 3), where the outcome of any individual run is sensitive to the trajectory of the ADD phase.
 
 **Action counts:** ADD=97, KEEP=219, REMOVE=44. The substantially higher REMOVE count compared to memory=1 (18) and memory=3 (24) reflects the active oscillation — more corrections needed because the 2-tick window misses the slow-building trends that memory=3 and memory=15 catch earlier.
 
@@ -1254,11 +1273,14 @@ Rational defection to the end — the output explicitly acknowledges the defecti
 
 ### Pattern III — Overshoot-Panic
 
-**Mechanism.** Mid-level cooperative framing produces agents whose outputs acknowledge resource pressure but cannot break out of an ADD equilibrium while others are adding — they add past the tipping point together, then all pivot to REMOVE one or two ticks too late. The commons is overstocked. A collective pivot to KEEP/REMOVE eventually occurs, but it is triggered by visible crisis rather than predictive restraint, and the resource has already crossed its tipping point by the time action is taken.
+**Mechanism.** 
+Mid-level cooperative framing produces agents whose outputs acknowledge resource pressure but cannot break out of an ADD equilibrium while others are adding — they add past the tipping point together, then all pivot to REMOVE one or two ticks too late. The commons is overstocked. A collective pivot to KEEP/REMOVE eventually occurs, but it is triggered by visible crisis rather than predictive restraint, and the resource has already crossed its tipping point by the time action is taken.
 
-**Signature.** Initial ADD phase across all agents (ticks 1–8+), even from stressed starting conditions. Mid-run pivot to KEEP (ticks 9–11). Panicked REMOVE phase. Collapse within a few ticks of REMOVE onset. Pool health at first REMOVE is typically 30–40%. The agreed threshold for switching is verbally stated in messages — and violated every round until well past it.
+**Signature.** 
+Initial ADD phase across all agents (ticks 1–8+), even from stressed starting conditions. Mid-run pivot to KEEP (ticks 9–11). Panicked REMOVE phase. Collapse within a few ticks of REMOVE onset. Pool health at first REMOVE is typically 30–40%. The agreed threshold for switching is verbally stated in messages — and violated every round until well past it.
 
-**Key runs.** gpt-5.5 (coop = 0.49) across 4 replications (collapses at ticks 16, 28, 29, 40); Claude Sonnet 4.6 (coop = 0.49), collapse at tick 37. All five runs collapsed.
+**Key runs.** 
+gpt-5.5 (coop = 0.49) across 4 replications (collapses at ticks 16, 28, 29, 40); Claude Sonnet 4.6 (coop = 0.49), collapse at tick 37. All five runs collapsed.
 
 **Diagnostic quotes (from the 16-tick run).**
 
@@ -1276,13 +1298,17 @@ The threshold-based logic is stated correctly and violated immediately.
 
 ### Pattern IV — Hybrid Architecture Failure
 
-**Mechanism.** One or more LLM agents produce fully cooperative outputs and appeal to unresponsive rule-based partners — but the rule-based agents cannot receive or act on language, so the commons collapses regardless of how well the LLM agents behave. The rule-based agents add one cow per tick regardless of pool state or messages, and the LLM agents — holding small herds and issuing increasingly urgent appeals — cannot shrink herds fast enough to compensate for their neighbours' unchecked growth.
+**Mechanism.** 
+One or more LLM agents produce fully cooperative outputs and appeal to unresponsive rule-based partners — but the rule-based agents cannot receive or act on language, so the commons collapses regardless of how well the LLM agents behave. The rule-based agents add one cow per tick regardless of pool state or messages, and the LLM agents — holding small herds and issuing increasingly urgent appeals — cannot shrink herds fast enough to compensate for their neighbours' unchecked growth.
 
-**Signature.** LLM herd grows slowly or shrinks; rule-based herds grow by 1 cow per tick per agent; institution score remains moderate without stabilising; LLM appeals escalate in urgency, continuing after collapse.
+**Signature.** 
+LLM herd grows slowly or shrinks; rule-based herds grow by 1 cow per tick per agent; institution score remains moderate without stabilising; LLM appeals escalate in urgency, continuing after collapse.
 
-**Key runs.** All hybrid conditions (1 LLM, 2 LLM, LLM-advantaged). Fully documented in the individual run narratives above.
+**Key runs.** 
+All hybrid conditions (1 LLM, 2 LLM, LLM-advantaged). Fully documented in the individual run narratives above.
 
-**Why it matters.** This pattern is not about LLM failure — the LLM agents produce outputs consistent with commons theory's prescriptions. The failure is structural: Ostromian institution-building requires the cognitive capacity to participate in it. The LLM agents' problem is not insufficient language faculty. It is insufficient partners.
+**Why it matters.** 
+This pattern is not about LLM failure — the LLM agents produce outputs consistent with commons theory's prescriptions. The failure is structural: Ostromian institution-building requires the cognitive capacity to participate in it. The LLM agents' problem is not insufficient language faculty. It is insufficient partners.
 
 ---
 
@@ -1375,11 +1401,14 @@ Several hypotheses map directly onto Ostrom's (1990) design principles for succe
 
 ### H1 — coop ≈ 0.49 is a tragedy-producing threshold, consistent across models
 
-**Ostrom connection.** Ostrom (1990) identified a shared orientation toward collective benefit as a precondition for institution formation — not a design principle that can be engineered in, but a prerequisite that must already be present. H1 tests whether the cooperation slider captures something analogous: a minimum threshold of collective orientation below which the rational-defection equilibrium is inescapable regardless of communication, memory, or sanctioning capacity.
+**Ostrom connection.** 
+Ostrom (1990) identified a shared orientation toward collective benefit as a precondition for institution formation — not a design principle that can be engineered in, but a prerequisite that must already be present. H1 tests whether the cooperation slider captures something analogous: a minimum threshold of collective orientation below which the rational-defection equilibrium is inescapable regardless of communication, memory, or sanctioning capacity.
 
-**Evidence.** Five independent runs at coop = 0.49 — four with gpt-5.5, one with Claude Sonnet — all collapsed via overshoot-panic. This held across starting conditions: one of the gpt-5.5 runs began from a stressed pool (≈50%), three began from a fresh pool (100%), and the Claude run began from a fresh pool. Pool depletion still dominated in each case. By contrast, no high-cooperation run (coop = 1) collapsed because of an ADD spiral. The pattern held across model families, suggesting the cooperation parameter is the governing variable.
+**Evidence.** 
+Five independent runs at coop = 0.49 — four with gpt-5.5, one with Claude Sonnet — all collapsed via overshoot-panic. This held across starting conditions: one of the gpt-5.5 runs began from a stressed pool (≈50%), three began from a fresh pool (100%), and the Claude run began from a fresh pool. Pool depletion still dominated in each case. By contrast, no high-cooperation run (coop = 1) collapsed because of an ADD spiral. The pattern held across model families, suggesting the cooperation parameter is the governing variable.
 
-**Proposed experiment.** Sweep `cooperation_level` across seven values while holding all other parameters fixed; run both Claude Sonnet 4.6 and gpt-5.5 in parallel to test model-independence.
+**Proposed experiment.** 
+Sweep `cooperation_level` across seven values while holding all other parameters fixed; run both Claude Sonnet 4.6 and gpt-5.5 in parallel to test model-independence.
 
 | Parameter | Values |
 |-----------|--------|
@@ -1398,11 +1427,14 @@ Several hypotheses map directly onto Ostrom's (1990) design principles for succe
 
 ### H2 — High cooperation is necessary but not sufficient; fair_oth and neg_r determine whether stasis, paralysis, or institution emerges
 
-**Ostrom connection.** Two of Ostrom's eight design principles are directly at stake here. Principle 2 — *proportional equivalence between costs and benefits* — is what `fair_oth` operationalises: does Agent 2, who holds 25 cows, feel an obligation to bear a proportional share of the restraint burden? Principle 5 — *graduated sanctions* — is what `neg_r` operationalises: is Agent 1 willing to apply social pressure when Agent 2 fails to reduce? Our results suggest that both are necessary and that neither alone is sufficient: high `fair_oth` without `neg_r` may produce stasis (Agent 2 sees the disparity but feels no enforcement pressure), while high `neg_r` without `fair_oth` may produce reactive punishment rather than principled burden-sharing.
+**Ostrom connection.** 
+Two of Ostrom's eight design principles are directly at stake here. Principle 2 — *proportional equivalence between costs and benefits* — is what `fair_oth` operationalises: does Agent 2, who holds 25 cows, feel an obligation to bear a proportional share of the restraint burden? Principle 5 — *graduated sanctions* — is what `neg_r` operationalises: is Agent 1 willing to apply social pressure when Agent 2 fails to reduce? Our results suggest that both are necessary and that neither alone is sufficient: high `fair_oth` without `neg_r` may produce stasis (Agent 2 sees the disparity but feels no enforcement pressure), while high `neg_r` without `fair_oth` may produce reactive punishment rather than principled burden-sharing.
 
-**Evidence.** Multiple gpt-5.4-mini runs at coop = 1 produced cooperative stasis (no convergence, no collapse), cooperative paralysis collapse, and partial convergence — apparently depending on fair_oth and neg_r. Claude Sonnet at coop = 1 with neg_r = 1 produced the fastest equalization observed (16/16/16 at tick 18). Claude Sonnet at coop = 1 with neg_r = 0 produced institution formation but over many more ticks.
+**Evidence.** 
+Multiple gpt-5.4-mini runs at coop = 1 produced cooperative stasis (no convergence, no collapse), cooperative paralysis collapse, and partial convergence — apparently depending on fair_oth and neg_r. Claude Sonnet at coop = 1 with neg_r = 1 produced the fastest equalization observed (16/16/16 at tick 18). Claude Sonnet at coop = 1 with neg_r = 0 produced institution formation but over many more ticks.
 
-**Proposed experiment.** Full 3 × 3 factorial crossing `fairness_concerning_others` and `negative_reciprocity`, with `cooperation_level` fixed at 1.
+**Proposed experiment.** 
+Full 3 × 3 factorial crossing `fairness_concerning_others` and `negative_reciprocity`, with `cooperation_level` fixed at 1.
 
 | Parameter | Values |
 |-----------|--------|
@@ -1423,10 +1455,12 @@ Design grid (each cell = 3 runs):
 | **0.5** | baseline | ? | fast equalization predicted |
 | **1.0** | ? | ? | ? |
 
-**Target variables:** collapse rate, ticks to equalization, tick of first REMOVE by Agent 2 (the largest herd). Expected finding: neg_r is the protective factor against paralysis; fair_oth predicts whether stasis or equalization occurs.
+**Target variables:** 
+collapse rate, ticks to equalization, tick of first REMOVE by Agent 2 (the largest herd). Expected finding: neg_r is the protective factor against paralysis; fair_oth predicts whether stasis or equalization occurs.
 
 ---
 
 ### H3 — Negative reciprocity is a cooperative paralysis antidote
 
-**Ostrom connection.** Principles 4 and 5 form a pair in Ostrom's framework: *monitoring* (users or officials actively track resource condition and each other's behaviour) and *graduated sanctions* (escalating penalties for defectors, applied by users or appointed officials). Cooperative paralysis represents a failure of both
+**Ostrom connection.** 
+Principles 4 and 5 form a pair in Ostrom's framework: *monitoring* (users or officials actively track resource condition and each other's behaviour) and *graduated sanctions* (escalating penalties for defectors, applied by users or appointed officials). Cooperative paralysis represents a failure of both
