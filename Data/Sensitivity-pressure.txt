@@ -3658,3 +3658,33 @@ risk aversion: 0.5
 0.37281910009182734
 0.31588613406795224
 0.2598714416896235
+0.2130394857667585
+ 
+Condition: full-gabm
+initial cows 5 15 25
+forage: 2
+grass: 100
+growth: 0.001
+fairness me: 0.5
+fairness others: 1
+cooperation: 1
+recip neg: 0
+recip pos: 1
+conformity: 0
+risk aversion: 1
+0.07897153351698806
+ 
+Condition: full-gabm
+initial cows 5 15 25
+forage: 2
+grass: 50
+growth: 0.001
+fairness me: 0.5
+fairness others: 0.5
+cooperation: 0.5
+recip neg: 0.5
+recip pos: 1
+conformity: 0.5
+risk aversion: 0.5
+0.5876951331496786
+0.5693296602387512

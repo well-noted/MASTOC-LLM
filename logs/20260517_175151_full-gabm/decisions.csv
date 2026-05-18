@@ -791,3 +791,75 @@ Considering all this: The payoff for adding is higher, the pasture isn't overgra
   ""message"": ""Adding one cow to support balanced growth while monitoring pasture health.""
 }
 ```",84.5,8,17.453,16.0,14.543
+9,0,ollama-native,deepseek-r1:32b,1,ADD,"I'm adding one cow as the grassland is still sufficient, and we're all monitoring together for sustainable growth.","The commons are in a healthy state with 89.5% grassland remaining. Adding a cow provides the highest expected payoff, and neighbors have shown commitment to sustainability by keeping their herds.","Alright, let me go through my thought process step by step. First, I need to understand the current state of the commons and how it affects my decision-making as a herder. 
+
+The commons has 975 patches remaining, which is 89.5% of the total. That seems like a healthy amount, but I should be cautious because if too many cows are added, the grassland could degrade quickly. My herd size is currently at 9 cows. Last round, I added a cow, and my payoff was zero, which might indicate that adding wasn't beneficial in terms of immediate gain, but perhaps it's part of a longer-term strategy.
+
+Looking at my neighbors: Agent 1 has 19 cows and kept their herd last round, while Agent 2 has 29 cows and also chose to keep. Both agents have sent messages this round emphasizing the importance of monitoring herds for sustainable growth. This suggests that they are committed to preserving the commons and might be considering similar strategies as me.
+
+The payoff forecast shows that adding a cow would give me 19.545, keeping gives 18.0, and removing gives 16.451. The highest payoff is from adding, but I need to consider not just immediate payoffs but the sustainability of the commons for future rounds.
+
+Looking at my past actions: In round 4, I added a cow when the pool was at 61.8%. Then in round 5, I kept at 66.9%, and again in round 6, keeping at 72.6%. Round 7 saw me add another cow at 78.7%, and in round 8, I added yet again at 84.5%. It seems like each time the grassland percentage has been increasing, allowing me to add cows without immediate negative consequences.
+
+However, with the current pool at 89.5%, which is quite high, adding another cow might be pushing it. The payoff from adding is higher than keeping or removing, but I need to balance this against the potential long-term health of the commons. If too many agents keep adding cows, the grassland could deplete rapidly.
+
+Considering my neighbors' actions and messages, they seem to be aware of the need for sustainability. They have kept their herds this round, which might indicate a cautious approach. However, I shouldn't rely solely on others; I need to make a decision that's responsible both individually and collectively.
+
+Given that the grassland is still at 89.5%, there's room for some growth without immediate risk. My payoff from adding is higher than keeping, so economically, it makes sense in the short term. But I should also think about how this affects future rounds. If I continue to add cows as the grassland approaches its limit, I might face diminishing returns or even penalties if the commons degrade.
+
+Alternatively, if I choose to keep my herd size at 9, I can stabilize and perhaps encourage others to do the same, preventing overgrazing. However, since both neighbors are keeping their herds, maybe it's safe for me to add as well without causing immediate harm. The grassland percentage is still above 80%, so there's a buffer.
+
+Another angle is that if I remove a cow, my payoff drops significantly to 16.451, which doesn't seem beneficial unless the commons are in critical condition. Since they're not, removing might be counterproductive for my own gains without clear collective benefits.
+
+Weighing all these factors: high grassland percentage, higher payoff from adding, neighbors' cautious but possibly additive strategies, and the importance of long-term sustainability. I think the best move is to add another cow, as the current conditions support it without immediate risk, and the payoff is favorable.
+","{
+  ""reasoning"": ""The commons are in a healthy state with 89.5% grassland remaining. Adding a cow provides the highest expected payoff, and neighbors have shown commitment to sustainability by keeping their herds."",
+  ""action"": 1,
+  ""message"": ""I'm adding one cow as the grassland is still sufficient, and we're all monitoring together for sustainable growth.""
+}",89.5,9,19.545,18.0,16.451
+9,1,ollama-native,deepseek-r1:32b,0,KEEP,I'll keep my herd this round to support sustainable growth and preserve the grassland for everyone.,"While adding a cow offers a higher payoff, keeping supports sustainable use of the commons and aligns with neighbors' cautious approach.","Okay, so I'm trying to figure out what decision to make as Agent 1 in this scenario. The grassland is at 975 patches, which is 89.5% of the total. My herd size is 19 cows, and last round I kept my herd. My neighbors are Agent 0 with 9 cows who added a cow, and Agent 2 with 29 cows who kept theirs.
+
+Looking at the payoff forecast: adding gives me 39.545, keeping is 38, and removing is 36.451. So adding seems better than keeping or removing. But I should consider the grassland state and sustainability.
+
+Agent 0 added a cow and mentioned supporting balanced growth while monitoring pasture health. Agent 2 suggested we all monitor our herds for sustainable growth and preserving the commons. That makes me think others are cautious about overgrazing.
+
+The grassland is at 89.5%, which is pretty high, but with my neighbors having different herd sizes, it's possible that adding more cows might strain resources. My last action was keeping, and I've added in previous rounds when the pool was lower.
+
+Since the payoff for adding is higher than keeping, maybe I should add again to maximize my own gain, but I need to balance this with preserving the commons for future rounds. If everyone adds, the grassland could deplete quickly. However, Agent 0 only has 9 cows and added one, while Agent 2 with 29 kept theirs.
+
+I'm a balanced personality without strong biases, so I should consider both my payoff and sustainability. Adding gives me more immediate benefit but risks future sustainability. Keeping maintains the status quo, which might be safer for the commons.
+
+Wait, the grassland is at 89.5%, which is still quite healthy. Maybe adding one more cow won't deplete it too much yet. Plus, if others are monitoring and keeping, maybe I can add without causing significant harm.
+
+So considering that, even though the payoff for adding is higher, maybe it's better to keep this round to support sustainable growth as Agent 2 suggested. That way, I contribute to preserving the commons for everyone.
+","{
+  ""reasoning"": ""While adding a cow offers a higher payoff, keeping supports sustainable use of the commons and aligns with neighbors' cautious approach."",
+  ""action"": 0,
+  ""message"": ""I'll keep my herd this round to support sustainable growth and preserve the grassland for everyone.""
+}",89.5,19,39.545,38.0,36.451
+9,2,ollama-native,deepseek-r1:32b,1,ADD,Adding one cow to support balanced growth; monitoring pasture health closely.,"The grassland is still healthy with 89.5% remaining, and my neighbors are acting cautiously. Adding a cow slightly increases expected payoff while maintaining sustainability.","Okay, so I'm Agent 2 in this herder scenario. Let me try to figure out what decision to make here. 
+
+First, looking at the commons state: there are 975 patches of grass remaining, which is 89.5% of the total. That's a pretty high percentage, so the pasture seems healthy and not overgrazed yet. My herd size is currently 29 cows. Last round, I decided to keep my herd size the same, and that didn't give me any payoff.
+
+My neighbors: Agent 0 has 9 cows and added one last time. Agent 1 has 19 cows and kept theirs. So both of them are either maintaining or adding a small number.
+
+Looking at the payoff forecast, if I add a cow, my expected payoff is 59.545. Keeping it gives me 58, and removing gives me 56.451. So from a purely numerical standpoint, adding seems better because it gives a higher payoff. 
+
+But wait, I should consider the sustainability aspect too. Even though the pasture has plenty of grass right now, if everyone adds cows, it might lead to overgrazing in the future. But my neighbors are either keeping or adding just one each. So maybe the risk isn't that high yet.
+
+Also, looking at my memory: in the last few rounds, I've been adding cows when the pool was around 60-84%. The pasture has been increasing steadily, so it seems like we're managing it well so far. 
+
+The messages from neighbors this round: Agent 0 is adding to support balanced growth while monitoring. Agent 1 is keeping their herd to support sustainable grazing and monitoring together. So both are cautious but optimistic.
+
+I'm a balanced personality without strong biases, so I should probably follow what makes sense numerically but also consider the long-term health. Since the pasture is still at 89.5%, which is quite high, adding one cow might be safe. Plus, my neighbors seem to be taking it slowly too.
+
+So, even though I have a balanced approach, the payoff for adding is higher than keeping or removing. The pasture seems healthy enough to support an additional cow without overgrazing, especially since both neighbors are being cautious in their actions.
+
+Therefore, I think adding another cow makes sense this round.
+","```json
+{
+  ""reasoning"": ""The grassland is still healthy with 89.5% remaining, and my neighbors are acting cautiously. Adding a cow slightly increases expected payoff while maintaining sustainability."",
+  ""action"": 1,
+  ""message"": ""Adding one cow to support balanced growth; monitoring pasture health closely.""
+}
+```",89.5,29,59.545,58.0,56.451
