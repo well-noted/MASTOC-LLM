@@ -155,8 +155,6 @@ to setup-python-bridge
   py:set "cfg_ollama_base_url" ollama-base-url
   py:set "cfg_verbose" verbose-mode
   py:set "cfg_communication" communication?
-  py:set "cfg_extended_thinking" extended-thinking?
-  py:set "cfg_thinking_budget"   thinking-budget
   let status py:runresult (word
     "bridge.configure("
     "agent_backends=cfg_agent_backends, "
@@ -169,9 +167,7 @@ to setup-python-bridge
     "system_prompt_override=cfg_system_prompt, "
     "ollama_base_url=cfg_ollama_base_url, "
     "verbose=cfg_verbose, "
-    "communication=cfg_communication, "
-    "extended_thinking=cfg_extended_thinking, "
-    "thinking_budget=int(cfg_thinking_budget)"
+    "communication=cfg_communication"
     ")")
   show status
 
@@ -774,21 +770,6 @@ to export-data
   file-close
 end
 
-to-report trace-status-for [ bknd ]
-  if bknd = "anthropic" [
-    ifelse extended-thinking? [ report "on" ] [ report "opt-in" ]
-  ]
-  if bknd = "ollama" or bknd = "ollama-native" [ report "native" ]
-  report "N/A"
-end
-
-to-report thinking-trace-status
-  report (word
-    "A0:" (trace-status-for agent0-backend) "  "
-    "A1:" (trace-status-for agent1-backend) "  "
-    "A2:" (trace-status-for agent2-backend))
-end
-
 ]]></code>
   <widgets>
     <view x="616" wrappingAllowedX="false" y="67" frameRate="30.0" minPycor="-16" height="547" showTickCounter="true" patchSize="15.8" fontSize="10" wrappingAllowedY="false" width="527" tickCounterLabel="ticks" maxPycor="16" updateMode="0" maxPxcor="16" minPxcor="-16"></view>
@@ -847,6 +828,16 @@ end
     <switch x="667" y="12" height="40" on="false" variable="verbose-mode" width="208" display="verbose-mode"></switch>
     <slider x="6" step="0.01" y="775" max="1" width="207" display="risk-aversion-level" height="50" min="0" direction="Horizontal" default="1.0" variable="risk-aversion-level"></slider>
     <note x="243" y="645" backgroundDark="0" fontSize="11" width="891" markdown="false" height="24" textColorDark="-1" textColorLight="-16777216" backgroundLight="0">LLM / Condition settings:</note>
+    <chooser x="244" y="681" height="60" variable="condition" current="0" width="208" display="condition">
+      <choice type="string" value="baseline"></choice>
+      <choice type="string" value="full-gabm"></choice>
+      <choice type="string" value="hybrid"></choice>
+    </chooser>
+    <slider x="461" step="1" y="685" max="3" width="208" display="num-llm-agents" height="50" min="1" direction="Horizontal" default="1.0" variable="num-llm-agents"></slider>
+    <slider x="680" step="1" y="684" max="15" width="208" display="memory-length" height="50" min="0" direction="Horizontal" default="5.0" variable="memory-length" units="rounds"></slider>
+    <switch x="247" y="753" height="40" on="true" variable="detect-institutions" width="208" display="detect-institutions"></switch>
+    <slider x="243" step="1" y="812" max="20" width="208" display="institution-check-interval" height="50" min="1" direction="Horizontal" default="5.0" variable="institution-check-interval" units="ticks"></slider>
+    <input x="242" multiline="false" y="885" height="157" variable="system-prompt-override" type="string" width="887"></input>
     <note x="11" y="111" backgroundDark="0" fontSize="11" width="198" markdown="false" height="18" textColorDark="-1" textColorLight="-16777216" backgroundLight="0">System parameters:</note>
     <note x="8" y="840" backgroundDark="0" fontSize="11" width="199" markdown="false" height="18" textColorDark="-1" textColorLight="-16777216" backgroundLight="0">Simulation parameters:</note>
     <slider x="13" step="1" y="979" max="60" width="208" display="agent2-initial-cows" height="50" min="1" direction="Horizontal" default="25.0" variable="agent2-initial-cows" units="cows"></slider>
@@ -859,21 +850,8 @@ end
       <choice type="string" value="ollama-native"></choice>
       <choice type="string" value="google"></choice>
     </chooser>
-    <chooser x="244" y="671" height="60" variable="condition" current="0" width="208" display="condition">
-      <choice type="string" value="baseline"></choice>
-      <choice type="string" value="full-gabm"></choice>
-      <choice type="string" value="hybrid"></choice>
-    </chooser>
-    <switch x="245" y="734" height="40" on="true" variable="detect-institutions" width="208" display="detect-institutions"></switch>
-    <slider x="243" step="1" y="784" max="20" width="208" display="institution-check-interval" height="50" min="1" direction="Horizontal" default="5.0" variable="institution-check-interval" units="ticks"></slider>
-    <slider x="461" step="1" y="675" max="3" width="208" display="num-llm-agents" height="50" min="1" direction="Horizontal" default="1.0" variable="num-llm-agents"></slider>
-    <switch x="691" y="676" height="40" on="false" variable="extended-thinking?" width="208" display="extended-thinking?"></switch>
-    <slider x="691" step="1000" y="724" max="16000" width="213" display="thinking-budget" height="50" min="1000" direction="Horizontal" default="5000.0" variable="thinking-budget" units="tokens"></slider>
-    <slider x="461" step="1" y="731" max="15" width="208" display="memory-length" height="50" min="0" direction="Horizontal" default="5.0" variable="memory-length" units="rounds"></slider>
-    <switch x="459" y="789" height="40" on="true" variable="communication?" width="208" display="communication?"></switch>
-    <input x="241" multiline="false" y="910" height="157" variable="system-prompt-override" type="string" width="887"></input>
-    <monitor x="690" precision="0" y="783" height="60" fontSize="11" width="216">thinking-trace-status</monitor>
-    <input x="245" multiline="false" y="840" height="60" variable="ollama-base-url" type="string" width="208">http://localhost:11434/v1</input>
+    <input x="704" multiline="false" y="802" height="60" variable="ollama-base-url" type="string" width="190">http://localhost:11434/v1</input>
+    <switch x="683" y="746" height="40" on="true" variable="communication?" width="208" display="communication?"></switch>
   </widgets>
   <info><![CDATA[WHAT IS IT?
 -----------
