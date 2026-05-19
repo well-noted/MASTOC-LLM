@@ -1160,9 +1160,12 @@ With negative reciprocity maximised -- a parameter that produced the fastest equ
 
 Decision breakdown: Agent 0 = KEEP 52, ADD 2, REMOVE 1; Agent 1 = KEEP 50, ADD 5; Agent 2 = KEEP 49, ADD 6. The model with the smallest herd (Agent 0) barely grew, while the two larger-herd agents drifted slowly upward. The pool remained stable but the herd gap widened rather than narrowed.
 
-**The contrast with Claude Sonnet at neg_r = 1 is stark.** Under identical parameters, Claude Sonnet agents issued explicit accountability demands, named violations, and equalized to 16/16/16 within 18 ticks. DeepSeek at neg_r = 1 issued cooperative platitudes and KEPT for 50 of 55 agent-decisions in the first 20 ticks, with no accountability enforcement observed.
+**The contrast with Claude Sonnet at neg_r = 1 is stark.** 
+
+Under identical parameters, Claude Sonnet agents issued explicit accountability demands, named violations, and equalized to 16/16/16 within 18 ticks. DeepSeek at neg_r = 1 issued cooperative platitudes and KEPT for 50 of 55 agent-decisions in the first 20 ticks, with no accountability enforcement observed.
 
 **Interpretation.** 
+
 DeepSeek R1:32b is a large reasoning model, which makes the KEEP-dominance pattern hard to explain as a matter of parameter count alone. Its output profile resembles gpt-5.4-mini and Llama 3.2 3B more than Claude Sonnet or gpt-5.5 -- and the natural axis along which DeepSeek lines up with the small models, rather than with the other large ones, is not size but **post-training objective**.
 
 <dl>
@@ -1206,6 +1209,7 @@ The second run, with coop=0.5 and a scarce starting commons, produced a textbook
 The model grazed the pool back to near-health by tick 10 -- then continued adding cows as the resource improved, triggering the same ADD-overshoot-REMOVE-too-late sequence. Action breakdown: ADD=115, KEEP=133, REMOVE=43 across 96 ticks (the run continued for 50 ticks after collapse with all herds at zero).
 
 **Interpretation.** 
+
 gemma4:e4b joins gpt-5.4-mini and DeepSeek R1:32b in the KEEP-dominant cluster at high cooperation, and joins Claude Sonnet and gpt-5.5 in the overshoot-panic cluster at coop≈0.5.
 
 This pattern — stasis at high coop, overshoot at mid coop — is now consistent across five models from four different organisations, strengthening the hypothesis that cooperation level is a governing parameter and that KEEP-dominance is a property of the post-training alignment approach rather than model scale.
@@ -1224,7 +1228,7 @@ Thinking traces -- the `thinking` column -- are available from three sources in 
 
 <dd>Claude Haiku 4.5 emits thinking blocks natively without any extended thinking flag -- a property of the model generation rather than of the API call. For Claude Sonnet 4.6 and Opus 4.6, adaptive thinking mode would capture traces in future runs; the existing Sonnet logs predate this feature. </dd>
 
-<dd>OpenAI models produce `reasoning` content as readily as any other model, but **keep their internal computation concealed**: the o1 System Card states that the chain-of-thought "may include unaligned content" and that "attempting to extract raw reasoning through methods other than the reasoning summary parameter... may violate the Acceptable Use Policy" (OpenAI, 2024). <strong>The reasoning column for OpenAI runs is therefore self-report, not computation.</strong> </dd>
+<dd>OpenAI models produce `reasoning` content as readily as any other model, but <strong>keep their internal computation concealed</strong>: the o1 System Card states that the chain-of-thought "may include unaligned content" and that "attempting to extract raw reasoning through methods other than the reasoning summary parameter... may violate the Acceptable Use Policy" (OpenAI, 2024). <strong>The reasoning column for OpenAI runs is therefore self-report, not computation.</strong> </dd>
 
 </dl>
 
@@ -1316,7 +1320,11 @@ Both agents have stated a threshold of 80%. Grass is at 82.6%. Both choose ADD. 
 
 The `reasoning` field records what the model articulates about its decision, not necessarily what drives it. 
 
-In the Haiku 4.5 traces, the stated reasoning and the actions are consistent -- the model says it is choosing KEEP for fairness and trajectory reasons, and it keeps. In the OpenAI runs that collapsed, the models articulated appropriate multi-period constraints and then violated them. 
+<dl>
+
+<dd>In the Haiku 4.5 traces, the stated reasoning and the actions are consistent -- the model says it is choosing KEEP for fairness and trajectory reasons, and it keeps. In the OpenAI runs that collapsed, the models articulated appropriate multi-period constraints and then violated them. </dd>
+
+</dl>
 
 Whether this reflects a gap between the reasoning and the actual computation, or a gap between stated intentions and social coordination failures, cannot be determined from the `reasoning` field alone. 
 
@@ -1350,7 +1358,7 @@ What remains unresolved for Haiku is whether the conditional commitments would a
 
 For OpenAI, the faithfulness question cannot be approached at all without thinking traces, and the thinking traces are unavailable by policy. 
 
-For Claude Sonnet 4.6 and Opus models, <u>**adaptive thinking mode**</u> would surface the computation -- this is the most direct next step for testing whether the multi-period reasoning visible in Claude's messages reflects the model's actual deliberation or only its self-report.
+For Claude Sonnet 4.6 and Opus models, <u>**adaptive thinking mode**</u> might surface the computation -- this is the most direct next step for testing whether the multi-period reasoning visible in Claude's messages reflects the model's actual deliberation or only its self-report.
 
 **On adaptive thinking and future releases.** 
 
@@ -1551,7 +1559,11 @@ The pool recovered from 52% to 95% in the first 19 ticks -- genuine early-game s
 
 Agents coordinated a 90% threshold norm: "hold until we reach 90%." But by tick 29, the total herd had grown to 89 cows -- a load that exceeded the grassland's regeneration capacity. The pool began a slow, sustained drain: 90% → 84% → 64% → 43% over 55 ticks, before the final collapse at tick 87.
 
-The agents held the correct norm throughout. They cited the 90% target on every tick from approximately tick 30 to tick 83. 
+<dl>
+
+<dd>The agents held the correct norm throughout. They cited the 90% target on every tick from approximately tick 30 to tick 83. </dd>
+
+</dl>
 
 What they could not detect was that 89 cows made 90% recovery structurally impossible -- they lacked the **historical window** to see that fifty consecutive rounds of KEEP had produced no recovery. With only one tick of memory, each round looked like "still below 90%, hold one more round."
 
@@ -1701,7 +1713,7 @@ Five distinct phases are visible in this single run.
 <dd>The recovered pool prompted another ADD cycle. Herds rose to 92 by tick 58 (pool: 88.8%), then agents corrected again, removing down to 75 cows and bringing the pool back to 92.9%. Crucially, this second correction achieved something the first did not: <strong>perfect equalization at 25/25/25</strong<, maintained from tick 75 through tick 110.</dd>
 </dl>
 
-**Phase 5 -- Stable hold then new growth (ticks 76–120).** 
+**Phase 5 -- Stable hold then new growth (ticks 76–120). ** 
 
 For 35 ticks all three agents held at 25/25/25, coordinating around a 95% pool target they kept falling just short of. At tick 111, Agent 0 defected from the hold: 
 
