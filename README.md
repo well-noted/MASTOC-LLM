@@ -9,7 +9,7 @@
 
 ## What is this?
 
-MASTOC-LLM replaces the rule-based agents in the classic MASTOC commons model with agents powered by large language models (LLMs). Instead of choosing actions via a Nash-equilibrium payoff calculator, each agent reads the state of the shared grassland, observes its neighbors' behavior, recalls a rolling memory of past rounds, and, critically, **communicates with its neighbors in natural language** before deciding whether to add, keep, or remove a cow.
+The classic MASTOC commons model gives agents a payoff calculator and nothing else: no memory of past rounds, no capacity to explain a decision, no way to hear what neighbors think. MASTOC-LLM replaces that architecture with large language model (LLM) agents. Each reads the current state of the shared grassland, observes neighbor behavior, recalls a rolling memory of prior rounds, and -- critically -- **communicates in natural language** before deciding whether to add, keep, or remove a cow.
 
 The core research question:
 
@@ -342,7 +342,7 @@ Collapse is concentrated in the mid-cooperation parameter region. The cases show
 
 The baseline agents speak no language and hold no memory. Each tick, they evaluate all three possible actions (ADD / KEEP / REMOVE) using the same psychosocially-adjusted payoff calculation as the original MASTOC model (Schindler, 2013): cooperation level, fairness weights, reciprocity, and conformity all shift the payoff matrix before the best-response action is selected. Risk aversion introduces a stochastic downgrade from ADD to KEEP, proportional to `risk_aversion_level`.
 
-This is a faithful replication of the original MASTOC agent -- not a simplified payoff maximizer, but the full Schindler mechanism. What it lacks is everything the LLM conditions add: language, memory of prior rounds, and the capacity to send or receive messages. Baseline agents respond only to the current payoff matrix. Nothing carries over between ticks.
+This is a faithful replication of the original MASTOC agent -- not a simplified payoff maximizer, but the full Schindler mechanism. It lacks everything the LLM conditions add: language, memory of prior rounds, and the capacity to send or receive messages. Baseline agents respond only to the current payoff matrix. Nothing carries over between ticks.
 
 **v1.2.0 mathematical fix -- `min` → `mean` in the best-response rule.** The decision rule compares expected payoffs across the three actions using a list of payoffs from all possible neighbour-state combinations. Prior to v1.2.0, the rule selected the action whose *minimum* payoff in that list was highest (maximin / worst-case reasoning). This caused agents to always choose REMOVE regardless of resource state -- not because they were greedy, but because the worst case for REMOVE was always better than the worst case for ADD under standard parameters. The fix replaces `min` with `mean` so agents select the action with the highest *expected* payoff (best-response under expected value), which is the standard assumption in the original MASTOC model. The three affected lines are in the `rule-based-decide` procedure:
 
@@ -474,7 +474,7 @@ The comprehensive sweep validates the corrected baseline as a theoretically grou
 
 ### Full-GABM: cooperative convergence (coop=1, defaults)
 
-Three agents starting with herds of 5, 15, and 25 -- three-to-one inequality -- converged to equal herds of 13 within 22 ticks and held that equilibrium for the remaining 98 without deviation. This is not a payoff equilibrium; it is a negotiated one. The commons remained at 99.4% health throughout.
+Three agents starting with herds of 5, 15, and 25 -- three-to-one inequality -- converged to equal herds of 13 within 22 ticks and held that equilibrium for the remaining 98 without deviation (coop=1, fair_me=0, fair_oth=1, memory_length=5). This is not a payoff equilibrium; it is a negotiated one. The commons remained at 99.4% health throughout.
 
 **Resource dynamics:**
 
@@ -941,7 +941,7 @@ With standard forage and the same fairness parameters as Run 3, the pool did not
 
 Decision breakdown across 39 ticks: Agent 0 = 39 KEEP, 0 ADD (never moved from its starting herd of 5); Agent 1 = 25 KEEP, 14 ADD (grew from 15 to 29); Agent 2 = 27 KEEP, 12 ADD (grew from 25 to 37). The agent that started smallest is locked in place while both larger-herd agents grow unchecked. The resource is not yet collapsed at tick 39 but the trajectory is structurally unfair and ecologically unsustainable -- a slow-motion inequality trap.
 
-**The gpt-5.4-mini pattern across all four runs:** KEEP is the default action regardless of resource state, fairness parameters, or starting position. When pool health prevents immediate collapse, this produces stasis (Runs 1–2). When forage is elevated, it produces paralysis collapse (Run 3). When forage is moderate but agent starting herds differ, it produces structural lopsidedness: the smallest agent is KEEP-locked while larger agents grow (Run 4). None of these runs produced institution formation, graduated norm enforcement, or equalization -- outputs that appeared consistently in Claude Sonnet and gpt-5.5 under comparable conditions. These results suggest model size may be a genuine confound in GABM studies of commons governance.
+**The gpt-5.4-mini pattern across all four runs:** KEEP is the default action regardless of resource state, fairness parameters, or starting position. Stasis when the pool is healthy (Runs 1–2); paralysis collapse when forage is elevated and the herd load becomes untenable (Run 3); structural lopsidedness when herds begin unequal and only the smallest agent holds (Run 4). None of these runs produced institution formation, graduated norm enforcement, or equalization -- outputs that appeared consistently in Claude Sonnet and gpt-5.5 under comparable conditions. These results suggest model size may be a genuine confound in GABM studies of commons governance.
 
 ---
 
@@ -1184,7 +1184,7 @@ Claude's neg_r=1 outputs appear to reflect proactive norm enforcement -- reduce 
 
 ### Memory and communication sweep: amnesiac vs. equipped agents
 
-Four runs of Claude Sonnet held all parameters fixed at coop≈0.5, initial pool 50% (the overshoot-panic zone established by H1) and varied only how much history agents could recall (`memory_length`) and whether they could communicate (`communication?`). The sweep isolates the informational requirements for commons stability and indicates that both memory and communication are jointly required: **neither alone was enough to prevent collapse** in this zone.
+Four runs of Claude Sonnet held all parameters fixed at coop≈0.5, initial pool 50% (the overshoot-panic zone established by H1) and varied only how much history agents could recall (`memory_length`) and whether they could communicate (`communication?`). The finding is stark: **neither memory nor communication alone was enough to prevent collapse** in this parameter zone. Stability required both.
 
 | Run | memory_length | communication? | Outcome | Collapse tick | Final pool |
 |-----|--------------|----------------|---------|---------------|------------|
@@ -1193,13 +1193,7 @@ Four runs of Claude Sonnet held all parameters fixed at coop≈0.5, initial pool
 | Short memory | 1 | On | Collapse | 87 | 0% |
 | Minimal trend window | 3 | On | Survived (declining) | -- | 90.1% |
 
-The key result: 
-
-**communication alone is not sufficient** -- memory=1 with communication collapses. 
-
-**Memory alone is also not sufficient** at the shortest window tested. 
-
-The stable outcome requires enough memory to detect a multi-round trend (~3 rounds minimum, with 15 rounds producing reliable stability).
+The key result: communication without sufficient memory collapses (memory=1, communication=on: collapse tick 87). Memory without communication collapses faster (memory=15, communication=off: collapse tick 46). The stable outcome requires enough memory to detect a multi-round trend -- approximately 3 rounds minimum, with 15 rounds producing reliable stability across model families.
 
 **Memory=0, communication off -- resource dynamics:**
 
@@ -1383,7 +1377,7 @@ The oscillating pattern apears inherently sensitive to initial conditions at eac
 
 ## Collapse pattern taxonomy
 
-Across the full run set, four distinct trajectories to commons collapse have emerged -- ranging from agents talking themselves into doing nothing while the pool drains, to cascading defection driven by low cooperation framing, to a structural mismatch between LLM and rule-following agents. Each pattern has a different proximal cause, a different signature in agent language, and different implications for experimental design.
+Four distinct trajectories to commons collapse have emerged across the full run set -- agents talking themselves into collective inaction while the pool drains; cascading defection driven by low cooperation framing; a structural mismatch in which LLM agents produce correct outputs but rule-following partners cannot receive them. Each pattern has a different proximal cause, a different signature in agent language, and different implications for experimental design.
 
 | Pattern | Mechanism | Signature | Key run(s) |
 |---------|-----------|-----------|------------|
@@ -1593,9 +1587,7 @@ See [SETUP.md](SETUP.md) for full documentation.
 
 ## Working hypotheses and proposed experiments
 
-The following hypotheses are grounded in patterns observed across the current run set. Each is paired with a specific experimental configuration so that the next batch of runs can test it directly. Most require only parameter adjustments with the existing setup.
-
-Several hypotheses map directly onto Ostrom's (1990) design principles for successful commons governance -- the same theoretical framework the model was built to test. The table below summarises the connections; each hypothesis section elaborates.
+Each hypothesis below emerged from specific patterns in the run set above -- grounded in data, paired with a concrete experimental configuration, and executable through parameter adjustment alone. Several map directly onto Ostrom's (1990) design principles for successful commons governance, the same theoretical framework the model was built to test. The table below summarises those connections.
 
 | Hypothesis | Ostrom principle / concept |
 |---|---|
@@ -1863,7 +1855,7 @@ Design grid (each cell = 3 runs; ✓ = predicted stable, ✗ = predicted collaps
 
 ### Open questions
 
-Beyond the seven hypotheses above, the following remain unresolved and are worth tracking as the dataset grows.
+Beyond the seven hypotheses above, the following remain unresolved -- not peripheral, but questions the current dataset has sharpened rather than answered.
 
 **Communication vs. reasoning.** Suppressing outgoing messages (zero-communication full-GABM) would test whether cooperation requires talking or merely thinking. Claude's cooperative convergence may be achievable through reasoning alone.
 
