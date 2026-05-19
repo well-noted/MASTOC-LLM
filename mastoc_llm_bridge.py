@@ -96,6 +96,8 @@ def configure(
     ollama_base_url: str = "http://localhost:11434/v1",
     verbose: bool = False,
     communication: bool = True,
+    extended_thinking: bool = False,
+    thinking_budget: int = 5000,
 ) -> str:
     """
     Initialise the bridge. Call once from NetLogo before the first tick.
@@ -114,6 +116,12 @@ def configure(
     institution_every_n_ticks : Run institution detection every N ticks (cost control)
     communication   : If False, agents receive no neighbour messages and send none;
                       isolates pure LLM reasoning from social coordination
+    extended_thinking : If True, enable Anthropic extended thinking mode; thinking traces
+                        are captured in the decisions.csv `thinking` column.
+                        Has no effect for non-Anthropic backends (OpenAI reasoning tokens
+                        are not exposed via API; Ollama models emit thinking natively).
+    thinking_budget : Token budget for Anthropic extended thinking (default 5000).
+                      The API call's max_tokens is automatically increased by this amount.
     """
     global _cfg, _client, _agent_memory, _msg_buffer, _msg_outbox
     global _log_handles, _run_id, _tick, _round_messages, _call_count
@@ -132,6 +140,8 @@ def configure(
         system_prompt_override=str(system_prompt_override).strip(),
         verbose=bool(verbose),
         communication=bool(communication),
+        extended_thinking=bool(extended_thinking),
+        thinking_budget=int(thinking_budget),
     )
 
     _run_id = run_id or datetime.now().strftime("%Y%m%d_%H%M%S") + f"_{condition}"
@@ -572,13 +582,30 @@ def _call_llm(
 
     if backend == "anthropic":
         import anthropic
-        response = client.messages.create(
+        extended_thinking = _cfg.get("extended_thinking", False)
+        thinking_budget   = int(_cfg.get("thinking_budget", 5000))
+
+        api_kwargs = dict(
             model=model,
-            max_tokens=max_tokens,
+            max_tokens=max_tokens + thinking_budget if extended_thinking else max_tokens,
             system=system_prompt,
             messages=[{"role": "user", "content": user_prompt}],
         )
-        return response.content[0].text, ""
+        if extended_thinking:
+            api_kwargs["thinking"] = {"type": "enabled", "budget_tokens": thinking_budget}
+
+        response = client.messages.create(**api_kwargs)
+
+        # Extract text and thinking blocks (extended thinking returns multiple content blocks)
+        response_text  = ""
+        thinking_text  = ""
+        for block in response.content:
+            if block.type == "thinking":
+                thinking_text = block.thinking
+            elif block.type == "text":
+                response_text = block.text
+
+        return response_text, thinking_text
 
     elif backend == "google":
         # client is a google.generativeai.GenerativeModel with model already set

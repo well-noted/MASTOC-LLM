@@ -1088,7 +1088,7 @@ gemma4:e4b joins gpt-5.4-mini and DeepSeek R1:32b in the KEEP-dominant cluster a
 
 ### Thinking traces: what the deliberation reveals
 
-Ollama-hosted models (DeepSeek R1:32b and gemma4:e4b) expose their chain-of-thought in the API response; the bridge logs this as a `thinking` field alongside each decision. Anthropic and OpenAI APIs do not expose internal reasoning in standard (non-extended-thinking) mode, so Claude Sonnet and gpt-5.5 appear here only through their outputs. The traces from DeepSeek and gemma4 are qualitative evidence -- nine runs, 598 decision traces in total -- not a systematic sample, but they offer a window into the deliberative process that action counts alone cannot.
+Ollama-hosted models (DeepSeek R1:32b and gemma4:e4b) expose their chain-of-thought in the API response; the bridge logs this as a `thinking` field alongside each decision. Anthropic does not expose internal reasoning by default but makes extended thinking available via API opt-in -- the `extended-thinking?` toggle in the model interface enables this for future runs. OpenAI is a different case: the o-series reasoning traces are actively concealed. The o1 System Card states that the chain-of-thought "may include unaligned content" and that "attempting to extract raw reasoning through methods other than the reasoning summary parameter... may violate the Acceptable Use Policy" (OpenAI, 2024). The stated rationale combines safety concerns about intermediate reasoning with competitive interests -- the traces are a product secret, not merely an engineering omission. Claude Sonnet and gpt-5.5 therefore appear here only through their outputs, for structurally different reasons: Claude's reasoning is inaccessible by default but recoverable; gpt-5.5's is inaccessible by policy. The traces from DeepSeek and gemma4 are qualitative evidence -- nine runs, 598 decision traces in total -- not a systematic sample, but they offer a window into the deliberative process that action counts alone cannot.
 
 #### DeepSeek R1:32b: payoff-personality deadlock
 
@@ -1124,7 +1124,7 @@ The gemma4 pattern is distinguishable from DeepSeek's paralysis: where DeepSeek 
 
 #### What the traces don't contain -- and what that implies
 
-Neither model's chain-of-thought contains reasoning of the form: *if current trends continue for N ticks, the commons will reach state X.* The agents reason about the current tick, not about trajectories. This is what distinguishes their output profiles from Claude Sonnet's: Claude's messages explicitly reference trajectories ("if this continues," "the last five rounds have shown"), propose numerical targets, and escalate accountability based on whether those targets are met. That behavior pattern is consistent with multi-period modeling -- but whether Claude's internal reasoning actually works that way cannot be determined from standard API calls. Extended thinking mode would be required to test this directly, and it represents a priority direction for future runs.
+Neither model's chain-of-thought contains reasoning of the form: *if current trends continue for N ticks, the commons will reach state X.* The agents reason about the current tick, not about trajectories. This is what distinguishes their output profiles from Claude Sonnet's: Claude's messages explicitly reference trajectories ("if this continues," "the last five rounds have shown"), propose numerical targets, and escalate accountability based on whether those targets are met. That behavior pattern is consistent with multi-period modeling -- but whether Claude's internal reasoning actually works that way cannot be determined from standard API calls. Extended thinking mode can answer this question for Anthropic models; the `extended-thinking?` toggle makes this available in future runs. For OpenAI models, the question cannot be tested: the reasoning is concealed by policy, not by technical limitation, and no equivalent opt-in exists.
 
 The traces are consistent with the GRPO-vs-RLHF hypothesis: models trained to optimize for reasoning correctness on well-defined problems (math, code) may not generalise that deliberative capacity to open-ended, multi-period coordination problems. But this remains a conjecture. The traces establish that KEEP-dominance in DeepSeek R1 is not an absence of reasoning -- the reasoning is present and detailed -- but a reasoning process that resolves a tick-level conflict without modeling what that resolution accumulates into.
 
@@ -1915,6 +1915,8 @@ Hardin, G. (1968). The Tragedy of the Commons. Science, 162(3859), 1243–1248.
 
 Jimenez-Romero, C. et al. (2025). Multi-agent systems powered by large language models.
 Frontiers in Artificial Intelligence. https://doi.org/10.3389/frai.2025.1593017
+
+OpenAI. (2024, December 5). OpenAI o1 System Card. https://cdn.openai.com/o1-system-card-20241205.pdf
 
 Ostrom, E. (1990). Governing the Commons. Cambridge University Press.
 
