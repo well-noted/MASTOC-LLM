@@ -11,11 +11,7 @@
 
 The classic MASTOC commons model gives agents a payoff calculator and nothing else: no memory of past rounds, no capacity to explain a decision, no way to hear what neighbors think. 
 
-<dl>
-
-<dd>MASTOC-LLM replaces that architecture with large language model (LLM) agents. </dd>
-
-</dl>
+**MASTOC-LLM replaces that architecture with large language model (LLM) agents.**
 
 Each reads the current state of the shared grassland, observes neighbor behavior, recalls a rolling memory of prior rounds, and -- critically -- **communicates in natural language** before deciding whether to add, keep, or remove a cow.
 
