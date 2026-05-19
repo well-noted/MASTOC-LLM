@@ -61,6 +61,7 @@ The core research question:
   - [Pattern IV -- Hybrid Architecture Failure](#pattern-iv----hybrid-architecture-failure)
 - [Repository structure](#repository-structure)
 - [Quick start](#quick-start)
+  - [Batch baseline sweeps](#batch-baseline-sweeps-headless-no-api-cost)
 - [Working hypotheses and proposed experiments](#working-hypotheses-and-proposed-experiments)
   - [H1: Cooperation threshold](#h1----coop--049-is-a-tragedy-producing-threshold-at-standard-starting-conditions-consistent-across-models)
   - [H2: High coop necessary but not sufficient](#h2----high-cooperation-is-necessary-but-not-sufficient-fairoth-and-negr-determine-whether-stasis-paralysis-or-institution-emerges)
@@ -1427,6 +1428,34 @@ set GOOGLE_API_KEY=...             # Google Gemini
 5. Adjust per-agent **initial cows** sliders if desired (defaults: 5 / 15 / 25)
 6. Click **Setup**, then **Simulation**
 7. Logs write to `logs/` automatically
+
+### Batch baseline sweeps (headless, no API cost)
+
+The baseline condition uses rule-based agents with no LLM calls, so it can be run headlessly at scale using `run_baseline_sweep.py`. This is the fastest way to generate statistically replicated control data across a range of psychosocial parameters.
+
+```bash
+python run_baseline_sweep.py --runs 30                          # 30 reps, default params
+python run_baseline_sweep.py --runs 30 --coop 0.49             # threshold cooperation
+python run_baseline_sweep.py --runs 30 --neg-r 1.0             # high negative reciprocity
+python run_baseline_sweep.py --runs 30 --grassland 50          # scarce commons
+python run_baseline_sweep.py --runs 30 --grassland 50,75,100   # sweep three starting conditions
+```
+
+Key options:
+
+| Flag | Default | Description |
+|---|---|---|
+| `--runs N` | 30 | Repetitions (each gets a unique random seed) |
+| `--ticks T` | 120 | Max ticks per run |
+| `--grassland G` | 100 | Initial grassland % — comma-separated for sweep |
+| `--coop F` | 1.0 | Cooperation level |
+| `--neg-r F` | 0.0 | Negative reciprocity |
+| `--fairness-me F` | 0.0 | Fairness concerning self |
+| `--fairness-oth F` | 1.0 | Fairness concerning others |
+| `--forage F` | 2.0 | Cow forage requirement |
+| `--netlogo-path PATH` | auto | NetLogo install directory |
+
+The script injects the experiment into a temporary copy of the model, calls Java directly (bypassing `netlogo-headless.bat`'s quoting bug when NetLogo is installed under `Program Files`), and cleans up afterward. Logs write to `logs/` in the usual format. Primarily tested on Windows; macOS/Linux users may need to adjust extension paths.
 
 ### Analysing results
 

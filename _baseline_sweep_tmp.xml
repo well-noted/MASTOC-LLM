@@ -1,0 +1,89 @@
+        <?xml version="1.0" encoding="us-ascii"?>
+        <!DOCTYPE experiments SYSTEM "behaviorspace.dtd">
+        <experiments>
+          <experiment name="baseline-sweep"
+                      repetitions="30"
+                      sequentialRunOrder="false"
+                      runMetricsEveryStep="true"
+                      timeLimit="120">
+            <setup>setup</setup>
+            <go>simulation</go>
+            <metrics>
+              <metric>count patches with [pcolor = green - 2]</metric>
+              <metric>count cows</metric>
+              <metric>pressure</metric>
+              <metric>count cows with [owner = human 0]</metric>
+              <metric>count cows with [owner = human 1]</metric>
+              <metric>count cows with [owner = human 2]</metric>
+            </metrics>
+            <constants>
+              <enumeratedValueSet variable="condition">
+                <value value="&quot;baseline&quot;"></value>
+              </enumeratedValueSet>
+              <enumeratedValueSet variable="cow-forage-requirement">
+                <value value="2.0"></value>
+              </enumeratedValueSet>
+              <enumeratedValueSet variable="initial-grassland">
+  <value value="100"></value>
+</enumeratedValueSet>
+              <enumeratedValueSet variable="initial-grass-growth-rate">
+                <value value="0.001"></value>
+              </enumeratedValueSet>
+              <enumeratedValueSet variable="cooperation-level">
+                <value value="1.0"></value>
+              </enumeratedValueSet>
+              <enumeratedValueSet variable="negative-reciprocity">
+                <value value="0.0"></value>
+              </enumeratedValueSet>
+              <enumeratedValueSet variable="positive-reciprocity">
+                <value value="1"></value>
+              </enumeratedValueSet>
+              <enumeratedValueSet variable="risk-aversion-level">
+                <value value="1.0"></value>
+              </enumeratedValueSet>
+              <enumeratedValueSet variable="fairness-concerning-me">
+                <value value="0.0"></value>
+              </enumeratedValueSet>
+              <enumeratedValueSet variable="fairness-concerning-others">
+                <value value="1.0"></value>
+              </enumeratedValueSet>
+              <enumeratedValueSet variable="conformity-level">
+                <value value="0"></value>
+              </enumeratedValueSet>
+              <enumeratedValueSet variable="memory-length">
+                <value value="5"></value>
+              </enumeratedValueSet>
+              <enumeratedValueSet variable="detect-institutions">
+                <value value="true"></value>
+              </enumeratedValueSet>
+              <enumeratedValueSet variable="institution-check-interval">
+                <value value="5"></value>
+              </enumeratedValueSet>
+              <enumeratedValueSet variable="num-llm-agents">
+                <value value="1"></value>
+              </enumeratedValueSet>
+              <!-- agent backend/model fields are ignored in baseline but must be present -->
+              <enumeratedValueSet variable="agent0-backend">
+                <value value="&quot;anthropic&quot;"></value>
+              </enumeratedValueSet>
+              <enumeratedValueSet variable="agent0-model">
+                <value value="&quot;claude-sonnet-4-6&quot;"></value>
+              </enumeratedValueSet>
+              <enumeratedValueSet variable="agent1-backend">
+                <value value="&quot;anthropic&quot;"></value>
+              </enumeratedValueSet>
+              <enumeratedValueSet variable="agent1-model">
+                <value value="&quot;claude-sonnet-4-6&quot;"></value>
+              </enumeratedValueSet>
+              <enumeratedValueSet variable="agent2-backend">
+                <value value="&quot;anthropic&quot;"></value>
+              </enumeratedValueSet>
+              <enumeratedValueSet variable="agent2-model">
+                <value value="&quot;claude-sonnet-4-6&quot;"></value>
+              </enumeratedValueSet>
+              <enumeratedValueSet variable="system-prompt-override">
+                <value value="&quot;&quot;"></value>
+              </enumeratedValueSet>
+            </constants>
+          </experiment>
+        </experiments>

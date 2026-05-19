@@ -1,0 +1,1975 @@
+<?xml version="1.0" encoding="utf-8"?>
+<model version="NetLogo 7.0.4" snapToGrid="false">
+  <code><![CDATA[;;; ============================================================
+;;; MASTOC-LLM v1.0
+;;; Multi-Agent System Tragedy of the Commons
+;;; with LLM-based agent decision-making
+;;;
+;;; Conditions:
+;;;   "baseline"  — psychosocially-adjusted best-response (faithful to original MASTOC)
+;;;   "full-gabm" — all agents use LLM
+;;;   "hybrid"    — num-llm-agents agents use LLM (1–3); rest use best-response
+;;;
+;;; Requires NetLogo 6.2+ with the py extension.
+;;; Python bridge: mastoc_llm_bridge.py (must be in the same directory)
+;;; ============================================================
+
+extensions [ py ]
+
+patches-own [ elapsed-growth-time rand-number ]
+
+turtles-own [
+  payoff Nash-list list-of-Nash-lists forage grazing-counter action M ki
+  payoff-total w owner derived-payoff final-total reduced-list-of-Nash-lists
+  random-number payoff-total2 comparison-list-alpha comparison-list-beta id
+  payoff-total3 xi C payoff-total-coop add-fairness previous-action d-neg d-pos d-zero
+  add-reciprocity list-of-agent-actions minus-counter equal-counter plus-counter
+  add-conformity add-a-cow-payoff-list remove-a-cow-payoff-list let-equal-payoff-list
+  add-a-cow-adj-list let-equal-adj-list remove-a-cow-adj-list
+  add-a-cow-minimum-payoff let-equal-minimum-payoff remove-a-cow-minimum-payoff-perc
+  let-equal-minimum-payoff-perc add-a-cow-minimum-payoff-perc remove-a-cow-minimum-payoff
+  list-of-agent-payoffs list-of-calc-agent-payoffs current-value list-of-final-agent-payoffs
+  savings initial-cattle
+  ;; --- NEW for MASTOC-LLM ---
+  is-llm-agent    ;; TRUE if this agent uses LLM decision-making
+  outgoing-message ;; message to broadcast to neighbours this round
+]
+
+globals [
+  nrActions kk counter total j step P K DiedK previous-list next-list b current f d
+  nrCombinations u-list payoff-list y yy nr v jj ii list-of-payoff-lists selected-Nash-equilibrium
+  gg list-of-numbering-lists numbering-list final-action-list not-valid rr lengthlist aa ss
+  final-payoff-list mm final-numbering-list product nn first-equilibrium second-equilibrium
+  first-is-larger bb non-is-dominated index rrr ended equal sd Capacity sum-action
+  new-grass-regeneration-period vv loss-list maxV Veg grass-initial-cows grass-after-cows
+  cost-of-action Veg1 Veg2 remove-one-cow-value minus-value equal-value plus-value
+  list-of-agent-actions-length item-of-final-payoff-list final-agent-payoff-list
+  count-human count-item count-global pressure
+  ;; --- NEW for MASTOC-LLM ---
+  llm-ready       ;; TRUE once the Python bridge is initialised
+  max-patches     ;; total patch count (cached at setup)
+  sim-status      ;; human-readable status string shown in the monitor
+  sim-started?    ;; TRUE after the first tick fires (used to print "Simulation started" once)
+]
+
+breed [ cows cow ]
+breed [ humans human ]
+
+
+;;; ============================================================
+;;; SETUP
+;;; ============================================================
+
+to setup
+  ca
+  set llm-ready false
+  set max-patches count patches
+  set sim-status "○ idle"
+  set sim-started? false
+
+  create-humans 3
+  set nrActions 3
+  ask human 0 [ set ki agent0-initial-cows  set action 1 set initial-cattle ki ]
+  ask human 1 [ set ki agent1-initial-cows  set action 1 set initial-cattle ki ]
+  ask human 2 [ set ki agent2-initial-cows  set action 1 set initial-cattle ki ]
+  set K sum [ ki ] of humans
+  set P 2
+  ask humans [ set previous-action (random 3) - 1 ]
+
+  ;; Mark LLM agents based on condition
+  ifelse condition = "full-gabm" [
+    ask humans [ set is-llm-agent true ]
+  ] [
+    ifelse condition = "hybrid" [
+      ;; Designate num-llm-agents agents as LLM agents (1–3)
+      ;; Initialise all to false first so none carry a numeric 0 default
+      ask humans [ set is-llm-agent false ]
+      let n-llm num-llm-agents
+      ask n-of n-llm humans [ set is-llm-agent true ]
+    ] [
+      ;; baseline — no LLM agents
+      ask humans [ set is-llm-agent false ]
+    ]
+  ]
+
+  ask humans [
+    set list-of-agent-actions []
+    set color white
+    set shape "person"
+    set size 3
+    setxy random-xcor random-ycor
+    hatch-cows ki [
+      set color brown set shape "cow" set size 3
+      setxy random-xcor random-ycor
+      set owner myself
+    ]
+    set outgoing-message ""
+  ]
+
+  ask n-of round (count patches * initial-grassland / 100) patches [
+    set pcolor green - 2
+  ]
+
+  ask cows [ set color brown set shape "cow" set size 3 setxy random-xcor random-ycor ]
+  set step 0
+  set DiedK 3
+
+  ask humans [
+    set add-a-cow-payoff-list []
+    set let-equal-payoff-list []
+    set remove-a-cow-payoff-list []
+    set add-a-cow-adj-list []
+    set let-equal-adj-list []
+    set remove-a-cow-adj-list []
+    set list-of-agent-payoffs []
+    set list-of-calc-agent-payoffs []
+  ]
+
+  ;; Initialise Python bridge for all conditions — baseline runs use it for logging only
+  setup-python-bridge
+
+  reset-ticks
+  generate-payoffs
+end
+
+
+;;; ============================================================
+;;; PYTHON BRIDGE INITIALISATION
+;;; ============================================================
+
+to setup-python-bridge
+  py:setup py:python3
+  ;; Load the bridge module (must be in the same directory as the .nlogo file)
+  py:run "import sys, os; sys.path.insert(0, os.getcwd())"
+  py:run "import mastoc_llm_bridge as bridge"
+
+  ;; Pass string parameters via py:set to avoid quoting/escaping issues
+  py:set "cfg_agent_backends" (list agent0-backend agent1-backend agent2-backend)
+  py:set "cfg_agent_models"   (list agent0-model   agent1-model   agent2-model)
+  py:set "cfg_condition"           condition
+  py:set "cfg_memory_length"       memory-length
+  py:set "cfg_detect_institutions" detect-institutions    ;; NetLogo bool → Python bool
+  py:set "cfg_institution_interval" institution-check-interval
+
+  py:set "cfg_system_prompt"   system-prompt-override
+  py:set "cfg_ollama_base_url" ollama-base-url
+  py:set "cfg_verbose" verbose-mode
+  py:set "cfg_communication" communication?
+  let status py:runresult (word
+    "bridge.configure("
+    "agent_backends=cfg_agent_backends, "
+    "agent_models=cfg_agent_models, "
+    "condition=cfg_condition, "
+    "memory_length=cfg_memory_length, "
+    "log_dir='logs', "
+    "detect_institutions=cfg_detect_institutions, "
+    "institution_every_n_ticks=cfg_institution_interval, "
+    "system_prompt_override=cfg_system_prompt, "
+    "ollama_base_url=cfg_ollama_base_url, "
+    "verbose=cfg_verbose, "
+    "communication=cfg_communication"
+    ")")
+  show status
+
+  ;; Log all experiment parameters to run_meta.json for reproducibility
+  py:set "param_keys" (list
+    "cooperation_level" "fairness_concerning_me" "fairness_concerning_others"
+    "positive_reciprocity" "negative_reciprocity" "risk_aversion_level"
+    "initial_grassland" "initial_grass_growth_rate" "cow_forage_requirement"
+    "memory_length" "initial_cows_agent0" "initial_cows_agent1" "initial_cows_agent2"
+    "ollama_base_url")
+  py:set "param_vals" (list
+    cooperation-level fairness-concerning-me fairness-concerning-others
+    positive-reciprocity negative-reciprocity risk-aversion-level
+    initial-grassland initial-grass-growth-rate cow-forage-requirement
+    memory-length agent0-initial-cows agent1-initial-cows agent2-initial-cows
+    ollama-base-url)
+  py:run "bridge.log_params(dict(zip(param_keys, param_vals)))"
+
+  ;; Register each LLM agent with the bridge
+  ask humans with [ is-llm-agent ] [
+    py:run (word "bridge.init_agent(" who ")")
+  ]
+
+  set llm-ready true
+end
+
+
+;;; ============================================================
+;;; MAIN SIMULATION LOOP
+;;; ============================================================
+
+to simulation
+  if not sim-started? [
+    print (word "▶ Simulation started — " date-and-time)
+    set sim-started? true
+  ]
+  set sim-status (word "● running — tick " (ticks + 1))
+  tick
+  set step step + 1
+
+  ;; Reset per-tick payoff accumulators
+  ask humans [
+    set add-a-cow-payoff-list []
+    set let-equal-payoff-list []
+    set remove-a-cow-payoff-list []
+    set add-a-cow-adj-list []
+    set let-equal-adj-list []
+    set remove-a-cow-adj-list []
+    set list-of-agent-payoffs []
+    set list-of-calc-agent-payoffs []
+  ]
+
+  ;; Always compute payoff matrix — provides context for all agent types
+  generate-payoffs
+
+  ;; ── Decision step (condition-dependent) ──────────────────────────────────
+  ifelse condition = "baseline" [
+    ;; Rule-based best-response for all agents (no LLM)
+    ask humans [ rule-based-decide ]
+  ] [
+    ifelse condition = "full-gabm" [
+      ;; LLM decision for all agents
+      ask humans [ llm-decide ]
+    ] [
+      ;; Hybrid: LLM agents reason via bridge, rule-based agents use heuristic
+      ask humans with [ is-llm-agent ] [ llm-decide ]
+      ask humans with [ not is-llm-agent ] [ rule-based-decide ]
+    ]
+    ;; Broadcast messages from LLM agents to their neighbours
+    broadcast-messages
+  ]
+
+  ;; ── Execute decisions ─────────────────────────────────────────────────────
+  change-number-of-cows
+  graze
+
+  ;; ── Plots & resource state ────────────────────────────────────────────────
+  set pressure count patches with [ pcolor = black ] / count patches
+  set-current-plot "Grazing pressure"
+  set-current-plot-pen "pressure"
+  plotxy step pressure
+
+  grass-regrowth
+  plot-data
+  export-data
+
+  ;; ── End-of-round logging via bridge ──────────────────────────────────────
+  if llm-ready [
+    let _status py:runresult (word
+      "bridge.end_round("
+      ticks ", "
+      count patches with [ pcolor = green - 2 ] ", "
+      max-patches ", "
+      count cows ", "
+      pressure ", "
+      count cows with [ owner = human 0 ] ", "
+      count cows with [ owner = human 1 ] ", "
+      count cows with [ owner = human 2 ]
+      ")")
+  ]
+
+  if (not run-indefinitely) and (ticks >= num-rounds) [
+    set sim-status "✓ done"
+    print (word "■ Simulation stopped — " num-rounds " rounds complete — " date-and-time)
+    close-bridge
+    stop
+  ]
+end
+
+
+;;; ============================================================
+;;; DECISION PROCEDURES
+;;; ============================================================
+
+;; ── LLM agent: call Python bridge ─────────────────────────────────────────
+to llm-decide
+  ;; Build context list and pass to bridge via py:set (avoids NetLogo string escaping)
+  let neighbour-ids   map [ h -> [who] of h ] sort other humans
+  let neighbour-herds map [ h -> [ki] of h ] sort other humans
+  let neighbour-acts  map [ h -> [previous-action] of h ] sort other humans
+
+  ;; Payoff estimates from current generate-payoffs run
+  let p-add    (ifelse-value (length add-a-cow-payoff-list > 0)
+                  [ min add-a-cow-payoff-list ] [ 0 ])
+  let p-keep   (ifelse-value (length let-equal-payoff-list > 0)
+                  [ min let-equal-payoff-list ] [ 0 ])
+  let p-remove (ifelse-value (length remove-a-cow-payoff-list > 0)
+                  [ min remove-a-cow-payoff-list ] [ 0 ])
+
+  py:set "ctx" (list
+    who ticks
+    count patches with [ pcolor = green - 2 ]
+    max-patches
+    ki previous-action payoff
+    neighbour-ids neighbour-herds neighbour-acts
+    p-add p-keep p-remove
+    fairness-concerning-me fairness-concerning-others
+    cooperation-level negative-reciprocity positive-reciprocity
+    conformity-level risk-aversion-level
+  )
+
+  let chosen-action py:runresult "bridge.decide_from_context(ctx)"
+  set action chosen-action
+  set previous-action action
+  set list-of-agent-actions lput action list-of-agent-actions
+
+  ;; Retrieve outgoing message
+  set outgoing-message py:runresult (word "bridge.get_outgoing_message(" who ")")
+end
+
+
+;; ── Rule-based agent: Python best-response heuristic ─────────────────────
+to rule-based-decide
+  ;; Reuse the same ctx structure so bridge.baseline_decide() can be called
+  ;; from Python even for rule-based agents (consistent logging path).
+  let neighbour-ids   map [ h -> [who] of h ] sort other humans
+  let neighbour-herds map [ h -> [ki] of h ] sort other humans
+  let neighbour-acts  map [ h -> [previous-action] of h ] sort other humans
+
+  let p-add    (ifelse-value (length add-a-cow-payoff-list > 0)
+                  [ min add-a-cow-payoff-list ] [ 0 ])
+  let p-keep   (ifelse-value (length let-equal-payoff-list > 0)
+                  [ min let-equal-payoff-list ] [ 0 ])
+  let p-remove (ifelse-value (length remove-a-cow-payoff-list > 0)
+                  [ min remove-a-cow-payoff-list ] [ 0 ])
+
+  ifelse condition = "baseline" [
+    ;; Best-response over psychosocially-adjusted payoffs — faithful to original MASTOC.
+    ;; All sliders (cooperation, fairness, reciprocity, conformity) are now active:
+    ;; calculate-payoff applies them before accumulating into the adj lists below.
+    ;; Risk-aversion retains its original role: conservative agents downgrade ADD→KEEP.
+    let pa (ifelse-value (length add-a-cow-adj-list    > 0) [ min add-a-cow-adj-list    ] [ 0 ])
+    let pk (ifelse-value (length let-equal-adj-list    > 0) [ min let-equal-adj-list    ] [ 0 ])
+    let pr (ifelse-value (length remove-a-cow-adj-list > 0) [ min remove-a-cow-adj-list ] [ 0 ])
+    let best-action 0
+    let best-payoff pk
+    if pa > best-payoff [ set best-action  1  set best-payoff pa ]
+    if pr > best-payoff [ set best-action -1 ]
+    if best-action = 1 and random-float 1 < risk-aversion-level * 0.3 [
+      set best-action 0
+    ]
+    set action best-action
+  ] [
+    ;; Hybrid condition: call Python bridge so rule-based agents are logged too
+    py:set "ctx" (list
+      who ticks
+      count patches with [ pcolor = green - 2 ]
+      max-patches
+      ki previous-action payoff
+      neighbour-ids neighbour-herds neighbour-acts
+      p-add p-keep p-remove
+      fairness-concerning-me fairness-concerning-others
+      cooperation-level negative-reciprocity positive-reciprocity
+      conformity-level risk-aversion-level
+    )
+    set action py:runresult "bridge.baseline_decide(ctx)"
+  ]
+
+  set previous-action action
+  set list-of-agent-actions lput action list-of-agent-actions
+  set outgoing-message ""
+end
+
+
+;;; ============================================================
+;;; COMMUNICATION
+;;; ============================================================
+
+to broadcast-messages
+  ;; Each LLM agent that has a non-empty outgoing message delivers it to all neighbours.
+  ;; Use py:set for the message string to avoid ALL quoting/escaping edge cases.
+  ask humans with [ is-llm-agent ] [
+    if outgoing-message != "" [
+      let sender who
+      let msg outgoing-message
+      ask other humans [
+        py:set "bcast_from"    sender
+        py:set "bcast_to"      who
+        py:set "bcast_content" msg
+        py:run "bridge.deliver_message(bcast_from, bcast_to, bcast_content)"
+      ]
+    ]
+  ]
+end
+
+
+;;; ============================================================
+;;; CLEANUP
+;;; ============================================================
+
+to close-bridge
+  if llm-ready [
+    let _msg py:runresult "bridge.close()"
+    show _msg
+  ]
+end
+
+
+;;; ============================================================
+;;; PAYOFF GENERATION  (unchanged from original MASTOC logic)
+;;; ============================================================
+
+to generate-payoffs
+  ask humans [ set ki count cows with [ owner = myself ] ]
+  set K sum [ ki ] of humans
+  set list-of-payoff-lists []
+  set list-of-numbering-lists []
+  set nrCombinations power nrActions (count humans)
+  set u-list n-values count humans [ i -> -1 ]
+  set payoff-list n-values count humans [ i -> 0 ]
+  set numbering-list n-values count humans [ i -> 0 ]
+
+  while [ y < nrCombinations ] [
+    while [ yy < count humans ] [
+      if (y mod (power nrActions yy)) = 0 [
+        set u-list replace-item yy u-list ((item yy u-list) + 1)
+      ]
+      set payoff-list replace-item yy payoff-list ((item yy u-list) mod nrActions)
+      set numbering-list replace-item yy numbering-list ((item yy u-list) mod nrActions)
+      if item yy payoff-list = 0 [ set payoff-list replace-item yy payoff-list 3 ]
+      if item yy payoff-list = 1 [ set payoff-list replace-item yy payoff-list 0 ]
+      if item yy payoff-list = 2 [ set payoff-list replace-item yy payoff-list -1 ]
+      if item yy payoff-list = 3 [ set payoff-list replace-item yy payoff-list 1 ]
+      set yy yy + 1
+    ]
+    set yy 0
+    calculate-payoff payoff-list
+    set list-of-payoff-lists lput payoff-list list-of-payoff-lists
+    set list-of-numbering-lists lput numbering-list list-of-numbering-lists
+    set y y + 1
+  ]
+  set y 0
+
+  foreach sort humans [ h ->
+    ask h [
+      set remove-a-cow-minimum-payoff min remove-a-cow-payoff-list
+      set let-equal-minimum-payoff    min let-equal-payoff-list
+      set add-a-cow-minimum-payoff    min add-a-cow-payoff-list
+      let denom sum (list remove-a-cow-minimum-payoff
+                         let-equal-minimum-payoff
+                         add-a-cow-minimum-payoff)
+      if denom != 0 [
+        set remove-a-cow-minimum-payoff-perc remove-a-cow-minimum-payoff / denom
+        set let-equal-minimum-payoff-perc    let-equal-minimum-payoff    / denom
+        set add-a-cow-minimum-payoff-perc    add-a-cow-minimum-payoff    / denom
+      ]
+    ]
+  ]
+
+  ;; Build final payoff lists (used for Nash calculation / LLM context)
+  ;; Build risk-aversion-weighted final payoff lists (mirrors original MASTOC logic).
+  ;; Each payoff = base_calc + raw * ra * risk_factor
+  ;; where risk_factor depends on whether this action has the highest min-payoff
+  ;; fraction (the agent's "best" option gets a higher weight under risk-aversion).
+  set count-human 0
+  ask humans [ set list-of-final-agent-payoffs [] ]
+  while [ count-human < count humans ] [
+    ask human count-human [
+      set count-item 0
+      ;; Cache the ordered percentages for readability
+      let perc-list (list remove-a-cow-minimum-payoff-perc
+                          let-equal-minimum-payoff-perc
+                          add-a-cow-minimum-payoff-perc)
+      let max-perc max perc-list
+
+      while [ count-item < length list-of-calc-agent-payoffs ] [
+        let base-payoff item count-item list-of-calc-agent-payoffs
+        let raw-payoff  item count-item list-of-agent-payoffs
+        let action-code item count-human item count-item list-of-numbering-lists
+
+        ;; Select this action's minimum-payoff percentage (0=remove,1=keep,2=add)
+        let this-perc ifelse-value (action-code = 0)
+          [ remove-a-cow-minimum-payoff-perc ]
+          [ ifelse-value (action-code = 1)
+            [ let-equal-minimum-payoff-perc ]
+            [ add-a-cow-minimum-payoff-perc ] ]
+
+        ;; Risk factor: best option gets compound weight; others get a discount
+        let risk-factor ifelse-value (this-perc = max-perc)
+          [ this-perc + risk-aversion-level * (1 - this-perc) ]
+          [ (1 - risk-aversion-level) * this-perc ]
+
+        set current-value base-payoff + raw-payoff * risk-aversion-level * risk-factor
+        set list-of-final-agent-payoffs lput current-value list-of-final-agent-payoffs
+        set count-item count-item + 1
+      ]
+    ]
+    set count-human count-human + 1
+  ]
+end
+
+
+;;; ============================================================
+;;; PAYOFF CALCULATION  (unchanged from original MASTOC logic)
+;;; ============================================================
+
+to calculate-payoff [ payoffs ]
+  set d sum payoffs
+  ask humans [ set xi item who payoffs ]
+  ask humans [
+    if xi = 1  [ set C cost K (K + 1) ]
+    if xi = 0  [ set C 0 ]
+    if xi = -1 [ set C cost K (K - 1) ]
+  ]
+  ask humans [ set payoff-total 0 ]
+  foreach sort humans [ h ->
+    ask h [ set payoff-total (ki + xi) * P - C ]
+  ]
+
+  ;; Cooperation adjustment
+  ask humans [
+    set payoff-total-coop
+      (1 - cooperation-level) * payoff-total +
+      cooperation-level * ((K + d) * P - sum [ C ] of humans)
+  ]
+
+  ;; Fairness adjustment
+  foreach sort humans [ h ->
+    ask h [
+      set comparison-list-alpha []
+      set comparison-list-beta  []
+      set rrr 0
+      while [ rrr < count humans ] [
+        if human rrr != h [
+          set comparison-list-alpha lput
+            (max (list ([ payoff-total ] of human rrr - payoff-total) 0))
+            comparison-list-alpha
+          set comparison-list-beta lput
+            (max (list (payoff-total - [ payoff-total ] of human rrr) 0))
+            comparison-list-beta
+        ]
+        set rrr rrr + 1
+      ]
+      set rrr 0
+    ]
+  ]
+  ask humans [
+    set add-fairness
+      fairness-concerning-me    / (count humans - 1) * sum comparison-list-alpha +
+      fairness-concerning-others / (count humans - 1) * sum comparison-list-beta
+  ]
+  let total-payoff sum [ payoff-total ] of humans
+  if total-payoff != 0 [
+    ask humans [
+      set add-fairness add-fairness / total-payoff * (count humans - 1) * payoff-total
+    ]
+  ]
+
+  ;; Reciprocity adjustment
+  ask humans [
+    set d-pos count other humans with [ previous-action = 1 ]
+    set d-neg count other humans with [ previous-action = -1 ]
+    set d-zero count other humans with [ previous-action = 0 ]
+    if xi = 1  [
+      set add-reciprocity payoff-total *
+        (negative-reciprocity * (d-pos + 0.5 * d-zero) / (count humans - 1))
+    ]
+    if xi = -1 [
+      set add-reciprocity payoff-total *
+        (positive-reciprocity * (d-neg + 0.5 * d-zero) / (count humans - 1))
+    ]
+    if xi = 0  [
+      set add-reciprocity payoff-total * 0.5 * (
+        (negative-reciprocity * (d-pos + 0.5 * d-zero) / (count humans - 1)) +
+        (positive-reciprocity * (d-neg + 0.5 * d-zero) / (count humans - 1)))
+    ]
+  ]
+
+  ;; Conformity adjustment
+  ask humans [
+    ifelse length list-of-agent-actions > 0
+      [ set list-of-agent-actions-length length list-of-agent-actions ]
+      [ set list-of-agent-actions-length 1 ]
+    set minus-counter 0
+    set equal-counter 0
+    set plus-counter  0
+    foreach list-of-agent-actions [ a ->
+      if a = -1 [ set minus-counter minus-counter + 1 ]
+      if a = 0  [ set equal-counter equal-counter + 1 ]
+      if a = 1  [ set plus-counter  plus-counter  + 1 ]
+    ]
+  ]
+  set minus-value sum [ minus-counter ] of humans / (count humans * list-of-agent-actions-length)
+  set equal-value sum [ equal-counter ] of humans / (count humans * list-of-agent-actions-length)
+  set plus-value  sum [ plus-counter  ] of humans / (count humans * list-of-agent-actions-length)
+
+  ask humans [
+    if xi = -1 [ set add-conformity conformity-level * payoff-total * minus-value ]
+    if xi = 0  [ set add-conformity conformity-level * payoff-total * equal-value ]
+    if xi = 1  [ set add-conformity conformity-level * payoff-total * plus-value  ]
+  ]
+
+  ;; Accumulate payoff lists by action
+  foreach sort humans [ h ->
+    ask h [
+      set list-of-agent-payoffs lput payoff-total list-of-agent-payoffs
+    ]
+  ]
+  ask humans [
+    if xi = -1 [ set remove-a-cow-payoff-list lput payoff-total remove-a-cow-payoff-list ]
+    if xi = 0  [ set let-equal-payoff-list    lput payoff-total let-equal-payoff-list    ]
+    if xi = 1  [ set add-a-cow-payoff-list    lput payoff-total add-a-cow-payoff-list    ]
+  ]
+
+  ;; Final payoff with all adjustments
+  ask humans [
+    set payoff-total payoff-total-coop - add-fairness + add-reciprocity + add-conformity
+    ;; Accumulate per-action adjusted payoffs for faithful baseline best-response
+    if xi = -1 [ set remove-a-cow-adj-list lput payoff-total remove-a-cow-adj-list ]
+    if xi = 0  [ set let-equal-adj-list    lput payoff-total let-equal-adj-list    ]
+    if xi = 1  [ set add-a-cow-adj-list    lput payoff-total add-a-cow-adj-list    ]
+  ]
+  foreach sort humans [ h ->
+    ask h [
+      set list-of-calc-agent-payoffs lput payoff-total list-of-calc-agent-payoffs
+    ]
+  ]
+end
+
+
+;;; ============================================================
+;;; COW MANAGEMENT
+;;; ============================================================
+
+to change-number-of-cows
+  ask humans [
+    if action = 1 [
+      hatch-cows 1 [
+        set color brown set shape "cow" set size 3
+        setxy random-xcor random-ycor
+        set owner myself
+      ]
+    ]
+    if action = -1 [
+      if any? cows with [ owner = myself ] [
+        ask one-of cows with [ owner = myself ] [ die ]
+      ]
+    ]
+  ]
+end
+
+
+;;; ============================================================
+;;; GRAZING
+;;; ============================================================
+
+to graze
+  ask cows [ set forage 0 ]
+  ask cows [
+    while [ (forage < cow-forage-requirement) and
+            (any? patches with [ pcolor = green - 2 ]) ] [
+      move-to min-one-of patches with [ pcolor = green - 2 ] [ distance myself ]
+      ask patch-here [ set pcolor black set elapsed-growth-time 0 ]
+      set forage forage + 1
+    ]
+    if forage < cow-forage-requirement [ die ]
+  ]
+end
+
+
+;;; ============================================================
+;;; GRASS REGROWTH  (logistic model)
+;;; ============================================================
+
+to grass-regrowth
+  set Veg count patches with [ pcolor = green - 2 ]
+  set maxV count patches
+  let new-grass round (Veg * (1 + (initial-grass-growth-rate * Veg * (1 - (Veg / maxV)))) - Veg)
+  let n-grow min (list new-grass count patches with [ pcolor = black ])
+  if n-grow > 0 [
+    ask n-of n-grow patches with [ pcolor = black ] [ set pcolor green - 2 ]
+  ]
+end
+
+
+;;; ============================================================
+;;; COST FUNCTION  (unchanged)
+;;; ============================================================
+
+to-report cost [ initial-cows after-cows ]
+  set Veg1 count patches with [ pcolor = green - 2 ] - initial-cows * cow-forage-requirement
+  set Veg2 count patches with [ pcolor = green - 2 ] - after-cows * cow-forage-requirement
+  set maxV count patches
+  set grass-initial-cows
+    (max list 0 Veg1) * (1 + (initial-grass-growth-rate * Veg1 * (1 - (Veg1 / maxV))))
+  set grass-after-cows
+    (max list 0 Veg2) * (1 + (initial-grass-growth-rate * Veg2 * (1 - (Veg2 / maxV))))
+  set cost-of-action
+    (grass-initial-cows - grass-after-cows) / (cow-forage-requirement * count humans) * P
+  report cost-of-action
+end
+
+
+;;; ============================================================
+;;; HELPERS
+;;; ============================================================
+
+to-report power [ a q ]
+  set nr 1
+  while [ v < q ] [ set nr nr * a  set v v + 1 ]
+  set v 0
+  report nr
+end
+
+
+;;; ============================================================
+;;; DATA EXPORT  (extended for LLM conditions)
+;;; ============================================================
+
+to plot-data
+  set-current-plot "Plot"
+  set-current-plot-pen "Patches"
+  plotxy step count patches with [ pcolor = green - 2 ]
+  set-current-plot-pen "Cows"
+  plotxy step count cows
+end
+
+to export-data
+  ;; Existing MASTOC flat-file exports (maintained for backward compatibility)
+  file-open "Data/Sensitivity-pressure.txt"
+  if ticks = 1 [
+    file-print " "
+    file-print (word "Condition: " condition)
+    file-print (word "initial cows "
+      [initial-cattle] of human 0 " "
+      [initial-cattle] of human 1 " "
+      [initial-cattle] of human 2)
+    file-print (word "forage: " cow-forage-requirement)
+    file-print (word "grass: "  initial-grassland)
+    file-print (word "growth: " initial-grass-growth-rate)
+    file-print (word "fairness me: "     fairness-concerning-me)
+    file-print (word "fairness others: " fairness-concerning-others)
+    file-print (word "cooperation: "     cooperation-level)
+    file-print (word "recip neg: "       negative-reciprocity)
+    file-print (word "recip pos: "       positive-reciprocity)
+    file-print (word "conformity: "      conformity-level)
+    file-print (word "risk aversion: "   risk-aversion-level)
+  ]
+  file-print pressure
+  file-close
+
+  file-open "Data/1-gain-agent0.txt"
+  if ticks = 1 [ file-print (word "Condition: " condition) ]
+  file-print count cows with [ owner = human 0 ]
+  file-close
+
+  file-open "Data/1-gain-agent1.txt"
+  if ticks = 1 [ file-print (word "Condition: " condition) ]
+  file-print count cows with [ owner = human 1 ]
+  file-close
+
+  file-open "Data/1-gain-agent2.txt"
+  if ticks = 1 [ file-print (word "Condition: " condition) ]
+  file-print count cows with [ owner = human 2 ]
+  file-close
+
+  file-open "Data/1-count-cows.txt"
+  if ticks = 1 [ file-print (word "Condition: " condition) ]
+  file-print count cows
+  file-close
+end
+
+]]></code>
+  <widgets>
+    <view x="616" wrappingAllowedX="false" y="67" frameRate="30.0" minPycor="-16" height="547" showTickCounter="true" patchSize="15.8" fontSize="10" wrappingAllowedY="false" width="527" tickCounterLabel="ticks" maxPycor="16" updateMode="0" maxPxcor="16" minPxcor="-16"></view>
+    <button x="8" y="10" height="40" disableUntilTicks="false" forever="false" kind="Observer" width="208">setup</button>
+    <button x="8" y="55" height="40" disableUntilTicks="false" forever="true" kind="Observer" width="208">simulation</button>
+    <slider x="8" step="1" y="132" max="50" width="208" display="cow-forage-requirement" height="50" min="0" direction="Horizontal" default="2.0" variable="cow-forage-requirement"></slider>
+    <slider x="8" step="1" y="188" max="100" width="208" display="initial-grassland" height="50" min="0" direction="Horizontal" default="100.0" variable="initial-grassland"></slider>
+    <slider x="8" step="0.0001" y="244" max="0.1" width="208" display="initial-grass-growth-rate" height="50" min="0" direction="Horizontal" default="0.001" variable="initial-grass-growth-rate"></slider>
+    <monitor x="932" precision="17" y="0" height="60" fontSize="11" width="208">sim-status</monitor>
+    <plot x="223" autoPlotX="true" yMax="1.0" autoPlotY="true" yAxis="Pressure" y="357" xMin="0.0" height="277" legend="false" xMax="10.0" yMin="0.0" width="386" xAxis="Time" display="Grazing pressure">
+      <setup></setup>
+      <update></update>
+      <pen interval="1.0" mode="0" display="pressure" color="-16777216" legend="true">
+        <setup></setup>
+        <update></update>
+      </pen>
+    </plot>
+    <plot x="224" autoPlotX="true" yMax="100.0" autoPlotY="true" yAxis="Number" y="32" xMin="0.0" height="282" legend="true" xMax="10.0" yMin="0.0" width="386" xAxis="Time" display="Plot">
+      <setup></setup>
+      <update></update>
+      <pen interval="1.0" mode="0" display="Patches" color="-10899396" legend="true">
+        <setup></setup>
+        <update></update>
+      </pen>
+      <pen interval="1.0" mode="0" display="Cows" color="-6459832" legend="true">
+        <setup></setup>
+        <update></update>
+      </pen>
+    </plot>
+    <chooser x="922" y="808" height="60" variable="agent2-backend" current="0" width="100" display="agent2-backend">
+      <choice type="string" value="anthropic"></choice>
+      <choice type="string" value="openai"></choice>
+      <choice type="string" value="ollama"></choice>
+      <choice type="string" value="ollama-native"></choice>
+      <choice type="string" value="google"></choice>
+    </chooser>
+    <input x="1029" multiline="false" y="807" height="60" variable="agent2-model" type="string" width="106">claude-sonnet-4-6</input>
+    <chooser x="921" y="740" height="60" variable="agent1-backend" current="0" width="100" display="agent1-backend">
+      <choice type="string" value="anthropic"></choice>
+      <choice type="string" value="openai"></choice>
+      <choice type="string" value="ollama"></choice>
+      <choice type="string" value="ollama-native"></choice>
+      <choice type="string" value="google"></choice>
+    </chooser>
+    <input x="1029" multiline="false" y="742" height="60" variable="agent1-model" type="string" width="106">claude-sonnet-4-6</input>
+    <input x="1027" multiline="false" y="674" height="60" variable="agent0-model" type="string" width="106">claude-sonnet-4-6</input>
+    <slider x="6" step="0.01" y="434" max="1" width="205" display="fairness-concerning-me" height="50" min="0" direction="Horizontal" default="0.0" variable="fairness-concerning-me"></slider>
+    <slider x="4" step="0.01" y="719" max="1" width="209" display="conformity-level" height="50" min="0" direction="Horizontal" default="0.0" variable="conformity-level"></slider>
+    <slider x="5" step="0.01" y="664" max="1" width="208" display="positive-reciprocity" height="50" min="0" direction="Horizontal" default="1.0" variable="positive-reciprocity"></slider>
+    <slider x="5" step="0.01" y="607" max="1" width="208" display="negative-reciprocity" height="50" min="0" direction="Horizontal" default="0.0" variable="negative-reciprocity"></slider>
+    <slider x="5" step="0.01" y="550" max="1" width="207" display="cooperation-level" height="50" min="0" direction="Horizontal" default="1.0" variable="cooperation-level"></slider>
+    <slider x="5" step="0.01" y="492" max="1" width="206" display="fairness-concerning-others" height="50" min="0" direction="Horizontal" default="1.0" variable="fairness-concerning-others"></slider>
+    <note x="7" y="415" backgroundDark="0" fontSize="11" width="223" markdown="false" height="28" textColorDark="-1" textColorLight="-16777216" backgroundLight="0">Socio-psychological dispositions:</note>
+    <slider x="12" step="1" y="303" max="500" width="208" display="num-rounds" height="50" min="1" direction="Horizontal" default="120.0" variable="num-rounds" units="rounds"></slider>
+    <switch x="11" y="361" height="40" on="false" variable="run-indefinitely" width="208" display="run-indefinitely"></switch>
+    <switch x="667" y="12" height="40" on="false" variable="verbose-mode" width="208" display="verbose-mode"></switch>
+    <slider x="6" step="0.01" y="775" max="1" width="207" display="risk-aversion-level" height="50" min="0" direction="Horizontal" default="1.0" variable="risk-aversion-level"></slider>
+    <note x="243" y="645" backgroundDark="0" fontSize="11" width="891" markdown="false" height="24" textColorDark="-1" textColorLight="-16777216" backgroundLight="0">LLM / Condition settings:</note>
+    <chooser x="244" y="681" height="60" variable="condition" current="0" width="208" display="condition">
+      <choice type="string" value="baseline"></choice>
+      <choice type="string" value="full-gabm"></choice>
+      <choice type="string" value="hybrid"></choice>
+    </chooser>
+    <slider x="461" step="1" y="685" max="3" width="208" display="num-llm-agents" height="50" min="1" direction="Horizontal" default="1.0" variable="num-llm-agents"></slider>
+    <slider x="680" step="1" y="684" max="15" width="208" display="memory-length" height="50" min="0" direction="Horizontal" default="5.0" variable="memory-length" units="rounds"></slider>
+    <switch x="247" y="753" height="40" on="true" variable="detect-institutions" width="208" display="detect-institutions"></switch>
+    <slider x="243" step="1" y="812" max="20" width="208" display="institution-check-interval" height="50" min="1" direction="Horizontal" default="5.0" variable="institution-check-interval" units="ticks"></slider>
+    <input x="242" multiline="false" y="885" height="157" variable="system-prompt-override" type="string" width="887"></input>
+    <note x="11" y="111" backgroundDark="0" fontSize="11" width="198" markdown="false" height="18" textColorDark="-1" textColorLight="-16777216" backgroundLight="0">System parameters:</note>
+    <note x="8" y="840" backgroundDark="0" fontSize="11" width="199" markdown="false" height="18" textColorDark="-1" textColorLight="-16777216" backgroundLight="0">Simulation parameters:</note>
+    <slider x="13" step="1" y="979" max="60" width="208" display="agent2-initial-cows" height="50" min="1" direction="Horizontal" default="25.0" variable="agent2-initial-cows" units="cows"></slider>
+    <slider x="12" step="1" y="919" max="60" width="208" display="agent1-initial-cows" height="50" min="1" direction="Horizontal" default="15.0" variable="agent1-initial-cows" units="cows"></slider>
+    <slider x="11" step="1" y="862" max="60" width="208" display="agent0-initial-cows" height="50" min="1" direction="Horizontal" default="5.0" variable="agent0-initial-cows" units="cows"></slider>
+    <chooser x="920" y="674" height="60" variable="agent0-backend" current="0" width="100" display="agent0-backend">
+      <choice type="string" value="anthropic"></choice>
+      <choice type="string" value="openai"></choice>
+      <choice type="string" value="ollama"></choice>
+      <choice type="string" value="ollama-native"></choice>
+      <choice type="string" value="google"></choice>
+    </chooser>
+    <input x="704" multiline="false" y="802" height="60" variable="ollama-base-url" type="string" width="190">http://localhost:11434/v1</input>
+    <switch x="683" y="746" height="40" on="true" variable="communication?" width="208" display="communication?"></switch>
+  </widgets>
+  <info><![CDATA[WHAT IS IT?
+-----------
+MASTOC-LLM is an extension of the MASTOC model (Multi-Agent System Tragedy of the Commons) that replaces the Nash-equilibrium decision mechanism with LLM-based reasoning for some or all agents, creating a Generative Agent-Based Model (GABM).
+
+Scientific question: Do Ostrom-style commons institutions (communication norms, graduated sanctions, coordination rules) emerge spontaneously from language-capable agents under resource pressure, without being hard-coded?
+
+Three experimental conditions:
+  1. Baseline    — rule-based best-response heuristic (reproduces classical tragedy as control)
+  2. Full GABM   — all agents reason via LLM
+  3. Hybrid      — a minority of LLM agents among rule-based majority
+
+HOW IT WORKS
+------------
+Each tick:
+1. Payoff matrix is computed for all action combinations (inherits MASTOC's socio-psychological
+   disposition parameters: fairness, cooperation, reciprocity, conformity, risk-aversion).
+2. Each agent decides:
+   - LLM agents: send resource state + rolling memory + neighbour messages to the LLM bridge;
+     parse back action (-1/0/+1) and optional message.
+   - Rule-based agents: myopic best-response (choose action with highest expected payoff).
+3. If communication is enabled, LLM agents broadcast messages to neighbours.
+4. Actions are executed (cows added/removed), grazing occurs, grass regrows logistically.
+5. End-of-round: resource state and agent decisions logged; optional Ostrom institution
+   detection classifies messages.
+
+Key parameters:
+  - memory-length  — rolling rounds of history each agent sees (0 = amnesiac, 1-15)
+  - communication? — if OFF, agents receive no neighbour messages and send none; isolates
+                     pure LLM reasoning from social coordination
+
+HOW TO USE IT
+-------------
+SETUP:
+  1. Install NetLogo 7 (https://ccl.northwestern.edu/netlogo/)
+  2. Install Python 3.9+ and the required packages for your chosen backend:
+       Anthropic:    pip install anthropic
+       OpenAI:       pip install openai
+       Google:       pip install google-generativeai
+       Ollama:       install Ollama locally (https://ollama.com), no pip package needed
+  3. Set the relevant API key as an environment variable:
+       ANTHROPIC_API_KEY, OPENAI_API_KEY, or GOOGLE_API_KEY
+  4. Place MASTOC-LLM.nlogox and mastoc_llm_bridge.py in the same directory
+  5. Open MASTOC-LLM.nlogox in NetLogo 7
+
+RUNNING:
+  - Select a condition from the Condition chooser
+  - Select a backend (anthropic / openai / google / ollama / ollama-native) and model
+    for each agent independently using the per-agent backend choosers and model inputboxes
+  - Adjust memory-length and communication? as desired
+  - Click Setup, then Simulation
+  - CSV logs are written to logs/<run_id>/
+
+OUTPUTS:
+  - logs/<run_id>/run_meta.json     — all experiment parameters for reproducibility
+  - logs/<run_id>/resources.csv    — pool size, cow counts, pressure per tick
+  - logs/<run_id>/decisions.csv    — agent decisions, reasoning, messages per tick
+  - logs/<run_id>/institutions.csv — Ostrom institution detection scores per round
+  - Data/Sensitivity-pressure.txt  — grazing pressure time series (MASTOC-compatible)
+
+SUPPORTED BACKENDS
+------------------
+  anthropic    — Claude models via Anthropic API (ANTHROPIC_API_KEY)
+  openai       — GPT models via OpenAI API (OPENAI_API_KEY)
+  google       — Gemini models via Google AI API (GOOGLE_API_KEY)
+  ollama       — Any locally-running Ollama model via OpenAI-compatible endpoint
+  ollama-native — Ollama models via Ollama's native API (supports reasoning/thinking models)
+
+Each of the three agents can use a different backend and model, enabling cross-model comparison
+within a single run.
+
+CREDITS
+-------
+Based on MASTOC v1.1.0 by Bais et al. (CoMSES model #2283).
+LLM bridge architecture inspired by swarm_gpt (Jimenez-Romero et al. 2025).]]></info>
+  <turtleShapes>
+    <shape name="default" rotatable="true" editableColorIndex="0">
+      <polygon color="-1920102913" filled="true" marked="true">
+        <point x="150" y="5"></point>
+        <point x="40" y="250"></point>
+        <point x="150" y="205"></point>
+        <point x="260" y="250"></point>
+      </polygon>
+    </shape>
+    <shape name="airplane" rotatable="true" editableColorIndex="0">
+      <polygon color="-1920102913" filled="true" marked="true">
+        <point x="150" y="0"></point>
+        <point x="135" y="15"></point>
+        <point x="120" y="60"></point>
+        <point x="120" y="105"></point>
+        <point x="15" y="165"></point>
+        <point x="15" y="195"></point>
+        <point x="120" y="180"></point>
+        <point x="135" y="240"></point>
+        <point x="105" y="270"></point>
+        <point x="120" y="285"></point>
+        <point x="150" y="270"></point>
+        <point x="180" y="285"></point>
+        <point x="210" y="270"></point>
+        <point x="165" y="240"></point>
+        <point x="180" y="180"></point>
+        <point x="285" y="195"></point>
+        <point x="285" y="165"></point>
+        <point x="180" y="105"></point>
+        <point x="180" y="60"></point>
+        <point x="165" y="15"></point>
+      </polygon>
+    </shape>
+    <shape name="arrow" rotatable="true" editableColorIndex="0">
+      <polygon color="-1920102913" filled="true" marked="true">
+        <point x="150" y="0"></point>
+        <point x="0" y="150"></point>
+        <point x="105" y="150"></point>
+        <point x="105" y="293"></point>
+        <point x="195" y="293"></point>
+        <point x="195" y="150"></point>
+        <point x="300" y="150"></point>
+      </polygon>
+    </shape>
+    <shape name="box" rotatable="false" editableColorIndex="0">
+      <polygon color="-1920102913" filled="true" marked="true">
+        <point x="150" y="285"></point>
+        <point x="285" y="225"></point>
+        <point x="285" y="75"></point>
+        <point x="150" y="135"></point>
+      </polygon>
+      <polygon color="-1920102913" filled="true" marked="true">
+        <point x="150" y="135"></point>
+        <point x="15" y="75"></point>
+        <point x="150" y="15"></point>
+        <point x="285" y="75"></point>
+      </polygon>
+      <polygon color="-1920102913" filled="true" marked="true">
+        <point x="15" y="75"></point>
+        <point x="15" y="225"></point>
+        <point x="150" y="285"></point>
+        <point x="150" y="135"></point>
+      </polygon>
+      <line endX="150" startY="285" marked="false" color="255" endY="135" startX="150"></line>
+      <line endX="15" startY="135" marked="false" color="255" endY="75" startX="150"></line>
+      <line endX="285" startY="135" marked="false" color="255" endY="75" startX="150"></line>
+    </shape>
+    <shape name="bug" rotatable="true" editableColorIndex="0">
+      <circle x="96" y="182" marked="true" color="-1920102913" diameter="108" filled="true"></circle>
+      <circle x="110" y="127" marked="true" color="-1920102913" diameter="80" filled="true"></circle>
+      <circle x="110" y="75" marked="true" color="-1920102913" diameter="80" filled="true"></circle>
+      <line endX="80" startY="100" marked="true" color="-1920102913" endY="30" startX="150"></line>
+      <line endX="220" startY="100" marked="true" color="-1920102913" endY="30" startX="150"></line>
+    </shape>
+    <shape name="butterfly" rotatable="true" editableColorIndex="0">
+      <polygon color="-1920102913" filled="true" marked="true">
+        <point x="150" y="165"></point>
+        <point x="209" y="199"></point>
+        <point x="225" y="225"></point>
+        <point x="225" y="255"></point>
+        <point x="195" y="270"></point>
+        <point x="165" y="255"></point>
+        <point x="150" y="240"></point>
+      </polygon>
+      <polygon color="-1920102913" filled="true" marked="true">
+        <point x="150" y="165"></point>
+        <point x="89" y="198"></point>
+        <point x="75" y="225"></point>
+        <point x="75" y="255"></point>
+        <point x="105" y="270"></point>
+        <point x="135" y="255"></point>
+        <point x="150" y="240"></point>
+      </polygon>
+      <polygon color="-1920102913" filled="true" marked="true">
+        <point x="139" y="148"></point>
+        <point x="100" y="105"></point>
+        <point x="55" y="90"></point>
+        <point x="25" y="90"></point>
+        <point x="10" y="105"></point>
+        <point x="10" y="135"></point>
+        <point x="25" y="180"></point>
+        <point x="40" y="195"></point>
+        <point x="85" y="194"></point>
+        <point x="139" y="163"></point>
+      </polygon>
+      <polygon color="-1920102913" filled="true" marked="true">
+        <point x="162" y="150"></point>
+        <point x="200" y="105"></point>
+        <point x="245" y="90"></point>
+        <point x="275" y="90"></point>
+        <point x="290" y="105"></point>
+        <point x="290" y="135"></point>
+        <point x="275" y="180"></point>
+        <point x="260" y="195"></point>
+        <point x="215" y="195"></point>
+        <point x="162" y="165"></point>
+      </polygon>
+      <polygon color="255" filled="true" marked="false">
+        <point x="150" y="255"></point>
+        <point x="135" y="225"></point>
+        <point x="120" y="150"></point>
+        <point x="135" y="120"></point>
+        <point x="150" y="105"></point>
+        <point x="165" y="120"></point>
+        <point x="180" y="150"></point>
+        <point x="165" y="225"></point>
+      </polygon>
+      <circle x="135" y="90" marked="false" color="255" diameter="30" filled="true"></circle>
+      <line endX="195" startY="105" marked="false" color="255" endY="60" startX="150"></line>
+      <line endX="105" startY="105" marked="false" color="255" endY="60" startX="150"></line>
+    </shape>
+    <shape name="car" rotatable="false" editableColorIndex="0">
+      <polygon color="-1920102913" filled="true" marked="true">
+        <point x="300" y="180"></point>
+        <point x="279" y="164"></point>
+        <point x="261" y="144"></point>
+        <point x="240" y="135"></point>
+        <point x="226" y="132"></point>
+        <point x="213" y="106"></point>
+        <point x="203" y="84"></point>
+        <point x="185" y="63"></point>
+        <point x="159" y="50"></point>
+        <point x="135" y="50"></point>
+        <point x="75" y="60"></point>
+        <point x="0" y="150"></point>
+        <point x="0" y="165"></point>
+        <point x="0" y="225"></point>
+        <point x="300" y="225"></point>
+        <point x="300" y="180"></point>
+      </polygon>
+      <circle x="180" y="180" marked="false" color="255" diameter="90" filled="true"></circle>
+      <circle x="30" y="180" marked="false" color="255" diameter="90" filled="true"></circle>
+      <polygon color="255" filled="true" marked="false">
+        <point x="162" y="80"></point>
+        <point x="132" y="78"></point>
+        <point x="134" y="135"></point>
+        <point x="209" y="135"></point>
+        <point x="194" y="105"></point>
+        <point x="189" y="96"></point>
+        <point x="180" y="89"></point>
+      </polygon>
+      <circle x="47" y="195" marked="true" color="-1920102913" diameter="58" filled="true"></circle>
+      <circle x="195" y="195" marked="true" color="-1920102913" diameter="58" filled="true"></circle>
+    </shape>
+    <shape name="circle" rotatable="false" editableColorIndex="0">
+      <circle x="0" y="0" marked="true" color="-1920102913" diameter="300" filled="true"></circle>
+    </shape>
+    <shape name="circle 2" rotatable="false" editableColorIndex="0">
+      <circle x="0" y="0" marked="true" color="-1920102913" diameter="300" filled="true"></circle>
+      <circle x="30" y="30" marked="false" color="255" diameter="240" filled="true"></circle>
+    </shape>
+    <shape name="cow" rotatable="false" editableColorIndex="0">
+      <polygon color="-1920102913" filled="true" marked="true">
+        <point x="200" y="193"></point>
+        <point x="197" y="249"></point>
+        <point x="179" y="249"></point>
+        <point x="177" y="196"></point>
+        <point x="166" y="187"></point>
+        <point x="140" y="189"></point>
+        <point x="93" y="191"></point>
+        <point x="78" y="179"></point>
+        <point x="72" y="211"></point>
+        <point x="49" y="209"></point>
+        <point x="48" y="181"></point>
+        <point x="37" y="149"></point>
+        <point x="25" y="120"></point>
+        <point x="25" y="89"></point>
+        <point x="45" y="72"></point>
+        <point x="103" y="84"></point>
+        <point x="179" y="75"></point>
+        <point x="198" y="76"></point>
+        <point x="252" y="64"></point>
+        <point x="272" y="81"></point>
+        <point x="293" y="103"></point>
+        <point x="285" y="121"></point>
+        <point x="255" y="121"></point>
+        <point x="242" y="118"></point>
+        <point x="224" y="167"></point>
+      </polygon>
+      <polygon color="-1920102913" filled="true" marked="true">
+        <point x="73" y="210"></point>
+        <point x="86" y="251"></point>
+        <point x="62" y="249"></point>
+        <point x="48" y="208"></point>
+      </polygon>
+      <polygon color="-1920102913" filled="true" marked="true">
+        <point x="25" y="114"></point>
+        <point x="16" y="195"></point>
+        <point x="9" y="204"></point>
+        <point x="23" y="213"></point>
+        <point x="25" y="200"></point>
+        <point x="39" y="123"></point>
+      </polygon>
+    </shape>
+    <shape name="cylinder" rotatable="false" editableColorIndex="0">
+      <circle x="0" y="0" marked="true" color="-1920102913" diameter="300" filled="true"></circle>
+    </shape>
+    <shape name="dot" rotatable="false" editableColorIndex="0">
+      <circle x="90" y="90" marked="true" color="-1920102913" diameter="120" filled="true"></circle>
+    </shape>
+    <shape name="face happy" rotatable="false" editableColorIndex="0">
+      <circle x="8" y="8" marked="true" color="-1920102913" diameter="285" filled="true"></circle>
+      <circle x="60" y="75" marked="false" color="255" diameter="60" filled="true"></circle>
+      <circle x="180" y="75" marked="false" color="255" diameter="60" filled="true"></circle>
+      <polygon color="255" filled="true" marked="false">
+        <point x="150" y="255"></point>
+        <point x="90" y="239"></point>
+        <point x="62" y="213"></point>
+        <point x="47" y="191"></point>
+        <point x="67" y="179"></point>
+        <point x="90" y="203"></point>
+        <point x="109" y="218"></point>
+        <point x="150" y="225"></point>
+        <point x="192" y="218"></point>
+        <point x="210" y="203"></point>
+        <point x="227" y="181"></point>
+        <point x="251" y="194"></point>
+        <point x="236" y="217"></point>
+        <point x="212" y="240"></point>
+      </polygon>
+    </shape>
+    <shape name="face neutral" rotatable="false" editableColorIndex="0">
+      <circle x="8" y="7" marked="true" color="-1920102913" diameter="285" filled="true"></circle>
+      <circle x="60" y="75" marked="false" color="255" diameter="60" filled="true"></circle>
+      <circle x="180" y="75" marked="false" color="255" diameter="60" filled="true"></circle>
+      <rectangle endX="240" startY="195" marked="false" color="255" endY="225" startX="60" filled="true"></rectangle>
+    </shape>
+    <shape name="face sad" rotatable="false" editableColorIndex="0">
+      <circle x="8" y="8" marked="true" color="-1920102913" diameter="285" filled="true"></circle>
+      <circle x="60" y="75" marked="false" color="255" diameter="60" filled="true"></circle>
+      <circle x="180" y="75" marked="false" color="255" diameter="60" filled="true"></circle>
+      <polygon color="255" filled="true" marked="false">
+        <point x="150" y="168"></point>
+        <point x="90" y="184"></point>
+        <point x="62" y="210"></point>
+        <point x="47" y="232"></point>
+        <point x="67" y="244"></point>
+        <point x="90" y="220"></point>
+        <point x="109" y="205"></point>
+        <point x="150" y="198"></point>
+        <point x="192" y="205"></point>
+        <point x="210" y="220"></point>
+        <point x="227" y="242"></point>
+        <point x="251" y="229"></point>
+        <point x="236" y="206"></point>
+        <point x="212" y="183"></point>
+      </polygon>
+    </shape>
+    <shape name="fish" rotatable="false" editableColorIndex="0">
+      <polygon color="-1" filled="true" marked="false">
+        <point x="44" y="131"></point>
+        <point x="21" y="87"></point>
+        <point x="15" y="86"></point>
+        <point x="0" y="120"></point>
+        <point x="15" y="150"></point>
+        <point x="0" y="180"></point>
+        <point x="13" y="214"></point>
+        <point x="20" y="212"></point>
+        <point x="45" y="166"></point>
+      </polygon>
+      <polygon color="-1" filled="true" marked="false">
+        <point x="135" y="195"></point>
+        <point x="119" y="235"></point>
+        <point x="95" y="218"></point>
+        <point x="76" y="210"></point>
+        <point x="46" y="204"></point>
+        <point x="60" y="165"></point>
+      </polygon>
+      <polygon color="-1" filled="true" marked="false">
+        <point x="75" y="45"></point>
+        <point x="83" y="77"></point>
+        <point x="71" y="103"></point>
+        <point x="86" y="114"></point>
+        <point x="166" y="78"></point>
+        <point x="135" y="60"></point>
+      </polygon>
+      <polygon color="-1920102913" filled="true" marked="true">
+        <point x="30" y="136"></point>
+        <point x="151" y="77"></point>
+        <point x="226" y="81"></point>
+        <point x="280" y="119"></point>
+        <point x="292" y="146"></point>
+        <point x="292" y="160"></point>
+        <point x="287" y="170"></point>
+        <point x="270" y="195"></point>
+        <point x="195" y="210"></point>
+        <point x="151" y="212"></point>
+        <point x="30" y="166"></point>
+      </polygon>
+      <circle x="215" y="106" marked="false" color="255" diameter="30" filled="true"></circle>
+    </shape>
+    <shape name="flag" rotatable="false" editableColorIndex="0">
+      <rectangle endX="75" startY="15" marked="true" color="-1920102913" endY="300" startX="60" filled="true"></rectangle>
+      <polygon color="-1920102913" filled="true" marked="true">
+        <point x="90" y="150"></point>
+        <point x="270" y="90"></point>
+        <point x="90" y="30"></point>
+      </polygon>
+      <line endX="90" startY="135" marked="true" color="-1920102913" endY="135" startX="75"></line>
+      <line endX="90" startY="45" marked="true" color="-1920102913" endY="45" startX="75"></line>
+    </shape>
+    <shape name="flower" rotatable="false" editableColorIndex="0">
+      <polygon color="1504722175" filled="true" marked="false">
+        <point x="135" y="120"></point>
+        <point x="165" y="165"></point>
+        <point x="180" y="210"></point>
+        <point x="180" y="240"></point>
+        <point x="150" y="300"></point>
+        <point x="165" y="300"></point>
+        <point x="195" y="240"></point>
+        <point x="195" y="195"></point>
+        <point x="165" y="135"></point>
+      </polygon>
+      <circle x="85" y="132" marked="true" color="-1920102913" diameter="38" filled="true"></circle>
+      <circle x="130" y="147" marked="true" color="-1920102913" diameter="38" filled="true"></circle>
+      <circle x="192" y="85" marked="true" color="-1920102913" diameter="38" filled="true"></circle>
+      <circle x="85" y="40" marked="true" color="-1920102913" diameter="38" filled="true"></circle>
+      <circle x="177" y="40" marked="true" color="-1920102913" diameter="38" filled="true"></circle>
+      <circle x="177" y="132" marked="true" color="-1920102913" diameter="38" filled="true"></circle>
+      <circle x="70" y="85" marked="true" color="-1920102913" diameter="38" filled="true"></circle>
+      <circle x="130" y="25" marked="true" color="-1920102913" diameter="38" filled="true"></circle>
+      <circle x="96" y="51" marked="true" color="-1920102913" diameter="108" filled="true"></circle>
+      <circle x="113" y="68" marked="false" color="255" diameter="74" filled="true"></circle>
+      <polygon color="1504722175" filled="true" marked="false">
+        <point x="189" y="233"></point>
+        <point x="219" y="188"></point>
+        <point x="249" y="173"></point>
+        <point x="279" y="188"></point>
+        <point x="234" y="218"></point>
+      </polygon>
+      <polygon color="1504722175" filled="true" marked="false">
+        <point x="180" y="255"></point>
+        <point x="150" y="210"></point>
+        <point x="105" y="210"></point>
+        <point x="75" y="240"></point>
+        <point x="135" y="240"></point>
+      </polygon>
+    </shape>
+    <shape name="house" rotatable="false" editableColorIndex="0">
+      <rectangle endX="255" startY="120" marked="true" color="-1920102913" endY="285" startX="45" filled="true"></rectangle>
+      <rectangle endX="180" startY="210" marked="false" color="255" endY="285" startX="120" filled="true"></rectangle>
+      <polygon color="-1920102913" filled="true" marked="true">
+        <point x="15" y="120"></point>
+        <point x="150" y="15"></point>
+        <point x="285" y="120"></point>
+      </polygon>
+      <line endX="270" startY="120" marked="false" color="255" endY="120" startX="30"></line>
+    </shape>
+    <shape name="leaf" rotatable="false" editableColorIndex="0">
+      <polygon color="-1920102913" filled="true" marked="true">
+        <point x="150" y="210"></point>
+        <point x="135" y="195"></point>
+        <point x="120" y="210"></point>
+        <point x="60" y="210"></point>
+        <point x="30" y="195"></point>
+        <point x="60" y="180"></point>
+        <point x="60" y="165"></point>
+        <point x="15" y="135"></point>
+        <point x="30" y="120"></point>
+        <point x="15" y="105"></point>
+        <point x="40" y="104"></point>
+        <point x="45" y="90"></point>
+        <point x="60" y="90"></point>
+        <point x="90" y="105"></point>
+        <point x="105" y="120"></point>
+        <point x="120" y="120"></point>
+        <point x="105" y="60"></point>
+        <point x="120" y="60"></point>
+        <point x="135" y="30"></point>
+        <point x="150" y="15"></point>
+        <point x="165" y="30"></point>
+        <point x="180" y="60"></point>
+        <point x="195" y="60"></point>
+        <point x="180" y="120"></point>
+        <point x="195" y="120"></point>
+        <point x="210" y="105"></point>
+        <point x="240" y="90"></point>
+        <point x="255" y="90"></point>
+        <point x="263" y="104"></point>
+        <point x="285" y="105"></point>
+        <point x="270" y="120"></point>
+        <point x="285" y="135"></point>
+        <point x="240" y="165"></point>
+        <point x="240" y="180"></point>
+        <point x="270" y="195"></point>
+        <point x="240" y="210"></point>
+        <point x="180" y="210"></point>
+        <point x="165" y="195"></point>
+      </polygon>
+      <polygon color="-1920102913" filled="true" marked="true">
+        <point x="135" y="195"></point>
+        <point x="135" y="240"></point>
+        <point x="120" y="255"></point>
+        <point x="105" y="255"></point>
+        <point x="105" y="285"></point>
+        <point x="135" y="285"></point>
+        <point x="165" y="240"></point>
+        <point x="165" y="195"></point>
+      </polygon>
+    </shape>
+    <shape name="line" rotatable="true" editableColorIndex="0">
+      <line endX="150" startY="0" marked="true" color="-1920102913" endY="300" startX="150"></line>
+    </shape>
+    <shape name="line half" rotatable="true" editableColorIndex="0">
+      <line endX="150" startY="0" marked="true" color="-1920102913" endY="150" startX="150"></line>
+    </shape>
+    <shape name="pentagon" rotatable="false" editableColorIndex="0">
+      <polygon color="-1920102913" filled="true" marked="true">
+        <point x="150" y="15"></point>
+        <point x="15" y="120"></point>
+        <point x="60" y="285"></point>
+        <point x="240" y="285"></point>
+        <point x="285" y="120"></point>
+      </polygon>
+    </shape>
+    <shape name="person" rotatable="false" editableColorIndex="0">
+      <circle x="110" y="5" marked="true" color="-1920102913" diameter="80" filled="true"></circle>
+      <polygon color="-1920102913" filled="true" marked="true">
+        <point x="105" y="90"></point>
+        <point x="120" y="195"></point>
+        <point x="90" y="285"></point>
+        <point x="105" y="300"></point>
+        <point x="135" y="300"></point>
+        <point x="150" y="225"></point>
+        <point x="165" y="300"></point>
+        <point x="195" y="300"></point>
+        <point x="210" y="285"></point>
+        <point x="180" y="195"></point>
+        <point x="195" y="90"></point>
+      </polygon>
+      <rectangle endX="172" startY="79" marked="true" color="-1920102913" endY="94" startX="127" filled="true"></rectangle>
+      <polygon color="-1920102913" filled="true" marked="true">
+        <point x="195" y="90"></point>
+        <point x="240" y="150"></point>
+        <point x="225" y="180"></point>
+        <point x="165" y="105"></point>
+      </polygon>
+      <polygon color="-1920102913" filled="true" marked="true">
+        <point x="105" y="90"></point>
+        <point x="60" y="150"></point>
+        <point x="75" y="180"></point>
+        <point x="135" y="105"></point>
+      </polygon>
+    </shape>
+    <shape name="plant" rotatable="false" editableColorIndex="0">
+      <rectangle endX="165" startY="90" marked="true" color="-1920102913" endY="300" startX="135" filled="true"></rectangle>
+      <polygon color="-1920102913" filled="true" marked="true">
+        <point x="135" y="255"></point>
+        <point x="90" y="210"></point>
+        <point x="45" y="195"></point>
+        <point x="75" y="255"></point>
+        <point x="135" y="285"></point>
+      </polygon>
+      <polygon color="-1920102913" filled="true" marked="true">
+        <point x="165" y="255"></point>
+        <point x="210" y="210"></point>
+        <point x="255" y="195"></point>
+        <point x="225" y="255"></point>
+        <point x="165" y="285"></point>
+      </polygon>
+      <polygon color="-1920102913" filled="true" marked="true">
+        <point x="135" y="180"></point>
+        <point x="90" y="135"></point>
+        <point x="45" y="120"></point>
+        <point x="75" y="180"></point>
+        <point x="135" y="210"></point>
+      </polygon>
+      <polygon color="-1920102913" filled="true" marked="true">
+        <point x="165" y="180"></point>
+        <point x="165" y="210"></point>
+        <point x="225" y="180"></point>
+        <point x="255" y="120"></point>
+        <point x="210" y="135"></point>
+      </polygon>
+      <polygon color="-1920102913" filled="true" marked="true">
+        <point x="135" y="105"></point>
+        <point x="90" y="60"></point>
+        <point x="45" y="45"></point>
+        <point x="75" y="105"></point>
+        <point x="135" y="135"></point>
+      </polygon>
+      <polygon color="-1920102913" filled="true" marked="true">
+        <point x="165" y="105"></point>
+        <point x="165" y="135"></point>
+        <point x="225" y="105"></point>
+        <point x="255" y="45"></point>
+        <point x="210" y="60"></point>
+      </polygon>
+      <polygon color="-1920102913" filled="true" marked="true">
+        <point x="135" y="90"></point>
+        <point x="120" y="45"></point>
+        <point x="150" y="15"></point>
+        <point x="180" y="45"></point>
+        <point x="165" y="90"></point>
+      </polygon>
+    </shape>
+    <shape name="square" rotatable="false" editableColorIndex="0">
+      <rectangle endX="270" startY="30" marked="true" color="-1920102913" endY="270" startX="30" filled="true"></rectangle>
+    </shape>
+    <shape name="square 2" rotatable="false" editableColorIndex="0">
+      <rectangle endX="270" startY="30" marked="true" color="-1920102913" endY="270" startX="30" filled="true"></rectangle>
+      <rectangle endX="240" startY="60" marked="false" color="255" endY="240" startX="60" filled="true"></rectangle>
+    </shape>
+    <shape name="star" rotatable="false" editableColorIndex="0">
+      <polygon color="-1920102913" filled="true" marked="true">
+        <point x="151" y="1"></point>
+        <point x="185" y="108"></point>
+        <point x="298" y="108"></point>
+        <point x="207" y="175"></point>
+        <point x="242" y="282"></point>
+        <point x="151" y="216"></point>
+        <point x="59" y="282"></point>
+        <point x="94" y="175"></point>
+        <point x="3" y="108"></point>
+        <point x="116" y="108"></point>
+      </polygon>
+    </shape>
+    <shape name="target" rotatable="false" editableColorIndex="0">
+      <circle x="0" y="0" marked="true" color="-1920102913" diameter="300" filled="true"></circle>
+      <circle x="30" y="30" marked="false" color="255" diameter="240" filled="true"></circle>
+      <circle x="60" y="60" marked="true" color="-1920102913" diameter="180" filled="true"></circle>
+      <circle x="90" y="90" marked="false" color="255" diameter="120" filled="true"></circle>
+      <circle x="120" y="120" marked="true" color="-1920102913" diameter="60" filled="true"></circle>
+    </shape>
+    <shape name="tree" rotatable="false" editableColorIndex="0">
+      <circle x="118" y="3" marked="true" color="-1920102913" diameter="94" filled="true"></circle>
+      <rectangle endX="180" startY="195" marked="false" color="-1653716737" endY="300" startX="120" filled="true"></rectangle>
+      <circle x="65" y="21" marked="true" color="-1920102913" diameter="108" filled="true"></circle>
+      <circle x="116" y="41" marked="true" color="-1920102913" diameter="127" filled="true"></circle>
+      <circle x="45" y="90" marked="true" color="-1920102913" diameter="120" filled="true"></circle>
+      <circle x="104" y="74" marked="true" color="-1920102913" diameter="152" filled="true"></circle>
+    </shape>
+    <shape name="triangle" rotatable="false" editableColorIndex="0">
+      <polygon color="-1920102913" filled="true" marked="true">
+        <point x="150" y="30"></point>
+        <point x="15" y="255"></point>
+        <point x="285" y="255"></point>
+      </polygon>
+    </shape>
+    <shape name="triangle 2" rotatable="false" editableColorIndex="0">
+      <polygon color="-1920102913" filled="true" marked="true">
+        <point x="150" y="30"></point>
+        <point x="15" y="255"></point>
+        <point x="285" y="255"></point>
+      </polygon>
+      <polygon color="255" filled="true" marked="false">
+        <point x="151" y="99"></point>
+        <point x="225" y="223"></point>
+        <point x="75" y="224"></point>
+      </polygon>
+    </shape>
+    <shape name="truck" rotatable="false" editableColorIndex="0">
+      <rectangle endX="195" startY="45" marked="true" color="-1920102913" endY="187" startX="4" filled="true"></rectangle>
+      <polygon color="-1920102913" filled="true" marked="true">
+        <point x="296" y="193"></point>
+        <point x="296" y="150"></point>
+        <point x="259" y="134"></point>
+        <point x="244" y="104"></point>
+        <point x="208" y="104"></point>
+        <point x="207" y="194"></point>
+      </polygon>
+      <rectangle endX="195" startY="60" marked="false" color="-1" endY="105" startX="195" filled="true"></rectangle>
+      <polygon color="255" filled="true" marked="false">
+        <point x="238" y="112"></point>
+        <point x="252" y="141"></point>
+        <point x="219" y="141"></point>
+        <point x="218" y="112"></point>
+      </polygon>
+      <circle x="234" y="174" marked="false" color="255" diameter="42" filled="true"></circle>
+      <rectangle endX="214" startY="185" marked="true" color="-1920102913" endY="194" startX="181" filled="true"></rectangle>
+      <circle x="144" y="174" marked="false" color="255" diameter="42" filled="true"></circle>
+      <circle x="24" y="174" marked="false" color="255" diameter="42" filled="true"></circle>
+      <circle x="24" y="174" marked="true" color="-1920102913" diameter="42" filled="false"></circle>
+      <circle x="144" y="174" marked="true" color="-1920102913" diameter="42" filled="false"></circle>
+      <circle x="234" y="174" marked="true" color="-1920102913" diameter="42" filled="false"></circle>
+    </shape>
+    <shape name="turtle" rotatable="true" editableColorIndex="0">
+      <polygon color="1504722175" filled="true" marked="false">
+        <point x="215" y="204"></point>
+        <point x="240" y="233"></point>
+        <point x="246" y="254"></point>
+        <point x="228" y="266"></point>
+        <point x="215" y="252"></point>
+        <point x="193" y="210"></point>
+      </polygon>
+      <polygon color="1504722175" filled="true" marked="false">
+        <point x="195" y="90"></point>
+        <point x="225" y="75"></point>
+        <point x="245" y="75"></point>
+        <point x="260" y="89"></point>
+        <point x="269" y="108"></point>
+        <point x="261" y="124"></point>
+        <point x="240" y="105"></point>
+        <point x="225" y="105"></point>
+        <point x="210" y="105"></point>
+      </polygon>
+      <polygon color="1504722175" filled="true" marked="false">
+        <point x="105" y="90"></point>
+        <point x="75" y="75"></point>
+        <point x="55" y="75"></point>
+        <point x="40" y="89"></point>
+        <point x="31" y="108"></point>
+        <point x="39" y="124"></point>
+        <point x="60" y="105"></point>
+        <point x="75" y="105"></point>
+        <point x="90" y="105"></point>
+      </polygon>
+      <polygon color="1504722175" filled="true" marked="false">
+        <point x="132" y="85"></point>
+        <point x="134" y="64"></point>
+        <point x="107" y="51"></point>
+        <point x="108" y="17"></point>
+        <point x="150" y="2"></point>
+        <point x="192" y="18"></point>
+        <point x="192" y="52"></point>
+        <point x="169" y="65"></point>
+        <point x="172" y="87"></point>
+      </polygon>
+      <polygon color="1504722175" filled="true" marked="false">
+        <point x="85" y="204"></point>
+        <point x="60" y="233"></point>
+        <point x="54" y="254"></point>
+        <point x="72" y="266"></point>
+        <point x="85" y="252"></point>
+        <point x="107" y="210"></point>
+      </polygon>
+      <polygon color="-1920102913" filled="true" marked="true">
+        <point x="119" y="75"></point>
+        <point x="179" y="75"></point>
+        <point x="209" y="101"></point>
+        <point x="224" y="135"></point>
+        <point x="220" y="225"></point>
+        <point x="175" y="261"></point>
+        <point x="128" y="261"></point>
+        <point x="81" y="224"></point>
+        <point x="74" y="135"></point>
+        <point x="88" y="99"></point>
+      </polygon>
+    </shape>
+    <shape name="wheel" rotatable="false" editableColorIndex="0">
+      <circle x="3" y="3" marked="true" color="-1920102913" diameter="294" filled="true"></circle>
+      <circle x="30" y="30" marked="false" color="255" diameter="240" filled="true"></circle>
+      <line endX="150" startY="285" marked="true" color="-1920102913" endY="15" startX="150"></line>
+      <line endX="285" startY="150" marked="true" color="-1920102913" endY="150" startX="15"></line>
+      <circle x="120" y="120" marked="true" color="-1920102913" diameter="60" filled="true"></circle>
+      <line endX="79" startY="40" marked="true" color="-1920102913" endY="269" startX="216"></line>
+      <line endX="269" startY="84" marked="true" color="-1920102913" endY="221" startX="40"></line>
+      <line endX="269" startY="216" marked="true" color="-1920102913" endY="79" startX="40"></line>
+      <line endX="221" startY="40" marked="true" color="-1920102913" endY="269" startX="84"></line>
+    </shape>
+    <shape name="x" rotatable="false" editableColorIndex="0">
+      <polygon color="-1920102913" filled="true" marked="true">
+        <point x="270" y="75"></point>
+        <point x="225" y="30"></point>
+        <point x="30" y="225"></point>
+        <point x="75" y="270"></point>
+      </polygon>
+      <polygon color="-1920102913" filled="true" marked="true">
+        <point x="30" y="75"></point>
+        <point x="75" y="30"></point>
+        <point x="270" y="225"></point>
+        <point x="225" y="270"></point>
+      </polygon>
+    </shape>
+  </turtleShapes>
+  <linkShapes>
+    <shape name="default" curviness="0.0">
+      <lines>
+        <line x="-0.2" visible="false">
+          <dash value="0.0"></dash>
+          <dash value="1.0"></dash>
+        </line>
+        <line x="0.0" visible="true">
+          <dash value="1.0"></dash>
+          <dash value="0.0"></dash>
+        </line>
+        <line x="0.2" visible="false">
+          <dash value="0.0"></dash>
+          <dash value="1.0"></dash>
+        </line>
+      </lines>
+      <indicator>
+        <shape name="link direction" rotatable="true" editableColorIndex="0">
+          <line endX="90" startY="150" marked="true" color="-1920102913" endY="180" startX="150"></line>
+          <line endX="210" startY="150" marked="true" color="-1920102913" endY="180" startX="150"></line>
+        </shape>
+      </indicator>
+    </shape>
+  </linkShapes>
+  <previewCommands>setup repeat 75 [ go ]</previewCommands>
+  <experiments>
+    <experiment name="baseline" repetitions="3" sequentialRunOrder="false" runMetricsEveryStep="true" timeLimit="120">
+      <setup>setup</setup>
+      <go>simulation</go>
+      <metrics>
+        <metric>count patches with [pcolor = green - 2]</metric>
+        <metric>count cows</metric>
+        <metric>pressure</metric>
+        <metric>count cows with [owner = human 0]</metric>
+        <metric>count cows with [owner = human 1]</metric>
+        <metric>count cows with [owner = human 2]</metric>
+      </metrics>
+      <constants>
+        <enumeratedValueSet variable="cow-forage-requirement">
+          <value value="2"></value>
+        </enumeratedValueSet>
+        <enumeratedValueSet variable="initial-grassland">
+          <value value="100"></value>
+        </enumeratedValueSet>
+        <enumeratedValueSet variable="initial-grass-growth-rate">
+          <value value="0.001"></value>
+        </enumeratedValueSet>
+        <enumeratedValueSet variable="fairness-concerning-me">
+          <value value="0"></value>
+        </enumeratedValueSet>
+        <enumeratedValueSet variable="fairness-concerning-others">
+          <value value="1"></value>
+        </enumeratedValueSet>
+        <enumeratedValueSet variable="cooperation-level">
+          <value value="1"></value>
+        </enumeratedValueSet>
+        <enumeratedValueSet variable="negative-reciprocity">
+          <value value="0"></value>
+        </enumeratedValueSet>
+        <enumeratedValueSet variable="positive-reciprocity">
+          <value value="1"></value>
+        </enumeratedValueSet>
+        <enumeratedValueSet variable="conformity-level">
+          <value value="0"></value>
+        </enumeratedValueSet>
+        <enumeratedValueSet variable="risk-aversion-level">
+          <value value="1"></value>
+        </enumeratedValueSet>
+        <enumeratedValueSet variable="agent0-backend">
+          <value value="&quot;anthropic&quot;"></value>
+          <value value="&quot;openai&quot;"></value>
+          <value value="&quot;ollama&quot;"></value>
+          <value value="&quot;google&quot;"></value>
+        </enumeratedValueSet>
+        <enumeratedValueSet variable="agent0-model">
+          <value value="&quot;claude-sonnet-4-6&quot;"></value>
+        </enumeratedValueSet>
+        <enumeratedValueSet variable="agent1-backend">
+          <value value="&quot;anthropic&quot;"></value>
+        </enumeratedValueSet>
+        <enumeratedValueSet variable="agent1-model">
+          <value value="&quot;claude-sonnet-4-6&quot;"></value>
+        </enumeratedValueSet>
+        <enumeratedValueSet variable="agent2-backend">
+          <value value="&quot;anthropic&quot;"></value>
+        </enumeratedValueSet>
+        <enumeratedValueSet variable="agent2-model">
+          <value value="&quot;claude-sonnet-4-6&quot;"></value>
+        </enumeratedValueSet>
+        <enumeratedValueSet variable="system-prompt-override">
+          <value value="&quot;&quot;"></value>
+        </enumeratedValueSet>
+        <enumeratedValueSet variable="memory-length">
+          <value value="5"></value>
+        </enumeratedValueSet>
+        <enumeratedValueSet variable="detect-institutions">
+          <value value="true"></value>
+        </enumeratedValueSet>
+        <enumeratedValueSet variable="institution-check-interval">
+          <value value="5"></value>
+        </enumeratedValueSet>
+        <enumeratedValueSet variable="condition">
+          <value value="&quot;baseline&quot;"></value>
+        </enumeratedValueSet>
+        <enumeratedValueSet variable="num-llm-agents">
+          <value value="1"></value>
+        </enumeratedValueSet>
+      </constants>
+    </experiment>
+    <experiment name="full-gabm" repetitions="3" sequentialRunOrder="false" runMetricsEveryStep="true" timeLimit="120">
+      <setup>setup</setup>
+      <go>simulation</go>
+      <metrics>
+        <metric>count patches with [pcolor = green - 2]</metric>
+        <metric>count cows</metric>
+        <metric>pressure</metric>
+        <metric>count cows with [owner = human 0]</metric>
+        <metric>count cows with [owner = human 1]</metric>
+        <metric>count cows with [owner = human 2]</metric>
+      </metrics>
+      <constants>
+        <enumeratedValueSet variable="cow-forage-requirement">
+          <value value="2"></value>
+        </enumeratedValueSet>
+        <enumeratedValueSet variable="initial-grassland">
+          <value value="100"></value>
+        </enumeratedValueSet>
+        <enumeratedValueSet variable="initial-grass-growth-rate">
+          <value value="0.001"></value>
+        </enumeratedValueSet>
+        <enumeratedValueSet variable="fairness-concerning-me">
+          <value value="0"></value>
+        </enumeratedValueSet>
+        <enumeratedValueSet variable="fairness-concerning-others">
+          <value value="1"></value>
+        </enumeratedValueSet>
+        <enumeratedValueSet variable="cooperation-level">
+          <value value="1"></value>
+        </enumeratedValueSet>
+        <enumeratedValueSet variable="negative-reciprocity">
+          <value value="0"></value>
+        </enumeratedValueSet>
+        <enumeratedValueSet variable="positive-reciprocity">
+          <value value="1"></value>
+        </enumeratedValueSet>
+        <enumeratedValueSet variable="conformity-level">
+          <value value="0"></value>
+        </enumeratedValueSet>
+        <enumeratedValueSet variable="risk-aversion-level">
+          <value value="1"></value>
+        </enumeratedValueSet>
+        <enumeratedValueSet variable="agent0-backend">
+          <value value="&quot;anthropic&quot;"></value>
+          <value value="&quot;openai&quot;"></value>
+          <value value="&quot;ollama&quot;"></value>
+          <value value="&quot;google&quot;"></value>
+        </enumeratedValueSet>
+        <enumeratedValueSet variable="agent0-model">
+          <value value="&quot;claude-sonnet-4-6&quot;"></value>
+        </enumeratedValueSet>
+        <enumeratedValueSet variable="agent1-backend">
+          <value value="&quot;anthropic&quot;"></value>
+        </enumeratedValueSet>
+        <enumeratedValueSet variable="agent1-model">
+          <value value="&quot;claude-sonnet-4-6&quot;"></value>
+        </enumeratedValueSet>
+        <enumeratedValueSet variable="agent2-backend">
+          <value value="&quot;anthropic&quot;"></value>
+        </enumeratedValueSet>
+        <enumeratedValueSet variable="agent2-model">
+          <value value="&quot;claude-sonnet-4-6&quot;"></value>
+        </enumeratedValueSet>
+        <enumeratedValueSet variable="system-prompt-override">
+          <value value="&quot;&quot;"></value>
+        </enumeratedValueSet>
+        <enumeratedValueSet variable="memory-length">
+          <value value="5"></value>
+        </enumeratedValueSet>
+        <enumeratedValueSet variable="detect-institutions">
+          <value value="true"></value>
+        </enumeratedValueSet>
+        <enumeratedValueSet variable="institution-check-interval">
+          <value value="5"></value>
+        </enumeratedValueSet>
+        <enumeratedValueSet variable="condition">
+          <value value="&quot;full-gabm&quot;"></value>
+        </enumeratedValueSet>
+        <enumeratedValueSet variable="num-llm-agents">
+          <value value="1"></value>
+        </enumeratedValueSet>
+      </constants>
+    </experiment>
+    <experiment name="hybrid-33" repetitions="3" sequentialRunOrder="false" runMetricsEveryStep="true" timeLimit="120">
+      <setup>setup</setup>
+      <go>simulation</go>
+      <metrics>
+        <metric>count patches with [pcolor = green - 2]</metric>
+        <metric>count cows</metric>
+        <metric>pressure</metric>
+        <metric>count cows with [owner = human 0]</metric>
+        <metric>count cows with [owner = human 1]</metric>
+        <metric>count cows with [owner = human 2]</metric>
+      </metrics>
+      <constants>
+        <enumeratedValueSet variable="cow-forage-requirement">
+          <value value="2"></value>
+        </enumeratedValueSet>
+        <enumeratedValueSet variable="initial-grassland">
+          <value value="100"></value>
+        </enumeratedValueSet>
+        <enumeratedValueSet variable="initial-grass-growth-rate">
+          <value value="0.001"></value>
+        </enumeratedValueSet>
+        <enumeratedValueSet variable="fairness-concerning-me">
+          <value value="0"></value>
+        </enumeratedValueSet>
+        <enumeratedValueSet variable="fairness-concerning-others">
+          <value value="1"></value>
+        </enumeratedValueSet>
+        <enumeratedValueSet variable="cooperation-level">
+          <value value="1"></value>
+        </enumeratedValueSet>
+        <enumeratedValueSet variable="negative-reciprocity">
+          <value value="0"></value>
+        </enumeratedValueSet>
+        <enumeratedValueSet variable="positive-reciprocity">
+          <value value="1"></value>
+        </enumeratedValueSet>
+        <enumeratedValueSet variable="conformity-level">
+          <value value="0"></value>
+        </enumeratedValueSet>
+        <enumeratedValueSet variable="risk-aversion-level">
+          <value value="1"></value>
+        </enumeratedValueSet>
+        <enumeratedValueSet variable="agent0-backend">
+          <value value="&quot;anthropic&quot;"></value>
+          <value value="&quot;openai&quot;"></value>
+          <value value="&quot;ollama&quot;"></value>
+          <value value="&quot;google&quot;"></value>
+        </enumeratedValueSet>
+        <enumeratedValueSet variable="agent0-model">
+          <value value="&quot;claude-sonnet-4-6&quot;"></value>
+        </enumeratedValueSet>
+        <enumeratedValueSet variable="agent1-backend">
+          <value value="&quot;anthropic&quot;"></value>
+        </enumeratedValueSet>
+        <enumeratedValueSet variable="agent1-model">
+          <value value="&quot;claude-sonnet-4-6&quot;"></value>
+        </enumeratedValueSet>
+        <enumeratedValueSet variable="agent2-backend">
+          <value value="&quot;anthropic&quot;"></value>
+        </enumeratedValueSet>
+        <enumeratedValueSet variable="agent2-model">
+          <value value="&quot;claude-sonnet-4-6&quot;"></value>
+        </enumeratedValueSet>
+        <enumeratedValueSet variable="system-prompt-override">
+          <value value="&quot;&quot;"></value>
+        </enumeratedValueSet>
+        <enumeratedValueSet variable="memory-length">
+          <value value="5"></value>
+        </enumeratedValueSet>
+        <enumeratedValueSet variable="detect-institutions">
+          <value value="true"></value>
+        </enumeratedValueSet>
+        <enumeratedValueSet variable="institution-check-interval">
+          <value value="5"></value>
+        </enumeratedValueSet>
+        <enumeratedValueSet variable="condition">
+          <value value="&quot;hybrid&quot;"></value>
+        </enumeratedValueSet>
+        <enumeratedValueSet variable="num-llm-agents">
+          <value value="1"></value>
+        </enumeratedValueSet>
+      </constants>
+    </experiment>
+      <experiment name="baseline-sweep"
+                repetitions="20"
+                sequentialRunOrder="false"
+                runMetricsEveryStep="true"
+                timeLimit="120">
+      <setup>setup</setup>
+      <go>simulation</go>
+      <metrics>
+        <metric>count patches with [pcolor = green - 2]</metric>
+        <metric>count cows</metric>
+        <metric>pressure</metric>
+        <metric>count cows with [owner = human 0]</metric>
+        <metric>count cows with [owner = human 1]</metric>
+        <metric>count cows with [owner = human 2]</metric>
+      </metrics>
+      <constants>
+        <enumeratedValueSet variable="condition">
+          <value value="&quot;baseline&quot;"></value>
+        </enumeratedValueSet>
+        <enumeratedValueSet variable="cow-forage-requirement">
+          <value value="4.0"></value>
+        </enumeratedValueSet>
+        <enumeratedValueSet variable="initial-grassland">
+          <value value="100"></value>
+        </enumeratedValueSet>
+        <enumeratedValueSet variable="initial-grass-growth-rate">
+          <value value="0.001"></value>
+        </enumeratedValueSet>
+        <enumeratedValueSet variable="cooperation-level">
+          <value value="1.0"></value>
+        </enumeratedValueSet>
+        <enumeratedValueSet variable="negative-reciprocity">
+          <value value="0.0"></value>
+        </enumeratedValueSet>
+        <enumeratedValueSet variable="positive-reciprocity">
+          <value value="1"></value>
+        </enumeratedValueSet>
+        <enumeratedValueSet variable="risk-aversion-level">
+          <value value="1.0"></value>
+        </enumeratedValueSet>
+        <enumeratedValueSet variable="fairness-concerning-me">
+          <value value="0.0"></value>
+        </enumeratedValueSet>
+        <enumeratedValueSet variable="fairness-concerning-others">
+          <value value="1.0"></value>
+        </enumeratedValueSet>
+        <enumeratedValueSet variable="conformity-level">
+          <value value="0"></value>
+        </enumeratedValueSet>
+        <enumeratedValueSet variable="memory-length">
+          <value value="5"></value>
+        </enumeratedValueSet>
+        <enumeratedValueSet variable="detect-institutions">
+          <value value="true"></value>
+        </enumeratedValueSet>
+        <enumeratedValueSet variable="institution-check-interval">
+          <value value="5"></value>
+        </enumeratedValueSet>
+        <enumeratedValueSet variable="num-llm-agents">
+          <value value="1"></value>
+        </enumeratedValueSet>
+        <enumeratedValueSet variable="agent0-backend">
+          <value value="&quot;anthropic&quot;"></value>
+        </enumeratedValueSet>
+        <enumeratedValueSet variable="agent0-model">
+          <value value="&quot;claude-sonnet-4-6&quot;"></value>
+        </enumeratedValueSet>
+        <enumeratedValueSet variable="agent1-backend">
+          <value value="&quot;anthropic&quot;"></value>
+        </enumeratedValueSet>
+        <enumeratedValueSet variable="agent1-model">
+          <value value="&quot;claude-sonnet-4-6&quot;"></value>
+        </enumeratedValueSet>
+        <enumeratedValueSet variable="agent2-backend">
+          <value value="&quot;anthropic&quot;"></value>
+        </enumeratedValueSet>
+        <enumeratedValueSet variable="agent2-model">
+          <value value="&quot;claude-sonnet-4-6&quot;"></value>
+        </enumeratedValueSet>
+        <enumeratedValueSet variable="system-prompt-override">
+          <value value="&quot;&quot;"></value>
+        </enumeratedValueSet>
+      </constants>
+    </experiment>
+  </experiments>
+</model>
