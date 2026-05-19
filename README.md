@@ -1350,7 +1350,9 @@ Claude's neg_r=1 outputs read as proactive norm enforcement -- reduce because th
 
 ### Memory and communication sweep: amnesiac vs. equipped agents
 
-Four runs of Claude Sonnet held all parameters fixed at coop≈0.5, initial pool 50% (the overshoot-panic zone established by H1) and varied only how much history agents could recall (`memory_length`) and whether they could communicate (`communication?`). The finding is stark: **neither memory nor communication alone was enough to prevent collapse** in this parameter zone. Stability required both.
+Four runs of Claude Sonnet held all parameters fixed at coop≈0.5, initial pool 50% (the overshoot-panic zone established by H1) and varied only how much history agents could recall (`memory_length`) and whether they could communicate (`communication?`). 
+
+The finding is stark: **neither memory nor communication alone was enough to prevent collapse** in this parameter zone. Stability required both.
 
 | Run | memory_length | communication? | Outcome | Collapse tick | Final pool |
 |-----|--------------|----------------|---------|---------------|------------|
@@ -1359,7 +1361,17 @@ Four runs of Claude Sonnet held all parameters fixed at coop≈0.5, initial pool
 | Short memory | 1 | On | Collapse | 87 | 0% |
 | Minimal trend window | 3 | On | Survived (declining) | -- | 90.1% |
 
-The key result: communication without sufficient memory collapses (memory=1, communication=on: collapse tick 87). Memory without communication collapses faster (memory=15, communication=off: collapse tick 46). The stable outcome requires enough memory to detect a multi-round trend -- approximately 3 rounds minimum, with 15 rounds producing reliable stability across model families.
+The key result: 
+
+<dl>
+
+<dd>Communication without sufficient memory collapses (memory=1, communication=on: collapse tick 87). </dd>
+
+<dd> Memory without communication collapses faster (memory=15, communication=off: collapse tick 46). </dd>
+
+</dl>
+
+The stable outcome requires enough memory to detect a multi-round trend -- approximately 3 rounds minimum, with 15 rounds producing reliable stability across model families.
 
 **Memory=0, communication off -- resource dynamics:**
 
@@ -1434,7 +1446,15 @@ This is Pattern I (**Cooperative Paralysis**) induced by insufficient memory rat
 
 **Interpretation.**
 
-Memory=1 produces a new variant of cooperative paralysis: agents successfully establish a threshold norm via communication, but cannot detect that the norm's target is unreachable under current herd loads. The failure is not linguistic -- the agents' outputs reason and communicate correctly -- it is informational. 
+Memory=1 produces a new variant of cooperative paralysis: 
+
+<dl>
+
+<dd> Agents successfully establish a threshold norm via communication, but cannot detect that the norm's target is unreachable under current herd loads. </dd>
+
+<dd> The failure is not linguistic -- the agents' outputs reason and communicate correctly -- it is informational. </dd>
+
+</dl>
 
 A 1-tick window supports "is this tick better or worse than last?" but not "has fifty consecutive ticks of KEEP moved the pool at all?" Without that trend-detection capacity, the norm becomes a holding pattern rather than a feedback loop.
 
@@ -1468,13 +1488,15 @@ Where memory=1 agents repeatedly renewed a holding promise without detecting its
 
 **Interpretation.**
 
-Three rounds of memory appears sufficient to detect a short-term declining trend and trigger corrective action. But it may be insufficient for long-run stability: the herd total grew to 81–83 cows (compared to 72 in the memory=15 run) and the pool was trending slowly downward at termination. Whether memory=3 produces eventual collapse on a longer timescale, or whether the agents would correct it before that point, is unresolved -- and motivates the threshold experiment described in H7.
+Three rounds of memory appears sufficient to detect a short-term declining trend and trigger corrective action. But it may be insufficient for long-run stability: the herd total grew to 81–83 cows (compared to 72 in the memory=15 run) and the pool was trending slowly downward at termination. 
+
+Whether memory=3 produces eventual collapse on a longer timescale, or whether the agents would correct it before that point, is unresolved -- and motivates the threshold experiment described in H7.
 
 ---
 
 ### Claude Haiku: memory × communication interaction
 
-Three matched runs with Claude Haiku 4.5 at coop≈0.5 (initial pool 52%) replicate and extend the Sonnet memory sweep, and suggest that long memory and communication must both be present: 15 ticks of memory without communication still collapsed, as did communication paired with too short a memory window. Memory and communication appear jointly necessary, not individually sufficient.
+Three matched runs with Claude Haiku 4.5 at coop≈0.5 (initial pool 52%) replicate and extend the Sonnet memory sweep, and suggest that long memory and communication must both be present: 15 ticks of memory without communication still collapsed, as did communication paired with too short a memory window. **Memory and communication appear jointly necessary, not individually sufficient.**
 
 All three runs began from identical conditions (5/15/26 starting herds, 52% initial pool). Memory was held at either 5 or 15 ticks; communication was on or off.
 
@@ -1484,13 +1506,31 @@ All three runs began from identical conditions (5/15/26 starting herds, 52% init
 | memory=15, comm=on | No | -- | 95.0% | 24/24/24 |
 | memory=15, comm=off | **Yes** | 46 | 0% | -- |
 
-**Memory=5, comm=on (collapse tick 99):** Agents recovered the pool to 99% by tick 10, then gradually expanded herds. By tick 45 total cows had reached 67; the pool eroded steadily and crashed at tick 99. The pattern matches the Sonnet memory=5 baseline -- a 5-tick window cannot detect gradual multi-decade trends.
+**Memory=5, comm=on (collapse tick 99):** 
+<dl>
+<dd> Agents recovered the pool to 99% by tick 10, then gradually expanded herds. By tick 45 total cows had reached 67; the pool eroded steadily and crashed at tick 99. The pattern matches the Sonnet memory=5 baseline -- a 5-tick window cannot detect gradual multi-decade trends. </dd>
+</dl>
 
-**Memory=15, comm=on (survives, 24/24/24 by tick 120):** Agents converged to equal herds of 24 and held the pool at 95% -- the same outcome achieved by Claude Sonnet under memory=15. The behavioral signature is shared across model generations at this memory length.
+**Memory=15, comm=on (survives, 24/24/24 by tick 120):** 
+<dl>
+<dd> Agents converged to equal herds of 24 and held the pool at 95% -- the same outcome achieved by Claude Sonnet under memory=15. The behavioral signature is shared across model generations at this memory length. </dd>
+</dl>
 
-**Memory=15, comm=off (collapse tick 46):** With communication disabled, the same 15-tick memory was insufficient. Agents added continuously -- herds reached 88 total by tick 45 -- with no coordination to arrest the growth phase. The pool fell from 52% to 14.7% between ticks 1 and 45, and collapsed at tick 46. Empty message logs confirm communication was inactive.
+**Memory=15, comm=off (collapse tick 46):** 
+<dl>
+<dd> With communication disabled, the same 15-tick memory was insufficient. Agents added continuously -- herds reached 88 total by tick 45 -- with no coordination to arrest the growth phase. The pool fell from 52% to 14.7% between ticks 1 and 45, and collapsed at tick 46. Empty message logs confirm communication was inactive.<dd>
+</dl>
 
-**Interpretation.** Long memory without communication produces collapse just as fast as short memory with it. With only 15 ticks of memory and no communication channel, agents cannot translate individual trend observations into collective restraint -- their outputs remain uncoordinated. Neither informational capacity alone is sufficient -- what is required is the combination: a memory long enough to detect multi-tick trends *and* communication capable of converting that detection into coordinated action. This is consistent with Ostrom's DP3 (collective choice rules) and DP4 (monitoring): monitoring alone does not prevent tragedy; it must feed into a governance mechanism capable of collective response.
+**Interpretation.** 
+Long memory without communication produces collapse just as fast as short memory with it. With only 15 ticks of memory and no communication channel, agents cannot translate individual trend observations into collective restraint -- their outputs remain uncoordinated. 
+
+<dl>
+
+<dd> Neither informational capacity alone is sufficient -- what is required is the combination: a memory long enough to detect multi-tick trends <strong>and</strong> communication capable of converting that detection into coordinated action. </dd>
+
+</dl>
+
+This is consistent with Ostrom's DP3 (collective choice rules) and DP4 (monitoring): monitoring alone does not prevent tragedy; it must feed into a governance mechanism capable of collective response.
 
 ---
 
@@ -1515,15 +1555,30 @@ Memory=2 produced the most complex behavior in the sweep -- not a clean collapse
 
 Five distinct phases are visible in this single run.
 
-**Phase 1 -- Recovery (ticks 1–13).** Agents cooperated to let the pool recover from 52.9% to 96.7%, growing herds moderately from 45 to 66 total cows.
+**Phase 1 -- Recovery (ticks 1–13).** 
+<dl>
 
-**Phase 2 -- First overshoot (ticks 14–35).** The healthy pool prompted continued adding. Total cows grew to 89 while the pool slid from 97% to 89%. Agents communicated concern but kept adding, each citing the pool as "still above threshold" -- the same threshold slippage seen in Pattern III.
+<dd> Agents cooperated to let the pool recover from 52.9% to 96.7%, growing herds moderately from 45 to 66 total cows. </dd>
 
-**Phase 3 -- First correction (ticks 36–44).** With 2 ticks of memory, agents detected the declining trend and began removing. Total cows fell from 89 to 77; the pool partially recovered to 91%.
+</dl>
 
-**Phase 4 -- Second overshoot and correction (ticks 45–75).** The recovered pool prompted another ADD cycle. Herds rose to 92 by tick 58 (pool: 88.8%), then agents corrected again, removing down to 75 cows and bringing the pool back to 92.9%. Crucially, this second correction achieved something the first did not: **perfect equalization at 25/25/25**, maintained from tick 75 through tick 110.
+**Phase 2 -- First overshoot (ticks 14–35).** 
+<dl>
+<dd>The healthy pool prompted continued adding. Total cows grew to 89 while the pool slid from 97% to 89%. Agents communicated concern but kept adding, each citing the pool as "still above threshold" -- the same threshold slippage seen in Pattern III.</dd>
+</dl>
 
-**Phase 5 -- Stable hold then new growth (ticks 76–120).** For 35 ticks all three agents held at 25/25/25, coordinating around a 95% pool target they kept falling just short of. At tick 111, Agent 0 defected from the hold:
+**Phase 3 -- First correction (ticks 36–44).** 
+<dl>
+<dd>With 2 ticks of memory, agents detected the declining trend and began removing. Total cows fell from 89 to 77; the pool partially recovered to 91%.</dd>
+</dl>
+
+**Phase 4 -- Second overshoot and correction (ticks 45–75).** 
+<dl>
+<dd>The recovered pool prompted another ADD cycle. Herds rose to 92 by tick 58 (pool: 88.8%), then agents corrected again, removing down to 75 cows and bringing the pool back to 92.9%. Crucially, this second correction achieved something the first did not: <strong>perfect equalization at 25/25/25</strong<, maintained from tick 75 through tick 110.</dd>
+</dl>
+
+**Phase 5 -- Stable hold then new growth (ticks 76–120).** 
+For 35 ticks all three agents held at 25/25/25, coordinating around a 95% pool target they kept falling just short of. At tick 111, Agent 0 defected from the hold: 
 
 > **Tick 111 – Agent 0 (action: ADD, pool 94.0%):** *"Pasture at 94% looks healthy. I'm adding one cow given the strong conditions -- still well within sustainable range. Let's monitor together."*
 
