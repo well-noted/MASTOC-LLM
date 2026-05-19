@@ -1094,7 +1094,15 @@ gemma4:e4b joins gpt-5.4-mini and DeepSeek R1:32b in the KEEP-dominant cluster a
 
 The bridge logs two distinct traces per decision. The `reasoning` field is parsed from the model's structured JSON output -- it is what the model chooses to say about its decision, and it is available for every model that follows the prompt format, including gpt-5.4-mini. The `thinking` field is different: it contains the internal chain-of-thought tokens the model generated before committing to an answer, where the API exposes them. These are not the same thing, and conflating them produces a misleading picture of what each backend reveals.
 
-Thinking traces -- the `thinking` column -- are available from three sources in our dataset. Ollama-native models (DeepSeek R1:32b and gemma4:e4b) expose them natively in the API response. Claude Haiku 4.5 emits thinking blocks natively without any extended thinking flag -- a property of the model generation rather than of the API call. For Claude Sonnet 4.6 and Opus 4.6, adaptive thinking mode would capture traces in future runs; the existing Sonnet logs predate this feature. OpenAI models produce `reasoning` content as readily as any other model, but keep their internal computation concealed: the o1 System Card states that the chain-of-thought "may include unaligned content" and that "attempting to extract raw reasoning through methods other than the reasoning summary parameter... may violate the Acceptable Use Policy" (OpenAI, 2024). The reasoning column for OpenAI runs is therefore self-report, not computation. The analyses below treat this distinction carefully. The dataset covers nine runs, 598 decision traces -- qualitative evidence, not a systematic sample, but legible enough to distinguish deliberation patterns across model families.
+Thinking traces -- the `thinking` column -- are available from three sources in our dataset:
+
+Ollama-native models (DeepSeek R1:32b and gemma4:e4b) expose them natively in the API response. 
+
+Claude Haiku 4.5 emits thinking blocks natively without any extended thinking flag -- a property of the model generation rather than of the API call. For Claude Sonnet 4.6 and Opus 4.6, adaptive thinking mode would capture traces in future runs; the existing Sonnet logs predate this feature. 
+
+OpenAI models produce `reasoning` content as readily as any other model, but **keep their internal computation concealed**: the o1 System Card states that the chain-of-thought "may include unaligned content" and that "attempting to extract raw reasoning through methods other than the reasoning summary parameter... may violate the Acceptable Use Policy" (OpenAI, 2024). **The reasoning column for OpenAI runs is therefore self-report, not computation.**
+
+The analyses below treat this distinction carefully. The dataset covers nine runs, 598 decision traces -- qualitative evidence, not a systematic sample, but legible enough to distinguish deliberation patterns across model families.
 
 #### DeepSeek R1:32b: payoff-personality deadlock
 
@@ -1126,7 +1134,7 @@ Under social pressure, however, the reasoning switches register entirely:
 
 Then, with pressure absent, payoff logic resumes. At tick 40 the grassland has fallen to 75% and herds have grown to 27/36/39, but the reasoning returns to: "ADD has the highest payoff... maintaining a stable herd better aligns with expressed personality." REMOVE eventually arrives at tick 46 -- when the grassland has reached 22.6% and the trajectory is already irreversible.
 
-The gemma4 pattern is distinguishable from DeepSeek's paralysis: where DeepSeek settles into a fixed local resolution (KEEP), gemma4 oscillates between payoff-maximization and social conformism based on the most recent messages received. Neither pattern constitutes multi-period modeling of the commons.
+The gemma4 pattern is distinguishable from DeepSeek's paralysis: **where DeepSeek settles into a fixed local resolution (KEEP), gemma4 oscillates between payoff-maximization and social conformism** based on the most recent messages received. Neither pattern constitutes multi-period modeling of the commons.
 
 #### Claude Haiku 4.5: trajectory-conditional reasoning
 
@@ -1146,11 +1154,11 @@ And by tick 7:
 
 > *"I've been consistently KEEP for the last 5 rounds, sending cooperative messages."*
 
-These are not tick-level claims. The first is a structural assessment of the commons' fairness geometry -- the model is maintaining a running account of who is taking how much. The second is a self-model: the agent is tracking its own behavioral history as a signal about what kind of agent it is. DeepSeek's traces contain neither.
+These are not tick-level claims. The first is a structural assessment of the commons' fairness geometry -- **the model is maintaining a running account of who is taking how much.** The second is a self-model: the agent is tracking its own behavioral history as a signal about what kind of agent it is. DeepSeek's traces contain neither.
 
 The most distinctive feature is the conditional forward commitment that appears in the messages: *"If pasture pressure rises later, open to reducing together."* Whether this phrasing originates in the thinking or in message generation, the thinking traces confirm it is not empty signalling -- the traces contain genuine assessments of when the commons would cross a threshold that would trigger a different response. This is reasoning of the form *if X, then Y* across time, not just reasoning about the current state.
 
-The payoff conflict is present, as in DeepSeek. ADD gives 31.742, KEEP gives 30.0. Haiku acknowledges this and sets it aside -- but not by applying a personality constraint and stopping there. The trace continues: *"Adding would contribute to the tragedy of the commons... Agent 2 already has 25 cows vs my 15."* The fairness concern is grounded in specific numerical comparison and connected to the commons trajectory, not just to a personality parameter.
+The payoff conflict is present, as in DeepSeek. ADD gives 31.742, KEEP gives 30.0. Haiku acknowledges this and sets it aside -- but not by applying a personality constraint and stopping there. The trace continues: *"Adding would contribute to the tragedy of the commons... Agent 2 already has 25 cows vs my 15."* **The fairness concern is grounded in specific numerical comparison and connected to the commons trajectory, not just to a personality parameter.**
 
 This is an empirical regularity from eight decisions under a single personality configuration. It cannot be generalized. Whether the pattern holds at lower cooperation, under adversarial personality combinations, or over longer runs where the commons actually degrades -- these remain open questions. The traces are consistent with multi-period modeling; they do not establish it.
 
@@ -1166,21 +1174,57 @@ OpenAI models produce the `reasoning` field as fluently as any other backend -- 
 
 > **Tick 20, Agent 2 -- Action: ADD (pool=82.6%)**
 
-Both agents have just stated a threshold of 80%. Grass is at 82.6%. Both choose ADD. By tick 40 of these same runs, the commons has collapsed -- pool at 2.8%, all agents removing. The reasoning switches registers entirely: *"The pasture is almost exhausted... continued reduction is the safest way to avoid total collapse."* What the agents said they would do at 80% did not happen at 82%. The verbal commitment and the action were decoupled.
+Both agents have stated a threshold of 80%. Grass is at 82.6%. Both choose ADD. By tick 40 of these same runs, the commons has collapsed -- pool at 2.8%, all agents removing. The reasoning switches registers entirely: *"The pasture is almost exhausted... continued reduction is the safest way to avoid total collapse."* What the agents said they would do at 80% did not happen at 82%. The verbal commitment and the action were decoupled.
 
-This is the faithfulness problem. The `reasoning` field records what the model articulates about its decision, not necessarily what drives it. In the Haiku 4.5 traces, the stated reasoning and the actions are consistent -- the model says it is choosing KEEP for fairness and trajectory reasons, and it keeps. In the OpenAI runs that collapsed, the models articulated appropriate multi-period constraints and then violated them. Whether this reflects a gap between the reasoning and the actual computation, or a gap between stated intentions and social coordination failures, cannot be determined from the `reasoning` field alone -- and the `thinking` field remains empty. The faithfulness question is genuinely open, and it is precisely the question that internal computation traces could address.
+This is a <u>**faithfulness problem**</u>. 
+
+The `reasoning` field records what the model articulates about its decision, not necessarily what drives it. 
+
+In the Haiku 4.5 traces, the stated reasoning and the actions are consistent -- the model says it is choosing KEEP for fairness and trajectory reasons, and it keeps. In the OpenAI runs that collapsed, the models articulated appropriate multi-period constraints and then violated them. 
+
+Whether this reflects a gap between the reasoning and the actual computation, or a gap between stated intentions and social coordination failures, cannot be determined from the `reasoning` field alone. 
+
+The faithfulness question is genuinely open, and it is precisely the question that internal computation traces might address.
 
 #### What the traces reveal -- and where they stop
 
-DeepSeek R1 resolves a tick-level conflict by applying personality constraints to a payoff signal -- the reasoning is correct, detailed, and temporally blind. gemma4 oscillates between payoff maximization and social conformism with no stable internal model. OpenAI gpt-5.4-mini articulates multi-period conditional commitments and then violates them when the threshold arrives. Claude Haiku 4.5 -- in the one run where full traces are available -- maintains a running model of structural inequality, tracks its own behavioral history, and builds conditional commitments that appear to be acted upon.
+DeepSeek R1 resolves a tick-level conflict by applying personality constraints to a payoff signal -- **the reasoning is correct, detailed, and temporally blind**. 
 
-The gradient maps onto outcome differences. DeepSeek's KEEP-dominant stasis allowed slow herd drift. OpenAI runs that articulated restraint collapsed anyway. Haiku's restraint held the commons stable. The actions can look similar; the processes are not, and the outcomes diverge.
+gemma4 oscillates between payoff maximization and social conformism with no stable internal model. 
 
-What remains unresolved for Haiku is whether the conditional commitments would activate if the commons actually degraded -- the run ended before that test. For OpenAI, the faithfulness question cannot be approached at all without thinking traces, and the thinking traces are unavailable by policy. For Claude Sonnet 4.6 and Opus models, adaptive thinking mode would surface the computation -- this is the most direct next step for testing whether the multi-period reasoning visible in Claude's messages reflects the model's actual deliberation or only its self-report.
+OpenAI gpt-5.4-mini articulates multi-period conditional commitments and then violates them when the threshold arrives. 
 
-**On adaptive thinking and future releases.** Anthropic's adaptive thinking mode -- available for Claude Sonnet 4.6, Opus 4.6, and required on Opus 4.7 -- lets the model decide when and how much extended thinking to apply based on task complexity (Anthropic, 2025). Claude 4 models return summarized thinking by default rather than full traces; full access requires contacting Anthropic directly. For Opus 4.7, manual `budget_tokens` is rejected; only `thinking: {type: "adaptive"}` is accepted. A future release of MASTOC-LLM should migrate the bridge's extended thinking call from the deprecated `budget_tokens` parameter to adaptive mode, and test whether Sonnet 4.6 and Opus runs produce thinking content that corroborates or contradicts the trajectory-conditional reasoning visible in their messages.
+Claude Haiku 4.5 -- in the one run where full traces are available -- maintains a running model of structural inequality, tracks its own behavioral history, and builds conditional commitments that appear to be acted upon.
 
-The traces are consistent with the GRPO-vs-RLHF hypothesis: models trained to optimize for reasoning correctness on well-defined problems (math, code) may not generalise that deliberative capacity to open-ended, multi-period coordination problems. But this remains a conjecture. The traces establish that KEEP-dominance in DeepSeek R1 is not an absence of reasoning -- the reasoning is present and detailed -- but a reasoning process that resolves a tick-level conflict without modeling what that resolution accumulates into.
+The gradient maps onto outcome differences:
+
+DeepSeek's KEEP-dominant stasis allowed slow herd drift. 
+
+OpenAI runs that articulated restraint collapsed anyway. 
+
+Haiku's restraint held the commons stable. 
+
+The actions can look similar; the processes are not, and the outcomes diverge.
+
+What remains unresolved for Haiku is whether the conditional commitments would activate if the commons actually degraded -- the run ended before that test. 
+
+For OpenAI, the faithfulness question cannot be approached at all without thinking traces, and the thinking traces are unavailable by policy. 
+
+For Claude Sonnet 4.6 and Opus models, <u>**adaptive thinking mode**</u> would surface the computation -- this is the most direct next step for testing whether the multi-period reasoning visible in Claude's messages reflects the model's actual deliberation or only its self-report.
+
+**On adaptive thinking and future releases.** 
+
+Anthropic's **adaptive thinking mode** -- available for Claude Sonnet 4.6, Opus 4.6, and required on Opus 4.7 -- lets the model decide when and how much extended thinking to apply based on task complexity (Anthropic, 2025). 
+
+Claude 4 models return summarized thinking by default rather than full traces; full access requires contacting Anthropic directly. For Opus 4.7, manual `budget_tokens` is rejected; only `thinking: {type: "adaptive"}` is accepted. 
+
+A future release of MASTOC-LLM should migrate the bridge's extended thinking call from the deprecated `budget_tokens` parameter to adaptive mode, and test whether Sonnet 4.6 and Opus runs produce thinking content that corroborates or contradicts the trajectory-conditional reasoning visible in their messages.
+
+The traces are consistent with the GRPO-vs-RLHF hypothesis: 
+
+models trained to optimize for reasoning correctness on well-defined problems (math, code) may not generalise that deliberative capacity to open-ended, multi-period coordination problems. 
+
+This remains a conjecture. The traces establish that KEEP-dominance in DeepSeek R1 is not an absence of reasoning -- the reasoning is present and detailed -- but a reasoning process that resolves a tick-level conflict without modeling what that resolution accumulates into.
 
 ---
 
@@ -1221,13 +1265,15 @@ Agent 2 reduced from 25 to 16 across 15 ticks. Agent 0 grew from 5 to 16. Agent 
 
 > **Tick 19 – Agent 0:** *"We're all at 16 now -- great coordination! Let's hold steady at this level. The grassland is thriving at 98.8%."*
 
-The negative reciprocity framing appeared to function as a catalytic mechanism: agents' outputs treated a large herd as a form of norm violation worth correcting, rather than simply an observation about the status quo. The result was faster, more deliberate equalization -- and a qualitatively different institutional dynamic, one built on explicit accountability rather than gradual convergence.
+The negative reciprocity framing appeared to function as a catalytic mechanism: agents' outputs treated a large herd as a form of norm violation worth correcting, rather than simply an observation about the status quo. The result was faster, more deliberate equalization -- and a qualitatively different institutional dynamic, one built on <u>**explicit accountability**</u> rather than gradual convergence.
 
 ---
 
 ### Cross-model comparison: neg_r = 1 with gpt-5.5 produces stability but not equality
 
-Running the same parameter configuration (coop = 1, neg_r = 1) with gpt-5.5 produced stability without equality, while Claude Sonnet drove straight to equal herd sizes in 18 ticks. Under identical settings gpt-5.5 entered escalating tit-for-tat cycles and settled at a stable but unequal distribution -- both avoided collapse, but through markedly different institutional dynamics.
+Running the same parameter configuration (coop = 1, neg_r = 1) with gpt-5.5 produced **stability without equality**, while Claude Sonnet drove straight to equal herd sizes in 18 ticks. 
+
+Under identical settings gpt-5.5 entered escalating tit-for-tat cycles and settled at a stable but unequal distribution -- both avoided collapse, but through markedly different institutional dynamics.
 
 **Resource dynamics:**
 
@@ -1241,7 +1287,7 @@ Running the same parameter configuration (coop = 1, neg_r = 1) with gpt-5.5 prod
 
 Unlike Claude, which produced consistent removal actions toward equalization from tick 1, gpt-5.5 agents all added on the very first tick -- then embarked on a complex tit-for-tat negotiation before eventually settling at a stable but unequal distribution of 12/21/22 by tick 17.
 
-The tit-for-tat logic was explicit and recursive: each agent cited the others' prior expansions as justification for their own, producing two escalation cycles before a collective de-escalation took hold.
+The tit-for-tat logic was **explicit and recursive**: each agent cited the others' prior expansions as justification for their own, producing two escalation cycles before a collective de-escalation took hold.
 
 > **Tick 8 – Agent 0 (action: ADD, after Agent 2 had been removing):** *"I am adding one cow because my herd is still much smaller while the pasture is strong. I appreciate Agent 2 reducing."*
 
@@ -1255,13 +1301,23 @@ The de-escalation finally stabilized around tick 15–17, after all three agents
 
 > **Tick 16 – Agent 0:** *"I will keep steady as well. Thank you for holding; let us maintain this pause and avoid restarting an expansion cycle."*
 
-The pool remained stable at 98.2% throughout -- no tragedy, no collapse. But equalization never arrived. At tick 20, Agent 2 still held 22 cows to Agent 0's 12, a near-two-to-one disparity that persisted without any agent moving to close it.
+The pool remained stable at 98.2% throughout -- no tragedy, no collapse. 
+
+But equalization never arrived. 
+
+At tick 20, Agent 2 still held 22 cows to Agent 0's 12, a near-two-to-one disparity that persisted without any agent moving to close it.
 
 **Interpretation.**
 
-Both models avoided collapse under the same parameter configuration; the institutional processes that got them there were qualitatively different. Claude Sonnet treated the disparity as a norm violation from tick 1, with Agent 2 immediately producing removal actions and Agent 1 issuing accountability messages ("you added AGAIN -- this is a pattern, not cooperation"); the run converged to full equality in 18 ticks. gpt-5.5 began with all three agents adding on tick 1, then settled into tit-for-tat dynamics in which expansions triggered counter-expansions and removals triggered counter-removals, eventually de-escalating to a stable but unequal distribution that no agent's outputs pressed to correct.
+Both models avoided collapse under the same parameter configuration; the institutional processes that got them there were qualitatively different:
 
-The implication is that **negative reciprocity framing may interact with model-specific priors in important ways**. Claude's neg_r=1 outputs read as proactive norm enforcement -- reduce because the disparity is unjust. gpt-5.5's read as reactive sanctioning -- match or counter the other's move. Both produce stability; only one produces fairness.
+Claude Sonnet treated the disparity as a norm violation from tick 1, with Agent 2 immediately producing removal actions and Agent 1 issuing accountability messages ("you added AGAIN -- this is a pattern, not cooperation"); **the run converged to full equality in 18 ticks**. 
+
+gpt-5.5 began with all three agents adding on tick 1, then settled into tit-for-tat dynamics in which expansions triggered counter-expansions and removals triggered counter-removals, eventually de-escalating to a **stable but unequal distribution** that no agent's outputs pressed to correct.
+
+The implication is that **negative reciprocity framing may interact with model-specific priors in important ways**. 
+
+Claude's neg_r=1 outputs read as proactive norm enforcement -- reduce because the disparity is unjust. gpt-5.5's read as **reactive sanctioning** -- match or counter the other's move. Both produce stability; only one produces fairness.
 
 ---
 
@@ -1313,7 +1369,7 @@ The threshold norm was explicitly named and mutually enforced across 70+ ticks -
 
 ### Memory=1: delayed collapse via coordination without trend detection
 
-With memory=1 and communication on, agents talked each other into holding the commons at a target and achieved early recovery -- but could not detect that fifty rounds of holding was producing no actual recovery, and the run collapsed at tick 87 with agents still citing the correct norm. This is a novel failure mode not seen in any prior run.
+With memory=1 and communication on, agents talked each other into holding the commons at a target and achieved early recovery -- but could not detect that fifty rounds of holding was producing no actual recovery, and the run collapsed at tick 87 with agents still citing the correct norm. <u>**This is a novel failure mode not seen in any prior run.**</u>
 
 **Resource dynamics:**
 
@@ -1329,9 +1385,13 @@ With memory=1 and communication on, agents talked each other into holding the co
 | 84   | 89        | 43.2%       | 24      | 31      | 34      |
 | 87   | --         | 0%          | --       | --       | --       |
 
-The pool recovered from 52% to 95% in the first 19 ticks -- genuine early-game success driven by communication. Agents coordinated a 90% threshold norm: "hold until we reach 90%." But by tick 29, the total herd had grown to 89 cows -- a load that exceeded the grassland's regeneration capacity. The pool began a slow, sustained drain: 90% → 84% → 64% → 43% over 55 ticks, before the final collapse at tick 87.
+The pool recovered from 52% to 95% in the first 19 ticks -- genuine early-game success driven by communication. 
 
-The agents held the correct norm throughout. They cited the 90% target on every tick from approximately tick 30 to tick 83. What they could not detect was that 89 cows made 90% recovery structurally impossible -- they lacked the **historical window** to see that fifty consecutive rounds of KEEP had produced no recovery. With only one tick of memory, each round looked like "still below 90%, hold one more round."
+Agents coordinated a 90% threshold norm: "hold until we reach 90%." But by tick 29, the total herd had grown to 89 cows -- a load that exceeded the grassland's regeneration capacity. The pool began a slow, sustained drain: 90% → 84% → 64% → 43% over 55 ticks, before the final collapse at tick 87.
+
+The agents held the correct norm throughout. They cited the 90% target on every tick from approximately tick 30 to tick 83. 
+
+What they could not detect was that 89 cows made 90% recovery structurally impossible -- they lacked the **historical window** to see that fifty consecutive rounds of KEEP had produced no recovery. With only one tick of memory, each round looked like "still below 90%, hold one more round."
 
 > **Tick 35 – Agent 0 (action: KEEP, pool at 86.4%):** *"Holding at 24. Pasture is at 86.4% -- still below the 90% target. I agree we should hold or reduce until it recovers. Let's stay disciplined for another round or two before anyone adds."*
 
@@ -1341,11 +1401,15 @@ The agents held the correct norm throughout. They cited the 90% target on every 
 
 > **Tick 84 – Agent 0 (action: REMOVE, pool at 43.2%):** *"Removing a cow -- pasture dropped sharply to 43.2%."*
 
-The same conditional promise -- "hold until 90%" -- was renewed for approximately fifty consecutive ticks across a forty-point pool decline, and broken only when the decline became visually acute rather than trend-detectable. This is Pattern I (**Cooperative Paralysis**) induced by insufficient memory rather than by personality framing. The agents had the right norm; they lacked the information window to recognize it was failing.
+The same conditional promise -- "hold until 90%" -- was renewed for approximately fifty consecutive ticks across a forty-point pool decline, and broken only when the decline became visually acute rather than trend-detectable. 
+
+This is Pattern I (**Cooperative Paralysis**) induced by insufficient memory rather than by personality framing. The agents had the right norm; they lacked the information window to recognize it was failing.
 
 **Interpretation.**
 
-Memory=1 produces a new variant of cooperative paralysis: agents successfully establish a threshold norm via communication, but cannot detect that the norm's target is unreachable under current herd loads. The failure is not linguistic -- the agents' outputs reason and communicate correctly -- it is informational. A 1-tick window supports "is this tick better or worse than last?" but not "has fifty consecutive ticks of KEEP moved the pool at all?" Without that trend-detection capacity, the norm becomes a holding pattern rather than a feedback loop.
+Memory=1 produces a new variant of cooperative paralysis: agents successfully establish a threshold norm via communication, but cannot detect that the norm's target is unreachable under current herd loads. The failure is not linguistic -- the agents' outputs reason and communicate correctly -- it is informational. 
+
+A 1-tick window supports "is this tick better or worse than last?" but not "has fifty consecutive ticks of KEEP moved the pool at all?" Without that trend-detection capacity, the norm becomes a holding pattern rather than a feedback loop.
 
 ADD=47, KEEP=205, REMOVE=18. Compared to the memory=0 run (ADD=71), memory=1 agents were far less aggressive -- they held the commons at a stressed level for far longer. But the outcome was still collapse, delayed by 56 ticks.
 
@@ -1353,7 +1417,7 @@ ADD=47, KEEP=205, REMOVE=18. Compared to the memory=0 run (ADD=71), memory=1 age
 
 ### Memory=3: fragile survival at the threshold
 
-With memory=3 and communication on, agents survived 120 ticks without collapse -- three ticks of memory appearing just sufficient for them to detect declining trends and coordinate removals in time. But the pool was still slowly declining at termination, and Thomas noted it was "starting to trend that way," leaving the long-run outcome unresolved.
+With memory=3 and communication on, agents survived 120 ticks without collapse -- three ticks of memory appearing just sufficient for them to detect declining trends and coordinate removals in time. But the pool was still slowly declining at termination.
 
 **Resource dynamics:**
 
