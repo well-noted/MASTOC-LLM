@@ -90,7 +90,9 @@ The core research question:
 
 The [Tragedy of the Commons](https://en.wikipedia.org/wiki/Tragedy_of_the_commons) (Hardin, 1968) predicts that rational self-interest leads to collective over-exploitation of shared resources. Ostrom (1990) challenged this, showing that real communities often self-organise governance institutions -- rules, monitoring, graduated sanctions -- without top-down intervention.
 
-MASTOC (Schindler, 2013) is a NetLogo ABM that reproduces the tragedy under classical rational-agent assumptions. MASTOC-LLM asks: what happens when agents can reason, remember, and talk?
+MASTOC (Schindler, 2013) is a NetLogo ABM that reproduces the tragedy under classical rational-agent assumptions. 
+
+MASTOC-LLM asks: what happens when agents can reason, remember, and talk?
 
 ### Ostrom's Design Principles -- applicability to this model
 
@@ -361,7 +363,16 @@ The baseline agents speak no language and hold no memory. Each tick, they evalua
 
 This is a faithful replication of the original MASTOC agent -- not a simplified payoff maximizer, but the full Schindler mechanism. It lacks everything the LLM conditions add: language, memory of prior rounds, and the capacity to send or receive messages. Baseline agents respond only to the current payoff matrix. Nothing carries over between ticks.
 
-**v1.2.0 mathematical fix -- `min` → `mean` in the best-response rule.** The decision rule compares expected payoffs across the three actions using a list of payoffs from all possible neighbour-state combinations. Prior to v1.2.0, the rule selected the action whose *minimum* payoff in that list was highest (maximin / worst-case reasoning). This caused agents to always choose REMOVE regardless of resource state -- not because they were greedy, but because the worst case for REMOVE was always better than the worst case for ADD under standard parameters. The fix replaces `min` with `mean` so agents select the action with the highest *expected* payoff (best-response under expected value), which is the standard assumption in the original MASTOC model. The three affected lines are in the `rule-based-decide` procedure:
+**v1.2.0 mathematical fix -- `min` → `mean` in the best-response rule.** 
+
+The decision rule compares expected payoffs across the three actions using a list of payoffs from all possible neighbour-state combinations. Prior to v1.2.0, the rule selected the action whose *minimum* payoff in that list was highest (maximin / worst-case reasoning). 
+
+<dl>
+<dd>This caused agents to always choose REMOVE regardless of resource state -- not because they were greedy, but because the worst case for REMOVE was always better than the worst case for ADD under standard parameters.</dd>
+
+</dl>
+
+The fix replaces `min` with `mean` so agents select the action with the highest *expected* payoff (best-response under expected value), which is the standard assumption in the original MASTOC model. The three affected lines are in the `rule-based-decide` procedure:
 
 ```netlogo
 ;; v1.1.0 (maximin -- incorrect):
@@ -376,12 +387,15 @@ let pr (ifelse-value (length remove-a-cow-adj-list > 0) [ mean remove-a-cow-adj-
 ```
 
 **Note on existing data:** 
+
 The growth rate sweep and risk aversion tables below were collected under the previous pure payoff maximizer implementation. They remain valid as control results and their qualitative conclusions hold, but they do not reflect the psychosocially-adjusted baseline introduced in v1.1.0. New baseline runs at non-zero personality parameters may produce modestly different collapse trajectories.
 
 **Standard conditions (growth = 0.001):** 
+
 At default growth rates the commons collapsed in approximately 36 ticks, exactly as classical tragedy-of-the-commons theory predicts. Herds grew from a starting total of 45 cows, crossed 100 by tick ~25, and the grassland was fully depleted by tick 36. This reproduces the original MASTOC result and confirms the control condition is working correctly.
 
 **Growth rate sweep -- finding the stability threshold:** 
+
 The most significant baseline experiment was a systematic sweep of the grass growth rate to find the conditions under which the rule-based heuristic can sustain the commons. Starting from a scarce commons (grass=41%) with forage=2:
 
 | Growth rate | Result | Collapse tick |
