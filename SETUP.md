@@ -40,6 +40,11 @@ export ANTHROPIC_API_KEY=sk-ant-...
 set OPENAI_API_KEY=sk-...
 ```
 
+**Google Gemini:**
+```
+set GOOGLE_API_KEY=...
+```
+
 **Ollama (local models — no key needed):**
 ```bash
 # Install from https://ollama.com, then pull a model:
@@ -91,7 +96,7 @@ MASTOC-LLM/
 | Control | Type | Description |
 |---|---|---|
 | **Condition** | Chooser | `baseline` / `full-gabm` / `hybrid` |
-| **Backend** | Chooser (per agent) | `anthropic` / `openai` / `ollama` |
+| **Backend** | Chooser (per agent) | `anthropic` / `openai` / `google` / `ollama` |
 | **Model name** | Input (per agent) | e.g. `claude-sonnet-4-6`, `llama3.2` |
 | **num-llm-agents** | Slider | How many agents use LLM in hybrid mode (1–3) |
 | **memory-length** | Slider | Rounds each agent remembers (0–15) |

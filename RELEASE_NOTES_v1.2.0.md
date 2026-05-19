@@ -50,7 +50,7 @@ The batch sweep runner has been substantially expanded. New capabilities:
 | Flag | Default | Description |
 |---|---|---|
 | `--condition` | `baseline` | `baseline`, `full-gabm`, or `hybrid` |
-| `--backend` | `anthropic` | `anthropic`, `openai`, or `ollama` |
+| `--backend` | `anthropic` | `anthropic`, `openai`, `google`, or `ollama` |
 | `--llm-model` | `claude-sonnet-4-6` | Model name |
 | `--num-llm-agents` | 1 | LLM agents in hybrid mode (1–3) |
 | `--runs N` | 30 | Repetitions per parameter combo |

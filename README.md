@@ -1556,7 +1556,7 @@ python run_baseline_sweep.py --condition full-gabm --runs 5 \
 | Flag | Default | Description |
 |---|---|---|
 | `--condition` | `baseline` | `baseline`, `full-gabm`, or `hybrid` |
-| `--backend` | `anthropic` | LLM backend: `anthropic`, `openai`, `ollama` |
+| `--backend` | `anthropic` | LLM backend: `anthropic`, `openai`, `google`, `ollama` |
 | `--llm-model` | `claude-sonnet-4-6` | Model name passed to the bridge |
 | `--num-llm-agents` | 1 | Number of LLM agents in hybrid mode (1–3) |
 | `--runs N` | 30 | Repetitions per parameter combo |
