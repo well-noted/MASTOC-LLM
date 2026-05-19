@@ -1096,11 +1096,15 @@ The bridge logs two distinct traces per decision. The `reasoning` field is parse
 
 Thinking traces -- the `thinking` column -- are available from three sources in our dataset:
 
-Ollama-native models (DeepSeek R1:32b and gemma4:e4b) expose them natively in the API response. 
+<dl>
 
-Claude Haiku 4.5 emits thinking blocks natively without any extended thinking flag -- a property of the model generation rather than of the API call. For Claude Sonnet 4.6 and Opus 4.6, adaptive thinking mode would capture traces in future runs; the existing Sonnet logs predate this feature. 
+<dd>Ollama-native models (DeepSeek R1:32b and gemma4:e4b) expose them natively in the API response. </dd>
 
-OpenAI models produce `reasoning` content as readily as any other model, but **keep their internal computation concealed**: the o1 System Card states that the chain-of-thought "may include unaligned content" and that "attempting to extract raw reasoning through methods other than the reasoning summary parameter... may violate the Acceptable Use Policy" (OpenAI, 2024). **The reasoning column for OpenAI runs is therefore self-report, not computation.**
+<dd>Claude Haiku 4.5 emits thinking blocks natively without any extended thinking flag -- a property of the model generation rather than of the API call. For Claude Sonnet 4.6 and Opus 4.6, adaptive thinking mode would capture traces in future runs; the existing Sonnet logs predate this feature. </dd>
+
+<dd>OpenAI models produce `reasoning` content as readily as any other model, but **keep their internal computation concealed**: the o1 System Card states that the chain-of-thought "may include unaligned content" and that "attempting to extract raw reasoning through methods other than the reasoning summary parameter... may violate the Acceptable Use Policy" (OpenAI, 2024). **The reasoning column for OpenAI runs is therefore self-report, not computation.** </dd>
+
+</dl>
 
 The analyses below treat this distinction carefully. The dataset covers nine runs, 598 decision traces -- qualitative evidence, not a systematic sample, but legible enough to distinguish deliberation patterns across model families.
 
