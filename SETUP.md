@@ -1,6 +1,6 @@
 # MASTOC-LLM Setup Guide
 
-> CAS 520 — Agent-Based Modeling | Arizona State University  
+> 
 > Research question: Do Ostrom-style commons institutions emerge from language-capable agents under resource pressure?
 
 ---

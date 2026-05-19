@@ -327,7 +327,7 @@ def _build_experiment_xml(args: argparse.Namespace) -> str:
               <value value="{args.fairness_oth}"></value>
             </enumeratedValueSet>
             <enumeratedValueSet variable="conformity-level">
-              <value value="0"></value>
+              <value value="{args.conformity}"></value>
             </enumeratedValueSet>
             <enumeratedValueSet variable="memory-length">
               <value value="{args.memory_length}"></value>
@@ -396,7 +396,8 @@ def run(args: argparse.Namespace) -> None:
     print(f"  Ticks per run    : {args.ticks}")
     print(f"  Stop on collapse : {'yes (<5% grassland)' if args.stop_on_collapse else 'no'}")
     print(f"  coop={args.coop}  neg_r={args.neg_r}  pos_r={args.pos_r}  "
-          f"risk={args.risk}  fair_me={args.fairness_me}  fair_oth={args.fairness_oth}")
+          f"risk={args.risk}  fair_me={args.fairness_me}  fair_oth={args.fairness_oth}  "
+          f"conformity={args.conformity}")
     print(f"  Model file       : {model_path}")
     print(f"  NetLogo          : {netlogo_dir}")
 
@@ -535,6 +536,8 @@ def main() -> None:
                    help="Fairness concerning me. Default: 0.0")
     p.add_argument("--fairness-oth",type=float, default=1.0, dest="fairness_oth",
                    help="Fairness concerning others. Default: 1.0")
+    p.add_argument("--conformity",  type=float, default=0.0,
+                   help="Conformity level. Default: 0.0")
 
     # ── Paths & endpoints ──────────────────────────────────────────────────
     p.add_argument("--model",        type=str, default="MASTOC-LLM.nlogox",
