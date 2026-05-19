@@ -1760,8 +1760,7 @@ Frontiers in Artificial Intelligence. https://doi.org/10.3389/frai.2025.1593017
 
 Ostrom, E. (1990). Governing the Commons. Cambridge University Press.
 
-Tuoti, T. E. (2026, May 18). Do Ostrom-Style Commons Institutions Emerge from LLM Agents?
-A Pre-Registration of Confirmatory Hypotheses for MASTOC-LLM. OSF. https://osf.io/bwer9
+Tuoti, T. E. (2026, May 18). Do Ostrom-Style Commons Institutions Emerge from LLM Agents? A Pre-Registration of Confirmatory Hypotheses for MASTOC-LLM. https://doi.org/10.17605/OSF.IO/WBVHT
 ```
 
 ---
