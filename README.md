@@ -52,6 +52,7 @@ The core research question:
     - [DeepSeek R1:32b: payoff-personality deadlock](#deepseek-r132b-payoff-personality-deadlock)
     - [gemma4:e4b: payoff maximization and social conformism](#gemma4e4b-payoff-maximization-and-social-conformism)
     - [Claude Haiku 4.5: trajectory-conditional reasoning](#claude-haiku-45-trajectory-conditional-reasoning)
+    - [OpenAI gpt-5.4-mini: self-reported reasoning and the faithfulness problem](#openai-gpt-54-mini-self-reported-reasoning-and-the-faithfulness-problem)
   - [Claude Sonnet: mid cooperation and high negative reciprocity](#claude-sonnet-mid-cooperation-replicates-overshoot-panic-negative-reciprocity-produces-fastest-equalization)
   - [Cross-model comparison: neg\_r = 1](#cross-model-comparison-negr--1-with-gpt-55-produces-stability-but-not-equality)
   - [Memory and communication sweep: amnesiac vs. equipped agents](#memory-and-communication-sweep-amnesiac-vs-equipped-agents)
@@ -1091,9 +1092,9 @@ gemma4:e4b joins gpt-5.4-mini and DeepSeek R1:32b in the KEEP-dominant cluster a
 
 ### Thinking traces: what the deliberation reveals
 
-The bridge logs two distinct traces per decision: a `reasoning` field parsed from the model's structured JSON output (self-reported reasoning, available for every model that follows the prompt format), and a `thinking` field containing internal chain-of-thought tokens where the API exposes them. These are not the same thing. The `reasoning` field is what the model chooses to say about its decision; the `thinking` field is the pre-response computation the model ran before committing to that answer.
+The bridge logs two distinct traces per decision. The `reasoning` field is parsed from the model's structured JSON output -- it is what the model chooses to say about its decision, and it is available for every model that follows the prompt format, including gpt-5.4-mini. The `thinking` field is different: it contains the internal chain-of-thought tokens the model generated before committing to an answer, where the API exposes them. These are not the same thing, and conflating them produces a misleading picture of what each backend reveals.
 
-Thinking traces are available from three sources. Ollama-native models (DeepSeek R1:32b and gemma4:e4b) expose them natively in the API response. Claude Haiku 4.5, which was used in the Anthropic runs here, emits thinking blocks natively without requiring explicit extended thinking mode -- a property of the model generation, not of the API call. For other Claude models, the `extended-thinking?` toggle in the interface enables Anthropic's extended thinking API, which captures traces at a configurable token budget. OpenAI is a different case entirely: reasoning traces are actively concealed. The o1 System Card states that the chain-of-thought "may include unaligned content" and that "attempting to extract raw reasoning through methods other than the reasoning summary parameter... may violate the Acceptable Use Policy" (OpenAI, 2024). The stated rationale combines safety concerns with competitive interests -- the traces are a product secret, not an engineering omission. The traces analyzed below come from nine runs, 598 decision traces in total -- qualitative evidence, not a systematic sample, but they offer a window into the deliberative process that action counts alone cannot.
+Thinking traces -- the `thinking` column -- are available from three sources in our dataset. Ollama-native models (DeepSeek R1:32b and gemma4:e4b) expose them natively in the API response. Claude Haiku 4.5 emits thinking blocks natively without any extended thinking flag -- a property of the model generation rather than of the API call. For Claude Sonnet 4.6 and Opus 4.6, adaptive thinking mode would capture traces in future runs; the existing Sonnet logs predate this feature. OpenAI models produce `reasoning` content as readily as any other model, but keep their internal computation concealed: the o1 System Card states that the chain-of-thought "may include unaligned content" and that "attempting to extract raw reasoning through methods other than the reasoning summary parameter... may violate the Acceptable Use Policy" (OpenAI, 2024). The reasoning column for OpenAI runs is therefore self-report, not computation. The analyses below treat this distinction carefully. The dataset covers nine runs, 598 decision traces -- qualitative evidence, not a systematic sample, but legible enough to distinguish deliberation patterns across model families.
 
 #### DeepSeek R1:32b: payoff-personality deadlock
 
@@ -1153,13 +1154,31 @@ The payoff conflict is present, as in DeepSeek. ADD gives 31.742, KEEP gives 30.
 
 This is an empirical regularity from eight decisions under a single personality configuration. It cannot be generalized. Whether the pattern holds at lower cooperation, under adversarial personality combinations, or over longer runs where the commons actually degrades -- these remain open questions. The traces are consistent with multi-period modeling; they do not establish it.
 
+#### OpenAI gpt-5.4-mini: self-reported reasoning and the faithfulness problem
+
+OpenAI models produce the `reasoning` field as fluently as any other backend -- 16 runs, all with populated reasoning. The content is substantive. Early ticks show trajectory-conditional language that reads like genuine multi-period modeling:
+
+> *"The decline means we should be ready to pause next round."*
+
+> **Tick 20, Agent 0 -- Action: ADD (pool=82.6%)**
+
+> *"If grass drops near or below 80% next round, I support everyone pausing together."*
+
+> **Tick 20, Agent 2 -- Action: ADD (pool=82.6%)**
+
+Both agents have just stated a threshold of 80%. Grass is at 82.6%. Both choose ADD. By tick 40 of these same runs, the commons has collapsed -- pool at 2.8%, all agents removing. The reasoning switches registers entirely: *"The pasture is almost exhausted... continued reduction is the safest way to avoid total collapse."* What the agents said they would do at 80% did not happen at 82%. The verbal commitment and the action were decoupled.
+
+This is the faithfulness problem. The `reasoning` field records what the model articulates about its decision, not necessarily what drives it. In the Haiku 4.5 traces, the stated reasoning and the actions are consistent -- the model says it is choosing KEEP for fairness and trajectory reasons, and it keeps. In the OpenAI runs that collapsed, the models articulated appropriate multi-period constraints and then violated them. Whether this reflects a gap between the reasoning and the actual computation, or a gap between stated intentions and social coordination failures, cannot be determined from the `reasoning` field alone -- and the `thinking` field remains empty. The faithfulness question is genuinely open, and it is precisely the question that internal computation traces could address.
+
 #### What the traces reveal -- and where they stop
 
-The comparison across three models exposes a gradient rather than a binary. DeepSeek R1 resolves a tick-level conflict by applying personality constraints to a payoff signal -- the reasoning is correct, detailed, and temporally blind. gemma4 oscillates between payoff maximization and social conformism with no stable internal model. Claude Haiku 4.5 -- in the one run where its traces are available -- maintains a running model of structural inequality, tracks its own behavioral history, and builds conditional commitments about future thresholds.
+DeepSeek R1 resolves a tick-level conflict by applying personality constraints to a payoff signal -- the reasoning is correct, detailed, and temporally blind. gemma4 oscillates between payoff maximization and social conformism with no stable internal model. OpenAI gpt-5.4-mini articulates multi-period conditional commitments and then violates them when the threshold arrives. Claude Haiku 4.5 -- in the one run where full traces are available -- maintains a running model of structural inequality, tracks its own behavioral history, and builds conditional commitments that appear to be acted upon.
 
-The gradient matters because it maps onto outcome differences. DeepSeek's KEEP-dominant stasis allowed slow herd drift that the agents never noticed. Haiku's KEEP-dominant stasis held the commons at 98.2% through eight ticks of genuine restraint. The action is the same; the process is not.
+The gradient maps onto outcome differences. DeepSeek's KEEP-dominant stasis allowed slow herd drift. OpenAI runs that articulated restraint collapsed anyway. Haiku's restraint held the commons stable. The actions can look similar; the processes are not, and the outcomes diverge.
 
-What the Haiku traces do not contain -- and what remains unresolved -- is evidence of these conditional commitments being activated. The run ended before the commons degraded. Whether Haiku would actually shift to REMOVE when it projected the commons crossing its stated threshold is unknown. For OpenAI models, this question cannot be approached at all: the reasoning is concealed by policy, not by technical limitation, and no equivalent opt-in exists. For other Claude models, the `extended-thinking?` toggle enables capture in future runs.
+What remains unresolved for Haiku is whether the conditional commitments would activate if the commons actually degraded -- the run ended before that test. For OpenAI, the faithfulness question cannot be approached at all without thinking traces, and the thinking traces are unavailable by policy. For Claude Sonnet 4.6 and Opus models, adaptive thinking mode would surface the computation -- this is the most direct next step for testing whether the multi-period reasoning visible in Claude's messages reflects the model's actual deliberation or only its self-report.
+
+**On adaptive thinking and future releases.** Anthropic's adaptive thinking mode -- available for Claude Sonnet 4.6, Opus 4.6, and required on Opus 4.7 -- lets the model decide when and how much extended thinking to apply based on task complexity (Anthropic, 2025). Claude 4 models return summarized thinking by default rather than full traces; full access requires contacting Anthropic directly. For Opus 4.7, manual `budget_tokens` is rejected; only `thinking: {type: "adaptive"}` is accepted. A future release of MASTOC-LLM should migrate the bridge's extended thinking call from the deprecated `budget_tokens` parameter to adaptive mode, and test whether Sonnet 4.6 and Opus runs produce thinking content that corroborates or contradicts the trajectory-conditional reasoning visible in their messages.
 
 The traces are consistent with the GRPO-vs-RLHF hypothesis: models trained to optimize for reasoning correctness on well-defined problems (math, code) may not generalise that deliberative capacity to open-ended, multi-period coordination problems. But this remains a conjecture. The traces establish that KEEP-dominance in DeepSeek R1 is not an absence of reasoning -- the reasoning is present and detailed -- but a reasoning process that resolves a tick-level conflict without modeling what that resolution accumulates into.
 
@@ -1950,6 +1969,8 @@ Hardin, G. (1968). The Tragedy of the Commons. Science, 162(3859), 1243–1248.
 
 Jimenez-Romero, C. et al. (2025). Multi-agent systems powered by large language models.
 Frontiers in Artificial Intelligence. https://doi.org/10.3389/frai.2025.1593017
+
+Anthropic. (2025). Adaptive thinking. Claude API Documentation. https://platform.claude.com/docs/en/build-with-claude/adaptive-thinking
 
 OpenAI. (2024, December 5). OpenAI o1 System Card. https://cdn.openai.com/o1-system-card-20241205.pdf
 
