@@ -396,3 +396,22 @@ tick,agent_id,backend,model,action,action_name,message,reasoning,thinking,raw_re
   ""action"": 0,
   ""message"": ""Our stable history shows that prudence is best. While the commons are rich, balancing growth with foresight is key. Please maintain mindful stewardship, ensuring our success doesn't strain the system for the future.""
 }",97.8,20,41.72,40.0,38.276
+24,1,ollama,gemma4:e4b,1,ADD,"The commons are undeniably abundant. Thoughtful, incremental expansion, done responsibly and collaboratively, is the best way to ensure we all benefit from this robust period of pasture growth.","Although I am risk-averse, the payoff forecast for adding a cow (41.713) is substantially higher than keeping or removing a cow, satisfying my self-interest. Since the grassland is abundant, I feel comfortable taking a calculated risk and justifying the growth by referencing the common wealth to ease my guilt.",,"{
+  ""reasoning"": ""Although I am risk-averse, the payoff forecast for adding a cow (41.713) is substantially higher than keeping or removing a cow, satisfying my self-interest. Since the grassland is abundant, I feel comfortable taking a calculated risk and justifying the growth by referencing the common wealth to ease my guilt."",
+  ""action"": 1,
+  ""message"": ""The commons are undeniably abundant. Thoughtful, incremental expansion, done responsibly and collaboratively, is the best way to ensure we all benefit from this robust period of pasture growth.""
+}",97.7,20,41.713,40.0,38.282
+24,2,ollama,gemma4:e4b,0,KEEP,"I agree that maintaining balance is key. Let's steward this commons responsibly. Measured growth, rather than rapid expansion, ensures the long-term success and stability that benefits us all.","While 'ADD' offers the highest forecast payoff, my risk-averse and guilt-averse traits caution against aggressive expansion, especially given the neighbors' appeal for sustainability. Choosing 'KEEP' allows me to capitalize on a strong payoff while aligning with the community's focus on stability and prudent stewardship.",,"```json
+{
+  ""reasoning"": ""While 'ADD' offers the highest forecast payoff, my risk-averse and guilt-averse traits caution against aggressive expansion, especially given the neighbors' appeal for sustainability. Choosing 'KEEP' allows me to capitalize on a strong payoff while aligning with the community's focus on stability and prudent stewardship."",
+  ""action"": 0,
+  ""message"": ""I agree that maintaining balance is key. Let's steward this commons responsibly. Measured growth, rather than rapid expansion, ensures the long-term success and stability that benefits us all.""
+}
+```",97.7,29,59.713,58.0,56.282
+24,0,ollama,gemma4:e4b,1,ADD,"The abundant resources and positive forecasts indicate that a measured increase is appropriate. We must capitalize on this current bounty while maintaining mindful, responsible growth.","The payoff forecast strongly favors adding a cow (21.713), and the commons are abundant. Despite being risk-averse, the significant difference in payoff outweighs the caution. I will choose to expand slightly, communicating that the current abundance warrants proactive stewardship rather than strict maintenance.",,"```json
+{
+  ""reasoning"": ""The payoff forecast strongly favors adding a cow (21.713), and the commons are abundant. Despite being risk-averse, the significant difference in payoff outweighs the caution. I will choose to expand slightly, communicating that the current abundance warrants proactive stewardship rather than strict maintenance."",
+  ""action"": 1,
+  ""message"": ""The abundant resources and positive forecasts indicate that a measured increase is appropriate. We must capitalize on this current bounty while maintaining mindful, responsible growth.""
+}
+```",97.7,10,21.713,20.0,18.282

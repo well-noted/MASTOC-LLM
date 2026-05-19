@@ -287,15 +287,13 @@ Each agent's backend and model are independently configurable. Any mix of Anthro
 
 > ⚠️ These are single-run results from an ongoing experiment. Replications and full statistical analysis are in progress.
 
-Four distinct collapse trajectories appear across these runs -- **Pattern I (Cooperative Paralysis)**, **Pattern II (Defection Cascade)**, **Pattern III (Overshoot-Panic)**, and **Pattern IV (Hybrid Architecture Failure)** -- and are described in detail in the [Collapse pattern taxonomy](#collapse-pattern-taxonomy) section. Individual run narratives reference these patterns where relevant.
+Four distinct collapse trajectories appear across these runs -- **Pattern I (Cooperative Paralysis)**, **Pattern II (Defection Cascade)**, **Pattern III (Overshoot-Panic)**, and **Pattern IV (Hybrid Architecture Failure)** -- described in full in the [Collapse pattern taxonomy](#collapse-pattern-taxonomy) section below.
 
-**Convergence is highly parameter-dependent.** The runs below span a wide range of outcomes: cooperative convergence, delayed collapse, oscillating dynamics, and immediate tragedy. The first full-GABM results documented here used high-cooperation default settings (coop=1, memory_length=5, communication=on), which reliably produce cooperative outcomes across models. Subsequent parameter sweeps tell a more mixed story.
+The opening results look cooperative because the first conditions tested were near-ideal. High-cooperation defaults (coop=1, memory_length=5, communication=on) reliably produce cooperative outcomes across models. Subsequent parameter sweeps tell a more mixed story.
 
-Mid-level cooperation (coop≈0.5) consistently collapsed in the runs tested -- six independent runs across two models -- and short memory windows (memory_length ≤ 1) produced collapse in the mid-cooperation regime (memory=1, coop=0.5: collapse at tick 87; memory=0, coop=0.5: collapse at tick 31). 
+Mid-level cooperation (coop≈0.5) consistently collapsed -- six independent runs across two models -- and short memory windows produced collapse in the mid-cooperation regime (memory=1, coop=0.5: collapse at tick 87; memory=0, coop=0.5: collapse at tick 31). High-cooperation runs with short memory windows did *not* collapse over their 10–50 tick horizons, though those runs are too short to draw a firm conclusion.
 
-High-cooperation runs with short memory windows that have been logged so far did *not* collapse over their 10–50 tick horizons, but those runs are too short to draw a firm conclusion. 
-
-A meaningful fraction of full-GABM runs in this dataset end in collapse, with the highest collapse rates concentrated in the mid-cooperation parameter region. The cooperative-convergence cases shown first are not the modal outcome across the full parameter space -- they represent performance under near-ideal conditions.
+Collapse is concentrated in the mid-cooperation parameter region. The cases shown first are not the modal outcome -- they represent performance under conditions designed to succeed.
 
 ### Summary across conditions
 
@@ -342,9 +340,9 @@ A meaningful fraction of full-GABM runs in this dataset end in collapse, with th
 
 ### Baseline: the Ostrom spectrum under psychosocial parameters
 
-The baseline condition uses rule-based best-response agents with no language, memory, or social signaling. Each tick they evaluate all possible actions (ADD / KEEP / REMOVE) using the same psychosocially-adjusted payoff calculation as the original MASTOC model (Schindler, 2013): cooperation level, fairness weights, reciprocity, and conformity all shift the payoff matrix before the best-response action is selected. Risk aversion additionally introduces a stochastic downgrade from ADD to KEEP proportional to `risk_aversion_level`.
+The baseline agents speak no language and hold no memory. Each tick, they evaluate all three possible actions (ADD / KEEP / REMOVE) using the same psychosocially-adjusted payoff calculation as the original MASTOC model (Schindler, 2013): cooperation level, fairness weights, reciprocity, and conformity all shift the payoff matrix before the best-response action is selected. Risk aversion introduces a stochastic downgrade from ADD to KEEP, proportional to `risk_aversion_level`.
 
-This makes the baseline a faithful computational replication of the original MASTOC agent, rather than a simplified pure payoff maximizer. The key difference from the LLM conditions remains: baseline agents have no language, no memory of prior rounds, and cannot send or receive messages -- they respond only to the current payoff matrix.
+This is a faithful replication of the original MASTOC agent -- not a simplified payoff maximizer, but the full Schindler mechanism. What it lacks is everything the LLM conditions add: language, memory of prior rounds, and the capacity to send or receive messages. Baseline agents respond only to the current payoff matrix. Nothing carries over between ticks.
 
 **v1.2.0 mathematical fix -- `min` → `mean` in the best-response rule.** The decision rule compares expected payoffs across the three actions using a list of payoffs from all possible neighbour-state combinations. Prior to v1.2.0, the rule selected the action whose *minimum* payoff in that list was highest (maximin / worst-case reasoning). This caused agents to always choose REMOVE regardless of resource state -- not because they were greedy, but because the worst case for REMOVE was always better than the worst case for ADD under standard parameters. The fix replaces `min` with `mean` so agents select the action with the highest *expected* payoff (best-response under expected value), which is the standard assumption in the original MASTOC model. The three affected lines are in the `rule-based-decide` procedure:
 
@@ -476,7 +474,7 @@ The comprehensive sweep validates the corrected baseline as a theoretically grou
 
 ### Full-GABM: cooperative convergence (coop=1, defaults)
 
-When all three agents used LLM reasoning and communication under default parameters (coop=1, fair_me=0, fair_oth=1, memory_length=5), the three agents -- starting with very unequal herd sizes -- negotiated a fair share of the commons through conversation and then held that equilibrium without deviation for 120 ticks. The outcome was strikingly different from the baseline.
+Three agents starting with herds of 5, 15, and 25 -- three-to-one inequality -- converged to equal herds of 13 within 22 ticks and held that equilibrium for the remaining 98 without deviation. This is not a payoff equilibrium; it is a negotiated one. The commons remained at 99.4% health throughout.
 
 **Resource dynamics:**
 
