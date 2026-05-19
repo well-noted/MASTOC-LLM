@@ -397,7 +397,7 @@ Following the min→mean fix, a comprehensive sweep of the full psychosocial par
 
 #### Core stability rule: pos_r > neg_r
 
-The clearest finding of the sweep is a sharp, near-perfect stability criterion that emerges from the neg_r × pos_r full grid (Sweep C, 5×5, 500 runs):
+The clearest finding of the sweep is a sharp empirical regularity that emerges from the neg_r × pos_r full grid (Sweep C, 5×5, 500 runs):
 
 | | pos_r=0.00 | pos_r=0.25 | pos_r=0.50 | pos_r=0.75 | pos_r=1.00 |
 |---|---|---|---|---|---|
@@ -407,17 +407,19 @@ The clearest finding of the sweep is a sharp, near-perfect stability criterion t
 | **neg_r=0.75** | 100% | 100% | 100% | 100% | 0% |
 | **neg_r=1.00** | 100% | 100% | 100% | 100% | 100% |
 
-*Collapse rate (out of 20 runs per cell)*
+*Collapse rate (out of 20 runs per cell). Results are for n=3 agents; the exact threshold may differ at other group sizes.*
 
-The grid reveals a clean rule: **when `pos_r > neg_r`, collapse rate is 0%; when `pos_r ≤ neg_r`, collapse rate is 100%.** The only exception is the `neg_r=0, pos_r=0` corner (100% collapse) -- with both reciprocity mechanisms absent, agents have no social incentive beyond raw payoff maximisation, which drives extraction unchecked. The boundary is perfectly sharp at every tested combination: not a gradual transition but a discrete regime boundary.
+Across all 25 tested combinations, collapse rate is 0% whenever `pos_r > neg_r` and 100% whenever `pos_r ≤ neg_r`. The regularity is consistent with the payoff structure but should be understood as an empirical finding for this model configuration rather than a general theorem.
 
-This is mathematically grounded. The code computes reciprocity adjustments for each candidate action before the agent picks the best-response. Letting *d*⁺ = number of neighbours who added last tick and *d*⁻ = number who removed:
+**Why the formula is consistent with this boundary.** The code computes reciprocity adjustments for each candidate action before the agent picks the best-response. Letting *d*⁺ = number of neighbours who added last tick and *d*⁻ = number who removed:
 
 - **REMOVE** (xi = −1) gains: `payoff × pos_r × (d⁻ + 0.5 × d°) / (n−1)` — cooperative restraint is rewarded when neighbours also restrained, scaled by pos_r.
 - **ADD** (xi = +1) gains: `payoff × neg_r × (d⁺ + 0.5 × d°) / (n−1)` — defection is rewarded when neighbours also defected, scaled by neg_r.
 - **KEEP** (xi = 0) gains the average of both terms.
 
-When `pos_r > neg_r`, the REMOVE bonus exceeds the ADD bonus at any given neighbour-state distribution: cooperation-when-others-cooperate is more profitable than defection-when-others-defect. The commons locks into a removing/keeping equilibrium. When `pos_r ≤ neg_r`, the ADD bonus dominates and agents enter a race-to-ADD spiral. The `neg_r=0, pos_r=0` corner collapses because no reciprocity adjustment acts on either action, leaving agents with raw payoff maximisation, which under this payoff structure always favours adding.
+When `pos_r > neg_r`, the REMOVE bonus exceeds the ADD bonus at any given neighbour-state distribution: cooperation-when-others-cooperate is more profitable than defection-when-others-defect. The commons converges toward a removing/keeping equilibrium. When `pos_r ≤ neg_r`, the ADD bonus dominates and agents enter a race-to-ADD spiral.
+
+**The `neg_r=0, pos_r=0` corner** deserves a separate note: this is not a boundary case but a structurally distinct regime. With both reciprocity terms zero, agents evaluate actions on raw payoff alone. The base payoff for ADD is `(ki + 1) × P − C`, for KEEP is `ki × P − C`. ADD beats KEEP whenever `P > C` — i.e., whenever the price of livestock `P` exceeds the per-cow grazing cost `C`. Under the model's standard parameters this holds as long as the commons is healthy, so agents always ADD until the commons collapses. This is the classical tragedy-of-the-commons result, and it is analytically derivable rather than merely empirical.
 
 #### neg_r threshold scan (Sweep A, pos_r=1.0)
 
@@ -449,12 +451,12 @@ Conformity is consequential only in the intermediate reciprocity zone:
 | 0.5 | 0.25 | 0% | Still stable |
 | 0.5 | 0.50 | 20% | Conformity starts amplifying instability |
 | 0.5 | 0.75 | **35%** | Peak instability amplification |
-| 0.5 | 1.00 | 20% | Slight reduction (full herd-matching suppresses extremes) |
+| 0.5 | 1.00 | 20% | Slight reduction at full conformity |
 | 1.0 | 0.00 | 100% | Full collapse |
 | 1.0 | 0.50 | 90% | Partial mitigation |
-| 1.0 | 1.00 | 75% | Strongest mitigation -- conformity tempers retaliation spiral |
+| 1.0 | 1.00 | 75% | Strongest mitigation |
 
-At neg_r=0.5 (the transition zone), conformity pushes runs that would otherwise stabilise into collapse by pulling agents toward the mean herd size, which in a retaliation-prone environment tends to be the removing majority. Paradoxically, at neg_r=1.0 (full retaliation), high conformity slightly reduces collapse: when conformity is so strong that agents match the herd regardless of payoffs, it partially suppresses the ADD impulse that would otherwise spike before collapse.
+The conformity mechanism rewards matching the **historically most common action** across all agents and all elapsed ticks: `add-conformity = conformity-level × payoff × (fraction of past actions that were xi)`. The action history is cumulative from tick 0, so early-run dynamics matter disproportionately. At neg_r=0.5, positive reciprocity is just sufficient to sustain equilibrium without conformity. Adding conformity means that any early ADD decisions in the shared history generate a matching bonus that can tip marginal runs toward collapse — which is why collapse rises from 0% (conf=0) to 35% (conf=0.75), then partially retreats to 20% at conf=1.0 (where the conformity pressure is so strong that it eventually locks in whichever regime establishes early). At neg_r=1.0, all runs collapse without conformity, but high conformity provides a small counter-force: because the action history begins empty, early ticks carry no conformity pressure toward ADD, giving the pos_r mechanism a brief window before the neg_r spiral takes hold. This slightly reduces collapse (100% → 75%) but cannot overcome the regime.
 
 #### Starting grassland doesn't change the qualitative regime (Sweep F)
 
@@ -468,7 +470,7 @@ Starting from a degraded commons (50% grassland) does not change agent behaviour
 
 #### Summary
 
-The comprehensive sweep validates the corrected baseline as a theoretically grounded Ostrom instrument. Outcome is determined primarily by the **balance between positive and negative reciprocity** (`pos_r` vs `neg_r`), not by cooperation level, risk aversion, or starting resource state. Conformity matters only in the intermediate neg_r zone (0.5–0.75). The stability rule `pos_r > neg_r` maps directly onto Ostrom's (1990) account: when the social reward for restraint exceeds the social reward for retaliation, commons governance succeeds; when it does not, tragedy follows.
+The comprehensive sweep validates the corrected baseline as a theoretically grounded Ostrom instrument. Within this model configuration (n=3 agents, standard payoff parameters, 120-tick runs), outcome is determined primarily by the **balance between positive and negative reciprocity** (`pos_r` vs `neg_r`): cooperation level, risk aversion, and starting resource state are secondary. Conformity matters only in the intermediate neg_r zone where the two reciprocity mechanisms are in competition. The empirical regularity `pos_r > neg_r → stable` is consistent with Ostrom's (1990) account — when the social reward for restraint exceeds the social reward for retaliation, commons governance succeeds — though a formal proof of the boundary condition for this payoff structure remains a direction for future analytical work.
 
 ---
 
