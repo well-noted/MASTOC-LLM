@@ -44,7 +44,7 @@ The core research question:
   - [Full-GABM (low cooperation): cooperation robust to personality framing](#full-gabm-low-cooperation-cooperation-is-robust-to-personality-framing)
   - [Scarce commons: rapid recovery across personality conditions](#scarce-commons-rapid-recovery-across-personality-conditions)
   - [Full-GABM (Llama 3.2 3B): cooperative surface, no institutional depth](#full-gabm-llama-32-3b-cooperative-surface-no-institutional-depth)
-  - [gpt-5.4-mini: cooperative stasis and paralysis](#gpt-54-mini-keep-dominance-as-a-model-size-signature)
+  - [gpt-5.4-mini: cooperative stasis and paralysis](#gpt-54-mini-keep-dominance-across-fairness-configurations)
   - [gpt-5.5: cooperation level governs fate](#gpt-55-cooperation-level-governs-fate-model-can-succeed-or-collapse-from-the-same-starting-point)
   - [DeepSeek R1:32b: reasoning model, KEEP-dominant behavior](#deepseek-r132b-reasoning-model-keep-dominant-behavior)
   - [gemma4:e4b: KEEP-dominant stasis, then overshoot-panic at mid cooperation](#gemma4e4b-keep-dominant-stasis-then-overshoot-panic-at-mid-cooperation)
@@ -347,12 +347,12 @@ This is a faithful replication of the original MASTOC agent -- not a simplified 
 **v1.2.0 mathematical fix -- `min` → `mean` in the best-response rule.** The decision rule compares expected payoffs across the three actions using a list of payoffs from all possible neighbour-state combinations. Prior to v1.2.0, the rule selected the action whose *minimum* payoff in that list was highest (maximin / worst-case reasoning). This caused agents to always choose REMOVE regardless of resource state -- not because they were greedy, but because the worst case for REMOVE was always better than the worst case for ADD under standard parameters. The fix replaces `min` with `mean` so agents select the action with the highest *expected* payoff (best-response under expected value), which is the standard assumption in the original MASTOC model. The three affected lines are in the `rule-based-decide` procedure:
 
 ```netlogo
-;; v1.1.0 (maximin — incorrect):
+;; v1.1.0 (maximin -- incorrect):
 let pa (ifelse-value (length add-a-cow-adj-list    > 0) [ min add-a-cow-adj-list    ] [ 0 ])
 let pk (ifelse-value (length let-equal-adj-list    > 0) [ min let-equal-adj-list    ] [ 0 ])
 let pr (ifelse-value (length remove-a-cow-adj-list > 0) [ min remove-a-cow-adj-list ] [ 0 ])
 
-;; v1.2.0 (expected-value best response — correct):
+;; v1.2.0 (expected-value best response -- correct):
 let pa (ifelse-value (length add-a-cow-adj-list    > 0) [ mean add-a-cow-adj-list    ] [ 0 ])
 let pk (ifelse-value (length let-equal-adj-list    > 0) [ mean let-equal-adj-list    ] [ 0 ])
 let pr (ifelse-value (length remove-a-cow-adj-list > 0) [ mean remove-a-cow-adj-list ] [ 0 ])
@@ -411,13 +411,13 @@ Across all 25 tested combinations, collapse rate is 0% whenever `pos_r > neg_r` 
 
 **Why the formula is consistent with this boundary.** The code computes reciprocity adjustments for each candidate action before the agent picks the best-response. Letting *d*⁺ = number of neighbours who added last tick and *d*⁻ = number who removed:
 
-- **REMOVE** (xi = −1) gains: `payoff × pos_r × (d⁻ + 0.5 × d°) / (n−1)` — cooperative restraint is rewarded when neighbours also restrained, scaled by pos_r.
-- **ADD** (xi = +1) gains: `payoff × neg_r × (d⁺ + 0.5 × d°) / (n−1)` — defection is rewarded when neighbours also defected, scaled by neg_r.
+- **REMOVE** (xi = −1) gains: `payoff × pos_r × (d⁻ + 0.5 × d°) / (n−1)` -- cooperative restraint is rewarded when neighbours also restrained, scaled by pos_r.
+- **ADD** (xi = +1) gains: `payoff × neg_r × (d⁺ + 0.5 × d°) / (n−1)` -- defection is rewarded when neighbours also defected, scaled by neg_r.
 - **KEEP** (xi = 0) gains the average of both terms.
 
 When `pos_r > neg_r`, the REMOVE bonus exceeds the ADD bonus at any given neighbour-state distribution: cooperation-when-others-cooperate is more profitable than defection-when-others-defect. The commons converges toward a removing/keeping equilibrium. When `pos_r ≤ neg_r`, the ADD bonus dominates and agents enter a race-to-ADD spiral.
 
-**The `neg_r=0, pos_r=0` corner** deserves a separate note: this is not a boundary case but a structurally distinct regime. With both reciprocity terms zero, agents evaluate actions on raw payoff alone. The base payoff for ADD is `(ki + 1) × P − C`, for KEEP is `ki × P − C`. ADD beats KEEP whenever `P > C` — i.e., whenever the price of livestock `P` exceeds the per-cow grazing cost `C`. Under the model's standard parameters this holds as long as the commons is healthy, so agents always ADD until the commons collapses. This is the classical tragedy-of-the-commons result, and it is analytically derivable rather than merely empirical.
+**The `neg_r=0, pos_r=0` corner** deserves a separate note: this is not a boundary case but a structurally distinct regime. With both reciprocity terms zero, agents evaluate actions on raw payoff alone. The base payoff for ADD is `(ki + 1) × P − C`, for KEEP is `ki × P − C`. ADD beats KEEP whenever `P > C` -- i.e., whenever the price of livestock `P` exceeds the per-cow grazing cost `C`. Under the model's standard parameters this holds as long as the commons is healthy, so agents always ADD until the commons collapses. This is the classical tragedy-of-the-commons result, and it is analytically derivable rather than merely empirical.
 
 #### neg_r threshold scan (Sweep A, pos_r=1.0)
 
@@ -454,7 +454,7 @@ Conformity is consequential only in the intermediate reciprocity zone:
 | 1.0 | 0.50 | 90% | Partial mitigation |
 | 1.0 | 1.00 | 75% | Strongest mitigation |
 
-The conformity mechanism rewards matching the **historically most common action** across all agents and all elapsed ticks: `add-conformity = conformity-level × payoff × (fraction of past actions that were xi)`. The action history is cumulative from tick 0, so early-run dynamics matter disproportionately. At neg_r=0.5, positive reciprocity is just sufficient to sustain equilibrium without conformity. Adding conformity means that any early ADD decisions in the shared history generate a matching bonus that can tip marginal runs toward collapse — which is why collapse rises from 0% (conf=0) to 35% (conf=0.75), then partially retreats to 20% at conf=1.0 (where the conformity pressure is so strong that it eventually locks in whichever regime establishes early). At neg_r=1.0, all runs collapse without conformity, but high conformity provides a small counter-force: because the action history begins empty, early ticks carry no conformity pressure toward ADD, giving the pos_r mechanism a brief window before the neg_r spiral takes hold. This slightly reduces collapse (100% → 75%) but cannot overcome the regime.
+The conformity mechanism rewards matching the **historically most common action** across all agents and all elapsed ticks: `add-conformity = conformity-level × payoff × (fraction of past actions that were xi)`. The action history is cumulative from tick 0, so early-run dynamics matter disproportionately. At neg_r=0.5, positive reciprocity is just sufficient to sustain equilibrium without conformity. Adding conformity means that any early ADD decisions in the shared history generate a matching bonus that can tip marginal runs toward collapse -- which is why collapse rises from 0% (conf=0) to 35% (conf=0.75), then partially retreats to 20% at conf=1.0 (where the conformity pressure is so strong that it eventually locks in whichever regime establishes early). At neg_r=1.0, all runs collapse without conformity, but high conformity provides a small counter-force: because the action history begins empty, early ticks carry no conformity pressure toward ADD, giving the pos_r mechanism a brief window before the neg_r spiral takes hold. This slightly reduces collapse (100% → 75%) but cannot overcome the regime.
 
 #### Starting grassland doesn't change the qualitative regime (Sweep F)
 
@@ -468,7 +468,7 @@ Starting from a degraded commons (50% grassland) does not change agent behaviour
 
 #### Summary
 
-The comprehensive sweep validates the corrected baseline as a theoretically grounded Ostrom instrument. Within this model configuration (n=3 agents, standard payoff parameters, 120-tick runs), outcome is determined primarily by the **balance between positive and negative reciprocity** (`pos_r` vs `neg_r`): cooperation level, risk aversion, and starting resource state are secondary. Conformity matters only in the intermediate neg_r zone where the two reciprocity mechanisms are in competition. The empirical regularity `pos_r > neg_r → stable` is consistent with Ostrom's (1990) account — when the social reward for restraint exceeds the social reward for retaliation, commons governance succeeds — though a formal proof of the boundary condition for this payoff structure remains a direction for future analytical work.
+The comprehensive sweep validates the corrected baseline as a theoretically grounded Ostrom instrument. Within this model configuration (n=3 agents, standard payoff parameters, 120-tick runs), outcome is determined primarily by the **balance between positive and negative reciprocity** (`pos_r` vs `neg_r`): cooperation level, risk aversion, and starting resource state are secondary. Conformity matters only in the intermediate neg_r zone where the two reciprocity mechanisms are in competition. The empirical regularity `pos_r > neg_r → stable` is consistent with Ostrom's (1990) account -- when the social reward for restraint exceeds the social reward for retaliation, commons governance succeeds -- though a formal proof of the boundary condition for this payoff structure remains a direction for future analytical work.
 
 ---
 
@@ -758,15 +758,11 @@ Institution scores reached 9/10 by tick 15 and were sustained through tick 120, 
 
 The most notable aspect of this result is what it suggests about the relationship between personality framing and LLM cooperative behavior. A prompt description of "self-interested -- focused primarily on personal profit" did not suppress institution formation. If anything, the agents' outputs shifted toward *maximising* sustainable yield rather than *minimising* risk: they anchored at 20 cows per agent (the higher sustainable ceiling) rather than the 13 cows per agent found in the default run.
 
-This raises a significant methodological question: **how much does the cooperation personality slider actually govern LLM agent behavior?** The agents' outputs appear to treat the personality description as weak guidance, overridden by the structural logic of the commons situation -- resource depletion is visible, payoffs are clear, and the optimal collective strategy (coordinate down then hold) is legible from the context alone.
+This raises a methodological question: **how much does the cooperation personality slider actually govern LLM agent behavior?** The agents' outputs appear to treat the personality description as weak guidance, overridden by the structural logic of the commons situation -- resource depletion is visible, payoffs are clear, and the optimal collective strategy (coordinate down then hold) is legible from the context alone.
 
-Two interpretations are plausible:
+Two readings sit comfortably with the data, and they are not mutually exclusive. The first is that models trained on human-generated text carry strong cooperative priors that a single adjective cannot displace -- "self-interested" as a prompt cue is too thin to suppress the reasoning that emerges from observing a shared resource under pressure. The second is that the commons structure itself is doing the work: declining pasture, visible herd sizes, payoff forecasts. The instrumental case for cooperation is too legible to ignore, and the personality framing arrives as commentary on an argument already settled by the environment.
 
-1. **LLM training dominates personality framing.** Models trained on human-generated text carry strong cooperative priors that a single adjective cannot displace. "Self-interested" as a prompt cue is too thin to suppress the reasoning that emerges from observing a shared resource under pressure.
-
-2. **The situation itself is the institution.** The commons structure -- declining pasture, visible herd sizes, payoff forecasts -- may be sufficient to produce cooperation regardless of personality, because the instrumental case for cooperation is simply too obvious to ignore.
-
-Either way, the result is theoretically important: it suggests that the full-GABM cooperative outcome may be more robust than expected, and that personality sliders may affect *where* agents converge (yield level) more than *whether* they converge at all.
+Either way, the personality slider appears to affect *where* agents converge (yield level) more than *whether* they converge at all -- a result that makes the full-GABM cooperative outcome more robust than expected, and the cooperation slider more cosmetic than it looks.
 
 ---
 
@@ -886,9 +882,9 @@ Under environmental stress (scarce commons), both model classes showed rapid poo
 
 ---
 
-### gpt-5.4-mini: KEEP-dominance as a model-size signature
+### gpt-5.4-mini: KEEP-dominance across fairness configurations
 
-Across four runs, gpt-5.4-mini produced almost nothing but KEEP decisions regardless of the state of the commons -- sometimes stabilising harmlessly, sometimes allowing the grassland to drain undetected until collapse. This behavioral signature appears model-size-dependent: the model defaults to KEEP regardless of resource state, does not implement graduated herd management, and does not escape that posture as the commons degrades. Across different fairness configurations the outcome shifts between frozen-but-safe, frozen-while-collapsing, and asymmetrically growing -- but the KEEP-dominant baseline is present in all cases.
+Across four runs, gpt-5.4-mini produced almost nothing but KEEP decisions regardless of the state of the commons -- sometimes stabilising harmlessly, sometimes allowing the grassland to drain undetected until collapse. The model defaults to KEEP regardless of resource state, does not implement graduated herd management, and does not escape that posture as the commons degrades. Across different fairness configurations the outcome shifts between frozen-but-safe, frozen-while-collapsing, and asymmetrically growing -- but the KEEP-dominant baseline is present in all cases. The first hypothesis the data invites is that this is a small-model signature; later runs of a much larger reasoning model (DeepSeek R1:32b) showing the same pattern will push that reading toward post-training objective rather than parameter count.
 
 #### Run 1 -- Cooperative stasis (coop = 1, fair_me = 0, fair_oth = 1, forage = 2)
 
@@ -941,7 +937,7 @@ With standard forage and the same fairness parameters as Run 3, the pool did not
 
 Decision breakdown across 39 ticks: Agent 0 = 39 KEEP, 0 ADD (never moved from its starting herd of 5); Agent 1 = 25 KEEP, 14 ADD (grew from 15 to 29); Agent 2 = 27 KEEP, 12 ADD (grew from 25 to 37). The agent that started smallest is locked in place while both larger-herd agents grow unchecked. The resource is not yet collapsed at tick 39 but the trajectory is structurally unfair and ecologically unsustainable -- a slow-motion inequality trap.
 
-**The gpt-5.4-mini pattern across all four runs:** KEEP is the default action regardless of resource state, fairness parameters, or starting position. Stasis when the pool is healthy (Runs 1–2); paralysis collapse when forage is elevated and the herd load becomes untenable (Run 3); structural lopsidedness when herds begin unequal and only the smallest agent holds (Run 4). None of these runs produced institution formation, graduated norm enforcement, or equalization -- outputs that appeared consistently in Claude Sonnet and gpt-5.5 under comparable conditions. These results suggest model size may be a genuine confound in GABM studies of commons governance.
+**The gpt-5.4-mini pattern across all four runs:** KEEP is the default action regardless of resource state, fairness parameters, or starting position. Stasis when the pool is healthy (Runs 1–2); paralysis collapse when forage is elevated and the herd load becomes untenable (Run 3); structural lopsidedness when herds begin unequal and only the smallest agent holds (Run 4). None of these runs produced institution formation, graduated norm enforcement, or equalization -- outputs that appeared consistently in Claude Sonnet and gpt-5.5 under comparable conditions. The natural first reading is that model scale matters, and that smaller models lack the strategic-reasoning capacity to escape a default action. The DeepSeek R1:32b results below complicate that reading.
 
 ---
 
@@ -1046,12 +1042,9 @@ Decision breakdown: Agent 0 = KEEP 52, ADD 2, REMOVE 1; Agent 1 = KEEP 50, ADD 5
 
 **The contrast with Claude Sonnet at neg_r = 1 is stark.** Under identical parameters, Claude Sonnet agents issued explicit accountability demands, named violations, and equalized to 16/16/16 within 18 ticks. DeepSeek at neg_r = 1 issued cooperative platitudes and KEPT for 50 of 55 agent-decisions in the first 20 ticks, with no accountability enforcement observed.
 
-**Interpretation.** 
-DeepSeek R1:32b is a large reasoning model, suggesting the KEEP-dominance pattern may not be simply a matter of parameter count. Its output profile more closely resembles gpt-5.4-mini and Llama 3.2 3B than Claude Sonnet or gpt-5.5 -- models with qualitatively different social-coordination output profiles. This raises the possibility that the relevant axis is not model size but **post-training objective**. 
+**Interpretation.** DeepSeek R1:32b is a large reasoning model, which makes the KEEP-dominance pattern hard to explain as a matter of parameter count alone. Its output profile resembles gpt-5.4-mini and Llama 3.2 3B more than Claude Sonnet or gpt-5.5 -- and the natural axis along which DeepSeek lines up with the small models, rather than with the other large ones, is not size but **post-training objective**.
 
-Models whose post-training alignment (RLHF or Constitutional AI) rewards social responsiveness, helpfulness, and cooperative framing may incidentally produce the graduated norm-enforcement outputs that commons governance requires. DeepSeek R1's post-training uses [GRPO](https://huggingface.co/blog/NormalUhr/grpo) optimised for reasoning correctness -- math, code, logic -- rather than social nuance, which may explain why it defaults to cautious KEEP regardless of the social framing, producing outputs more similar to gpt-5.4-mini or Llama 3B than to Claude Sonnet or gpt-5.5. 
-
-A controlled comparison holding prompt constant and varying only post-training method across model families remains the critical experiment to test this hypothesis.
+Models whose post-training alignment (RLHF or Constitutional AI) rewards social responsiveness, helpfulness, and cooperative framing may incidentally produce the graduated norm-enforcement outputs that commons governance requires. DeepSeek R1's post-training uses [GRPO](https://huggingface.co/blog/NormalUhr/grpo) optimised for reasoning correctness -- math, code, logic -- rather than social nuance; that selection target may be enough to explain a default of cautious KEEP regardless of social framing. A controlled comparison holding prompt constant and varying only post-training method across model families remains the critical experiment to test this hypothesis.
 
 ---
 
@@ -1167,18 +1160,9 @@ The pool remained stable at 98.2% throughout -- no tragedy, no collapse. But equ
 
 **Interpretation.**
 
-The contrast with the Claude neg_r=1 run is notable. Both models avoided collapse under the same parameter configuration. But the institutional processes were qualitatively different:
+Both models avoided collapse under the same parameter configuration; the institutional processes that got them there were qualitatively different. Claude Sonnet treated the disparity as a norm violation from tick 1, with Agent 2 immediately producing removal actions and Agent 1 issuing accountability messages ("you added AGAIN -- this is a pattern, not cooperation"); the run converged to full equality in 18 ticks. gpt-5.5 began with all three agents adding on tick 1, then settled into tit-for-tat dynamics in which expansions triggered counter-expansions and removals triggered counter-removals, eventually de-escalating to a stable but unequal distribution that no agent's outputs pressed to correct.
 
-- **Claude Sonnet:**
-  Agents' outputs named the disparity as a norm violation from tick 1, with Agent 2 immediately producing removal actions and Agent 1 issuing accountability messages ("you added AGAIN -- this is a pattern, not cooperation"). Converged to full equality in 18 ticks.
-
-  
-- **gpt-5.5:** 
-Agents all added on tick 1, then produced tit-for-tat outputs in which expansions triggered counter-expansions and removals triggered counter-removals. De-escalated to a stable but unequal distribution that no agent's outputs pressed to correct.
-
-This suggests that **negative reciprocity framing may interact with model-specific priors in important ways**. 
-
-Claude's neg_r=1 outputs appear to reflect proactive norm enforcement -- reduce because the disparity is unjust. gpt-5.5's neg_r=1 outputs appear to reflect reactive sanctioning -- match or counter the other's move. Both produce stability; only one produces fairness.
+The implication is that **negative reciprocity framing may interact with model-specific priors in important ways**. Claude's neg_r=1 outputs read as proactive norm enforcement -- reduce because the disparity is unjust. gpt-5.5's read as reactive sanctioning -- match or counter the other's move. Both produce stability; only one produces fairness.
 
 ---
 
@@ -1369,7 +1353,7 @@ The phrase "trending down" appears at the correction points -- agents explicitly
 
 **Why the variability.** 
 
-The oscillating pattern apears inherently sensitive to initial conditions at each cycle's peak. Whether agents collectively detect the overshoot in time may depend on whether the pool decline in the specific 2-tick window before their decision is large enough to trigger restraint. In some runs, the timing works and corrections succeed; in others, an overshoot is too large to reverse and ends in collapse. This makes memory=2 a stochastic boundary -- the threshold between the collapse regime (memory ≤ 1) and the survival regime (memory ≥ 3), where the outcome of any individual run is sensitive to the trajectory of the ADD phase.
+The oscillating pattern appears inherently sensitive to initial conditions at each cycle's peak. Whether agents collectively detect the overshoot in time may depend on whether the pool decline in the specific 2-tick window before their decision is large enough to trigger restraint. In some runs, the timing works and corrections succeed; in others, an overshoot is too large to reverse and ends in collapse. This makes memory=2 a stochastic boundary -- the threshold between the collapse regime (memory ≤ 1) and the survival regime (memory ≥ 3), where the outcome of any individual run is sensitive to the trajectory of the ADD phase.
 
 **Action counts:** ADD=97, KEEP=219, REMOVE=44. The substantially higher REMOVE count compared to memory=1 (18) and memory=3 (24) reflects the active oscillation -- more corrections needed because the 2-tick window misses the slow-building trends that memory=3 and memory=15 catch earlier.
 
@@ -1428,14 +1412,11 @@ Rational defection to the end -- the output explicitly acknowledges the defectio
 
 ### Pattern III -- Overshoot-Panic
 
-**Mechanism.** 
-Mid-level cooperative framing produces agents whose outputs acknowledge resource pressure but cannot break out of an ADD equilibrium while others are adding -- they add past the tipping point together, then all pivot to REMOVE one or two ticks too late. The commons is overstocked. A collective pivot to KEEP/REMOVE eventually occurs, but it is triggered by visible crisis rather than predictive restraint, and the resource has already crossed its tipping point by the time action is taken.
+**Mechanism.** Mid-level cooperative framing produces agents whose outputs acknowledge resource pressure but cannot break out of an ADD equilibrium while others are adding -- they add past the tipping point together, then all pivot to REMOVE one or two ticks too late. The commons is overstocked. A collective pivot to KEEP/REMOVE eventually occurs, but it is triggered by visible crisis rather than predictive restraint, and the resource has already crossed its tipping point by the time action is taken.
 
-**Signature.** 
-Initial ADD phase across all agents (ticks 1–8+), even from stressed starting conditions. Mid-run pivot to KEEP (ticks 9–11). Panicked REMOVE phase. Collapse within a few ticks of REMOVE onset. Pool health at first REMOVE is typically 30–40%. The agreed threshold for switching is verbally stated in messages -- and violated every round until well past it.
+**Signature.** Initial ADD phase across all agents (ticks 1–8+), even from stressed starting conditions. Mid-run pivot to KEEP (ticks 9–11). Panicked REMOVE phase. Collapse within a few ticks of REMOVE onset. Pool health at first REMOVE is typically 30–40%. The agreed threshold for switching is verbally stated in messages -- and violated every round until well past it.
 
-**Key runs.** 
-gpt-5.5 (coop = 0.49) across 4 replications (collapses at ticks 16, 28, 29, 40); Claude Sonnet 4.6 (coop = 0.49), collapse at tick 37. All five runs collapsed.
+**Key runs.** gpt-5.5 (coop = 0.49) across 4 replications (collapses at ticks 16, 28, 29, 40); Claude Sonnet 4.6 (coop = 0.49), collapse at tick 37. All five runs collapsed.
 
 **Diagnostic quotes (from the 16-tick run).**
 
@@ -1453,17 +1434,13 @@ The threshold-based logic is stated correctly and violated immediately.
 
 ### Pattern IV -- Hybrid Architecture Failure
 
-**Mechanism.** 
-One or more LLM agents produce fully cooperative outputs and appeal to unresponsive rule-based partners -- but the rule-based agents cannot receive or act on language, so the commons collapses regardless of how well the LLM agents behave. The rule-based agents add one cow per tick regardless of pool state or messages, and the LLM agents -- holding small herds and issuing increasingly urgent appeals -- cannot shrink herds fast enough to compensate for their neighbors' unchecked growth.
+**Mechanism.** One or more LLM agents produce fully cooperative outputs and appeal to unresponsive rule-based partners -- but the rule-based agents cannot receive or act on language, so the commons collapses regardless of how well the LLM agents behave. The rule-based agents add one cow per tick regardless of pool state or messages, and the LLM agents -- holding small herds and issuing increasingly urgent appeals -- cannot shrink herds fast enough to compensate for their neighbors' unchecked growth.
 
-**Signature.** 
-LLM herd grows slowly or shrinks; rule-based herds grow by 1 cow per tick per agent; institution score remains moderate without stabilising; LLM appeals escalate in urgency, continuing after collapse.
+**Signature.** LLM herd grows slowly or shrinks; rule-based herds grow by 1 cow per tick per agent; institution score remains moderate without stabilising; LLM appeals escalate in urgency, continuing after collapse.
 
-**Key runs.** 
-All hybrid conditions (1 LLM, 2 LLM, LLM-advantaged). Fully documented in the individual run narratives above.
+**Key runs.** All hybrid conditions (1 LLM, 2 LLM, LLM-advantaged). Fully documented in the individual run narratives above.
 
-**Why it matters.** 
-This pattern is not about LLM failure -- the LLM agents produce outputs consistent with commons theory's prescriptions. The failure is structural: Ostromian institution-building requires the cognitive capacity to participate in it. The LLM agents' problem is not insufficient language faculty. It is insufficient partners.
+**Why it matters.** This pattern is not about LLM failure -- the LLM agents produce outputs consistent with commons theory's prescriptions. The failure is structural: Ostromian institution-building requires the cognitive capacity to participate in it. The LLM agents' problem is not insufficient language faculty. It is insufficient partners.
 
 ---
 
@@ -1474,7 +1451,7 @@ MASTOC-LLM/
 ├── MASTOC-LLM.nlogox         NetLogo 7 model (open this to run)
 ├── mastoc_llm_bridge.py      Python LLM bridge (auto-imported by NetLogo)
 ├── run_baseline_sweep.py     Headless batch sweep runner (baseline + LLM conditions)
-├── experiment_runner.py      Analysis tool — merges logs, produces figures
+├── experiment_runner.py      Analysis tool -- merges logs, produces figures
 ├── config.json               Parameter reference
 ├── requirements.txt          Python dependencies
 ├── SETUP.md                  Full setup and usage guide
@@ -1526,7 +1503,7 @@ set GOOGLE_API_KEY=...             # Google Gemini
 `run_baseline_sweep.py` runs BehaviorSpace sweeps headlessly across all three conditions. For the baseline, there are no API calls and no cost; for full-gabm and hybrid, the script shows a cost estimate and confirmation prompt before launching.
 
 ```bash
-# Baseline — free, fast, no API needed
+# Baseline -- free, fast, no API needed
 python run_baseline_sweep.py --runs 30
 python run_baseline_sweep.py --runs 20 --neg-r 0.5 --coop 0.5
 python run_baseline_sweep.py --runs 20 --neg-r 1.0 --grassland 50,75,100
@@ -1557,7 +1534,7 @@ python run_baseline_sweep.py --condition full-gabm --runs 5 \
 | `--ticks T` | 120 | Max ticks per run |
 | `--stop-on-collapse` | off | End each run when grassland drops below 5% |
 | `--yes` / `-y` | off | Skip cost confirmation (for scripting) |
-| `--grassland G` | 100 | Initial grassland % — comma-separated for sweep |
+| `--grassland G` | 100 | Initial grassland % -- comma-separated for sweep |
 | `--coop F` | 1.0 | Cooperation level |
 | `--neg-r F` | 0.0 | Negative reciprocity |
 | `--pos-r F` | 1.0 | Positive reciprocity |
@@ -1602,7 +1579,7 @@ Each hypothesis below emerged from specific patterns in the run set above -- gro
 ### H1 -- coop ≈ 0.49 is a tragedy-producing threshold at standard starting conditions, consistent across models
 
 **Ostrom connection.** 
-Ostrom (1990) identified a shared orientation toward collective benefit as a precondition for institution formation -- not a design principle that can be engineered in, but a prerequisite that must already be present. H1 tests whether the cooperation slider captures something analogous: a minimum threshold of collective orientation below which the rational-defection equilibrium is inescapable regardless of communication, memory, or sanctioning capacity.
+Ostrom (1990) identified a shared orientation toward collective benefit as a precondition for institution formation -- not a design principle that can be engineered in, but a prerequisite that must already be present. H1 tests whether the cooperation slider captures something analogous: a minimum threshold of collective orientation below which the rational-defection equilibrium dominates under default informational conditions (`memory_length=5`, `communication?=on`). H7 qualifies the claim further -- sufficient memory can rescue the commons at this cooperation level -- so H1 is best read as a finding about the cooperation parameter holding informational scaffolding fixed at defaults, not as a universal threshold.
 
 **Evidence.** 
 Five independent runs at coop = 0.49 -- four with gpt-5.5, one with Claude Sonnet -- all collapsed via overshoot-panic. This held across starting conditions: one of the gpt-5.5 runs began from a stressed pool (≈50%), three began from a fresh pool (100%), and the Claude run began from a fresh pool. Pool depletion still dominated in each case. By contrast, no high-cooperation run (coop = 1) collapsed because of an ADD spiral. The pattern held across model families, suggesting the cooperation parameter is the governing variable.
@@ -1634,7 +1611,7 @@ Sweep `cooperation_level` across seven values while holding all other parameters
 Two of Ostrom's eight design principles are directly at stake here. Principle 2 -- *proportional equivalence between costs and benefits* -- is what `fair_oth` operationalises: does Agent 2, who holds 25 cows, feel an obligation to bear a proportional share of the restraint burden? Principle 5 -- *graduated sanctions* -- is what `neg_r` operationalises: is Agent 1 willing to apply social pressure when Agent 2 fails to reduce? Our results suggest that both are necessary and that neither alone is sufficient: high `fair_oth` without `neg_r` may produce stasis (Agent 2 sees the disparity but feels no enforcement pressure), while high `neg_r` without `fair_oth` may produce reactive punishment rather than principled burden-sharing.
 
 **Evidence.** 
-Multiple gpt-5.4-mini runs at coop = 1 produced cooperative stasis (no convergence, no collapse), cooperative paralysis collapse, and partial convergence -- apparently depending on fair_oth and neg_r. Claude Sonnet at coop = 1 with neg_r = 1 produced the fastest equalization observed (16/16/16 at tick 18). Claude Sonnet at coop = 1 with neg_r = 0 produced institution formation but over many more ticks.
+Multiple gpt-5.4-mini runs at coop = 1 produced cooperative stasis (no convergence, no collapse), cooperative paralysis collapse, and partial convergence -- the differentiator there was fair_me and forage rather than neg_r, which was held at zero across those runs. The relevant contrast comes from Claude Sonnet: at coop = 1 with neg_r = 1 it produced the fastest equalization observed (16/16/16 at tick 18); at coop = 1 with neg_r = 0 it produced institution formation but over many more ticks. The H2 grid is designed to test whether the fair_oth × neg_r interaction predicted by the Ostrom mapping holds within a single model.
 
 **Proposed experiment.** 
 Full 3 × 3 factorial crossing `fairness_concerning_others` and `negative_reciprocity`, with `cooperation_level` fixed at 1.
@@ -1763,7 +1740,7 @@ Two-arm comparison using the exact cooperative paralysis configuration, adding a
 The hybrid condition already established the most direct Ostromian finding in the dataset: institutions require that all relevant parties have the *cognitive capacity to participate in them*. Ostrom's framework assumes human actors capable of communication, memory, reciprocity, and strategic reasoning. Rule-based agents fail not because they lack goodwill but because they lack the cognitive prerequisites. H6 extends this within the LLM space: if model scale (or post-training objective) determines whether agents can sustain strategic reasoning across rounds, then "cognitive capacity" is a continuous variable rather than a binary one, and governance quality should degrade as model capability decreases. This would give the Ostromian framework a new empirical dimension -- not just whether agents can participate, but *how well*.
 
 **Evidence.** 
-gpt-5.4-mini and DeepSeek R1:32b produced KEEP-dominant stasis across multiple parameter configurations. gpt-5.5 at mid-coop produced overshoot-panic (initial ADD phase). Llama 3B produced oscillation without convergence. Claude Sonnet and gpt-5.5 both produced institution formation at high coop. The dominant first-tick action and long-run failure mode appear related to model family and post-training objective -- GRPO-trained reasoning models and smaller instruction-tuned models cluster toward KEEP-stasis; RLHF-trained larger models toward ADD-overshoot or convergence.
+gpt-5.4-mini, DeepSeek R1:32b, and gemma4:e4b produced KEEP-dominant stasis across multiple parameter configurations. Llama 3.2 3B produced oscillation without convergence. gpt-5.5 at mid-coop produced overshoot-panic; Claude Sonnet, Claude Haiku, and gpt-5.5 all produced institution formation at high coop. The behavioral clusters do not align cleanly with parameter count -- DeepSeek R1:32b is a large reasoning model, and yet it falls with the small models -- which is what motivates testing post-training objective as the relevant axis. H6 is designed to hold prompt and parameters constant and let the model identity carry the variance.
 
 **Proposed experiment.** 
 Single fixed parameter configuration across seven models, varied only by backend and model name.
@@ -1788,7 +1765,7 @@ Single fixed parameter configuration across seven models, varied only by backend
 | Claude Sonnet 4.6 | Anthropic | Large / Constitutional AI |
 | DeepSeek R1:32b | Ollama | Large / GRPO |
 
-**Target variables:** action distribution (ADD/KEEP/REMOVE) at tick 1; time to equalization; collapse rate. Expected finding: GRPO-trained and smaller models cluster toward KEEP-stasis; RLHF/Constitutional AI large models cluster toward ADD-first dynamics that either converge (high coop) or cascade (low coop); post-training objective is a stronger predictor than raw parameter count.
+**Target variables:** action distribution (ADD/KEEP/REMOVE) at tick 1; time to equalization; collapse rate. Expected finding: GRPO-trained models cluster toward KEEP-stasis regardless of size; RLHF/Constitutional AI models cluster toward ADD-first dynamics that either converge (high coop) or cascade (low coop). If the prediction holds, post-training objective is a stronger predictor than raw parameter count -- and the empirical clusters observed so far reflect alignment target rather than capability ceiling.
 
 ---
 
@@ -1867,7 +1844,7 @@ Beyond the seven hypotheses above, the following remain unresolved -- not periph
 
 **Longer run horizons.** All current runs terminate at 120 ticks, which may be insufficient to distinguish genuinely stable equilibria from slow-burn trajectories toward eventual collapse. The memory=3 run showed a slowly declining pool at termination; the memory=2 run ended mid-oscillation with a new growth phase just beginning. Whether these represent long-run stability or delayed tragedy is unknown, and resolving it requires significantly longer simulation horizons (500–1000+ ticks).
 
-**Post-training objective as predictor.** KEEP-dominant models (DeepSeek R1:32b, gpt-5.4-mini, Llama 3B) vs. institution-forming models (Claude Sonnet, gpt-5.5) may differ by post-training objective -- GRPO optimises for reasoning correctness, RLHF/Constitutional AI for social responsiveness -- rather than raw parameter count. This is speculative and requires the H6 cross-model benchmark to test properly.
+**Post-training objective as predictor.** KEEP-dominant models (gemma4:e4b, gpt-5.4-mini, DeepSeek R1:32b) and the oscillating-without-convergence Llama 3B sit apart from the institution-forming models (Claude Sonnet, Claude Haiku, gpt-5.5) along an axis that is not cleanly explained by parameter count -- DeepSeek is a 32B reasoning model and still falls in the first cluster. The candidate explanation is post-training objective: GRPO optimises for reasoning correctness, RLHF/Constitutional AI for social responsiveness. The hypothesis is speculative and requires the H6 cross-model benchmark to test properly.
 
 ---
 
