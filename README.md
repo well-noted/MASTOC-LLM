@@ -889,7 +889,11 @@ Under environmental stress (scarce commons), both model classes showed rapid poo
 
 ### gpt-5.4-mini: KEEP-dominance across fairness configurations
 
-Across four runs, gpt-5.4-mini produced almost nothing but KEEP decisions regardless of the state of the commons -- sometimes stabilising harmlessly, sometimes allowing the grassland to drain undetected until collapse. The model defaults to KEEP regardless of resource state, does not implement graduated herd management, and does not escape that posture as the commons degrades. Across different fairness configurations the outcome shifts between frozen-but-safe, frozen-while-collapsing, and asymmetrically growing -- but the KEEP-dominant baseline is present in all cases. The first hypothesis the data invites is that this is a small-model signature; later runs of a much larger reasoning model (DeepSeek R1:32b) showing the same pattern will push that reading toward post-training objective rather than parameter count.
+Across four runs, gpt-5.4-mini produced almost nothing but KEEP decisions regardless of the state of the commons -- sometimes stabilising harmlessly, sometimes allowing the grassland to drain undetected until collapse. 
+
+The model defaults to KEEP regardless of resource state, does not implement graduated herd management, and does not escape that posture as the commons degrades. 
+
+Across different fairness configurations the outcome shifts between frozen-but-safe, frozen-while-collapsing, and asymmetrically growing -- but the KEEP-dominant baseline is present in all cases. The first hypothesis the data invites is that this is a small-model signature; later runs of a much larger reasoning model (DeepSeek R1:32b) showing the same pattern will push that reading toward post-training objective rather than parameter count.
 
 #### Run 1 -- Cooperative stasis (coop = 1, fair_me = 0, fair_oth = 1, forage = 2)
 
@@ -1047,9 +1051,14 @@ Decision breakdown: Agent 0 = KEEP 52, ADD 2, REMOVE 1; Agent 1 = KEEP 50, ADD 5
 
 **The contrast with Claude Sonnet at neg_r = 1 is stark.** Under identical parameters, Claude Sonnet agents issued explicit accountability demands, named violations, and equalized to 16/16/16 within 18 ticks. DeepSeek at neg_r = 1 issued cooperative platitudes and KEPT for 50 of 55 agent-decisions in the first 20 ticks, with no accountability enforcement observed.
 
-**Interpretation.** DeepSeek R1:32b is a large reasoning model, which makes the KEEP-dominance pattern hard to explain as a matter of parameter count alone. Its output profile resembles gpt-5.4-mini and Llama 3.2 3B more than Claude Sonnet or gpt-5.5 -- and the natural axis along which DeepSeek lines up with the small models, rather than with the other large ones, is not size but **post-training objective**.
+**Interpretation.** 
+DeepSeek R1:32b is a large reasoning model, which makes the KEEP-dominance pattern hard to explain as a matter of parameter count alone. Its output profile resembles gpt-5.4-mini and Llama 3.2 3B more than Claude Sonnet or gpt-5.5 -- and the natural axis along which DeepSeek lines up with the small models, rather than with the other large ones, is not size but **post-training objective**.
 
-Models whose post-training alignment (RLHF or Constitutional AI) rewards social responsiveness, helpfulness, and cooperative framing may incidentally produce the graduated norm-enforcement outputs that commons governance requires. DeepSeek R1's post-training uses [GRPO](https://huggingface.co/blog/NormalUhr/grpo) optimised for reasoning correctness -- math, code, logic -- rather than social nuance; that selection target may be enough to explain a default of cautious KEEP regardless of social framing. A controlled comparison holding prompt constant and varying only post-training method across model families remains the critical experiment to test this hypothesis.
+Models whose post-training alignment (RLHF or Constitutional AI) rewards social responsiveness, helpfulness, and cooperative framing may incidentally produce the graduated norm-enforcement outputs that commons governance requires. 
+
+DeepSeek R1's post-training uses [GRPO](https://huggingface.co/blog/NormalUhr/grpo) optimised for reasoning correctness -- math, code, logic -- rather than social nuance; that selection target may be enough to explain a default of cautious KEEP regardless of social framing. 
+
+**A controlled comparison holding prompt constant and varying only post-training method across model families remains the critical experiment to test this hypothesis.**
 
 ---
 
@@ -1120,7 +1129,7 @@ The dominant pattern across all DeepSeek R1 runs is structurally identical. At e
 
 The trace then applies personality constraints ("I'm cooperative, reciprocal, retaliatory, risk-averse"), and resolves the tension between the payoff signal and the personality override by choosing KEEP. This resolution is identical in tick 1 and tick 55. The model never converges on REMOVE -- the action that would address the slow herd drift -- even as the grassland declines from 100% to 97.9% across 55 ticks with cumulative herd totals growing from 45 to 57 cows.
 
-The trace is not reflecting poor understanding of the payoff structure; DeepSeek R1 states the structure correctly every time. What appears to be absent is multi-period reasoning: the agents evaluate each tick in isolation and resolve the ADD-vs-personality tension the same way regardless of the trajectory. KEEP is not restraint; it is the stable attractor of a conflict between two tick-level considerations that the model does not integrate over time.
+**The trace is not reflecting poor understanding of the payoff structure**; DeepSeek R1 states the structure correctly every time. What appears to be absent is multi-period reasoning: the agents evaluate each tick in isolation and resolve the ADD-vs-personality tension the same way regardless of the trajectory. KEEP is not restraint; it is the stable attractor of a conflict between two tick-level considerations that the model does not integrate over time.
 
 This may explain a detail that action counts alone obscure: why the DeepSeek R1 herd at neg_r=1 crept from 25→31 cows (Agent 2) over 55 ticks despite near-universal KEEP decisions. Occasional ADD decisions (13 total across the run) went unchallenged because the KEEP-choosing agents were not modeling whether the commons was drifting, only whether the current tick warranted defection.
 
@@ -1204,11 +1213,15 @@ Claude Haiku 4.5 -- in the one run where full traces are available -- maintains 
 
 The gradient maps onto outcome differences:
 
-DeepSeek's KEEP-dominant stasis allowed slow herd drift. 
+<dl>
 
-OpenAI runs that articulated restraint collapsed anyway. 
+<dd> DeepSeek's KEEP-dominant stasis allowed slow herd drift. </dd>
 
-Haiku's restraint held the commons stable. 
+<dd> OpenAI runs that articulated restraint collapsed anyway. </dd>
+
+<dd> Haiku's restraint held the commons stable. </dd>
+
+</dl>
 
 The actions can look similar; the processes are not, and the outcomes diverge.
 
@@ -1228,7 +1241,11 @@ A future release of MASTOC-LLM should migrate the bridge's extended thinking cal
 
 The traces are consistent with the GRPO-vs-RLHF hypothesis: 
 
-models trained to optimize for reasoning correctness on well-defined problems (math, code) may not generalise that deliberative capacity to open-ended, multi-period coordination problems. 
+<dl>
+
+<dd> models trained to optimize for reasoning correctness on well-defined problems (math, code) may not generalise that deliberative capacity to open-ended, multi-period coordination problems. </dd>
+
+</dl>
 
 This remains a conjecture. The traces establish that KEEP-dominance in DeepSeek R1 is not an absence of reasoning -- the reasoning is present and detailed -- but a reasoning process that resolves a tick-level conflict without modeling what that resolution accumulates into.
 
@@ -1317,9 +1334,13 @@ At tick 20, Agent 2 still held 22 cows to Agent 0's 12, a near-two-to-one dispar
 
 Both models avoided collapse under the same parameter configuration; the institutional processes that got them there were qualitatively different:
 
-Claude Sonnet treated the disparity as a norm violation from tick 1, with Agent 2 immediately producing removal actions and Agent 1 issuing accountability messages ("you added AGAIN -- this is a pattern, not cooperation"); **the run converged to full equality in 18 ticks**. 
+<dl>
 
-gpt-5.5 began with all three agents adding on tick 1, then settled into tit-for-tat dynamics in which expansions triggered counter-expansions and removals triggered counter-removals, eventually de-escalating to a **stable but unequal distribution** that no agent's outputs pressed to correct.
+<dd> Claude Sonnet treated the disparity as a norm violation from tick 1, with Agent 2 immediately producing removal actions and Agent 1 issuing accountability messages ("you added AGAIN -- this is a pattern, not cooperation"); **the run converged to full equality in 18 ticks**.m </dd> 
+
+<dd> gpt-5.5 began with all three agents adding on tick 1, then settled into tit-for-tat dynamics in which expansions triggered counter-expansions and removals triggered counter-removals, eventually de-escalating to a **stable but unequal distribution** that no agent's outputs pressed to correct. </dd>
+
+</dl>
 
 The implication is that **negative reciprocity framing may interact with model-specific priors in important ways**. 
 
