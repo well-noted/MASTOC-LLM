@@ -349,8 +349,8 @@ MASTOC-LLM targets NetLogo 7.0.4. The `.nlogox` format is not backward-compatibl
 If you use this model in your research, please cite:
 
 ```
-Bais, A. et al. (2023). MASTOC v1.1.0. CoMSES Computational Model Library.
-https://www.comses.net/codebases/2283/releases/1.1.0/
+Julia Schindler (2013, April 27). “MASTOC - A Multi-Agent System of the Tragedy Of The Commons” (Version 1.1.0). CoMSES Computational Model Library.
+Retrieved from: https://www.comses.net/codebases/2283/releases/1.1.0/
 
 Jimenez-Romero, C. et al. (2025). Multi-agent systems powered by large language models.
 Frontiers in Artificial Intelligence. https://doi.org/10.3389/frai.2025.1593017
