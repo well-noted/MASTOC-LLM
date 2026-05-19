@@ -339,9 +339,9 @@ to rule-based-decide
     ;; All sliders (cooperation, fairness, reciprocity, conformity) are now active:
     ;; calculate-payoff applies them before accumulating into the adj lists below.
     ;; Risk-aversion retains its original role: conservative agents downgrade ADD→KEEP.
-    let pa (ifelse-value (length add-a-cow-adj-list    > 0) [ min add-a-cow-adj-list    ] [ 0 ])
-    let pk (ifelse-value (length let-equal-adj-list    > 0) [ min let-equal-adj-list    ] [ 0 ])
-    let pr (ifelse-value (length remove-a-cow-adj-list > 0) [ min remove-a-cow-adj-list ] [ 0 ])
+    let pa (ifelse-value (length add-a-cow-adj-list    > 0) [ mean add-a-cow-adj-list    ] [ 0 ])
+    let pk (ifelse-value (length let-equal-adj-list    > 0) [ mean let-equal-adj-list    ] [ 0 ])
+    let pr (ifelse-value (length remove-a-cow-adj-list > 0) [ mean remove-a-cow-adj-list ] [ 0 ])
     let best-action 0
     let best-payoff pk
     if pa > best-payoff [ set best-action  1  set best-payoff pa ]

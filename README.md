@@ -339,11 +339,25 @@ A meaningful fraction of full-GABM runs in this dataset end in collapse, with th
 
 ---
 
-### Baseline: the tragedy unfolds -- and what it takes to stop it
+### Baseline: the Ostrom spectrum under psychosocial parameters
 
 The baseline condition uses rule-based best-response agents with no language, memory, or social signaling. Each tick they evaluate all possible actions (ADD / KEEP / REMOVE) using the same psychosocially-adjusted payoff calculation as the original MASTOC model (Schindler, 2013): cooperation level, fairness weights, reciprocity, and conformity all shift the payoff matrix before the best-response action is selected. Risk aversion additionally introduces a stochastic downgrade from ADD to KEEP proportional to `risk_aversion_level`.
 
 This makes the baseline a faithful computational replication of the original MASTOC agent, rather than a simplified pure payoff maximizer. The key difference from the LLM conditions remains: baseline agents have no language, no memory of prior rounds, and cannot send or receive messages -- they respond only to the current payoff matrix.
+
+**v1.2.0 mathematical fix -- `min` → `mean` in the best-response rule.** The decision rule compares expected payoffs across the three actions using a list of payoffs from all possible neighbour-state combinations. Prior to v1.2.0, the rule selected the action whose *minimum* payoff in that list was highest (maximin / worst-case reasoning). This caused agents to always choose REMOVE regardless of resource state -- not because they were greedy, but because the worst case for REMOVE was always better than the worst case for ADD under standard parameters. The fix replaces `min` with `mean` so agents select the action with the highest *expected* payoff (best-response under expected value), which is the standard assumption in the original MASTOC model. The three affected lines are in the `rule-based-decide` procedure:
+
+```netlogo
+;; v1.1.0 (maximin — incorrect):
+let pa (ifelse-value (length add-a-cow-adj-list    > 0) [ min add-a-cow-adj-list    ] [ 0 ])
+let pk (ifelse-value (length let-equal-adj-list    > 0) [ min let-equal-adj-list    ] [ 0 ])
+let pr (ifelse-value (length remove-a-cow-adj-list > 0) [ min remove-a-cow-adj-list ] [ 0 ])
+
+;; v1.2.0 (expected-value best response — correct):
+let pa (ifelse-value (length add-a-cow-adj-list    > 0) [ mean add-a-cow-adj-list    ] [ 0 ])
+let pk (ifelse-value (length let-equal-adj-list    > 0) [ mean let-equal-adj-list    ] [ 0 ])
+let pr (ifelse-value (length remove-a-cow-adj-list > 0) [ mean remove-a-cow-adj-list ] [ 0 ])
+```
 
 **Note on existing data:** The growth rate sweep and risk aversion tables below were collected under the previous pure payoff maximizer implementation. They remain valid as control results and their qualitative conclusions hold, but they do not reflect the psychosocially-adjusted baseline introduced in v1.1.0. New baseline runs at non-zero personality parameters may produce modestly different collapse trajectories.
 
@@ -373,6 +387,32 @@ The transition is sharp: fifteen independent replications at growth=0.0051 all c
 | 1.0 | 39 |
 
 At risk_aversion=1.0, agents have a 30% chance of downgrading ADD to KEEP when ADD would otherwise be the best response -- enough to slow accumulation but not enough to reverse it once the trajectory is established.
+
+---
+
+### Baseline psychosocial parameter sweep (v1.2.0)
+
+Following the min→mean fix, a systematic sweep of the full psychosocial parameter space confirmed that the corrected baseline expresses the *entire* Ostrom spectrum from sustainable governance to tragedy -- not a fixed tragedy outcome. The sweep covered 18 conditions across the key psychosocial axes (negative reciprocity, cooperation level, risk aversion, fairness-concerning-others, and positive reciprocity), with 20 replications per condition at standard parameters (growth=0.001, grassland=100%, forage=2).
+
+Key findings:
+
+**Negative reciprocity is the dominant collapse driver.** `neg_r=1.0` (maximum retaliatory reciprocity) produced 100% collapse across *all* cooperation levels tested -- including full cooperation (coop=1.0). When the retaliatory reciprocity mechanism dominates the payoff matrix, rule-based agents enter a race-to-REMOVE equilibrium regardless of their cooperative orientation. This is mathematically correct behavior: the reciprocity formula `payoff × neg_r × (d_neg/(n-1))` adds a multiplier to the REMOVE adj-list score proportional to how many neighbors previously removed, producing a self-reinforcing spiral. High `neg_r` operationalises Ostrom's (1990) retaliatory sanctioning regime -- but in a commons without governance, retaliation produces collapse rather than stabilisation.
+
+**Cooperative reciprocity sustains the commons.** `pos_r=1.0` (default) with `neg_r=0` produced stable outcomes across the full cooperation range. This reframes the baseline's standard equilibrium: agents don't avoid tragedy because they are cooperative -- they avoid it because positive reciprocity (`pos_r`) rewards collective restraint. The stable K=9 herd equilibrium observed at default parameters is an *institutional success* under cooperative reciprocity, not a coincidence.
+
+**Risk aversion is a key stabilising mechanism.** The surprise finding of the sweep: `neg_r=0, risk=0, fairness_oth=0` (all stabilising psychosocial mechanisms disabled) produced 100% collapse -- demonstrating that risk aversion is not a minor stochastic detail but a structural stabiliser in the baseline. Without risk aversion, agents ADD freely whenever ADD is the nominal best response, eliminating the brake that prevents runaway herd growth.
+
+**Mid neg_r + mid cooperation is the most productive sustainable outcome.** `neg_r=0.5, coop=0.5` produced 0% collapse with an average stable herd of approximately 25 cows per agent -- the highest sustainable extraction observed in the baseline sweep. This parameter combination sits at the productive boundary of the institutional success zone: enough retaliatory sensitivity to prevent free-riding, not so much as to trigger a retaliation spiral.
+
+| Condition | neg_r | coop | risk | Collapse rate | Notes |
+|-----------|-------|------|------|---------------|-------|
+| Default | 0.0 | 1.0 | 1.0 | 0% | K=9 sustainable equilibrium |
+| High neg_r | 1.0 | 1.0 | 1.0 | 100% | Retaliation spiral, all coop levels |
+| Mid neg_r | 0.5 | 0.5 | 1.0 | 0% | ~25 cows/agent, most productive |
+| No risk aversion | 0.0 | 1.0 | 0.0 | 100% | Risk aversion is structural stabiliser |
+| No psychosocial stabilisers | 0.0 | 1.0 | 0.0 | 100% | fair_oth=0 combined with risk=0 |
+
+The sweep confirms the corrected baseline as a theoretically grounded Ostrom instrument: it is not stuck at tragedy or stuck at cooperation, but responds systematically to the psychosocial parameters in ways that map directly onto Ostrom's (1990) account of the conditions that enable or undermine commons governance.
 
 ---
 
@@ -1381,9 +1421,10 @@ This pattern is not about LLM failure -- the LLM agents produce outputs consiste
 
 ```
 MASTOC-LLM/
-├── MASTOC-LLM.nlogo          NetLogo 7 model (open this to run)
+├── MASTOC-LLM.nlogox         NetLogo 7 model (open this to run)
 ├── mastoc_llm_bridge.py      Python LLM bridge (auto-imported by NetLogo)
-├── experiment_runner.py      Batch runner + analysis tool
+├── run_baseline_sweep.py     Headless batch sweep runner (baseline + LLM conditions)
+├── experiment_runner.py      Analysis tool — merges logs, produces figures
 ├── config.json               Parameter reference
 ├── requirements.txt          Python dependencies
 ├── SETUP.md                  Full setup and usage guide
@@ -1393,6 +1434,7 @@ MASTOC-LLM/
 │       ├── resources.csv     Pool, cows, pressure per tick
 │       ├── decisions.csv     Agent decisions, messages, reasoning per tick
 │       └── institutions.csv  Ostrom institution detection scores
+├── baseline_sweep_table.csv  BehaviorSpace output from run_baseline_sweep.py
 └── Data/                     Baseline flat-file outputs (MASTOC format)
 ```
 
@@ -1429,33 +1471,57 @@ set GOOGLE_API_KEY=...             # Google Gemini
 6. Click **Setup**, then **Simulation**
 7. Logs write to `logs/` automatically
 
-### Batch baseline sweeps (headless, no API cost)
+### Batch sweeps (baseline and LLM conditions)
 
-The baseline condition uses rule-based agents with no LLM calls, so it can be run headlessly at scale using `run_baseline_sweep.py`. This is the fastest way to generate statistically replicated control data across a range of psychosocial parameters.
+`run_baseline_sweep.py` runs BehaviorSpace sweeps headlessly across all three conditions. For the baseline, there are no API calls and no cost; for full-gabm and hybrid, the script shows a cost estimate and confirmation prompt before launching.
 
 ```bash
-python run_baseline_sweep.py --runs 30                          # 30 reps, default params
-python run_baseline_sweep.py --runs 30 --coop 0.49             # threshold cooperation
-python run_baseline_sweep.py --runs 30 --neg-r 1.0             # high negative reciprocity
-python run_baseline_sweep.py --runs 30 --grassland 50          # scarce commons
-python run_baseline_sweep.py --runs 30 --grassland 50,75,100   # sweep three starting conditions
+# Baseline — free, fast, no API needed
+python run_baseline_sweep.py --runs 30
+python run_baseline_sweep.py --runs 20 --neg-r 0.5 --coop 0.5
+python run_baseline_sweep.py --runs 20 --neg-r 1.0 --grassland 50,75,100
+
+# Full-GABM with Claude Sonnet (shows cost estimate first)
+python run_baseline_sweep.py --condition full-gabm --runs 10 \
+    --backend anthropic --llm-model claude-sonnet-4-6
+
+# Hybrid: 1 LLM agent + 2 rule-based, stop at collapse
+python run_baseline_sweep.py --condition hybrid --num-llm-agents 1 \
+    --backend ollama --llm-model llama3 --stop-on-collapse
+
+# Remote Ollama server (no API key required)
+python run_baseline_sweep.py --condition full-gabm --runs 5 \
+    --backend ollama --llm-model gemma3:27b \
+    --ollama-url http://192.168.86.26:11434/v1 --yes
 ```
 
-Key options:
+**All flags:**
 
 | Flag | Default | Description |
 |---|---|---|
-| `--runs N` | 30 | Repetitions (each gets a unique random seed) |
+| `--condition` | `baseline` | `baseline`, `full-gabm`, or `hybrid` |
+| `--backend` | `anthropic` | LLM backend: `anthropic`, `openai`, `ollama` |
+| `--llm-model` | `claude-sonnet-4-6` | Model name passed to the bridge |
+| `--num-llm-agents` | 1 | Number of LLM agents in hybrid mode (1–3) |
+| `--runs N` | 30 | Repetitions per parameter combo |
 | `--ticks T` | 120 | Max ticks per run |
+| `--stop-on-collapse` | off | End each run when grassland drops below 5% |
+| `--yes` / `-y` | off | Skip cost confirmation (for scripting) |
 | `--grassland G` | 100 | Initial grassland % — comma-separated for sweep |
 | `--coop F` | 1.0 | Cooperation level |
 | `--neg-r F` | 0.0 | Negative reciprocity |
+| `--pos-r F` | 1.0 | Positive reciprocity |
+| `--risk F` | 1.0 | Risk aversion |
 | `--fairness-me F` | 0.0 | Fairness concerning self |
 | `--fairness-oth F` | 1.0 | Fairness concerning others |
+| `--memory-length N` | 5 | Agent memory length (used for LLM cost estimate) |
 | `--forage F` | 2.0 | Cow forage requirement |
+| `--ollama-url URL` | `http://localhost:11434/v1` | Base URL for Ollama server |
 | `--netlogo-path PATH` | auto | NetLogo install directory |
 
-The script injects the experiment into a temporary copy of the model, calls Java directly (bypassing `netlogo-headless.bat`'s quoting bug when NetLogo is installed under `Program Files`), and cleans up afterward. Logs write to `logs/` in the usual format. Primarily tested on Windows; macOS/Linux users may need to adjust extension paths.
+The script injects the experiment into a temporary copy of the model, calls Java directly (bypassing `netlogo-headless.bat`'s quoting bug when NetLogo is installed under `Program Files`), and cleans up the temp file afterward. BehaviorSpace output writes to `baseline_sweep_table.csv`; per-run logs write to `logs/`. Primarily tested on Windows; macOS/Linux users may need to adjust extension paths.
+
+**Cost estimation for LLM conditions.** When `--condition` is `full-gabm` or `hybrid`, the script estimates total API cost based on run count, tick count, number of LLM agents, memory length, and the model's published per-token pricing, then shows a formatted table and prompts for confirmation. Pass `--yes` to skip. Ollama runs are always free. Unknown model names fall back to a mid-tier estimate with a warning.
 
 ### Analysing results
 
@@ -1464,13 +1530,6 @@ python experiment_runner.py --mode analyse
 ```
 
 Reads both `logs/` (LLM runs) and `Data/` (baseline runs) and produces merged CSVs and figures in `figures/`.
-
-### Estimating API cost before running
-
-```bash
-python experiment_runner.py --mode cost
-# full-gabm × 120 ticks ≈ $1.67 per run
-```
 
 See [SETUP.md](SETUP.md) for full documentation.
 

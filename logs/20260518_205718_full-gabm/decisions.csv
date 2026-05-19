@@ -1,0 +1,16 @@
+tick,agent_id,backend,model,action,action_name,message,reasoning,thinking,raw_response,pool_pct,own_herd,payoff_add,payoff_keep,payoff_remove
+1,0,ollama,gemma4:e4b,0,KEEP,The commons look healthy. Let's keep a steady hand this round and monitor the grass levels.,"Although adding a cow gives the highest payoff, my risk-averse personality makes 'KEEP' (10.0) the most comfortable and safe choice, balancing profit with stability. Given the mixed actions of my neighbours (one kept, one removed), maintaining my current herd size is the pragmatic, moderated approach.",,"{
+  ""reasoning"": ""Although adding a cow gives the highest payoff, my risk-averse personality makes 'KEEP' (10.0) the most comfortable and safe choice, balancing profit with stability. Given the mixed actions of my neighbours (one kept, one removed), maintaining my current herd size is the pragmatic, moderated approach."",
+  ""action"": 0,
+  ""message"": ""The commons look healthy. Let's keep a steady hand this round and monitor the grass levels.""
+}",100.0,5,11.832,10.0,8.163
+1,2,ollama,gemma4:e4b,0,KEEP,The commons is quite healthy! Let's work together to ensure we keep grazing habits sustainable for all of us.,"Although adding a cow yields the highest immediate payoff, I am risk-averse and feel a sense of guilt given my already large herd size compared to my neighbors. Keeping the herd size stable is a balanced, safe action that acknowledges the current resource abundance and maintains good neighborly relations.",,"{
+  ""reasoning"": ""Although adding a cow yields the highest immediate payoff, I am risk-averse and feel a sense of guilt given my already large herd size compared to my neighbors. Keeping the herd size stable is a balanced, safe action that acknowledges the current resource abundance and maintains good neighborly relations."",
+  ""action"": 0,
+  ""message"": ""The commons is quite healthy! Let's work together to ensure we keep grazing habits sustainable for all of us.""
+}",100.0,25,51.832,50.0,48.163
+1,1,ollama,gemma4:e4b,1,ADD,The grass is lovely right now! Let's continue monitoring the commons to ensure responsible grazing practices for everyone.,"Since the grassland is abundant, I prioritize maximizing immediate profit, which suggests adding a cow based on the payoff forecast. Although I am guilt-averse, the current resource state allows for this profitable move. I will send a gentle message to promote sustainable grazing habits generally.",,"{
+  ""reasoning"": ""Since the grassland is abundant, I prioritize maximizing immediate profit, which suggests adding a cow based on the payoff forecast. Although I am guilt-averse, the current resource state allows for this profitable move. I will send a gentle message to promote sustainable grazing habits generally."",
+  ""action"": 1,
+  ""message"": ""The grass is lovely right now! Let's continue monitoring the commons to ensure responsible grazing practices for everyone.""
+}",100.0,15,31.832,30.0,28.163
