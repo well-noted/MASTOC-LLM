@@ -18,16 +18,16 @@ This release corrects a mathematical error in the baseline best-response decisio
 
 ## New: baseline psychosocial parameter sweep
 
-A systematic sweep of 18 psychosocial parameter combinations (20 replications per condition, ~131 total runs) confirms that the corrected baseline expresses the full Ostrom spectrum from institutional success to tragedy depending on parameter settings.
+A comprehensive sweep of 87 psychosocial parameter conditions (20 replications per condition, 1,740 total runs) across six sweep families (neg_r threshold, pos_r ablation, full neg_r × pos_r grid, risk aversion scan, conformity scan, starting grassland) confirms that the corrected baseline expresses the full Ostrom spectrum from institutional success to tragedy.
 
 Key findings:
 
-- **`neg_r=1.0` (high negative reciprocity) → 100% collapse** across all cooperation levels. Retaliatory reciprocity produces a race-to-REMOVE equilibrium in which each agent's best response to others removing is also to remove, depleting the resource rapidly.
-- **Default parameters (`pos_r=1.0`, `neg_r=0.0`, `risk=1.0`) → 0% collapse**, sustainable K=9 equilibrium. Cooperative reciprocity rewards collective restraint; risk aversion provides an additional brake on ADD decisions.
-- **`neg_r=0.5`, `coop=0.5` → 0% collapse, ~25 cows/agent** — the most productive sustainable baseline condition found. Moderate retaliatory sensitivity prevents free-riding without triggering a collapse spiral.
-- **`risk=0`, `fair_oth=0` → 100% collapse** even at `neg_r=0`. Risk aversion is a structural stabiliser, not a peripheral parameter: disabling it (alongside fairness-toward-others) eliminates all brakes on ADD and produces tragedy regardless of cooperation level.
+- **`pos_r > neg_r` → 0% collapse; `pos_r ≤ neg_r` → 100% collapse.** The neg_r × pos_r full grid (5×5, 500 runs) reveals a clean, near-perfect regime boundary. When cooperative reciprocity exceeds retaliatory reciprocity, the commons stabilises; when it does not, tragedy follows. The only exception is the `neg_r=0, pos_r=0` corner (100% collapse), where no social incentive of any kind acts on agents.
+- **Risk aversion has no independent stabilising effect.** Sweep D varied risk aversion from 0.0 to 1.0 at default pos_r=1.0, neg_r=0.0. All eleven levels, including risk=0.0, produced 0% collapse. Positive reciprocity is the stabilising mechanism; risk aversion is not a structural brake in the corrected baseline.
+- **Conformity amplifies instability at intermediate neg_r.** At neg_r=0.5, conformity=0 → 0% collapse; conformity=0.75 → 35% collapse. Conformity pulls agents toward the mean herd size, which in a partially retaliatory environment is often the removing majority. At neg_r=1.0, high conformity paradoxically slightly mitigates collapse (100% → 75%), tempering the ADD spike that precedes the retaliation spiral.
+- **Starting grassland does not change the qualitative regime.** At neg_r=1.0, collapse rate is 100% regardless of whether agents start with 50%, 75%, or 100% grassland. At neg_r ≤ 0.5, 0% collapse at all starting levels. Initial resource state does not override the reciprocity regime.
 
-The corrected baseline is now a theoretically grounded Ostrom instrument: outcome varies systematically with psychosocial parameters in ways that map onto Ostrom's (1990) conditions for commons governance success and failure.
+The corrected baseline is now a theoretically grounded Ostrom instrument: outcome varies systematically with the balance between positive and negative reciprocity in ways that map directly onto Ostrom's (1990) conditions for commons governance success and failure.
 
 ---
 

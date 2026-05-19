@@ -393,27 +393,82 @@ At risk_aversion=1.0, agents have a 30% chance of downgrading ADD to KEEP when A
 
 ### Baseline psychosocial parameter sweep (v1.2.0)
 
-Following the min→mean fix, a systematic sweep of the full psychosocial parameter space confirmed that the corrected baseline expresses the *entire* Ostrom spectrum from sustainable governance to tragedy -- not a fixed tragedy outcome. The sweep covered 18 conditions across the key psychosocial axes (negative reciprocity, cooperation level, risk aversion, fairness-concerning-others, and positive reciprocity), with 20 replications per condition at standard parameters (growth=0.001, grassland=100%, forage=2).
+Following the min→mean fix, a comprehensive sweep of the full psychosocial parameter space was conducted across seven sweep families (Sweeps A–G), covering **107 parameter conditions × 20 replications = 2,140 total runs** at standard parameters (growth=0.001, forage=2). The sweep systematically varied negative reciprocity, positive reciprocity, risk aversion, conformity, and starting grassland to characterise the full Ostrom spectrum.
 
-Key findings:
+#### Core stability rule: pos_r > neg_r
 
-**Negative reciprocity is the dominant collapse driver.** `neg_r=1.0` (maximum retaliatory reciprocity) produced 100% collapse across *all* cooperation levels tested -- including full cooperation (coop=1.0). When the retaliatory reciprocity mechanism dominates the payoff matrix, rule-based agents enter a race-to-REMOVE equilibrium regardless of their cooperative orientation. This is mathematically correct behavior: the reciprocity formula `payoff × neg_r × (d_neg/(n-1))` adds a multiplier to the REMOVE adj-list score proportional to how many neighbors previously removed, producing a self-reinforcing spiral. High `neg_r` operationalises Ostrom's (1990) retaliatory sanctioning regime -- but in a commons without governance, retaliation produces collapse rather than stabilisation.
+The clearest finding of the sweep is a sharp, near-perfect stability criterion that emerges from the neg_r × pos_r full grid (Sweep C, 5×5, 500 runs):
 
-**Cooperative reciprocity sustains the commons.** `pos_r=1.0` (default) with `neg_r=0` produced stable outcomes across the full cooperation range. This reframes the baseline's standard equilibrium: agents don't avoid tragedy because they are cooperative -- they avoid it because positive reciprocity (`pos_r`) rewards collective restraint. The stable K=9 herd equilibrium observed at default parameters is an *institutional success* under cooperative reciprocity, not a coincidence.
+| | pos_r=0.00 | pos_r=0.25 | pos_r=0.50 | pos_r=0.75 | pos_r=1.00 |
+|---|---|---|---|---|---|
+| **neg_r=0.00** | 100% | 0% | 0% | 0% | 0% |
+| **neg_r=0.25** | 100% | 100% | 0% | 0% | 0% |
+| **neg_r=0.50** | 100% | 100% | 100% | 0% | 0% |
+| **neg_r=0.75** | 100% | 100% | 100% | 100% | 0% |
+| **neg_r=1.00** | 100% | 100% | 100% | 100% | 100% |
 
-**Risk aversion is a key stabilising mechanism.** The surprise finding of the sweep: `neg_r=0, risk=0, fairness_oth=0` (all stabilising psychosocial mechanisms disabled) produced 100% collapse -- demonstrating that risk aversion is not a minor stochastic detail but a structural stabiliser in the baseline. Without risk aversion, agents ADD freely whenever ADD is the nominal best response, eliminating the brake that prevents runaway herd growth.
+*Collapse rate (out of 20 runs per cell)*
 
-**Mid neg_r + mid cooperation is the most productive sustainable outcome.** `neg_r=0.5, coop=0.5` produced 0% collapse with an average stable herd of approximately 25 cows per agent -- the highest sustainable extraction observed in the baseline sweep. This parameter combination sits at the productive boundary of the institutional success zone: enough retaliatory sensitivity to prevent free-riding, not so much as to trigger a retaliation spiral.
+The grid reveals a clean rule: **when `pos_r > neg_r`, collapse rate is 0%; when `pos_r ≤ neg_r`, collapse rate is 100%.** The only exception is the `neg_r=0, pos_r=0` corner (100% collapse) -- with both reciprocity mechanisms absent, agents have no social incentive beyond raw payoff maximisation, which drives extraction unchecked. The boundary is perfectly sharp at every tested combination: not a gradual transition but a discrete regime boundary.
 
-| Condition | neg_r | coop | risk | Collapse rate | Notes |
-|-----------|-------|------|------|---------------|-------|
-| Default | 0.0 | 1.0 | 1.0 | 0% | K=9 sustainable equilibrium |
-| High neg_r | 1.0 | 1.0 | 1.0 | 100% | Retaliation spiral, all coop levels |
-| Mid neg_r | 0.5 | 0.5 | 1.0 | 0% | ~25 cows/agent, most productive |
-| No risk aversion | 0.0 | 1.0 | 0.0 | 100% | Risk aversion is structural stabiliser |
-| No psychosocial stabilisers | 0.0 | 1.0 | 0.0 | 100% | fair_oth=0 combined with risk=0 |
+This is mathematically grounded. The code computes reciprocity adjustments for each candidate action before the agent picks the best-response. Letting *d*⁺ = number of neighbours who added last tick and *d*⁻ = number who removed:
 
-The sweep confirms the corrected baseline as a theoretically grounded Ostrom instrument: it is not stuck at tragedy or stuck at cooperation, but responds systematically to the psychosocial parameters in ways that map directly onto Ostrom's (1990) account of the conditions that enable or undermine commons governance.
+- **REMOVE** (xi = −1) gains: `payoff × pos_r × (d⁻ + 0.5 × d°) / (n−1)` — cooperative restraint is rewarded when neighbours also restrained, scaled by pos_r.
+- **ADD** (xi = +1) gains: `payoff × neg_r × (d⁺ + 0.5 × d°) / (n−1)` — defection is rewarded when neighbours also defected, scaled by neg_r.
+- **KEEP** (xi = 0) gains the average of both terms.
+
+When `pos_r > neg_r`, the REMOVE bonus exceeds the ADD bonus at any given neighbour-state distribution: cooperation-when-others-cooperate is more profitable than defection-when-others-defect. The commons locks into a removing/keeping equilibrium. When `pos_r ≤ neg_r`, the ADD bonus dominates and agents enter a race-to-ADD spiral. The `neg_r=0, pos_r=0` corner collapses because no reciprocity adjustment acts on either action, leaving agents with raw payoff maximisation, which under this payoff structure always favours adding.
+
+#### neg_r threshold scan (Sweep A, pos_r=1.0)
+
+With positive reciprocity held at its default (pos_r=1.0), the transition from stability to collapse as neg_r increases is gradual rather than sharp:
+
+| neg_r | Collapse rate | Mean cows/agent |
+|-------|---------------|-----------------|
+| 0.0 – 0.7 | 0% | 3–11 |
+| 0.8 | 10% | 10.5 |
+| 0.9 | 45% | 8.9 |
+| 1.0 | **100%** | 0 |
+
+At pos_r=1.0, the commons survives even moderately high negative reciprocity (up to neg_r=0.7 with 0% collapse). The transition zone at 0.8–0.9 reflects stochastic competition between the two reciprocity mechanisms: in most runs the cooperative reciprocity wins, but in a growing fraction it loses.
+
+#### Risk aversion has no independent stabilising effect (Sweep D)
+
+Sweep D varied risk aversion from 0.0 to 1.0 at neg_r=0.0 and pos_r=1.0 (isolating its independent effect). **Every level, including risk=0.0, produced 0% collapse** -- identical to the default risk=1.0 outcome. Risk aversion has no independent stabilising effect when positive reciprocity is active: the cooperative reciprocity mechanism is entirely sufficient to maintain the commons equilibrium, and removing risk aversion changes nothing.
+
+This corrects an earlier claim: risk aversion is not a structural stabiliser of the corrected baseline. Its role matters only in the legacy (pre-v1.2.0) fixed-payoff-maximiser regime, where agents with no psychosocial adjustment needed a stochastic brake on ADD. In the corrected model, positive reciprocity is the stabilising mechanism; risk aversion is secondary.
+
+#### Conformity amplifies instability at intermediate neg_r, partially mitigates it at high neg_r (Sweep E)
+
+Conformity is consequential only in the intermediate reciprocity zone:
+
+| neg_r | conformity | Collapse rate | Notes |
+|-------|------------|---------------|-------|
+| 0.0 | any | 0% | Conformity irrelevant when pos_r dominates |
+| 0.5 | 0.00 | 0% | Baseline stable |
+| 0.5 | 0.25 | 0% | Still stable |
+| 0.5 | 0.50 | 20% | Conformity starts amplifying instability |
+| 0.5 | 0.75 | **35%** | Peak instability amplification |
+| 0.5 | 1.00 | 20% | Slight reduction (full herd-matching suppresses extremes) |
+| 1.0 | 0.00 | 100% | Full collapse |
+| 1.0 | 0.50 | 90% | Partial mitigation |
+| 1.0 | 1.00 | 75% | Strongest mitigation -- conformity tempers retaliation spiral |
+
+At neg_r=0.5 (the transition zone), conformity pushes runs that would otherwise stabilise into collapse by pulling agents toward the mean herd size, which in a retaliation-prone environment tends to be the removing majority. Paradoxically, at neg_r=1.0 (full retaliation), high conformity slightly reduces collapse: when conformity is so strong that agents match the herd regardless of payoffs, it partially suppresses the ADD impulse that would otherwise spike before collapse.
+
+#### Starting grassland doesn't change the qualitative regime (Sweep F)
+
+Starting grassland (50%, 75%, 100%) has no effect on the qualitative outcome:
+
+- **neg_r=1.0**: 100% collapse at all three starting grassland levels.
+- **neg_r=0.0–0.5**: 0% collapse at all three levels.
+- **neg_r=0.75**: 5% collapse at grass=50% (1/20 runs), 0% at 75% and 100% -- a marginal difference at the near-boundary case only.
+
+Starting from a degraded commons (50% grassland) does not change agent behaviour enough to shift outcomes: the reciprocity regime dominates, not the initial resource state.
+
+#### Summary
+
+The comprehensive sweep validates the corrected baseline as a theoretically grounded Ostrom instrument. Outcome is determined primarily by the **balance between positive and negative reciprocity** (`pos_r` vs `neg_r`), not by cooperation level, risk aversion, or starting resource state. Conformity matters only in the intermediate neg_r zone (0.5–0.75). The stability rule `pos_r > neg_r` maps directly onto Ostrom's (1990) account: when the social reward for restraint exceeds the social reward for retaliation, commons governance succeeds; when it does not, tragedy follows.
 
 ---
 

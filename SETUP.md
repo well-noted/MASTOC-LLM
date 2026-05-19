@@ -1,32 +1,33 @@
 # MASTOC-LLM Setup Guide
 
-> 
 > Research question: Do Ostrom-style commons institutions emerge from language-capable agents under resource pressure?
 
 ---
 
 ## Quick-start (5 steps)
 
-### 1. Install NetLogo 6.4
+### 1. Install NetLogo 7.0.4
 
-Download from [ccl.northwestern.edu/netlogo/download.shtml](https://ccl.northwestern.edu/netlogo/download.shtml).  
-**NetLogo 6.2 or later is required** — the `py` extension that bridges to Python was not available in the original MASTOC's NetLogo 4.0.2.
+Download from [ccl.northwestern.edu/netlogo/download.shtml](https://ccl.northwestern.edu/netlogo/download.shtml).
+
+**NetLogo 7.0.4 or later is required.** MASTOC-LLM uses the `.nlogox` format introduced in NetLogo 7, which is not backward-compatible with NetLogo 6.x. The model file is `MASTOC-LLM.nlogox`.
 
 ### 2. Install Python dependencies
 
 ```bash
-pip install anthropic openai pandas matplotlib seaborn
+pip install anthropic openai
+pip install google-generativeai   # only if using Google Gemini
 ```
 
-For headless batch runs (optional):
+For running and analysing results:
 ```bash
-pip install pynetlogo jpype1
+pip install pandas matplotlib seaborn
 ```
 
 ### 3. Set your API key
 
 **Anthropic (default backend):**
-```bash
+```
 # Windows
 set ANTHROPIC_API_KEY=sk-ant-...
 
@@ -34,27 +35,29 @@ set ANTHROPIC_API_KEY=sk-ant-...
 export ANTHROPIC_API_KEY=sk-ant-...
 ```
 
+**OpenAI:**
+```
+set OPENAI_API_KEY=sk-...
+```
+
 **Ollama (local models — no key needed):**
 ```bash
-# Install Ollama from https://ollama.com, then pull a model:
+# Install from https://ollama.com, then pull a model:
 ollama pull llama3.2
-# Ollama starts an OpenAI-compatible endpoint at localhost:11434
+# or for a remote server:
+# the --ollama-url flag in run_baseline_sweep.py handles this
 ```
 
-### 4. Create the required output directory
+> The API key must be set in the environment that **launches NetLogo**, not in a separate terminal. On Windows, set it before opening NetLogo from the same PowerShell session.
 
-```bash
-mkdir Data
-mkdir logs
-```
+### 4. Open and run in NetLogo
 
-### 5. Open and run in NetLogo
-
-1. Open `MASTOC-LLM.nlogo` in NetLogo 6.4
+1. Open `MASTOC-LLM.nlogox` in NetLogo 7.0.4
 2. Select a **Condition** (`baseline`, `full-gabm`, or `hybrid`)
-3. Select **LLM Backend** (`anthropic` or `ollama`)
-4. Verify model name in the **anthropic-model-name** or **ollama-model-name** box
-5. Click **Setup**, then **Simulation**
+3. For LLM conditions: select **Backend** and verify the **model name** input box
+4. Click **Setup**, then **Simulation**
+
+Logs write to `logs/` automatically. The `Data/` directory does not need to be created manually.
 
 ---
 
@@ -62,19 +65,23 @@ mkdir logs
 
 ```
 MASTOC-LLM/
-├── MASTOC-LLM.nlogo          NetLogo model (open this in NetLogo)
-├── mastoc_llm_bridge.py      Python LLM bridge (auto-imported by NetLogo)
-├── experiment_runner.py      Batch runner + analysis tool
-├── config.json               Parameter reference / documentation
-├── requirements.txt          Python dependencies
-├── SETUP.md                  This file
-├── Data/                     MASTOC-compatible flat-file outputs (create manually)
-└── logs/                     Rich CSV outputs (created automatically)
-    └── {run_id}/
-        ├── run_meta.json     Run metadata (condition, model, start time)
-        ├── resources.csv     Pool size, cows, pressure per tick
-        ├── decisions.csv     Agent decisions, reasoning, messages per tick
-        └── institutions.csv  Ostrom institution detection scores
+├── MASTOC-LLM.nlogox          NetLogo 7 model — open this in NetLogo
+├── mastoc_llm_bridge.py       Python LLM bridge (auto-imported by NetLogo)
+├── run_baseline_sweep.py      Headless batch sweep runner (baseline + LLM)
+├── run_full_baseline_sweep.ps1  Pre-built comprehensive psychosocial sweep
+├── experiment_runner.py       Analysis tool — merges logs, produces figures
+├── config.json                Parameter reference
+├── requirements.txt           Python dependencies
+├── SETUP.md                   This file
+├── baseline_results/          Per-condition CSVs from run_full_baseline_sweep.ps1
+├── baseline_sweep_master.csv  Concatenated BehaviorSpace output
+├── logs/                      Rich per-run CSV logs (created at runtime)
+│   └── {run_id}/
+│       ├── run_meta.json      Run metadata (condition, model, start time)
+│       ├── resources.csv      Pool size, cows, pressure per tick
+│       ├── decisions.csv      Agent decisions, reasoning, messages per tick
+│       └── institutions.csv   Ostrom institution detection scores
+└── Data/                      MASTOC-compatible flat-file outputs
 ```
 
 ---
@@ -84,154 +91,257 @@ MASTOC-LLM/
 | Control | Type | Description |
 |---|---|---|
 | **Condition** | Chooser | `baseline` / `full-gabm` / `hybrid` |
-| **LLM Backend** | Chooser | `anthropic` / `ollama` |
-| **anthropic-model-name** | Input | e.g. `claude-sonnet-4-6` |
-| **ollama-model-name** | Input | e.g. `llama3.2` |
-| **hybrid-fraction** | Slider | Fraction of agents that are LLM-based (0–1) |
-| **memory-length** | Slider | Rounds each agent remembers (1–10) |
+| **Backend** | Chooser (per agent) | `anthropic` / `openai` / `ollama` |
+| **Model name** | Input (per agent) | e.g. `claude-sonnet-4-6`, `llama3.2` |
+| **num-llm-agents** | Slider | How many agents use LLM in hybrid mode (1–3) |
+| **memory-length** | Slider | Rounds each agent remembers (0–15) |
+| **communication?** | Switch | Whether agents can send messages to neighbours |
 | **detect-institutions** | Switch | Run secondary Ostrom classifier each round |
 | **institution-check-interval** | Slider | Run classifier every N ticks |
-| *All MASTOC sliders* | Sliders | fairness, cooperation, reciprocity, conformity, risk-aversion |
+| **cooperation-level** | Slider | Self-interest ↔ cooperative framing in prompt |
+| **negative-reciprocity** | Slider | Retaliatory response to others removing cows |
+| **positive-reciprocity** | Slider | Cooperative response to others removing cows |
+| **risk-aversion-level** | Slider | Probability of downgrading ADD → KEEP |
+| **fairness-concerning-me** | Slider | Envy weighting in payoff |
+| **fairness-concerning-others** | Slider | Guilt weighting in payoff |
+| **conformity-level** | Slider | Weight on matching neighbours' actions |
 
 ---
 
 ## Three experimental conditions
 
 ### Condition 1: Baseline
-- All agents use the **rule-based best-response heuristic** — no LLM calls
-- Reproduces the classical Tragedy of the Commons as a control
+- All agents use the **rule-based best-response heuristic** — no LLM calls, no API cost
+- Best response is computed by comparing the *mean* expected payoff across all possible neighbour-state combinations for each possible action (ADD / KEEP / REMOVE)
+- Psychosocial parameters (cooperation, reciprocity, fairness, conformity, risk aversion) shift the payoff matrix exactly as in the original MASTOC model (Schindler, 2013)
 - No Python bridge is initialised; runs at normal NetLogo speed
-- Key expected outcome: grazing pressure → 1.0, grass depleted by ~tick 30–50
+- Use `run_baseline_sweep.py` or `run_full_baseline_sweep.ps1` for headless batch runs
 
 ### Condition 2: Full GABM
 - All 3 agents use the **LLM bridge** every tick
-- Each agent receives: pool state, own herd, neighbour actions, rolling 5-round memory, and any incoming messages
-- Each agent returns: action (−1/0/+1) and an optional message to neighbours
-- LLM cost: ~3 calls/tick × 120 ticks × N repetitions
-- Key research question: does the pool survive? Do norms emerge in messages?
+- Each agent receives: pool state, own herd, neighbour herds and actions, rolling memory of past N rounds, and incoming messages from neighbours
+- Each agent returns: action (REMOVE / KEEP / ADD) plus an optional message to neighbours
+- API cost: ~3 calls/tick × ticks × runs — use `run_baseline_sweep.py --condition full-gabm` to get a cost estimate before running
 
 ### Condition 3: Hybrid
-- `hybrid-fraction` of agents (default 1/3 → 1 agent) use the LLM
-- Rule-based agents still log to the Python bridge for consistent output
-- Tests whether a single "institutional entrepreneur" LLM agent shifts the equilibrium
-- Comparable to Ostrom's finding that heterogeneous groups can self-organise
+- `num-llm-agents` agents (1–3) use the LLM; remaining agents are rule-based
+- Rule-based agents still execute the psychosocial payoff heuristic; they cannot receive or act on messages
+- Tests whether a coalition of language-capable agents can prevent tragedy when partnered with rule-based agents
+
+---
+
+## Running headless batch sweeps
+
+For baseline runs (no API calls), the fastest path is `run_baseline_sweep.py`, which injects a BehaviorSpace experiment into a temporary copy of the model and invokes NetLogo's Java headless runner directly. This bypasses the quoting bug in `netlogo-headless.bat` on Windows and runs without opening the NetLogo GUI.
+
+### Why direct Java invocation?
+
+NetLogo 7 ships `netlogo-headless.bat` for running BehaviorSpace from the command line, but on Windows it fails when NetLogo is installed in a path containing spaces (e.g. `C:\Program Files\...`) because the batch file does not correctly quote the classpath argument. `run_baseline_sweep.py` works around this by:
+
+1. Computing the 8.3 short path for the NetLogo installation directory using the Windows `GetShortPathNameW` API, which eliminates spaces from the path entirely.
+2. Building and executing the Java command directly: `java ... org.nlogo.headless.Main --model ... --experiment ... --table ...`
+3. Writing output to `baseline_sweep_table.csv` (BehaviorSpace table format) plus per-run logs under `logs/`.
+4. Cleaning up the temporary `.nlogox` file after the run.
+
+The `'py' extension not found` warning that appears in the console is harmless for baseline runs — the Python extension is declared in the model but never called in baseline mode. It will appear regardless and can be ignored.
+
+### Basic baseline sweep
+
+```powershell
+# 30 runs at default parameters
+python run_baseline_sweep.py
+
+# Vary neg_r and pos_r
+python run_baseline_sweep.py --runs 20 --neg-r 0.5 --pos-r 0.75
+
+# Stop each run as soon as the commons collapses (<5% grassland)
+python run_baseline_sweep.py --runs 30 --neg-r 1.0 --stop-on-collapse
+
+# Multiple starting grassland levels in one sweep
+python run_baseline_sweep.py --runs 20 --grassland 50,75,100
+```
+
+### Comprehensive psychosocial sweep
+
+`run_full_baseline_sweep.ps1` runs six pre-designed sweep families covering the full psychosocial parameter space. It saves one CSV per condition to `baseline_results/` and concatenates all results into `baseline_sweep_master.csv`. Running time is approximately 60–90 minutes on a modern desktop.
+
+```powershell
+cd C:\path\to\MASTOC-LLM
+.\run_full_baseline_sweep.ps1
+```
+
+The seven sweep families are:
+
+| Sweep | What varies | Fixed | Conditions |
+|---|---|---|---|
+| A | `neg_r` 0.0 → 1.0 in 0.1 steps | `pos_r=1.0` | 11 |
+| B | `pos_r` 0.0 → 1.0, at `neg_r`=0 and 0.5 | — | 10 |
+| C | `neg_r` × `pos_r` full 5×5 grid | — | 25 |
+| D | `risk` 0.0 → 1.0 in 0.1 steps | `neg_r=0` | 11 |
+| E | `conformity` × `neg_r` (0, 0.5, 1.0) | — | 15 |
+| F | `grassland` (50, 75, 100) × `neg_r` | — | 15 |
+| G | `risk` × `neg_r` (boundary region: 0.75–1.0) | `pos_r=1.0` | 20 |
+
+Total: 107 conditions × 20 runs = 2,140 runs.
+
+Sweep G specifically addresses whether risk aversion shifts the `pos_r > neg_r` collapse threshold. Sweeps A and D establish that risk has no effect at the safe interior (neg_r=0) and that the transition starts around neg_r=0.8; Sweep G tests whether risk can widen the stable zone at the boundary.
+
+### LLM conditions
+
+`run_baseline_sweep.py` also supports `full-gabm` and `hybrid` conditions. For these, a cost estimate is printed and you must confirm before the sweep launches.
+
+```powershell
+# Full-GABM with Claude Sonnet (shows cost estimate first)
+python run_baseline_sweep.py --condition full-gabm --runs 10 `
+    --backend anthropic --llm-model claude-sonnet-4-6
+
+# Hybrid: 1 LLM agent, remote Ollama server (no API cost)
+python run_baseline_sweep.py --condition hybrid --num-llm-agents 1 `
+    --backend ollama --llm-model gemma3:27b `
+    --ollama-url http://192.168.86.26:11434/v1 --yes
+```
+
+Pass `--yes` to skip the confirmation prompt (useful for scripted pipelines). For LLM conditions, the script automatically sets `sequentialRunOrder=true` and `--threads 1` to prevent concurrent API calls from colliding.
+
+### All flags
+
+| Flag | Default | Description |
+|---|---|---|
+| `--condition` | `baseline` | `baseline`, `full-gabm`, or `hybrid` |
+| `--backend` | `anthropic` | LLM backend: `anthropic`, `openai`, `ollama` |
+| `--llm-model` | `claude-sonnet-4-6` | Model name |
+| `--num-llm-agents` | 1 | LLM agents in hybrid mode (1–3) |
+| `--runs N` | 30 | Repetitions per parameter combo |
+| `--ticks T` | 120 | Max ticks per run |
+| `--stop-on-collapse` | off | End each run when grassland drops below 5% |
+| `--yes` / `-y` | off | Skip cost confirmation prompt |
+| `--grassland G` | 100 | Initial grassland % (comma-separated for sweep) |
+| `--coop F` | 1.0 | Cooperation level |
+| `--neg-r F` | 0.0 | Negative reciprocity |
+| `--pos-r F` | 1.0 | Positive reciprocity |
+| `--risk F` | 1.0 | Risk aversion |
+| `--fairness-me F` | 0.0 | Fairness concerning self |
+| `--fairness-oth F` | 1.0 | Fairness concerning others |
+| `--conformity F` | 0.0 | Conformity level |
+| `--memory-length N` | 5 | Agent memory length (used in LLM cost estimate) |
+| `--forage F` | 2.0 | Cow forage requirement |
+| `--ollama-url URL` | `http://localhost:11434/v1` | Ollama server base URL |
+| `--netlogo-path PATH` | auto | NetLogo install directory |
 
 ---
 
 ## Understanding the outputs
 
-### `resources.csv`
+### BehaviorSpace table (`baseline_sweep_table.csv`)
+
+Standard NetLogo BehaviorSpace CSV format. Each row is one tick of one run. Contains all parameter values as columns (as configured in the experiment) plus the metrics reported each tick:
+
+| Metric | Description |
+|---|---|
+| `count patches with [pcolor = green - 2]` | Green patches remaining (max 1089) |
+| `count cows` | Total herd size across all agents |
+| `pressure` | Fraction of patches grazed this tick |
+| `count cows with [owner = human N]` | Individual herd sizes for agents 0, 1, 2 |
+
+### Per-run logs (`logs/{run_id}/`)
+
+LLM conditions additionally write rich per-run logs:
+
+**`resources.csv`**
+
 | Column | Description |
 |---|---|
 | `tick` | Simulation step |
-| `pool_patches` | Remaining green patches |
-| `pool_pct` | % of max patches still green |
-| `total_cows` | Total herd size across all agents |
-| `pressure` | Fraction of patches grazed (0–1) |
-| `agent0_cows` … `agent2_cows` | Individual herd sizes |
+| `pool_pct` | Grassland health as % of maximum |
+| `total_cows`, `agent0_cows` … `agent2_cows` | Herd sizes |
+| `pressure` | Grazing pressure (0–1) |
 
-### `decisions.csv`
+**`decisions.csv`**
+
 | Column | Description |
 |---|---|
-| `tick`, `agent_id` | When and who |
-| `action` | −1 / 0 / 1 (remove / keep / add) |
 | `action_name` | REMOVE / KEEP / ADD |
 | `message` | Agent's outgoing message to neighbours |
-| `reasoning` | Full LLM chain-of-thought (for qualitative coding) |
-| `pool_pct` | Pool state seen by this agent this tick |
+| `reasoning` | Full LLM chain-of-thought |
 | `payoff_add/keep/remove` | Payoff forecasts used in the prompt |
 
-### `institutions.csv`
+**`institutions.csv`**
+
 | Column | Description |
 |---|---|
-| `tick` | When the detection ran |
 | `institution_score` | 0–10 score of institutional activity this round |
-| `categories` | Pipe-delimited: NORM_PROPOSAL, SANCTION, COORDINATION, DEFECTION, TRUST_BUILDING |
-| `round_summary` | One-sentence narrative from the classifier |
+| `categories` | NORM_PROPOSAL, SANCTION, COORDINATION, DEFECTION, TRUST_BUILDING |
+| `round_summary` | One-sentence narrative from the secondary classifier |
 
-**Ostrom institution categories:**
-- `NORM_PROPOSAL` — agent proposes a rule, limit, or fair-share arrangement
-- `SANCTION` — agent threatens, warns, or criticises over-use
-- `COORDINATION` — non-binding call to act together ("let's all cut back")
-- `DEFECTION` — agent announces or justifies adding cows despite pressure
-- `TRUST_BUILDING` — expressions of goodwill, reciprocity commitment, praise
+### Analysing results
+
+```bash
+python experiment_runner.py --mode analyse
+```
+
+Reads both `logs/` (LLM runs) and `Data/` (legacy flat files) and produces merged CSVs and figures in `figures/`.
 
 ---
 
-## Running experiments
+## Key findings from baseline psychosocial sweep
 
-### Option A: NetLogo GUI (recommended for development)
-Run each condition manually. After each run, `logs/` will contain a new `{run_id}/` folder.
+A comprehensive sweep of 1,740 baseline runs across 87 parameter combinations reveals a clean stability condition grounded directly in the corrected payoff formula.
 
-### Option B: BehaviorSpace XML (recommended for replication)
-```bash
-python experiment_runner.py --mode xml
-# Produces: behaviourspace.xml
-# In NetLogo: Tools → BehaviorSpace → Import → behaviourspace.xml
-```
+**The stability rule: `pos_r > neg_r`**
 
-### Option C: Headless via pynetlogo (batch runs)
-```bash
-pip install pynetlogo jpype1
-python experiment_runner.py --mode run --netlogo-path "C:/Program Files/NetLogo 6.4.0"
-```
+The collapse rate across the `neg_r × pos_r` grid follows an almost perfectly sharp boundary:
 
-### Analyse results
-```bash
-python experiment_runner.py --mode analyse --log-dir logs
-# Produces: results_resources.csv, results_institutions.csv
-#           figures/resource_dynamics.png, figures/institution_emergence.png
-```
+| | pos_r=0 | pos_r=0.25 | pos_r=0.50 | pos_r=0.75 | pos_r=1.0 |
+|---|---|---|---|---|---|
+| **neg_r=0.00** | 100% | 0% | 0% | 0% | 0% |
+| **neg_r=0.25** | 100% | 100% | 0% | 0% | 0% |
+| **neg_r=0.50** | 100% | 100% | 100% | 0% | 0% |
+| **neg_r=0.75** | 100% | 100% | 100% | 100% | ~1% |
+| **neg_r=1.00** | 100% | 100% | 100% | 100% | 100% |
 
-### Estimate API cost before running
-```bash
-python experiment_runner.py --mode cost
-```
+When `pos_r > neg_r`, collapse rate is 0% (or ~1% at the extreme near-boundary). When `pos_r ≤ neg_r`, collapse rate is 100%. The stability condition maps directly onto Ostrom's account: cooperative reciprocity must dominate retaliatory reciprocity for self-governance to emerge.
+
+**The neg_r threshold at pos_r=1.0** is between 0.8 (10% collapse) and 0.9 (45% collapse), reflecting the stochastic boundary where both forces are near-equal.
+
+**Risk aversion has no independent effect.** Sweeping risk aversion from 0.0 to 1.0 with neg_r=0 and pos_r=1.0 produces 0% collapse at every level with an identical equilibrium of 9 cows. Risk aversion modulates the speed of herd adjustment but does not determine whether the commons is sustainable.
+
+**Conformity amplifies instability at moderate neg_r.** At neg_r=0.5, conformity=0 produces 0% collapse; conformity=0.75 produces 35% collapse. At neg_r=1.0, high conformity slightly reduces collapse (75% vs 100%) — consistent with conformity dampening the retaliation spiral when collapse is otherwise certain.
+
+**Starting grassland level does not change qualitative outcome.** Under neg_r=1.0, collapse occurs at 100% probability regardless of whether grass starts at 50%, 75%, or 100% — only the timing differs (~47 ticks from 50% start vs ~38 ticks from 100% start).
 
 ---
 
 ## Troubleshooting
 
-**`py:python3` not found**  
-NetLogo can't locate your Python 3 install. Set the path in NetLogo preferences:  
-Edit → Preferences → Python path → point to your `python3` executable.
+**`'py' extension not found` warning**
+Harmless for baseline runs. NetLogo loads all declared extensions at startup; the Python extension is declared in the model but never called during baseline. Ignore this warning.
 
-**`import mastoc_llm_bridge` fails**  
-The bridge file must be in the **same directory** as `MASTOC-LLM.nlogo`. NetLogo sets its working directory to the model's folder on load, and the bridge's `sys.path.insert(0, os.getcwd())` relies on this.
+**NetLogo doesn't find the model / `file not found` error**
+Ensure you run `run_baseline_sweep.py` from the same directory as `MASTOC-LLM.nlogox`, or pass `--model path/to/MASTOC-LLM.nlogox` explicitly.
 
-**`ANTHROPIC_API_KEY` not set / authentication error**  
-Set the environment variable before launching NetLogo (the variable must be set in the shell that launches NetLogo, not in a separate terminal).
+**`py:python3` not found (GUI runs)**
+NetLogo can't locate your Python 3 install. Set the path in NetLogo preferences: Edit → Preferences → Python path → point to your `python3` executable.
 
-**Ollama connection refused**  
-Ensure Ollama is running (`ollama serve` in a terminal) and the model is pulled (`ollama pull llama3.2`).
+**`import mastoc_llm_bridge` fails**
+The bridge file must be in the **same directory** as `MASTOC-LLM.nlogox`. NetLogo sets its working directory to the model's folder on load.
 
-**`Data/` directory not found**  
-Create `Data/` manually in the same folder as the `.nlogo` file before clicking Setup.
+**`ANTHROPIC_API_KEY` not set / authentication error**
+Set the environment variable before launching NetLogo. On Windows, set it in the same PowerShell session that opens NetLogo.
 
-**NetLogo 4.0.2 compatibility**  
-The original MASTOC ran on NetLogo 4.0.2 and used the `nash` extension. MASTOC-LLM targets **NetLogo 6.4** and replaces the Nash solver with a Python best-response heuristic (baseline) or LLM calls (GABM/hybrid). The `.nlogo` file will not open correctly in NetLogo 4.
+**Ollama connection refused**
+Ensure Ollama is running (`ollama serve`) and the model is pulled (`ollama pull modelname`). For a remote server, verify the URL with `--ollama-url http://host:11434/v1`.
 
----
+**`Cannot remove item ... being used by another process` (PowerShell sweep)**
+NetLogo hasn't released the CSV file handle yet. The sweep script retries up to 5 times with 500ms delays — if it still fails, the individual CSV has already been copied to `baseline_results/` so no data is lost. The master concatenation may be missing that condition's rows; re-run just that condition if needed.
 
-## Connecting to your scientific question
-
-To test whether Ostrom's institutions emerge, look for:
-
-1. **Pool survival** — does `pool_pct` in `resources.csv` stay above 0 in Full GABM vs collapse in Baseline?
-
-2. **Norm proposals** — search `decisions.csv` for rows where `message` contains "limit", "rule", "fair", "agree", "maximum"
-
-3. **Institution score trajectory** — plot `institution_score` from `institutions.csv` over ticks. Does it rise as the pool declines (crisis-driven institution formation)?
-
-4. **Behavioural convergence** — do agents' actions synchronise after norm proposals? Look for runs of consecutive REMOVE or KEEP actions across all agents.
-
-5. **Hybrid leverage** — in condition 3, does the single LLM agent's message content influence the rule-based agents' payoff structure? (Rule-based agents see LLM-agent herds; if the LLM agent consistently removes cows, others face higher relative payoffs for keeping.)
+**NetLogo 6.x / `.nlogo` file**
+MASTOC-LLM targets NetLogo 7.0.4. The `.nlogox` format is not backward-compatible with NetLogo 6. If you must use NetLogo 6, the legacy `.nlogo` file may be available in earlier releases but is no longer maintained.
 
 ---
 
 ## Citation
 
-If you use this model in your research, please cite both:
+If you use this model in your research, please cite:
 
 ```
 Bais, A. et al. (2023). MASTOC v1.1.0. CoMSES Computational Model Library.

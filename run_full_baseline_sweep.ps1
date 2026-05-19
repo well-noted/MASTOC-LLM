@@ -169,6 +169,27 @@ foreach ($grass in @(50, 75, 100)) {
 
 
 # ===========================================================================
+# SWEEP G -- risk aversion x neg_r (near boundary)
+# Goal: does risk aversion shift the pos_r > neg_r collapse threshold?
+# Sweep D showed risk has no effect at neg_r=0; this tests the transition zone
+# (neg_r=0.75-1.0) where partial collapse already appears.
+# ===========================================================================
+Write-Host ""
+Write-Host "==========================================="
+Write-Host "  SWEEP G -- risk aversion x neg_r"
+Write-Host "  (boundary region: neg_r = 0.75 to 1.0)"
+Write-Host "==========================================="
+
+foreach ($neg_r in @(0.75, 0.8, 0.9, 1.0)) {
+    foreach ($risk in @(0.0, 0.25, 0.5, 0.75, 1.0)) {
+        $nr = [string]([math]::Round($neg_r, 2))
+        $rk = [string]([math]::Round($risk, 2))
+        Run-Condition "G_neg${nr}_risk${rk}" "--neg-r $neg_r --risk $risk"
+    }
+}
+
+
+# ===========================================================================
 # Done
 # ===========================================================================
 $elapsed = (Get-Date) - $start
