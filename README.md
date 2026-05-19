@@ -1713,7 +1713,7 @@ Five distinct phases are visible in this single run.
 <dd>The recovered pool prompted another ADD cycle. Herds rose to 92 by tick 58 (pool: 88.8%), then agents corrected again, removing down to 75 cows and bringing the pool back to 92.9%. Crucially, this second correction achieved something the first did not: <strong>perfect equalization at 25/25/25</strong>, maintained from tick 75 through tick 110.</dd>
 </dl>
 
-**Phase 5 -- Stable hold then new growth (ticks 76–120). ** 
+**Phase 5 -- Stable hold then new growth (ticks 76–120).** 
 
 For 35 ticks all three agents held at 25/25/25, coordinating around a 95% pool target they kept falling just short of. At tick 111, Agent 0 defected from the hold: 
 
