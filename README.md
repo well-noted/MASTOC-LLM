@@ -49,6 +49,9 @@ The core research question:
   - [DeepSeek R1:32b: reasoning model, KEEP-dominant behavior](#deepseek-r132b-reasoning-model-keep-dominant-behavior)
   - [gemma4:e4b: KEEP-dominant stasis, then overshoot-panic at mid cooperation](#gemma4e4b-keep-dominant-stasis-then-overshoot-panic-at-mid-cooperation)
   - [Thinking traces: what the deliberation reveals](#thinking-traces-what-the-deliberation-reveals)
+    - [DeepSeek R1:32b: payoff-personality deadlock](#deepseek-r132b-payoff-personality-deadlock)
+    - [gemma4:e4b: payoff maximization and social conformism](#gemma4e4b-payoff-maximization-and-social-conformism)
+    - [Claude Haiku 4.5: trajectory-conditional reasoning](#claude-haiku-45-trajectory-conditional-reasoning)
   - [Claude Sonnet: mid cooperation and high negative reciprocity](#claude-sonnet-mid-cooperation-replicates-overshoot-panic-negative-reciprocity-produces-fastest-equalization)
   - [Cross-model comparison: neg\_r = 1](#cross-model-comparison-negr--1-with-gpt-55-produces-stability-but-not-equality)
   - [Memory and communication sweep: amnesiac vs. equipped agents](#memory-and-communication-sweep-amnesiac-vs-equipped-agents)
@@ -1088,7 +1091,9 @@ gemma4:e4b joins gpt-5.4-mini and DeepSeek R1:32b in the KEEP-dominant cluster a
 
 ### Thinking traces: what the deliberation reveals
 
-Ollama-hosted models (DeepSeek R1:32b and gemma4:e4b) expose their chain-of-thought in the API response; the bridge logs this as a `thinking` field alongside each decision. Anthropic does not expose internal reasoning by default but makes extended thinking available via API opt-in -- the `extended-thinking?` toggle in the model interface enables this for future runs. OpenAI is a different case: the o-series reasoning traces are actively concealed. The o1 System Card states that the chain-of-thought "may include unaligned content" and that "attempting to extract raw reasoning through methods other than the reasoning summary parameter... may violate the Acceptable Use Policy" (OpenAI, 2024). The stated rationale combines safety concerns about intermediate reasoning with competitive interests -- the traces are a product secret, not merely an engineering omission. Claude Sonnet and gpt-5.5 therefore appear here only through their outputs, for structurally different reasons: Claude's reasoning is inaccessible by default but recoverable; gpt-5.5's is inaccessible by policy. The traces from DeepSeek and gemma4 are qualitative evidence -- nine runs, 598 decision traces in total -- not a systematic sample, but they offer a window into the deliberative process that action counts alone cannot.
+The bridge logs two distinct traces per decision: a `reasoning` field parsed from the model's structured JSON output (self-reported reasoning, available for every model that follows the prompt format), and a `thinking` field containing internal chain-of-thought tokens where the API exposes them. These are not the same thing. The `reasoning` field is what the model chooses to say about its decision; the `thinking` field is the pre-response computation the model ran before committing to that answer.
+
+Thinking traces are available from three sources. Ollama-native models (DeepSeek R1:32b and gemma4:e4b) expose them natively in the API response. Claude Haiku 4.5, which was used in the Anthropic runs here, emits thinking blocks natively without requiring explicit extended thinking mode -- a property of the model generation, not of the API call. For other Claude models, the `extended-thinking?` toggle in the interface enables Anthropic's extended thinking API, which captures traces at a configurable token budget. OpenAI is a different case entirely: reasoning traces are actively concealed. The o1 System Card states that the chain-of-thought "may include unaligned content" and that "attempting to extract raw reasoning through methods other than the reasoning summary parameter... may violate the Acceptable Use Policy" (OpenAI, 2024). The stated rationale combines safety concerns with competitive interests -- the traces are a product secret, not an engineering omission. The traces analyzed below come from nine runs, 598 decision traces in total -- qualitative evidence, not a systematic sample, but they offer a window into the deliberative process that action counts alone cannot.
 
 #### DeepSeek R1:32b: payoff-personality deadlock
 
@@ -1122,9 +1127,39 @@ Then, with pressure absent, payoff logic resumes. At tick 40 the grassland has f
 
 The gemma4 pattern is distinguishable from DeepSeek's paralysis: where DeepSeek settles into a fixed local resolution (KEEP), gemma4 oscillates between payoff-maximization and social conformism based on the most recent messages received. Neither pattern constitutes multi-period modeling of the commons.
 
-#### What the traces don't contain -- and what that implies
+#### Claude Haiku 4.5: trajectory-conditional reasoning
 
-Neither model's chain-of-thought contains reasoning of the form: *if current trends continue for N ticks, the commons will reach state X.* The agents reason about the current tick, not about trajectories. This is what distinguishes their output profiles from Claude Sonnet's: Claude's messages explicitly reference trajectories ("if this continues," "the last five rounds have shown"), propose numerical targets, and escalate accountability based on whether those targets are met. That behavior pattern is consistent with multi-period modeling -- but whether Claude's internal reasoning actually works that way cannot be determined from standard API calls. Extended thinking mode can answer this question for Anthropic models; the `extended-thinking?` toggle makes this available in future runs. For OpenAI models, the question cannot be tested: the reasoning is concealed by policy, not by technical limitation, and no equivalent opt-in exists.
+Claude Haiku 4.5 emits thinking blocks natively -- no extended thinking flag required. Eight decisions from a single run (coop=1, guilt-averse, reciprocal, risk-averse; 1 Anthropic agent + 2 OpenAI agents) provide a small but legible window into the deliberation.
+
+The surface result looks familiar: all eight decisions are KEEP, the commons holds at 98.2%. But the traces that produce it are structurally different from DeepSeek R1's.
+
+> *"Let me analyze this situation carefully: Grassland: 1089 patches (100% -- pristine). My herd: 15 cows. Agent 1: 15 cows (kept). Agent 2: 25 cows (added)... The payoff forecast suggests ADD is best individually (31.786), but this conflicts with my personality traits... Agent 2 just added a cow."*
+
+> **Tick 1, Agent 0 -- Action: KEEP**
+
+So far this resembles DeepSeek's pattern: enumerate the payoff hierarchy, apply personality constraints, resolve to KEEP. The difference appears across ticks. By tick 6, the thinking trace contains this:
+
+> *"There's an imbalance: I have 15 cows. Agent 1 has 15 cows. Agent 2 has 25 cows. Agent 2 is overexploiting relative to us."*
+
+And by tick 7:
+
+> *"I've been consistently KEEP for the last 5 rounds, sending cooperative messages."*
+
+These are not tick-level claims. The first is a structural assessment of the commons' fairness geometry -- the model is maintaining a running account of who is taking how much. The second is a self-model: the agent is tracking its own behavioral history as a signal about what kind of agent it is. DeepSeek's traces contain neither.
+
+The most distinctive feature is the conditional forward commitment that appears in the messages: *"If pasture pressure rises later, open to reducing together."* Whether this phrasing originates in the thinking or in message generation, the thinking traces confirm it is not empty signalling -- the traces contain genuine assessments of when the commons would cross a threshold that would trigger a different response. This is reasoning of the form *if X, then Y* across time, not just reasoning about the current state.
+
+The payoff conflict is present, as in DeepSeek. ADD gives 31.742, KEEP gives 30.0. Haiku acknowledges this and sets it aside -- but not by applying a personality constraint and stopping there. The trace continues: *"Adding would contribute to the tragedy of the commons... Agent 2 already has 25 cows vs my 15."* The fairness concern is grounded in specific numerical comparison and connected to the commons trajectory, not just to a personality parameter.
+
+This is an empirical regularity from eight decisions under a single personality configuration. It cannot be generalized. Whether the pattern holds at lower cooperation, under adversarial personality combinations, or over longer runs where the commons actually degrades -- these remain open questions. The traces are consistent with multi-period modeling; they do not establish it.
+
+#### What the traces reveal -- and where they stop
+
+The comparison across three models exposes a gradient rather than a binary. DeepSeek R1 resolves a tick-level conflict by applying personality constraints to a payoff signal -- the reasoning is correct, detailed, and temporally blind. gemma4 oscillates between payoff maximization and social conformism with no stable internal model. Claude Haiku 4.5 -- in the one run where its traces are available -- maintains a running model of structural inequality, tracks its own behavioral history, and builds conditional commitments about future thresholds.
+
+The gradient matters because it maps onto outcome differences. DeepSeek's KEEP-dominant stasis allowed slow herd drift that the agents never noticed. Haiku's KEEP-dominant stasis held the commons at 98.2% through eight ticks of genuine restraint. The action is the same; the process is not.
+
+What the Haiku traces do not contain -- and what remains unresolved -- is evidence of these conditional commitments being activated. The run ended before the commons degraded. Whether Haiku would actually shift to REMOVE when it projected the commons crossing its stated threshold is unknown. For OpenAI models, this question cannot be approached at all: the reasoning is concealed by policy, not by technical limitation, and no equivalent opt-in exists. For other Claude models, the `extended-thinking?` toggle enables capture in future runs.
 
 The traces are consistent with the GRPO-vs-RLHF hypothesis: models trained to optimize for reasoning correctness on well-defined problems (math, code) may not generalise that deliberative capacity to open-ended, multi-period coordination problems. But this remains a conjecture. The traces establish that KEEP-dominance in DeepSeek R1 is not an absence of reasoning -- the reasoning is present and detailed -- but a reasoning process that resolves a tick-level conflict without modeling what that resolution accumulates into.
 
