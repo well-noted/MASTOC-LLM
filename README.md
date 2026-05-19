@@ -1749,9 +1749,11 @@ The oscillating pattern appears inherently sensitive to initial conditions at ea
 
 </dl>
 
-This makes memory=2 a stochastic boundary -- the threshold between the collapse regime (memory ≤ 1) and the survival regime (memory ≥ 3), where the outcome of any individual run is sensitive to the trajectory of the ADD phase.
+This makes memory=2 a **stochastic boundary** -- the threshold between the collapse regime (memory ≤ 1) and the survival regime (memory ≥ 3), where the outcome of any individual run is sensitive to the trajectory of the ADD phase.
 
-**Action counts:** ADD=97, KEEP=219, REMOVE=44. The substantially higher REMOVE count compared to memory=1 (18) and memory=3 (24) reflects the active oscillation -- more corrections needed because the 2-tick window misses the slow-building trends that memory=3 and memory=15 catch earlier.
+**Action counts:** 
+
+ADD=97, KEEP=219, REMOVE=44. The substantially higher REMOVE count compared to memory=1 (18) and memory=3 (24) reflects the active oscillation -- more corrections needed because the 2-tick window misses the slow-building trends that memory=3 and memory=15 catch earlier.
 
 ---
 
@@ -2006,7 +2008,7 @@ Each hypothesis below emerged from specific patterns in the run set above -- gro
 
 **Ostrom connection.** 
 
-Ostrom (1990) identified a shared orientation toward collective benefit as a precondition for institution formation -- not a design principle that can be engineered in, but a prerequisite that must already be present. 
+Ostrom (1990) identified a shared orientation toward collective benefit as a precondition for institution formation
 
 <dl>
 
@@ -2015,6 +2017,8 @@ Ostrom (1990) identified a shared orientation toward collective benefit as a pre
 <dd>H7 qualifies the claim further -- sufficient memory can rescue the commons at this cooperation level -- so H1 is best read as a finding about the cooperation parameter holding informational scaffolding fixed at defaults, not as a universal threshold.</dd>
 
 </dl>
+
+This is not a design principle that can be engineered in, but a prerequisite that must already be present. 
 
 **Evidence.** 
 
@@ -2049,7 +2053,17 @@ A sharp transition somewhere between coop=0.49 and coop=0.8; transition point mo
 
 **Ostrom connection.** 
 
-Two of Ostrom's eight design principles are directly at stake here. Principle 2 -- *proportional equivalence between costs and benefits* -- is what `fair_oth` operationalises: does Agent 2, who holds 25 cows, feel an obligation to bear a proportional share of the restraint burden? Principle 5 -- *graduated sanctions* -- is what `neg_r` operationalises: is Agent 1 willing to apply social pressure when Agent 2 fails to reduce? The results suggest that both are necessary and that neither alone is sufficient: high `fair_oth` without `neg_r` may produce stasis (Agent 2 sees the disparity but feels no enforcement pressure), while high `neg_r` without `fair_oth` may produce reactive punishment rather than principled burden-sharing.
+Two of Ostrom's eight design principles are directly at stake here. 
+
+<dl>
+
+<dd>Principle 2 -- *proportional equivalence between costs and benefits* -- is what `fair_oth` operationalises: does Agent 2, who holds 25 cows, feel an obligation to bear a proportional share of the restraint burden?</dd>
+
+<dd>Principle 5 -- *graduated sanctions* -- is what `neg_r` operationalises: is Agent 1 willing to apply social pressure when Agent 2 fails to reduce?</dd>
+
+</dl>
+
+The results suggest that both are necessary and that neither alone is sufficient: high `fair_oth` without `neg_r` may produce stasis (Agent 2 sees the disparity but feels no enforcement pressure), while high `neg_r` without `fair_oth` may produce reactive punishment rather than principled burden-sharing.
 
 **Evidence.** 
 
@@ -2081,6 +2095,7 @@ Design grid (each cell = 3 runs):
 **Expected finding:**
 
 neg_r is the protective factor against paralysis; fair_oth predicts whether stasis or equalization occurs. Neither alone is sufficient — the Ostrom connection requires both DP2 (proportional equivalence) and DP5 (graduated sanctions) to be operative simultaneously.
+
 ---
 
 ### H3 -- Negative reciprocity is a cooperative paralysis antidote
