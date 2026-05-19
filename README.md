@@ -1171,9 +1171,13 @@ And by tick 7:
 
 These are not tick-level claims. The first is a structural assessment of the commons' fairness geometry -- **the model is maintaining a running account of who is taking how much.** The second is a self-model: the agent is tracking its own behavioral history as a signal about what kind of agent it is. DeepSeek's traces contain neither.
 
-The most distinctive feature is the conditional forward commitment that appears in the messages: *"If pasture pressure rises later, open to reducing together."* Whether this phrasing originates in the thinking or in message generation, the thinking traces confirm it is not empty signalling -- the traces contain genuine assessments of when the commons would cross a threshold that would trigger a different response. This is reasoning of the form *if X, then Y* across time, not just reasoning about the current state.
+<dl>
 
-The payoff conflict is present, as in DeepSeek. ADD gives 31.742, KEEP gives 30.0. Haiku acknowledges this and sets it aside -- but not by applying a personality constraint and stopping there. The trace continues: *"Adding would contribute to the tragedy of the commons... Agent 2 already has 25 cows vs my 15."* **The fairness concern is grounded in specific numerical comparison and connected to the commons trajectory, not just to a personality parameter.**
+<dd> The most distinctive feature is the conditional forward commitment that appears in the messages: *"If pasture pressure rises later, open to reducing together."* Whether this phrasing originates in the thinking or in message generation, the thinking traces confirm it is not empty signalling -- the traces contain genuine assessments of when the commons would cross a threshold that would trigger a different response. This is reasoning of the form *if X, then Y* across time, not just reasoning about the current state.</dd>
+
+<dd>The payoff conflict is present, as in DeepSeek. ADD gives 31.742, KEEP gives 30.0. Haiku acknowledges this and sets it aside -- but not by applying a personality constraint and stopping there. The trace continues: *"Adding would contribute to the tragedy of the commons... Agent 2 already has 25 cows vs my 15."* <strong>The fairness concern is grounded in specific numerical comparison and connected to the commons trajectory, not just to a personality parameter.</strong> </dd>
+
+</dl>
 
 This is an empirical regularity from eight decisions under a single personality configuration. It cannot be generalized. Whether the pattern holds at lower cooperation, under adversarial personality combinations, or over longer runs where the commons actually degrades -- these remain open questions. The traces are consistent with multi-period modeling; they do not establish it.
 
