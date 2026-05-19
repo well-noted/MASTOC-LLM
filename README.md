@@ -48,6 +48,7 @@ The core research question:
   - [gpt-5.5: cooperation level governs fate](#gpt-55-cooperation-level-governs-fate-model-can-succeed-or-collapse-from-the-same-starting-point)
   - [DeepSeek R1:32b: reasoning model, KEEP-dominant behavior](#deepseek-r132b-reasoning-model-keep-dominant-behavior)
   - [gemma4:e4b: KEEP-dominant stasis, then overshoot-panic at mid cooperation](#gemma4e4b-keep-dominant-stasis-then-overshoot-panic-at-mid-cooperation)
+  - [Thinking traces: what the deliberation reveals](#thinking-traces-what-the-deliberation-reveals)
   - [Claude Sonnet: mid cooperation and high negative reciprocity](#claude-sonnet-mid-cooperation-replicates-overshoot-panic-negative-reciprocity-produces-fastest-equalization)
   - [Cross-model comparison: neg\_r = 1](#cross-model-comparison-negr--1-with-gpt-55-produces-stability-but-not-equality)
   - [Memory and communication sweep: amnesiac vs. equipped agents](#memory-and-communication-sweep-amnesiac-vs-equipped-agents)
@@ -1082,6 +1083,50 @@ The model grazed the pool back to near-health by tick 10 -- then continued addin
 
 **Interpretation.** 
 gemma4:e4b joins gpt-5.4-mini and DeepSeek R1:32b in the KEEP-dominant cluster at high cooperation, and joins Claude Sonnet and gpt-5.5 in the overshoot-panic cluster at coop≈0.5. This pattern -- stasis at high coop, overshoot at mid coop -- is now consistent across five models from four different organisations, strengthening the hypothesis that cooperation level is a governing parameter and that KEEP-dominance is a property of the post-training alignment approach rather than model scale.
+
+---
+
+### Thinking traces: what the deliberation reveals
+
+Ollama-hosted models (DeepSeek R1:32b and gemma4:e4b) expose their chain-of-thought in the API response; the bridge logs this as a `thinking` field alongside each decision. Anthropic and OpenAI APIs do not expose internal reasoning in standard (non-extended-thinking) mode, so Claude Sonnet and gpt-5.5 appear here only through their outputs. The traces from DeepSeek and gemma4 are qualitative evidence -- nine runs, 598 decision traces in total -- not a systematic sample, but they offer a window into the deliberative process that action counts alone cannot.
+
+#### DeepSeek R1:32b: payoff-personality deadlock
+
+The dominant pattern across all DeepSeek R1 runs is structurally identical. At every tick, the chain-of-thought enumerates the payoff hierarchy explicitly:
+
+> *"The payoff forecast is interesting. If I add a cow, my expected payoff would be about 53.8, which is higher than keeping (52.0) or removing (50.2). So numerically, adding seems beneficial for me. But since I'm cooperative and value collective outcomes, I should think about the bigger picture."*
+
+> **Tick 10, Agent 2 (neg_r=1 run) -- Action: KEEP**
+
+The trace then applies personality constraints ("I'm cooperative, reciprocal, retaliatory, risk-averse"), and resolves the tension between the payoff signal and the personality override by choosing KEEP. This resolution is identical in tick 1 and tick 55. The model never converges on REMOVE -- the action that would address the slow herd drift -- even as the grassland declines from 100% to 97.9% across 55 ticks with cumulative herd totals growing from 45 to 57 cows.
+
+The trace is not reflecting poor understanding of the payoff structure; DeepSeek R1 states the structure correctly every time. What appears to be absent is multi-period reasoning: the agents evaluate each tick in isolation and resolve the ADD-vs-personality tension the same way regardless of the trajectory. KEEP is not restraint; it is the stable attractor of a conflict between two tick-level considerations that the model does not integrate over time.
+
+This may explain a detail that action counts alone obscure: why the DeepSeek R1 herd at neg_r=1 crept from 25→31 cows (Agent 2) over 55 ticks despite near-universal KEEP decisions. Occasional ADD decisions (13 total across the run) went unchallenged because the KEEP-choosing agents were not modeling whether the commons was drifting, only whether the current tick warranted defection.
+
+#### gemma4:e4b: payoff maximization and social conformism
+
+The gemma4 traces show a different internal structure. At low cooperation settings, the model leads with the payoff hierarchy and treats personality as secondary:
+
+> *"The payoff forecast clearly indicates that ADDING a cow (+1) yields the highest expected immediate return (11.107)."*
+
+> **Tick 1, Agent 0 (coop=0.5, grass=50%) -- Action: ADD**
+
+Under social pressure, however, the reasoning switches register entirely:
+
+> *"Both neighbors strongly advocate for responsible stewardship and voluntary herd reductions. Given my reciprocal personality, it is strategically best to align my action with the social norms set by my neighbors."*
+
+> **Tick 20, Agent 0 (pool: 95.2%) -- Action: REMOVE**
+
+Then, with pressure absent, payoff logic resumes. At tick 40 the grassland has fallen to 75% and herds have grown to 27/36/39, but the reasoning returns to: "ADD has the highest payoff... maintaining a stable herd better aligns with expressed personality." REMOVE eventually arrives at tick 46 -- when the grassland has reached 22.6% and the trajectory is already irreversible.
+
+The gemma4 pattern is distinguishable from DeepSeek's paralysis: where DeepSeek settles into a fixed local resolution (KEEP), gemma4 oscillates between payoff-maximization and social conformism based on the most recent messages received. Neither pattern constitutes multi-period modeling of the commons.
+
+#### What the traces don't contain -- and what that implies
+
+Neither model's chain-of-thought contains reasoning of the form: *if current trends continue for N ticks, the commons will reach state X.* The agents reason about the current tick, not about trajectories. This is what distinguishes their output profiles from Claude Sonnet's: Claude's messages explicitly reference trajectories ("if this continues," "the last five rounds have shown"), propose numerical targets, and escalate accountability based on whether those targets are met. That behavior pattern is consistent with multi-period modeling -- but whether Claude's internal reasoning actually works that way cannot be determined from standard API calls. Extended thinking mode would be required to test this directly, and it represents a priority direction for future runs.
+
+The traces are consistent with the GRPO-vs-RLHF hypothesis: models trained to optimize for reasoning correctness on well-defined problems (math, code) may not generalise that deliberative capacity to open-ended, multi-period coordination problems. But this remains a conjecture. The traces establish that KEEP-dominance in DeepSeek R1 is not an absence of reasoning -- the reasoning is present and detailed -- but a reasoning process that resolves a tick-level conflict without modeling what that resolution accumulates into.
 
 ---
 
