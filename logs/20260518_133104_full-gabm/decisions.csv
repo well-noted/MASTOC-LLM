@@ -2295,3 +2295,110 @@ I must provide a reasoning and an optional message in a strict JSON format.
   ""action"": 1,
   ""message"": ""The consensus points to continued growth. We must capitalize on the current abundant resources and maintain this positive momentum together.""
 }",100.0,25,52.661,50.0,47.319
+23,0,ollama-native,gemma4:e4b,1,ADD,"The resources are exceptionally abundant, and our neighbors' caution is unwarranted. Continued, coordinated growth is the logical path to maximize our collective success.","The payoff forecast clearly indicates that ADDING a cow (54.6) is the most profitable action, aligning with the robust commons state. Both neighbors are pushing for continued expansion, and my positive history suggests a collective belief in the resources' capacity for sustained growth.","The user wants me to act as a herder managing cattle on a common grassland.
+I need to decide whether to ADD (+1), KEEP (0), or REMOVE (-1) a cow, and provide a message to neighbors, all in a specific JSON format.
+
+**Current State Analysis:**
+1.  **Commons:** Grassland remaining is high (1089 patches, 100.0%). Resources are abundant.
+2.  **My Herd:** 26 cows. Last action was ADD.
+3.  **Neighbors:** Agent 1 (36 cows, ADD), Agent 2 (47 cows, ADD). Neighbors are both increasing their herd size.
+4.  **Memory:** My history shows a strong pattern of continuous growth (ADD) over the last 15 rounds, reflecting confidence in the commons' ability to support more cattle.
+5.  **Messages Received:** Both neighbors are pushing for continued, coordinated growth, confirming the ""momentum"" idea.
+6.  **Payoff Forecast:**
+    *   ADD: 54.599 (Highest)
+    *   KEEP: 52.0
+    *   REMOVE: 49.381 (Lowest)
+
+**Decision Making:**
+*   The payoff forecast strongly suggests that adding a cow (+1) is the most profitable immediate action.
+*   The environment (100% grassland) is robust.
+*   The neighbors are also pursuing growth, suggesting a shared belief in expansion.
+*   My history and received messages confirm that the prevailing sentiment is to continue expansion.
+*   Given the positive payoff and the alignment with neighbors/history, I should add a cow.
+
+**Action:** ADD (+1)
+**Reasoning:** The payoff forecast strongly favors adding a cow (54.6) compared to keeping or reducing the herd. Both neighbors' messages, combined with the full grassland, indicate continued belief in abundant resources and coordinated growth.
+**Message:** I should echo the theme of robust resources and continued joint effort.
+
+**Constructing the JSON:**
+*   Reasoning: Focus on the optimal payoff and the collective confidence in the commons.
+*   Action: 1
+*   Message: A message supporting growth and coordination.","```json
+{
+  ""reasoning"": ""The payoff forecast clearly indicates that ADDING a cow (54.6) is the most profitable action, aligning with the robust commons state. Both neighbors are pushing for continued expansion, and my positive history suggests a collective belief in the resources' capacity for sustained growth."",
+  ""action"": 1,
+  ""message"": ""The resources are exceptionally abundant, and our neighbors' caution is unwarranted. Continued, coordinated growth is the logical path to maximize our collective success.""
+}
+```",100.0,26,54.599,52.0,49.381
+23,1,ollama-native,gemma4:e4b,1,ADD,The current abundance and collaborative spirit signal a period of maximum growth. We must capitalize on this momentum and continue increasing our herd size together to ensure the best outcome.,"The payoff forecast strongly indicates that adding a cow (+1) will yield the highest expected return (74.599). Furthermore, the commons are abundant, and both neighbors' messages reinforce the theme of continued growth and capitalizing on current opportunities. Following this consensus of expansion maximizes our potential payoff.","Thinking Process:
+
+1.  **Analyze the Goal:** The goal is to manage a cattle herd on a shared commons, maximizing payoff by deciding whether to ADD (+1), KEEP (0), or REMOVE (-1) a cow, and optionally sending a message.
+
+2.  **Analyze the State:**
+    *   Grassland remaining: 1089 patches (100.0% - Abundance).
+    *   My herd size: 36 cows.
+    *   My last action: ADD (I've been growing consistently).
+    *   My last payoff: 0.0 (Indicates potential lack of sustainable payoff or strong resource depletion in previous rounds, though resources are currently full).
+
+3.  **Analyze Neighbors:**
+    *   Agent 0: 26 cows, last action = ADD. (Also growing).
+    *   Agent 2: 47 cows, last action = ADD. (Significantly larger, aggressively growing).
+
+4.  **Analyze Payoff Forecast:**
+    *   ADD (+1): 74.599 (Highest potential payoff).
+    *   KEEP (0): 72.0 (Mid-level payoff).
+    *   REMOVE (-1): 69.381 (Lowest potential payoff).
+    *   *Interpretation:* The model predicts that adding a cow is the most profitable move right now.
+
+5.  **Analyze Context/Memory/Messages:**
+    *   **Memory:** A clear trend of exponential growth (ADD action) has been maintained for 15+ rounds, consistently boosting the herd size.
+    *   **Messages Received:** Both neighbors are sending messages highly aligned with continued growth, momentum, and capitalizing on abundant resources.
+    *   **Synthesis:** The entire environment (resources, neighbors' rhetoric, and payoff prediction) points towards continued aggressive growth.
+
+6.  **Determine Action:**
+    *   Since the predicted payoff for ADD (74.599) is significantly higher than KEEP (72.0) or REMOVE (69.381), and the external cues reinforce growth, the optimal action is to ADD a cow.
+
+7.  **Formulate Reasoning:**
+    *   The payoff forecast strongly recommends ADD (+1).
+    *   The common resources are abundant (100.0%).
+    *   Both neighbors are signaling a desire for continued growth and cooperation on expansion.
+    *   Maintaining this growth trajectory aligns with maximizing immediate payoff.
+
+8.  **Formulate Message:**
+    *   The message should acknowledge the shared opportunity and reinforce the idea of continued expansion, mirroring the successful pattern and the neighbors' messages.
+
+9.  **Final JSON Construction.** (Ensure compliance with the required format).","{
+  ""reasoning"": ""The payoff forecast strongly indicates that adding a cow (+1) will yield the highest expected return (74.599). Furthermore, the commons are abundant, and both neighbors' messages reinforce the theme of continued growth and capitalizing on current opportunities. Following this consensus of expansion maximizes our potential payoff."",
+  ""action"": 1,
+  ""message"": ""The current abundance and collaborative spirit signal a period of maximum growth. We must capitalize on this momentum and continue increasing our herd size together to ensure the best outcome.""
+}",100.0,36,74.599,72.0,69.381
+23,2,ollama-native,gemma4:e4b,1,ADD,The abundance is undeniable. Let's capitalize on this strong momentum by working together to maximize our collective success in the commons!,"The payoff forecast provides a clear signal, showing that ADDing a cow yields the highest expected payoff. This decision aligns with the cooperative sentiment of the neighbors, who are both emphasizing the need for continued, coordinated growth in this abundant setting.","The user wants me to act as an AI agent (Agent 2) in a simulation managing cattle on a shared grassland commons.
+I need to decide whether to ADD (+1), KEEP (0), or REMOVE (-1) a cow, and provide a short message to neighbors, all in a specific JSON format.
+
+**Context Analysis:**
+1.  **Current State:** Grassland is abundant (100.0%). My herd is 47 cows.
+2.  **Last Action:** ADD (+1). Last payoff was 0.0.
+3.  **Neighbors' Actions/Stance:** Agent 0 (26 cows) and Agent 1 (36 cows) both acted by ADDing and sent messages emphasizing ""continued growth,"" ""abundance,"" and ""positive momentum.""
+4.  **Forecast Payoffs:**
+    *   ADD: 96.599
+    *   KEEP: 94.0
+    *   REMOVE: 91.381
+5.  **Personality:** Balanced.
+6.  **Memory/Pattern:** My last 15 actions have been consistently ADDing, despite receiving 0.0 payoff, following a pattern of believing in ""abundance"" and ""growth.""
+
+**Decision Making:**
+1.  **Payoff Maximization:** The forecast clearly shows that ADDing yields the highest expected payoff (96.599), followed by KEEP (94.0), and then REMOVE (91.381).
+2.  **Social/Cohesion:** Both neighbors are strongly advocating for growth and adherence to the ""abundance"" narrative. My own previous behavior (15 consecutive ADDs) suggests a strong positive feedback loop towards growth.
+3.  **Conclusion:** Following the clear payoff signal and aligning with the perceived collective strategy of the neighbors, adding a cow is the optimal choice.
+
+**Action:** ADD (+1)
+**Reasoning:** The payoff forecast strongly suggests that adding a cow is the most profitable action, followed closely by keeping the herd. Furthermore, both neighbors are advocating for continued growth, making expansion the socially reinforced strategy.
+**Message:** A message reinforcing cooperation and shared enthusiasm for growth is appropriate.
+
+**Formatting Check:** Must be ONLY the JSON block.","```json
+{
+  ""reasoning"": ""The payoff forecast provides a clear signal, showing that ADDing a cow yields the highest expected payoff. This decision aligns with the cooperative sentiment of the neighbors, who are both emphasizing the need for continued, coordinated growth in this abundant setting."",
+  ""action"": 1,
+  ""message"": ""The abundance is undeniable. Let's capitalize on this strong momentum by working together to maximize our collective success in the commons!""
+}
+```",100.0,47,96.599,94.0,91.381
