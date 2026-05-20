@@ -208,6 +208,15 @@ python run_baseline_sweep.py --condition hybrid --num-llm-agents 1 `
 
 Pass `--yes` to skip the confirmation prompt (useful for scripted pipelines). For LLM conditions, the script automatically sets `sequentialRunOrder=true` and `--threads 1` to prevent concurrent API calls from colliding.
 
+Pass `--verbose` (or `-v`) to stream NetLogo's print/show output live — the equivalent of watching the Command Center during a GUI run. This also enables per-agent bridge logging (connection attempts, token counts, response timing). Without `--verbose`, NetLogo stdout is captured silently and only shown if the process exits with an error. This flag is strongly recommended when running LLM conditions for the first time or debugging unexpected behaviour.
+
+```powershell
+# LLM run with live output
+python run_baseline_sweep.py --condition full-gabm --runs 3 `
+    --backend ollama --llm-model deepseek-r1:32b `
+    --ollama-url http://192.168.86.26:11434/v1 --verbose
+```
+
 ### All flags
 
 | Flag | Default | Description |
@@ -220,6 +229,7 @@ Pass `--yes` to skip the confirmation prompt (useful for scripted pipelines). Fo
 | `--ticks T` | 120 | Max ticks per run |
 | `--stop-on-collapse` | off | End each run when grassland drops below 5% |
 | `--yes` / `-y` | off | Skip cost confirmation prompt |
+| `--verbose` / `-v` | off | Stream NetLogo print/show output live (Command Center equivalent) and enable per-agent LLM logging (connection, tokens, timing). Without this flag, NetLogo stdout is captured silently and only surfaced on failure. |
 | `--grassland G` | 100 | Initial grassland % (comma-separated for sweep) |
 | `--coop F` | 1.0 | Cooperation level |
 | `--neg-r F` | 0.0 | Negative reciprocity |

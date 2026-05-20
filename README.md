@@ -1949,6 +1949,11 @@ python run_baseline_sweep.py --condition hybrid --num-llm-agents 1 \
 python run_baseline_sweep.py --condition full-gabm --runs 5 \
     --backend ollama --llm-model gemma3:27b \
     --ollama-url http://192.168.86.26:11434/v1 --yes
+
+# Stream live LLM output (equivalent to watching the NetLogo Command Center)
+python run_baseline_sweep.py --condition full-gabm --runs 3 \
+    --backend ollama --llm-model deepseek-r1:32b \
+    --ollama-url http://192.168.86.26:11434/v1 --verbose
 ```
 
 **All flags:**
@@ -1963,6 +1968,7 @@ python run_baseline_sweep.py --condition full-gabm --runs 5 \
 | `--ticks T` | 120 | Max ticks per run |
 | `--stop-on-collapse` | off | End each run when grassland drops below 5% |
 | `--yes` / `-y` | off | Skip cost confirmation (for scripting) |
+| `--verbose` / `-v` | off | Stream NetLogo print/show output live (Command Center equivalent) and enable per-agent LLM logging (connection, tokens, timing). Without this flag, NetLogo stdout is captured silently and only surfaced on failure. |
 | `--grassland G` | 100 | Initial grassland % -- comma-separated for sweep |
 | `--coop F` | 1.0 | Cooperation level |
 | `--neg-r F` | 0.0 | Negative reciprocity |

@@ -1,0 +1,92 @@
+tick,agent_id,backend,model,action,action_name,message,reasoning,thinking,raw_response,pool_pct,own_herd,payoff_add,payoff_keep,payoff_remove
+1,2,ollama,deepseek-r1:32b,1,ADD,,"The grassland is fully available (100%), and adding a cow increases my expected payoff. While risk-averse, the modest gain outweighs waiting.",,"```json
+{
+  ""reasoning"": ""The grassland is fully available (100%), and adding a cow increases my expected payoff. While risk-averse, the modest gain outweighs waiting."",
+  ""action"": 1,
+  ""message"": """"
+}
+```",100.0,25,51.832,50.0,48.163
+1,1,ollama,deepseek-r1:32b,1,ADD,Adding. Let's expand while resources are ample.,"Given the high grassland remaining (100%), adding a cow seems safe for maximizing personal gain with potential reciprocity from neighbors who may also expand.",,"{
+  ""reasoning"": ""Given the high grassland remaining (100%), adding a cow seems safe for maximizing personal gain with potential reciprocity from neighbors who may also expand."",
+  ""action"": 1,
+  ""message"": ""Adding. Let's expand while resources are ample.""
+}",100.0,15,31.832,30.0,28.163
+1,0,ollama,deepseek-r1:32b,0,KEEP,,,,"{
+  ""reasoning"": ""The pasture is at full capacity, but both neighbors have added cows. Adding a cow now risks overgrazing, so keeping is safer while observing behavior."",
+  ""action"": 0,
+  ""message"": ""Consider the commons. Let's keep herds stable or grow slowly to prevent overgrazing.""
+}
+
+```json
+{
+  ""reasoning"": ""The pasture is at full capacity, but both neighbors have added cows. Adding a cow now risks overgrazing, so keeping is safer while observing behavior."",
+  ""action"": 0,
+  ""message"": ""Consider the commons. Let's keep herds stable or grow slowly to prevent overgrazing.""
+}
+```",100.0,5,11.832,10.0,8.163
+2,0,ollama,deepseek-r1:32b,1,ADD,Expanding cautiously together while monitoring pasture health for sustainability.,"Despite guilt-averse tendencies, adding a cow maximizes immediate payoff in ample pasture conditions. Reciprocally encouraging sustainable growth.",,"{
+  ""reasoning"": ""Despite guilt-averse tendencies, adding a cow maximizes immediate payoff in ample pasture conditions. Reciprocally encouraging sustainable growth."",
+  ""action"": 1,
+  ""message"": ""Expanding cautiously together while monitoring pasture health for sustainability.""
+}",99.2,5,11.802,10.0,8.194
+2,2,ollama,deepseek-r1:32b,1,ADD,Following suit to expand while pastures are still abundant.,"The pasture is still ample (99.2% remaining), and neighbors have also expanded their herds by adding cows. Given the forecasted payoffs and reciprocal behavior observed from my neighbors, adding a cow maximizes personal profit while maintaining alignment with group action.",,"```json
+{
+  ""reasoning"": ""The pasture is still ample (99.2% remaining), and neighbors have also expanded their herds by adding cows. Given the forecasted payoffs and reciprocal behavior observed from my neighbors, adding a cow maximizes personal profit while maintaining alignment with group action."",
+  ""action"": 1,
+  ""message"": ""Following suit to expand while pastures are still abundant.""
+}
+```",99.2,26,53.802,52.0,50.194
+2,1,ollama,deepseek-r1:32b,1,ADD,"Adding again, resources still ample. Let's monitor grassland to sustain growth together.","Grassland is plentiful at 99.2%, so adding a cow now offers the highest personal gain (33.802). Neighbors' recent actions suggest they are also expanding, and while guilt-averse, the immediate benefits outweigh concerns for now.",,"```json
+{
+  ""reasoning"": ""Grassland is plentiful at 99.2%, so adding a cow now offers the highest personal gain (33.802). Neighbors' recent actions suggest they are also expanding, and while guilt-averse, the immediate benefits outweigh concerns for now."",
+  ""action"": 1,
+  ""message"": ""Adding again, resources still ample. Let's monitor grassland to sustain growth together.""
+}
+```",99.2,16,33.802,32.0,30.194
+3,2,ollama,deepseek-r1:32b,0,KEEP,"Acknowledging your messages, I'll keep my herd to support sustainable grazing while monitoring conditions closely.","Given the high grassland remaining (98.8%) but observing neighbors adding cows, I decide to KEEP to balance immediate gains with sustainability. My risk-averse nature and preference for equitable outcomes make this cautious approach prudent.",,"{
+  ""reasoning"": ""Given the high grassland remaining (98.8%) but observing neighbors adding cows, I decide to KEEP to balance immediate gains with sustainability. My risk-averse nature and preference for equitable outcomes make this cautious approach prudent."",
+  ""action"": 0,
+  ""message"": ""Acknowledging your messages, I'll keep my herd to support sustainable grazing while monitoring conditions closely.""
+}",98.8,27,55.779,54.0,52.216
+3,1,ollama,deepseek-r1:32b,0,KEEP,Pausing expansion as initial signs of pasture strain emerge. Let's be mindful to sustain our resources collectively.,Pausing expansion to prevent potential overgrazing and ensure sustainable use of the commons for all herders.,,"```json
+{
+  ""reasoning"": ""Pausing expansion to prevent potential overgrazing and ensure sustainable use of the commons for all herders."",
+  ""action"": 0,
+  ""message"": ""Pausing expansion as initial signs of pasture strain emerge. Let's be mindful to sustain our resources collectively.""
+}
+```",98.8,17,35.779,34.0,32.216
+4,0,ollama,deepseek-r1:32b,0,KEEP,,"Observing ample grassland, but neighbors are keeping their herds. Guilt-averse to over-expand while others hold back; safer outcome is better than risking guilt or lower payoff.",,"```json
+{
+  ""reasoning"": ""Observing ample grassland, but neighbors are keeping their herds. Guilt-averse to over-expand while others hold back; safer outcome is better than risking guilt or lower payoff."",
+  ""action"": 0,
+  ""message"": """"
+}
+```",98.8,6,13.779,12.0,10.216
+4,1,ollama,deepseek-r1:32b,0,KEEP,,"While adding offers a higher payoff, concern over fairness and the commons' health leads me to pause expansion once more. Keeping maintains stability without contributing further strain while monitoring neighbors' actions.",,"The agent considers the high grassland availability but is hesitant to add due to neighbors' behavior and personal traits like guilt aversion and reciprocity. They decide to keep their herd size for safety and fairness.
+
+```json
+{
+  ""reasoning"": ""While adding offers a higher payoff, concern over fairness and the commons' health leads me to pause expansion once more. Keeping maintains stability without contributing further strain while monitoring neighbors' actions."",
+  ""action"": 0,
+  ""message"": """"
+}
+```",98.8,17,35.779,34.0,32.216
+4,2,ollama,deepseek-r1:32b,1,ADD,,"Adding a cow offers higher personal profit with pasture remaining sufficient, despite neighbors keeping herds.",,"{
+  ""reasoning"": ""Adding a cow offers higher personal profit with pasture remaining sufficient, despite neighbors keeping herds."",
+  ""action"": 1,
+  ""message"": """"
+}",98.8,27,55.779,54.0,52.216
+5,1,ollama,deepseek-r1:32b,0,KEEP,Noticing early signs of pasture strain; consider carefully before expanding further to maintain sustainability.,"Observing the remaining grassland and neighbours' actions, adding another cow could potentially stress the commons more. To balance personal profit with avoiding guilt from over-exploitation and contributing responsibly, keeping the herd size is prudent while monitoring conditions.",,"```json
+{
+  ""reasoning"": ""Observing the remaining grassland and neighbours' actions, adding another cow could potentially stress the commons more. To balance personal profit with avoiding guilt from over-exploitation and contributing responsibly, keeping the herd size is prudent while monitoring conditions."",
+  ""action"": 0,
+  ""message"": ""Noticing early signs of pasture strain; consider carefully before expanding further to maintain sustainability.""
+}
+```",98.6,17,35.77,34.0,32.225
+5,0,ollama,deepseek-r1:32b,0,KEEP,,Maintaining a balance to avoid depleting the grassland. Keeping prevents overexploitation while staying considerate of neighbors' actions.,,"```json
+{
+  ""reasoning"": ""Maintaining a balance to avoid depleting the grassland. Keeping prevents overexploitation while staying considerate of neighbors' actions."",
+  ""action"": 0,
+  ""message"": """"
+}
+```",98.6,6,13.77,12.0,10.225
