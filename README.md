@@ -304,7 +304,7 @@ Four distinct collapse trajectories appear across these runs -- **Pattern I (Coo
 
 <dl>
 
-<dd>The opening results look cooperative because the first conditions tested were near-ideal. High-cooperation defaults (coop=1, memory_length=5, communication=on) reliably produce cooperative outcomes across models. Subsequent parameter sweeps tell a more mixed story.</dd>
+<dd>The opening results look cooperative because the first conditions tested were near-ideal. High-cooperation defaults (coop=1, memory_length=5, communication=on) reliably produce cooperative outcomes in RLHF-aligned models (Claude Sonnet, gpt-5.5); KEEP-dominant models (gpt-5.4-mini, DeepSeek R1) produce stasis or paralysis under the same settings. Subsequent parameter sweeps tell a more mixed story.</dd>
 
 <dd>Mid-level cooperation (coop≈0.5) consistently collapsed -- six independent runs across two models -- and short memory windows produced collapse in the mid-cooperation regime (memory=1, coop=0.5: collapse at tick 87; memory=0, coop=0.5: collapse at tick 31).</dd>
 
@@ -336,7 +336,7 @@ Collapse is concentrated in the mid-cooperation parameter region. The cases show
 | **Full-GABM (scarce commons, high coop)** | gpt-5.5 | 3 | No | -- | coop=1, fair_me=1, fair_oth=0.11, initial pool 48%: immediate cooperative restraint; 23/23/23 by tick 46; pool recovered to 95.9% |
 | **Full-GABM (low cooperation)** | gpt-5.5 | 3 | Yes | 13 | coop=0.13: defection cascade -- all ADD every tick from tick 1; pool exhausted in 13 ticks from 49.4% |
 | **Full-GABM (mid cooperation, x4 replications)** | gpt-5.5 | 3 | Yes (4/4) | 16–40 | coop=0.49: overshoot-panic -- ADD phase from stressed start, collective REMOVE too late; consistent tragedy across all 4 runs |
-| **Full-GABM (mid cooperation)** | Claude Sonnet 4.6 | 3 | Yes | 37 | coop=0.49: overshoot-panic matching gpt-5.5 -- mid-level cooperation produces tragedy regardless of model |
+| **Full-GABM (mid cooperation)** | Claude Sonnet 4.6 | 3 | Yes | 37 | coop=0.49: overshoot-panic matching gpt-5.5 -- mid-level cooperation produces tragedy across all tested model families (Claude Sonnet, gpt-5.5, gemma4) |
 | **Full-GABM (high coop + high negative reciprocity)** | Claude Sonnet 4.6 | 3 | No | -- | coop=1, neg_r=1: equalized to 16/16/16 by tick 18 -- fastest convergence observed; explicit accountability enforcement in agent messages |
 | **Full-GABM (high coop + high negative reciprocity)** | gpt-5.5 | 3 | No | -- | coop=1, neg_r=1: stable at 12/21/22 by tick 17; tit-for-tat escalation cycles before de-escalation; pool stable at 98.2% -- same parameters, different institutional character than Claude |
 | **Full-GABM (memory=0, no communication)** | Claude Sonnet 4.6 | 3 | Yes | 31 | coop≈0.5, memory_length=0, communication=off: amnesiac agents with no messaging -- textbook overshoot-panic in 31 ticks; ADD=71, KEEP=19, REMOVE=6 |
@@ -544,9 +544,9 @@ The empirical regularity <code>pos_r > neg_r → stable</code> is consistent wit
 
 ---
 
-### Full-GABM: cooperative convergence (coop=1, defaults)
+### Full-GABM: cooperative convergence (coop=1, defaults) — Claude Sonnet 4.6
 
-Three agents starting with herds of 5, 15, and 25 -- three-to-one inequality -- converged to equal herds of 13 within 22 ticks and held that equilibrium for the remaining 98 without deviation (coop=1, fair_me=0, fair_oth=1, memory_length=5). The commons remained at 99.4% health throughout.
+Three Claude Sonnet 4.6 agents starting with herds of 5, 15, and 25 -- three-to-one inequality -- converged to equal herds of 13 within 22 ticks and held that equilibrium for the remaining 98 without deviation (coop=1, fair_me=0, fair_oth=1, memory_length=5). The commons remained at 99.4% health throughout.
 
 This is not a payoff equilibrium; it is a negotiated one.
 
@@ -587,9 +587,9 @@ The agents produced outputs displaying behavioral patterns absent from their pro
 
 ---
 
-### Hybrid: the limits of a single institutional entrepreneur
+### Hybrid: the limits of a single institutional entrepreneur — Claude Sonnet 4.6
 
-In the hybrid condition, one LLM agent (Agent 0, starting herd: 5) was paired with two rule-based agents (herds: 16 and 26) that cannot receive or act on language. The LLM agent issued repeated appeals to its partners to reduce, but with no mechanism for the rule-based agents to hear those messages the commons collapsed anyway at tick 35 -- identical in timing to the baseline.
+In the hybrid condition, one Claude Sonnet 4.6 agent (Agent 0, starting herd: 5) was paired with two rule-based agents (herds: 16 and 26) that cannot receive or act on language. The LLM agent issued repeated appeals to its partners to reduce, but with no mechanism for the rule-based agents to hear those messages the commons collapsed anyway at tick 35 -- identical in timing to the baseline.
 
 **Resource dynamics:**
 
@@ -633,14 +633,14 @@ The hybrid result converges with Ostrom's (1990) core insight: institutions requ
 <dd>The LLM agent's outputs identified the problem, proposed solutions, signaled reciprocity, and escalated pressure -- all standard elements of successful commons governance -- but had no mechanism to make the rule-based agents hear, let alone respond.</dd>
 </dl>
 
-This is not a failure of the LLM agent's outputs. It is a structural finding: <strong>the preconditions for Ostromian institution-building include the cognitive capacity to participate in them.</strong></dd>
+This is not a failure of the LLM agent's outputs. It is a structural finding: <strong>the preconditions for Ostromian institution-building include the cognitive capacity to participate in them.</strong>
 
 
 ---
 
-### Hybrid (2 LLM): coalition formation, delayed tragedy
+### Hybrid (2 LLM): coalition formation, delayed tragedy — Claude Sonnet 4.6
 
-With 2 LLM agents (`num-llm-agents = 2`), two agents used LLM reasoning (Agents 0 and 1) and one was rule-based (Agent 2). The two LLM agents coordinated and repeatedly called out the rule-based defector -- yet had no means to halt its additions, and the commons still collapsed, 23 ticks later than the 1-LLM case and through an entirely different institutional dynamic.
+With 2 Claude Sonnet 4.6 agents (`num-llm-agents = 2`), two agents used LLM reasoning (Agents 0 and 1) and one was rule-based (Agent 2). The two LLM agents coordinated and repeatedly called out the rule-based defector -- yet had no means to halt its additions, and the commons still collapsed, 23 ticks later than the 1-LLM case and through an entirely different institutional dynamic.
 
 **Resource dynamics:**
 
@@ -685,7 +685,7 @@ The two LLM agents explicitly named each other as cooperators and Agent 2 as the
 The 2-LLM hybrid is consistent with a phase in the participation-threshold story between 1-LLM tragedy and 3-LLM cooperation. Two language-capable agents can coordinate, name a defector, and maintain a sanctioning coalition -- genuine institutional behavior. But when the defecting agent is mechanically unresponsive, sanctions are toothless. The coalition can delay the tragedy (35 → 58 ticks, +66%) but not prevent it.
 
 <dl>
-<dd>The qualitative shift in institution type is also significant: full-GABM institutions were convergent and ultimately stable; 2-LLM hybrid institutions were adversarial and ultimately futile. <dd>
+<dd>The qualitative shift in institution type is also significant: full-GABM institutions were convergent and ultimately stable; 2-LLM hybrid institutions were adversarial and ultimately futile.</dd>
 </dl>
 
 Real-world commons governance literature (Ostrom, 1990) similarly distinguishes between internal norm maintenance and external enforcement — the latter requires that violators be reachable. Two language-capable agents can form a coordinated coalition, name a defector, and sustain it for 58 ticks. They cannot make an unresponsive agent hear them.
@@ -792,7 +792,7 @@ Later runs in the dataset show that *occasional* DEFECTION signals are common ac
 
 **Interpretation:**
 
-This is the most theoretically differentiated result across the personality conditions. The guilt and envy parameters -- the fairness-framing components of each agent's prompt -- do not determine *whether* LLM agents produce cooperative outputs, but they strongly shape *how* and *when* cooperation stabilises.
+This is the most theoretically differentiated result across the Claude Sonnet personality conditions. The guilt and envy parameters -- the fairness-framing components of each agent's prompt -- did not determine *whether* Claude Sonnet agents produced cooperative outputs, but they strongly shaped *how* and *when* cooperation stabilised. Whether this holds for KEEP-dominant model families (where the fairness parameters may interact differently with the default KEEP posture) remains untested.
 
 With guilt (fairness-concerning-others) active, Agent 2's outputs reflected pressure to reduce a disproportionately large herd, producing consistent removal actions. With envy (fairness-concerning-me) active, Agent 0's outputs reflected urgency to grow toward parity. Both dynamics converged on equalization quickly and conservatively in the default run. Without them, Agent 2 produced no adjustment signals despite holding 32 cows against Agent 0's 21 -- and Agent 0 maintained cooperative outputs without expressing urgency about the disparity.
 
@@ -851,12 +851,12 @@ This raises a methodological question: **how much does the cooperation personali
 Two readings sit comfortably with the data, and they are not mutually exclusive. 
 
 <dl>
-<dd>The first is that models trained on human-generated text carry strong cooperative priors that a single adjective cannot displace -- "self-interested" as a prompt cue is too thin to suppress the reasoning that emerges from observing a shared resource under pressure. </dd>
+<dd>The first is that RLHF-aligned models carry strong cooperative priors that a single adjective cannot displace -- "self-interested" as a prompt cue is too thin to suppress the reasoning that emerges from observing a shared resource under pressure. (DeepSeek R1 and gemma4, trained on different alignment objectives, do not show this same override.)</dd>
 
 <dd>The second is that the commons structure itself is doing the work: declining pasture, visible herd sizes, payoff forecasts. The instrumental case for cooperation is too legible to ignore, and the personality framing arrives as commentary on an argument already settled by the environment.</dd>
 </dl>
 
-The personality slider appears to affect <em>where</em> agents converge (yield level) more than <em>whether</em> they converge at all — making the full-GABM cooperative outcome more robust than expected, and the cooperation slider more cosmetic than it looks.
+For Claude Sonnet specifically, the personality slider appeared to affect *where* agents converge (yield level) more than *whether* they converge at all. This does not generalize across model families: gpt-5.5 at coop=0.13 collapsed via defection cascade, and gpt-5.5 at coop=0.49 collapsed across four replications. The cooperation slider appears more cosmetic for Claude than it looks — but for other models it may be the governing variable.
 
 ---
 
@@ -905,16 +905,15 @@ Recovery was nearly as fast (99%+ by tick 20) and herds converged to [12, 14, 16
 
 **Interpretation:**
 
-Taken together, these runs add a third axis to the personality-parameter findings. Earlier results indicated that the cooperation slider had almost no effect on outcome, and that fairness sliders affected convergence speed and equilibrium herd size. These scarce-commons runs suggest that **environmental stress may itself function as a coordination accelerant**:
+Taken together, these Claude Sonnet runs add a third axis to the personality-parameter findings — specific to this model at moderate-to-high cooperation. Earlier results indicated that the cooperation slider had almost no effect on outcome, and that fairness sliders affected convergence speed and equilibrium herd size. These scarce-commons runs suggest that **environmental stress may itself function as a coordination accelerant for cooperative agents**:
 
-
-- In the default full-GABM (normal commons), agents converged to 13/13/13 by tick 22.
-- In the scarce-commons default-fairness run, agents converged to 11/12/13 by tick 30 -- from a more difficult starting position, and through an initial *reduction* phase rather than equalization.
+- In the default full-GABM (normal commons), Claude Sonnet agents converged to 13/13/13 by tick 22.
+- In the scarce-commons default-fairness run, they converged to 11/12/13 by tick 30 -- from a more difficult starting position, and through an initial *reduction* phase rather than equalization.
 - Even with low cooperation and zero fairness prompting, the scarce-commons run converged to a stable equilibrium by tick 30.
 
-The commons situation appears sufficient to override weak or absent fairness framing when the resource signal is strong enough. A stressed grassland at 49–50% makes the case for restraint immediately legible -- there is no ambiguity about whether the resource is under pressure. This contrasts with the low-fairness normal-commons run, where the commons was healthy enough that agents expanded aggressively before slowly coordinating.
+For Claude Sonnet at moderate-to-high cooperation, the commons situation appeared sufficient to override weak or absent fairness framing when the resource signal was strong enough: a stressed grassland at 49–50% made the case for restraint immediately legible. This contrasts with the low-fairness normal-commons run, where the commons was healthy enough that agents expanded aggressively before slowly coordinating. Later results qualify this finding substantially — gemma4 at coop=0.5 from a scarce start did not show the same cooperative response, suggesting the stress-override mechanism is cooperation-level dependent, not a structural property of the scenario.
 
-**LLM cooperative output may be highly context-sensitive.** The same model with the same personality framing produces different outputs when the environment provides an unambiguous signal. **Commons governance may be easiest to elicit from LLM agents precisely when it matters most — when the resource is visibly stressed.**
+For high-cooperation Claude Sonnet agents, cooperative output appeared highly context-sensitive: the same personality framing produced different responses when the environment provided an unambiguous distress signal. Whether this generalizes to other model families or cooperation levels is an open question — later results suggest it does not, at least not unconditionally.
 
 ---
 
@@ -979,7 +978,7 @@ The pool health numbers look similar on the surface. The underlying dynamics are
 <dd>This is consistent with the hypothesis that model scale shapes <em>how</em> cooperative outputs manifest — and that apparent cooperation in small models may not reflect the same underlying processing as in larger ones.</dd>
 </dl>
 
-Under environmental stress (scarce commons), both model classes showed rapid pool recovery. This is arguably the more robust finding: LLM agents in general do not respond to scarcity by expanding herds the way rule-based best-response agents do. The model's training-embedded cooperative prior appears robust to resource pressure, regardless of whether it is operating through sustained strategic reasoning or more reflexive output patterns.
+Under environmental stress, both Claude Sonnet and Llama 3B showed rapid pool recovery at the high-cooperation settings tested. These results prompted an early hypothesis about cooperative priors being robust to resource pressure. That hypothesis has not survived the full dataset: gemma4:e4b at coop=0.5 from a stressed start expanded aggressively and collapsed at tick 46, and gpt-5.5 at coop=0.13 from a 49% pool collapsed within 13 ticks. The stress-response result is model- and cooperation-level-specific — it holds for high-cooperation RLHF-aligned models, not for LLM agents as a class.
 
 ---
 
@@ -1500,7 +1499,7 @@ The key result:
 
 </dl>
 
-The stable outcome requires enough memory to detect a multi-round trend -- approximately 3 rounds minimum, with 15 rounds producing reliable stability across model families.
+The stable outcome requires enough memory to detect a multi-round trend -- approximately 3 rounds minimum, with 15 rounds producing reliable stability. This result was confirmed in Claude Haiku 4.5 under the same parameters (converged 24/24/24, pool stable at 95%), but the memory sweep itself was only conducted for Claude Sonnet; whether the memory=3 threshold generalizes to KEEP-dominant model families is untested.
 
 **Memory=0, communication off -- resource dynamics:**
 
