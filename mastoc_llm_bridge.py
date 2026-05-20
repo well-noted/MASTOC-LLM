@@ -709,45 +709,69 @@ def _call_llm(
         return content, thinking
 
     else:
-        # openai / ollama / any OpenAI-compatible endpoint
-        # Newer OpenAI models (o-series, gpt-4o and later) require max_completion_tokens;
-        # older models and local OpenAI-compat endpoints (Ollama) use max_tokens.
-        # Try max_completion_tokens first and fall back if the API rejects it.
+        # openai / ollama / any OpenAI-compatible endpoint — streamed so verbose
+        # mode shows connection and chunk-count progress (same feel as ollama-native).
+        # Newer OpenAI models require max_completion_tokens; Ollama uses max_tokens.
+        # We try max_completion_tokens first and fall back if the API rejects it.
         tag = f"agent {agent_id}" if agent_id is not None else "institution detector"
         verbose = _cfg.get("verbose")
         base_url = getattr(getattr(client, "_base_url", None), "host", str(backend))
         if verbose:
             _say(f"[{tag}] POST {base_url} model={model} ...")
         t_start = time.time()
-        try:
-            response = client.chat.completions.create(
+
+        messages = [
+            {"role": "system", "content": system_prompt},
+            {"role": "user",   "content": user_prompt},
+        ]
+
+        def _stream(token_kwarg: dict) -> tuple:
+            """Stream one attempt; returns (content_str, tok_in, tok_out)."""
+            content_parts = []
+            chunk_count   = 0
+            tok_in = tok_out = "?"
+            first = True
+            stream = client.chat.completions.create(
                 model=model,
-                messages=[
-                    {"role": "system", "content": system_prompt},
-                    {"role": "user", "content": user_prompt},
-                ],
-                max_completion_tokens=max_tokens,
+                messages=messages,
+                stream=True,
+                stream_options={"include_usage": True},
+                **token_kwarg,
             )
+            for chunk in stream:
+                if first:
+                    first = False
+                    if verbose:
+                        _say(f"[{tag}] connected, streaming response...")
+                delta = (chunk.choices[0].delta.content or "") if chunk.choices else ""
+                if delta:
+                    content_parts.append(delta)
+                    chunk_count += 1
+                    if verbose and chunk_count % 50 == 0:
+                        _say(f"[{tag}] {chunk_count} chunks received...")
+                # Final chunk carries usage when stream_options include_usage=True
+                if getattr(chunk, "usage", None):
+                    tok_in  = getattr(chunk.usage, "prompt_tokens",     "?")
+                    tok_out = getattr(chunk.usage, "completion_tokens", "?")
+            return "".join(content_parts), tok_in, tok_out
+
+        try:
+            content, tok_in, tok_out = _stream({"max_completion_tokens": max_tokens})
         except Exception as e:
             if "max_completion_tokens" in str(e) or "unsupported_parameter" in str(e).lower():
-                response = client.chat.completions.create(
-                    model=model,
-                    messages=[
-                        {"role": "system", "content": system_prompt},
-                        {"role": "user", "content": user_prompt},
-                    ],
-                    max_tokens=max_tokens,
-                )
+                try:
+                    content, tok_in, tok_out = _stream({"max_tokens": max_tokens})
+                except Exception as e2:
+                    if verbose:
+                        _say(f"[{tag}] FAILED ({time.time() - t_start:.1f}s): {e2}")
+                    raise
             else:
                 if verbose:
                     _say(f"[{tag}] FAILED ({time.time() - t_start:.1f}s): {e}")
                 raise
+
         elapsed = time.time() - t_start
-        content = response.choices[0].message.content or ""
         if verbose:
-            usage = getattr(response, "usage", None)
-            tok_in  = getattr(usage, "prompt_tokens",     "?") if usage else "?"
-            tok_out = getattr(usage, "completion_tokens", "?") if usage else "?"
             _say(f"[{tag}] done ({elapsed:.1f}s, {tok_in} in / {tok_out} out tokens, {len(content)} chars)")
         return content, ""
 
