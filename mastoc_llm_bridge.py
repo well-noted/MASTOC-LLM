@@ -98,6 +98,7 @@ def configure(
     communication: bool = True,
     extended_thinking: bool = False,
     thinking_budget: int = 5000,
+    cache_prompts: bool = True,
 ) -> str:
     """
     Initialise the bridge. Call once from NetLogo before the first tick.
@@ -142,6 +143,7 @@ def configure(
         communication=bool(communication),
         extended_thinking=bool(extended_thinking),
         thinking_budget=int(thinking_budget),
+        cache_prompts=bool(cache_prompts),
     )
 
     _run_id = run_id or datetime.now().strftime("%Y%m%d_%H%M%S") + f"_{condition}"
@@ -584,11 +586,26 @@ def _call_llm(
         import anthropic
         extended_thinking = _cfg.get("extended_thinking", False)
         thinking_budget   = int(_cfg.get("thinking_budget", 5000))
+        cache_prompts     = _cfg.get("cache_prompts", True)
+        verbose           = _cfg.get("verbose")
+        tag = f"agent {agent_id}" if agent_id is not None else "institution detector"
+
+        # Prompt caching: mark the system prompt for caching.
+        # Anthropic caches any prefix up to the last cache_control breakpoint.
+        # Effective only when the cached prefix reaches ≥1024 tokens (Sonnet) /
+        # ≥2048 tokens (Haiku) — prompts shorter than that are processed normally
+        # with no cost impact.  Cache TTL is 5 minutes; subsequent calls within
+        # that window pay 10% of normal input-token cost for the cached portion.
+        if cache_prompts:
+            system_block = [{"type": "text", "text": system_prompt,
+                             "cache_control": {"type": "ephemeral"}}]
+        else:
+            system_block = system_prompt
 
         api_kwargs = dict(
             model=model,
             max_tokens=max_tokens + thinking_budget if extended_thinking else max_tokens,
-            system=system_prompt,
+            system=system_block,
             messages=[{"role": "user", "content": user_prompt}],
         )
         if extended_thinking:
@@ -604,6 +621,15 @@ def _call_llm(
                 thinking_text = block.thinking
             elif block.type == "text":
                 response_text = block.text
+
+        # Log cache stats when verbose (cache_creation = write; cache_read = hit)
+        if verbose and cache_prompts:
+            u = response.usage
+            created = getattr(u, "cache_creation_input_tokens", 0) or 0
+            read    = getattr(u, "cache_read_input_tokens",     0) or 0
+            if created or read:
+                status = f"cache write {created}t" if created else f"cache HIT {read}t saved"
+                _say(f"[{tag}] {status}")
 
         return response_text, thinking_text
 
