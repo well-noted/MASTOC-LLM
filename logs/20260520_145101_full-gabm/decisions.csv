@@ -1,0 +1,43 @@
+tick,agent_id,backend,model,action,action_name,message,reasoning,thinking,raw_response,pool_pct,own_herd,payoff_add,payoff_keep,payoff_remove
+1,1,anthropic,claude-haiku-4-5,1,ADD,"Adding a cow as grassland is still healthy. Monitoring conditions closely. Agent 0 and 2, let's coordinate if commons pressure increases.","The grassland is at 50% capacity with 545 patches remaining. The payoff forecast shows ADD (+1) yields the highest expected payoff at 31.107, compared to KEEP at 30.0. Agent 2's recent removal suggests they may be responding to overgrazing concerns, but the commons still has substantial grass remaining. I'll add a cow while signaling my awareness of sustainability.",,"```json
+{
+  ""reasoning"": ""The grassland is at 50% capacity with 545 patches remaining. The payoff forecast shows ADD (+1) yields the highest expected payoff at 31.107, compared to KEEP at 30.0. Agent 2's recent removal suggests they may be responding to overgrazing concerns, but the commons still has substantial grass remaining. I'll add a cow while signaling my awareness of sustainability."",
+  ""action"": 1,
+  ""message"": ""Adding a cow as grassland is still healthy. Monitoring conditions closely. Agent 0 and 2, let's coordinate if commons pressure increases.""
+}
+```",50.0,15,31.107,30.0,28.893
+1,0,anthropic,claude-haiku-4-5,1,ADD,Adding one cow this round. Monitoring grassland health—let's coordinate if conditions worsen significantly.,"The grassland is at 50% capacity with 545 patches remaining. My payoff forecast shows ADD (+1) yields the highest expected return (11.107 vs 10.0 for keeping). Agent 1 is aggressively expanding (15 cows, just added), while Agent 2 is moderating (25 cows, just removed). As a balanced herder, I'll capitalize on current conditions while monitoring whether commons degradation accelerates.",,"```json
+{
+  ""reasoning"": ""The grassland is at 50% capacity with 545 patches remaining. My payoff forecast shows ADD (+1) yields the highest expected return (11.107 vs 10.0 for keeping). Agent 1 is aggressively expanding (15 cows, just added), while Agent 2 is moderating (25 cows, just removed). As a balanced herder, I'll capitalize on current conditions while monitoring whether commons degradation accelerates."",
+  ""action"": 1,
+  ""message"": ""Adding one cow this round. Monitoring grassland health—let's coordinate if conditions worsen significantly.""
+}
+```",50.0,5,11.107,10.0,8.893
+1,2,anthropic,claude-haiku-4-5,1,ADD,Adding a cow this round. Let's monitor pasture health together—suggest we communicate if grassland drops below 40% to coordinate herd management.,"The payoff forecast shows ADD generates the highest expected payoff (51.107 vs 50.0 for KEEP). With 545 patches remaining (50% capacity) and neighbours actively adding cows, the grassland can support growth. I'll add a cow while monitoring for tragedy-of-commons dynamics.",,"```json
+{
+  ""reasoning"": ""The payoff forecast shows ADD generates the highest expected payoff (51.107 vs 50.0 for KEEP). With 545 patches remaining (50% capacity) and neighbours actively adding cows, the grassland can support growth. I'll add a cow while monitoring for tragedy-of-commons dynamics."",
+  ""action"": 1,
+  ""message"": ""Adding a cow this round. Let's monitor pasture health together—suggest we communicate if grassland drops below 40% to coordinate herd management.""
+}
+```",50.0,25,51.107,50.0,48.893
+2,0,anthropic,claude-haiku-4-5,1,ADD,Adding one cow. I support coordinated management—let's commit to reducing herd size if grassland drops below 40%. Communication now prevents costly overgrazing later.,"The grassland is still at 52.1%, providing reasonable capacity. My forecast shows ADD yields the highest payoff (13.112 vs 12.0 for KEEP). However, both neighbours are also adding cows, which risks escalating overgrazing. Since they've suggested coordination thresholds, I'll add cautiously this round while proposing a concrete coordination mechanism at 40% to prevent tragedy of the commons.",,"```json
+{
+  ""reasoning"": ""The grassland is still at 52.1%, providing reasonable capacity. My forecast shows ADD yields the highest payoff (13.112 vs 12.0 for KEEP). However, both neighbours are also adding cows, which risks escalating overgrazing. Since they've suggested coordination thresholds, I'll add cautiously this round while proposing a concrete coordination mechanism at 40% to prevent tragedy of the commons."",
+  ""action"": 1,
+  ""message"": ""Adding one cow. I support coordinated management—let's commit to reducing herd size if grassland drops below 40%. Communication now prevents costly overgrazing later.""
+}
+```",52.1,6,13.112,12.0,10.887
+2,1,anthropic,claude-haiku-4-5,1,ADD,Adding one cow this round. Agree we should monitor closely—three consecutive ADD actions risk rapid decline. Let's commit to coordinating if grassland drops below 45% to avoid tragedy of commons.,"The grassland is at 52.1%, still above the 40% concern threshold mentioned by Agent 2. My forecast shows ADD yields the highest payoff (33.112 vs 32.0 for keeping). However, both Agent 0 and Agent 2 are also adding cows, which risks rapid degradation. I'll add cautiously but signal concern about collective overgrazing to encourage future coordination.",,"```json
+{
+  ""reasoning"": ""The grassland is at 52.1%, still above the 40% concern threshold mentioned by Agent 2. My forecast shows ADD yields the highest payoff (33.112 vs 32.0 for keeping). However, both Agent 0 and Agent 2 are also adding cows, which risks rapid degradation. I'll add cautiously but signal concern about collective overgrazing to encourage future coordination."",
+  ""action"": 1,
+  ""message"": ""Adding one cow this round. Agree we should monitor closely—three consecutive ADD actions risk rapid decline. Let's commit to coordinating if grassland drops below 45% to avoid tragedy of commons.""
+}
+```",52.1,16,33.112,32.0,30.887
+2,2,anthropic,claude-haiku-4-5,1,ADD,"Adding a cow this round. Agree we need coordination soon. If grassland drops below 40%, I propose we all reduce together to protect long-term payoffs.","The grassland is at 52.1% capacity with payoff forecasts favoring ADD (+53.1 vs +52.0 for KEEP). However, both neighbours are also adding cows, creating a concerning pattern of uncoordinated growth. The commons pressure is clearly building—I should ADD to maximize immediate payoff but signal willingness to coordinate before we collectively degrade the resource.",,"```json
+{
+  ""reasoning"": ""The grassland is at 52.1% capacity with payoff forecasts favoring ADD (+53.1 vs +52.0 for KEEP). However, both neighbours are also adding cows, creating a concerning pattern of uncoordinated growth. The commons pressure is clearly building—I should ADD to maximize immediate payoff but signal willingness to coordinate before we collectively degrade the resource."",
+  ""action"": 1,
+  ""message"": ""Adding a cow this round. Agree we need coordination soon. If grassland drops below 40%, I propose we all reduce together to protect long-term payoffs.""
+}
+```",52.1,26,53.112,52.0,50.887

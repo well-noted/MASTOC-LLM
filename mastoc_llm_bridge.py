@@ -932,6 +932,15 @@ def _action_name(a: int) -> str:
 # LOGGING
 # ──────────────────────────────────────────────────────────────────────────────
 
+def _flush_logs() -> None:
+    """Flush all open log file handles to disk (called after each tick)."""
+    for _name, (fh, _writer) in list(_log_handles.items()):
+        try:
+            fh.flush()
+        except Exception:
+            pass
+
+
 def _close_logs() -> None:
     """Close any open log file handles from a previous run (e.g. back-to-back BehaviorSpace runs)."""
     global _log_handles
@@ -975,7 +984,7 @@ def _init_logs(log_path: Path) -> None:
     iw.writerow(["tick", "institution_score", "categories", "round_summary"])
     _log_handles["institutions"] = (ih, iw)
 
-    # Write run metadata
+    # run_meta.json — written once at start, updated by log_params()
     meta_path = log_path / "run_meta.json"
     with open(meta_path, "w", encoding="utf-8") as f:
         json.dump({
@@ -1007,4 +1016,13 @@ def _log_decision(tick, agent_id, action, message, reasoning, thinking, raw_resp
 
 def _log_resources(tick, pool_patches, pool_pct, total_cows, pressure,
                    c0, c1, c2) -> None:
-    return f"Run {_run_id} complete. {_call_count} LLM calls made."
+    _, rw = _log_handles.get("resources", (None, None))
+    if rw:
+        rw.writerow([tick, pool_patches, pool_pct, total_cows,
+                     round(float(pressure), 4), c0, c1, c2])
+
+
+def _log_institution_row(tick, score, categories, summary) -> None:
+    _, iw = _log_handles.get("institutions", (None, None))
+    if iw:
+        iw.writerow([tick, score, categories, summary])
