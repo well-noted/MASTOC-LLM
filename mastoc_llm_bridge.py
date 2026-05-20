@@ -138,7 +138,7 @@ def configure(
         detect_institutions=bool(detect_institutions),
         institution_every_n_ticks=int(institution_every_n_ticks),
         system_prompt_override=str(system_prompt_override).strip(),
-        verbose=bool(verbose),
+        verbose=bool(verbose) or os.environ.get("MASTOC_VERBOSE", "0") == "1",
         communication=bool(communication),
         extended_thinking=bool(extended_thinking),
         thinking_budget=int(thinking_budget),

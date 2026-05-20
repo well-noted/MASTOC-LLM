@@ -944,7 +944,9 @@ Unlike Claude agents, whose stated intentions aligned consistently with their ac
 
 Messages reference other agents by name and invoke cooperative norms, consistent with the cooperative prior embedded in the model's training. But the reasoning does not reliably connect to the action returned: the model appears to produce cooperative-sounding text and payoff-driven actions in ways that are partially decoupled.
 
-**Institution emergence:** No institution scoring was recorded for this run. Qualitatively, there were no stable norm agreements, no convergence to shared targets, and no evidence of collective self-governance.
+**Institution emergence:** 
+
+No institution scoring was recorded for this run. Qualitatively, there were no stable norm agreements, no convergence to shared targets, and no evidence of collective self-governance.
 
 #### Scarce commons (initial-grassland = 48, 51 ticks)
 

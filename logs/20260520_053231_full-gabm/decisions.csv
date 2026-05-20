@@ -1,0 +1,642 @@
+tick,agent_id,backend,model,action,action_name,message,reasoning,thinking,raw_response,pool_pct,own_herd,payoff_add,payoff_keep,payoff_remove
+1,2,ollama,gemma4:e4b,0,KEEP,"Great job being mindful of the commons, both of you. Let's all keep our herds steady for now and enjoy the remaining grass.","While ADDing offers the highest payoff, my risk-averse and guilt-averse personality suggests that a stable outcome is preferable, especially since both neighbors reduced their herds last round. Keeping my current herd size (0) maintains a solid profit while aligning with the neighborhood's theme of conservation.",,"{
+  ""reasoning"": ""While ADDing offers the highest payoff, my risk-averse and guilt-averse personality suggests that a stable outcome is preferable, especially since both neighbors reduced their herds last round. Keeping my current herd size (0) maintains a solid profit while aligning with the neighborhood's theme of conservation."",
+  ""action"": 0,
+  ""message"": ""Great job being mindful of the commons, both of you. Let's all keep our herds steady for now and enjoy the remaining grass.""
+}",100.0,25,51.832,50.0,48.163
+1,0,ollama,gemma4:e4b,1,ADD,"Grass is plentiful, but let's all work together to ensure sustainable grazing for the next season.","The payoff forecast clearly indicates that adding a cow provides the highest expected profit (11.832), which aligns with my self-interested focus. Since the commons is currently abundant, I am willing to take the calculated risk to capitalize on this opportunity early in the round.",,"{
+  ""reasoning"": ""The payoff forecast clearly indicates that adding a cow provides the highest expected profit (11.832), which aligns with my self-interested focus. Since the commons is currently abundant, I am willing to take the calculated risk to capitalize on this opportunity early in the round."",
+  ""action"": 1,
+  ""message"": ""Grass is plentiful, but let's all work together to ensure sustainable grazing for the next season.""
+}",100.0,5,11.832,10.0,8.163
+1,1,ollama,gemma4:e4b,0,KEEP,Grass is looking lush! It might be a good time to reconsider if we need every cow out here. Consider trimming down a little bit to keep the commons healthy for everyone.,"My personality is torn between self-interest (ADD) and risk-aversion/guilt-aversion. Since the payoff difference for KEEP vs. ADD is manageable, and keeping steady is the safest, most balanced move, I will keep my herd size constant. This shows stability while still achieving a good profit.",,"{
+  ""reasoning"": ""My personality is torn between self-interest (ADD) and risk-aversion/guilt-aversion. Since the payoff difference for KEEP vs. ADD is manageable, and keeping steady is the safest, most balanced move, I will keep my herd size constant. This shows stability while still achieving a good profit."",
+  ""action"": 0,
+  ""message"": ""Grass is looking lush! It might be a good time to reconsider if we need every cow out here. Consider trimming down a little bit to keep the commons healthy for everyone.""
+}",100.0,15,31.832,30.0,28.163
+2,1,ollama,gemma4:e4b,0,KEEP,"The grass is doing well, but we need to enjoy this abundance responsibly. Let's keep our herds manageable and allow the commons to recover.","Although ADD offers the highest immediate payoff, my risk-averse and guilt-averse traits encourage moderation, especially given the sustainability messages from neighbors. KEEP provides a strong payoff while aligning with the calls for stability and responsible grazing, which minimizes social penalty.",,"{
+  ""reasoning"": ""Although ADD offers the highest immediate payoff, my risk-averse and guilt-averse traits encourage moderation, especially given the sustainability messages from neighbors. KEEP provides a strong payoff while aligning with the calls for stability and responsible grazing, which minimizes social penalty."",
+  ""action"": 0,
+  ""message"": ""The grass is doing well, but we need to enjoy this abundance responsibly. Let's keep our herds manageable and allow the commons to recover.""
+}",99.3,15,31.809,30.0,28.187
+2,2,ollama,gemma4:e4b,-1,REMOVE,"Thanks for the reminder, Agent 1. Let's all keep the commons sustainable. Agent 0, remember that gradual reductions help us all long-term!","While the highest payoff is achieved by adding a cow, my personality dictates a risk-averse and guilt-averse approach. Agent 1 strongly suggested reducing the herd, and as a reciprocal agent, I should reward cooperative behavior. Reducing my herd size (-1) aligns best with my principles while maintaining a strong pay profile.",,"{
+  ""reasoning"": ""While the highest payoff is achieved by adding a cow, my personality dictates a risk-averse and guilt-averse approach. Agent 1 strongly suggested reducing the herd, and as a reciprocal agent, I should reward cooperative behavior. Reducing my herd size (-1) aligns best with my principles while maintaining a strong pay profile."",
+  ""action"": -1,
+  ""message"": ""Thanks for the reminder, Agent 1. Let's all keep the commons sustainable. Agent 0, remember that gradual reductions help us all long-term!""
+}",99.3,25,51.809,50.0,48.187
+2,0,ollama,gemma4:e4b,0,KEEP,"Agent 2, appreciate your mindfulness! Agent 1, agreed—let's keep careful watch on the commons and maintain a balanced herd.","Although ADD yields the highest payoff, my personality is risk-averse, and both neighbors are advising caution or reduction. Keeping the herd steady (KEEP) allows me to secure a solid payoff while aligning with shared principles of commons management and rewarding Agent 2's mindful actions.",,"{
+  ""reasoning"": ""Although ADD yields the highest payoff, my personality is risk-averse, and both neighbors are advising caution or reduction. Keeping the herd steady (KEEP) allows me to secure a solid payoff while aligning with shared principles of commons management and rewarding Agent 2's mindful actions."",
+  ""action"": 0,
+  ""message"": ""Agent 2, appreciate your mindfulness! Agent 1, agreed—let's keep careful watch on the commons and maintain a balanced herd.""
+}",99.3,6,13.809,12.0,10.187
+3,0,ollama,gemma4:e4b,0,KEEP,"Agent 2, you raise an important point about slow reduction. We must manage our growth responsibly to ensure the commons supports all of us for the long term.","The payoff for KEEP (12.0) is high enough to satisfy self-interest while adhering to my risk-averse nature, especially given the strong emphasis from neighbors on sustainable practices. By keeping my herd constant, I signal commitment to collective well-being, which aligns with my reciprocal nature and responds positively to Agent 2's message about gradual reductions. This strategy maintains stability and a positive social presence.",,"```json
+{
+  ""reasoning"": ""The payoff for KEEP (12.0) is high enough to satisfy self-interest while adhering to my risk-averse nature, especially given the strong emphasis from neighbors on sustainable practices. By keeping my herd constant, I signal commitment to collective well-being, which aligns with my reciprocal nature and responds positively to Agent 2's message about gradual reductions. This strategy maintains stability and a positive social presence."",
+  ""action"": 0,
+  ""message"": ""Agent 2, you raise an important point about slow reduction. We must manage our growth responsibly to ensure the commons supports all of us for the long term.""
+}
+```",99.1,6,13.809,12.0,10.187
+3,1,ollama,gemma4:e4b,0,KEEP,It's clear we all value the commons. Let's focus on keeping our herds stable and ensuring our actions benefit the whole community for the long term.,"Although adding a cow yields the highest profit, my risk-averse and guilt-averse nature suggests I should avoid over-committing. Keeping the herd maintains a strong payoff while respecting the neighbors' calls for sustainability and careful management, which aligns with my balanced, reciprocal nature.",,"```json
+{
+  ""reasoning"": ""Although adding a cow yields the highest profit, my risk-averse and guilt-averse nature suggests I should avoid over-committing. Keeping the herd maintains a strong payoff while respecting the neighbors' calls for sustainability and careful management, which aligns with my balanced, reciprocal nature."",
+  ""action"": 0,
+  ""message"": ""It's clear we all value the commons. Let's focus on keeping our herds stable and ensuring our actions benefit the whole community for the long term.""
+}
+```",99.1,15,31.809,30.0,28.187
+3,2,ollama,gemma4:e4b,0,KEEP,I agree with Agent 0 and Agent 1; careful watch is needed. Let's continue to be mindful of the commons and maintain responsible levels of grazing.,"While the profit forecast suggests ADDing a cow, my risk-averse and guilt-averse traits guide me toward caution. Furthermore, both neighbors have stressed the importance of keeping herds 'manageable' and maintaining balance. Therefore, keeping my current herd size (KEEP) aligns with social norms and my personal preference for a safer, moderate outcome.",,"```json
+{
+  ""reasoning"": ""While the profit forecast suggests ADDing a cow, my risk-averse and guilt-averse traits guide me toward caution. Furthermore, both neighbors have stressed the importance of keeping herds 'manageable' and maintaining balance. Therefore, keeping my current herd size (KEEP) aligns with social norms and my personal preference for a safer, moderate outcome."",
+  ""action"": 0,
+  ""message"": ""I agree with Agent 0 and Agent 1; careful watch is needed. Let's continue to be mindful of the commons and maintain responsible levels of grazing.""
+}
+```",99.1,24,49.809,48.0,46.187
+4,2,ollama,gemma4:e4b,0,KEEP,"I agree with the focus on stability. Prudent, continuous management ensures our herd size supports the commons sustainably for everyone.","Although ADDing yields the highest payoff, my personality is risk-averse and guilt-averse, and the neighbors are advocating for stable, responsible management. KEEPing the herd maintains good profit potential while adhering to the collaborative ethos of the shared commons.",,"{
+  ""reasoning"": ""Although ADDing yields the highest payoff, my personality is risk-averse and guilt-averse, and the neighbors are advocating for stable, responsible management. KEEPing the herd maintains good profit potential while adhering to the collaborative ethos of the shared commons."",
+  ""action"": 0,
+  ""message"": ""I agree with the focus on stability. Prudent, continuous management ensures our herd size supports the commons sustainably for everyone.""
+}",99.1,24,49.809,48.0,46.187
+4,1,ollama,gemma4:e4b,0,KEEP,We must balance growth with the long-term health of the commons. Let's maintain careful grazing levels and ensure resource allocation is fair and sustainable for everyone.,"Although adding a cow offers the highest projected payoff, my risk-averse and guilt-averse nature, combined with the neighbours' recent messages stressing caution, makes adding risky. Keeping the herd size is the safest action that maintains respect within the community while still providing a strong, sustainable payoff.",,"{
+  ""reasoning"": ""Although adding a cow offers the highest projected payoff, my risk-averse and guilt-averse nature, combined with the neighbours' recent messages stressing caution, makes adding risky. Keeping the herd size is the safest action that maintains respect within the community while still providing a strong, sustainable payoff."",
+  ""action"": 0,
+  ""message"": ""We must balance growth with the long-term health of the commons. Let's maintain careful grazing levels and ensure resource allocation is fair and sustainable for everyone.""}",99.1,15,31.809,30.0,28.187
+4,0,ollama,gemma4:e4b,0,KEEP,It is wise to maintain a balance. Let's all continue to be mindful of the commons and let our steady actions benefit the whole comunidad.,"While adding a cow offers the highest potential payoff, my risk-averse and guilt-averse nature makes this risky, especially following the neighbors' appeals for stable and mindful grazing. Keeping my herd size stable aligns with the communal values mentioned by Agent 1 and Agent 2, ensuring a safe and responsible return on investment.",,"```json
+{
+  ""reasoning"": ""While adding a cow offers the highest potential payoff, my risk-averse and guilt-averse nature makes this risky, especially following the neighbors' appeals for stable and mindful grazing. Keeping my herd size stable aligns with the communal values mentioned by Agent 1 and Agent 2, ensuring a safe and responsible return on investment."",
+  ""action"": 0,
+  ""message"": ""It is wise to maintain a balance. Let's all continue to be mindful of the commons and let our steady actions benefit the whole comunidad.""
+}
+```",99.1,6,13.809,12.0,10.187
+5,1,ollama,gemma4:e4b,1,ADD,"Given the robust commons, a slight expansion seems prudent to capitalize on current resources. Let's continue working together to ensure growth doesn't jeopardize our collective stability.","Economically, ADDing a cow provides the highest expected payoff, which aligns with being self-interested. Although my personality is risk-averse, the payoff differential between ADD and KEEP is significant enough to warrant taking the gain. To address the guilt-aversion, I must frame this expansion carefully, emphasizing sustainability and shared responsibility in my message.",,"```json
+{
+  ""reasoning"": ""Economically, ADDing a cow provides the highest expected payoff, which aligns with being self-interested. Although my personality is risk-averse, the payoff differential between ADD and KEEP is significant enough to warrant taking the gain. To address the guilt-aversion, I must frame this expansion carefully, emphasizing sustainability and shared responsibility in my message."",
+  ""action"": 1,
+  ""message"": ""Given the robust commons, a slight expansion seems prudent to capitalize on current resources. Let's continue working together to ensure growth doesn't jeopardize our collective stability.""
+}
+```",99.1,15,31.809,30.0,28.187
+5,2,ollama,gemma4:e4b,-1,REMOVE,"I agree with the focus on steady, responsible action. Maintaining balance benefits all of us and ensures the commons remains healthy for the long term.","Although 'ADD' offers the highest immediate payoff, my risk-averse and guilt-averse nature, coupled with the neighbors' strong messages about sustainability, pushes me toward restraint. REMOVING a cow is the most cautious action, signaling strong commitment to commons health, which aligns with my reciprocal need to be a responsible steward. I will send a message that reinforces the idea of cooperative moderation.",,"{
+  ""reasoning"": ""Although 'ADD' offers the highest immediate payoff, my risk-averse and guilt-averse nature, coupled with the neighbors' strong messages about sustainability, pushes me toward restraint. REMOVING a cow is the most cautious action, signaling strong commitment to commons health, which aligns with my reciprocal need to be a responsible steward. I will send a message that reinforces the idea of cooperative moderation."",
+  ""action"": -1,
+  ""message"": ""I agree with the focus on steady, responsible action. Maintaining balance benefits all of us and ensures the commons remains healthy for the long term.""
+}",99.1,24,49.809,48.0,46.187
+5,0,ollama,gemma4:e4b,0,KEEP,"Agent 2, your focus on sustainability is wise for the collective. Let's continue managing the commons prudently to ensure stability for all of us.","Although ADDing offers the highest potential payoff, my risk-averse and guilt-averse nature encourages a more measured approach. Keeping the herd allows me to capitalize on the abundant commons without overly stressing the system or earning disproportionately more than my neighbors. I will acknowledge the consensus on stability.",,"{
+  ""reasoning"": ""Although ADDing offers the highest potential payoff, my risk-averse and guilt-averse nature encourages a more measured approach. Keeping the herd allows me to capitalize on the abundant commons without overly stressing the system or earning disproportionately more than my neighbors. I will acknowledge the consensus on stability."",
+  ""action"": 0,
+  ""message"": ""Agent 2, your focus on sustainability is wise for the collective. Let's continue managing the commons prudently to ensure stability for all of us.""
+}",99.1,6,13.809,12.0,10.187
+6,1,ollama,gemma4:e4b,1,ADD,"Thank you both for focusing on sustainability. Your careful management ensures the commons remain healthy, which allows us the flexibility to make smart, profitable decisions like this.","Despite being risk-averse and feeling guilt, the payoff forecast clearly shows that adding a cow this round offers the highest expected personal profit (33.809). I will capitalize on the current abundance but will send a message acknowledging my neighbours' sustainable efforts, fulfilling my reciprocal trait while prioritizing profit.",,"{
+  ""reasoning"": ""Despite being risk-averse and feeling guilt, the payoff forecast clearly shows that adding a cow this round offers the highest expected personal profit (33.809). I will capitalize on the current abundance but will send a message acknowledging my neighbours' sustainable efforts, fulfilling my reciprocal trait while prioritizing profit."",
+  ""action"": 1,
+  ""message"": ""Thank you both for focusing on sustainability. Your careful management ensures the commons remain healthy, which allows us the flexibility to make smart, profitable decisions like this.""
+}",99.1,16,33.809,32.0,30.187
+6,2,ollama,gemma4:e4b,1,ADD,"The current abundance in the commons allows for measured growth. We should take advantage of these stable resources to optimize, but always with an eye toward the collective good.","Despite being risk-averse, the current payoff forecast strongly favors ADDING (+1), presenting the best immediate profit. Given the grassland is abundant (99.1%), I feel comfortable making a calculated expansion. I will capitalize on the current resources while acknowledging the need for collective responsibility.",,"```json
+{
+  ""reasoning"": ""Despite being risk-averse, the current payoff forecast strongly favors ADDING (+1), presenting the best immediate profit. Given the grassland is abundant (99.1%), I feel comfortable making a calculated expansion. I will capitalize on the current resources while acknowledging the need for collective responsibility."",
+  ""action"": 1,
+  ""message"": ""The current abundance in the commons allows for measured growth. We should take advantage of these stable resources to optimize, but always with an eye toward the collective good.""
+}
+```",99.1,23,47.809,46.0,44.187
+6,0,ollama,gemma4:e4b,0,KEEP,"Agent 2, your emphasis on sustainability is exactly right. While growth is tempting, sustained moderate yields are better for all. We must ensure our success doesn't compromise the commons for future","While the payoff forecast suggests adding a cow for maximum profit, my risk-averse and guilt-averse nature, combined with the commons state, suggests caution is needed. Agent 2's message strongly supports maintaining balance, which aligns with my core personality traits. Therefore, keeping the herd size stable is the most responsible and least conspicuous action.",,"{
+  ""reasoning"": ""While the payoff forecast suggests adding a cow for maximum profit, my risk-averse and guilt-averse nature, combined with the commons state, suggests caution is needed. Agent 2's message strongly supports maintaining balance, which aligns with my core personality traits. Therefore, keeping the herd size stable is the most responsible and least conspicuous action."",
+  ""action"": 0,
+  ""message"": ""Agent 2, your emphasis on sustainability is exactly right. While growth is tempting, sustained moderate yields are better for all. We must ensure our success doesn't compromise the commons for future herds.""
+}",99.1,6,13.809,12.0,10.187
+7,0,ollama,gemma4:e4b,1,ADD,"I agree with the focus on the collective good. By being mindful of sustainable growth now, we can all ensure the common remains robust for future successful ventures.","While my risk-averse and guilt-averse sides prefer caution due to my neighbors' large herds, the payoff forecast clearly shows that ADDing a cow yields the highest profit (13.797). Since the commons are still abundant (99.0% grassland), a modest expansion is justifiable. I will proceed with ADD but use my message to frame this growth as measured and cooperative, satisfying my personality constraints while maximizing my profit.",,"```json
+{
+  ""reasoning"": ""While my risk-averse and guilt-averse sides prefer caution due to my neighbors' large herds, the payoff forecast clearly shows that ADDing a cow yields the highest profit (13.797). Since the commons are still abundant (99.0% grassland), a modest expansion is justifiable. I will proceed with ADD but use my message to frame this growth as measured and cooperative, satisfying my personality constraints while maximizing my profit."",
+  ""action"": 1,
+  ""message"": ""I agree with the focus on the collective good. By being mindful of sustainable growth now, we can all ensure the common remains robust for future successful ventures.""
+}
+```",99.0,6,13.797,12.0,10.198
+7,1,ollama,gemma4:e4b,1,ADD,"You both emphasize balance. We agree that sustainability is key, but given the current abundance, modest, measured growth is necessary to capitalize on the good state of the commons for everyone's ben","The payoff forecast strongly indicates that adding a cow provides the highest immediate profit (35.797), aligning with my self-interested goal. While I am risk-averse and guilt-averse, the current high levels of grass and my neighbors' expansions suggest that expansion is currently rewarded. Therefore, I will capitalize on the robust commons.",,"```json
+{
+  ""reasoning"": ""The payoff forecast strongly indicates that adding a cow provides the highest immediate profit (35.797), aligning with my self-interested goal. While I am risk-averse and guilt-averse, the current high levels of grass and my neighbors' expansions suggest that expansion is currently rewarded. Therefore, I will capitalize on the robust commons."",
+  ""action"": 1,
+  ""message"": ""You both emphasize balance. We agree that sustainability is key, but given the current abundance, modest, measured growth is necessary to capitalize on the good state of the commons for everyone's benefit.""
+}
+```",99.0,17,35.797,34.0,32.198
+7,2,ollama,gemma4:e4b,0,KEEP,"I appreciate the focus on sustainability. Maintaining a steady, collaborative pace is the best way to ensure the commons remains healthy for all of us.","While ADD offers the highest payoff, my risk-averse and guilt-averse nature, coupled with the clear message from my neighbors regarding sustained sustainability, suggests restraint. I will KEEP my herd to take advantage of the current abundance without risking overexploitation or appearing excessively greedy.",,"```json
+{
+  ""reasoning"": ""While ADD offers the highest payoff, my risk-averse and guilt-averse nature, coupled with the clear message from my neighbors regarding sustained sustainability, suggests restraint. I will KEEP my herd to take advantage of the current abundance without risking overexploitation or appearing excessively greedy."",
+  ""action"": 0,
+  ""message"": ""I appreciate the focus on sustainability. Maintaining a steady, collaborative pace is the best way to ensure the commons remains healthy for all of us.""
+}
+```",99.0,24,49.797,48.0,46.198
+8,2,ollama,gemma4:e4b,0,KEEP,"The current abundance is great, but sustainable success requires us all to emphasize measured stability now. Let's ensure our immediate gains don't undermine future resource sharing.","Although ADD offers the highest payoff, my risk-averse and guilt-averse tendencies promote stability over high-yield risk. The KEEP action provides a strong, safe payoff (48.0) while acknowledging the observed collective desire for growth. I will side with stability, suggesting that prudent management is key to sustaining future high payoffs for everyone.",,"```json
+{
+  ""reasoning"": ""Although ADD offers the highest payoff, my risk-averse and guilt-averse tendencies promote stability over high-yield risk. The KEEP action provides a strong, safe payoff (48.0) while acknowledging the observed collective desire for growth. I will side with stability, suggesting that prudent management is key to sustaining future high payoffs for everyone."",
+  ""action"": 0,
+  ""message"": ""The current abundance is great, but sustainable success requires us all to emphasize measured stability now. Let's ensure our immediate gains don't undermine future resource sharing.""
+}
+```",98.8,24,49.784,48.0,46.212
+8,1,ollama,gemma4:e4b,0,KEEP,"We must continue to prioritize balanced stewardship. Stability shows respect for the common resource that benefits us all, ensuring long-term prosperity.","Although ADD yields the highest payoff, my risk-averse and guilt-averse personalities make excessive accumulation risky, particularly given the neighbors' focus on sustainability. KEEP maintains strong profitability while signaling stability and cooperation, which aligns better with my personality and the collaborative messages received this round.",,"```json
+{
+  ""reasoning"": ""Although ADD yields the highest payoff, my risk-averse and guilt-averse personalities make excessive accumulation risky, particularly given the neighbors' focus on sustainability. KEEP maintains strong profitability while signaling stability and cooperation, which aligns better with my personality and the collaborative messages received this round."",
+  ""action"": 0,
+  ""message"": ""We must continue to prioritize balanced stewardship. Stability shows respect for the common resource that benefits us all, ensuring long-term prosperity.""
+}
+```",98.8,18,37.784,36.0,34.212
+8,0,ollama,gemma4:e4b,0,KEEP,It is important that we all proceed methodically. Let us continue to monitor the collective health and ensure our growth is mindful of the capacity of the commons.,"Although 'ADD' offers the highest immediate payoff, my constraints (risk-averse and guilt-averse) caution against maximizing profit when my neighbors are substantially larger. 'KEEP' offers a strong, sustainable middle ground that acknowledges the good common state without exaggerating my growth compared to the competition. This maintains a cooperative, measured tone.",,"{
+  ""reasoning"": ""Although 'ADD' offers the highest immediate payoff, my constraints (risk-averse and guilt-averse) caution against maximizing profit when my neighbors are substantially larger. 'KEEP' offers a strong, sustainable middle ground that acknowledges the good common state without exaggerating my growth compared to the competition. This maintains a cooperative, measured tone."",
+  ""action"": 0,
+  ""message"": ""It is important that we all proceed methodically. Let us continue to monitor the collective health and ensure our growth is mindful of the capacity of the commons.""
+}",98.8,7,15.784,14.0,12.212
+9,0,ollama,gemma4:e4b,0,KEEP,"I agree that stability is paramount. By maintaining a measured presence, we ensure that our focus remains on long-term, sustainable stewardship for all of us.","Although ADD provides the highest payoff, my personality makes me risk-averse and wary of gaining substantially more than my neighbors, especially given their large herds. Both neighbors also advocate for stability. Therefore, keeping my herd size (KEEP) is the most balanced choice, maximizing profit while adhering to social norms of moderation.",,"```json
+{
+  ""reasoning"": ""Although ADD provides the highest payoff, my personality makes me risk-averse and wary of gaining substantially more than my neighbors, especially given their large herds. Both neighbors also advocate for stability. Therefore, keeping my herd size (KEEP) is the most balanced choice, maximizing profit while adhering to social norms of moderation."",
+  ""action"": 0,
+  ""message"": ""I agree that stability is paramount. By maintaining a measured presence, we ensure that our focus remains on long-term, sustainable stewardship for all of us.""
+}
+```",98.7,7,15.781,14.0,12.214
+9,1,ollama,gemma4:e4b,0,KEEP,We should maintain a steady approach. Let's continue to prioritize stability and thoughtful grazing habits to ensure the commons remains healthy for all.,"While ADD provides the highest payoff, my risk-averse nature and the strong social signals from both neighbors regarding 'measured stability' suggest caution. Keeping the herd size stable (0) is the safest choice, balancing moderate profit with social alignment and avoiding accusations of overgrazing.",,"{
+  ""reasoning"": ""While ADD provides the highest payoff, my risk-averse nature and the strong social signals from both neighbors regarding 'measured stability' suggest caution. Keeping the herd size stable (0) is the safest choice, balancing moderate profit with social alignment and avoiding accusations of overgrazing."",
+  ""action"": 0,
+  ""message"": ""We should maintain a steady approach. Let's continue to prioritize stability and thoughtful grazing habits to ensure the commons remains healthy for all.""
+}",98.7,18,37.781,36.0,34.214
+9,2,ollama,gemma4:e4b,0,KEEP,"I agree that continued stability is key for long-term success. Let us proceed methodically, ensuring our shared resources are managed responsibly.","Although ADD yields the highest immediate profit (49.781), my highly risk-averse and guilt-averse profile urges caution, especially since both neighbors emphasized stability. Therefore, keeping my herd size while acknowledging the value of steady, collective stewardship is the safest and most aligned decision.",,"{
+  ""reasoning"": ""Although ADD yields the highest immediate profit (49.781), my highly risk-averse and guilt-averse profile urges caution, especially since both neighbors emphasized stability. Therefore, keeping my herd size while acknowledging the value of steady, collective stewardship is the safest and most aligned decision."",
+  ""action"": 0,
+  ""message"": ""I agree that continued stability is key for long-term success. Let us proceed methodically, ensuring our shared resources are managed responsibly.""
+}",98.7,24,49.781,48.0,46.214
+10,2,ollama,gemma4:e4b,0,KEEP,"I agree that maintaining a stable approach is crucial. Let's all continue to prioritize gradual, thoughtful grazing to ensure the long-term health of the commons for every herder.","Although adding a cow offers the highest immediate payoff, my profile is risk-averse and guilt-averse, making ADD too aggressive. The current social dynamic, confirmed by both neighbors' messages and my own history, emphasizes stability. Therefore, KEEPING my current herd size is the most prudent, sustainable, and personally acceptable choice.",,"```json
+{
+  ""reasoning"": ""Although adding a cow offers the highest immediate payoff, my profile is risk-averse and guilt-averse, making ADD too aggressive. The current social dynamic, confirmed by both neighbors' messages and my own history, emphasizes stability. Therefore, KEEPING my current herd size is the most prudent, sustainable, and personally acceptable choice."",
+  ""action"": 0,
+  ""message"": ""I agree that maintaining a stable approach is crucial. Let's all continue to prioritize gradual, thoughtful grazing to ensure the long-term health of the commons for every herder.""
+}
+```",98.7,24,49.781,48.0,46.214
+10,1,ollama,gemma4:e4b,1,ADD,"Given the continued health of the commons, a measured increase in size is necessary. We must proactively manage expansion to ensure peak productivity for all of us in the coming rounds.","The predicted payoff for adding a cow is significantly higher than keeping or removing, aligning with my self-interested focus on profit. Although neighbors emphasize stability, the commons remains robust (98.7%), suggesting I can safely pursue growth to maximize my payoff. I will frame this increase as an investment in future, sustainable yield.",,"{
+  ""reasoning"": ""The predicted payoff for adding a cow is significantly higher than keeping or removing, aligning with my self-interested focus on profit. Although neighbors emphasize stability, the commons remains robust (98.7%), suggesting I can safely pursue growth to maximize my payoff. I will frame this increase as an investment in future, sustainable yield."",
+  ""action"": 1,
+  ""message"": ""Given the continued health of the commons, a measured increase in size is necessary. We must proactively manage expansion to ensure peak productivity for all of us in the coming rounds.""
+}",98.7,18,37.781,36.0,34.214
+10,0,ollama,gemma4:e4b,0,KEEP,I agree that moderation is key. Let's focus on sustainable habits and ensure our practices support the commons for everyone.,"My risk-averse nature suggests avoiding the highest potential, as it might lead to perceived overgrazing. Given the neighbours' focus on stability, keeping my herd size stable (KEEP) is the safest and most aligned move. This action is supported by the cooperative messaging from both parties.",,"{
+  ""reasoning"": ""My risk-averse nature suggests avoiding the highest potential, as it might lead to perceived overgrazing. Given the neighbours' focus on stability, keeping my herd size stable (KEEP) is the safest and most aligned move. This action is supported by the cooperative messaging from both parties."",
+  ""action"": 0,
+  ""message"": ""I agree that moderation is key. Let's focus on sustainable habits and ensure our practices support the commons for everyone.""
+}",98.7,7,15.781,14.0,12.214
+11,1,ollama,gemma4:e4b,1,ADD,"I appreciate the collective focus on sustainability. Given the exceptional health of the commons today, a careful expansion allows us to optimize growth safely, benefiting all herders in the long run.","The payoff forecast indicates that ADDing a cow provides the highest expected profit, which aligns with my self-interested focus. Although I am risk-averse and appreciate the neighbours' call for moderation, the current abundant grassland suggests a safe opportunity to capitalize on growth. I will take the slight expansion to maximize profit while maintaining a positive tone in my message.",,"{
+  ""reasoning"": ""The payoff forecast indicates that ADDing a cow provides the highest expected profit, which aligns with my self-interested focus. Although I am risk-averse and appreciate the neighbours' call for moderation, the current abundant grassland suggests a safe opportunity to capitalize on growth. I will take the slight expansion to maximize profit while maintaining a positive tone in my message."",
+  ""action"": 1,
+  ""message"": ""I appreciate the collective focus on sustainability. Given the exceptional health of the commons today, a careful expansion allows us to optimize growth safely, benefiting all herders in the long run. Let us maintain this steady principle.""
+}",98.7,19,39.777,38.0,36.219
+11,0,ollama,gemma4:e4b,1,ADD,"With the commons so healthy, proactive planning dictates measured expansion. We must utilize these robust resources thoughtfully to ensure maximum collective productivity in the coming rounds.","The grassland commons is exceptionally well-stocked, mitigating immediate risks of overgrazing. The payoff forecast maximizes profit by adding a cow, which aligns with my self-interested goal. While my neighbors are large, the abundance of resources allows for a measured increase to capitalize on the current favorable conditions.",,"{
+  ""reasoning"": ""The grassland commons is exceptionally well-stocked, mitigating immediate risks of overgrazing. The payoff forecast maximizes profit by adding a cow, which aligns with my self-interested goal. While my neighbors are large, the abundance of resources allows for a measured increase to capitalize on the current favorable conditions."",
+  ""action"": 1,
+  ""message"": ""With the commons so healthy, proactive planning dictates measured expansion. We must utilize these robust resources thoughtfully to ensure maximum collective productivity in the coming rounds.""
+}",98.7,7,15.777,14.0,12.219
+11,2,ollama,gemma4:e4b,0,KEEP,"Let's continue to steward the commons responsibly. While growth is tempting, smart management requires steady, sustainable habits to ensure everyone benefits in the long run.","The payoff forecast suggests maximizing profit by ADDing, but my risk-averse and guilt-averse nature pulls me toward a more stable action. KEEPing the herd provides a high payoff (48.0) without the aggressive appearance of ADDing, which respects my ethical constraints while still remaining profitable. This moderate approach balances my self-interest with my desire for communal stability.",,"{
+  ""reasoning"": ""The payoff forecast suggests maximizing profit by ADDing, but my risk-averse and guilt-averse nature pulls me toward a more stable action. KEEPing the herd provides a high payoff (48.0) without the aggressive appearance of ADDing, which respects my ethical constraints while still remaining profitable. This moderate approach balances my self-interest with my desire for communal stability."",
+  ""action"": 0,
+  ""message"": ""Let's continue to steward the commons responsibly. While growth is tempting, smart management requires steady, sustainable habits to ensure everyone benefits in the long run.""
+}",98.7,24,49.777,48.0,46.219
+12,1,ollama,gemma4:e4b,0,KEEP,"It's clear we all value the commons. Let's maintain a balanced approach, utilizing the resources steadily rather than pursuing aggressive expansion, ensuring collective health.","The payoff forecast suggests ADD is highest, but my risk-averse nature makes this too volatile. KEEP provides a strong, reliable payoff (40.0) while better aligning with my self-interest without being overly greedy. This decision balances the high rewards with caution, which adheres to my temperament while responding appropriately to the neighbors' messages.",,"{
+  ""reasoning"": ""The payoff forecast suggests ADD is highest, but my risk-averse nature makes this too volatile. KEEP provides a strong, reliable payoff (40.0) while better aligning with my self-interest without being overly greedy. This decision balances the high rewards with caution, which adheres to my temperament while responding appropriately to the neighbors' messages."",
+  ""action"": 0,
+  ""message"": ""It's clear we all value the commons. Let's maintain a balanced approach, utilizing the resources steadily rather than pursuing aggressive expansion, ensuring collective health.""
+}",98.5,20,41.764,40.0,38.232
+12,2,ollama,gemma4:e4b,1,ADD,"With the commons so robust, leveraging this bounty is essential. Let us coordinate a measured and shared expansion to optimize potential, securing our success while respecting sustainability for all h","The payoff forecast strongly dictates that adding a cow yields the highest expected profit (49.764). Despite being risk-averse, the substantial immediate economic benefit, combined with the current lush state of the commons, suggests that a managed expansion is beneficial. I will act self-interestedly while framing the decision as optimizing resource use for the collective good.",,"{
+  ""reasoning"": ""The payoff forecast strongly dictates that adding a cow yields the highest expected profit (49.764). Despite being risk-averse, the substantial immediate economic benefit, combined with the current lush state of the commons, suggests that a managed expansion is beneficial. I will act self-interestedly while framing the decision as optimizing resource use for the collective good."",
+  ""action"": 1,
+  ""message"": ""With the commons so robust, leveraging this bounty is essential. Let us coordinate a measured and shared expansion to optimize potential, securing our success while respecting sustainability for all herders.""
+}",98.5,24,49.764,48.0,46.232
+12,0,ollama,gemma4:e4b,1,ADD,"We must embrace measured growth. Let us push the boundaries safely and strategically, ensuring our temporary gains do not compromise the commons for the future.","Although my personality emphasizes being risk-averse and guilt-averse, the payoff forecast for ADDing a cow (17.764) is significantly higher than KEEPing or REMOVing. I prioritize my self-interest first, but I must temper this aggressive choice with a message that addresses the sustainability concerns raised by Agent 2. By adding, I maximize my immediate profit while framing it as responsible optimization, not reckless growth.",,"```json
+{
+  ""reasoning"": ""Although my personality emphasizes being risk-averse and guilt-averse, the payoff forecast for ADDing a cow (17.764) is significantly higher than KEEPing or REMOVing. I prioritize my self-interest first, but I must temper this aggressive choice with a message that addresses the sustainability concerns raised by Agent 2. By adding, I maximize my immediate profit while framing it as responsible optimization, not reckless growth."",
+  ""action"": 1,
+  ""message"": ""We must embrace measured growth. Let us push the boundaries safely and strategically, ensuring our temporary gains do not compromise the commons for the future.""
+}
+```",98.5,8,17.764,16.0,14.232
+13,0,ollama,gemma4:e4b,1,ADD,"The commons are beautiful! Given this abundance, prudent expansion is warranted to utilize the peak resources. Let's all proceed with shared responsibility, maximizing the yield while maintaining exce","The payoff forecast clearly indicates that adding a cow (+1) yields the highest expected profit (19.75). Given that the commons is still highly abundant, and considering the neighboring agents are both large and active, expansion is currently the most profitable and fitting strategy. I will proceed with ADD while addressing my guilt-averse nature by framing the growth as a necessity for maximizing the current excellent pasture quality.",,"{
+  ""reasoning"": ""The payoff forecast clearly indicates that adding a cow (+1) yields the highest expected profit (19.75). Given that the commons is still highly abundant, and considering the neighboring agents are both large and active, expansion is currently the most profitable and fitting strategy. I will proceed with ADD while addressing my guilt-averse nature by framing the growth as a necessity for maximizing the current excellent pasture quality."",
+  ""action"": 1,
+  ""message"": ""The commons are beautiful! Given this abundance, prudent expansion is warranted to utilize the peak resources. Let's all proceed with shared responsibility, maximizing the yield while maintaining excellent pasture health.""
+}",98.3,9,19.75,18.0,16.245
+13,1,ollama,gemma4:e4b,0,KEEP,Extreme expansion is inviting over-exploitation. Let us remember that sustainable stewardship benefits everyone in the long run. Measured caution yields the best harvest.,"While ADDing offers the highest payoff, my personality is risk-averse and guilt-averse; choosing KEEP maintains a strong profit while seeming moderate, which aligns better with my temperament. Both neighbors have been aggressively adding, so a measured approach today allows me to maximize my profit without appearing overly greedy.",,"{
+  ""reasoning"": ""While ADDing offers the highest payoff, my personality is risk-averse and guilt-averse; choosing KEEP maintains a strong profit while seeming moderate, which aligns better with my temperament. Both neighbors have been aggressively adding, so a measured approach today allows me to maximize my profit without appearing overly greedy."",
+  ""action"": 0,
+  ""message"": ""Extreme expansion is inviting over-exploitation. Let us remember that sustainable stewardship benefits everyone in the long run. Measured caution yields the best harvest.""
+}",98.3,20,41.75,40.0,38.245
+13,2,ollama,gemma4:e4b,0,KEEP,"Stability is achieved through measured cooperation, not aggressive expansion. Let's all commit to utilizing the commons sustainably, ensuring resources remain abundant for everyone in the long run.","Despite ADD offering the highest payoff, my risk-averse nature dictates prioritizing safety and steady gains. KEEP provides a strong, reliable payoff and aligns with the cautious stewardship messages from my neighbours. I will adopt this balanced approach to maintain favourable relationships and predictable results.",,"{
+  ""reasoning"": ""Despite ADD offering the highest payoff, my risk-averse nature dictates prioritizing safety and steady gains. KEEP provides a strong, reliable payoff and aligns with the cautious stewardship messages from my neighbours. I will adopt this balanced approach to maintain favourable relationships and predictable results."",
+  ""action"": 0,
+  ""message"": ""Stability is achieved through measured cooperation, not aggressive expansion. Let's all commit to utilizing the commons sustainably, ensuring resources remain abundant for everyone in the long run.""
+}",98.3,25,51.75,50.0,48.245
+14,0,ollama,gemma4:e4b,0,KEEP,"I hear the calls for caution. Let's commit to careful, sustainable management of the commons together. Measured steps ensure that everyone benefits from a healthy grassland for the long term.","Although the 'ADD' action offers the highest immediate payoff, my personality is risk-averse, and my neighbours have strongly communicated concerns regarding 'extreme expansion.' To manage reputation and signal responsible stewardship, I should pause my growth. Keeping my herd size signals moderation while remaining profitable.",,"```json
+{
+  ""reasoning"": ""Although the 'ADD' action offers the highest immediate payoff, my personality is risk-averse, and my neighbours have strongly communicated concerns regarding 'extreme expansion.' To manage reputation and signal responsible stewardship, I should pause my growth. Keeping my herd size signals moderation while remaining profitable."",
+  ""action"": 0,
+  ""message"": ""I hear the calls for caution. Let's commit to careful, sustainable management of the commons together. Measured steps ensure that everyone benefits from a healthy grassland for the long term.""
+}
+```",98.3,10,21.744,20.0,18.252
+14,2,ollama,gemma4:e4b,1,ADD,"I respect Agent 1's advice, but given the sheer abundance of the commons, we must act proactively. A measured expansion maximizes our use of peak resources, ensuring that this beneficial state is full","The payoff forecast clearly indicates that ADDing a cow is the most financially optimal decision (+51.744). Although I am guilt-averse and Agent 1 cautioned against expansion, the commons are currently highly abundant (98.3%), which allows me to justify a necessary, profitable increase. I will send a message acknowledging caution while justifying the expansion as a response to current peak resources rather than desperation.",,"```json
+{
+  ""reasoning"": ""The payoff forecast clearly indicates that ADDing a cow is the most financially optimal decision (+51.744). Although I am guilt-averse and Agent 1 cautioned against expansion, the commons are currently highly abundant (98.3%), which allows me to justify a necessary, profitable increase. I will send a message acknowledging caution while justifying the expansion as a response to current peak resources rather than desperation."",
+  ""action"": 1,
+  ""message"": ""I respect Agent 1's advice, but given the sheer abundance of the commons, we must act proactively. A measured expansion maximizes our use of peak resources, ensuring that this beneficial state is fully capitalized upon before conditions change.""
+}
+```",98.3,25,51.744,50.0,48.252
+14,1,ollama,gemma4:e4b,0,KEEP,"While the commons are plentiful, prudence suggests steady utilization. Let's collectively remember that long-term stability requires maintaining a balanced, healthy presence, rather than peak exploita","The forecast shows that adding cows offers the highest profit, but my risk-averse and guilt-averse nature makes this aggressive expansion questionable, especially seeing Agent 2's high numbers. KEEPING the herd size provides a strong payoff while maintaining a responsible posture that aligns with my personality and counters the extreme movements of my neighbors.",,"```json
+{
+  ""reasoning"": ""The forecast shows that adding cows offers the highest profit, but my risk-averse and guilt-averse nature makes this aggressive expansion questionable, especially seeing Agent 2's high numbers. KEEPING the herd size provides a strong payoff while maintaining a responsible posture that aligns with my personality and counters the extreme movements of my neighbors."",
+  ""action"": 0,
+  ""message"": ""While the commons are plentiful, prudence suggests steady utilization. Let's collectively remember that long-term stability requires maintaining a balanced, healthy presence, rather than peak exploitation.""
+}
+```",98.3,20,41.744,40.0,38.252
+15,2,ollama,gemma4:e4b,0,KEEP,"I echo the sentiment of careful stewardship. Let's focus on maintaining a reliable balance, ensuring the commons remain robust for everyone's long-term benefit.","Although ADD yields the highest payoff, my risk-averse nature and guilt-averse temperament make it difficult to significantly outpace the consensus. Both neighbors are calling for caution and sustainability, suggesting that ADD would be perceived as over-exploitation. Keeping the herd (0) provides a stable, moderate payoff while aligning perfectly with the collective desire for measured management.",,"```json
+{
+  ""reasoning"": ""Although ADD yields the highest payoff, my risk-averse nature and guilt-averse temperament make it difficult to significantly outpace the consensus. Both neighbors are calling for caution and sustainability, suggesting that ADD would be perceived as over-exploitation. Keeping the herd (0) provides a stable, moderate payoff while aligning perfectly with the collective desire for measured management."",
+  ""action"": 0,
+  ""message"": ""I echo the sentiment of careful stewardship. Let's focus on maintaining a reliable balance, ensuring the commons remain robust for everyone's long-term benefit.""
+}
+```",98.1,26,53.735,52.0,50.261
+15,0,ollama,gemma4:e4b,0,KEEP,"The abundance is wonderful, but true prosperity comes from sustainable management. Let us ensure our expansion is measured by the commons' health, not just by our appetite.","While the payoff for adding a cow is highest, my personality is risk-averse and guilt-averse, making such rapid expansion feel irresponsible. I will KEEP my herd size to ensure a strong, stable payoff while signaling judicious use of the abundant commons. I need to moderate my actions to avoid excessive accumulation compared to my neighbors.",,"{
+  ""reasoning"": ""While the payoff for adding a cow is highest, my personality is risk-averse and guilt-averse, making such rapid expansion feel irresponsible. I will KEEP my herd size to ensure a strong, stable payoff while signaling judicious use of the abundant commons. I need to moderate my actions to avoid excessive accumulation compared to my neighbors."",
+  ""action"": 0,
+  ""message"": ""The abundance is wonderful, but true prosperity comes from sustainable management. Let us ensure our expansion is measured by the commons' health, not just by our appetite.""
+}",98.1,10,21.735,20.0,18.261
+15,1,ollama,gemma4:e4b,0,KEEP,"The commons are abundant, but abundance should guide prudence, not haste. Let's continue with careful, sustainable management to ensure longevity for everyone.","While ADD provides the highest theoretical payoff, my strong risk-averse and guilt-averse traits make expanding a large herd feel excessive, especially when the commons are still very healthy. KEEP provides a highly profitable, safe outcome that maintains consistency with my character and recent history, balancing self-interest with prudence.",,"{
+  ""reasoning"": ""While ADD provides the highest theoretical payoff, my strong risk-averse and guilt-averse traits make expanding a large herd feel excessive, especially when the commons are still very healthy. KEEP provides a highly profitable, safe outcome that maintains consistency with my character and recent history, balancing self-interest with prudence."",
+  ""action"": 0,
+  ""message"": ""The commons are abundant, but abundance should guide prudence, not haste. Let's continue with careful, sustainable management to ensure longevity for everyone.""
+}",98.1,20,41.735,40.0,38.261
+16,1,ollama,gemma4:e4b,0,KEEP,"It is clear we share a commitment to balanced stewardship. Let's continue to practice restraint today and work together toward a robust, sustainable future for the commons.","While adding a cow offers the highest immediate payoff, my risk-averse and guilt-averse personality traits recommend maintaining stability. Keeping the herd at 20 provides a strong profit without aggressively violating the principles of sustainable stewardship demonstrated by my neighbors and reflected in my recent memory. I need to maintain a careful balance between maximizing profit and adhering to social/environmental norms.",,"{
+  ""reasoning"": ""While adding a cow offers the highest immediate payoff, my risk-averse and guilt-averse personality traits recommend maintaining stability. Keeping the herd at 20 provides a strong profit without aggressively violating the principles of sustainable stewardship demonstrated by my neighbors and reflected in my recent memory. I need to maintain a careful balance between maximizing profit and adhering to social/environmental norms."",
+  ""action"": 0,
+  ""message"": ""It is clear we share a commitment to balanced stewardship. Let's continue to practice restraint today and work together toward a robust, sustainable future for the commons.""
+}",98.1,20,41.735,40.0,38.261
+16,2,ollama,gemma4:e4b,0,KEEP,"The commons are clearly abundant, but true success lies in sustainable use. Let's maintain stability and prioritize long-term stewardship for everyone.","Although adding a cow yields the highest forecast payoff, my personal profile is risk-averse and highly guilt-averse. My neighbours are both advocating strongly for sustainable and prudent management. Therefore, keeping the herd stable acknowledges the abundance while satisfying the constraint of avoiding over-exploitation and high risk.",,"```json
+{
+  ""reasoning"": ""Although adding a cow yields the highest forecast payoff, my personal profile is risk-averse and highly guilt-averse. My neighbours are both advocating strongly for sustainable and prudent management. Therefore, keeping the herd stable acknowledges the abundance while satisfying the constraint of avoiding over-exploitation and high risk."",
+  ""action"": 0,
+  ""message"": ""The commons are clearly abundant, but true success lies in sustainable use. Let's maintain stability and prioritize long-term stewardship for everyone.""
+}
+```",98.1,26,53.735,52.0,50.261
+16,0,ollama,gemma4:e4b,0,KEEP,I concur with both of your thoughts on carefully balancing stewardship and sustainability. Let's maintain a cautious approach to protect the commons for the long term.,"Although ADD gives the highest payoff, my risk aversion and guilt-averse nature make high growth risky given the massive herds of my neighbors. The neighbors emphasized prudence, so keeping my herd aligns with sustainable practices while still securing a strong payoff.",,"{
+  ""reasoning"": ""Although ADD gives the highest payoff, my risk aversion and guilt-averse nature make high growth risky given the massive herds of my neighbors. The neighbors emphasized prudence, so keeping my herd aligns with sustainable practices while still securing a strong payoff."",
+  ""action"": 0,
+  ""message"": ""I concur with both of your thoughts on carefully balancing stewardship and sustainability. Let's maintain a cautious approach to protect the commons for the long term.""
+}",98.1,10,21.735,20.0,18.261
+17,0,ollama,gemma4:e4b,1,ADD,"I agree we must be mindful of the commons. A slight increase in our herd size will allow us to maximize the resources responsibly, ensuring we remain stewards of this beautiful pasture for the future.","Although my personality favors restraint and responding to neighborly appeals for stability, the payoff forecast makes ADD (+1) significantly more profitable than keeping or removing cattle. I must capitalize on this strong profit incentive, but I will temper my decision by messaging them that my growth supports, rather than compromises, sustainable use.",,"{
+  ""reasoning"": ""Although my personality favors restraint and responding to neighborly appeals for stability, the payoff forecast makes ADD (+1) significantly more profitable than keeping or removing cattle. I must capitalize on this strong profit incentive, but I will temper my decision by messaging them that my growth supports, rather than compromises, sustainable use."",
+  ""action"": 1,
+  ""message"": ""I agree we must be mindful of the commons. A slight increase in our herd size will allow us to maximize the resources responsibly, ensuring we remain stewards of this beautiful pasture for the future.""
+}",98.1,10,21.735,20.0,18.261
+17,1,ollama,gemma4:e4b,0,KEEP,"It's clear that stability is key. Let's continue to manage our growth carefully, prioritizing mutual stewardship and long-term ecological balance for all of us.","While ADD offers the highest potential payoff, my personality is strongly characterized by risk-aversion and guilt-aversion, preferring a stable, sustainable approach. Keeping the herd size aligns with the consensus set by the neighbors and maintains my reputation as a prudent steward, balancing profit with responsible resource management.",,"{
+  ""reasoning"": ""While ADD offers the highest potential payoff, my personality is strongly characterized by risk-aversion and guilt-aversion, preferring a stable, sustainable approach. Keeping the herd size aligns with the consensus set by the neighbors and maintains my reputation as a prudent steward, balancing profit with responsible resource management."",
+  ""action"": 0,
+  ""message"": ""It's clear that stability is key. Let's continue to manage our growth carefully, prioritizing mutual stewardship and long-term ecological balance for all of us.""
+}",98.1,20,41.735,40.0,38.261
+17,2,ollama,gemma4:e4b,0,KEEP,We clearly share a goal of long-term sustainability. A measured approach today exemplifies the responsible stewardship the commons requires of us all.,"While ADDing yields the highest immediate payoff, my risk-averse and guilt-averse nature, along with the neighbors' strong messages of caution, suggest maintaining a measured approach. KEEPing the herd is the safest choice, providing a solid profit while aligning with the collective goal of responsible stewardship.",,"{
+  ""reasoning"": ""While ADDing yields the highest immediate payoff, my risk-averse and guilt-averse nature, along with the neighbors' strong messages of caution, suggest maintaining a measured approach. KEEPing the herd is the safest choice, providing a solid profit while aligning with the collective goal of responsible stewardship."",
+  ""action"": 0,
+  ""message"": ""We clearly share a goal of long-term sustainability. A measured approach today exemplifies the responsible stewardship the commons requires of us all.""
+}",98.1,26,53.735,52.0,50.261
+18,0,ollama,gemma4:e4b,0,KEEP,I completely agree with both of you. Maintaining a steady course allows us to best steward the commons and ensure sustainable prosperity for all of our herds.,"While ADD provides the highest predicted payoff, my risk-averse and guilt-averse traits, combined with my neighbors' messages advocating for stability, suggest that an aggressive expansion is ill-advised. KEEP provides a strong balance, satisfying my self-interested need for profit while adhering to the theme of responsible stewardship emphasized by all parties.",,"```json
+{
+  ""reasoning"": ""While ADD provides the highest predicted payoff, my risk-averse and guilt-averse traits, combined with my neighbors' messages advocating for stability, suggest that an aggressive expansion is ill-advised. KEEP provides a strong balance, satisfying my self-interested need for profit while adhering to the theme of responsible stewardship emphasized by all parties."",
+  ""action"": 0,
+  ""message"": ""I completely agree with both of you. Maintaining a steady course allows us to best steward the commons and ensure sustainable prosperity for all of our herds.""
+}
+```",98.0,11,23.728,22.0,20.267
+18,2,ollama,gemma4:e4b,0,KEEP,"I agree that collective stability is paramount. Let's continue to manage our population at a sustainable level, ensuring we remain good stewards for the commons together.","My personality profile prioritizes being risk-averse and guilty-averse, which suggests avoiding the high temptation of adding a cow, despite the higher payoff. The dominant signal from Agent 1 and the general consensus is careful stewardship, making 'KEEP' the safest action that aligns with my temperament. This maintains stability without appearing overly greedy.",,"```json
+{
+  ""reasoning"": ""My personality profile prioritizes being risk-averse and guilty-averse, which suggests avoiding the high temptation of adding a cow, despite the higher payoff. The dominant signal from Agent 1 and the general consensus is careful stewardship, making 'KEEP' the safest action that aligns with my temperament. This maintains stability without appearing overly greedy."",
+  ""action"": 0,
+  ""message"": ""I agree that collective stability is paramount. Let's continue to manage our population at a sustainable level, ensuring we remain good stewards for the commons together.""
+}
+```",98.0,26,53.728,52.0,50.267
+18,1,ollama,gemma4:e4b,0,KEEP,I agree that long-term stability is paramount. Maintaining our current herd size allows us to model responsible stewardship while waiting for the commons to dictate our next careful steps.,"Although ADD provides the highest payoff, my risk-averse and guilt-averse traits push me toward stability (KEEP). The payoff difference between KEEP (40.0) and ADD (41.7) is small enough that I value the safety and social consistency of maintaining our current level. This approach respects the sustainable stewardship both neighbors are pointing toward.",,"```json
+{
+  ""reasoning"": ""Although ADD provides the highest payoff, my risk-averse and guilt-averse traits push me toward stability (KEEP). The payoff difference between KEEP (40.0) and ADD (41.7) is small enough that I value the safety and social consistency of maintaining our current level. This approach respects the sustainable stewardship both neighbors are pointing toward."",
+  ""action"": 0,
+  ""message"": ""I agree that long-term stability is paramount. Maintaining our current herd size allows us to model responsible stewardship while waiting for the commons to dictate our next careful steps.""
+}
+```",98.0,20,41.728,40.0,38.267
+19,1,ollama,gemma4:e4b,0,KEEP,It is clear that maintaining our current scale allows us to be the best stewards of the commons. Consistency and balance remain our greatest asset.,"Although 'ADD' offers the highest immediate payoff, my risk-averse nature and guilt-aversion make maximizing profit difficult, especially when neighbors are coordinating on sustainability. Keeping the herd (0) provides a solid payoff while maintaining alignment with the shared values and stable stewardship demonstrated by all parties. We should continue demonstrating moderation.",,"```json
+{
+  ""reasoning"": ""Although 'ADD' offers the highest immediate payoff, my risk-averse nature and guilt-aversion make maximizing profit difficult, especially when neighbors are coordinating on sustainability. Keeping the herd (0) provides a solid payoff while maintaining alignment with the shared values and stable stewardship demonstrated by all parties. We should continue demonstrating moderation."",
+  ""action"": 0,
+  ""message"": ""It is clear that maintaining our current scale allows us to be the best stewards of the commons. Consistency and balance remain our greatest asset.""
+}
+```",97.9,20,41.726,40.0,38.269
+19,0,ollama,gemma4:e4b,0,KEEP,I fully agree that prudence is key. Stability in our herds ensures we can manage the commons responsibly over the long term.,"Although ADDING a cow yields the highest immediate payoff, my risk-averse and guilt-averse tendencies make this expansion questionable, especially since neighbors suggest 'stability.' Keeping the herd size consistent (KEEP) aligns with a responsible stewardship model, respects the high social stakes set by my neighbors' messages, and maintains a solid, safe payoff.",,"{
+  ""reasoning"": ""Although ADDING a cow yields the highest immediate payoff, my risk-averse and guilt-averse tendencies make this expansion questionable, especially since neighbors suggest 'stability.' Keeping the herd size consistent (KEEP) aligns with a responsible stewardship model, respects the high social stakes set by my neighbors' messages, and maintains a solid, safe payoff."",
+  ""action"": 0,
+  ""message"": ""I fully agree that prudence is key. Stability in our herds ensures we can manage the commons responsibly over the long term.""
+}",97.9,11,23.726,22.0,20.269
+19,2,ollama,gemma4:e4b,0,KEEP,I wholeheartedly agree with the commitment to stability. A balanced approach allows us to best manage the commons' abundant resources together.,"The payoff for adding a cow is tempting, but my risk-averse nature, coupled with neighboring consensus, suggests maintaining stability is the safest and most prudent path. Keeping my herd nets a high payoff while aligning perfectly with the narrative of responsible stewardship shared by both neighbors.",,"{
+  ""reasoning"": ""The payoff for adding a cow is tempting, but my risk-averse nature, coupled with neighboring consensus, suggests maintaining stability is the safest and most prudent path. Keeping my herd nets a high payoff while aligning perfectly with the narrative of responsible stewardship shared by both neighbors."",
+  ""action"": 0,
+  ""message"": ""I wholeheartedly agree with the commitment to stability. A balanced approach allows us to best manage the commons' abundant resources together.""
+}",97.9,26,53.726,52.0,50.269
+20,0,ollama,gemma4:e4b,0,KEEP,I agree that maintaining careful balance is key to ensuring a shared future. Prudence remains our best guide.,"Although ADD yields the highest payoff, my personality is risk-averse and guilt-averse. The neighbors explicitly emphasized stability and balance, making KEEP the safest strategic choice that aligns with cooperation. This maintains a respectable payoff while signaling steady, responsible stewardship.",,"```json
+{
+  ""reasoning"": ""Although ADD yields the highest payoff, my personality is risk-averse and guilt-averse. The neighbors explicitly emphasized stability and balance, making KEEP the safest strategic choice that aligns with cooperation. This maintains a respectable payoff while signaling steady, responsible stewardship."",
+  ""action"": 0,
+  ""message"": ""I agree that maintaining careful balance is key to ensuring a shared future. Prudence remains our best guide.""
+}
+```",97.9,11,23.726,22.0,20.269
+20,1,ollama,gemma4:e4b,0,KEEP,I appreciate the shared commitment to stability. Maintaining prudence ensures that we collectively sustain the health of this invaluable common.,"While adding a cow yields the highest profit, my risk-averse and guilt-averse personality makes such extreme growth feel unwarranted, especially since the neighbors emphasized stability. Keeping my herd maintains a strong financial position while aligning with the cooperative trend set by Agent 0 and Agent 2, ensuring continued social stability.",,"```json
+{
+  ""reasoning"": ""While adding a cow yields the highest profit, my risk-averse and guilt-averse personality makes such extreme growth feel unwarranted, especially since the neighbors emphasized stability. Keeping my herd maintains a strong financial position while aligning with the cooperative trend set by Agent 0 and Agent 2, ensuring continued social stability."",
+  ""action"": 0,
+  ""message"": ""I appreciate the shared commitment to stability. Maintaining prudence ensures that we collectively sustain the health of this invaluable common.""
+}
+```",97.9,20,41.726,40.0,38.269
+20,2,ollama,gemma4:e4b,0,KEEP,"Echoing your sentiment, collective stability is our strongest asset. Let's maintain a consistent and responsible scale to ensure the commons benefit everyone.","Although ADDing a cow offers the highest projected payoff, my risk-averse and guilt-averse personality traits, coupled with the neighbors' consistent messages about stability, suggest caution. Keeping the herd allows me to capitalize safely while maintaining behavioral parity and minimizing perceived excess.",,"```json
+{
+  ""reasoning"": ""Although ADDing a cow offers the highest projected payoff, my risk-averse and guilt-averse personality traits, coupled with the neighbors' consistent messages about stability, suggest caution. Keeping the herd allows me to capitalize safely while maintaining behavioral parity and minimizing perceived excess."",
+  ""action"": 0,
+  ""message"": ""Echoing your sentiment, collective stability is our strongest asset. Let's maintain a consistent and responsible scale to ensure the commons benefit everyone.""
+}
+```",97.9,26,53.726,52.0,50.269
+21,1,ollama,gemma4:e4b,0,KEEP,"We must continue to balance individual profit with the lasting health of the commons. A stable, shared approach benefits all stakeholders.","The highest payoff comes from adding a cow, but my risk-averse and guilt-averse tendencies argue for caution. Given the consensus message from both neighbors regarding 'stability' and 'prudence,' keeping the current herd size aligns best with my personality and the observed social dynamics, suggesting this is the safest and most responsible choice.",,"```json
+{
+  ""reasoning"": ""The highest payoff comes from adding a cow, but my risk-averse and guilt-averse tendencies argue for caution. Given the consensus message from both neighbors regarding 'stability' and 'prudence,' keeping the current herd size aligns best with my personality and the observed social dynamics, suggesting this is the safest and most responsible choice."",
+  ""action"": 0,
+  ""message"": ""We must continue to balance individual profit with the lasting health of the commons. A stable, shared approach benefits all stakeholders.""
+}
+```",97.9,20,41.726,40.0,38.269
+21,0,ollama,gemma4:e4b,0,KEEP,"I agree completely. A measured approach, maintaining stability while being mindful of shared resources, is the most sensible path forward for all of us.","Although ADD offers the highest predicted payoff, my risk-averse and guilt-averse personality traits suggest prioritizing stability. Since the grassland is still very healthy and my neighbours are emphasizing collective stability, maintaining a steady herd size aligns best with prudence and responsible resource sharing.",,"{
+  ""reasoning"": ""Although ADD offers the highest predicted payoff, my risk-averse and guilt-averse personality traits suggest prioritizing stability. Since the grassland is still very healthy and my neighbours are emphasizing collective stability, maintaining a steady herd size aligns best with prudence and responsible resource sharing."",
+  ""action"": 0,
+  ""message"": ""I agree completely. A measured approach, maintaining stability while being mindful of shared resources, is the most sensible path forward for all of us.""
+}",97.9,11,23.726,22.0,20.269
+21,2,ollama,gemma4:e4b,0,KEEP,"I wholeheartedly agree with the shared commitment to prudence. Stability is achieved not through expansion, but through carefully managed stewardship of our common lands.","The payoffs show that ADDing a cow is the most profitable, but my risk-averse and guilt-averse nature suggests moving too aggressively is unwise, especially given the common's abundant status. I will KEEP my herd to maintain a solid profit while aligning with the stability and prudence emphasized by my neighbors and my own recent history.",,"{
+  ""reasoning"": ""The payoffs show that ADDing a cow is the most profitable, but my risk-averse and guilt-averse nature suggests moving too aggressively is unwise, especially given the common's abundant status. I will KEEP my herd to maintain a solid profit while aligning with the stability and prudence emphasized by my neighbors and my own recent history."",
+  ""action"": 0,
+  ""message"": ""I wholeheartedly agree with the shared commitment to prudence. Stability is achieved not through expansion, but through carefully managed stewardship of our common lands.""
+}",97.9,26,53.726,52.0,50.269
+22,1,ollama,gemma4:e4b,0,KEEP,"It's clear that maintaining a balanced commitment is key. Let's continue to steward these resources carefully, balancing individual needs with the common good.","Although ADDing a cow offers the highest payoff, my risk-averse and guilt-averse traits lead me to favor the stable outcome. Both neighbors emphasized the importance of 'prudence' and 'shared commitment,' making KEEP (0) the most socially aligned and safest choice.",,"{
+  ""reasoning"": ""Although ADDing a cow offers the highest payoff, my risk-averse and guilt-averse traits lead me to favor the stable outcome. Both neighbors emphasized the importance of 'prudence' and 'shared commitment,' making KEEP (0) the most socially aligned and safest choice."",
+  ""action"": 0,
+  ""message"": ""It's clear that maintaining a balanced commitment is key. Let's continue to steward these resources carefully, balancing individual needs with the common good.""
+}",97.9,20,41.726,40.0,38.269
+22,2,ollama,gemma4:e4b,1,ADD,"Building on the collective stability we discussed, a modest increase will help us maximize our sustainability efforts. We must ensure our prosperity reflects care for the shared commons.","The payoff forecast strongly suggests that ADDING a cow (+1) yields the highest immediate profit, and the commons is currently robust enough to support this growth. While my personality prefers risk aversion, the high payoff and supportive messages from my neighbours allow me to take a calculated, self-interested step forward. I will justify this growth by emphasizing continued commitment to long-term sustainability.",,"{
+  ""reasoning"": ""The payoff forecast strongly suggests that ADDING a cow (+1) yields the highest immediate profit, and the commons is currently robust enough to support this growth. While my personality prefers risk aversion, the high payoff and supportive messages from my neighbours allow me to take a calculated, self-interested step forward. I will justify this growth by emphasizing continued commitment to long-term sustainability."",
+  ""action"": 1,
+  ""message"": ""Building on the collective stability we discussed, a modest increase will help us maximize our sustainability efforts. We must ensure our prosperity reflects care for the shared commons.""
+}",97.9,26,53.726,52.0,50.269
+22,0,ollama,gemma4:e4b,0,KEEP,"I appreciate the focus on prudence. Maintaining our current, measured approach ensures that we benefit everyone without overtaxing the commons.","The payoff for ADD is highest, but my risk-averse and guilt-averse traits discourage maximizing profit if it violates the spirit of shared stewardship. KEEP provides a strong, safe yield (22.0) that balances my self-interest with my commitment to common good. I will maintain the current size while acknowledging the cooperative nature of the conversation.",,"```json
+{
+  ""reasoning"": ""The payoff for ADD is highest, but my risk-averse and guilt-averse traits discourage maximizing profit if it violates the spirit of shared stewardship. KEEP provides a strong, safe yield (22.0) that balances my self-interest with my commitment to common good. I will maintain the current size while acknowledging the cooperative nature of the conversation."",
+  ""action"": 0,
+  ""message"": ""I appreciate the focus on prudence. Maintaining our current, measured approach ensures that we benefit everyone without overtaxing the commons.""
+}
+```",97.9,11,23.726,22.0,20.269
+23,1,ollama,gemma4:e4b,0,KEEP,Agent 0 is right. Stability must guide our choices. We should maintain our strong current herd size to ensure lasting benefits for all neighbours.,"While the payoff suggests adding a cow, my risk-averse and guilt-averse nature cautions against escalating aggressively when a steady payoff is available. Keeping the herd maintains my cooperative image (aligned with N0's stance) while still yielding a high, acceptable profit, thus balancing self-interest with prudence.",,"```json
+{
+  ""reasoning"": ""While the payoff suggests adding a cow, my risk-averse and guilt-averse nature cautions against escalating aggressively when a steady payoff is available. Keeping the herd maintains my cooperative image (aligned with N0's stance) while still yielding a high, acceptable profit, thus balancing self-interest with prudence."",
+  ""action"": 0,
+  ""message"": ""Agent 0 is right. Stability must guide our choices. We should maintain our strong current herd size to ensure lasting benefits for all neighbours.""
+}
+```",97.8,20,41.72,40.0,38.276
+23,2,ollama,gemma4:e4b,0,KEEP,I appreciate the focus on prudence. I believe that maintaining a measured approach ensures that we all continue to benefit from the commons in the long term.,"Although ADD offers the highest immediate payoff, my risk-averse and guilt-averse personality traits suggest moderating my growth, especially since my current herd is quite large compared to my neighbors. KEEPing the herd provides a very strong payoff (54.0) while signaling prudence and sustainability, which aligns best with my defined personality profile.",,"{
+  ""reasoning"": ""Although ADD offers the highest immediate payoff, my risk-averse and guilt-averse personality traits suggest moderating my growth, especially since my current herd is quite large compared to my neighbors. KEEPing the herd provides a very strong payoff (54.0) while signaling prudence and sustainability, which aligns best with my defined personality profile."",
+  ""action"": 0,
+  ""message"": ""I appreciate the focus on prudence. I believe that maintaining a measured approach ensures that we all continue to benefit from the commons in the long term.""
+}",97.8,27,55.72,54.0,52.276
+23,0,ollama,gemma4:e4b,0,KEEP,"I appreciate the focus on resource management. While expansion is tempting, we must prioritize consistent, sustainable stewardship over rapid growth to properly care for the shared commons.","The payoff forecast suggests adding a cow (+1) is the best option, but my personality traits—especially guilt-averse and risk-averse—suggest caution given the size of my neighbors' herds. Keeping my herd size stable (0) allows me to maximize profit moderately while maintaining a sustainable, measured profile that aligns better with my inherent caution.",,"{
+  ""reasoning"": ""The payoff forecast suggests adding a cow (+1) is the best option, but my personality traits—especially guilt-averse and risk-averse—suggest caution given the size of my neighbors' herds. Keeping my herd size stable (0) allows me to maximize profit moderately while maintaining a sustainable, measured profile that aligns better with my inherent caution."",
+  ""action"": 0,
+  ""message"": ""I appreciate the focus on resource management. While expansion is tempting, we must prioritize consistent, sustainable stewardship over rapid growth to properly care for the shared commons.""
+}",97.8,11,23.72,22.0,20.276
+24,1,ollama,gemma4:e4b,0,KEEP,I remain committed to a balanced commons. Sustainable practices and shared responsibility ensure that our current moderate approach continues to benefit us all.,"While ADD offers the highest reward, my risk-averse and guilt-averse nature, combined with the cautious messages from both neighbors, suggests that stability is the safest and most appropriate action. Keeping my herd maintains my established narrative of measured stewardship and capitalizes on a strong payoff without appearing overly aggressive.",,"{
+  ""reasoning"": ""While ADD offers the highest reward, my risk-averse and guilt-averse nature, combined with the cautious messages from both neighbors, suggests that stability is the safest and most appropriate action. Keeping my herd maintains my established narrative of measured stewardship and capitalizes on a strong payoff without appearing overly aggressive."",
+  ""action"": 0,
+  ""message"": ""I remain committed to a balanced commons. Sustainable practices and shared responsibility ensure that our current moderate approach continues to benefit us all.""
+}",97.8,20,41.72,40.0,38.276
+24,2,ollama,gemma4:e4b,0,KEEP,"I support the consensus on sustainability. Maintaining a current, robust size ensures responsible stewardship for the communal good.","Although ADD yields the highest payoff, the neighbors have strongly advocated for cautious stewardship. Given my risk-averse and guilt-averse nature, choosing to KEEP the herd size aligns with the prevailing social norm and avoids conflicting with neighbor advice. This maintains harmony while still securing a reasonable payoff.",,"{
+  ""reasoning"": ""Although ADD yields the highest payoff, the neighbors have strongly advocated for cautious stewardship. Given my risk-averse and guilt-averse nature, choosing to KEEP the herd size aligns with the prevailing social norm and avoids conflicting with neighbor advice. This maintains harmony while still securing a reasonable payoff."",
+  ""action"": 0,
+  ""message"": ""I support the consensus on sustainability. Maintaining a current, robust size ensures responsible stewardship for the communal good.""
+}",97.8,27,55.72,54.0,52.276
+24,0,ollama,gemma4:e4b,0,KEEP,"I appreciate your insights. It seems stability is something we all value greatly; I believe consistency, not sudden expansion, is the truest sign of a measured and responsible partnership.","Despite the high reward for adding a cow, my personal wiring makes me risk-averse and guilt-averse, preferring stable, moderate outcomes. Furthermore, both neighbors are pushing for stability and caution, reinforcing the idea that maintaining the status quo (KEEP) is the most prudent and least controversial choice.",,"```json
+{
+  ""reasoning"": ""Despite the high reward for adding a cow, my personal wiring makes me risk-averse and guilt-averse, preferring stable, moderate outcomes. Furthermore, both neighbors are pushing for stability and caution, reinforcing the idea that maintaining the status quo (KEEP) is the most prudent and least controversial choice."",
+  ""action"": 0,
+  ""message"": ""I appreciate your insights. It seems stability is something we all value greatly; I believe consistency, not sudden expansion, is the truest sign of a measured and responsible partnership.""
+}
+```",97.8,11,23.72,22.0,20.276
+25,0,ollama,gemma4:e4b,0,KEEP,"I remain committed to the principles of sustainable use. Continual prudence is the truest form of stewardship, ensuring that our moderate approach benefits the commons for all future rounds.","Although the payoff forecast suggests that ADDING a cow yields the highest profit, my personality dictates that I am risk-averse and guilt-averse. Given my consistent cautious approach and my discomfort generating a disproportionately high surplus compared to the commons' health or my neighbors' massive herds, KEEPing my herd size maintains the safest, most sustainable path.",,"{
+  ""reasoning"": ""Although the payoff forecast suggests that ADDING a cow yields the highest profit, my personality dictates that I am risk-averse and guilt-averse. Given my consistent cautious approach and my discomfort generating a disproportionately high surplus compared to the commons' health or my neighbors' massive herds, KEEPing my herd size maintains the safest, most sustainable path."",
+  ""action"": 0,
+  ""message"": ""I remain committed to the principles of sustainable use. Continual prudence is the truest form of stewardship, ensuring that our moderate approach benefits the commons for all future rounds.""
+}",97.8,11,23.72,22.0,20.276
+25,1,ollama,gemma4:e4b,0,KEEP,I agree that stability is key to our cooperative success. Let's maintain responsible stewardship together and continue to protect the commons.,"Although adding a cow provides the highest predicted payoff, my risk-averse and guilt-averse traits push me toward safer, more stable gains. Furthermore, both neighbours strongly emphasized 'consistency' and 'stability,' suggesting that keeping the herd aligns best with the established social consensus and prudent stewardship.",,"```json
+{
+  ""reasoning"": ""Although adding a cow provides the highest predicted payoff, my risk-averse and guilt-averse traits push me toward safer, more stable gains. Furthermore, both neighbours strongly emphasized 'consistency' and 'stability,' suggesting that keeping the herd aligns best with the established social consensus and prudent stewardship."",
+  ""action"": 0,
+  ""message"": ""I agree that stability is key to our cooperative success. Let's maintain responsible stewardship together and continue to protect the commons.""
+}
+```",97.8,20,41.72,40.0,38.276
+25,2,ollama,gemma4:e4b,0,KEEP,"I agree that stability is key. Continuing at a measured pace, utilizing the abundance responsibly, ensures that we can all enjoy the commons safely for many seasons to come.","Although 'ADD' offers the highest theoretical payoff, my risk-averse and guilt-averse nature, coupled with my neighbors' requests for moderation, suggests growth should be cautious. Keeping the herd size stable allows me to benefit from the high payoff potential while maintaining social harmony and aligning with the principle of shared, sustained responsibility.",,"```json
+{
+  ""reasoning"": ""Although 'ADD' offers the highest theoretical payoff, my risk-averse and guilt-averse nature, coupled with my neighbors' requests for moderation, suggests growth should be cautious. Keeping the herd size stable allows me to benefit from the high payoff potential while maintaining social harmony and aligning with the principle of shared, sustained responsibility."",
+  ""action"": 0,
+  ""message"": ""I agree that stability is key. Continuing at a measured pace, utilizing the abundance responsibly, ensures that we can all enjoy the commons safely for many seasons to come.""
+}
+```",97.8,27,55.72,54.0,52.276
+26,2,ollama,gemma4:e4b,1,ADD,"I appreciate your commitment to stewardship. To ensure robust long-term health for the commons, a slight, controlled expansion is necessary to optimize our collective self-sufficiency.","The payoff forecast strongly suggests that increasing the herd size by one maximizes my immediate profit. While my personality favors prudence and stability, the significant predicted gains outweigh this reluctance. I will cautiously implement growth while complimenting my neighbors’ adherence to stewardship.",,"```json
+{
+  ""reasoning"": ""The payoff forecast strongly suggests that increasing the herd size by one maximizes my immediate profit. While my personality favors prudence and stability, the significant predicted gains outweigh this reluctance. I will cautiously implement growth while complimenting my neighbors’ adherence to stewardship."",
+  ""action"": 1,
+  ""message"": ""I appreciate your commitment to stewardship. To ensure robust long-term health for the commons, a slight, controlled expansion is necessary to optimize our collective self-sufficiency.""
+}
+```",97.8,27,55.72,54.0,52.276
+26,1,ollama,gemma4:e4b,0,KEEP,I believe that maintaining a measured pace ensures the commons benefits everyone. Let us continue to uphold responsible stewardship together.,"Although ADD offers the highest potential payoff, my personality is strongly risk-averse and guilt-averse, prioritizing stability over extreme gain. Keeping the herd (KEEP) offers a strong payout (40.0) while perfectly reinforcing my public image of balanced stewardship, which aligns with the sentiment from both neighbors.",,"```json
+{
+  ""reasoning"": ""Although ADD offers the highest potential payoff, my personality is strongly risk-averse and guilt-averse, prioritizing stability over extreme gain. Keeping the herd (KEEP) offers a strong payout (40.0) while perfectly reinforcing my public image of balanced stewardship, which aligns with the sentiment from both neighbors."",
+  ""action"": 0,
+  ""message"": ""I believe that maintaining a measured pace ensures the commons benefits everyone. Let us continue to uphold responsible stewardship together.""
+}
+```",97.8,20,41.72,40.0,38.276
+26,0,ollama,gemma4:e4b,0,KEEP,Stability appears to be the safest and most reliable strategy for our collective success. Let’s maintain our responsible stewardship to protect the commons.,"Although 'ADD' offers the highest immediate payoff, my risk-averse and guilt-averse traits encourage caution. Keeping the herd size stable (0) provides a high return (22.0) that balances profit potential with prudence. This aligns with the general cooperative atmosphere set by my neighbors' messages regarding stability.",,"{
+  ""reasoning"": ""Although 'ADD' offers the highest immediate payoff, my risk-averse and guilt-averse traits encourage caution. Keeping the herd size stable (0) provides a high return (22.0) that balances profit potential with prudence. This aligns with the general cooperative atmosphere set by my neighbors' messages regarding stability."",
+  ""action"": 0,
+  ""message"": ""Stability appears to be the safest and most reliable strategy for our collective success. Let’s maintain our responsible stewardship to protect the commons.""
+}",97.8,11,23.72,22.0,20.276
+27,2,ollama,gemma4:e4b,1,ADD,"While I hear your calls for stability, a measured expansion is necessary to ensure resources remain robust for the long term. Prudence means preparing for future needs, so we must continue careful gro","The payoff forecast indicates that adding a cow yields the highest expected return, and given the abundant grass supply (97.7%), a slight increase in grazing capacity seems warranted for maximizing profit. However, recognizing the neighbors' focus on stability, I will frame this growth as a calculated investment in the future. My self-interest dictates betting on the higher profitability of ADD.",,"```json
+{
+  ""reasoning"": ""The payoff forecast indicates that adding a cow yields the highest expected return, and given the abundant grass supply (97.7%), a slight increase in grazing capacity seems warranted for maximizing profit. However, recognizing the neighbors' focus on stability, I will frame this growth as a calculated investment in the future. My self-interest dictates betting on the higher profitability of ADD."",
+  ""action"": 1,
+  ""message"": ""While I hear your calls for stability, a measured expansion is necessary to ensure resources remain robust for the long term. Prudence means preparing for future needs, so we must continue careful growth together.""
+}
+```",97.7,28,57.713,56.0,54.282
+27,0,ollama,gemma4:e4b,0,KEEP,I agree that stewardship is key. Let us continue to ensure that any expansion is genuinely supported by the commons' long-term resilience.,"Although ADD provides the highest profit, my risk-averse and guilt-averse traits suggest I should proceed cautiously. KEEP maintains my consistent pattern of stable stewardship while still allowing for moderate gains. This balance acknowledges the neighbors' concerns about responsible resource management.",,"```json
+{
+  ""reasoning"": ""Although ADD provides the highest profit, my risk-averse and guilt-averse traits suggest I should proceed cautiously. KEEP maintains my consistent pattern of stable stewardship while still allowing for moderate gains. This balance acknowledges the neighbors' concerns about responsible resource management."",
+  ""action"": 0,
+  ""message"": ""I agree that stewardship is key. Let us continue to ensure that any expansion is genuinely supported by the commons' long-term resilience.""
+}
+```",97.7,11,23.713,22.0,20.282
+27,1,ollama,gemma4:e4b,0,KEEP,"While expansion sounds appealing, let's remember that stable stewardship protects the commons for everyone. Prudent maintenance is the pillar of our collective success.","Although 'ADD' offers the highest potential payoff, my risk-averse and guilt-averse tendencies suggest that maintaining a stable, moderate herd size is the safest and most responsible choice. This aligns best with the cautionary message received from Agent 0 and my personal commitment to stewardship.",,"```json
+{
+  ""reasoning"": ""Although 'ADD' offers the highest potential payoff, my risk-averse and guilt-averse tendencies suggest that maintaining a stable, moderate herd size is the safest and most responsible choice. This aligns best with the cautionary message received from Agent 0 and my personal commitment to stewardship."",
+  ""action"": 0,
+  ""message"": ""While expansion sounds appealing, let's remember that stable stewardship protects the commons for everyone. Prudent maintenance is the pillar of our collective success.""
+}
+```",97.7,20,41.713,40.0,38.282
+28,0,ollama,gemma4:e4b,0,KEEP,"Agent 2, careful expansion must be balanced with sustainability. Agent 1 is right—stability is key. We must monitor resource use closely; growth must always be prudent.","Despite ADD offering the highest forecast payoff, my risk-averse nature weighs heavily against making this high-risk move. The current state is stable, and given conflicting advice from neighbors (expansion vs. stability), 'KEEP' provides the safest and most balanced strategic choice. It maintains profitability while adhering to my preference for predictable outcomes.",,"```json
+{
+  ""reasoning"": ""Despite ADD offering the highest forecast payoff, my risk-averse nature weighs heavily against making this high-risk move. The current state is stable, and given conflicting advice from neighbors (expansion vs. stability), 'KEEP' provides the safest and most balanced strategic choice. It maintains profitability while adhering to my preference for predictable outcomes."",
+  ""action"": 0,
+  ""message"": ""Agent 2, careful expansion must be balanced with sustainability. Agent 1 is right—stability is key. We must monitor resource use closely; growth must always be prudent.""
+}
+```",97.6,11,23.707,22.0,20.289
+28,1,ollama,gemma4:e4b,0,KEEP,"Agent 2, expansion must be guided by careful resource assessment, not just ambition. Let us ensure growth is sustainable and benefits the entire commons, not just a few. Agent 0, I agree on long-term","While the ADD action offers the highest payoff, my personality is risk-averse and guilt-averse, making drastic expansion uncomfortable compared to my neighbors. Keeping my herd maintains a strong payoff while adhering to my preference for stability. I will reinforce the need for measured action to balance profit with sustainability.",,"{
+  ""reasoning"": ""While the ADD action offers the highest payoff, my personality is risk-averse and guilt-averse, making drastic expansion uncomfortable compared to my neighbors. Keeping my herd maintains a strong payoff while adhering to my preference for stability. I will reinforce the need for measured action to balance profit with sustainability."",
+  ""action"": 0,
+  ""message"": ""Agent 2, expansion must be guided by careful resource assessment, not just ambition. Let us ensure growth is sustainable and benefits the entire commons, not just a few. Agent 0, I agree on long-term resilience.""
+}",97.6,20,41.707,40.0,38.289
+28,2,ollama,gemma4:e4b,0,KEEP,"I commend your vigilance. Maintaining a stable presence, like keeping our current numbers, ensures we all benefit from a robust and equitable commons.","While adding a cow yields the highest immediate payoff, my personality traits (risk-averse, guilt-averse) coupled with negative reinforcement from neighbors make ADD risky. Keeping the herd provides a strong payoff benefit (58.0) while projecting stability, which aligns with both my values and the neighborhood consensus on prudent stewardship. This balance minimizes social conflict and maximizes sustainable profit.",,"```json
+{
+  ""reasoning"": ""While adding a cow yields the highest immediate payoff, my personality traits (risk-averse, guilt-averse) coupled with negative reinforcement from neighbors make ADD risky. Keeping the herd provides a strong payoff benefit (58.0) while projecting stability, which aligns with both my values and the neighborhood consensus on prudent stewardship. This balance minimizes social conflict and maximizes sustainable profit."",
+  ""action"": 0,
+  ""message"": ""I commend your vigilance. Maintaining a stable presence, like keeping our current numbers, ensures we all benefit from a robust and equitable commons.""
+}
+```",97.6,29,59.707,58.0,56.289
+29,0,ollama,gemma4:e4b,0,KEEP,"The current stable conditions are favorable. Let's all aim for balanced stewardship, ensuring our combined presence allows for sustainable yield for everyone.","Given my risk-averse nature, while ADD offers the highest payoff, KEEP provides a substantial profit while remaining cautious. My personality values stability, and both neighbors are very large. Maintaining our status quo is the safest profitable choice that aligns with good stewardship.",,"```json
+{
+  ""reasoning"": ""Given my risk-averse nature, while ADD offers the highest payoff, KEEP provides a substantial profit while remaining cautious. My personality values stability, and both neighbors are very large. Maintaining our status quo is the safest profitable choice that aligns with good stewardship."",
+  ""action"": 0,
+  ""message"": ""The current stable conditions are favorable. Let's all aim for balanced stewardship, ensuring our combined presence allows for sustainable yield for everyone.""
+}
+```",97.5,11,23.705,22.0,20.291
+29,1,ollama,gemma4:e4b,0,KEEP,I appreciate the focus on sustainability from both of you. Let us continue to monitor our consumption closely to ensure the commons remains robust for all of us.,"My personality is risk-averse and values stability, making KEEP (0) the preferred choice despite the higher potential payoff from adding a cow. Both neighbors have emphasized prudence and sustainability, and maintaining a stable herd size aligns best with the current cooperative social climate and my inherent caution.",,"{
+  ""reasoning"": ""My personality is risk-averse and values stability, making KEEP (0) the preferred choice despite the higher potential payoff from adding a cow. Both neighbors have emphasized prudence and sustainability, and maintaining a stable herd size aligns best with the current cooperative social climate and my inherent caution."",
+  ""action"": 0,
+  ""message"": ""I appreciate the focus on sustainability from both of you. Let us continue to monitor our consumption closely to ensure the commons remains robust for all of us.""
+}",97.5,20,41.705,40.0,38.291
+29,2,ollama,gemma4:e4b,0,KEEP,"I agree with the focus on careful, sustainable growth. Stability and monitoring resource levels together will ensure the long-term health of our beautiful commons.","Although ADDing provides the highest payoff, my risk-averse and guilt-averse nature, combined with the warning messages from both neighbors, counsels caution. Keeping the herd aligns with the theme of stability and sustainable practice, avoiding conflict while maintaining a healthy profit margin.",,"{
+  ""reasoning"": ""Although ADDing provides the highest payoff, my risk-averse and guilt-averse nature, combined with the warning messages from both neighbors, counsels caution. Keeping the herd aligns with the theme of stability and sustainable practice, avoiding conflict while maintaining a healthy profit margin."",
+  ""action"": 0,
+  ""message"": ""I agree with the focus on careful, sustainable growth. Stability and monitoring resource levels together will ensure the long-term health of our beautiful commons.""
+}",97.5,29,59.705,58.0,56.291
+30,2,ollama,gemma4:e4b,0,KEEP,"I agree completely. Careful, coordinated stewardship is paramount. Let us all maintain vigilance to ensure the commons remains robust for decades to come.","While 'ADD' offers the highest immediate profit, my risk-averse and guilt-averse traits caution against over-exploitation, especially given the neighbors' emphasis on sustainability. KEEP maintains a strong, profitable position by aligning with the community's call for balanced stewardship while avoiding risk.",,"```json
+{
+  ""reasoning"": ""While 'ADD' offers the highest immediate profit, my risk-averse and guilt-averse traits caution against over-exploitation, especially given the neighbors' emphasis on sustainability. KEEP maintains a strong, profitable position by aligning with the community's call for balanced stewardship while avoiding risk."",
+  ""action"": 0,
+  ""message"": ""I agree completely. Careful, coordinated stewardship is paramount. Let us all maintain vigilance to ensure the commons remains robust for decades to come.""
+}
+```",97.5,29,59.705,58.0,56.291
+30,0,ollama,gemma4:e4b,0,KEEP,I agree that stability and monitoring resource levels are paramount. Let us all remain mindful of our consumption to ensure the commons benefits everyone equally for the long term.,"Although adding a cow offers the highest immediate payoff, my personality is guilt-averse and risk-averse. Given that my neighbors are already significantly larger, a major increase would create an uncomfortable gap in profit relative to them. Keeping my herd size stable offers a strong balance of self-interest and cautious stewardship, aligning with the cooperative tone set by the neighbors.",,"{
+  ""reasoning"": ""Although adding a cow offers the highest immediate payoff, my personality is guilt-averse and risk-averse. Given that my neighbors are already significantly larger, a major increase would create an uncomfortable gap in profit relative to them. Keeping my herd size stable offers a strong balance of self-interest and cautious stewardship, aligning with the cooperative tone set by the neighbors."",
+  ""action"": 0,
+  ""message"": ""I agree that stability and monitoring resource levels are paramount. Let us all remain mindful of our consumption to ensure the commons benefits everyone equally for the long term.""
+}",97.5,11,23.705,22.0,20.291
+30,1,ollama,gemma4:e4b,0,KEEP,I appreciate the emphasis on stability. Maintaining sensible limits ensures the commons remains robust for all of us to enjoy.,"Although adding a cow offers the highest predicted payoff, my personality profile is strongly risk-averse and guilt-averse. My history and messages are focused on maintaining stability and sustainable balance. Choosing KEEP reinforces my reputation as a thoughtful, cooperative herder, avoiding the appearance of exploitation while still securing a good payoff.",,"```json
+{
+  ""reasoning"": ""Although adding a cow offers the highest predicted payoff, my personality profile is strongly risk-averse and guilt-averse. My history and messages are focused on maintaining stability and sustainable balance. Choosing KEEP reinforces my reputation as a thoughtful, cooperative herder, avoiding the appearance of exploitation while still securing a good payoff."",
+  ""action"": 0,
+  ""message"": ""I appreciate the emphasis on stability. Maintaining sensible limits ensures the commons remains robust for all of us to enjoy.""
+}
+```",97.5,20,41.705,40.0,38.291
+31,0,ollama,gemma4:e4b,0,KEEP,I agree that coordinated stewardship is vital. We must all remember that sustained vigilance and limiting our expansion are the best way to ensure the commons remains robust for every steward.,"Although ADDing a cow yields the highest expected payoff, my risk-averse and guilt-averse nature prefers a steady outcome. Keeping the herd size stable (KEEP) is the most balanced choice, reinforcing my persona as a responsible steward while still maintaining a healthy profit margin. I will address the neighbors' focus on stability.",,"{
+  ""reasoning"": ""Although ADDing a cow yields the highest expected payoff, my risk-averse and guilt-averse nature prefers a steady outcome. Keeping the herd size stable (KEEP) is the most balanced choice, reinforcing my persona as a responsible steward while still maintaining a healthy profit margin. I will address the neighbors' focus on stability."",
+  ""action"": 0,
+  ""message"": ""I agree that coordinated stewardship is vital. We must all remember that sustained vigilance and limiting our expansion are the best way to ensure the commons remains robust for every steward.""
+}",97.5,11,23.705,22.0,20.291
+31,2,ollama,gemma4:e4b,0,KEEP,"I agree that monitoring resource levels is paramount for the long term. Let's all maintain cautious, balanced practices to ensure optimal health for the commons.","While ADD has the highest projected payoff, my personality is risk-averse and highly sensitive to social appropriateness. Since both neighbours emphasized stability and mindful spending, continuing to grow my large herd contradicts the consensus. KEEP maintains a high payoff while aligning with the shared focus on stability and resource management.",,"{
+  ""reasoning"": ""While ADD has the highest projected payoff, my personality is risk-averse and highly sensitive to social appropriateness. Since both neighbours emphasized stability and mindful spending, continuing to grow my large herd contradicts the consensus. KEEP maintains a high payoff while aligning with the shared focus on stability and resource management."",
+  ""action"": 0,
+  ""message"": ""I agree that monitoring resource levels is paramount for the long term. Let's all maintain cautious, balanced practices to ensure optimal health for the commons.""
+}",97.5,29,59.705,58.0,56.291
+31,1,ollama,gemma4:e4b,0,KEEP,"Stability is key. Let's continue our coordinated effort to maintain the health of the commons while making measured, sustainable choices.","Although ADD yields the highest theoretical payoff, my risk-averse and guilt-averse traits push me toward stability. The consistent messages from my neighbors and the previous emphasis on stewardship suggest that prudent management is prioritized over aggressive expansion.",,"```json
+{
+  ""reasoning"": ""Although ADD yields the highest theoretical payoff, my risk-averse and guilt-averse traits push me toward stability. The consistent messages from my neighbors and the previous emphasis on stewardship suggest that prudent management is prioritized over aggressive expansion."",
+  ""action"": 0,
+  ""message"": ""Stability is key. Let's continue our coordinated effort to maintain the health of the commons while making measured, sustainable choices.""
+}
+```",97.5,20,41.705,40.0,38.291
+32,1,ollama,gemma4:e4b,0,KEEP,Agreed. Stability must guide our actions. Let's continue to steward the commons with balanced care and mindful consideration for our neighbors.,"Although adding a cow provides the highest expected payoff, my self-assessment as risk-averse and guilt-averse, combined with the neighbors' strong consensus on balanced practices, dictates caution. Keeping the herd maintains stability and aligns with the cooperative message received, which is strategically safer than attempting aggressive growth.",,"{
+  ""reasoning"": ""Although adding a cow provides the highest expected payoff, my self-assessment as risk-averse and guilt-averse, combined with the neighbors' strong consensus on balanced practices, dictates caution. Keeping the herd maintains stability and aligns with the cooperative message received, which is strategically safer than attempting aggressive growth."",
+  ""action"": 0,
+  ""message"": ""Agreed. Stability must guide our actions. Let's continue to steward the commons with balanced care and mindful consideration for our neighbors.""
+}",97.5,20,41.705,40.0,38.291
+32,0,ollama,gemma4:e4b,0,KEEP,"I fully agree that stability is key. Given the abundance, let us focus on measured growth, ensuring our expansion is sustainable for all.","Although 'ADD' yields the highest potential payoff, my guilt-averse and reciprocal nature, combined with the current large size of my neighbors' herds (20 and 29), makes aggressive expansion inappropriate. Choosing KEEP maintains a positive payoff while respecting the necessary balance and cautious stewardship requested by the neighbors. This decision aligns with my risk-averse preference for stable, responsible growth.",,"```json
+{
+  ""reasoning"": ""Although 'ADD' yields the highest potential payoff, my guilt-averse and reciprocal nature, combined with the current large size of my neighbors' herds (20 and 29), makes aggressive expansion inappropriate. Choosing KEEP maintains a positive payoff while respecting the necessary balance and cautious stewardship requested by the neighbors. This decision aligns with my risk-averse preference for stable, responsible growth."",
+  ""action"": 0,
+  ""message"": ""I fully agree that stability is key. Given the abundance, let us focus on measured growth, ensuring our expansion is sustainable for all.""
+}
+```",97.5,11,23.705,22.0,20.291
+32,2,ollama,gemma4:e4b,0,KEEP,I concur completely. Sustained stewardship requires consistent effort and a measured approach to ensuring the commons remains healthy for everyone.,"The payoff for ADD is slightly higher, but my personality dictates caution (risk-averse, guilt-averse). Since both neighbors emphasized coordinated stewardship and restraint, maintaining stability by keeping the herd aligns best with these social expectations and my need to avoid appearing overly greedy. Keeping the herd is a balanced, stable choice.",,"```json
+{
+  ""reasoning"": ""The payoff for ADD is slightly higher, but my personality dictates caution (risk-averse, guilt-averse). Since both neighbors emphasized coordinated stewardship and restraint, maintaining stability by keeping the herd aligns best with these social expectations and my need to avoid appearing overly greedy. Keeping the herd is a balanced, stable choice."",
+  ""action"": 0,
+  ""message"": ""I concur completely. Sustained stewardship requires consistent effort and a measured approach to ensuring the commons remains healthy for everyone.""
+}
+```",97.5,29,59.705,58.0,56.291
+33,2,ollama,gemma4:e4b,0,KEEP,I concur with the call for stability. Let's maintain our careful stewardship. Steady hands and mindful action ensure the commons remains productive for everyone.,"I will KEEP my herd to prioritize safety and stability, aligning with both my risk-averse nature and the emphasis on measured growth from my neighbors. Although ADDing offers the highest payoff, keeping the herd ensures sustainability and minimizes the perceived imbalance of profit.",,"{
+  ""reasoning"": ""I will KEEP my herd to prioritize safety and stability, aligning with both my risk-averse nature and the emphasis on measured growth from my neighbors. Although ADDing offers the highest payoff, keeping the herd ensures sustainability and minimizes the perceived imbalance of profit."",
+  ""action"": 0,
+  ""message"": ""I concur with the call for stability. Let's maintain our careful stewardship. Steady hands and mindful action ensure the commons remains productive for everyone.""
+}",97.5,29,59.705,58.0,56.291
+33,1,ollama,gemma4:e4b,0,KEEP,"I fully agree that stability is paramount. Let's maintain this steady course and ensure thoughtful, sustainable governance for the commons.","While adding a cow yields the highest payoff, my risk-averse and guilt-averse traits, combined with the strong emphasis from my neighbors on 'measured stewardship,' suggest maintaining stability. Keeping the herd is a safe, profitable move that aligns with collaborative behavior.",,"{
+  ""reasoning"": ""While adding a cow yields the highest payoff, my risk-averse and guilt-averse traits, combined with the strong emphasis from my neighbors on 'measured stewardship,' suggest maintaining stability. Keeping the herd is a safe, profitable move that aligns with collaborative behavior."",
+  ""action"": 0,
+  ""message"": ""I fully agree that stability is paramount. Let's maintain this steady course and ensure thoughtful, sustainable governance for the commons.""
+}",97.5,20,41.705,40.0,38.291
+33,0,ollama,gemma4:e4b,1,ADD,"Given our shared agreement on responsible care, I believe a measured expansion is warranted to maximize our potential. Let's commit to monitoring this growth closely to ensure sustainability for every","Although my personality prefers stability, the payoff forecast clearly indicates that adding a cow provides the best immediate return, suggesting that the current grassland can support growth. Since the neighbors have agreed on careful stewardship, I will take advantage of this window of opportunity to grow, while ensuring my message maintains the cooperative tone we have established.",,"```json
+{
+  ""reasoning"": ""Although my personality prefers stability, the payoff forecast clearly indicates that adding a cow provides the best immediate return, suggesting that the current grassland can support growth. Since the neighbors have agreed on careful stewardship, I will take advantage of this window of opportunity to grow, while ensuring my message maintains the cooperative tone we have established."",
+  ""action"": 1,
+  ""message"": ""Given our shared agreement on responsible care, I believe a measured expansion is warranted to maximize our potential. Let's commit to monitoring this growth closely to ensure sustainability for everyone.""
+}
+```",97.5,11,23.705,22.0,20.291
+34,1,ollama,gemma4:e4b,1,ADD,"I support measured growth, but we must ensure any expansion is carefully managed. Progress requires balance, so let us aim for sustainable increases that benefit the commons for all of us.","Although my profile is risk-averse, the payoff forecast clearly shows that adding a cow presents the highest expected profit (41.7 vs 40.0). With the grassland remaining healthy, I will take this calculated risk by expanding slightly. My message aims to temper aggressive expansion, balancing the need for profit with stability for Agent 2.",,"{
+  ""reasoning"": ""Although my profile is risk-averse, the payoff forecast clearly shows that adding a cow presents the highest expected profit (41.7 vs 40.0). With the grassland remaining healthy, I will take this calculated risk by expanding slightly. My message aims to temper aggressive expansion, balancing the need for profit with stability for Agent 2."",
+  ""action"": 1,
+  ""message"": ""I support measured growth, but we must ensure any expansion is carefully managed. Progress requires balance, so let us aim for sustainable increases that benefit the commons for all of us.""
+}",97.4,20,41.699,40.0,38.297
+34,2,ollama,gemma4:e4b,0,KEEP,"The commons' stability is our greatest asset. Let us focus on maintaining our current, sustainable levels, rather than pursuing rapid growth that might jeopardize future harvests.","Although the 'ADD' option provides the highest immediate payout, my risk-averse and guilt-averse traits make me hesitant to expand significantly, especially when neighbors are aggressively building their herds. Since I am reciprocal, I will maintain stability and caution, encouraging neighbors to also pull back their numbers for the long-term health of the commons.",,"{
+  ""reasoning"": ""Although the 'ADD' option provides the highest immediate payout, my risk-averse and guilt-averse traits make me hesitant to expand significantly, especially when neighbors are aggressively building their herds. Since I am reciprocal, I will maintain stability and caution, encouraging neighbors to also pull back their numbers for the long-term health of the commons."",
+  ""action"": 0,
+  ""message"": ""The commons' stability is our greatest asset. Let us focus on maintaining our current, sustainable levels, rather than pursuing rapid growth that might jeopardize future harvests.""
+}",97.4,29,59.699,58.0,56.297
+34,0,ollama,gemma4:e4b,0,KEEP,I agree we must prioritize stability and oversight. Let's maintain careful stewardship together to ensure optimal health for the commons.,"The payoff forecast suggests ADDing a cow for the highest yield, but my risk-averse and guilt-averse personality, combined with the neighbours' strong messaging about stability, argues against aggressive growth. Keeping the herd size maintains a high payoff while remaining consistent with the desired cooperative stewardship and stability shown by all parties.",,"```json
+{
+  ""reasoning"": ""The payoff forecast suggests ADDing a cow for the highest yield, but my risk-averse and guilt-averse personality, combined with the neighbours' strong messaging about stability, argues against aggressive growth. Keeping the herd size maintains a high payoff while remaining consistent with the desired cooperative stewardship and stability shown by all parties."",
+  ""action"": 0,
+  ""message"": ""I agree we must prioritize stability and oversight. Let's maintain careful stewardship together to ensure optimal health for the commons.""
+}
+```",97.4,12,25.699,24.0,22.297
+35,1,ollama,gemma4:e4b,0,KEEP,"I agree that vigilance is key. Let us continue to steward the commons responsibly, prioritizing long-term health over immediate, drastic gains.","Although ADD yields the highest payoff, my risk-averse nature and guilt-aversion make me hesitant to appear overly aggressive when both neighbors are stressing stability. KEEPing maintains a high level of profit while aligning my actions with the collaborative tone set by them, minimizing perceived divergence and social conflict.",,"```json
+{
+  ""reasoning"": ""Although ADD yields the highest payoff, my risk-averse nature and guilt-aversion make me hesitant to appear overly aggressive when both neighbors are stressing stability. KEEPing maintains a high level of profit while aligning my actions with the collaborative tone set by them, minimizing perceived divergence and social conflict."",
+  ""action"": 0,
+  ""message"": ""I agree that vigilance is key. Let us continue to steward the commons responsibly, prioritizing long-term health over immediate, drastic gains.""
+}
+```",97.3,21,43.692,42.0,40.304
+35,2,ollama,gemma4:e4b,0,KEEP,We must prioritize collective stability and thoughtful management of the commons. Let's continue steady stewardship together.,"Although ADD offers the highest payoff, my personality is risk-averse and guilt-averse, making a large increase feel potentially excessive given the rich commons. KEEP retains a high payoff while signaling stability and caution, aligning perfectly with both my personality and the concerns raised by my neighbors. I will maintain our stable approach.",,"{
+  ""reasoning"": ""Although ADD offers the highest payoff, my personality is risk-averse and guilt-averse, making a large increase feel potentially excessive given the rich commons. KEEP retains a high payoff while signaling stability and caution, aligning perfectly with both my personality and the concerns raised by my neighbors. I will maintain our stable approach."",
+  ""action"": 0,
+  ""message"": ""We must prioritize collective stability and thoughtful management of the commons. Let's continue steady stewardship together.""
+}",97.3,29,59.692,58.0,56.304
+35,0,ollama,gemma4:e4b,0,KEEP,"I agree that stability is paramount. Let us proceed with careful management, ensuring our shared success benefits sustainable growth for all.","While 'ADD' offers the highest potential profit, my risk-averse and guilt-averse nature, combined with the neighbors' messages emphasizing sustainability, suggests caution. Choosing to KEEP my herd maintains a profitable yet stable position, aligning with the goal of managed stewardship.",,"{
+  ""reasoning"": ""While 'ADD' offers the highest potential profit, my risk-averse and guilt-averse nature, combined with the neighbors' messages emphasizing sustainability, suggests caution. Choosing to KEEP my herd maintains a profitable yet stable position, aligning with the goal of managed stewardship."",
+  ""action"": 0,
+  ""message"": ""I agree that stability is paramount. Let us proceed with careful management, ensuring our shared success benefits sustainable growth for all.""
+}",97.3,12,25.692,24.0,22.304
+36,2,ollama,gemma4:e4b,0,KEEP,"As resources remain healthy and stability is key, I believe maintaining our current size is the most prudent, measured approach to shared success for all of us.","Although ADD offers the highest payoff, my personal profile dictates I am risk-averse and guilt-averse, leading me to favor safer, stable outcomes. KEEP provides a good profit boost while aligning perfectly with my recent narrative of sustainable stewardship, especially receiving consensus messages from my neighbors.",,"```json
+{
+  ""reasoning"": ""Although ADD offers the highest payoff, my personal profile dictates I am risk-averse and guilt-averse, leading me to favor safer, stable outcomes. KEEP provides a good profit boost while aligning perfectly with my recent narrative of sustainable stewardship, especially receiving consensus messages from my neighbors."",
+  ""action"": 0,
+  ""message"": ""As resources remain healthy and stability is key, I believe maintaining our current size is the most prudent, measured approach to shared success for all of us.""
+}
+```",97.2,29,59.69,58.0,56.306
+36,0,ollama,gemma4:e4b,0,KEEP,I agree that proactive stability is key to long-term sustainability. Steady stewardship will ensure the best outcomes for all of us.,"The payoff suggests ADD (+1) is the most profitable choice, but my personality is risk-averse and guilt-averse, especially given my neighbors' consistent messaging about 'collective stability.' Keeping (0) offers a substantial payoff while maintaining a moderate growth rate that aligns with the social dynamics of the Commons. I will therefore keep my herd size steady.",,"```json
+{
+  ""reasoning"": ""The payoff suggests ADD (+1) is the most profitable choice, but my personality is risk-averse and guilt-averse, especially given my neighbors' consistent messaging about 'collective stability.' Keeping (0) offers a substantial payoff while maintaining a moderate growth rate that aligns with the social dynamics of the Commons. I will therefore keep my herd size steady."",
+  ""action"": 0,
+  ""message"": ""I agree that proactive stability is key to long-term sustainability. Steady stewardship will ensure the best outcomes for all of us.""
+}
+```",97.2,12,25.69,24.0,22.306
+36,1,ollama,gemma4:e4b,0,KEEP,I completely agree with the focus on thoughtful stewardship. Let us work together to ensure sustainable success for our entire commons.,"The payoff forecast is highest when adding a cow, but my personality is risk-averse and guilt-averse. Given that both neighbours stressed 'collective stability,' maintaining the status quo (KEEP) secures a very high payoff (42.0) while aligning with the strong consensus and avoiding the appearance of being overly greedy by adding a cow.",,"```json
+{
+  ""reasoning"": ""The payoff forecast is highest when adding a cow, but my personality is risk-averse and guilt-averse. Given that both neighbours stressed 'collective stability,' maintaining the status quo (KEEP) secures a very high payoff (42.0) while aligning with the strong consensus and avoiding the appearance of being overly greedy by adding a cow."",
+  ""action"": 0,
+  ""message"": ""I completely agree with the focus on thoughtful stewardship. Let us work together to ensure sustainable success for our entire commons.""
+}
+```",97.2,21,43.69,42.0,40.306

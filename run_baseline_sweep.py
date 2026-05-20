@@ -15,15 +15,21 @@ prompt (useful for scripted pipelines).
 Pass --stop-on-collapse to end each run as soon as grassland drops below 5 %
 instead of running to --ticks.
 
+Pass --verbose to stream NetLogo's print/show output live (the equivalent of
+watching the Command Center during a GUI run), plus the full Java command and
+injected BehaviorSpace XML.  Without it, NetLogo's stdout is captured silently
+and only surfaced if the process exits with a non-zero return code.  JVM stderr
+noise is suppressed in both modes.
+
 Usage examples
 --------------
   # 30 baseline runs, default psychosocial params
   python run_baseline_sweep.py
 
-  # Vary neg-r and cooperation across a 3×3 grid (baseline)
+  # Vary neg-r and cooperation across a 3x3 grid (baseline)
   python run_baseline_sweep.py --runs 20 --neg-r 0.5 --coop 0.5
 
-  # 10 full-gabm runs with Claude Sonnet — shows cost estimate first
+  # 10 full-gabm runs with Claude Sonnet -- shows cost estimate first
   python run_baseline_sweep.py --condition full-gabm --runs 10 --backend anthropic --llm-model claude-sonnet-4-6
 
   # Hybrid: 1 LLM agent, 2 rule-based, using a local Ollama model (free)
@@ -45,7 +51,7 @@ import textwrap
 from pathlib import Path
 
 
-# ─── Pricing table (USD per million tokens, May 2026) ────────────────────────
+# --- Pricing table (USD per million tokens, May 2026) ------------------------
 # { model_id: (input_per_M_usd, output_per_M_usd) }
 PRICING: dict[str, tuple[float, float]] = {
     # Anthropic
@@ -58,14 +64,14 @@ PRICING: dict[str, tuple[float, float]] = {
     "gpt-4o-mini":                  ( 0.15,  0.60),
     "gpt-4-turbo":                  (10.00, 30.00),
     "gpt-3.5-turbo":                ( 0.50,  1.50),
-    # Google (via Ollama or API — list common ones)
+    # Google (via Ollama or API -- list common ones)
     "gemma2:27b":                   ( 0.00,  0.00),
     "gemma3:27b":                   ( 0.00,  0.00),
-    # Ollama local models (always free — matched by backend, not model name)
+    # Ollama local models (always free -- matched by backend, not model name)
 }
 
 # Token estimates per LLM call, based on observed MASTOC-LLM bridge logs.
-# Input grows with memory_length (each stored round ≈ 55 tokens).
+# Input grows with memory_length (each stored round ~55 tokens).
 # Output is stable: JSON with action + reasoning + message.
 _BASE_INPUT_TOKENS  = 480
 _PER_MEMORY_TOKENS  =  55
@@ -73,9 +79,9 @@ _BASE_OUTPUT_TOKENS = 155
 _OUTPUT_TOKEN_HIGH  = 220   # upper bound for range display
 
 
-# ─── Helpers ─────────────────────────────────────────────────────────────────
+# --- Helpers -----------------------------------------------------------------
 
-def _short_path(p: "Path | str") -> str:
+def _short_path(p):
     """8.3 short path so Java never sees a space in Program Files."""
     if os.name != "nt":
         return str(p)
@@ -88,7 +94,7 @@ def _short_path(p: "Path | str") -> str:
     return str(p)
 
 
-def _find_netlogo(hint: "str | None") -> Path:
+def _find_netlogo(hint):
     candidates = []
     if hint:
         candidates.append(Path(hint))
@@ -108,7 +114,7 @@ def _find_netlogo(hint: "str | None") -> Path:
     )
 
 
-def _find_java(netlogo_dir: Path) -> str:
+def _find_java(netlogo_dir):
     for rel in ["jdk/bin/java.exe", "runtime/bin/java.exe",
                 "jdk/bin/java",    "runtime/bin/java"]:
         c = netlogo_dir / rel
@@ -122,17 +128,17 @@ def _find_java(netlogo_dir: Path) -> str:
     return "java"
 
 
-def _find_netlogo_jar(netlogo_dir: Path) -> Path:
+def _find_netlogo_jar(netlogo_dir):
     jars = sorted((netlogo_dir / "app").glob("netlogo-*.jar"))
     if not jars:
         sys.exit(f"No netlogo-*.jar found under {netlogo_dir / 'app'}")
     return jars[-1]
 
 
-def _find_extensions_dir(netlogo_dir: Path) -> str:
-    dirs: list[str] = []
+def _find_extensions_dir(netlogo_dir):
+    dirs = []
 
-    def _add(p: Path) -> None:
+    def _add(p):
         if p.exists() and str(p) not in dirs:
             dirs.append(_short_path(p))
 
@@ -158,38 +164,24 @@ def _find_extensions_dir(netlogo_dir: Path) -> str:
     return found
 
 
-# ─── Cost estimation ─────────────────────────────────────────────────────────
+# --- Cost estimation ---------------------------------------------------------
 
-def _estimate_cost(
-    runs: int,
-    ticks: int,
-    memory_length: int,
-    n_llm_agents: int,
-    backend: str,
-    llm_model: str,
-    stop_on_collapse: bool,
-) -> None:
-    """
-    Print a cost estimate and prompt for confirmation.
-    Returns normally if user confirms; calls sys.exit() if they decline.
-    Skipped entirely for baseline condition (no API calls).
-    """
-    # Local backends are always free — skip cost check
+def _estimate_cost(runs, ticks, memory_length, n_llm_agents,
+                   backend, llm_model, stop_on_collapse):
+    """Print cost estimate and prompt for confirmation."""
     if backend == "ollama":
-        print(f"  Backend: ollama (local) — no API charges.")
+        print("  Backend: ollama (local) -- no API charges.")
         print()
         return
 
-    # Effective ticks may be lower if stop-on-collapse is on
     effective_ticks = ticks
     if stop_on_collapse:
-        effective_ticks = int(ticks * 0.6)   # rough mid-point estimate
+        effective_ticks = int(ticks * 0.6)
         ticks_note = f"~{effective_ticks} (collapse cutoff active; full run = {ticks})"
     else:
         ticks_note = str(ticks)
 
     total_calls = runs * effective_ticks * n_llm_agents
-
     input_tokens_per_call  = _BASE_INPUT_TOKENS + memory_length * _PER_MEMORY_TOKENS
     output_tokens_lo = _BASE_OUTPUT_TOKENS
     output_tokens_hi = _OUTPUT_TOKEN_HIGH
@@ -198,12 +190,10 @@ def _estimate_cost(
     total_output_lo = total_calls * output_tokens_lo
     total_output_hi = total_calls * output_tokens_hi
 
-    # Pricing
     if llm_model in PRICING:
         price_in, price_out = PRICING[llm_model]
         known = True
     else:
-        # Unknown model — warn and use rough mid-tier estimate
         price_in, price_out = 3.00, 15.00
         known = False
 
@@ -211,22 +201,22 @@ def _estimate_cost(
     cost_hi = (total_input_lo / 1_000_000) * price_in + (total_output_hi / 1_000_000) * price_out
 
     print()
-    print("  ┌─────────────────────────────────────────────────┐")
-    print("  │              API COST ESTIMATE                  │")
-    print("  ├─────────────────────────────────────────────────┤")
-    print(f"  │  Model          : {llm_model:<30} │")
-    print(f"  │  LLM agents/tick: {n_llm_agents:<30} │")
-    print(f"  │  Runs × ticks   : {runs} × {ticks_note:<23} │")
-    print(f"  │  Total API calls : {total_calls:>6,}                        │")
-    print(f"  │  Input  tokens  : ~{total_input_lo / 1_000_000:>5.1f}M                       │")
-    print(f"  │  Output tokens  : ~{total_output_lo/1_000_000:.1f}M – {total_output_hi/1_000_000:.1f}M                 │")
+    print("  +---------------------------------------------------+")
+    print("  |              API COST ESTIMATE                    |")
+    print("  +---------------------------------------------------+")
+    print(f"  |  Model          : {llm_model:<30} |")
+    print(f"  |  LLM agents/tick: {n_llm_agents:<30} |")
+    print(f"  |  Runs x ticks   : {runs} x {ticks_note:<23} |")
+    print(f"  |  Total API calls : {total_calls:>6,}                          |")
+    print(f"  |  Input  tokens  : ~{total_input_lo / 1_000_000:>5.1f}M                         |")
+    print(f"  |  Output tokens  : ~{total_output_lo/1_000_000:.1f}M - {total_output_hi/1_000_000:.1f}M                   |")
     if not known:
-        print(f"  │  ⚠ Pricing unknown — using $3/$15 per M estimate  │")
-    print(f"  │  Input  @ ${price_in:.2f}/M : ${(total_input_lo/1_000_000)*price_in:>7.2f}                     │")
-    print(f"  │  Output @ ${price_out:.2f}/M : ${(total_output_lo/1_000_000)*price_out:.2f} – ${(total_output_hi/1_000_000)*price_out:.2f}               │")
-    print(f"  │                                                 │")
-    print(f"  │  ESTIMATED TOTAL : ${cost_lo:.2f} – ${cost_hi:.2f}             │")
-    print("  └─────────────────────────────────────────────────┘")
+        print(f"  |  WARNING: Pricing unknown -- using $3/$15 per M est  |")
+    print(f"  |  Input  @ ${price_in:.2f}/M : ${(total_input_lo/1_000_000)*price_in:>7.2f}                       |")
+    print(f"  |  Output @ ${price_out:.2f}/M : ${(total_output_lo/1_000_000)*price_out:.2f} - ${(total_output_hi/1_000_000)*price_out:.2f}                 |")
+    print(f"  |                                                   |")
+    print(f"  |  ESTIMATED TOTAL : ${cost_lo:.2f} - ${cost_hi:.2f}               |")
+    print("  +---------------------------------------------------+")
     print()
 
     answer = input("  Proceed? [y/N] ").strip().lower()
@@ -236,17 +226,14 @@ def _estimate_cost(
     print()
 
 
-# ─── BehaviorSpace XML builder ────────────────────────────────────────────────
+# --- BehaviorSpace XML builder -----------------------------------------------
 
-def _build_experiment_xml(args: argparse.Namespace) -> str:
-    """Return a single <experiment> XML block to inject into the .nlogox."""
-
+def _build_experiment_xml(args):
     grassland_values_xml = "\n          ".join(
         f'<value value="{g}"></value>'
         for g in [int(g.strip()) for g in args.grassland.split(",")]
     )
 
-    # Stop condition (optional)
     exit_condition_xml = ""
     if args.stop_on_collapse:
         exit_condition_xml = (
@@ -255,26 +242,24 @@ def _build_experiment_xml(args: argparse.Namespace) -> str:
             "</exitCondition>"
         )
 
-    # For LLM conditions, run repetitions sequentially to avoid hammering the API
     sequential = "true" if args.condition != "baseline" else "false"
 
-    # Agent backend/model blocks
     agent_blocks = ""
     for i in range(3):
         if args.condition == "baseline":
-            backend = "anthropic"          # irrelevant in baseline — never called
-            model   = "claude-sonnet-4-6"  # irrelevant
+            backend = "anthropic"
+            model   = "claude-sonnet-4-6"
         else:
             backend = args.backend
             model   = args.llm_model
-        agent_blocks += f"""\
-            <enumeratedValueSet variable="agent{i}-backend">
-              <value value="&quot;{backend}&quot;"></value>
-            </enumeratedValueSet>
-            <enumeratedValueSet variable="agent{i}-model">
-              <value value="&quot;{model}&quot;"></value>
-            </enumeratedValueSet>
-"""
+        agent_blocks += (
+            f'            <enumeratedValueSet variable="agent{i}-backend">\n'
+            f'              <value value="&quot;{backend}&quot;"></value>\n'
+            f'            </enumeratedValueSet>\n'
+            f'            <enumeratedValueSet variable="agent{i}-model">\n'
+            f'              <value value="&quot;{model}&quot;"></value>\n'
+            f'            </enumeratedValueSet>\n'
+        )
 
     return textwrap.dedent(f"""\
         <experiment name="baseline-sweep"
@@ -349,7 +334,7 @@ def _build_experiment_xml(args: argparse.Namespace) -> str:
         </experiment>""")
 
 
-def _inject_experiment(model_content: str, experiment_xml: str) -> str:
+def _inject_experiment(model_content, experiment_xml):
     model_content = re.sub(
         r'\s*<experiment name="baseline-sweep".*?</experiment>',
         "",
@@ -366,9 +351,9 @@ def _inject_experiment(model_content: str, experiment_xml: str) -> str:
     )
 
 
-# ─── Runner ──────────────────────────────────────────────────────────────────
+# --- Runner ------------------------------------------------------------------
 
-def run(args: argparse.Namespace) -> None:
+def run(args):
     netlogo_dir = _find_netlogo(args.netlogo_path)
     model_path  = Path(args.model).resolve()
     if not model_path.exists():
@@ -377,12 +362,11 @@ def run(args: argparse.Namespace) -> None:
     grassland_values = [int(g.strip()) for g in args.grassland.split(",")]
     total_runs = args.runs * len(grassland_values)
 
-    # Determine how many agents will call the LLM
     if args.condition == "baseline":
         n_llm_agents = 0
     elif args.condition == "full-gabm":
         n_llm_agents = 3
-    else:  # hybrid
+    else:
         n_llm_agents = args.num_llm_agents
 
     print()
@@ -392,7 +376,7 @@ def run(args: argparse.Namespace) -> None:
         print(f"  Backend          : {args.backend}")
         print(f"  LLM model        : {args.llm_model}")
         print(f"  LLM agents/tick  : {n_llm_agents}")
-    print(f"  Runs             : {args.runs}  ×  grassland={grassland_values}  =  {total_runs} total")
+    print(f"  Runs             : {args.runs}  x  grassland={grassland_values}  =  {total_runs} total")
     print(f"  Ticks per run    : {args.ticks}")
     print(f"  Stop on collapse : {'yes (<5% grassland)' if args.stop_on_collapse else 'no'}")
     print(f"  coop={args.coop}  neg_r={args.neg_r}  pos_r={args.pos_r}  "
@@ -401,7 +385,6 @@ def run(args: argparse.Namespace) -> None:
     print(f"  Model file       : {model_path}")
     print(f"  NetLogo          : {netlogo_dir}")
 
-    # ── Cost estimate & confirmation (LLM conditions only) ───────────────────
     if args.condition != "baseline" and not args.yes:
         _estimate_cost(
             runs=total_runs,
@@ -413,11 +396,18 @@ def run(args: argparse.Namespace) -> None:
             stop_on_collapse=args.stop_on_collapse,
         )
     elif args.condition != "baseline" and args.yes:
-        print("  (--yes flag set — skipping cost confirmation)")
+        print("  (--yes flag set -- skipping cost confirmation)")
     print()
 
-    # ── Build the patched model ───────────────────────────────────────────────
-    experiment_xml  = _build_experiment_xml(args)
+    experiment_xml   = _build_experiment_xml(args)
+
+    if args.verbose:
+        print("Injected BehaviorSpace XML:")
+        print("-" * 60)
+        print(experiment_xml)
+        print("-" * 60)
+        print()
+
     original_content = model_path.read_text(encoding="utf-8")
     patched_content  = _inject_experiment(original_content, experiment_xml)
 
@@ -427,7 +417,6 @@ def run(args: argparse.Namespace) -> None:
 
     table_path = model_path.parent / "baseline_sweep_table.csv"
 
-    # ── Java command ─────────────────────────────────────────────────────────
     java_exe = _find_java(netlogo_dir)
     nl_jar   = _find_netlogo_jar(netlogo_dir)
     s_nl     = _short_path(netlogo_dir)
@@ -451,22 +440,61 @@ def run(args: argparse.Namespace) -> None:
         "--table",      str(table_path),
     ]
 
-    # For LLM conditions, force single-threaded to avoid concurrent API calls
     if args.condition != "baseline":
         cmd += ["--threads", "1"]
+
+    if args.verbose:
+        print("Java command:")
+        print("  " + " \\\n    ".join(cmd))
+        print()
 
     print(f"Launching NetLogo headless ({args.condition})...\n")
     print("=" * 60)
 
     try:
-        result = subprocess.run(cmd, check=False)
+        # Build subprocess environment.  When --verbose is set, inject
+        # MASTOC_VERBOSE=1 so the bridge enables its per-agent output
+        # (connection events, token streaming, timing) regardless of
+        # how the verbose flag was set inside the NetLogo model.
+        # The JVM inherits this env var and passes it on to the py:
+        # extension's Python subprocess, where the bridge reads it.
+        run_env = os.environ.copy()
+        if args.verbose:
+            run_env["MASTOC_VERBOSE"] = "1"
+
+        if args.verbose:
+            # stdout (NetLogo print/show + bridge _say() = Command Center
+            # equivalent) passes through; JVM stderr is suppressed as noise.
+            result = subprocess.run(
+                cmd, check=False, stderr=subprocess.DEVNULL, env=run_env,
+            )
+            captured_output = None
+        else:
+            # Capture NetLogo stdout silently; surface it only on failure.
+            # JVM stderr is suppressed in both modes -- it is just startup noise.
+            result = subprocess.run(
+                cmd, check=False,
+                stdout=subprocess.PIPE,
+                stderr=subprocess.DEVNULL,
+                text=True,
+                env=run_env,
+            )
+            captured_output = result.stdout
+
         print("=" * 60)
         if result.returncode == 0:
-            print(f"\nDone.")
+            print("\nDone.")
             print(f"  BehaviorSpace table : {table_path}")
             print(f"  Per-run logs        : {model_path.parent / 'logs'}")
         else:
             print(f"\nNetLogo exited with code {result.returncode}.")
+            if captured_output:
+                print("\nCaptured NetLogo output (re-run with --verbose to see it live):")
+                print("-" * 60)
+                lines = captured_output.splitlines()
+                if len(lines) > 50:
+                    print(f"  [... {len(lines) - 50} lines omitted ...]")
+                print("\n".join(lines[-50:]))
     except KeyboardInterrupt:
         print("\nInterrupted.")
     finally:
@@ -474,9 +502,9 @@ def run(args: argparse.Namespace) -> None:
         print("Temp model cleaned up.")
 
 
-# ─── CLI ─────────────────────────────────────────────────────────────────────
+# --- CLI ---------------------------------------------------------------------
 
-def main() -> None:
+def main():
     p = argparse.ArgumentParser(
         description="Batch sweep runner for MASTOC-LLM (baseline, full-gabm, hybrid).",
         formatter_class=argparse.RawDescriptionHelpFormatter,
@@ -489,7 +517,6 @@ def main() -> None:
         """),
     )
 
-    # ── Condition ──────────────────────────────────────────────────────────
     p.add_argument("--condition", choices=["baseline", "full-gabm", "hybrid"],
                    default="baseline",
                    help="Agent condition. Default: baseline")
@@ -502,7 +529,6 @@ def main() -> None:
                    default=1, choices=[1, 2, 3],
                    help="Number of LLM agents in hybrid mode. Default: 1")
 
-    # ── Run parameters ─────────────────────────────────────────────────────
     p.add_argument("--runs",    type=int,   default=30,
                    help="Repetitions per parameter combo. Default: 30")
     p.add_argument("--ticks",   type=int,   default=120,
@@ -512,8 +538,12 @@ def main() -> None:
                    help="End each run early when grassland drops below 5%%.")
     p.add_argument("--yes", "-y", action="store_true",
                    help="Skip cost confirmation prompt (for scripting).")
+    p.add_argument("--verbose", "-v", action="store_true",
+                   help="Stream NetLogo print/show output live (Command Center "
+                        "equivalent), and print the Java command and injected XML. "
+                        "Without this flag, NetLogo stdout is captured silently and "
+                        "only shown on failure. JVM stderr is suppressed either way.")
 
-    # ── Physical parameters ────────────────────────────────────────────────
     p.add_argument("--grassland",   type=str,   default="100",
                    help="Initial grassland %% (single value or comma list). Default: 100")
     p.add_argument("--forage",      type=float, default=2.0,
@@ -523,7 +553,6 @@ def main() -> None:
     p.add_argument("--memory-length", type=int, default=5, dest="memory_length",
                    help="Agent memory length (ticks). Default: 5")
 
-    # ── Psychosocial parameters ────────────────────────────────────────────
     p.add_argument("--coop",        type=float, default=1.0,
                    help="Cooperation level. Default: 1.0")
     p.add_argument("--neg-r",       type=float, default=0.0, dest="neg_r",
@@ -539,11 +568,10 @@ def main() -> None:
     p.add_argument("--conformity",  type=float, default=0.0,
                    help="Conformity level. Default: 0.0")
 
-    # ── Paths & endpoints ──────────────────────────────────────────────────
     p.add_argument("--model",        type=str, default="MASTOC-LLM.nlogox",
                    help="Path to .nlogox model file. Default: MASTOC-LLM.nlogox")
     p.add_argument("--netlogo-path", type=str, default=None, dest="netlogo_path",
-                   help='NetLogo install dir. Default: auto-detect')
+                   help="NetLogo install dir. Default: auto-detect")
     p.add_argument("--ollama-url",   type=str, default="http://localhost:11434/v1",
                    dest="ollama_url",
                    help="Ollama base URL. Default: http://localhost:11434/v1")
