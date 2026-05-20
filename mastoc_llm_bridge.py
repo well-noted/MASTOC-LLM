@@ -713,6 +713,12 @@ def _call_llm(
         # Newer OpenAI models (o-series, gpt-4o and later) require max_completion_tokens;
         # older models and local OpenAI-compat endpoints (Ollama) use max_tokens.
         # Try max_completion_tokens first and fall back if the API rejects it.
+        tag = f"agent {agent_id}" if agent_id is not None else "institution detector"
+        verbose = _cfg.get("verbose")
+        base_url = getattr(getattr(client, "_base_url", None), "host", str(backend))
+        if verbose:
+            _say(f"[{tag}] POST {base_url} model={model} ...")
+        t_start = time.time()
         try:
             response = client.chat.completions.create(
                 model=model,
@@ -733,8 +739,17 @@ def _call_llm(
                     max_tokens=max_tokens,
                 )
             else:
+                if verbose:
+                    _say(f"[{tag}] FAILED ({time.time() - t_start:.1f}s): {e}")
                 raise
-        return response.choices[0].message.content, ""
+        elapsed = time.time() - t_start
+        content = response.choices[0].message.content or ""
+        if verbose:
+            usage = getattr(response, "usage", None)
+            tok_in  = getattr(usage, "prompt_tokens",     "?") if usage else "?"
+            tok_out = getattr(usage, "completion_tokens", "?") if usage else "?"
+            _say(f"[{tag}] done ({elapsed:.1f}s, {tok_in} in / {tok_out} out tokens, {len(content)} chars)")
+        return content, ""
 
 
 # ──────────────────────────────────────────────────────────────────────────────
@@ -867,6 +882,18 @@ def _action_name(a: int) -> str:
 # LOGGING
 # ──────────────────────────────────────────────────────────────────────────────
 
+def _close_logs() -> None:
+    """Close any open log file handles from a previous run (e.g. back-to-back BehaviorSpace runs)."""
+    global _log_handles
+    for _name, (fh, _writer) in list(_log_handles.items()):
+        try:
+            fh.flush()
+            fh.close()
+        except Exception:
+            pass
+    _log_handles.clear()
+
+
 def _init_logs(log_path: Path) -> None:
     global _log_handles
 
@@ -930,37 +957,4 @@ def _log_decision(tick, agent_id, action, message, reasoning, thinking, raw_resp
 
 def _log_resources(tick, pool_patches, pool_pct, total_cows, pressure,
                    c0, c1, c2) -> None:
-    _, rw = _log_handles.get("resources", (None, None))
-    if rw:
-        rw.writerow([tick, pool_patches, pool_pct, total_cows,
-                     round(float(pressure), 4), c0, c1, c2])
-
-
-def _log_institution_row(tick, score, categories, summary) -> None:
-    _, iw = _log_handles.get("institutions", (None, None))
-    if iw:
-        iw.writerow([tick, score, categories, summary])
-
-
-def _flush_logs() -> None:
-    for fh, _ in _log_handles.values():
-        try:
-            fh.flush()
-        except Exception:
-            pass
-
-
-def _close_logs() -> None:
-    for fh, _ in _log_handles.values():
-        try:
-            fh.close()
-        except Exception:
-            pass
-    _log_handles.clear()
-
-
-def close() -> str:
-    """Call at end of simulation to flush and close all logs."""
-    _flush_logs()
-    _close_logs()
     return f"Run {_run_id} complete. {_call_count} LLM calls made."

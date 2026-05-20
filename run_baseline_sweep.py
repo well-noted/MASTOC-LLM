@@ -464,10 +464,10 @@ def run(args):
 
         if args.verbose:
             # stdout (NetLogo print/show + bridge _say() = Command Center
-            # equivalent) passes through; JVM stderr is suppressed as noise.
-            result = subprocess.run(
-                cmd, check=False, stderr=subprocess.DEVNULL, env=run_env,
-            )
+            # equivalent) passes through.  stderr also passes through in
+            # verbose mode so Java/NetLogo error messages are visible --
+            # this is what reveals API failures, missing keys, etc.
+            result = subprocess.run(cmd, check=False, env=run_env)
             captured_output = None
         else:
             # Capture NetLogo stdout silently; surface it only on failure.
