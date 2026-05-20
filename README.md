@@ -2361,7 +2361,7 @@ If confirmed, this establishes a minimum memory threshold that is both necessary
 
 ### Open questions
 
-Beyond the seven hypotheses above, the following remain unresolved -- not peripheral, but questions the current dataset has sharpened rather than answered.
+Beyond the seven hypotheses above, the following remain unresolved:
 
 <dl>
 <dd><strong>Communication vs. reasoning.</strong> Suppressing outgoing messages (zero-communication full-GABM) would test whether cooperation requires talking or merely thinking. Claude's cooperative convergence may be achievable through reasoning alone — but the Haiku memory=15/comm=off collapse at tick 46 suggests this may not hold at mid cooperation.</dd>
@@ -2376,6 +2376,8 @@ Beyond the seven hypotheses above, the following remain unresolved -- not periph
 
 <dd><strong>Post-training objective as predictor.</strong> KEEP-dominant models (gemma4:e4b, gpt-5.4-mini, DeepSeek R1:32b) sit apart from the institution-forming models (Claude Sonnet, Claude Haiku, gpt-5.5) along an axis that is not cleanly explained by parameter count — DeepSeek is a 32B reasoning model and still falls in the first cluster. The hypothesis is speculative and requires the H6 cross-model benchmark to test properly.</dd>
 </dl>
+
+These are not peripheral, but questions the current dataset has sharpened rather than answered.
 
 ---
 
