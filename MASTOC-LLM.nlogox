@@ -50,6 +50,7 @@ globals [
   max-patches     ;; total patch count (cached at setup)
   sim-status      ;; human-readable status string shown in the monitor
   sim-started?    ;; TRUE after the first tick fires (used to print "Simulation started" once)
+  total-runs      ;; total number of BehaviorSpace runs (set via constant; 0 in GUI mode)
 ]
 
 breed [ cows cow ]
@@ -61,7 +62,9 @@ breed [ humans human ]
 ;;; ============================================================
 
 to setup
+  let _saved-total-runs total-runs  ;; preserve BehaviorSpace constant (ca resets plain globals)
   ca
+  set total-runs _saved-total-runs
   set llm-ready false
   set max-patches count patches
   set sim-status "○ idle"
@@ -201,7 +204,13 @@ end
 
 to simulation
   if not sim-started? [
-    print (word "▶ Simulation started — " date-and-time)
+    ifelse (behaviorspace-run-number > 0) [
+      print (word "Run " behaviorspace-run-number
+             (ifelse-value (total-runs > 0) [ (word " of " total-runs) ] [ "" ])
+             " | Simulation started " date-and-time)
+    ] [
+      print (word "Simulation started " date-and-time)
+    ]
     set sim-started? true
   ]
   set sim-status (word "● running — tick " (ticks + 1))

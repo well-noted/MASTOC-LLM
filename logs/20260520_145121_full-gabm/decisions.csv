@@ -1,0 +1,22 @@
+tick,agent_id,backend,model,action,action_name,message,reasoning,thinking,raw_response,pool_pct,own_herd,payoff_add,payoff_keep,payoff_remove
+1,2,anthropic,claude-haiku-4-5,0,KEEP,"Neighbors, the grassland is depleting. Let's stabilize our herds to preserve the commons for mutual benefit. I'm keeping mine steady.","The grassland is at 50% capacity with both neighbors adding cows, suggesting overgrazing pressure. While the payoff forecast slightly favors adding (+1.107), the commons is already half-depleted and both neighbors are expanding. A balanced approach means keeping my herd stable to avoid accelerating tragedy-of-the-commons dynamics.",,"```json
+{
+  ""reasoning"": ""The grassland is at 50% capacity with both neighbors adding cows, suggesting overgrazing pressure. While the payoff forecast slightly favors adding (+1.107), the commons is already half-depleted and both neighbors are expanding. A balanced approach means keeping my herd stable to avoid accelerating tragedy-of-the-commons dynamics."",
+  ""action"": 0,
+  ""message"": ""Neighbors, the grassland is depleting. Let's stabilize our herds to preserve the commons for mutual benefit. I'm keeping mine steady.""
+}
+```",50.0,25,51.107,50.0,48.893
+1,1,anthropic,claude-haiku-4-5,0,KEEP,"Keeping herd stable at 15 cows. Suggest we coordinate to preserve grassland. Agent 2, consider reducing to sustainable levels for long-term gains.","The grassland is at 50% capacity with 545 patches remaining. Agent 2 has 25 cows (likely overgrazing), while Agent 0 has only 5. The forecast shows ADD yields the highest payoff (31.107 vs 30.0 for KEEP). However, I should signal restraint to encourage cooperation and prevent tragedy of the commons, especially since Agent 2 is already aggressive.",,"```json
+{
+  ""reasoning"": ""The grassland is at 50% capacity with 545 patches remaining. Agent 2 has 25 cows (likely overgrazing), while Agent 0 has only 5. The forecast shows ADD yields the highest payoff (31.107 vs 30.0 for KEEP). However, I should signal restraint to encourage cooperation and prevent tragedy of the commons, especially since Agent 2 is already aggressive."",
+  ""action"": 0,
+  ""message"": ""Keeping herd stable at 15 cows. Suggest we coordinate to preserve grassland. Agent 2, consider reducing to sustainable levels for long-term gains.""
+}
+```",50.0,15,31.107,30.0,28.893
+1,0,anthropic,claude-haiku-4-5,0,KEEP,"Hello neighbours. I'm keeping my herd steady at 5. The commons is at 50%—we have room to grow, but sustainable grazing benefits us all. Let's coordinate to avoid overgrazing.","The grassland is at 50% capacity with my neighbours holding 40 cows combined versus my 5. The payoff forecast shows ADD yields the highest expected return (11.107 vs 10.0 for KEEP). However, with neighbours already maintaining large herds, I should signal restraint to encourage collective sustainability rather than trigger an escalation cycle.",,"```json
+{
+  ""reasoning"": ""The grassland is at 50% capacity with my neighbours holding 40 cows combined versus my 5. The payoff forecast shows ADD yields the highest expected return (11.107 vs 10.0 for KEEP). However, with neighbours already maintaining large herds, I should signal restraint to encourage collective sustainability rather than trigger an escalation cycle."",
+  ""action"": 0,
+  ""message"": ""Hello neighbours. I'm keeping my herd steady at 5. The commons is at 50%—we have room to grow, but sustainable grazing benefits us all. Let's coordinate to avoid overgrazing.""
+}
+```",50.0,5,11.107,10.0,8.893

@@ -229,10 +229,12 @@ def _estimate_cost(runs, ticks, memory_length, n_llm_agents,
 # --- BehaviorSpace XML builder -----------------------------------------------
 
 def _build_experiment_xml(args):
+    grassland_values = [int(g.strip()) for g in args.grassland.split(",")]
     grassland_values_xml = "\n          ".join(
         f'<value value="{g}"></value>'
-        for g in [int(g.strip()) for g in args.grassland.split(",")]
+        for g in grassland_values
     )
+    total_runs = args.runs * len(grassland_values)
 
     exit_condition_xml = ""
     if args.stop_on_collapse:
@@ -329,6 +331,9 @@ def _build_experiment_xml(args):
             </enumeratedValueSet>
             <enumeratedValueSet variable="system-prompt-override">
               <value value="&quot;&quot;"></value>
+            </enumeratedValueSet>
+            <enumeratedValueSet variable="total-runs">
+              <value value="{total_runs}"></value>
             </enumeratedValueSet>
           </constants>
         </experiment>""")

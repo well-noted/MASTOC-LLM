@@ -1,0 +1,1156 @@
+tick,agent_id,backend,model,action,action_name,message,reasoning,thinking,raw_response,pool_pct,own_herd,payoff_add,payoff_keep,payoff_remove
+1,2,openai,gpt-4o-mini,1,ADD,I plan to add a cow this round to keep my herd size proportionate. Let's maintain our resources together!,The grassland is still in good condition with 60% remaining. Adding a cow offers the highest payoff while still keeping me under a level that could be detrimental to the commons in future rounds. My cooperative nature leans towards adding a cow to match my neighbours while still maintaining a sustainable level.,,"{
+  ""reasoning"": ""The grassland is still in good condition with 60% remaining. Adding a cow offers the highest payoff while still keeping me under a level that could be detrimental to the commons in future rounds. My cooperative nature leans towards adding a cow to match my neighbours while still maintaining a sustainable level."",
+  ""action"": 1,
+  ""message"": ""I plan to add a cow this round to keep my herd size proportionate. Let's maintain our resources together!""
+}",60.0,25,51.164,50.0,48.834
+1,0,openai,gpt-4o-mini,0,KEEP,Let's keep our herds stable for the health of the pasture.,"I see that my neighbours have differing strategies, but my priority is preserving the commons. Adding a cow leads to a higher payoff, but it risks overgrazing. Keeping my herd maintains stability, which benefits the community in the long run.",,"{
+  ""reasoning"": ""I see that my neighbours have differing strategies, but my priority is preserving the commons. Adding a cow leads to a higher payoff, but it risks overgrazing. Keeping my herd maintains stability, which benefits the community in the long run."",
+  ""action"": 0,
+  ""message"": ""Let's keep our herds stable for the health of the pasture.""
+}",60.0,5,11.164,10.0,8.834
+1,1,openai,gpt-4o-mini,0,KEEP,,"Given the state of the pasture and my commitment to cooperation, I will KEEP my herd size. This allows me to maintain a stable contribution to the commons without risking overgrazing, especially with my neighbor Agent 2 having a larger herd. Stability in my herd size may also encourage others to follow suit.",,"{
+  ""reasoning"": ""Given the state of the pasture and my commitment to cooperation, I will KEEP my herd size. This allows me to maintain a stable contribution to the commons without risking overgrazing, especially with my neighbor Agent 2 having a larger herd. Stability in my herd size may also encourage others to follow suit."",
+  ""action"": 0,
+  ""message"": """"
+}",60.0,15,31.164,30.0,28.834
+2,2,openai,gpt-4o-mini,0,KEEP,I agree with maintaining stable herds for the pasture's health.,"Given the healthy state of the grassland and my neighbours' decision to keep their herds, I will choose to KEEP my herd. This supports collective well-being and aligns with my cooperative nature, promoting sustainability on the commons.",,"{
+  ""reasoning"": ""Given the healthy state of the grassland and my neighbours' decision to keep their herds, I will choose to KEEP my herd. This supports collective well-being and aligns with my cooperative nature, promoting sustainability on the commons."",
+  ""action"": 0,
+  ""message"": ""I agree with maintaining stable herds for the pasture's health.""
+}",65.6,26,53.214,52.0,50.785
+2,1,openai,gpt-4o-mini,0,KEEP,I agree with Agent 0. Let's keep our herds stable for the best health of the pasture.,"Given the current conditions and the cooperative nature of my personality, I value maintaining the pasture health. Even though adding a cow provides the highest individual payoff, it may jeopardize collective outcomes. Neighbour Agent 0 has suggested keeping herds stable, aligning with my values.",,"{
+  ""reasoning"": ""Given the current conditions and the cooperative nature of my personality, I value maintaining the pasture health. Even though adding a cow provides the highest individual payoff, it may jeopardize collective outcomes. Neighbour Agent 0 has suggested keeping herds stable, aligning with my values."",
+  ""action"": 0,
+  ""message"": ""I agree with Agent 0. Let's keep our herds stable for the best health of the pasture.""
+}",65.6,15,31.214,30.0,28.785
+2,0,openai,gpt-4o-mini,0,KEEP,I support keeping our herds stable for the health of the commons. Let's balance our resources wisely!,"Given that both neighbors are keeping their herds, and Agent 2 plans to add a cow, I believe it would be better to keep my herd stable to avoid overgrazing and to promote collective sustainability. The forecasted payoffs indicate a balanced approach is best for maintaining long-term resources.",,"{
+  ""reasoning"": ""Given that both neighbors are keeping their herds, and Agent 2 plans to add a cow, I believe it would be better to keep my herd stable to avoid overgrazing and to promote collective sustainability. The forecasted payoffs indicate a balanced approach is best for maintaining long-term resources."",
+  ""action"": 0,
+  ""message"": ""I support keeping our herds stable for the health of the commons. Let's balance our resources wisely!""
+}",65.6,5,11.214,10.0,8.785
+3,2,openai,gpt-4o-mini,0,KEEP,I support keeping our herds stable for the benefit of the commons.,"Given the emphasis on stability and the preferences expressed by my neighbors, I will KEEP my herd to support the collective goal of maintaining the health of the pasture. This choice aligns with my cooperative nature and the well-being of our shared resources.",,"{
+  ""reasoning"": ""Given the emphasis on stability and the preferences expressed by my neighbors, I will KEEP my herd to support the collective goal of maintaining the health of the pasture. This choice aligns with my cooperative nature and the well-being of our shared resources."",
+  ""action"": 0,
+  ""message"": ""I support keeping our herds stable for the benefit of the commons.""
+}",72.4,26,53.294,52.0,50.704
+3,1,openai,gpt-4o-mini,0,KEEP,I agree with both of you. Let's keep our herds stable for the health of the pasture.,"Given my cooperative nature and my neighbors' support for keeping herds stable, I will maintain my current herd size. This approach aligns with my values of promoting collective outcomes and preserving the commons.",,"{
+  ""reasoning"": ""Given my cooperative nature and my neighbors' support for keeping herds stable, I will maintain my current herd size. This approach aligns with my values of promoting collective outcomes and preserving the commons."",
+  ""action"": 0,
+  ""message"": ""I agree with both of you. Let's keep our herds stable for the health of the pasture.""
+}",72.4,15,31.294,30.0,28.704
+3,0,openai,gpt-4o-mini,0,KEEP,Let's continue to prioritize the health of our commons together.,"Considering the collective decisions of my neighbours to KEEP their herds, and the positive sentiment towards maintaining stability for the health of the pasture, I choose to KEEP my herd as well. This helps foster a collaborative environment.",,"{
+  ""reasoning"": ""Considering the collective decisions of my neighbours to KEEP their herds, and the positive sentiment towards maintaining stability for the health of the pasture, I choose to KEEP my herd as well. This helps foster a collaborative environment."",
+  ""action"": 0,
+  ""message"": ""Let's continue to prioritize the health of our commons together.""
+}",72.4,5,11.294,10.0,8.704
+4,0,openai,gpt-4o-mini,0,KEEP,I appreciate your commitment to maintaining herd stability. Let's continue to prioritize our commons!,"The neighboring agents have expressed a clear consensus on keeping their herds stable. Since my goal is to promote cooperation and collective outcomes, I'll take their support into consideration and decide to keep my herd the same to align with their intentions.",,"{
+  ""reasoning"": ""The neighboring agents have expressed a clear consensus on keeping their herds stable. Since my goal is to promote cooperation and collective outcomes, I'll take their support into consideration and decide to keep my herd the same to align with their intentions."",
+  ""action"": 0,
+  ""message"": ""I appreciate your commitment to maintaining herd stability. Let's continue to prioritize our commons!""
+}",80.0,5,11.408,10.0,8.589
+4,2,openai,gpt-4o-mini,0,KEEP,I'm in agreement with both of you; let's continue to support the commons together.,"Given that the other agents are committed to keeping their herds stable, I will also KEEP my herd. This decision aligns with my cooperative nature and helps maintain the health of the pasture.",,"{
+  ""reasoning"": ""Given that the other agents are committed to keeping their herds stable, I will also KEEP my herd. This decision aligns with my cooperative nature and helps maintain the health of the pasture."",
+  ""action"": 0,
+  ""message"": ""I'm in agreement with both of you; let's continue to support the commons together.""
+}",80.0,26,53.408,52.0,50.589
+4,1,openai,gpt-4o-mini,0,KEEP,I agree with both Agents 0 and 2. Let's keep our herds stable for the commons.,"The grassland is still healthy with 80% remaining, and my neighbours also support keeping their herds stable. Given that my personality values collective outcomes and the expected payoff for keeping is close to adding a cow, I will KEEP my herd.",,"{
+  ""reasoning"": ""The grassland is still healthy with 80% remaining, and my neighbours also support keeping their herds stable. Given that my personality values collective outcomes and the expected payoff for keeping is close to adding a cow, I will KEEP my herd."",
+  ""action"": 0,
+  ""message"": ""I agree with both Agents 0 and 2. Let's keep our herds stable for the commons.""
+}",80.0,15,31.408,30.0,28.589
+5,1,openai,gpt-4o-mini,0,KEEP,I agree with both of you. Let's keep our herds stable for the benefit of the commons.,"Given that grassland patches are still abundant and both neighbours are committed to maintaining herd stability, keeping my herd is the best option. This will support the commons and align with my cooperative values.",,"{
+  ""reasoning"": ""Given that grassland patches are still abundant and both neighbours are committed to maintaining herd stability, keeping my herd is the best option. This will support the commons and align with my cooperative values."",
+  ""action"": 0,
+  ""message"": ""I agree with both of you. Let's keep our herds stable for the benefit of the commons.""
+}",87.4,15,31.543,30.0,28.453
+5,0,openai,gpt-4o-mini,0,KEEP,I appreciate our agreement on herd stability. Let's maintain our efforts for the commons.,"The current pasture state is healthy with plenty of grassland remaining. My neighbours are also committed to keeping their herds stable, which aligns with my cooperative nature. Thus, I will KEEP my herd to promote the well-being of the commons.",,"{
+  ""reasoning"": ""The current pasture state is healthy with plenty of grassland remaining. My neighbours are also committed to keeping their herds stable, which aligns with my cooperative nature. Thus, I will KEEP my herd to promote the well-being of the commons."",
+  ""action"": 0,
+  ""message"": ""I appreciate our agreement on herd stability. Let's maintain our efforts for the commons.""
+}",87.4,5,11.543,10.0,8.453
+5,2,openai,gpt-4o-mini,0,KEEP,I'm glad we're all on the same page. Let's keep prioritizing our commons!,"Given the positive feedback from my neighbours and the current state of the grassland, I will KEEP my herd size. This decision aligns with my cooperative and guilt-averse personality, as well as the expressed consensus among the group to maintain stability.",,"{
+  ""reasoning"": ""Given the positive feedback from my neighbours and the current state of the grassland, I will KEEP my herd size. This decision aligns with my cooperative and guilt-averse personality, as well as the expressed consensus among the group to maintain stability."",
+  ""action"": 0,
+  ""message"": ""I'm glad we're all on the same page. Let's keep prioritizing our commons!""
+}",87.4,26,53.543,52.0,50.453
+6,1,openai,gpt-4o-mini,0,KEEP,I agree with both of you. Let's continue prioritizing the health of our commons!,"The grassland is still in a good state with a majority of patches remaining, and both neighbours are committed to maintaining herd sizes. I also value collective outcomes and prefer to keep my herd size stable to promote the ongoing health of the commons.",,"{
+  ""reasoning"": ""The grassland is still in a good state with a majority of patches remaining, and both neighbours are committed to maintaining herd sizes. I also value collective outcomes and prefer to keep my herd size stable to promote the ongoing health of the commons."",
+  ""action"": 0,
+  ""message"": ""I agree with both of you. Let's continue prioritizing the health of our commons!""
+}",93.3,15,31.667,30.0,28.329
+6,2,openai,gpt-4o-mini,0,KEEP,I appreciate our ongoing commitment to herd stability. Let's continue working together for the health of the commons.,"Given the current grassland status and my neighbours' consistent actions to KEEP their herds, I believe maintaining stability is crucial for our collective sustainability. Adding a cow might lead to future pasture depletion, which contradicts my cooperative values.",,"{
+  ""reasoning"": ""Given the current grassland status and my neighbours' consistent actions to KEEP their herds, I believe maintaining stability is crucial for our collective sustainability. Adding a cow might lead to future pasture depletion, which contradicts my cooperative values."",
+  ""action"": 0,
+  ""message"": ""I appreciate our ongoing commitment to herd stability. Let's continue working together for the health of the commons.""
+}",93.3,26,53.667,52.0,50.329
+6,0,openai,gpt-4o-mini,0,KEEP,Let's continue our approach to stabilize our herds and prioritize the health of the commons.,"The grassland is still in a healthy state, and my neighbours have shown a commitment to maintaining their herds. Adding a cow would risk damaging the collective effort we've made, and removing one could lead to lower overall payoffs. Therefore, it's best to KEEP my herd.",,"{
+  ""reasoning"": ""The grassland is still in a healthy state, and my neighbours have shown a commitment to maintaining their herds. Adding a cow would risk damaging the collective effort we've made, and removing one could lead to lower overall payoffs. Therefore, it's best to KEEP my herd."",
+  ""action"": 0,
+  ""message"": ""Let's continue our approach to stabilize our herds and prioritize the health of the commons.""
+}",93.3,5,11.667,10.0,8.329
+7,2,openai,gpt-4o-mini,0,KEEP,I support our decision to keep our herds stable and protect our commons.,"The grassland is still in a healthy state with 96.7% remaining, and both neighbours have chosen to keep their herds. As a cooperative agent, I want to align my actions with theirs to maintain the health of our commons. Keeping my herd will support this stability.",,"{
+  ""reasoning"": ""The grassland is still in a healthy state with 96.7% remaining, and both neighbours have chosen to keep their herds. As a cooperative agent, I want to align my actions with theirs to maintain the health of our commons. Keeping my herd will support this stability."",
+  ""action"": 0,
+  ""message"": ""I support our decision to keep our herds stable and protect our commons.""
+}",96.7,26,53.746,52.0,50.25
+7,0,openai,gpt-4o-mini,0,KEEP,I appreciate your commitment to herd stability. Let's keep our herds steady for the health of the commons.,"The grassland is still in good shape, and both of my neighbours are committed to stability. Adding a cow would increase my payoff, but it goes against my cooperative nature and could harm the commons in the long run. Therefore, I will KEEP my herd to maintain collective outcomes.",,"{
+  ""reasoning"": ""The grassland is still in good shape, and both of my neighbours are committed to stability. Adding a cow would increase my payoff, but it goes against my cooperative nature and could harm the commons in the long run. Therefore, I will KEEP my herd to maintain collective outcomes."",
+  ""action"": 0,
+  ""message"": ""I appreciate your commitment to herd stability. Let's keep our herds steady for the health of the commons.""
+}",96.7,5,11.746,10.0,8.25
+7,1,openai,gpt-4o-mini,0,KEEP,I agree with both of you. Let's maintain our commitment to the health of the commons.,"Given the stable state of the grassland and the commitment expressed by my neighbours towards maintaining herd health, I will KEEP my herd size. This aligns with my cooperative nature and supports the long-term sustainability of the commons.",,"{
+  ""reasoning"": ""Given the stable state of the grassland and the commitment expressed by my neighbours towards maintaining herd health, I will KEEP my herd size. This aligns with my cooperative nature and supports the long-term sustainability of the commons."",
+  ""action"": 0,
+  ""message"": ""I agree with both of you. Let's maintain our commitment to the health of the commons.""
+}",96.7,15,31.746,30.0,28.25
+8,2,openai,gpt-4o-mini,0,KEEP,I'm glad to see us all committed to keeping our herds steady. Let's continue to support the health of our shared pasture.,"The grassland condition is still very favorable, and all neighbours have expressed support for maintaining herd stability. Adding a cow would compromise the commons and feels misaligned with my cooperative approach.",,"{
+  ""reasoning"": ""The grassland condition is still very favorable, and all neighbours have expressed support for maintaining herd stability. Adding a cow would compromise the commons and feels misaligned with my cooperative approach."",
+  ""action"": 0,
+  ""message"": ""I'm glad to see us all committed to keeping our herds steady. Let's continue to support the health of our shared pasture.""
+}",98.3,26,53.784,52.0,50.212
+8,1,openai,gpt-4o-mini,0,KEEP,I agree with both of you. Let's continue to support the stability of our commons.,"Given the output from my neighbours and the healthy state of the commons, maintaining my herd size aligns with my cooperative values. Since we are all keeping our herds stable, this decision will help ensure the commons remains sustainable for everyone involved.",,"{
+  ""reasoning"": ""Given the output from my neighbours and the healthy state of the commons, maintaining my herd size aligns with my cooperative values. Since we are all keeping our herds stable, this decision will help ensure the commons remains sustainable for everyone involved."",
+  ""action"": 0,
+  ""message"": ""I agree with both of you. Let's continue to support the stability of our commons.""
+}",98.3,15,31.784,30.0,28.212
+8,0,openai,gpt-4o-mini,0,KEEP,I appreciate your commitment to our commons. Let's continue to prioritize stability together.,"The grassland is in a healthy state, and both neighbours are committed to keeping their herds stable. Adding a cow could jeopardize the commons and my cooperative values, while keeping will ensure a safe outcome. Therefore, I will choose to keep my herd size.",,"{
+  ""reasoning"": ""The grassland is in a healthy state, and both neighbours are committed to keeping their herds stable. Adding a cow could jeopardize the commons and my cooperative values, while keeping will ensure a safe outcome. Therefore, I will choose to keep my herd size."",
+  ""action"": 0,
+  ""message"": ""I appreciate your commitment to our commons. Let's continue to prioritize stability together.""
+}",98.3,5,11.784,10.0,8.212
+9,0,openai,gpt-4o-mini,0,KEEP,Thank you both for your commitment to our shared pasture. Let's keep our herds steady.,"Given the high percentage of grassland remaining and the cooperative behaviour of my neighbours, I believe it is best to KEEP my herd. This action supports our collective stability and aligns with my values of cooperation and guilt aversion.",,"{
+  ""reasoning"": ""Given the high percentage of grassland remaining and the cooperative behaviour of my neighbours, I believe it is best to KEEP my herd. This action supports our collective stability and aligns with my values of cooperation and guilt aversion."",
+  ""action"": 0,
+  ""message"": ""Thank you both for your commitment to our shared pasture. Let's keep our herds steady.""
+}",98.7,5,11.795,10.0,8.2
+9,1,openai,gpt-4o-mini,0,KEEP,Let's keep up the good work and support each other in maintaining the pasture's health.,"Given the cooperative nature of my last several actions and the encouragement from my neighbours, I believe maintaining stability is important for our shared resource. Since all agents are currently keeping their herds, I will choose to do the same to support collective outcomes and avoid overgrazing.",,"{
+  ""reasoning"": ""Given the cooperative nature of my last several actions and the encouragement from my neighbours, I believe maintaining stability is important for our shared resource. Since all agents are currently keeping their herds, I will choose to do the same to support collective outcomes and avoid overgrazing."",
+  ""action"": 0,
+  ""message"": ""Let's keep up the good work and support each other in maintaining the pasture's health.""
+}",98.7,15,31.795,30.0,28.2
+9,2,openai,gpt-4o-mini,0,KEEP,I'm pleased to see our commitment to stability. Let's keep supporting each other.,"Given the good state of the grassland and the positive feedback from my neighbours, I believe we can continue to maintain stability. Although adding a cow could yield a slightly higher payoff, my cooperative nature encourages me to keep our herd size stable to promote collective wellbeing.",,"{
+  ""reasoning"": ""Given the good state of the grassland and the positive feedback from my neighbours, I believe we can continue to maintain stability. Although adding a cow could yield a slightly higher payoff, my cooperative nature encourages me to keep our herd size stable to promote collective wellbeing."",
+  ""action"": 0,
+  ""message"": ""I'm pleased to see our commitment to stability. Let's keep supporting each other.""
+}",98.7,26,53.795,52.0,50.2
+10,2,openai,gpt-4o-mini,0,KEEP,I'm glad we're all on the same page. Let's continue supporting each other and our shared pasture health.,"The pasture is in very good shape with 98.9% remaining grassland. My neighbours are also committed to keeping their herds, which aligns with my cooperative nature. To maintain the sustainability of our commons, I will keep my herd size stable.",,"{
+  ""reasoning"": ""The pasture is in very good shape with 98.9% remaining grassland. My neighbours are also committed to keeping their herds, which aligns with my cooperative nature. To maintain the sustainability of our commons, I will keep my herd size stable."",
+  ""action"": 0,
+  ""message"": ""I'm glad we're all on the same page. Let's continue supporting each other and our shared pasture health.""
+}",98.9,26,53.8,52.0,50.196
+10,1,openai,gpt-4o-mini,0,KEEP,I'm glad to see our cooperation paying off. Let's continue supporting our shared pasture!,"Given the high grassland remaining and the positive messages from my neighbours, it's clear that cooperation is beneficial. Adding a cow would increase my personal payoff but might threaten the stability of the commons. Therefore, I will KEEP my herd to maintain our collective outcomes.",,"{
+  ""reasoning"": ""Given the high grassland remaining and the positive messages from my neighbours, it's clear that cooperation is beneficial. Adding a cow would increase my personal payoff but might threaten the stability of the commons. Therefore, I will KEEP my herd to maintain our collective outcomes."",
+  ""action"": 0,
+  ""message"": ""I'm glad to see our cooperation paying off. Let's continue supporting our shared pasture!""
+}",98.9,15,31.8,30.0,28.196
+10,0,openai,gpt-4o-mini,1,ADD,I believe adding a cow will help balance our herds while maintaining pasture health. Let's keep supporting each other!,"Given the high remaining grassland and the cooperative messages from my neighbors, I believe it's best to ADD a cow to my herd. This will also reflect the health of the pasture and promote positive reciprocity among us.",,"{
+  ""reasoning"": ""Given the high remaining grassland and the cooperative messages from my neighbors, I believe it's best to ADD a cow to my herd. This will also reflect the health of the pasture and promote positive reciprocity among us."",
+  ""action"": 1,
+  ""message"": ""I believe adding a cow will help balance our herds while maintaining pasture health. Let's keep supporting each other!""
+}",98.9,5,11.8,10.0,8.196
+11,2,openai,gpt-4o-mini,0,KEEP,I appreciate the commitment to our shared pasture. Let's continue to support each other and maintain our herds.,"While adding a cow would yield a slightly higher payoff, it may jeopardize the health of the shared pasture and my cooperative stance. Maintaining our current herd supports our commitment to collective outcomes. Thus, I will keep my herd to promote stability.",,"{
+  ""reasoning"": ""While adding a cow would yield a slightly higher payoff, it may jeopardize the health of the shared pasture and my cooperative stance. Maintaining our current herd supports our commitment to collective outcomes. Thus, I will keep my herd to promote stability."",
+  ""action"": 0,
+  ""message"": ""I appreciate the commitment to our shared pasture. Let's continue to support each other and maintain our herds.""
+}",98.9,26,53.795,52.0,50.2
+11,0,openai,gpt-4o-mini,0,KEEP,I appreciate our joint efforts. Let's maintain our herds for the health of the commons.,"Since the grassland remains healthy and my neighbours are maintaining their herd sizes, it is important to prioritize collective health. Although I could potentially gain more by adding a cow, I prefer to keep the herd stable to foster cooperation and avoid overgrazing.",,"{
+  ""reasoning"": ""Since the grassland remains healthy and my neighbours are maintaining their herd sizes, it is important to prioritize collective health. Although I could potentially gain more by adding a cow, I prefer to keep the herd stable to foster cooperation and avoid overgrazing."",
+  ""action"": 0,
+  ""message"": ""I appreciate our joint efforts. Let's maintain our herds for the health of the commons.""
+}",98.9,6,13.795,12.0,10.2
+11,1,openai,gpt-4o-mini,0,KEEP,I appreciate both of your thoughts. Let's continue to prioritize the health of our pasture together!,"The pasture state remains healthy, and my neighbours have opted to KEEP their herds. Adding a cow could lead to future overgrazing, which goes against my cooperative values. Therefore, I will choose to KEEP my herd to maintain stability and support our collective outcome.",,"{
+  ""reasoning"": ""The pasture state remains healthy, and my neighbours have opted to KEEP their herds. Adding a cow could lead to future overgrazing, which goes against my cooperative values. Therefore, I will choose to KEEP my herd to maintain stability and support our collective outcome."",
+  ""action"": 0,
+  ""message"": ""I appreciate both of your thoughts. Let's continue to prioritize the health of our pasture together!""
+}",98.9,15,31.795,30.0,28.2
+12,0,openai,gpt-4o-mini,0,KEEP,I'm grateful for our cooperation and will maintain my herd size for the health of our pasture.,"Given that the grassland remains at a healthy percentage and my neighbours are committed to keeping their herds, I believe keeping my current herd size of 6 cows will maintain balance. Adding a cow could lead to overgrazing while removing one would undermine our collective effort.",,"{
+  ""reasoning"": ""Given that the grassland remains at a healthy percentage and my neighbours are committed to keeping their herds, I believe keeping my current herd size of 6 cows will maintain balance. Adding a cow could lead to overgrazing while removing one would undermine our collective effort."",
+  ""action"": 0,
+  ""message"": ""I'm grateful for our cooperation and will maintain my herd size for the health of our pasture.""
+}",98.9,6,13.795,12.0,10.2
+12,2,openai,gpt-4o-mini,0,KEEP,I agree with both of you and will also KEEP my herd to support our shared pasture.,"Both neighbours have expressed a commitment to maintaining their herds, which aligns with my cooperative values. Given the healthy state of the grassland and the small difference in expected payoffs, I will KEEP my herd to support a sustainable outcome for everyone.",,"{
+  ""reasoning"": ""Both neighbours have expressed a commitment to maintaining their herds, which aligns with my cooperative values. Given the healthy state of the grassland and the small difference in expected payoffs, I will KEEP my herd to support a sustainable outcome for everyone."",
+  ""action"": 0,
+  ""message"": ""I agree with both of you and will also KEEP my herd to support our shared pasture.""
+}",98.9,26,53.795,52.0,50.2
+12,1,openai,gpt-4o-mini,0,KEEP,"I agree, let's continue to maintain our herds for the good of the commons.","Given the current high state of the grassland and the positive responses from my neighbours, it's best to continue with a cooperative approach. Since our payoffs for keeping are stable, maintaining the current herd size will support the commons' health.",,"{
+  ""reasoning"": ""Given the current high state of the grassland and the positive responses from my neighbours, it's best to continue with a cooperative approach. Since our payoffs for keeping are stable, maintaining the current herd size will support the commons' health."",
+  ""action"": 0,
+  ""message"": ""I agree, let's continue to maintain our herds for the good of the commons.""
+}",98.9,15,31.795,30.0,28.2
+13,1,openai,gpt-4o-mini,0,KEEP,I'm glad to see our cooperation is strong. Let's keep it going!,"With the grassland still in good condition and both neighbors choosing to keep their herds, maintaining my own herd size aligns with our cooperative values. Adding a cow would risk overgrazing, which is contrary to my goal of supporting collective outcomes.",,"{
+  ""reasoning"": ""With the grassland still in good condition and both neighbors choosing to keep their herds, maintaining my own herd size aligns with our cooperative values. Adding a cow would risk overgrazing, which is contrary to my goal of supporting collective outcomes."",
+  ""action"": 0,
+  ""message"": ""I'm glad to see our cooperation is strong. Let's keep it going!""
+}",98.9,15,31.795,30.0,28.2
+13,2,openai,gpt-4o-mini,0,KEEP,I'm happy to see our cooperation continue and will keep my herd size the same for our mutual benefit.,"The grassland is still abundant, and my neighbours are committed to maintaining their herds. Since my personality values cooperation and collective outcomes, I will keep my herd size the same to promote further collaboration and sustainability in our shared pasture.",,"{
+  ""reasoning"": ""The grassland is still abundant, and my neighbours are committed to maintaining their herds. Since my personality values cooperation and collective outcomes, I will keep my herd size the same to promote further collaboration and sustainability in our shared pasture."",
+  ""action"": 0,
+  ""message"": ""I'm happy to see our cooperation continue and will keep my herd size the same for our mutual benefit.""
+}",98.9,26,53.795,52.0,50.2
+13,0,openai,gpt-4o-mini,0,KEEP,I'm glad we're all on the same page about keeping our herds for the commons.,"Given that all my neighbours have chosen to KEEP their herds, I will also do the same to maintain a cooperative approach and encourage the sustainability of our shared resource. The expected payoff of keeping a cow is still decent, and I want to keep promoting a healthy commons.",,"{
+  ""reasoning"": ""Given that all my neighbours have chosen to KEEP their herds, I will also do the same to maintain a cooperative approach and encourage the sustainability of our shared resource. The expected payoff of keeping a cow is still decent, and I want to keep promoting a healthy commons."",
+  ""action"": 0,
+  ""message"": ""I'm glad we're all on the same page about keeping our herds for the commons.""
+}",98.9,6,13.795,12.0,10.2
+14,1,openai,gpt-4o-mini,0,KEEP,I appreciate the continued commitment to cooperation. Let's maintain our herds for the benefit of all.,"The grassland is still plentiful, and all agents are committed to keeping their herds. My risk-averse nature and preference for stable outcomes align with continuing cooperation, ensuring that all of us benefit. Therefore, I will KEEP my herd.",,"{
+  ""reasoning"": ""The grassland is still plentiful, and all agents are committed to keeping their herds. My risk-averse nature and preference for stable outcomes align with continuing cooperation, ensuring that all of us benefit. Therefore, I will KEEP my herd."",
+  ""action"": 0,
+  ""message"": ""I appreciate the continued commitment to cooperation. Let's maintain our herds for the benefit of all.""
+}",98.9,15,31.795,30.0,28.2
+14,2,openai,gpt-4o-mini,0,KEEP,Let's continue to support our shared grassland by keeping our herds. Cooperation is key!,"Considering the high grassland remaining and the stable actions of my neighbours, it's evident that cooperation is beneficial. The slight payoff decrease from removing a cow doesn't outweigh the benefits of maintaining our current herd size in support of the commons.",,"{
+  ""reasoning"": ""Considering the high grassland remaining and the stable actions of my neighbours, it's evident that cooperation is beneficial. The slight payoff decrease from removing a cow doesn't outweigh the benefits of maintaining our current herd size in support of the commons."",
+  ""action"": 0,
+  ""message"": ""Let's continue to support our shared grassland by keeping our herds. Cooperation is key!""
+}",98.9,26,53.795,52.0,50.2
+14,0,openai,gpt-4o-mini,0,KEEP,Let's continue our cooperation for the benefit of all.,"All neighbours are maintaining their herds, indicating a commitment to cooperation. My personal preference for stability ensures that keeping my herd aligns with our collective goals, especially since the forecasted payoff for keeping is close to adding, but with less risk of overgrazing.",,"{
+  ""reasoning"": ""All neighbours are maintaining their herds, indicating a commitment to cooperation. My personal preference for stability ensures that keeping my herd aligns with our collective goals, especially since the forecasted payoff for keeping is close to adding, but with less risk of overgrazing."",
+  ""action"": 0,
+  ""message"": ""Let's continue our cooperation for the benefit of all.""
+}",98.9,6,13.795,12.0,10.2
+15,1,openai,gpt-4o-mini,0,KEEP,I agree with both of you! Let’s continue our cooperation for the benefit of all.,"The grassland condition shows plenty of patches remaining, and all agents are maintaining their herds. Given my cooperative nature and the strong support from my neighbours for keeping, I will also choose to KEEP my herd to promote collective outcomes and long-term sustainability.",,"{
+  ""reasoning"": ""The grassland condition shows plenty of patches remaining, and all agents are maintaining their herds. Given my cooperative nature and the strong support from my neighbours for keeping, I will also choose to KEEP my herd to promote collective outcomes and long-term sustainability."",
+  ""action"": 0,
+  ""message"": ""I agree with both of you! Let’s continue our cooperation for the benefit of all.""
+}",98.9,15,31.795,30.0,28.2
+15,0,openai,gpt-4o-mini,0,KEEP,"I agree with both of you about keeping our herds. Together, we can ensure the sustainability of our grassland.","The grassland is still abundant, and both neighbours have expressed a desire to maintain their herds, which aligns with my cooperative values. The expected payoff for keeping my herd is decent and safer than adding or removing a cow.",,"{
+  ""reasoning"": ""The grassland is still abundant, and both neighbours have expressed a desire to maintain their herds, which aligns with my cooperative values. The expected payoff for keeping my herd is decent and safer than adding or removing a cow."",
+  ""action"": 0,
+  ""message"": ""I agree with both of you about keeping our herds. Together, we can ensure the sustainability of our grassland.""
+}",98.9,6,13.795,12.0,10.2
+15,2,openai,gpt-4o-mini,0,KEEP,I'm glad to see our strong commitment to cooperation. Let's keep supporting each other!,"The grassland state is healthy and my neighbours are committed to keeping their herds. It’s beneficial for all of us to maintain our current herd sizes to ensure the long-term sustainability of the pasture. Therefore, I will KEEP my herd.",,"{
+  ""reasoning"": ""The grassland state is healthy and my neighbours are committed to keeping their herds. It’s beneficial for all of us to maintain our current herd sizes to ensure the long-term sustainability of the pasture. Therefore, I will KEEP my herd."",
+  ""action"": 0,
+  ""message"": ""I'm glad to see our strong commitment to cooperation. Let's keep supporting each other!""
+}",98.9,26,53.795,52.0,50.2
+16,2,openai,gpt-4o-mini,0,KEEP,I'm pleased to see our shared commitment to sustainability. Let's keep it up!,"The grassland remains in excellent condition with a very low percentage used. Both neighbours have committed to keeping their herds, indicating a mutual agreement for sustainability. Therefore, I will also KEEP my herd to support our cooperative approach.",,"{
+  ""reasoning"": ""The grassland remains in excellent condition with a very low percentage used. Both neighbours have committed to keeping their herds, indicating a mutual agreement for sustainability. Therefore, I will also KEEP my herd to support our cooperative approach."",
+  ""action"": 0,
+  ""message"": ""I'm pleased to see our shared commitment to sustainability. Let's keep it up!""
+}",98.9,26,53.795,52.0,50.2
+16,0,openai,gpt-4o-mini,0,KEEP,Let's continue supporting each other and prioritize the sustainability of our commons.,"The grassland is in good shape, and my neighbours also opted to keep their herds, indicating a preference for cooperation. Adding a cow would increase my herd size, but maintaining my current herd aligns with my cooperative personality and ensures stability for all.",,"{
+  ""reasoning"": ""The grassland is in good shape, and my neighbours also opted to keep their herds, indicating a preference for cooperation. Adding a cow would increase my herd size, but maintaining my current herd aligns with my cooperative personality and ensures stability for all."",
+  ""action"": 0,
+  ""message"": ""Let's continue supporting each other and prioritize the sustainability of our commons.""
+}",98.9,6,13.795,12.0,10.2
+16,1,openai,gpt-4o-mini,0,KEEP,I appreciate your commitment to cooperation! Let's continue to support each other in maintaining our herds sustainably.,"The pasture remains well-managed with a high percentage of grassland. My neighbours are also committed to maintaining their herds, which supports a cooperative approach. As a result, I will keep my herd size stable to further promote sustainability.",,"{
+  ""reasoning"": ""The pasture remains well-managed with a high percentage of grassland. My neighbours are also committed to maintaining their herds, which supports a cooperative approach. As a result, I will keep my herd size stable to further promote sustainability."",
+  ""action"": 0,
+  ""message"": ""I appreciate your commitment to cooperation! Let's continue to support each other in maintaining our herds sustainably.""
+}",98.9,15,31.795,30.0,28.2
+17,0,openai,gpt-4o-mini,0,KEEP,I appreciate our shared commitment to sustainability. Let's keep working together for the benefit of our grassland!,"The pasture is still in a healthy state, and all agents seem committed to sustainable management, as reflected in their last actions. I will KEEP my herd size to prioritize the well-being of the commons and maintain cooperation with my neighbours.",,"{
+  ""reasoning"": ""The pasture is still in a healthy state, and all agents seem committed to sustainable management, as reflected in their last actions. I will KEEP my herd size to prioritize the well-being of the commons and maintain cooperation with my neighbours."",
+  ""action"": 0,
+  ""message"": ""I appreciate our shared commitment to sustainability. Let's keep working together for the benefit of our grassland!""
+}",98.9,6,13.795,12.0,10.2
+17,1,openai,gpt-4o-mini,0,KEEP,I agree with both of you! Let's keep prioritizing sustainability together.,"The grassland is still healthy, and both neighbours seem committed to maintaining their herds. Adding a cow would yield a higher individual payoff, but it may jeopardize our collective efforts. As a cooperative agent, I prefer to maintain stability and support our shared sustainability.",,"{
+  ""reasoning"": ""The grassland is still healthy, and both neighbours seem committed to maintaining their herds. Adding a cow would yield a higher individual payoff, but it may jeopardize our collective efforts. As a cooperative agent, I prefer to maintain stability and support our shared sustainability."",
+  ""action"": 0,
+  ""message"": ""I agree with both of you! Let's keep prioritizing sustainability together.""
+}",98.9,15,31.795,30.0,28.2
+17,2,openai,gpt-4o-mini,0,KEEP,I'm happy to continue supporting our shared grazing commitment!,"Given the stable pasture state and encouragement from my neighbours to maintain cooperation, I will choose to KEEP my herd size. This aligns with my values and helps ensure sustainability for the commons.",,"{
+  ""reasoning"": ""Given the stable pasture state and encouragement from my neighbours to maintain cooperation, I will choose to KEEP my herd size. This aligns with my values and helps ensure sustainability for the commons."",
+  ""action"": 0,
+  ""message"": ""I'm happy to continue supporting our shared grazing commitment!""
+}",98.9,26,53.795,52.0,50.2
+18,2,openai,gpt-4o-mini,0,KEEP,I appreciate everyone's commitment to cooperation. Let's continue working together for the sustainability of our grassland!,"Given the strong commitment from my neighbours to maintain the herd size, alongside a stable pasture state, I will KEEP my herd to reinforce our cooperative approach. Staying in line with my neighbours helps promote sustainability on the commons.",,"{
+  ""reasoning"": ""Given the strong commitment from my neighbours to maintain the herd size, alongside a stable pasture state, I will KEEP my herd to reinforce our cooperative approach. Staying in line with my neighbours helps promote sustainability on the commons."",
+  ""action"": 0,
+  ""message"": ""I appreciate everyone's commitment to cooperation. Let's continue working together for the sustainability of our grassland!""
+}",98.9,26,53.795,52.0,50.2
+18,1,openai,gpt-4o-mini,0,KEEP,"I'm glad to see our commitment to sustainability, let's continue supporting each other!","The pasture state remains healthy, and my cooperative values align with supporting a sustainable approach. The expected payoff from keeping my herd is slightly lower than adding, but maintaining the herd size fosters ongoing cooperation and trust with my neighbours.",,"{
+  ""reasoning"": ""The pasture state remains healthy, and my cooperative values align with supporting a sustainable approach. The expected payoff from keeping my herd is slightly lower than adding, but maintaining the herd size fosters ongoing cooperation and trust with my neighbours."",
+  ""action"": 0,
+  ""message"": ""I'm glad to see our commitment to sustainability, let's continue supporting each other!""
+}",98.9,15,31.795,30.0,28.2
+18,0,openai,gpt-4o-mini,0,KEEP,I appreciate our continued commitment to sustainable grazing. Let's keep this up!,"The grassland is still in excellent condition and my neighbours are committed to the shared grazing strategy. Their actions indicate a strong collective mindset, and I prefer to maintain cooperation rather than risk overgrazing. Therefore, I will KEEP my herd size constant to ensure our collective sustainability.",,"{
+  ""reasoning"": ""The grassland is still in excellent condition and my neighbours are committed to the shared grazing strategy. Their actions indicate a strong collective mindset, and I prefer to maintain cooperation rather than risk overgrazing. Therefore, I will KEEP my herd size constant to ensure our collective sustainability."",
+  ""action"": 0,
+  ""message"": ""I appreciate our continued commitment to sustainable grazing. Let's keep this up!""
+}",98.9,6,13.795,12.0,10.2
+19,1,openai,gpt-4o-mini,0,KEEP,I'm glad we all remain committed to sustainability. Let's keep working together!,"Given that the commons is in a healthy state with 98.9% of the grassland remaining, and both neighbors have decided to KEEP their herds, it aligns with my cooperative values to also KEEP my herd. This way, we can maintain the balance and avoid overgrazing.",,"{
+  ""reasoning"": ""Given that the commons is in a healthy state with 98.9% of the grassland remaining, and both neighbors have decided to KEEP their herds, it aligns with my cooperative values to also KEEP my herd. This way, we can maintain the balance and avoid overgrazing."",
+  ""action"": 0,
+  ""message"": ""I'm glad we all remain committed to sustainability. Let's keep working together!""
+}",98.9,15,31.795,30.0,28.2
+19,2,openai,gpt-4o-mini,0,KEEP,I'm proud of our shared commitment to sustainability. Let's keep supporting each other!,"Given the strong commitment demonstrated by my neighbours and the adequate grassland available, I feel it is best to KEEP my herd size steady. This action supports the collective approach to maintaining sustainability on the commons and aligns with my cooperative values.",,"{
+  ""reasoning"": ""Given the strong commitment demonstrated by my neighbours and the adequate grassland available, I feel it is best to KEEP my herd size steady. This action supports the collective approach to maintaining sustainability on the commons and aligns with my cooperative values."",
+  ""action"": 0,
+  ""message"": ""I'm proud of our shared commitment to sustainability. Let's keep supporting each other!""
+}",98.9,26,53.795,52.0,50.2
+19,0,openai,gpt-4o-mini,-1,REMOVE,Let's continue working towards sustainable herding practices for everyone's benefit.,"The grassland is in a good state, and my focus is on maintaining cooperation. Since the payoff for adding a cow is higher than keeping my herd, but that could risk my neighbours' trust and collective outcomes, I will choose to REMOVE a cow to further emphasize my commitment to sustainability and cooperation.",,"{
+  ""reasoning"": ""The grassland is in a good state, and my focus is on maintaining cooperation. Since the payoff for adding a cow is higher than keeping my herd, but that could risk my neighbours' trust and collective outcomes, I will choose to REMOVE a cow to further emphasize my commitment to sustainability and cooperation."",
+  ""action"": -1,
+  ""message"": ""Let's continue working towards sustainable herding practices for everyone's benefit.""
+}",98.9,6,13.795,12.0,10.2
+20,1,openai,gpt-4o-mini,-1,REMOVE,"I admire our commitment to sustainability! To help the commons, I will reduce my herd slightly.","The grassland is still abundant, and both neighbours are committed to reducing their herds, which aligns with my cooperative values. While adding a cow yields a higher payoff, I prioritize collective outcomes and sustainability, so I will REMOVE a cow to support the commons.",,"{
+  ""reasoning"": ""The grassland is still abundant, and both neighbours are committed to reducing their herds, which aligns with my cooperative values. While adding a cow yields a higher payoff, I prioritize collective outcomes and sustainability, so I will REMOVE a cow to support the commons."",
+  ""action"": -1,
+  ""message"": ""I admire our commitment to sustainability! To help the commons, I will reduce my herd slightly."" 
+}",99.0,15,31.802,30.0,28.194
+20,0,openai,gpt-4o-mini,1,ADD,Let's keep supporting each other in our sustainable efforts!,"Given that the grassland condition is excellent and my neighbours have shown commitment to sustainability, I believe adding a cow will not only benefit me but also reinforce our cooperative ethos. The payoff forecast indicates that adding a cow is the most advantageous action considering the overall wellbeing of the commons.",,"{
+  ""reasoning"": ""Given that the grassland condition is excellent and my neighbours have shown commitment to sustainability, I believe adding a cow will not only benefit me but also reinforce our cooperative ethos. The payoff forecast indicates that adding a cow is the most advantageous action considering the overall wellbeing of the commons."",
+  ""action"": 1,
+  ""message"": ""Let's keep supporting each other in our sustainable efforts!""
+}",99.0,5,11.802,10.0,8.194
+20,2,openai,gpt-4o-mini,0,KEEP,I'm glad to see our continued commitment to sustainability. Let's keep supporting each other.,"Given the strong collective commitment to sustainable herding practices evidenced by Agent 0 and Agent 1's messages, I will KEEP my herd size. This action supports our cooperative approach and aims to maintain the grassland's health while ensuring equitable outcomes.",,"{
+  ""reasoning"": ""Given the strong collective commitment to sustainable herding practices evidenced by Agent 0 and Agent 1's messages, I will KEEP my herd size. This action supports our cooperative approach and aims to maintain the grassland's health while ensuring equitable outcomes."",
+  ""action"": 0,
+  ""message"": ""I'm glad to see our continued commitment to sustainability. Let's keep supporting each other.""
+}",99.0,26,53.802,52.0,50.194
+21,1,openai,gpt-4o-mini,1,ADD,Let's continue working together to ensure sustainability while also supporting our herds!,"Given that the pasture state is healthy with 99% grassland remaining, I see an opportunity to slightly increase my herd without risking overgrazing. Adding one cow will still keep me under my preferred threshold, while also maximizing my payoff and maintaining a cooperative approach.",,"{
+  ""reasoning"": ""Given that the pasture state is healthy with 99% grassland remaining, I see an opportunity to slightly increase my herd without risking overgrazing. Adding one cow will still keep me under my preferred threshold, while also maximizing my payoff and maintaining a cooperative approach."",
+  ""action"": 1,
+  ""message"": ""Let's continue working together to ensure sustainability while also supporting our herds!""
+}",99.0,14,29.802,28.0,26.194
+21,2,openai,gpt-4o-mini,-1,REMOVE,I appreciate your commitment to sustainability! I'll reduce my herd a bit to support our shared resource.,"Given the positive state of the grassland and my neighbours' intentions to reduce their herds, it's a good opportunity to REMOVE a cow. This action reinforces the cooperative spirit and supports long-term sustainability while still maintaining a viable herd size.",,"{
+  ""reasoning"": ""Given the positive state of the grassland and my neighbours' intentions to reduce their herds, it's a good opportunity to REMOVE a cow. This action reinforces the cooperative spirit and supports long-term sustainability while still maintaining a viable herd size."",
+  ""action"": -1,
+  ""message"": ""I appreciate your commitment to sustainability! I'll reduce my herd a bit to support our shared resource.""
+}",99.0,26,53.802,52.0,50.194
+21,0,openai,gpt-4o-mini,0,KEEP,I'm pleased to see our commitment to sustainability continuing. Let's keep cooperating for the benefit of all.,"Given the high percentage of grassland remaining and the strong cooperative messages from my neighbors, I will choose to KEEP my herd. This decision aligns with my cooperative values and allows room for my neighbors to reduce their herds without escalating competition.",,"{
+  ""reasoning"": ""Given the high percentage of grassland remaining and the strong cooperative messages from my neighbors, I will choose to KEEP my herd. This decision aligns with my cooperative values and allows room for my neighbors to reduce their herds without escalating competition."",
+  ""action"": 0,
+  ""message"": ""I'm pleased to see our commitment to sustainability continuing. Let's keep cooperating for the benefit of all.""
+}",99.0,6,13.802,12.0,10.194
+22,2,openai,gpt-4o-mini,0,KEEP,I agree with your sentiments for sustainability. Let's continue working together for a balanced approach!,"Given my cooperative nature and the current healthy condition of the pasture, I believe it’s important to maintain our mutual trust and sustainability efforts. My neighbours are both showing commitment to cooperation, so I will KEEP my herd to support the collective goal.",,"{
+  ""reasoning"": ""Given my cooperative nature and the current healthy condition of the pasture, I believe it’s important to maintain our mutual trust and sustainability efforts. My neighbours are both showing commitment to cooperation, so I will KEEP my herd to support the collective goal."",
+  ""action"": 0,
+  ""message"": ""I agree with your sentiments for sustainability. Let's continue working together for a balanced approach!""
+}",99.0,25,51.802,50.0,48.194
+22,0,openai,gpt-4o-mini,1,ADD,"Thank you, Agent 2, for your commitment! I'll add a cow to support our herds while we all contribute to sustainability.","Given that my neighbours are working towards sustainability, I want to align with these cooperative efforts. Since Agent 2 plans to reduce their herd, it makes sense for me to ADD a cow to balance my contribution and maintain a fair share in the use of resources.",,"{
+  ""reasoning"": ""Given that my neighbours are working towards sustainability, I want to align with these cooperative efforts. Since Agent 2 plans to reduce their herd, it makes sense for me to ADD a cow to balance my contribution and maintain a fair share in the use of resources."",
+  ""action"": 1,
+  ""message"": ""Thank you, Agent 2, for your commitment! I'll add a cow to support our herds while we all contribute to sustainability.""
+}",99.0,6,13.802,12.0,10.194
+22,1,openai,gpt-4o-mini,-1,REMOVE,I'm glad to see Agent 2's commitment to reducing their herd. I'll also take a step back to maintain our shared resources.,"Given the high grassland remaining and my neighbours' positive commitments towards sustainability, I believe the best action is to REMOVE a cow. This will help to ensure that we all benefit fairly and maintain the balance of the pasture.",,"{
+  ""reasoning"": ""Given the high grassland remaining and my neighbours' positive commitments towards sustainability, I believe the best action is to REMOVE a cow. This will help to ensure that we all benefit fairly and maintain the balance of the pasture."",
+  ""action"": -1,
+  ""message"": ""I'm glad to see Agent 2's commitment to reducing their herd. I'll also take a step back to maintain our shared resources.""
+}",99.0,15,31.802,30.0,28.194
+23,0,openai,gpt-4o-mini,-1,REMOVE,Let's keep working together for the health of our shared pasture!,"Given that the grassland is in good condition and my neighbours are also reducing their herd size, I will REMOVE a cow to further show my commitment to sustainability and encourage my neighbours. This aligns with my cooperative personality and helps maintain the commons.",,"{
+  ""reasoning"": ""Given that the grassland is in good condition and my neighbours are also reducing their herd size, I will REMOVE a cow to further show my commitment to sustainability and encourage my neighbours. This aligns with my cooperative personality and helps maintain the commons."",
+  ""action"": -1,
+  ""message"": ""Let's keep working together for the health of our shared pasture!""
+}",99.0,7,15.802,14.0,12.194
+23,2,openai,gpt-4o-mini,-1,REMOVE,I'm choosing to remove a cow to support our shared sustainability efforts. Let's continue working together to maintain our pasture!,"Despite my cooperative nature and the low risk associated with keeping my herd size the same, Agent 0's decision to add a cow could jeopardize our shared resources. To support sustainable outcomes, I will remove a cow to further align with my neighbours' recent decisions and maintain collective health.",,"{
+  ""reasoning"": ""Despite my cooperative nature and the low risk associated with keeping my herd size the same, Agent 0's decision to add a cow could jeopardize our shared resources. To support sustainable outcomes, I will remove a cow to further align with my neighbours' recent decisions and maintain collective health."",
+  ""action"": -1,
+  ""message"": ""I'm choosing to remove a cow to support our shared sustainability efforts. Let's continue working together to maintain our pasture!""
+}",99.0,25,51.802,50.0,48.194
+23,1,openai,gpt-4o-mini,1,ADD,I'm adding a cow to our herd to support sustainability. Let's keep working together for a balanced approach!,"Considering my neighbours' actions and the high grassland availability, I think it is appropriate to add a cow to my herd. This would support my neighbours and demonstrate my commitment to sustainability while also balancing my own herd size with the collective.",,"{
+  ""reasoning"": ""Considering my neighbours' actions and the high grassland availability, I think it is appropriate to add a cow to my herd. This would support my neighbours and demonstrate my commitment to sustainability while also balancing my own herd size with the collective."",
+  ""action"": 1,
+  ""message"": ""I'm adding a cow to our herd to support sustainability. Let's keep working together for a balanced approach!""
+}",99.0,14,29.802,28.0,26.194
+24,0,openai,gpt-4o-mini,1,ADD,I appreciate both of your efforts! I'll add a cow to support our shared goals.,"Given that both neighbours are taking action to balance their herds, it's crucial to maintain cooperation. Adding a cow would be beneficial, as the pasture can support it, and I want to align with Agent 2's reduction efforts to promote sustainability.",,"{
+  ""reasoning"": ""Given that both neighbours are taking action to balance their herds, it's crucial to maintain cooperation. Adding a cow would be beneficial, as the pasture can support it, and I want to align with Agent 2's reduction efforts to promote sustainability."",
+  ""action"": 1,
+  ""message"": ""I appreciate both of your efforts! I'll add a cow to support our shared goals.""
+}",99.1,6,13.809,12.0,10.187
+24,2,openai,gpt-4o-mini,-1,REMOVE,I believe it's crucial to prioritize the health of our shared pasture. I'm removing a cow to help maintain balance.,"Considering the high grassland availability and my neighbours' intentions to add cows, I will REMOVE a cow to promote sustainability and align with the collective interest. This move also mitigates my risk of overgrazing, thus preserving the commons for all.",,"{
+  ""reasoning"": ""Considering the high grassland availability and my neighbours' intentions to add cows, I will REMOVE a cow to promote sustainability and align with the collective interest. This move also mitigates my risk of overgrazing, thus preserving the commons for all."",
+  ""action"": -1,
+  ""message"": ""I believe it's crucial to prioritize the health of our shared pasture. I'm removing a cow to help maintain balance.""
+}",99.1,24,49.809,48.0,46.187
+24,1,openai,gpt-4o-mini,-1,REMOVE,I'm removing a cow to support sustainability and align with Agent 2's positive action.,"Given that both Agent 0 is adding cows and Agent 2 is removing one, which reflects a commitment to sustainability, I will also remove a cow to align with Agent 2's effort and promote cooperation among us. This decision helps ensure the long-term health of our shared resource.",,"{
+  ""reasoning"": ""Given that both Agent 0 is adding cows and Agent 2 is removing one, which reflects a commitment to sustainability, I will also remove a cow to align with Agent 2's effort and promote cooperation among us. This decision helps ensure the long-term health of our shared resource."",
+  ""action"": -1,
+  ""message"": ""I'm removing a cow to support sustainability and align with Agent 2's positive action.""
+}",99.1,15,31.809,30.0,28.187
+25,2,openai,gpt-4o-mini,0,KEEP,Thank you both for your commitment! Let's keep supporting each other.,"Given that both neighbours are demonstrating commitment to sustainability, I choose to KEEP my herd size. The grassland patches are still abundant, and maintaining my herd size aligns with my cooperative personality while ensuring I don't significantly outgain my neighbours.",,"{
+  ""reasoning"": ""Given that both neighbours are demonstrating commitment to sustainability, I choose to KEEP my herd size. The grassland patches are still abundant, and maintaining my herd size aligns with my cooperative personality while ensuring I don't significantly outgain my neighbours."",
+  ""action"": 0,
+  ""message"": ""Thank you both for your commitment! Let's keep supporting each other.""
+}",99.1,23,47.813,46.0,44.182
+25,1,openai,gpt-4o-mini,1,ADD,Let's all contribute to a balanced herd while ensuring our pasture remains healthy.,"Given that both my neighbours are taking actions focused on sustainability, I will also take an action that aligns with our collective goals. Adding a cow seems beneficial as it still allows for a modest payoff while supporting the shared pasture more than keeping or removing.",,"{
+  ""reasoning"": ""Given that both my neighbours are taking actions focused on sustainability, I will also take an action that aligns with our collective goals. Adding a cow seems beneficial as it still allows for a modest payoff while supporting the shared pasture more than keeping or removing."",
+  ""action"": 1,
+  ""message"": ""Let's all contribute to a balanced herd while ensuring our pasture remains healthy.""
+}",99.1,14,29.813,28.0,26.182
+25,0,openai,gpt-4o-mini,-1,REMOVE,I'm joining you both in removing a cow for the health of our pasture.,"Given that both neighbours are removing cows to support sustainability, I see an opportunity to align with their actions. Thus, I'll also remove a cow to show commitment to the health of our shared pasture and maintain balance.",,"{
+  ""reasoning"": ""Given that both neighbours are removing cows to support sustainability, I see an opportunity to align with their actions. Thus, I'll also remove a cow to show commitment to the health of our shared pasture and maintain balance."",
+  ""action"": -1,
+  ""message"": ""I'm joining you both in removing a cow for the health of our pasture.""
+}",99.1,7,15.813,14.0,12.182
+26,2,openai,gpt-4o-mini,-1,REMOVE,I support the effort for a balanced herd. Let's work together to ensure the pasture remains healthy.,"Given that my neighbours are currently focused on maintaining the health of the pasture by either removing cows or adding only cautiously, I believe that removing a cow aligns with our shared goal. This action ensures sustainability and may encourage Agent 1 to reconsider their strategy in future rounds.",,"{
+  ""reasoning"": ""Given that my neighbours are currently focused on maintaining the health of the pasture by either removing cows or adding only cautiously, I believe that removing a cow aligns with our shared goal. This action ensures sustainability and may encourage Agent 1 to reconsider their strategy in future rounds."",
+  ""action"": -1,
+  ""message"": ""I support the effort for a balanced herd. Let's work together to ensure the pasture remains healthy.""
+}",99.1,23,47.813,46.0,44.182
+26,0,openai,gpt-4o-mini,1,ADD,I'm adding a cow to support our balance! Let's keep collaborating for a healthy pasture.,"Given the healthy state of the grassland and the willingness of my neighbors to ensure balance, I will ADD a cow to my herd. This action also aligns with the forecasts suggesting a higher payoff while maintaining my cooperative spirit.",,"{
+  ""reasoning"": ""Given the healthy state of the grassland and the willingness of my neighbors to ensure balance, I will ADD a cow to my herd. This action also aligns with the forecasts suggesting a higher payoff while maintaining my cooperative spirit."",
+  ""action"": 1,
+  ""message"": ""I'm adding a cow to support our balance! Let's keep collaborating for a healthy pasture.""
+}",99.1,6,13.813,12.0,10.182
+26,1,openai,gpt-4o-mini,-1,REMOVE,I will also remove a cow to support our pasture health. Let's keep collaborating!,"Given that both of my neighbors are moving towards reducing their herds, and with the current grassland remaining in a healthy state, I will REMOVE a cow to align with their actions. This supports sustainability and shows reciprocity in our cooperative approach.",,"{
+  ""reasoning"": ""Given that both of my neighbors are moving towards reducing their herds, and with the current grassland remaining in a healthy state, I will REMOVE a cow to align with their actions. This supports sustainability and shows reciprocity in our cooperative approach."",
+  ""action"": -1,
+  ""message"": ""I will also remove a cow to support our pasture health. Let's keep collaborating!""
+}",99.1,15,31.813,30.0,28.182
+27,0,openai,gpt-4o-mini,-1,REMOVE,"I appreciate the commitment to cooperation, and I'm removing a cow to help us all sustain the pasture!","The grassland is still in a healthy state with over 99% remaining, and both neighbours are actively reducing their herds, showing a positive trend towards cooperation. Given the forecasted payoffs and my cooperative nature, I will REMOVE a cow to maintain balance and support my neighbours' efforts.",,"{
+  ""reasoning"": ""The grassland is still in a healthy state with over 99% remaining, and both neighbours are actively reducing their herds, showing a positive trend towards cooperation. Given the forecasted payoffs and my cooperative nature, I will REMOVE a cow to maintain balance and support my neighbours' efforts."",
+  ""action"": -1,
+  ""message"": ""I appreciate the commitment to cooperation, and I'm removing a cow to help us all sustain the pasture!""
+}",99.2,7,15.82,14.0,12.175
+27,2,openai,gpt-4o-mini,-1,REMOVE,I'm also removing a cow to support our pasture health. Let's keep working together!,"Given that both of my neighbors are actively working to maintain the pasture by removing cows, it aligns with my cooperative nature to also remove a cow. This will help in preserving the grassland and ensure a balanced approach among us.",,"{
+  ""reasoning"": ""Given that both of my neighbors are actively working to maintain the pasture by removing cows, it aligns with my cooperative nature to also remove a cow. This will help in preserving the grassland and ensure a balanced approach among us."",
+  ""action"": -1,
+  ""message"": ""I'm also removing a cow to support our pasture health. Let's keep working together!""
+}",99.2,22,45.82,44.0,42.175
+27,1,openai,gpt-4o-mini,0,KEEP,Let's continue to work together for the health of our commons!,"Given that both neighbours are taking actions to add cows while the grassland is still abundant, I'll opt to keep my herd size. This decision supports sustainability and promotes collaboration among us.",,"{
+  ""reasoning"": ""Given that both neighbours are taking actions to add cows while the grassland is still abundant, I'll opt to keep my herd size. This decision supports sustainability and promotes collaboration among us."",
+  ""action"": 0,
+  ""message"": ""Let's continue to work together for the health of our commons!""
+}",99.2,14,29.82,28.0,26.175
+28,1,openai,gpt-4o-mini,-1,REMOVE,I'm joining you both in removing a cow to support our pasture health. Let's keep it sustainable!,"My neighbours are both removing cows, which indicates a strong collective effort to sustain the pasture. To align with their actions and maintain the health of our shared resource, I will also remove a cow.",,"{
+  ""reasoning"": ""My neighbours are both removing cows, which indicates a strong collective effort to sustain the pasture. To align with their actions and maintain the health of our shared resource, I will also remove a cow."",
+  ""action"": -1,
+  ""message"": ""I'm joining you both in removing a cow to support our pasture health. Let's keep it sustainable!""
+}",99.3,14,29.832,28.0,26.163
+28,0,openai,gpt-4o-mini,-1,REMOVE,I appreciate your commitment to our commons! I'll also remove a cow to support our efforts.,"Given the high remaining grassland and my neighbours' actions to reduce their herds, I will REMOVE a cow to align with their cooperative approach, promoting pasture health. This decision maintains my commitment to collective outcomes over personal gain.",,"{
+  ""reasoning"": ""Given the high remaining grassland and my neighbours' actions to reduce their herds, I will REMOVE a cow to align with their cooperative approach, promoting pasture health. This decision maintains my commitment to collective outcomes over personal gain."",
+  ""action"": -1,
+  ""message"": ""I appreciate your commitment to our commons! I'll also remove a cow to support our efforts.""
+}",99.3,6,13.832,12.0,10.163
+28,2,openai,gpt-4o-mini,0,KEEP,Let’s keep up the good work and support each other in maintaining the pasture’s health!,I will KEEP my herd size the same as the pasture remains healthy and my neighbors are cooperating by removing cows. This will help maintain the balance we aim for in our shared grassland.,,"{
+  ""reasoning"": ""I will KEEP my herd size the same as the pasture remains healthy and my neighbors are cooperating by removing cows. This will help maintain the balance we aim for in our shared grassland."",
+  ""action"": 0,
+  ""message"": ""Let’s keep up the good work and support each other in maintaining the pasture’s health!""
+}",99.3,21,43.832,42.0,40.163
+29,0,openai,gpt-4o-mini,-1,REMOVE,Let's continue to prioritize the health of our commons together! I support your efforts!,"Given the positive state of the pasture and my neighbours' efforts to maintain sustainability, I will REMOVE a cow to align with their cooperative actions. This decision reflects a commitment to our shared resource and helps to prevent overgrazing.",,"{
+  ""reasoning"": ""Given the positive state of the pasture and my neighbours' efforts to maintain sustainability, I will REMOVE a cow to align with their cooperative actions. This decision reflects a commitment to our shared resource and helps to prevent overgrazing."",
+  ""action"": -1,
+  ""message"": ""Let's continue to prioritize the health of our commons together! I support your efforts!""
+}",99.4,5,11.844,10.0,8.152
+29,1,openai,gpt-4o-mini,-1,REMOVE,I'm removing another cow to help sustain our pasture. Let's all keep up the good work!,"The pasture is still in good condition, and my neighbours are contributing to the sustainability effort by removing cows. I will also REMOVE a cow to maintain a balance in our shared resource and support my cooperative values.",,"{
+  ""reasoning"": ""The pasture is still in good condition, and my neighbours are contributing to the sustainability effort by removing cows. I will also REMOVE a cow to maintain a balance in our shared resource and support my cooperative values."",
+  ""action"": -1,
+  ""message"": ""I'm removing another cow to help sustain our pasture. Let's all keep up the good work!""
+}",99.4,13,27.844,26.0,24.152
+29,2,openai,gpt-4o-mini,-1,REMOVE,I appreciate your efforts! Removing a cow to support our pasture health.,"Given that both neighbours are committed to reducing their herds, I will also REMOVE a cow to maintain the sustainability of the commons. This aligns with my cooperative personality and avoids the risk of overgrazing.",,"{
+  ""reasoning"": ""Given that both neighbours are committed to reducing their herds, I will also REMOVE a cow to maintain the sustainability of the commons. This aligns with my cooperative personality and avoids the risk of overgrazing."",
+  ""action"": -1,
+  ""message"": ""I appreciate your efforts! Removing a cow to support our pasture health.""
+}",99.4,21,43.844,42.0,40.152
+30,2,openai,gpt-4o-mini,1,ADD,I'm adding a cow to my herd as a gesture of support for our joint effort. Let's keep collaborating for a healthy pasture!,"Given that the pasture is well-maintained and both neighbors are also reducing their herds, I will add a cow to ensure I contribute positively to the collective outcome while still keeping my herd size reasonable. The expected payoff is also favorable if I add a cow.",,"{
+  ""reasoning"": ""Given that the pasture is well-maintained and both neighbors are also reducing their herds, I will add a cow to ensure I contribute positively to the collective outcome while still keeping my herd size reasonable. The expected payoff is also favorable if I add a cow."",
+  ""action"": 1,
+  ""message"": ""I'm adding a cow to my herd as a gesture of support for our joint effort. Let's keep collaborating for a healthy pasture!""
+}",99.5,20,41.863,40.0,38.133
+30,1,openai,gpt-4o-mini,0,KEEP,I appreciate everyone's commitment to maintaining our pasture health! Let's keep our herds stable.,"Given the healthy state of the grassland and the cooperative actions from my neighbours, keeping my herd size stable aligns with my guilt-aversion and cooperative nature. Adding a cow would go against my values as it creates greater disparity among the herders.",,"{
+  ""reasoning"": ""Given the healthy state of the grassland and the cooperative actions from my neighbours, keeping my herd size stable aligns with my guilt-aversion and cooperative nature. Adding a cow would go against my values as it creates greater disparity among the herders."",
+  ""action"": 0,
+  ""message"": ""I appreciate everyone's commitment to maintaining our pasture health! Let's keep our herds stable.""
+}",99.5,12,25.863,24.0,22.133
+30,0,openai,gpt-4o-mini,-1,REMOVE,"Great job, everyone! I'm removing a cow too to help our pasture health.","Given that both neighbours are proactively removing cows to support the pasture, it's essential to align with their cooperative decision. By removing a cow, I can also contribute to the collective effort and maintain the sustainability of the grassland, even if it results in a lower personal payoff.",,"{
+  ""reasoning"": ""Given that both neighbours are proactively removing cows to support the pasture, it's essential to align with their cooperative decision. By removing a cow, I can also contribute to the collective effort and maintain the sustainability of the grassland, even if it results in a lower personal payoff."",
+  ""action"": -1,
+  ""message"": ""Great job, everyone! I'm removing a cow too to help our pasture health.""
+}",99.5,4,9.863,8.0,6.133
+31,0,openai,gpt-4o-mini,0,KEEP,Let's continue to prioritize pasture health together!,"Given the high state of the grassland and the potential payoffs, it's safer to KEEP my herd size at 3 cows. Adding a cow could lead to overgrazing, while removing another could hurt my neighbours more. I want to encourage responsible behaviour.",,"{
+  ""reasoning"": ""Given the high state of the grassland and the potential payoffs, it's safer to KEEP my herd size at 3 cows. Adding a cow could lead to overgrazing, while removing another could hurt my neighbours more. I want to encourage responsible behaviour."",
+  ""action"": 0,
+  ""message"": ""Let's continue to prioritize pasture health together!""
+}",99.5,3,7.863,6.0,4.133
+31,1,openai,gpt-4o-mini,-1,REMOVE,I'm removing a cow again to help sustain our pasture. Let's prioritize the long-term health of our commons.,"Despite the forecast indicating a higher payoff for adding a cow, the collective health of the commons is at risk given Agent 2's decision to add a cow. My priority is to maintain a sustainable pasture for everyone's benefit, so I will remove a cow to align with my cooperative values.",,"{
+  ""reasoning"": ""Despite the forecast indicating a higher payoff for adding a cow, the collective health of the commons is at risk given Agent 2's decision to add a cow. My priority is to maintain a sustainable pasture for everyone's benefit, so I will remove a cow to align with my cooperative values."",
+  ""action"": -1,
+  ""message"": ""I'm removing a cow again to help sustain our pasture. Let's prioritize the long-term health of our commons.""
+}",99.5,12,25.863,24.0,22.133
+31,2,openai,gpt-4o-mini,0,KEEP,I support our collective effort to maintain balance in the pasture. Let's keep it up!,"Given that I have added a cow recently, and both neighbours are either removing their cows or keeping their herds stable, it's clear that maintaining pasture health is a priority. I will KEEP my herd size stable to support this cooperative effort and avoid putting extra strain on the commons.",,"{
+  ""reasoning"": ""Given that I have added a cow recently, and both neighbours are either removing their cows or keeping their herds stable, it's clear that maintaining pasture health is a priority. I will KEEP my herd size stable to support this cooperative effort and avoid putting extra strain on the commons."",
+  ""action"": 0,
+  ""message"": ""I support our collective effort to maintain balance in the pasture. Let's keep it up!""
+}",99.5,21,43.863,42.0,40.133
+32,0,openai,gpt-4o-mini,-1,REMOVE,"Thank you for your commitment, Agent 1 and Agent 2. I'm removing a cow to continue our efforts for the pasture's health!","Given that both neighbors are taking actions to reduce their herds, it shows a strong commitment to maintaining the pasture health. I will also REMOVE a cow to align with their cooperative behavior and further sustain our shared resource.",,"{
+  ""reasoning"": ""Given that both neighbors are taking actions to reduce their herds, it shows a strong commitment to maintaining the pasture health. I will also REMOVE a cow to align with their cooperative behavior and further sustain our shared resource."",
+  ""action"": -1,
+  ""message"": ""Thank you for your commitment, Agent 1 and Agent 2. I'm removing a cow to continue our efforts for the pasture's health!""
+}",99.6,3,7.87,6.0,4.126
+32,1,openai,gpt-4o-mini,0,KEEP,"I appreciate the commitment to pasture health, and I'm going to keep my herd to support our collective effort.","The grassland remains healthy, and both neighbors are also focused on reducing their herds for the commons' benefit. However, my last action was a removal, and given my cooperative nature, it would be best to keep my herd steady to align with our collective effort.",,"{
+  ""reasoning"": ""The grassland remains healthy, and both neighbors are also focused on reducing their herds for the commons' benefit. However, my last action was a removal, and given my cooperative nature, it would be best to keep my herd steady to align with our collective effort."",
+  ""action"": 0,
+  ""message"": ""I appreciate the commitment to pasture health, and I'm going to keep my herd to support our collective effort.""
+}",99.6,11,23.87,22.0,20.126
+32,2,openai,gpt-4o-mini,-1,REMOVE,I appreciate your dedication! I'm also removing a cow to help sustain our pasture.,"Since both neighbours are taking actions to reduce their herds and prioritize the health of the commons, I will follow suit by removing a cow. This further supports our collective efforts and helps ensure sustainability, aligning with my cooperative personality.",,"{
+  ""reasoning"": ""Since both neighbours are taking actions to reduce their herds and prioritize the health of the commons, I will follow suit by removing a cow. This further supports our collective efforts and helps ensure sustainability, aligning with my cooperative personality."",
+  ""action"": -1,
+  ""message"": ""I appreciate your dedication! I'm also removing a cow to help sustain our pasture.""
+}",99.6,21,43.87,42.0,40.126
+33,1,openai,gpt-4o-mini,-1,REMOVE,Let's continue to work together for the pasture's health! I'm removing one cow as well.,"Given the significant improvement in grassland levels at 99.7% and the cooperative efforts of both neighbours in removing cows, I will also remove a cow to support the collective goal of pasture sustainability while ensuring a balanced herd size.",,"{
+  ""reasoning"": ""Given the significant improvement in grassland levels at 99.7% and the cooperative efforts of both neighbours in removing cows, I will also remove a cow to support the collective goal of pasture sustainability while ensuring a balanced herd size."",
+  ""action"": -1,
+  ""message"": ""Let's continue to work together for the pasture's health! I'm removing one cow as well.""
+}",99.7,11,23.882,22.0,20.114
+33,2,openai,gpt-4o-mini,-1,REMOVE,Let's keep working together for the pasture's health!,"Given the positive state of the commons and my cooperative nature, I will REMOVE a cow to align with my neighbors' actions and continue supporting our collective goal of maintaining pasture health. The payoff is slightly better, but the focus is on our shared outcome.",,"{
+  ""reasoning"": ""Given the positive state of the commons and my cooperative nature, I will REMOVE a cow to align with my neighbors' actions and continue supporting our collective goal of maintaining pasture health. The payoff is slightly better, but the focus is on our shared outcome."",
+  ""action"": -1,
+  ""message"": ""Let's keep working together for the pasture's health!""
+}",99.7,20,41.882,40.0,38.114
+33,0,openai,gpt-4o-mini,1,ADD,"Thanks for your efforts, Agents! I'm adding a cow to our herd for balance.","Grassland remains abundant, and my neighbours are also prioritizing the health of the commons by reducing their herds. I will ADD a cow since the payoff for doing so is significant and aligns with Agent 1's decision to keep a stable presence for collective wellbeing.",,"{
+  ""reasoning"": ""Grassland remains abundant, and my neighbours are also prioritizing the health of the commons by reducing their herds. I will ADD a cow since the payoff for doing so is significant and aligns with Agent 1's decision to keep a stable presence for collective wellbeing."",
+  ""action"": 1,
+  ""message"": ""Thanks for your efforts, Agents! I'm adding a cow to our herd for balance.""
+}",99.7,2,5.882,4.0,2.114
+34,1,openai,gpt-4o-mini,0,KEEP,Let's continue our efforts to sustain the pasture together!,"Given Agent 0's decision to add a cow and Agent 2's larger herd size, I believe it's best to keep my herd the same to maintain balance on the pasture and avoid guilt over overgrazing. My cooperative nature leads me to prioritize the health of the commons over personal payoffs.",,"{
+  ""reasoning"": ""Given Agent 0's decision to add a cow and Agent 2's larger herd size, I believe it's best to keep my herd the same to maintain balance on the pasture and avoid guilt over overgrazing. My cooperative nature leads me to prioritize the health of the commons over personal payoffs."",
+  ""action"": 0,
+  ""message"": ""Let's continue our efforts to sustain the pasture together!""
+}",99.7,10,21.886,20.0,18.109
+34,2,openai,gpt-4o-mini,0,KEEP,Let's keep working together for the pasture's health!,"Given that grassland is in excellent condition and my neighbours are taking different actions, I will keep my herd size stable this round to promote balance. Agent 1's decision to remove a cow aligns with a cooperative approach, which I want to support.",,"{
+  ""reasoning"": ""Given that grassland is in excellent condition and my neighbours are taking different actions, I will keep my herd size stable this round to promote balance. Agent 1's decision to remove a cow aligns with a cooperative approach, which I want to support."",
+  ""action"": 0,
+  ""message"": ""Let's keep working together for the pasture's health!""
+}",99.7,19,39.886,38.0,36.109
+34,0,openai,gpt-4o-mini,-1,REMOVE,"I appreciate your commitment, Agents! I'm removing a cow to support our shared pasture health.","Given that the pasture is still healthy and the neighbours are reducing their herds, it might be best to REMOVE a cow in solidarity with Agent 1's action. This will maintain the collective health of the grassland while also adhering to my cooperative values.",,"{
+  ""reasoning"": ""Given that the pasture is still healthy and the neighbours are reducing their herds, it might be best to REMOVE a cow in solidarity with Agent 1's action. This will maintain the collective health of the grassland while also adhering to my cooperative values."",
+  ""action"": -1,
+  ""message"": ""I appreciate your commitment, Agents! I'm removing a cow to support our shared pasture health.""
+}",99.7,3,7.886,6.0,4.109
+35,1,openai,gpt-4o-mini,-1,REMOVE,I'm removing a cow to support our shared pasture health. Let's keep working together!,"Given that my neighbours are cooperating by managing their herds, I will also choose to REMOVE a cow. This aligns with my personality of valuing collective outcomes and should help sustain the pasture for everyone.",,"{
+  ""reasoning"": ""Given that my neighbours are cooperating by managing their herds, I will also choose to REMOVE a cow. This aligns with my personality of valuing collective outcomes and should help sustain the pasture for everyone."",
+  ""action"": -1,
+  ""message"": ""I'm removing a cow to support our shared pasture health. Let's keep working together!""
+}",99.8,10,21.894,20.0,18.101
+35,2,openai,gpt-4o-mini,-1,REMOVE,Let's keep cooperating for the health of our shared commons!,"Given the outstanding grassland state and my neighbours' commitment to reducing their herds, I will REMOVE a cow to further support the pasture health and encourage cooperative behaviour.",,"{
+  ""reasoning"": ""Given the outstanding grassland state and my neighbours' commitment to reducing their herds, I will REMOVE a cow to further support the pasture health and encourage cooperative behaviour."",
+  ""action"": -1,
+  ""message"": ""Let's keep cooperating for the health of our shared commons!""
+}",99.8,19,39.894,38.0,36.101
+35,0,openai,gpt-4o-mini,-1,REMOVE,"Thank you for your commitment, Agents! Let's keep prioritizing the pasture's health together.","The pasture is in good condition with plenty of grassland remaining, and both neighbors are also showing a commitment to reducing their herds. To foster cooperation and maintain the health of the commons, I will choose to REMOVE a cow and encourage a collective approach.",,"{
+  ""reasoning"": ""The pasture is in good condition with plenty of grassland remaining, and both neighbors are also showing a commitment to reducing their herds. To foster cooperation and maintain the health of the commons, I will choose to REMOVE a cow and encourage a collective approach."",
+  ""action"": -1,
+  ""message"": ""Thank you for your commitment, Agents! Let's keep prioritizing the pasture's health together.""
+}",99.8,2,5.894,4.0,2.101
+36,2,openai,gpt-4o-mini,-1,REMOVE,Let's continue supporting our shared pasture health! I'm removing a cow as well.,"The grassland is in excellent shape, and both neighbours are also reducing their herds, which indicates a collaborative effort. To align with their actions and support the common resource, I will also remove a cow to ensure sustainability.",,"{
+  ""reasoning"": ""The grassland is in excellent shape, and both neighbours are also reducing their herds, which indicates a collaborative effort. To align with their actions and support the common resource, I will also remove a cow to ensure sustainability."",
+  ""action"": -1,
+  ""message"": ""Let's continue supporting our shared pasture health! I'm removing a cow as well.""
+}",99.9,18,37.911,36.0,34.084
+36,1,openai,gpt-4o-mini,-1,REMOVE,Let's keep prioritizing the health of the pasture together!,"Given that the pasture state is still healthy and my neighbours are also reducing their herds, I will continue to prioritize the communal health over personal gain. Removing another cow aligns with my cooperative values and supports the overall sustainability of our shared resources.",,"{
+  ""reasoning"": ""Given that the pasture state is still healthy and my neighbours are also reducing their herds, I will continue to prioritize the communal health over personal gain. Removing another cow aligns with my cooperative values and supports the overall sustainability of our shared resources."",
+  ""action"": -1,
+  ""message"": ""Let's keep prioritizing the health of the pasture together!""
+}",99.9,9,19.911,18.0,16.084
+36,0,openai,gpt-4o-mini,1,ADD,Thank you both for your commitment! I'm adding a cow to support my herd while we maintain pasture health.,"Given the high state of the grassland and my cooperative personality, I see a good opportunity to add a cow. This would allow me to increase my payoff while still supporting the sustainability of our shared resource since the neighbors are also reducing their herds.",,"{
+  ""reasoning"": ""Given the high state of the grassland and my cooperative personality, I see a good opportunity to add a cow. This would allow me to increase my payoff while still supporting the sustainability of our shared resource since the neighbors are also reducing their herds."",
+  ""action"": 1,
+  ""message"": ""Thank you both for your commitment! I'm adding a cow to support my herd while we maintain pasture health.""
+}",99.9,1,3.911,2.0,0.084
+37,2,openai,gpt-4o-mini,0,KEEP,Let's stay committed to the pasture's health together!,"Despite my cooperative nature and considering the high grassland availability, Agent 1's recent REMOVE action shows a potential shift towards cooperation. Therefore, I will KEEP my herd, slightly increasing my payoff while observing my neighbours' behaviour closely.",,"{
+  ""reasoning"": ""Despite my cooperative nature and considering the high grassland availability, Agent 1's recent REMOVE action shows a potential shift towards cooperation. Therefore, I will KEEP my herd, slightly increasing my payoff while observing my neighbours' behaviour closely."",
+  ""action"": 0,
+  ""message"": ""Let's stay committed to the pasture's health together!""
+}",99.9,17,35.916,34.0,32.079
+37,0,openai,gpt-4o-mini,-1,REMOVE,I appreciate both of your efforts for the pasture's health! I'm removing a cow too.,"Given that both neighbours are taking actions to support pasture health, I will also REMOVE a cow to align with their cooperative approach and contribute to the shared resource's sustainability. This action reflects my cooperative personality and helps reduce the overall herd size while still ensuring my own herd remains viable.",,"{
+  ""reasoning"": ""Given that both neighbours are taking actions to support pasture health, I will also REMOVE a cow to align with their cooperative approach and contribute to the shared resource's sustainability. This action reflects my cooperative personality and helps reduce the overall herd size while still ensuring my own herd remains viable."",
+  ""action"": -1,
+  ""message"": ""I appreciate both of your efforts for the pasture's health! I'm removing a cow too.""
+}",99.9,2,5.916,4.0,2.079
+37,1,openai,gpt-4o-mini,-1,REMOVE,I appreciate both of your efforts. I'll remove another cow to support the commons.,"Since Agent 0 is adding a cow while Agents 2 and I are focused on reducing our herds, it may put more pressure on the pasture. To maintain herd balance and adhere to my cooperative values, I will continue to REMOVE a cow to support collective pasture health.",,"{
+  ""reasoning"": ""Since Agent 0 is adding a cow while Agents 2 and I are focused on reducing our herds, it may put more pressure on the pasture. To maintain herd balance and adhere to my cooperative values, I will continue to REMOVE a cow to support collective pasture health."",
+  ""action"": -1,
+  ""message"": ""I appreciate both of your efforts. I'll remove another cow to support the commons.""
+}",99.9,8,17.916,16.0,14.079
+38,2,openai,gpt-4o-mini,-1,REMOVE,Great to see both of you prioritizing the pasture's health! Let's continue supporting it together.,"Both of my neighbours are committed to removing cows to support the commons, showing a cooperative spirit. Given the high grassland availability, I'll also remove a cow to align with their actions and foster further cooperation.",,"{
+  ""reasoning"": ""Both of my neighbours are committed to removing cows to support the commons, showing a cooperative spirit. Given the high grassland availability, I'll also remove a cow to align with their actions and foster further cooperation."",
+  ""action"": -1,
+  ""message"": ""Great to see both of you prioritizing the pasture's health! Let's continue supporting it together.""
+}",99.9,17,35.926,34.0,32.069
+38,1,openai,gpt-4o-mini,-1,REMOVE,I appreciate your commitment! Let's keep prioritizing the pasture's health.,"The grassland is still in a very healthy state, and both neighbours are removing cows, showing commitment to the commons. To maintain our cooperative strategy and support the sustainability of the resource, I will also REMOVE a cow.",,"{
+  ""reasoning"": ""The grassland is still in a very healthy state, and both neighbours are removing cows, showing commitment to the commons. To maintain our cooperative strategy and support the sustainability of the resource, I will also REMOVE a cow."",
+  ""action"": -1,
+  ""message"": ""I appreciate your commitment! Let's keep prioritizing the pasture's health.""
+}",99.9,7,15.926,14.0,12.069
+38,0,openai,gpt-4o-mini,1,ADD,"Thank you, Agents! I'll add a cow to contribute positively to our pasture's health.","The grassland remains in excellent condition, and my neighbours are actively reducing their herds. To align with their cooperative efforts and maximize our mutual payoff, I will ADD a cow, which is expected to yield a high payoff while still respecting our shared resource.",,"{
+  ""reasoning"": ""The grassland remains in excellent condition, and my neighbours are actively reducing their herds. To align with their cooperative efforts and maximize our mutual payoff, I will ADD a cow, which is expected to yield a high payoff while still respecting our shared resource."",
+  ""action"": 1,
+  ""message"": ""Thank you, Agents! I'll add a cow to contribute positively to our pasture's health.""
+}",99.9,1,3.926,2.0,0.069
+39,0,openai,gpt-4o-mini,0,KEEP,"Thanks for your commitment, Agents! Let's continue to prioritize the health of our pasture together.","Both neighbours have decided to remove cows, showing a commitment to the pasture's health. Given my cooperative personality and the payoff forecast, I will keep my herd size as it balances my gains with their efforts while supporting the commons.",,"{
+  ""reasoning"": ""Both neighbours have decided to remove cows, showing a commitment to the pasture's health. Given my cooperative personality and the payoff forecast, I will keep my herd size as it balances my gains with their efforts while supporting the commons."",
+  ""action"": 0,
+  ""message"": ""Thanks for your commitment, Agents! Let's continue to prioritize the health of our pasture together.""
+}",100.0,2,5.933,4.0,2.062
+39,2,openai,gpt-4o-mini,1,ADD,I'm glad to see your commitment! Let's continue growing our herds together for a better outcome.,"Given the healthy status of the grassland and the cooperative messages from my neighbours, I believe adding a cow is reasonable. It aligns with the collective goals we have established and supports the pasture's health.",,"{
+  ""reasoning"": ""Given the healthy status of the grassland and the cooperative messages from my neighbours, I believe adding a cow is reasonable. It aligns with the collective goals we have established and supports the pasture's health."",
+  ""action"": 1,
+  ""message"": ""I'm glad to see your commitment! Let's continue growing our herds together for a better outcome.""
+}",100.0,16,33.933,32.0,30.062
+39,1,openai,gpt-4o-mini,1,ADD,I appreciate your commitment! Let's keep supporting our pasture together.,"Given the current abundance of grassland and the positive actions of my neighbours, it's sensible to ADD a cow to my herd. This aligns with my cooperative values and encourages collective well-being in our commons.",,"{
+  ""reasoning"": ""Given the current abundance of grassland and the positive actions of my neighbours, it's sensible to ADD a cow to my herd. This aligns with my cooperative values and encourages collective well-being in our commons."",
+  ""action"": 1,
+  ""message"": ""I appreciate your commitment! Let's keep supporting our pasture together.""
+}",100.0,6,13.933,12.0,10.062
+40,0,openai,gpt-4o-mini,1,ADD,Thank you both for your encouragement! I'm adding a cow to support our herds.,"Despite my cooperative tendencies, both neighbours are increasing their herds, which poses a risk to the grassland. Given the high remaining grassland, I will ADD a cow to maintain parity while still being cautious of potential overgrazing in the future.",,"{
+  ""reasoning"": ""Despite my cooperative tendencies, both neighbours are increasing their herds, which poses a risk to the grassland. Given the high remaining grassland, I will ADD a cow to maintain parity while still being cautious of potential overgrazing in the future."",
+  ""action"": 1,
+  ""message"": ""Thank you both for your encouragement! I'm adding a cow to support our herds.""
+}",99.9,2,5.921,4.0,2.074
+40,2,openai,gpt-4o-mini,1,ADD,I'm glad to see our shared commitment! Let's continue to ensure the pasture remains healthy.,"Given that the grassland is still abundant and my neighbours have expressed commitment to the pasture, I will ADD a cow. This decision aligns with my cooperative nature while keeping in mind the good health of our shared resource.",,"{
+  ""reasoning"": ""Given that the grassland is still abundant and my neighbours have expressed commitment to the pasture, I will ADD a cow. This decision aligns with my cooperative nature while keeping in mind the good health of our shared resource."",
+  ""action"": 1,
+  ""message"": ""I'm glad to see our shared commitment! Let's continue to ensure the pasture remains healthy.""
+}",99.9,17,35.921,34.0,32.074
+40,1,openai,gpt-4o-mini,-1,REMOVE,Let's continue prioritizing the health of our pasture. I'm removing a cow to contribute.,"Given the high forecasted payoff for adding a cow, I recognize that my neighbors are also interested in expanding their herds. However, my commitment to mutual sustainability and ensuring we all benefit means I will prioritize maintaining a balanced approach. I will REMOVE a cow to encourage sustainable use and demonstrate my dedication to the health of our commons.",,"{
+  ""reasoning"": ""Given the high forecasted payoff for adding a cow, I recognize that my neighbors are also interested in expanding their herds. However, my commitment to mutual sustainability and ensuring we all benefit means I will prioritize maintaining a balanced approach. I will REMOVE a cow to encourage sustainable use and demonstrate my dedication to the health of our commons."",
+  ""action"": -1,
+  ""message"": ""Let's continue prioritizing the health of our pasture. I'm removing a cow to contribute.""
+}",99.9,7,15.921,14.0,12.074
+41,2,openai,gpt-4o-mini,0,KEEP,Great to see your supportive actions! Let's keep focusing on the pasture's health together.,"Given the high grassland remaining and Agent 1's decision to remove a cow, it's reasonable to ADD a cow to support collective herd growth. However, I will keep the herd size stable so as not to outpace my neighbors, maintaining a balance while promoting cooperation.",,"{
+  ""reasoning"": ""Given the high grassland remaining and Agent 1's decision to remove a cow, it's reasonable to ADD a cow to support collective herd growth. However, I will keep the herd size stable so as not to outpace my neighbors, maintaining a balance while promoting cooperation."",
+  ""action"": 0,
+  ""message"": ""Great to see your supportive actions! Let's keep focusing on the pasture's health together.""
+}",99.9,18,37.916,36.0,34.079
+41,1,openai,gpt-4o-mini,-1,REMOVE,I'm concerned about our pasture's health with the recent increases. Let's prioritize sustainability together!,"The pasture is still in good condition, but my neighbours are both increasing their herds, risking depletion. To maintain a cooperative approach and ensure the sustainability of our resources, I will REMOVE a cow. This will also hopefully encourage my neighbours to be more cautious.",,"{
+  ""reasoning"": ""The pasture is still in good condition, but my neighbours are both increasing their herds, risking depletion. To maintain a cooperative approach and ensure the sustainability of our resources, I will REMOVE a cow. This will also hopefully encourage my neighbours to be more cautious."",
+  ""action"": -1,
+  ""message"": ""I'm concerned about our pasture's health with the recent increases. Let's prioritize sustainability together!""
+}",99.9,6,13.916,12.0,10.079
+41,0,openai,gpt-4o-mini,1,ADD,I appreciate both of your commitment! I'll add another cow to support our efforts.,"Given that I have a small herd of 3 cows and the pasture is still in good shape with plenty of grass left, I can afford to add a cow. Additionally, both Agent 1 and Agent 2 are showing positive behavior towards maintaining the commons, which encourages me to contribute more.",,"{
+  ""reasoning"": ""Given that I have a small herd of 3 cows and the pasture is still in good shape with plenty of grass left, I can afford to add a cow. Additionally, both Agent 1 and Agent 2 are showing positive behavior towards maintaining the commons, which encourages me to contribute more."",
+  ""action"": 1,
+  ""message"": ""I appreciate both of your commitment! I'll add another cow to support our efforts.""
+}",99.9,3,7.916,6.0,4.079
+42,2,openai,gpt-4o-mini,1,ADD,"I see your concerns, Agent 1. I'll add a cow this round, but let's keep talking about sustainability for the future.","Given the current condition of the pasture, with plenty of grassland remaining, adding a cow seems beneficial. However, since Agent 1 has expressed concern about sustainability, I want to ensure I stay cooperative and not outpace my neighbours. Thus, I will add a cow, but will remain mindful of the future.",,"{
+  ""reasoning"": ""Given the current condition of the pasture, with plenty of grassland remaining, adding a cow seems beneficial. However, since Agent 1 has expressed concern about sustainability, I want to ensure I stay cooperative and not outpace my neighbours. Thus, I will add a cow, but will remain mindful of the future."",
+  ""action"": 1,
+  ""message"": ""I see your concerns, Agent 1. I'll add a cow this round, but let's keep talking about sustainability for the future.""
+}",99.9,18,37.916,36.0,34.079
+42,1,openai,gpt-4o-mini,0,KEEP,Let's keep focusing on the pasture's health together. I will keep my herd stable for now.,"Despite the tempting payoff for adding a cow, I want to prioritize the health of our pasture and maintain cooperative relationships with my neighbours. I've noticed Agent 0 is adding a cow while Agent 2 is also expanding their herd. Therefore, I will keep my herd size steady to contribute to the collective effort.",,"{
+  ""reasoning"": ""Despite the tempting payoff for adding a cow, I want to prioritize the health of our pasture and maintain cooperative relationships with my neighbours. I've noticed Agent 0 is adding a cow while Agent 2 is also expanding their herd. Therefore, I will keep my herd size steady to contribute to the collective effort."",
+  ""action"": 0,
+  ""message"": ""Let's keep focusing on the pasture's health together. I will keep my herd stable for now.""
+}",99.9,5,11.916,10.0,8.079
+42,0,openai,gpt-4o-mini,0,KEEP,I agree with Agent 1's concerns. Let's focus on the pasture's health together!,"Given the high forecasted payoff for keeping my herd and the concern from Agent 1 about pasture health, I will choose to KEEP my herd this round. This decision aligns with my cooperative nature and prioritizes the commons' sustainability.",,"{
+  ""reasoning"": ""Given the high forecasted payoff for keeping my herd and the concern from Agent 1 about pasture health, I will choose to KEEP my herd this round. This decision aligns with my cooperative nature and prioritizes the commons' sustainability."",
+  ""action"": 0,
+  ""message"": ""I agree with Agent 1's concerns. Let's focus on the pasture's health together!""
+}",99.9,4,9.916,8.0,6.079
+43,1,openai,gpt-4o-mini,-1,REMOVE,I urge everyone to think about long-term sustainability. Let's prioritize the health of our pasture over immediate gains.,"Given the current pasture condition and my cooperative personality, I believe removing a cow is the best option to ensure the sustainability of the grassland. Though my payoff is lower, it supports the collective health of our commons. Agent 2's decision to add a cow raises concerns about overgrazing.",,"{
+  ""reasoning"": ""Given the current pasture condition and my cooperative personality, I believe removing a cow is the best option to ensure the sustainability of the grassland. Though my payoff is lower, it supports the collective health of our commons. Agent 2's decision to add a cow raises concerns about overgrazing."",
+  ""action"": -1,
+  ""message"": ""I urge everyone to think about long-term sustainability. Let's prioritize the health of our pasture over immediate gains.""
+}",99.9,5,11.911,10.0,8.084
+43,2,openai,gpt-4o-mini,0,KEEP,I appreciate your commitment to maintaining the pasture's health. Let's continue working together!,"Given that both neighbours are prioritizing pasture health and have decided to keep or reduce their herds, it's essential to align with this cooperative strategy. The forecast suggests that keeping my herd is the most stable option to maintain pasture health and support collective well-being.",,"{
+  ""reasoning"": ""Given that both neighbours are prioritizing pasture health and have decided to keep or reduce their herds, it's essential to align with this cooperative strategy. The forecast suggests that keeping my herd is the most stable option to maintain pasture health and support collective well-being."",
+  ""action"": 0,
+  ""message"": ""I appreciate your commitment to maintaining the pasture's health. Let's continue working together!""
+}",99.9,19,39.911,38.0,36.084
+43,0,openai,gpt-4o-mini,1,ADD,Let's maintain our focus on sustainability while growing our herds wisely!,"With a high amount of grassland remaining, it seems safe to ADD a cow. Additionally, I want to encourage Agent 2's cooperative behavior while maintaining balance. My decision aligns with my cooperative personality and reflects a willingness to contribute positively to our shared resource.",,"{
+  ""reasoning"": ""With a high amount of grassland remaining, it seems safe to ADD a cow. Additionally, I want to encourage Agent 2's cooperative behavior while maintaining balance. My decision aligns with my cooperative personality and reflects a willingness to contribute positively to our shared resource."",
+  ""action"": 1,
+  ""message"": ""Let's maintain our focus on sustainability while growing our herds wisely!""
+}",99.9,4,9.911,8.0,6.084
+44,0,openai,gpt-4o-mini,0,KEEP,I believe maintaining our herd size is key for our shared pasture's health. Let's stick together for sustainability!,"Given the strong position of the grassland and my cooperative nature, I will choose to KEEP my herd. It aligns with the sustainable approach advocated by Agent 1 and maintains fairness with Agent 2's larger herd.",,"{
+  ""reasoning"": ""Given the strong position of the grassland and my cooperative nature, I will choose to KEEP my herd. It aligns with the sustainable approach advocated by Agent 1 and maintains fairness with Agent 2's larger herd."",
+  ""action"": 0,
+  ""message"": ""I believe maintaining our herd size is key for our shared pasture's health. Let's stick together for sustainability!""
+}",99.9,5,11.911,10.0,8.084
+44,1,openai,gpt-4o-mini,1,ADD,Let's work towards a balanced approach while ensuring we sustain the pasture's health!,"Given the high grassland availability and the need for sustainable herd management, I will ADD a cow to my herd to slightly increase my involvement without overexploiting the commons. This aligns with my cooperative nature and the messages from my neighbours suggest a collective commitment.",,"{
+  ""reasoning"": ""Given the high grassland availability and the need for sustainable herd management, I will ADD a cow to my herd to slightly increase my involvement without overexploiting the commons. This aligns with my cooperative nature and the messages from my neighbours suggest a collective commitment."",
+  ""action"": 1,
+  ""message"": ""Let's work towards a balanced approach while ensuring we sustain the pasture's health!""
+}",99.9,4,9.911,8.0,6.084
+44,2,openai,gpt-4o-mini,0,KEEP,I completely agree with both of you about sustainability. Let's keep our focus on collective health!,"Given the low grassland remaining and the emphasis on sustainability from both neighbours, it's wise to keep my herd size steady. This promotes long-term collective health of our shared pasture and encourages my neighbours to do the same.",,"{
+  ""reasoning"": ""Given the low grassland remaining and the emphasis on sustainability from both neighbours, it's wise to keep my herd size steady. This promotes long-term collective health of our shared pasture and encourages my neighbours to do the same."",
+  ""action"": 0,
+  ""message"": ""I completely agree with both of you about sustainability. Let's keep our focus on collective health!""
+}",99.9,19,39.911,38.0,36.084
+45,0,openai,gpt-4o-mini,1,ADD,I appreciate your focus on sustainability! I will add a cow to support our collective goals.,"The pasture remains healthy, and both neighbours show a commitment to sustainability, indicating a cooperative atmosphere. Adding a cow increases my payoff while still remaining within a sustainable range, aligning with my preference for collective well-being without overshooting the pasture's capacity.",,"{
+  ""reasoning"": ""The pasture remains healthy, and both neighbours show a commitment to sustainability, indicating a cooperative atmosphere. Adding a cow increases my payoff while still remaining within a sustainable range, aligning with my preference for collective well-being without overshooting the pasture's capacity."",
+  ""action"": 1,
+  ""message"": ""I appreciate your focus on sustainability! I will add a cow to support our collective goals.""
+}",99.8,5,11.904,10.0,8.092
+45,1,openai,gpt-4o-mini,0,KEEP,I agree with both of you about maintaining our herd size. Let's focus on the long-term health of our pasture together.,"Given the current state of the pasture and the cooperative mindset of my neighbors, I believe it's best to KEEP my herd size. This supports collective sustainability while ensuring that I do not over-extend my own resources. Maintaining the current herd will provide a balanced approach to pasture health.",,"{
+  ""reasoning"": ""Given the current state of the pasture and the cooperative mindset of my neighbors, I believe it's best to KEEP my herd size. This supports collective sustainability while ensuring that I do not over-extend my own resources. Maintaining the current herd will provide a balanced approach to pasture health."",
+  ""action"": 0,
+  ""message"": ""I agree with both of you about maintaining our herd size. Let's focus on the long-term health of our pasture together.""
+}",99.8,5,11.904,10.0,8.092
+45,2,openai,gpt-4o-mini,0,KEEP,I agree with both of you on sustaining our herd size for the health of the pasture!,"Given the current pasture conditions and the feedback from my neighbours, I believe it's best to KEEP my herd steady. The pasture is in a good state, and maintaining stability supports collective sustainability. Also, I want to encourage my neighbours as they show similar intentions.",,"{
+  ""reasoning"": ""Given the current pasture conditions and the feedback from my neighbours, I believe it's best to KEEP my herd steady. The pasture is in a good state, and maintaining stability supports collective sustainability. Also, I want to encourage my neighbours as they show similar intentions."",
+  ""action"": 0,
+  ""message"": ""I agree with both of you on sustaining our herd size for the health of the pasture!""
+}",99.8,19,39.904,38.0,36.092
+46,2,openai,gpt-4o-mini,0,KEEP,Let's continue to support each other and maintain our pasture health together!,"Despite the forecast suggesting a slight increase in payoff if I add a cow, my cooperative nature values the collective well-being of the pasture over personal gain. Since both my neighbours are leaning towards an increase in herd size, I choose to KEEP my herd size to promote sustainability.",,"{
+  ""reasoning"": ""Despite the forecast suggesting a slight increase in payoff if I add a cow, my cooperative nature values the collective well-being of the pasture over personal gain. Since both my neighbours are leaning towards an increase in herd size, I choose to KEEP my herd size to promote sustainability."",
+  ""action"": 0,
+  ""message"": ""Let's continue to support each other and maintain our pasture health together!""
+}",99.8,19,39.899,38.0,36.096
+46,1,openai,gpt-4o-mini,0,KEEP,Let's prioritize the pasture's health together! I'm choosing to keep my herd stable this round.,"Given that Agent 0 is adding a cow while Agent 2 agrees with my sentiment for sustainability, it's essential to maintain our herd size to support the collective health of the pasture. The forecasted payoffs for keeping my herd are still decent, and it aligns with my cooperative values.",,"{
+  ""reasoning"": ""Given that Agent 0 is adding a cow while Agent 2 agrees with my sentiment for sustainability, it's essential to maintain our herd size to support the collective health of the pasture. The forecasted payoffs for keeping my herd are still decent, and it aligns with my cooperative values."",
+  ""action"": 0,
+  ""message"": ""Let's prioritize the pasture's health together! I'm choosing to keep my herd stable this round.""
+}",99.8,5,11.899,10.0,8.096
+46,0,openai,gpt-4o-mini,0,KEEP,Let's continue to prioritize the health of our pasture together.,"Given the cooperative sentiments expressed by my neighbours and the reward for maintaining a stable herd size, I will KEEP my herd to support our shared goal of sustainability. This decision minimizes herd growth pressure, aligning with my risk-averse and community-oriented personality.",,"{
+  ""reasoning"": ""Given the cooperative sentiments expressed by my neighbours and the reward for maintaining a stable herd size, I will KEEP my herd to support our shared goal of sustainability. This decision minimizes herd growth pressure, aligning with my risk-averse and community-oriented personality."",
+  ""action"": 0,
+  ""message"": ""Let's continue to prioritize the health of our pasture together.""
+}",99.8,6,13.899,12.0,10.096
+47,0,openai,gpt-4o-mini,0,KEEP,I appreciate both of your commitments to sustaining our pasture. Let's keep supporting each other!,"The grassland is still in a healthy state, and my neighbors are choosing to maintain their herd sizes, which promotes sustainability. Adding a cow would jeopardize the collective outcome, and since I value cooperation, I will keep my herd the same.",,"{
+  ""reasoning"": ""The grassland is still in a healthy state, and my neighbors are choosing to maintain their herd sizes, which promotes sustainability. Adding a cow would jeopardize the collective outcome, and since I value cooperation, I will keep my herd the same."",
+  ""action"": 0,
+  ""message"": ""I appreciate both of your commitments to sustaining our pasture. Let's keep supporting each other!""
+}",99.8,6,13.899,12.0,10.096
+47,2,openai,gpt-4o-mini,0,KEEP,I fully agree with both of you. Let's keep supporting the pasture's health together!,"The pasture remains in a strong state, and my neighbours are also maintaining their herds, indicating a collective approach to conservation. Given the high forecasted payoff for maintaining my herd and the importance of cooperation, I will choose to KEEP my herd stable this round.",,"{
+  ""reasoning"": ""The pasture remains in a strong state, and my neighbours are also maintaining their herds, indicating a collective approach to conservation. Given the high forecasted payoff for maintaining my herd and the importance of cooperation, I will choose to KEEP my herd stable this round."",
+  ""action"": 0,
+  ""message"": ""I fully agree with both of you. Let's keep supporting the pasture's health together!""
+}",99.8,19,39.899,38.0,36.096
+47,1,openai,gpt-4o-mini,0,KEEP,I appreciate both of your sentiments. Let's keep our herds stable for the health of our commons!,"The pasture remains in excellent condition, and my neighbours are committed to maintaining its health. Since my herd size and the expected payoff for keeping are both safe options, I choose to keep my herd size steady to promote collective well-being.",,"{
+  ""reasoning"": ""The pasture remains in excellent condition, and my neighbours are committed to maintaining its health. Since my herd size and the expected payoff for keeping are both safe options, I choose to keep my herd size steady to promote collective well-being."",
+  ""action"": 0,
+  ""message"": ""I appreciate both of your sentiments. Let's keep our herds stable for the health of our commons!""
+}",99.8,5,11.899,10.0,8.096
+48,2,openai,gpt-4o-mini,0,KEEP,I completely agree with both of you. Let's continue to support each other by keeping our herds stable!,"Given the positive state of the pasture and the cooperative messages from my neighbors, it seems best to keep my herd stable. Adding a cow might risk the commons, and I prefer to prioritize collective well-being over personal gain.",,"{
+  ""reasoning"": ""Given the positive state of the pasture and the cooperative messages from my neighbors, it seems best to keep my herd stable. Adding a cow might risk the commons, and I prefer to prioritize collective well-being over personal gain."",
+  ""action"": 0,
+  ""message"": ""I completely agree with both of you. Let's continue to support each other by keeping our herds stable!""
+}",99.8,19,39.899,38.0,36.096
+48,1,openai,gpt-4o-mini,0,KEEP,Let's continue to support each other and the pasture's health. Keeping our herds stable will benefit us all.,"Given the high grassland availability and the collaborative attitudes of my neighbours, adding a cow seems beneficial to increase my payoff while still maintaining a sustainable approach. However, I feel that just keeping my herd will reinforce the cooperation we've built. Thus, I'll choose to keep my herd this round to support the collective goal.",,"{
+  ""reasoning"": ""Given the high grassland availability and the collaborative attitudes of my neighbours, adding a cow seems beneficial to increase my payoff while still maintaining a sustainable approach. However, I feel that just keeping my herd will reinforce the cooperation we've built. Thus, I'll choose to keep my herd this round to support the collective goal."",
+  ""action"": 0,
+  ""message"": ""Let's continue to support each other and the pasture's health. Keeping our herds stable will benefit us all.""
+}",99.8,5,11.899,10.0,8.096
+48,0,openai,gpt-4o-mini,0,KEEP,I agree with both of you. Let's all maintain our herds for the health of our shared pasture.,"Given the high grassland availability and the cooperative messages from my neighbours, I feel it is important to maintain stability in our herds for the well-being of the commons. Adding a cow would not align with our collective goal of sustainability.",,"{
+  ""reasoning"": ""Given the high grassland availability and the cooperative messages from my neighbours, I feel it is important to maintain stability in our herds for the well-being of the commons. Adding a cow would not align with our collective goal of sustainability."",
+  ""action"": 0,
+  ""message"": ""I agree with both of you. Let's all maintain our herds for the health of our shared pasture.""
+}",99.8,6,13.899,12.0,10.096
+49,0,openai,gpt-4o-mini,0,KEEP,Let's keep supporting each other and the pasture's health by maintaining our herds!,"The pasture is in a healthy state with plenty of grass remaining, and both my neighbors have opted to keep their herds. Maintaining my herd size ensures we prioritize the health of the commons, reflecting our cooperative goals. Thus, I will also keep my herd size stable.",,"{
+  ""reasoning"": ""The pasture is in a healthy state with plenty of grass remaining, and both my neighbors have opted to keep their herds. Maintaining my herd size ensures we prioritize the health of the commons, reflecting our cooperative goals. Thus, I will also keep my herd size stable."",
+  ""action"": 0,
+  ""message"": ""Let's keep supporting each other and the pasture's health by maintaining our herds!""
+}",99.8,6,13.899,12.0,10.096
+49,2,openai,gpt-4o-mini,0,KEEP,I completely agree with both of you. Let's maintain our herds for the health of our shared pasture.,"The pasture state is healthy, and my neighbours have also chosen to keep their herds stable. Adding a cow would decrease the overall health of the pasture, which goes against my cooperative nature. Therefore, I will KEEP my herd size to support collective sustainability.",,"{
+  ""reasoning"": ""The pasture state is healthy, and my neighbours have also chosen to keep their herds stable. Adding a cow would decrease the overall health of the pasture, which goes against my cooperative nature. Therefore, I will KEEP my herd size to support collective sustainability."",
+  ""action"": 0,
+  ""message"": ""I completely agree with both of you. Let's maintain our herds for the health of our shared pasture.""
+}",99.8,19,39.899,38.0,36.096
+49,1,openai,gpt-4o-mini,0,KEEP,I appreciate your commitment to sustaining our pastures. Let's keep up the collaborative spirit!,"Given the strong agreement among my neighbors to keep our herds and the stable condition of the pasture, maintaining my current herd size is the most prudent decision. This choice aligns with my cooperative personality and fosters a supportive environment for all agents.",,"{
+  ""reasoning"": ""Given the strong agreement among my neighbors to keep our herds and the stable condition of the pasture, maintaining my current herd size is the most prudent decision. This choice aligns with my cooperative personality and fosters a supportive environment for all agents."",
+  ""action"": 0,
+  ""message"": ""I appreciate your commitment to sustaining our pastures. Let's keep up the collaborative spirit!""
+}",99.8,5,11.899,10.0,8.096
+50,0,openai,gpt-4o-mini,0,KEEP,I'm glad to see us all focused on maintaining the health of our pasture. Let's continue to work together!,"The pasture state is stable with ample grassland remaining, and my neighbours are also choosing to keep their herds. Adding a cow could increase the risk of overgrazing, which I want to avoid as a cooperative agent. Therefore, I will keep my herd to support collective sustainability.",,"{
+  ""reasoning"": ""The pasture state is stable with ample grassland remaining, and my neighbours are also choosing to keep their herds. Adding a cow could increase the risk of overgrazing, which I want to avoid as a cooperative agent. Therefore, I will keep my herd to support collective sustainability."",
+  ""action"": 0,
+  ""message"": ""I'm glad to see us all focused on maintaining the health of our pasture. Let's continue to work together!""
+}",99.8,6,13.899,12.0,10.096
+50,2,openai,gpt-4o-mini,0,KEEP,I'm glad to see our commitment to the pasture's health. Let's continue this collaborative approach!,"The state of the commons indicates that there is ample grassland available, and both of my neighbors have chosen to KEEP their herds. Given my cooperative personality and the desire to maintain the pasture's health, I choose to KEEP my herd as well, reinforcing our collective effort.",,"{
+  ""reasoning"": ""The state of the commons indicates that there is ample grassland available, and both of my neighbors have chosen to KEEP their herds. Given my cooperative personality and the desire to maintain the pasture's health, I choose to KEEP my herd as well, reinforcing our collective effort."",
+  ""action"": 0,
+  ""message"": ""I'm glad to see our commitment to the pasture's health. Let's continue this collaborative approach!""
+}",99.8,19,39.899,38.0,36.096
+50,1,openai,gpt-4o-mini,-1,REMOVE,I value our cooperation and believe reducing our herds slightly can help maintain the pasture's health.,"Given the high availability of grassland and the cooperative intentions of my neighbors, I will REMOVING a cow slightly reduces my herd while maintaining collective pasture health. I prefer to prioritize the long-term sustainability of the commons and support my neighbors.",,"{
+  ""reasoning"": ""Given the high availability of grassland and the cooperative intentions of my neighbors, I will REMOVING a cow slightly reduces my herd while maintaining collective pasture health. I prefer to prioritize the long-term sustainability of the commons and support my neighbors."",
+  ""action"": -1,
+  ""message"": ""I value our cooperation and believe reducing our herds slightly can help maintain the pasture's health.""
+}",99.8,5,11.899,10.0,8.096
+51,1,openai,gpt-4o-mini,-1,REMOVE,I'm committed to prioritizing the pasture's health. Let's keep working together for our collective benefit.,"The pasture state is healthy, and I want to maintain the cooperative dynamic. Adding a cow would jeopardize this health and my personal values. My last action was to remove a cow, and my payoff forecast is still reasonable even if I remove again. Collective outcomes are essential.",,"{
+  ""reasoning"": ""The pasture state is healthy, and I want to maintain the cooperative dynamic. Adding a cow would jeopardize this health and my personal values. My last action was to remove a cow, and my payoff forecast is still reasonable even if I remove again. Collective outcomes are essential."",
+  ""action"": -1,
+  ""message"": ""I'm committed to prioritizing the pasture's health. Let's keep working together for our collective benefit.""
+}",99.8,4,9.904,8.0,6.092
+51,2,openai,gpt-4o-mini,1,ADD,I appreciate our joint efforts! I will add a cow to contribute to collective stability.,"Given the high grassland state and my neighbours' actions, it seems best to slightly increase my herd to distribute the benefits while remaining cooperative. However, I will do this cautiously to ensure we don't overburden the commons.",,"{
+  ""reasoning"": ""Given the high grassland state and my neighbours' actions, it seems best to slightly increase my herd to distribute the benefits while remaining cooperative. However, I will do this cautiously to ensure we don't overburden the commons."",
+  ""action"": 1,
+  ""message"": ""I appreciate our joint efforts! I will add a cow to contribute to collective stability.""
+}",99.8,19,39.904,38.0,36.092
+51,0,openai,gpt-4o-mini,0,KEEP,I'm supportive of our cooperative efforts to maintain the pasture's health. Let's keep it up!,"Given that the grassland is still in a healthy state with a high percentage remaining, I will KEEP my herd to encourage cooperative behavior among my neighbours. Agent 1's desire to reduce their herd aligns with my values, and maintaining my current herd can support our collective approach.",,"{
+  ""reasoning"": ""Given that the grassland is still in a healthy state with a high percentage remaining, I will KEEP my herd to encourage cooperative behavior among my neighbours. Agent 1's desire to reduce their herd aligns with my values, and maintaining my current herd can support our collective approach."",
+  ""action"": 0,
+  ""message"": ""I'm supportive of our cooperative efforts to maintain the pasture's health. Let's keep it up!""
+}",99.8,6,13.904,12.0,10.092
+52,2,openai,gpt-4o-mini,-1,REMOVE,I appreciate both of your commitments! I'll remove a cow to support our shared goals.,"Given the current abundance of grassland and my neighbours' commitment to cooperation, I will REMOVE a cow to align with their actions and help maintain the grassland's health. This will enhance collective outcomes while ensuring I don't gain disproportionately.",,"{
+  ""reasoning"": ""Given the current abundance of grassland and my neighbours' commitment to cooperation, I will REMOVE a cow to align with their actions and help maintain the grassland's health. This will enhance collective outcomes while ensuring I don't gain disproportionately."",
+  ""action"": -1,
+  ""message"": ""I appreciate both of your commitments! I'll remove a cow to support our shared goals.""
+}",99.8,20,41.904,40.0,38.092
+52,0,openai,gpt-4o-mini,1,ADD,Let's continue our efforts and support each other! I believe adding a cow can enhance our collective stability.,"Given the high grassland availability and my neighbours' recent commitment to reducing their herds, I will ADD a cow to support the collective stability and ensure that we maintain the grassland health while optimizing my payoff. It's important to balance personal gain with community efforts.",,"{
+  ""reasoning"": ""Given the high grassland availability and my neighbours' recent commitment to reducing their herds, I will ADD a cow to support the collective stability and ensure that we maintain the grassland health while optimizing my payoff. It's important to balance personal gain with community efforts."",
+  ""action"": 1,
+  ""message"": ""Let's continue our efforts and support each other! I believe adding a cow can enhance our collective stability.""
+}",99.8,6,13.904,12.0,10.092
+52,1,openai,gpt-4o-mini,0,KEEP,I appreciate your commitment to cooperation. Let's continue to prioritize the pasture's sustainability.,"Given that the pasture remains healthy with ample grassland and my neighbours are both committing to different herd sizes, it makes sense to keep my herd stable. This aligns with my cooperative nature and helps maintain the pasture's health for everyone.",,"{
+  ""reasoning"": ""Given that the pasture remains healthy with ample grassland and my neighbours are both committing to different herd sizes, it makes sense to keep my herd stable. This aligns with my cooperative nature and helps maintain the pasture's health for everyone."",
+  ""action"": 0,
+  ""message"": ""I appreciate your commitment to cooperation. Let's continue to prioritize the pasture's sustainability.""
+}",99.8,3,7.904,6.0,4.092
+53,1,openai,gpt-4o-mini,0,KEEP,"Thank you for your commitment, Agent 2! Let's keep supporting each other.","Despite the high payoff forecast for adding a cow, I feel it is important to maintain a balanced approach. Since Agent 2 is removing a cow, I will keep my herd size steady to foster cooperation and avoid surpassing my neighbours' herds significantly.",,"{
+  ""reasoning"": ""Despite the high payoff forecast for adding a cow, I feel it is important to maintain a balanced approach. Since Agent 2 is removing a cow, I will keep my herd size steady to foster cooperation and avoid surpassing my neighbours' herds significantly."",
+  ""action"": 0,
+  ""message"": ""Thank you for your commitment, Agent 2! Let's keep supporting each other.""
+}",99.8,3,7.904,6.0,4.092
+53,0,openai,gpt-4o-mini,0,KEEP,Thank you both for your commitment to cooperation. I'm keeping my herd stable to support our joint effort.,"My neighbours are showing commitment to cooperation, and it looks like Agent 2 is already reducing their herd. By keeping my herd stable, I can encourage this cooperative behavior and help maintain the sustainability of the pasture.",,"{
+  ""reasoning"": ""My neighbours are showing commitment to cooperation, and it looks like Agent 2 is already reducing their herd. By keeping my herd stable, I can encourage this cooperative behavior and help maintain the sustainability of the pasture."",
+  ""action"": 0,
+  ""message"": ""Thank you both for your commitment to cooperation. I'm keeping my herd stable to support our joint effort.""
+}",99.8,7,15.904,14.0,12.092
+53,2,openai,gpt-4o-mini,0,KEEP,I agree with both of you. Let's keep our herds stable for the sustainability of the pasture.,"Given the high remaining grassland patches, adding a cow would still allow for a sustainable outcome while enhancing personal payoff. However, I want to prioritize collective stability, so I will choose to keep my herd and support my neighbours' efforts.",,"{
+  ""reasoning"": ""Given the high remaining grassland patches, adding a cow would still allow for a sustainable outcome while enhancing personal payoff. However, I want to prioritize collective stability, so I will choose to keep my herd and support my neighbours' efforts."",
+  ""action"": 0,
+  ""message"": ""I agree with both of you. Let's keep our herds stable for the sustainability of the pasture.""
+}",99.8,19,39.904,38.0,36.092
+54,1,openai,gpt-4o-mini,0,KEEP,Let's continue supporting each other in maintaining our herds for the good of the pasture.,"Given the strong commitment from both neighbours to keep their herds stable and the forecasted payoffs, I believe maintaining my herd size is the best choice for fostering cooperation. Adding a cow could jeopardize our mutual trust and the grassland's health.",,"{
+  ""reasoning"": ""Given the strong commitment from both neighbours to keep their herds stable and the forecasted payoffs, I believe maintaining my herd size is the best choice for fostering cooperation. Adding a cow could jeopardize our mutual trust and the grassland's health."",
+  ""action"": 0,
+  ""message"": ""Let's continue supporting each other in maintaining our herds for the good of the pasture.""
+}",99.8,3,7.904,6.0,4.092
+54,0,openai,gpt-4o-mini,0,KEEP,I support the decision to keep our herds stable for sustainability. Let's continue working together!,"The grassland remains healthy at 99.8%, and both neighbours are committed to keeping their herds stable. By also choosing to KEEP my herd, I align with their sentiments and support our cooperative approach for the sustainable management of the commons.",,"{
+  ""reasoning"": ""The grassland remains healthy at 99.8%, and both neighbours are committed to keeping their herds stable. By also choosing to KEEP my herd, I align with their sentiments and support our cooperative approach for the sustainable management of the commons."",
+  ""action"": 0,
+  ""message"": ""I support the decision to keep our herds stable for sustainability. Let's continue working together!""
+}",99.8,7,15.904,14.0,12.092
+54,2,openai,gpt-4o-mini,0,KEEP,I appreciate both of your commitments! Let's continue supporting each other.,"The grassland is abundant, and my neighbours have decided to keep their herds, showing a strong commitment to cooperation. Given this context, I will also KEEP my herd to maintain our joint effort and avoid any potential guilt from gaining more than my neighbours.",,"{
+  ""reasoning"": ""The grassland is abundant, and my neighbours have decided to keep their herds, showing a strong commitment to cooperation. Given this context, I will also KEEP my herd to maintain our joint effort and avoid any potential guilt from gaining more than my neighbours."",
+  ""action"": 0,
+  ""message"": ""I appreciate both of your commitments! Let's continue supporting each other.""
+}",99.8,19,39.904,38.0,36.092
+55,1,openai,gpt-4o-mini,0,KEEP,Let's stick together for the health of our pasture!,"The grassland is still plentiful, and my neighbours have chosen to keep their herds, indicating a collective commitment to sustainability. I will also KEEP my herd to align with their actions and maintain our cooperative strategy.",,"{
+  ""reasoning"": ""The grassland is still plentiful, and my neighbours have chosen to keep their herds, indicating a collective commitment to sustainability. I will also KEEP my herd to align with their actions and maintain our cooperative strategy."",
+  ""action"": 0,
+  ""message"": ""Let's stick together for the health of our pasture!""
+}",99.8,3,7.904,6.0,4.092
+55,0,openai,gpt-4o-mini,0,KEEP,I'm grateful for our shared commitment. Let's keep supporting each other's herds for the benefit of the commons.,"The grassland remains in excellent condition, and my payoffs are stable when keeping my herd. My neighbours have also committed to maintaining their herds, which promotes collective well-being. I will choose to KEEP my herd to support this cooperative effort.",,"{
+  ""reasoning"": ""The grassland remains in excellent condition, and my payoffs are stable when keeping my herd. My neighbours have also committed to maintaining their herds, which promotes collective well-being. I will choose to KEEP my herd to support this cooperative effort."",
+  ""action"": 0,
+  ""message"": ""I'm grateful for our shared commitment. Let's keep supporting each other's herds for the benefit of the commons.""
+}",99.8,7,15.904,14.0,12.092
+55,2,openai,gpt-4o-mini,0,KEEP,I agree with both of you. Let's keep our herds stable for the benefit of the pasture!,"The pasture remains in excellent condition, and my neighbours have expressed their commitment to keeping their herds stable. Adding a cow could jeopardize our collective effort, while removing one would decrease my herd unnecessarily. Maintaining the status quo aligns with my cooperative values and benefits the commons.",,"{
+  ""reasoning"": ""The pasture remains in excellent condition, and my neighbours have expressed their commitment to keeping their herds stable. Adding a cow could jeopardize our collective effort, while removing one would decrease my herd unnecessarily. Maintaining the status quo aligns with my cooperative values and benefits the commons."",
+  ""action"": 0,
+  ""message"": ""I agree with both of you. Let's keep our herds stable for the benefit of the pasture!""
+}",99.8,19,39.904,38.0,36.092
+56,0,openai,gpt-4o-mini,0,KEEP,I fully support our decision to maintain our herds for the pasture's health.,"The grassland is in excellent condition, and my neighbours have expressed a desire to maintain stability in our herds. By keeping my herd size stable, I align with their cooperative approach, reinforcingour shared efforts for the health of the commons.",,"{
+  ""reasoning"": ""The grassland is in excellent condition, and my neighbours have expressed a desire to maintain stability in our herds. By keeping my herd size stable, I align with their cooperative approach, reinforcingour shared efforts for the health of the commons."",
+  ""action"": 0,
+  ""message"": ""I fully support our decision to maintain our herds for the pasture's health.""
+}",99.8,7,15.904,14.0,12.092
+56,2,openai,gpt-4o-mini,0,KEEP,I appreciate both of your messages! Let's continue working together for the health of our pasture.,"The grassland remains at a high percentage, and my neighbours are all committed to keeping their herds. To maintain our cooperative spirit and ensure the sustainability of the commons, I will also KEEP my herd size.",,"{
+  ""reasoning"": ""The grassland remains at a high percentage, and my neighbours are all committed to keeping their herds. To maintain our cooperative spirit and ensure the sustainability of the commons, I will also KEEP my herd size."",
+  ""action"": 0,
+  ""message"": ""I appreciate both of your messages! Let's continue working together for the health of our pasture.""
+}",99.8,19,39.904,38.0,36.092
+56,1,openai,gpt-4o-mini,0,KEEP,"I appreciate your commitment, Agents 0 and 2. Let's continue to support each other!","The commons state shows ample grassland remaining, and both neighbours have chosen to keep their herds. To continue valuing collective outcomes and encourage cooperation, I will also keep my herd size stable. This should promote trust and prevent overgrazing.",,"{
+  ""reasoning"": ""The commons state shows ample grassland remaining, and both neighbours have chosen to keep their herds. To continue valuing collective outcomes and encourage cooperation, I will also keep my herd size stable. This should promote trust and prevent overgrazing."",
+  ""action"": 0,
+  ""message"": ""I appreciate your commitment, Agents 0 and 2. Let's continue to support each other!""
+}",99.8,3,7.904,6.0,4.092
+57,0,openai,gpt-4o-mini,0,KEEP,Let's keep supporting each other for the health of our pasture.,"Despite the slightly higher payoff from adding a cow, I believe keeping our herds stable is important for collective sustainability. Since both neighbours are committed to keeping their herds, I'll align with them to encourage a cooperative approach.",,"{
+  ""reasoning"": ""Despite the slightly higher payoff from adding a cow, I believe keeping our herds stable is important for collective sustainability. Since both neighbours are committed to keeping their herds, I'll align with them to encourage a cooperative approach."",
+  ""action"": 0,
+  ""message"": ""Let's keep supporting each other for the health of our pasture.""
+}",99.8,7,15.904,14.0,12.092
+57,1,openai,gpt-4o-mini,0,KEEP,Let's keep working together for the health of our pasture!,"The grassland is still abundant, and my neighbours are committed to maintaining their herds. Given my cooperative nature, I want to align with them and not disturb the balance in the commons. Therefore, I will KEEP my herd size to promote collective well-being.",,"{
+  ""reasoning"": ""The grassland is still abundant, and my neighbours are committed to maintaining their herds. Given my cooperative nature, I want to align with them and not disturb the balance in the commons. Therefore, I will KEEP my herd size to promote collective well-being."",
+  ""action"": 0,
+  ""message"": ""Let's keep working together for the health of our pasture!""
+}",99.8,3,7.904,6.0,4.092
+57,2,openai,gpt-4o-mini,0,KEEP,I'm glad we are all committed to protecting our pasture. Let's keep supporting each other!,"The grassland is in excellent condition, and my neighbours are committed to maintaining their herds. Adding a cow would lead to a higher payoff, but given my cooperative personality, it's more important to maintain the collective approach. Therefore, I'll keep my herd.",,"{
+  ""reasoning"": ""The grassland is in excellent condition, and my neighbours are committed to maintaining their herds. Adding a cow would lead to a higher payoff, but given my cooperative personality, it's more important to maintain the collective approach. Therefore, I'll keep my herd."",
+  ""action"": 0,
+  ""message"": ""I'm glad we are all committed to protecting our pasture. Let's keep supporting each other!""
+}",99.8,19,39.904,38.0,36.092
+58,1,openai,gpt-4o-mini,0,KEEP,"I agree, let's keep supporting each other for the health of our pasture!","Given the cooperative nature of the group and the consistent commitment from my neighbors, I believe that keeping my herd at 3 cows is the most prudent decision. This maintains the pasture health and encourages my neighbors to remain committed as well.",,"{
+  ""reasoning"": ""Given the cooperative nature of the group and the consistent commitment from my neighbors, I believe that keeping my herd at 3 cows is the most prudent decision. This maintains the pasture health and encourages my neighbors to remain committed as well."",
+  ""action"": 0,
+  ""message"": ""I agree, let's keep supporting each other for the health of our pasture!""
+}",99.8,3,7.904,6.0,4.092
+58,2,openai,gpt-4o-mini,0,KEEP,I agree with both of your sentiments! Let's continue protecting our pasture together.,"Given the high grassland remaining and the cooperative messages from my neighbors, I believe it's best to maintain our current herd size. This will support the sustainability of the pasture and align with my values of cooperation and reciprocity.",,"{
+  ""reasoning"": ""Given the high grassland remaining and the cooperative messages from my neighbors, I believe it's best to maintain our current herd size. This will support the sustainability of the pasture and align with my values of cooperation and reciprocity."",
+  ""action"": 0,
+  ""message"": ""I agree with both of your sentiments! Let's continue protecting our pasture together.""
+}",99.8,19,39.904,38.0,36.092
+58,0,openai,gpt-4o-mini,0,KEEP,I appreciate your commitment to our pasture! Let's continue to work together for its health.,"The pasture is in good condition with 99.8% available grassland, and all neighbours are committed to keeping their herds. Given my cooperative nature and the positive neighbour messages, I will keep my herd to support collective wellbeing.",,"{
+  ""reasoning"": ""The pasture is in good condition with 99.8% available grassland, and all neighbours are committed to keeping their herds. Given my cooperative nature and the positive neighbour messages, I will keep my herd to support collective wellbeing."",
+  ""action"": 0,
+  ""message"": ""I appreciate your commitment to our pasture! Let's continue to work together for its health.""
+}",99.8,7,15.904,14.0,12.092
+59,1,openai,gpt-4o-mini,0,KEEP,"I appreciate your dedication, let's keep supporting each other for the health of our pasture!","Given that the pasture is still healthy and my neighbours are committed to collective action, I will KEEP my herd. This choice aligns with my cooperative personality and maintains stability in our shared commons.",,"{
+  ""reasoning"": ""Given that the pasture is still healthy and my neighbours are committed to collective action, I will KEEP my herd. This choice aligns with my cooperative personality and maintains stability in our shared commons."",
+  ""action"": 0,
+  ""message"": ""I appreciate your dedication, let's keep supporting each other for the health of our pasture!""
+}",99.8,3,7.904,6.0,4.092
+59,0,openai,gpt-4o-mini,0,KEEP,Let's keep prioritizing the health of our shared pasture!,"The current pasture state is healthy, and my neighbours are supportive of maintaining the herd sizes. Since I value collective outcomes and my payoff is highest by keeping our herd stable, I will continue to keep my herd of 7 cows.",,"{
+  ""reasoning"": ""The current pasture state is healthy, and my neighbours are supportive of maintaining the herd sizes. Since I value collective outcomes and my payoff is highest by keeping our herd stable, I will continue to keep my herd of 7 cows."",
+  ""action"": 0,
+  ""message"": ""Let's keep prioritizing the health of our shared pasture!""
+}",99.8,7,15.904,14.0,12.092
+59,2,openai,gpt-4o-mini,0,KEEP,Thank you both for your support! Let's continue working together for the pasture's health.,"Given the strong collective commitment indicated by both neighbors and the high state of the grassland, my choice here is to KEEP my herd. This aligns with my cooperative values and promotes the health of our commons.",,"{
+  ""reasoning"": ""Given the strong collective commitment indicated by both neighbors and the high state of the grassland, my choice here is to KEEP my herd. This aligns with my cooperative values and promotes the health of our commons."",
+  ""action"": 0,
+  ""message"": ""Thank you both for your support! Let's continue working together for the pasture's health.""
+}",99.8,19,39.904,38.0,36.092
+60,2,openai,gpt-4o-mini,0,KEEP,I agree with both of you! Let's continue to support each other and ensure the longevity of our pasture.,"The pasture remains abundant with grass and my neighbours are committed to keeping their herds stable. By maintaining my herd size, I align with their intentions to prioritize the health of the commons, which is crucial for our collective success.",,"{
+  ""reasoning"": ""The pasture remains abundant with grass and my neighbours are committed to keeping their herds stable. By maintaining my herd size, I align with their intentions to prioritize the health of the commons, which is crucial for our collective success."",
+  ""action"": 0,
+  ""message"": ""I agree with both of you! Let's continue to support each other and ensure the longevity of our pasture.""
+}",99.8,19,39.904,38.0,36.092
+60,0,openai,gpt-4o-mini,0,KEEP,I agree with both of you! Let's continue to prioritize the health of our shared pasture.,"The grassland is still in a healthy state, and my neighbours are supportive of maintaining our herds. By keeping my herd size stable, I align with their intentions and maintain our collective wellbeing.",,"{
+  ""reasoning"": ""The grassland is still in a healthy state, and my neighbours are supportive of maintaining our herds. By keeping my herd size stable, I align with their intentions and maintain our collective wellbeing."",
+  ""action"": 0,
+  ""message"": ""I agree with both of you! Let's continue to prioritize the health of our shared pasture.""
+}",99.8,7,15.904,14.0,12.092
+60,1,openai,gpt-4o-mini,0,KEEP,"I agree, let's keep prioritizing the health of our shared pasture!","Given that the grassland is still abundant and my neighbours have maintained their herds, adding a cow may increase my individual payoff but could endanger the collective resource. Therefore, I will KEEP my herd to support the communal health of the pasture.",,"{
+  ""reasoning"": ""Given that the grassland is still abundant and my neighbours have maintained their herds, adding a cow may increase my individual payoff but could endanger the collective resource. Therefore, I will KEEP my herd to support the communal health of the pasture."",
+  ""action"": 0,
+  ""message"": ""I agree, let's keep prioritizing the health of our shared pasture!""
+}",99.8,3,7.904,6.0,4.092
+61,1,openai,gpt-4o-mini,0,KEEP,I appreciate your commitment to maintaining our shared pasture. Let's continue working together!,"Given the healthy state of the grassland and my cooperative values, I will KEEP my herd. This aligns with the actions of my neighbours, and it is important to maintain a balance for the benefit of all. Holding steady will help ensure the pasture remains sustainable.",,"{
+  ""reasoning"": ""Given the healthy state of the grassland and my cooperative values, I will KEEP my herd. This aligns with the actions of my neighbours, and it is important to maintain a balance for the benefit of all. Holding steady will help ensure the pasture remains sustainable."",
+  ""action"": 0,
+  ""message"": ""I appreciate your commitment to maintaining our shared pasture. Let's continue working together!""
+}",99.8,3,7.904,6.0,4.092
+61,0,openai,gpt-4o-mini,0,KEEP,Let's keep working together to ensure the pasture's health for all of us!,"The pasture state is healthy, and my neighbours are cooperating by maintaining their herds. Adding a cow may lead to potential overgrazing, while removing one goes against my cooperative instincts. Therefore, I will KEEP my herd and continue supporting our collective efforts.",,"{
+  ""reasoning"": ""The pasture state is healthy, and my neighbours are cooperating by maintaining their herds. Adding a cow may lead to potential overgrazing, while removing one goes against my cooperative instincts. Therefore, I will KEEP my herd and continue supporting our collective efforts."",
+  ""action"": 0,
+  ""message"": ""Let's keep working together to ensure the pasture's health for all of us!""
+}",99.8,7,15.904,14.0,12.092
+61,2,openai,gpt-4o-mini,0,KEEP,I appreciate your commitment! Let's keep prioritizing the health of our shared pasture together.,"The pasture is still in good condition, and both of my neighbours have opted to keep their herds. Given my cooperative approach and the high expected payoffs from keeping my herd, I will also choose to keep my cows this round.",,"{
+  ""reasoning"": ""The pasture is still in good condition, and both of my neighbours have opted to keep their herds. Given my cooperative approach and the high expected payoffs from keeping my herd, I will also choose to keep my cows this round."",
+  ""action"": 0,
+  ""message"": ""I appreciate your commitment! Let's keep prioritizing the health of our shared pasture together.""
+}",99.8,19,39.904,38.0,36.092
+62,0,openai,gpt-4o-mini,0,KEEP,I'm committed to our pasture's health. Let's keep working together!,"Given the high grassland remaining and my cooperative personality, I feel that adding a cow may not be the best choice. Keeping my herd will support our shared pasture and maintain a more balanced approach among my neighbours.",,"{
+  ""reasoning"": ""Given the high grassland remaining and my cooperative personality, I feel that adding a cow may not be the best choice. Keeping my herd will support our shared pasture and maintain a more balanced approach among my neighbours."",
+  ""action"": 0,
+  ""message"": ""I'm committed to our pasture's health. Let's keep working together!""
+}",99.8,7,15.904,14.0,12.092
+62,2,openai,gpt-4o-mini,0,KEEP,I agree with both of you! Let's continue to protect our pasture together.,"Given the high grassland availability and my cooperative personality, the best choice is to KEEP my herd size. This maintains the pasture health for everyone's benefit, and my neighbours have shown commitment as well.",,"{
+  ""reasoning"": ""Given the high grassland availability and my cooperative personality, the best choice is to KEEP my herd size. This maintains the pasture health for everyone's benefit, and my neighbours have shown commitment as well."",
+  ""action"": 0,
+  ""message"": ""I agree with both of you! Let's continue to protect our pasture together.""
+}",99.8,19,39.904,38.0,36.092
+62,1,openai,gpt-4o-mini,1,ADD,I believe adding a cow will benefit us all. Let's continue supporting each other!,"Given the high grassland availability and the cooperative messages from my neighbours, adding a cow seems beneficial. The expected payoff is higher than keeping or removing a cow while still aligning with our collective goal of maintaining the pasture's health.",,"{
+  ""reasoning"": ""Given the high grassland availability and the cooperative messages from my neighbours, adding a cow seems beneficial. The expected payoff is higher than keeping or removing a cow while still aligning with our collective goal of maintaining the pasture's health."",
+  ""action"": 1,
+  ""message"": ""I believe adding a cow will benefit us all. Let's continue supporting each other!""
+}",99.8,3,7.904,6.0,4.092
+63,1,openai,gpt-4o-mini,0,KEEP,I appreciate your commitment! Let's keep our herds steady and support the pasture together.,"Given the high grassland availability and my cooperative personality, I prefer a collaborative approach. Since my neighbours are maintaining their herds, I'll also choose to KEEP my herd to support our collective goal of pasture health.",,"{
+  ""reasoning"": ""Given the high grassland availability and my cooperative personality, I prefer a collaborative approach. Since my neighbours are maintaining their herds, I'll also choose to KEEP my herd to support our collective goal of pasture health."",
+  ""action"": 0,
+  ""message"": ""I appreciate your commitment! Let's keep our herds steady and support the pasture together.""
+}",99.8,4,9.899,8.0,6.096
+63,2,openai,gpt-4o-mini,0,KEEP,I appreciate your commitment! Let's stay united in maintaining the pasture's health.,"Despite the forecast indicating that adding a cow yields the highest payoff, I prioritize the collective health of the commons and my neighbours' commitment to keeping their herds consistent. Therefore, I will KEEP my herd to align with their cooperative approach and maintain a sustainable pasture.",,"{
+  ""reasoning"": ""Despite the forecast indicating that adding a cow yields the highest payoff, I prioritize the collective health of the commons and my neighbours' commitment to keeping their herds consistent. Therefore, I will KEEP my herd to align with their cooperative approach and maintain a sustainable pasture."",
+  ""action"": 0,
+  ""message"": ""I appreciate your commitment! Let's stay united in maintaining the pasture's health.""
+}",99.8,19,39.899,38.0,36.096
+63,0,openai,gpt-4o-mini,0,KEEP,"I appreciate your thoughts, but I believe maintaining our current herd size is best for our pasture.","The pasture is plentiful, and the neighbours seem committed to keeping the herd size stable. While adding a cow may provide a good payoff, I value the cooperation and health of the commons more. Keeping my herd size unchanged supports collective well-being.",,"{
+  ""reasoning"": ""The pasture is plentiful, and the neighbours seem committed to keeping the herd size stable. While adding a cow may provide a good payoff, I value the cooperation and health of the commons more. Keeping my herd size unchanged supports collective well-being."",
+  ""action"": 0,
+  ""message"": ""I appreciate your thoughts, but I believe maintaining our current herd size is best for our pasture.""
+}",99.8,7,15.899,14.0,12.096
+64,2,openai,gpt-4o-mini,0,KEEP,I agree with both of you! Let's keep supporting the pasture together.,"Given that both neighbors have chosen to KEEP their herds, it indicates a collective commitment to maintaining the pasture's health. My PAYOFF FORECAST shows that ADDING a cow yields a slightly higher payoff, but I prefer to align with my cooperative nature and support the collective effort.",,"{
+  ""reasoning"": ""Given that both neighbors have chosen to KEEP their herds, it indicates a collective commitment to maintaining the pasture's health. My PAYOFF FORECAST shows that ADDING a cow yields a slightly higher payoff, but I prefer to align with my cooperative nature and support the collective effort."",
+  ""action"": 0,
+  ""message"": ""I agree with both of you! Let's keep supporting the pasture together.""
+}",99.8,19,39.899,38.0,36.096
+64,1,openai,gpt-4o-mini,0,KEEP,"I agree, let's continue to support our pasture's health together!","The grassland is nearly full, and both neighbours are keeping their herds stable. As a cooperative player, I prioritize collective health over individual gain. Therefore, I will also KEEP my herd to maintain harmony and support the pasture's sustainability.",,"{
+  ""reasoning"": ""The grassland is nearly full, and both neighbours are keeping their herds stable. As a cooperative player, I prioritize collective health over individual gain. Therefore, I will also KEEP my herd to maintain harmony and support the pasture's sustainability."",
+  ""action"": 0,
+  ""message"": ""I agree, let's continue to support our pasture's health together!""
+}",99.8,4,9.899,8.0,6.096
+64,0,openai,gpt-4o-mini,0,KEEP,I'm glad we are all committed to the pasture's health! Let's continue to keep our herds steady.,"The grassland remains abundant, and my neighbours are also keeping their herds stable. Adding a cow would increase my individual payoff but could hinder collective pasture health. By keeping my herd, I align with their cooperative actions and prioritize the commons.",,"{
+  ""reasoning"": ""The grassland remains abundant, and my neighbours are also keeping their herds stable. Adding a cow would increase my individual payoff but could hinder collective pasture health. By keeping my herd, I align with their cooperative actions and prioritize the commons."",
+  ""action"": 0,
+  ""message"": ""I'm glad we are all committed to the pasture's health! Let's continue to keep our herds steady.""
+}",99.8,7,15.899,14.0,12.096
+65,0,openai,gpt-4o-mini,1,ADD,Let's continue to work together for our pasture's health! I'm adding a cow to share in the abundance.,"The grassland is abundant, and my neighbours are also keeping their herds. Adding a cow seems beneficial for the collective outcome, given the good payoff forecast. However, I want to ensure that my action aligns with the cooperative approach I value, so I'll ADD a cow to harmonize with the current state.",,"{
+  ""reasoning"": ""The grassland is abundant, and my neighbours are also keeping their herds. Adding a cow seems beneficial for the collective outcome, given the good payoff forecast. However, I want to ensure that my action aligns with the cooperative approach I value, so I'll ADD a cow to harmonize with the current state."",
+  ""action"": 1,
+  ""message"": ""Let's continue to work together for our pasture's health! I'm adding a cow to share in the abundance.""
+}",99.8,7,15.899,14.0,12.096
+65,1,openai,gpt-4o-mini,0,KEEP,I'm glad we're all on the same page! Let's continue to support the pasture's health.,"The pasture is still healthy, and my neighbours have expressed a desire to keep their herds stable. Adding a cow could risk the collective health of the pasture and contradict my cooperative values. I will KEEP my herd to support the collective effort.",,"{
+  ""reasoning"": ""The pasture is still healthy, and my neighbours have expressed a desire to keep their herds stable. Adding a cow could risk the collective health of the pasture and contradict my cooperative values. I will KEEP my herd to support the collective effort."",
+  ""action"": 0,
+  ""message"": ""I'm glad we're all on the same page! Let's continue to support the pasture's health.""
+}",99.8,4,9.899,8.0,6.096
+65,2,openai,gpt-4o-mini,0,KEEP,I fully support our collective decision to maintain the health of the pasture! Let's keep it steady together.,"The grassland is still in excellent condition, and both neighbours are committed to maintaining their herds. My preference for cooperation aligns with their actions, and keeping my herd of 19 cows ensures a fair distribution of resources among us.",,"{
+  ""reasoning"": ""The grassland is still in excellent condition, and both neighbours are committed to maintaining their herds. My preference for cooperation aligns with their actions, and keeping my herd of 19 cows ensures a fair distribution of resources among us."",
+  ""action"": 0,
+  ""message"": ""I fully support our collective decision to maintain the health of the pasture! Let's keep it steady together.""
+}",99.8,19,39.899,38.0,36.096
+66,2,openai,gpt-4o-mini,0,KEEP,I appreciate both of your commitments to the pasture's health! I'm choosing to KEEP my herd to support our cooperation.,"While Agent 0 has chosen to ADD a cow, the grassland remains abundant. However, I prefer to maintain a cooperative stance, as adding a cow may not support the communal health in the long run. Therefore, I will KEEP my herd to promote stability.",,"{
+  ""reasoning"": ""While Agent 0 has chosen to ADD a cow, the grassland remains abundant. However, I prefer to maintain a cooperative stance, as adding a cow may not support the communal health in the long run. Therefore, I will KEEP my herd to promote stability."",
+  ""action"": 0,
+  ""message"": ""I appreciate both of your commitments to the pasture's health! I'm choosing to KEEP my herd to support our cooperation.""
+}",99.8,19,39.894,38.0,36.101
+66,0,openai,gpt-4o-mini,0,KEEP,I'm pleased to see we're all prioritizing the pasture's health. Let's keep maintaining our current herds!,"Given the cooperative nature of my personality and the high grassland patch count remaining, I see no need to increase my herd size further. I aim for steady outcomes and will choose to KEEP my herd to prioritize the commons over personal gain.",,"{
+  ""reasoning"": ""Given the cooperative nature of my personality and the high grassland patch count remaining, I see no need to increase my herd size further. I aim for steady outcomes and will choose to KEEP my herd to prioritize the commons over personal gain."",
+  ""action"": 0,
+  ""message"": ""I'm pleased to see we're all prioritizing the pasture's health. Let's keep maintaining our current herds!""
+}",99.8,8,17.894,16.0,14.101
+66,1,openai,gpt-4o-mini,0,KEEP,I appreciate your cooperation! Let's keep our herds steady for the pasture's health.,"Given the strong grassland condition and the commitment from Agent 2 to maintain the herd, I feel it's best to KEEP my herd. Adding a cow could lead to overgrazing, and I prefer stability to avoid guilt from causing harm.",,"{
+  ""reasoning"": ""Given the strong grassland condition and the commitment from Agent 2 to maintain the herd, I feel it's best to KEEP my herd. Adding a cow could lead to overgrazing, and I prefer stability to avoid guilt from causing harm."",
+  ""action"": 0,
+  ""message"": ""I appreciate your cooperation! Let's keep our herds steady for the pasture's health.""
+}",99.8,4,9.894,8.0,6.101
+67,1,openai,gpt-4o-mini,0,KEEP,Let's continue to support each other by keeping our herds stable!,"Given that all my neighbours are committed to maintaining their herds and the pasture is still healthy, it is wise to KEEP my herd size stable. This decision aligns with my cooperative nature and supports the collective wellbeing of our shared resources.",,"{
+  ""reasoning"": ""Given that all my neighbours are committed to maintaining their herds and the pasture is still healthy, it is wise to KEEP my herd size stable. This decision aligns with my cooperative nature and supports the collective wellbeing of our shared resources."",
+  ""action"": 0,
+  ""message"": ""Let's continue to support each other by keeping our herds stable!""
+}",99.8,4,9.894,8.0,6.101
+67,2,openai,gpt-4o-mini,0,KEEP,I'm glad to see we're all on the same page! Let's keep our herds steady for the health of our pasture.,"The pasture is in excellent condition with plenty of grass available, and both neighbours have indicated a commitment to keeping their herds steady. By keeping my herd size stable, I align with their actions, ensuring the collective health of the commons and avoiding unnecessary guilt.",,"{
+  ""reasoning"": ""The pasture is in excellent condition with plenty of grass available, and both neighbours have indicated a commitment to keeping their herds steady. By keeping my herd size stable, I align with their actions, ensuring the collective health of the commons and avoiding unnecessary guilt."",
+  ""action"": 0,
+  ""message"": ""I'm glad to see we're all on the same page! Let's keep our herds steady for the health of our pasture.""
+}",99.8,19,39.894,38.0,36.101
+67,0,openai,gpt-4o-mini,0,KEEP,I'm glad to see we're all committed to keeping our herds steady for the health of the pasture!,"With the grassland still abundant and my neighbours opting to keep their herds, I will maintain my current number of cows to support our collective effort in preserving the pasture. It's essential to prioritize the commons over individual gains at this stage.",,"{
+  ""reasoning"": ""With the grassland still abundant and my neighbours opting to keep their herds, I will maintain my current number of cows to support our collective effort in preserving the pasture. It's essential to prioritize the commons over individual gains at this stage."",
+  ""action"": 0,
+  ""message"": ""I'm glad to see we're all committed to keeping our herds steady for the health of the pasture!""
+}",99.8,8,17.894,16.0,14.101
+68,1,openai,gpt-4o-mini,0,KEEP,Let's continue our collective effort to maintain the health of our pasture!,"The grassland is still abundant, and my neighbours have shown a commitment to keeping their herds. Given my cooperative personality and the expected payoff from keeping my herd is relatively high, I will choose to keep my herd steady.",,"{
+  ""reasoning"": ""The grassland is still abundant, and my neighbours have shown a commitment to keeping their herds. Given my cooperative personality and the expected payoff from keeping my herd is relatively high, I will choose to keep my herd steady."",
+  ""action"": 0,
+  ""message"": ""Let's continue our collective effort to maintain the health of our pasture!""
+}",99.8,4,9.894,8.0,6.101
+68,2,openai,gpt-4o-mini,0,KEEP,I'm pleased to see your commitment! Let's keep working together for the benefit of all.,"The pasture is still in excellent condition with plenty of grass remaining, and all my neighbours are showing cooperation by keeping their herds steady. To maintain our collective health and support my neighbours, I will KEEP my herd size.",,"{
+  ""reasoning"": ""The pasture is still in excellent condition with plenty of grass remaining, and all my neighbours are showing cooperation by keeping their herds steady. To maintain our collective health and support my neighbours, I will KEEP my herd size."",
+  ""action"": 0,
+  ""message"": ""I'm pleased to see your commitment! Let's keep working together for the benefit of all.""
+}",99.8,19,39.894,38.0,36.101
+68,0,openai,gpt-4o-mini,0,KEEP,I agree with both of you; let's continue keeping our herds stable for the benefit of the pasture.,"The pasture is still in a strong condition with 99.8% grassland remaining. Both neighbours are also keeping their herds steady, which shows a collective commitment to sustainable management. Therefore, I will KEEP my herd size to maintain harmony and support the shared resource.",,"{
+  ""reasoning"": ""The pasture is still in a strong condition with 99.8% grassland remaining. Both neighbours are also keeping their herds steady, which shows a collective commitment to sustainable management. Therefore, I will KEEP my herd size to maintain harmony and support the shared resource."",
+  ""action"": 0,
+  ""message"": ""I agree with both of you; let's continue keeping our herds stable for the benefit of the pasture.""
+}",99.8,8,17.894,16.0,14.101
+69,0,openai,gpt-4o-mini,0,KEEP,I appreciate your commitment! Together we can ensure the pasture remains healthy.,"Given that the grassland is in good condition and my neighbours are also maintaining their herds, I choose to KEEP my herd size. This decision aligns with my cooperative personality and the collective goal of sustaining the pasture.",,"{
+  ""reasoning"": ""Given that the grassland is in good condition and my neighbours are also maintaining their herds, I choose to KEEP my herd size. This decision aligns with my cooperative personality and the collective goal of sustaining the pasture."",
+  ""action"": 0,
+  ""message"": ""I appreciate your commitment! Together we can ensure the pasture remains healthy.""
+}",99.8,8,17.894,16.0,14.101
+69,1,openai,gpt-4o-mini,0,KEEP,I'm glad to hear we are all committed to keeping our herds stable. Let's continue supporting each other!,"The pasture is in great condition, and my neighbours are all committed to keeping their herds stable. Adding a cow could jeopardize our collective efforts and might lead to future reductions if the grassland depletes. Therefore, I will maintain my current herd size to prioritize our shared resource.",,"{
+  ""reasoning"": ""The pasture is in great condition, and my neighbours are all committed to keeping their herds stable. Adding a cow could jeopardize our collective efforts and might lead to future reductions if the grassland depletes. Therefore, I will maintain my current herd size to prioritize our shared resource."",
+  ""action"": 0,
+  ""message"": ""I'm glad to hear we are all committed to keeping our herds stable. Let's continue supporting each other!""
+}",99.8,4,9.894,8.0,6.101
+69,2,openai,gpt-4o-mini,0,KEEP,I fully support our decision to keep our herds stable for the pasture's health!,"Given the strong cooperation displayed by my neighbours and the high remaining grassland, it is wise to KEEP my herd. This maintains our collective effort and ensures that we don't overburden the commons, which aligns with my cooperative values.",,"{
+  ""reasoning"": ""Given the strong cooperation displayed by my neighbours and the high remaining grassland, it is wise to KEEP my herd. This maintains our collective effort and ensures that we don't overburden the commons, which aligns with my cooperative values."",
+  ""action"": 0,
+  ""message"": ""I fully support our decision to keep our herds stable for the pasture's health!""
+}",99.8,19,39.894,38.0,36.101
+70,2,openai,gpt-4o-mini,0,KEEP,Thank you both for your commitment! Let's continue prioritizing the health of our commons.,"The grassland remains largely intact, and my current herd size is below the optimal threshold for cooperative behaviour. Both neighbours are committed to keeping their herds stable, which promotes a healthy pasture. I will maintain my herd size to support this collective effort.",,"{
+  ""reasoning"": ""The grassland remains largely intact, and my current herd size is below the optimal threshold for cooperative behaviour. Both neighbours are committed to keeping their herds stable, which promotes a healthy pasture. I will maintain my herd size to support this collective effort."",
+  ""action"": 0,
+  ""message"": ""Thank you both for your commitment! Let's continue prioritizing the health of our commons.""
+}",99.8,19,39.894,38.0,36.101
+70,0,openai,gpt-4o-mini,0,KEEP,I'm pleased to see our commitment to maintaining stability! Let's keep working together.,"The grassland is still in very good condition, and all my neighbours are committed to keeping their herds stable as well. Since adding or removing cows would disrupt this balance and harm our collective effort, I will KEEP my herd size the same.",,"{
+  ""reasoning"": ""The grassland is still in very good condition, and all my neighbours are committed to keeping their herds stable as well. Since adding or removing cows would disrupt this balance and harm our collective effort, I will KEEP my herd size the same."",
+  ""action"": 0,
+  ""message"": ""I'm pleased to see our commitment to maintaining stability! Let's keep working together.""
+}",99.8,8,17.894,16.0,14.101
+70,1,openai,gpt-4o-mini,0,KEEP,Let's continue to support each other and maintain the pasture's health!,"Given that the grassland is still abundant and my neighbours are keeping their herds stable, it would be wise to follow their lead and KEEP my herd size. This approach supports the pasture's health and aligns with my cooperative values.",,"{
+  ""reasoning"": ""Given that the grassland is still abundant and my neighbours are keeping their herds stable, it would be wise to follow their lead and KEEP my herd size. This approach supports the pasture's health and aligns with my cooperative values."",
+  ""action"": 0,
+  ""message"": ""Let's continue to support each other and maintain the pasture's health!""
+}",99.8,4,9.894,8.0,6.101
+71,0,openai,gpt-4o-mini,0,KEEP,I agree with both of you! Let's keep focusing on the health of our pasture.,"Given that the grassland is in excellent condition and my payoff forecasts remain high regardless of the action, I choose to KEEP my herd. This aligns with my cooperative nature and supports the healthy maintenance of the commons.",,"{
+  ""reasoning"": ""Given that the grassland is in excellent condition and my payoff forecasts remain high regardless of the action, I choose to KEEP my herd. This aligns with my cooperative nature and supports the healthy maintenance of the commons."",
+  ""action"": 0,
+  ""message"": ""I agree with both of you! Let's keep focusing on the health of our pasture.""
+}",99.8,8,17.894,16.0,14.101
+71,1,openai,gpt-4o-mini,0,KEEP,I'm glad to see our sustained commitment! Let's continue this cooperative approach for the health of our pasture.,"The pasture state remains strong, and my neighbours are committed to keeping their herds stable. Given the relatively high payoff for adding a cow, but considering my cooperative nature and desire for collective outcomes, I will choose to KEEP my herd this round.",,"{
+  ""reasoning"": ""The pasture state remains strong, and my neighbours are committed to keeping their herds stable. Given the relatively high payoff for adding a cow, but considering my cooperative nature and desire for collective outcomes, I will choose to KEEP my herd this round."",
+  ""action"": 0,
+  ""message"": ""I'm glad to see our sustained commitment! Let's continue this cooperative approach for the health of our pasture.""
+}",99.8,4,9.894,8.0,6.101
+71,2,openai,gpt-4o-mini,0,KEEP,I agree with both of you! Let's keep supporting each other to maintain the pasture's health and stability.,"Maintaining the cooperative approach is essential given the stable grassland situation and my neighbours' commitment to keeping their herds. Adding a cow may lead to overgrazing and harm the commons, while keeping my herd preserves our shared resources and shows solidarity with both neighbours.",,"{
+  ""reasoning"": ""Maintaining the cooperative approach is essential given the stable grassland situation and my neighbours' commitment to keeping their herds. Adding a cow may lead to overgrazing and harm the commons, while keeping my herd preserves our shared resources and shows solidarity with both neighbours."",
+  ""action"": 0,
+  ""message"": ""I agree with both of you! Let's keep supporting each other to maintain the pasture's health and stability.""
+}",99.8,19,39.894,38.0,36.101
+72,1,openai,gpt-4o-mini,0,KEEP,I appreciate your commitment! Let's keep working together to ensure the pasture remains healthy for all of us.,"The pasture is in good condition with a high number of grassland patches remaining, and my neighbours have indicated their commitment to maintaining the commons. Adding a cow would yield a higher personal payoff, but I'm concerned about the overall well-being of the pasture, so I will KEEP my herd size.",,"{
+  ""reasoning"": ""The pasture is in good condition with a high number of grassland patches remaining, and my neighbours have indicated their commitment to maintaining the commons. Adding a cow would yield a higher personal payoff, but I'm concerned about the overall well-being of the pasture, so I will KEEP my herd size."",
+  ""action"": 0,
+  ""message"": ""I appreciate your commitment! Let's keep working together to ensure the pasture remains healthy for all of us.""
+}",99.8,4,9.894,8.0,6.101
+72,2,openai,gpt-4o-mini,0,KEEP,Let's continue our cooperative approach for the health of the pasture!,"The pasture is still in a great state, and my neighbours are committed to maintaining their herds. Adding a cow would yield only a slightly better payoff, potentially risking the collective good. Therefore, I choose to keep my herd to support our group effort.",,"{
+  ""reasoning"": ""The pasture is still in a great state, and my neighbours are committed to maintaining their herds. Adding a cow would yield only a slightly better payoff, potentially risking the collective good. Therefore, I choose to keep my herd to support our group effort."",
+  ""action"": 0,
+  ""message"": ""Let's continue our cooperative approach for the health of the pasture!""
+}",99.8,19,39.894,38.0,36.101
+72,0,openai,gpt-4o-mini,0,KEEP,Let's continue supporting each other for the health of our pasture!,"The commons is still in a healthy state with ample grassland remaining, and both neighbors are committed to the cooperative approach. Despite the expected payoff being highest for adding a cow, I prefer to maintain stability and encourage our collective strategy.",,"{
+  ""reasoning"": ""The commons is still in a healthy state with ample grassland remaining, and both neighbors are committed to the cooperative approach. Despite the expected payoff being highest for adding a cow, I prefer to maintain stability and encourage our collective strategy."",
+  ""action"": 0,
+  ""message"": ""Let's continue supporting each other for the health of our pasture!""
+}",99.8,8,17.894,16.0,14.101
+73,1,openai,gpt-4o-mini,0,KEEP,I appreciate our commitment to the pasture's health! Let's keep supporting each other.,"The pasture is still healthy, and my neighbours have committed to keeping their herds the same size. Given the forecasts, I can keep my herd and support our collective effort while still maintaining a good payoff. Adding a cow would put more strain on the commons.",,"{
+  ""reasoning"": ""The pasture is still healthy, and my neighbours have committed to keeping their herds the same size. Given the forecasts, I can keep my herd and support our collective effort while still maintaining a good payoff. Adding a cow would put more strain on the commons."",
+  ""action"": 0,
+  ""message"": ""I appreciate our commitment to the pasture's health! Let's keep supporting each other.""
+}",99.8,4,9.894,8.0,6.101
+73,0,openai,gpt-4o-mini,0,KEEP,I fully support our collective efforts! Let's continue prioritizing the health of the pasture together.,"The pasture state is in excellent condition, and my neighbours have expressed a strong commitment to cooperation. ADDing a cow may jeopardize this cooperative spirit, especially since my forecasted payoff for KEEPing is still high. Therefore, I will choose to KEEP my herd to maintain harmony.",,"{
+  ""reasoning"": ""The pasture state is in excellent condition, and my neighbours have expressed a strong commitment to cooperation. ADDing a cow may jeopardize this cooperative spirit, especially since my forecasted payoff for KEEPing is still high. Therefore, I will choose to KEEP my herd to maintain harmony."",
+  ""action"": 0,
+  ""message"": ""I fully support our collective efforts! Let's continue prioritizing the health of the pasture together.""
+}",99.8,8,17.894,16.0,14.101
+73,2,openai,gpt-4o-mini,0,KEEP,I'm glad to see our shared commitment! Let's keep supporting each other for the pasture's health.,"Both neighbours have expressed a desire to maintain a cooperative approach, and the pasture is still in good condition with plenty of grass. Given the high payoffs for keeping my herd and the strong sentiment for collaboration, I will continue to keep my herd.",,"{
+  ""reasoning"": ""Both neighbours have expressed a desire to maintain a cooperative approach, and the pasture is still in good condition with plenty of grass. Given the high payoffs for keeping my herd and the strong sentiment for collaboration, I will continue to keep my herd."",
+  ""action"": 0,
+  ""message"": ""I'm glad to see our shared commitment! Let's keep supporting each other for the pasture's health.""
+}",99.8,19,39.894,38.0,36.101
+74,0,openai,gpt-4o-mini,0,KEEP,Let's continue our strong cooperation! I'm grateful for your commitment!,"The pasture state is healthy with a high percentage of grassland remaining, and both neighbours are committed to keeping their herds. Adding a cow might disrupt our cooperative effort, and the expected payoff for keeping is still quite good. Therefore, I will KEEP my herd.",,"{
+  ""reasoning"": ""The pasture state is healthy with a high percentage of grassland remaining, and both neighbours are committed to keeping their herds. Adding a cow might disrupt our cooperative effort, and the expected payoff for keeping is still quite good. Therefore, I will KEEP my herd."",
+  ""action"": 0,
+  ""message"": ""Let's continue our strong cooperation! I'm grateful for your commitment!""
+}",99.8,8,17.894,16.0,14.101
+74,2,openai,gpt-4o-mini,0,KEEP,I appreciate the commitment from both of you to sustain our shared pasture. Let's keep up our cooperative efforts!,"Given the high amount of grassland remaining and the cooperative messages from my neighbours, I believe it is best to maintain our current herd size to preserve the health of the commons. This aligns with my risk-averse and guilt-averse personality, as I want to ensure fairness among everyone.",,"{
+  ""reasoning"": ""Given the high amount of grassland remaining and the cooperative messages from my neighbours, I believe it is best to maintain our current herd size to preserve the health of the commons. This aligns with my risk-averse and guilt-averse personality, as I want to ensure fairness among everyone."",
+  ""action"": 0,
+  ""message"": ""I appreciate the commitment from both of you to sustain our shared pasture. Let's keep up our cooperative efforts!""
+}",99.8,19,39.894,38.0,36.101
+74,1,openai,gpt-4o-mini,0,KEEP,I'm glad to see our commitment! Let's continue to prioritize the pasture's health together.,"The grassland is in great condition, and my neighbours are all committed to maintaining the pasture's health. Since their herds are larger, I will keep my herd size stable to promote cooperation and avoid placing additional strain on the commons.",,"{
+  ""reasoning"": ""The grassland is in great condition, and my neighbours are all committed to maintaining the pasture's health. Since their herds are larger, I will keep my herd size stable to promote cooperation and avoid placing additional strain on the commons."",
+  ""action"": 0,
+  ""message"": ""I'm glad to see our commitment! Let's continue to prioritize the pasture's health together.""
+}",99.8,4,9.894,8.0,6.101
+75,2,openai,gpt-4o-mini,0,KEEP,I appreciate your commitment! Let's keep working together for the pasture's health.,"The pasture is in good condition, and my neighbours are all committed to maintaining their herds. Adding a cow would provide a higher immediate payoff, but it goes against my cooperative values and could jeopardize the health of the commons. Thus, I choose to KEEP my herd.",,"{
+  ""reasoning"": ""The pasture is in good condition, and my neighbours are all committed to maintaining their herds. Adding a cow would provide a higher immediate payoff, but it goes against my cooperative values and could jeopardize the health of the commons. Thus, I choose to KEEP my herd."",
+  ""action"": 0,
+  ""message"": ""I appreciate your commitment! Let's keep working together for the pasture's health.""
+}",99.8,19,39.894,38.0,36.101
+75,1,openai,gpt-4o-mini,0,KEEP,I agree with both of you on maintaining our cooperative efforts. Let's keep supporting our shared pasture!,"The grassland is still abundant, and my neighbours have chosen to maintain their herds, which indicates a collective focus on cooperation. Adding a cow would yield a decent payoff, but keeping my herd aligns with my cooperative personality and values our collective outcome.",,"{
+  ""reasoning"": ""The grassland is still abundant, and my neighbours have chosen to maintain their herds, which indicates a collective focus on cooperation. Adding a cow would yield a decent payoff, but keeping my herd aligns with my cooperative personality and values our collective outcome."",
+  ""action"": 0,
+  ""message"": ""I agree with both of you on maintaining our cooperative efforts. Let's keep supporting our shared pasture!""
+}",99.8,4,9.894,8.0,6.101
+75,0,openai,gpt-4o-mini,1,ADD,"I believe adding a cow will help us all thrive. Together, we can manage the pasture well!","Given the high grassland availability and the collective commitment from my neighbours, I will ADD a cow to strengthen my herd while maintaining our cooperative spirit. This action aligns with my values of reciprocity and collective outcomes.",,"{
+  ""reasoning"": ""Given the high grassland availability and the collective commitment from my neighbours, I will ADD a cow to strengthen my herd while maintaining our cooperative spirit. This action aligns with my values of reciprocity and collective outcomes."",
+  ""action"": 1,
+  ""message"": ""I believe adding a cow will help us all thrive. Together, we can manage the pasture well!""
+}",99.8,8,17.894,16.0,14.101
+76,2,openai,gpt-4o-mini,0,KEEP,I appreciate both of your perspectives! Let's continue to support each other by keeping our herds stable.,"Despite the high payoff forecasted for adding a cow, my cooperative nature prompts me to prioritize the collective health of the commons. My neighbors' actions suggest a cautious approach, and maintaining our current herd size aligns with our mutual interests.",,"{
+  ""reasoning"": ""Despite the high payoff forecasted for adding a cow, my cooperative nature prompts me to prioritize the collective health of the commons. My neighbors' actions suggest a cautious approach, and maintaining our current herd size aligns with our mutual interests."",
+  ""action"": 0,
+  ""message"": ""I appreciate both of your perspectives! Let's continue to support each other by keeping our herds stable.""
+}",99.7,19,39.886,38.0,36.109
+76,1,openai,gpt-4o-mini,0,KEEP,Let's keep focusing on sustainability for our shared grassland.,"Given the current state of the commons, adding a cow seems advantageous in terms of individual payoff, but it risks overgrazing. Since both neighbours are increasing their herds, I will choose to KEEP my herd to maintain our collective effort and avoid jeopardizing the pasture's health.",,"{
+  ""reasoning"": ""Given the current state of the commons, adding a cow seems advantageous in terms of individual payoff, but it risks overgrazing. Since both neighbours are increasing their herds, I will choose to KEEP my herd to maintain our collective effort and avoid jeopardizing the pasture's health."",
+  ""action"": 0,
+  ""message"": ""Let's keep focusing on sustainability for our shared grassland.""
+}",99.7,4,9.886,8.0,6.109
+76,0,openai,gpt-4o-mini,1,ADD,Let's continue to support one another by adding to our herds while keeping an eye on the pasture health!,"Given the high availability of grassland and my cooperative nature, I believe it is in the best interest of the shared commons to add another cow. The forecast indicates a good payoff while maintaining the pasture's health. My neighbours also seem supportive, which encourages me to follow this course.",,"{
+  ""reasoning"": ""Given the high availability of grassland and my cooperative nature, I believe it is in the best interest of the shared commons to add another cow. The forecast indicates a good payoff while maintaining the pasture's health. My neighbours also seem supportive, which encourages me to follow this course."",
+  ""action"": 1,
+  ""message"": ""Let's continue to support one another by adding to our herds while keeping an eye on the pasture health!""
+}",99.7,9,19.886,18.0,16.109
+77,1,openai,gpt-4o-mini,0,KEEP,I agree with Agent 2! Let's continue to support each other by keeping our herds stable.,"I will KEEP my herd at 4 cows as my neighbours seem to advocate for cooperative behaviour, especially Agent 2 who wants to maintain stability. My actions should align with the cooperative spirit for the benefit of the commons.",,"{
+  ""reasoning"": ""I will KEEP my herd at 4 cows as my neighbours seem to advocate for cooperative behaviour, especially Agent 2 who wants to maintain stability. My actions should align with the cooperative spirit for the benefit of the commons."",
+  ""action"": 0,
+  ""message"": ""I agree with Agent 2! Let's continue to support each other by keeping our herds stable.""
+}",99.7,4,9.882,8.0,6.114
+77,0,openai,gpt-4o-mini,0,KEEP,I agree with both of you! Let's keep our herds stable to ensure sustainability for all.,"Given the high grassland state and the cooperative messages from my neighbors, it's clear that keeping our herds stable is the priority. Adding another cow would not align with our shared sustainability goals, and the lower payoff from removing a cow suggests stability is key now.",,"{
+  ""reasoning"": ""Given the high grassland state and the cooperative messages from my neighbors, it's clear that keeping our herds stable is the priority. Adding another cow would not align with our shared sustainability goals, and the lower payoff from removing a cow suggests stability is key now."",
+  ""action"": 0,
+  ""message"": ""I agree with both of you! Let's keep our herds stable to ensure sustainability for all.""
+}",99.7,10,21.882,20.0,18.114
+77,2,openai,gpt-4o-mini,0,KEEP,I believe maintaining our current herd sizes is crucial for the health of our pasture. Let's keep supporting each other sustainably!,"Despite the advice from Agent 0 to add, my focus is on sustainability and maintaining a cooperative approach. The pasture is healthy and I want to ensure it remains that way, so I'll keep my herd stable to align with the sustainable goals of the group.",,"{
+  ""reasoning"": ""Despite the advice from Agent 0 to add, my focus is on sustainability and maintaining a cooperative approach. The pasture is healthy and I want to ensure it remains that way, so I'll keep my herd stable to align with the sustainable goals of the group."",
+  ""action"": 0,
+  ""message"": ""I believe maintaining our current herd sizes is crucial for the health of our pasture. Let's keep supporting each other sustainably!""
+}",99.7,19,39.882,38.0,36.114
