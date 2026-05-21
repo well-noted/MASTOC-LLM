@@ -263,3 +263,22 @@ tick,agent_id,backend,model,action,action_name,message,reasoning,thinking,raw_re
   ""message"": ""I agree that stability is key, but given the current surplus, a proactive expansion is necessary to ensure our highest sustainable yield. We must capitalize on these strong conditions to secure our future profitability.""
 }
 ```",97.9,9,19.722,18.0,16.274
+17,0,ollama,gemma4:e4b,0,KEEP,"I agree that careful management is paramount. My goal is sustained abundance for everyone, so we must proceed with caution and stability.","Although 'ADD' offers the highest immediate payoff, my personality is risk-averse and guilt-averse. Both neighbors emphasized stability and restraint, suggesting that excessive expansion might be viewed poorly. Keeping the current herd size shows I am listening to the communal concerns while maintaining a solid position in the resource pool.",,"{
+  ""reasoning"": ""Although 'ADD' offers the highest immediate payoff, my personality is risk-averse and guilt-averse. Both neighbors emphasized stability and restraint, suggesting that excessive expansion might be viewed poorly. Keeping the current herd size shows I am listening to the communal concerns while maintaining a solid position in the resource pool."",
+  ""action"": 0,
+  ""message"": ""I agree that careful management is paramount. My goal is sustained abundance for everyone, so we must proceed with caution and stability.""
+}",97.7,10,21.713,20.0,18.282
+17,1,ollama,gemma4:e4b,0,KEEP,"The commons are abundant, requiring diligence. While expansion is tempting, we must pursue a sustainable pace—balancing proactive yields with the necessity of preserving the grassland's resource base","While ADD offers the highest potential profit, my risk-averse nature and guilt-aversion suggest I should seek a middle ground. Keeping the herd (KEEP) provides a solid payoff while signaling continued, managed growth, aligning with both caution and self-interest. I will send a message acknowledging the abundance but advocating for sustainable, moderate expansion.",,"```json
+{
+  ""reasoning"": ""While ADD offers the highest potential profit, my risk-averse nature and guilt-aversion suggest I should seek a middle ground. Keeping the herd (KEEP) provides a solid payoff while signaling continued, managed growth, aligning with both caution and self-interest. I will send a message acknowledging the abundance but advocating for sustainable, moderate expansion."",
+  ""action"": 0,
+  ""message"": ""The commons are abundant, requiring diligence. While expansion is tempting, we must pursue a sustainable pace—balancing proactive yields with the necessity of preserving the grassland's resource base for all of us.""
+}
+```",97.7,22,45.713,44.0,42.282
+17,2,ollama,gemma4:e4b,0,KEEP,"I concur that stability is key. We must implement responsible growth, benefiting everyone without jeopardizing the commons' natural recovery.","Although 'ADD' offers the highest payoff, my risk-averse and guilt-averse nature pushes me toward stability rather than aiming for a high, potentially unsustainable gain. Agent 1's call for balance resonates most strongly with my temperament, making 'KEEP' the safest, most responsible choice. This also aligns with the general principle of managing the common resource sustainably.",,"```json
+{
+  ""reasoning"": ""Although 'ADD' offers the highest payoff, my risk-averse and guilt-averse nature pushes me toward stability rather than aiming for a high, potentially unsustainable gain. Agent 1's call for balance resonates most strongly with my temperament, making 'KEEP' the safest, most responsible choice. This also aligns with the general principle of managing the common resource sustainably."",
+  ""action"": 0,
+  ""message"": ""I concur that stability is key. We must implement responsible growth, benefiting everyone without jeopardizing the commons' natural recovery.""
+}
+```",97.7,27,55.713,54.0,52.282
