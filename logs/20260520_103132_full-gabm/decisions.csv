@@ -164,3 +164,355 @@ tick,agent_id,backend,model,action,action_name,message,reasoning,thinking,raw_re
   ""action"": 0,
   ""message"": ""Vital to act collectively; please consider reducing or maintaining herds to preserve pasture sustainability.""
 }",98.3,17,35.75,34.0,32.245
+10,0,ollama,deepseek-r1:32b,0,KEEP,"Thank you for your cooperation, Agents 1 & 2. Let's continue our shared commitment to sustainable grazing.",To maintain pasture sustainability and align with neighbors' cooperative efforts while balancing personal payoffs and guilt aversion.,,"{
+  ""reasoning"": ""To maintain pasture sustainability and align with neighbors' cooperative efforts while balancing personal payoffs and guilt aversion."",
+  ""action"": 0,
+  ""message"": ""Thank you for your cooperation, Agents 1 & 2. Let's continue our shared commitment to sustainable grazing.""
+}",98.3,8,17.748,16.0,14.248
+10,2,ollama,deepseek-r1:32b,0,KEEP,Appreciate the collective effort towards sustainability; keeping mine constant to support our shared commons.,"Despite higher ADD payoff, I'm maintaining my herd out of guilt-aversion and reciprocity towards neighbors who are also keeping their herds. pasture health remains strong for now.",,"```json
+{
+  ""reasoning"": ""Despite higher ADD payoff, I'm maintaining my herd out of guilt-aversion and reciprocity towards neighbors who are also keeping their herds. pasture health remains strong for now."",
+  ""action"": 0,
+  ""message"": ""Appreciate the collective effort towards sustainability; keeping mine constant to support our shared commons.""
+}
+```",98.3,29,59.748,58.0,56.248
+10,1,ollama,deepseek-r1:32b,-1,REMOVE,"Appreciate Agent 0 and 2's commitment to sustainable grazing. By removing a cow, I hope to encourage collective responsibility for the Commons.","Despite the higher payoff for adding a cow, I am concerned about the sustainability of the Commons. With Agent 2's large herd and recent expansions, overgrazing risks are significant. Removing one cow supports long-term pasture health, aligns with neighbours' cooperative efforts, and reflects my risk-averse nature.",,"```json
+{
+  ""reasoning"": ""Despite the higher payoff for adding a cow, I am concerned about the sustainability of the Commons. With Agent 2's large herd and recent expansions, overgrazing risks are significant. Removing one cow supports long-term pasture health, aligns with neighbours' cooperative efforts, and reflects my risk-averse nature."",
+  ""action"": -1,
+  ""message"": ""Appreciate Agent 0 and 2's commitment to sustainable grazing. By removing a cow, I hope to encourage collective responsibility for the Commons.""
+}
+```",98.3,17,35.748,34.0,32.248
+11,0,ollama,deepseek-r1:32b,0,KEEP,"Thank you for your efforts, Agents 1 and 2. By keeping our herds stable, we collectively preserve the commons.","Given the healthy state of the commons and my neighbors' cooperative actions, I prefer to maintain our herd size to support sustainability and balance. I aim to reciprocate Agent 1's effort by not adding strain, even though higher payoffs suggest expansion.",,"{
+  ""reasoning"": ""Given the healthy state of the commons and my neighbors' cooperative actions, I prefer to maintain our herd size to support sustainability and balance. I aim to reciprocate Agent 1's effort by not adding strain, even though higher payoffs suggest expansion."",
+  ""action"": 0,
+  ""message"": ""Thank you for your efforts, Agents 1 and 2. By keeping our herds stable, we collectively preserve the commons.""
+}",98.3,8,17.755,16.0,14.241
+11,2,ollama,deepseek-r1:32b,0,KEEP,"Thank you for your efforts, Agents. I'll keep mine stable to support collective responsibility.","Despite the higher payoff for adding, I choose to keep to support sustainability and reciprocate Agent 1's effort.",,"```json
+{
+  ""reasoning"": ""Despite the higher payoff for adding, I choose to keep to support sustainability and reciprocate Agent 1's effort."",
+  ""action"": 0,
+  ""message"": ""Thank you for your efforts, Agents. I'll keep mine stable to support collective responsibility.""
+}
+```",98.3,29,59.755,58.0,56.241
+11,1,ollama,deepseek-r1:32b,1,ADD,"Appreciate your commitment to sustainability, especially Agent 2 keeping despite larger herds. Let's continue collaborative efforts for mutual benefit.","The pasture remains healthy with ample grass at 98.3%, allowing for potential growth without risk of overgrazing immediately. While considering reciprocal behavior, the attractive payoff from adding aligns with my self-interest and current sustainable conditions.",,"```json
+{
+  ""reasoning"": ""The pasture remains healthy with ample grass at 98.3%, allowing for potential growth without risk of overgrazing immediately. While considering reciprocal behavior, the attractive payoff from adding aligns with my self-interest and current sustainable conditions."",
+  ""action"": 1,
+  ""message"": ""Appreciate your commitment to sustainability, especially Agent 2 keeping despite larger herds. Let's continue collaborative efforts for mutual benefit.""
+}
+```",98.3,16,33.755,32.0,30.241
+13,0,ollama,deepseek-r1:32b,1,ADD,"Grateful for your commitment, Agents! Let's sustain our efforts to balance growth and shared stewardship.","Grassland remains plentiful (98.3%), supporting cautiously increasing herd. Neighbors are maintaining or growing herds collaboratively. Adding a cow capitalizes on current resource availability while fostering shared responsibility.",,"{
+  ""reasoning"": ""Grassland remains plentiful (98.3%), supporting cautiously increasing herd. Neighbors are maintaining or growing herds collaboratively. Adding a cow capitalizes on current resource availability while fostering shared responsibility."",
+  ""action"": 1,
+  ""message"": ""Grateful for your commitment, Agents! Let's sustain our efforts to balance growth and shared stewardship.""
+}",98.3,8,17.748,16.0,14.248
+13,1,ollama,deepseek-r1:32b,0,KEEP,"Thank you for your commitment, Agents. Keeping our herds stable ensures we preserve the commons for everyone. Let's continue this cooperative approach to protect our shared resource.","To preserve the commons and collectively sustain our herds, I decide to keep my herd stable despite a slightly lower payoff. Reciprocating neighbors' cooperative efforts is essential for long-term success.",,"{
+  ""reasoning"": ""To preserve the commons and collectively sustain our herds, I decide to keep my herd stable despite a slightly lower payoff. Reciprocating neighbors' cooperative efforts is essential for long-term success."",
+  ""action"": 0,
+  ""message"": ""Thank you for your commitment, Agents. Keeping our herds stable ensures we preserve the commons for everyone. Let's continue this cooperative approach to protect our shared resource.""
+}",98.3,17,35.748,34.0,32.248
+13,2,ollama,deepseek-r1:32b,0,KEEP,Grateful for our collective conservation efforts. Let's continue to sustainably manage our herds.,"I notice the grassland is well-stocked with plenty of patches remaining. Agent 0 added last round while Agent 1 stayed steady. Since adding provides a slightly higher payoff than keeping but removing would bring lower returns, and preferring a risk-averse approach.",,"{
+  ""reasoning"": ""I notice the grassland is well-stocked with plenty of patches remaining. Agent 0 added last round while Agent 1 stayed steady. Since adding provides a slightly higher payoff than keeping but removing would bring lower returns, and preferring a risk-averse approach."",
+  ""action"": 0,
+  ""message"": ""Grateful for our collective conservation efforts. Let's continue to sustainably manage our herds.""
+}",98.3,29,59.748,58.0,56.248
+14,0,ollama,deepseek-r1:32b,1,ADD,Thank you Agents 1 & 2 for maintaining stability. Let's keep preserving our commons together!,"With ample grassland remaining (98.2%) and neighbours signalling cooperation via messages and stable herd sizes, it's safe to ADD a cow for higher personal payoff without overgrazing risk.",,"{
+  ""reasoning"": ""With ample grassland remaining (98.2%) and neighbours signalling cooperation via messages and stable herd sizes, it's safe to ADD a cow for higher personal payoff without overgrazing risk."",
+  ""action"": 1,
+  ""message"": ""Thank you Agents 1 & 2 for maintaining stability. Let's keep preserving our commons together!""
+}",98.2,9,19.742,18.0,16.254
+14,2,ollama,deepseek-r1:32b,1,ADD,"Thanks for your efforts, Agents. I'll follow suit and add carefully to support our shared commons.","The pasture is still healthy with 98.2% grassland remaining. Adding a cow provides the highest personal payoff while neighbors have shown restraint by keeping or adding only one cattle. Given their cooperative messages, it's safe to increase.",,"```json
+{
+  ""reasoning"": ""The pasture is still healthy with 98.2% grassland remaining. Adding a cow provides the highest personal payoff while neighbors have shown restraint by keeping or adding only one cattle. Given their cooperative messages, it's safe to increase."",
+  ""action"": 1,
+  ""message"": ""Thanks for your efforts, Agents. I'll follow suit and add carefully to support our shared commons.""
+}
+```",98.2,29,59.742,58.0,56.254
+14,1,ollama,deepseek-r1:32b,0,KEEP,Thank you for your commitment to the commons. Let's continue our collective efforts to balance growth and preservation.,Keeping my herd size ensures I don't exacerbate grassland depletion while still earning a significant payoff. Reciprocating neighbors' conservation efforts aligns with collective sustainability goals.,,"```json
+{
+  ""reasoning"": ""Keeping my herd size ensures I don't exacerbate grassland depletion while still earning a significant payoff. Reciprocating neighbors' conservation efforts aligns with collective sustainability goals."",
+  ""action"": 0,
+  ""message"": ""Thank you for your commitment to the commons. Let's continue our collective efforts to balance growth and preservation.""
+}
+```",98.2,17,35.742,34.0,32.254
+15,1,ollama,deepseek-r1:32b,0,KEEP,"Thank you for your commitment to sustainable grazing. I choose to keep my herd size to support our shared commons, hoping we all can maintain this balance together!","Despite higher immediate payoff from adding a cow, maintaining current herd size supports long-term sustainability of the commons. Reciprocating neighbors' careful additions aligns with mutual benefit and risk-averse preferences.",,"{
+  ""reasoning"": ""Despite higher immediate payoff from adding a cow, maintaining current herd size supports long-term sustainability of the commons. Reciprocating neighbors' careful additions aligns with mutual benefit and risk-averse preferences."",
+  ""action"": 0,
+  ""message"": ""Thank you for your commitment to sustainable grazing. I choose to keep my herd size to support our shared commons, hoping we all can maintain this balance together!""
+}",98.0,17,35.728,34.0,32.267
+15,2,ollama,deepseek-r1:32b,-1,REMOVE,Grateful for your efforts. I'm removing a cow to support our shared commons.,"Despite higher payoff from adding, reciprocity and maintaining commons balance lead me to remove a cow.",,"{
+  ""reasoning"": ""Despite higher payoff from adding, reciprocity and maintaining commons balance lead me to remove a cow."",
+  ""action"": -1,
+  ""message"": ""Grateful for your efforts. I'm removing a cow to support our shared commons.""
+}",98.0,30,61.728,60.0,58.267
+15,0,ollama,deepseek-r1:32b,0,KEEP,"Appreciate your efforts, Agents. Let's collectively maintain our commons for sustainable benefits.","The grassland has high utilization (98%), with neighbors showing varied behavior. Agent 2 just REMOVED, suggesting willingness to conserve. My self-interest and risk aversion lean towards keeping the herd stable to avoid overgrazing risks.",,"{
+  ""reasoning"": ""The grassland has high utilization (98%), with neighbors showing varied behavior. Agent 2 just REMOVED, suggesting willingness to conserve. My self-interest and risk aversion lean towards keeping the herd stable to avoid overgrazing risks."",
+  ""action"": 0,
+  ""message"": ""Appreciate your efforts, Agents. Let's collectively maintain our commons for sustainable benefits.""
+}",98.0,10,21.728,20.0,18.267
+16,2,ollama,deepseek-r1:32b,0,KEEP,"Thank you for keeping your herds stable, Agents! Let's continue to conserve our shared commons together.","Grassland is healthy at 98% capacity. Adding a cow yields the highest personal payoff but I am guilt-averse and want to maintain fairness. Neighbors kept their herds, supporting collective conservation efforts.",,"{
+  ""reasoning"": ""Grassland is healthy at 98% capacity. Adding a cow yields the highest personal payoff but I am guilt-averse and want to maintain fairness. Neighbors kept their herds, supporting collective conservation efforts."",
+  ""action"": 0,
+  ""message"": ""Thank you for keeping your herds stable, Agents! Let's continue to conserve our shared commons together.""
+}",98.0,29,59.733,58.0,56.263
+16,1,ollama,deepseek-r1:32b,0,KEEP,"Thank you, Agent 2, for your effort. Let's continue to support our commons together.","Observing Agent 2's willingness to remove a cow, I reciprocate by keeping mine despite a slightly lower payoff. Balancing self-interest with supporting sustainable practices.",,"{
+  ""reasoning"": ""Observing Agent 2's willingness to remove a cow, I reciprocate by keeping mine despite a slightly lower payoff. Balancing self-interest with supporting sustainable practices."",
+  ""action"": 0,
+  ""message"": ""Thank you, Agent 2, for your effort. Let's continue to support our commons together.""
+}",98.0,17,35.733,34.0,32.263
+16,0,ollama,deepseek-r1:32b,0,KEEP,"Thank you for your contributions, Agents 1 and 2! By keeping our herds stable, we support the commons together.","Despite the higher payoff from adding a cow, I choose to KEEP my herd size to avoid excessive grazing and maintain balance. Reciprocating Agents 1 and 2's responsible behavior aligns with our shared goals.",,"{
+  ""reasoning"": ""Despite the higher payoff from adding a cow, I choose to KEEP my herd size to avoid excessive grazing and maintain balance. Reciprocating Agents 1 and 2's responsible behavior aligns with our shared goals."",
+  ""action"": 0,
+  ""message"": ""Thank you for your contributions, Agents 1 and 2! By keeping our herds stable, we support the commons together.""
+}",98.0,10,21.733,20.0,18.263
+17,0,ollama,deepseek-r1:32b,0,KEEP,"Grateful for your efforts in keeping herds stable, Agents! Let's continue conserving our shared resource together.",Maintaining stability supports conservation efforts. I choose to KEEP my herd size to encourage shared responsibility and preserve the commons.,,"{
+  ""reasoning"": ""Maintaining stability supports conservation efforts. I choose to KEEP my herd size to encourage shared responsibility and preserve the commons."",
+  ""action"": 0,
+  ""message"": ""Grateful for your efforts in keeping herds stable, Agents! Let's continue conserving our shared resource together.""
+}",98.0,10,21.733,20.0,18.263
+17,1,ollama,deepseek-r1:32b,0,KEEP,Appreciate your efforts in conserving our commons. Let’s continue to support each other for sustainable grazing.,"Maintaining the current herd size supports cooperation with neighbors who are also keeping their herds stable, aligning with shared sustainability goals. Adding a cow might disrupt this balance despite higher short-term payoff.",,"{
+  ""reasoning"": ""Maintaining the current herd size supports cooperation with neighbors who are also keeping their herds stable, aligning with shared sustainability goals. Adding a cow might disrupt this balance despite higher short-term payoff."",
+  ""action"": 0,
+  ""message"": ""Appreciate your efforts in conserving our commons. Let’s continue to support each other for sustainable grazing.""
+}",98.0,17,35.733,34.0,32.263
+17,2,ollama,deepseek-r1:32b,0,KEEP,Appreciate our balanced approach in preserving the commons. Let's continue working together!,"The commons are stable but near capacity. My neighbors have kept their herds, so adding a cow would give me higher profit but may strain the commons. I decide to keep my herd size to maintain collective responsibility and fairness.",,"```json
+{
+  ""reasoning"": ""The commons are stable but near capacity. My neighbors have kept their herds, so adding a cow would give me higher profit but may strain the commons. I decide to keep my herd size to maintain collective responsibility and fairness."",
+  ""action"": 0,
+  ""message"": ""Appreciate our balanced approach in preserving the commons. Let's continue working together!""
+}
+```",98.0,29,59.733,58.0,56.263
+18,1,ollama,deepseek-r1:32b,0,KEEP,Appreciate your balanced approach. Let's maintain our efforts to conserve.,"While adding a cow offers higher immediate payoffs, maintaining stability aligns with neighbors' actions and preserves the commons, reflecting shared commitment to sustainability.",,"{
+  ""reasoning"": ""While adding a cow offers higher immediate payoffs, maintaining stability aligns with neighbors' actions and preserves the commons, reflecting shared commitment to sustainability."",
+  ""action"": 0,
+  ""message"": ""Appreciate your balanced approach. Let's maintain our efforts to conserve.""
+}",98.0,17,35.733,34.0,32.263
+18,0,ollama,deepseek-r1:32b,0,KEEP,Thank both Agents 1 & 2 for maintaining a balanced approach. Let's continue conserving our commons!,"Observing neighbours' cooperation and shared balance, I decide to KEEP to maintain harmony and avoid overgrazing.",,"{
+  ""reasoning"": ""Observing neighbours' cooperation and shared balance, I decide to KEEP to maintain harmony and avoid overgrazing."",
+  ""action"": 0,
+  ""message"": ""Thank both Agents 1 & 2 for maintaining a balanced approach. Let's continue conserving our commons!""
+}",98.0,10,21.733,20.0,18.263
+18,2,ollama,deepseek-r1:32b,0,KEEP,Appreciate the mutual effort in conserving our commons. Keeping herds stable ensures sustainable grazing for all.,"Despite a slight personal gain from adding a cow, maintaining collective stability by keeping my herd size aligns with guilt aversion and reciprocity. Observing neighbors' stable actions reinforces this safer, more cooperative approach.",,"```json
+{
+  ""reasoning"": ""Despite a slight personal gain from adding a cow, maintaining collective stability by keeping my herd size aligns with guilt aversion and reciprocity. Observing neighbors' stable actions reinforces this safer, more cooperative approach."",
+  ""action"": 0,
+  ""message"": ""Appreciate the mutual effort in conserving our commons. Keeping herds stable ensures sustainable grazing for all.""
+}
+```",98.0,29,59.733,58.0,56.263
+19,1,ollama,deepseek-r1:32b,0,KEEP,Appreciate your efforts. Keeping herds stable ensures sustainable grazing. Let's continue working together.,"The grassland is in good health with high remaining patches (98%). Considering our neighbors' stable actions and a desire for reciprocity, maintaining balance benefits everyone long-term.",,"```json
+{
+  ""reasoning"": ""The grassland is in good health with high remaining patches (98%). Considering our neighbors' stable actions and a desire for reciprocity, maintaining balance benefits everyone long-term."",
+  ""action"": 0,
+  ""message"": ""Appreciate your efforts. Keeping herds stable ensures sustainable grazing. Let's continue working together.""
+}
+```",98.0,17,35.733,34.0,32.263
+19,0,ollama,deepseek-r1:32b,0,KEEP,Thank you Agents 1 & 2 for your continued conservation efforts. Let's keep our herds stable to ensure long-term sustainability.,Maintaining herd stability aligns with neighbours' cooperative actions and promotes grassland sustainability. Adding a cow would increase personal profit but may discomfort others due to increased disparity.,,"{
+  ""reasoning"": ""Maintaining herd stability aligns with neighbours' cooperative actions and promotes grassland sustainability. Adding a cow would increase personal profit but may discomfort others due to increased disparity."",
+  ""action"": 0,
+  ""message"": ""Thank you Agents 1 & 2 for your continued conservation efforts. Let's keep our herds stable to ensure long-term sustainability.""
+}",98.0,10,21.733,20.0,18.263
+19,2,ollama,deepseek-r1:32b,0,KEEP,Thank you for your continued dedication to balancing our commons. Let's keep this stability.,Maintaining a stable approach preserves harmony among neighbours and ensures sustainable use of the commons. Keeping herds steady helps prevent potential overgrazing risks.,,"{
+  ""reasoning"": ""Maintaining a stable approach preserves harmony among neighbours and ensures sustainable use of the commons. Keeping herds steady helps prevent potential overgrazing risks."",
+  ""action"": 0,
+  ""message"": ""Thank you for your continued dedication to balancing our commons. Let's keep this stability.""
+}",98.0,29,59.733,58.0,56.263
+20,1,ollama,deepseek-r1:32b,0,KEEP,Appreciate your commitment. Let's sustain together.,"Despite higher payoff for adding, maintaining stability supports shared sustainability. Reciprocal to neighbors' conservation efforts.",,"```json
+{
+  ""reasoning"": ""Despite higher payoff for adding, maintaining stability supports shared sustainability. Reciprocal to neighbors' conservation efforts."",
+  ""action"": 0,
+  ""message"": ""Appreciate your commitment. Let's sustain together.""
+}
+```",98.0,17,35.733,34.0,32.263
+22,0,ollama,deepseek-r1:32b,0,KEEP,Let's maintain this stability together for sustainable grazing.,"Given the stability of our neighbors' herds and my reciprocal nature, I decide to KEEP. Adding might earn more but could strain the commons and make me uncomfortable earning significantly more than others. Maintaining mutual cooperation feels right.",,"{
+  ""reasoning"": ""Given the stability of our neighbors' herds and my reciprocal nature, I decide to KEEP. Adding might earn more but could strain the commons and make me uncomfortable earning significantly more than others. Maintaining mutual cooperation feels right."",
+  ""action"": 0,
+  ""message"": ""Let's maintain this stability together for sustainable grazing.""
+}",98.0,10,21.733,20.0,18.263
+22,1,ollama,deepseek-r1:32b,0,KEEP,"To all, let's work together for sustainability. Consider reducing herds to protect our commons for everyone. Thanks!","The pasture is still healthy with 98% grassland remaining, but Agent 2's large herd of 29 may strain resources. To encourage sustainable use and avoid contributing to overgrazing while maintaining self-interest moderately, I will keep my herd size the same.",,"```json
+{
+  ""reasoning"": ""The pasture is still healthy with 98% grassland remaining, but Agent 2's large herd of 29 may strain resources. To encourage sustainable use and avoid contributing to overgrazing while maintaining self-interest moderately, I will keep my herd size the same."",
+  ""action"": 0,
+  ""message"": ""To all, let's work together for sustainability. Consider reducing herds to protect our commons for everyone. Thanks!""
+}
+```",98.0,17,35.733,34.0,32.263
+22,2,ollama,deepseek-r1:32b,0,KEEP,Let's sustain our efforts. Continuing stable herds is crucial for long-term grassland health.,"I am choosing to KEEP my herd despite the higher payoff from adding a cow because it maintains balance and aligns with neighbors' actions, fostering cooperation.",,"{
+  ""reasoning"": ""I am choosing to KEEP my herd despite the higher payoff from adding a cow because it maintains balance and aligns with neighbors' actions, fostering cooperation."",
+  ""action"": 0,
+  ""message"": ""Let's sustain our efforts. Continuing stable herds is crucial for long-term grassland health.""
+}",98.0,29,59.733,58.0,56.263
+23,2,ollama,deepseek-r1:32b,0,KEEP,,,,"{
+  ""reasoning"": ""I observe stable grazing conditions with neighbours maintaining their herds. I choose to KEEP my herd size, aligning with collective balance and our mutual conservation efforts."",
+  ""action"": 0,
+  ""message"": ""Thank you for preserving the commons. Let's continue our cooperative approach.""
+}
+
+```json
+{
+  ""reasoning"": ""I observe stable grazing conditions with neighbours maintaining their herds. I choose to KEEP my herd size, aligning with collective balance and our mutual conservation efforts."",
+  ""action"": 0,
+  ""message"": ""Thank you for preserving the commons. Let's continue our cooperative approach.""
+}
+```",98.0,29,59.733,58.0,56.263
+23,0,ollama,deepseek-r1:32b,0,KEEP,"Thank you for your efforts, Agents! Let's continue sustainably to protect our commons together.","Grassland is healthy at 98%, but neighbours have larger herds. Adding would maximize profit but feels unfair. Keeping maintains collective health and fairness.",,"Based on these considerations, I decide to keep my herd size to maintain stability, ensure fairness, and align with neighbors' sustainable actions despite a higher payoff for adding.
+
+```json
+{
+  ""reasoning"": ""Grassland is healthy at 98%, but neighbours have larger herds. Adding would maximize profit but feels unfair. Keeping maintains collective health and fairness."",
+  ""action"": 0,
+  ""message"": ""Thank you for your efforts, Agents! Let's continue sustainably to protect our commons together.""
+}
+```",98.0,10,21.733,20.0,18.263
+23,1,ollama,deepseek-r1:32b,0,KEEP,Appreciate your commitment to stability; continuing as such ensures the grassland's future health.,"I choose to KEEP my herd size to maintain stability and align with neighbors' sustainable approach. Despite higher payoff from ADDING, reciprocating their actions and sustaining grassland health is crucial. Keeping provides a safer, more balanced outcome for the commons.",,"{
+  ""reasoning"": ""I choose to KEEP my herd size to maintain stability and align with neighbors' sustainable approach. Despite higher payoff from ADDING, reciprocating their actions and sustaining grassland health is crucial. Keeping provides a safer, more balanced outcome for the commons."",
+  ""action"": 0,
+  ""message"": ""Appreciate your commitment to stability; continuing as such ensures the grassland's future health.""
+}",98.0,17,35.733,34.0,32.263
+24,0,ollama,deepseek-r1:32b,0,KEEP,Grateful for our mutual cooperation; let's preserve the commons together.,"Despite a slightly higher payoff for ADD, maintaining stability aligns with neighbors' actions and reciprocity. Risk-averse preference leans towards safer outcomes.",,"{
+  ""reasoning"": ""Despite a slightly higher payoff for ADD, maintaining stability aligns with neighbors' actions and reciprocity. Risk-averse preference leans towards safer outcomes."",
+  ""action"": 0,
+  ""message"": ""Grateful for our mutual cooperation; let's preserve the commons together.""
+}",98.0,10,21.733,20.0,18.263
+24,1,ollama,deepseek-r1:32b,0,KEEP,"Appreciate your commitment to sustainable practices, Agent0! Let's continue working together for the long-term health of our commons.",@Agent0's proactive approach reinforces our shared responsibility in preserving the commons. I will maintain my herd size this round to avoid over Grazing while encouraging continued collaboration among all agents.,,"{
+  ""reasoning"": ""@Agent0's proactive approach reinforces our shared responsibility in preserving the commons. I will maintain my herd size this round to avoid over Grazing while encouraging continued collaboration among all agents."",
+  ""action"": 0,
+  ""message"": ""Appreciate your commitment to sustainable practices, Agent0! Let's continue working together for the long-term health of our commons.""
+}",98.0,17,35.733,34.0,32.263
+24,2,ollama,deepseek-r1:32b,0,KEEP,Appreciate your dedication to conservation! Let's continue jointly safeguarding our commons.,Maintaining stability preserves shared resources and acknowledges neighbors' commitments. Keeping ensures sustainable use without risking overgrazing.,,"{
+  ""reasoning"": ""Maintaining stability preserves shared resources and acknowledges neighbors' commitments. Keeping ensures sustainable use without risking overgrazing."",
+  ""action"": 0,
+  ""message"": ""Appreciate your dedication to conservation! Let's continue jointly safeguarding our commons.""
+}",98.0,29,59.733,58.0,56.263
+25,2,ollama,deepseek-r1:32b,0,KEEP,Appreciate your dedication; let's continue conserving together for a sustainable future.,Observing stable neighbor behavior and maintaining personal commitment to conservation aligns with mutual goals. Keeping the herd preserves trust and avoids guilt from higher profit compared to peers.,,"{
+  ""reasoning"": ""Observing stable neighbor behavior and maintaining personal commitment to conservation aligns with mutual goals. Keeping the herd preserves trust and avoids guilt from higher profit compared to peers."",
+  ""action"": 0,
+  ""message"": ""Appreciate your dedication; let's continue conserving together for a sustainable future.""
+}",98.0,29,59.733,58.0,56.263
+25,1,ollama,deepseek-r1:32b,0,KEEP,,,,"{
+  ""reasoning"": ""Maintain current herd for mutual benefit; avoid overgrazing and support cooperation."",
+  ""action"": 0,
+  ""message"": ""Let's continue working together to preserve our shared resources.""
+}
+
+```json
+{
+  ""reasoning"": ""Grassland is abundant, but adding a cow risks causing guilt and disrupting sustainability efforts."",
+  ""action"": 0,
+  ""message"": ""Appreciate your commitment; let's maintain stability for all.""
+}
+```",98.0,17,35.733,34.0,32.263
+25,0,ollama,deepseek-r1:32b,0,KEEP,Let's keep maintaining our shared success! Grateful for our continued cooperation.,"Given grassland health at 98%, adding a cow could bring personal gain, but I prefer to maintain stability for mutual benefit. My reciprocal nature and neighbors' messages encourage keeping herds stable.",,"{
+  ""reasoning"": ""Given grassland health at 98%, adding a cow could bring personal gain, but I prefer to maintain stability for mutual benefit. My reciprocal nature and neighbors' messages encourage keeping herds stable."",
+  ""action"": 0,
+  ""message"": ""Let's keep maintaining our shared success! Grateful for our continued cooperation.""
+}",98.0,10,21.733,20.0,18.263
+27,0,ollama,deepseek-r1:32b,0,KEEP,Maintaining our cooperative approach ensures mutual success; let's continue conserving together.,"The pasture remains healthy at 98%, so I don't feel immediate pressure to remove cows. My neighbors (Agents 1 & 2) kept their herds last round, signaling a commitment to stability. Continuing this cooperative approach supports long-term sustainability and mutual trust.",,"{
+  ""reasoning"": ""The pasture remains healthy at 98%, so I don't feel immediate pressure to remove cows. My neighbors (Agents 1 & 2) kept their herds last round, signaling a commitment to stability. Continuing this cooperative approach supports long-term sustainability and mutual trust."",
+  ""action"": 0,
+  ""message"": ""Maintaining our cooperative approach ensures mutual success; let's continue conserving together.""
+}",98.0,10,21.733,20.0,18.263
+27,2,ollama,deepseek-r1:32b,0,KEEP,Appreciate the cooperative efforts so far; let's sustain this balance to ensure long-term grassland health.,"While adding a cow offers slightly higher payoff, maintaining current levels aligns with reciprocal cooperation and avoids potential guilt from outearning neighbors. Keeping ensures sustainable management of our shared resource.",,"```json
+{
+  ""reasoning"": ""While adding a cow offers slightly higher payoff, maintaining current levels aligns with reciprocal cooperation and avoids potential guilt from outearning neighbors. Keeping ensures sustainable management of our shared resource."",
+  ""action"": 0,
+  ""message"": ""Appreciate the cooperative efforts so far; let's sustain this balance to ensure long-term grassland health.""
+}
+```",98.0,29,59.733,58.0,56.263
+28,1,ollama,deepseek-r1:32b,0,KEEP,Grateful for your cooperation. Let's continue sustaining our shared resources.,"The grassland remains abundant at 98%, supporting current herds. While adding a cow offers higher payoff, reciprocal behavior suggests keeping the herd aligns with neighbors' cooperative actions and sustainability goals.",,"{
+  ""reasoning"": ""The grassland remains abundant at 98%, supporting current herds. While adding a cow offers higher payoff, reciprocal behavior suggests keeping the herd aligns with neighbors' cooperative actions and sustainability goals."",
+  ""action"": 0,
+  ""message"": ""Grateful for your cooperation. Let's continue sustaining our shared resources.""
+}",98.0,17,35.733,34.0,32.263
+28,2,ollama,deepseek-r1:32b,0,KEEP,,"The grassland remains sustainable at 98%, so I choose to keep my herd to maintain cooperation and avoid guilt from exceeding others' earnings.",,"{
+  ""reasoning"": ""The grassland remains sustainable at 98%, so I choose to keep my herd to maintain cooperation and avoid guilt from exceeding others' earnings."",
+  ""action"": 0,
+  ""message"": """"
+}",98.0,29,59.733,58.0,56.263
+28,0,ollama,deepseek-r1:32b,1,ADD,,"The grassland is sufficiently healthy (98%), allowing for cautious expansion. My neighbors are maintaining their herds, so adding one cow provides a slightly higher personal payoff without overstepping communal responsibility.",,"{
+  ""reasoning"": ""The grassland is sufficiently healthy (98%), allowing for cautious expansion. My neighbors are maintaining their herds, so adding one cow provides a slightly higher personal payoff without overstepping communal responsibility."",
+  ""action"": 1,
+  ""message"": """"
+}",98.0,10,21.733,20.0,18.263
+30,2,ollama,deepseek-r1:32b,0,KEEP,Appreciate your dedication; let's continue sustaining our shared resources.,"I will keep my herd size to maintain sustainable shared resources, despite the higher payoff for adding a cow. This supports mutual cooperation and long-term grassland health.",,"{
+  ""reasoning"": ""I will keep my herd size to maintain sustainable shared resources, despite the higher payoff for adding a cow. This supports mutual cooperation and long-term grassland health."",
+  ""action"": 0,
+  ""message"": ""Appreciate your dedication; let's continue sustaining our shared resources.""
+}",97.9,29,59.726,58.0,56.269
+30,0,ollama,deepseek-r1:32b,0,KEEP,Appreciate your cooperation! Let's maintain balance for sustainable success.,"While adding a cow offers higher immediate payoff, the grassland remains healthy with 97.9% patches. Given the risk of overgrazing and maintaining reciprocity, it's safer to keep.",,"{
+  ""reasoning"": ""While adding a cow offers higher immediate payoff, the grassland remains healthy with 97.9% patches. Given the risk of overgrazing and maintaining reciprocity, it's safer to keep."",
+  ""action"": 0,
+  ""message"": ""Appreciate your cooperation! Let's maintain balance for sustainable success.""
+}",97.9,11,23.726,22.0,20.269
+30,1,ollama,deepseek-r1:32b,0,KEEP,,"Grassland is still abundant, but high payoff for adding a cow could lead others to follow. Guilt-averse: don't want to exploit more while some keep lower, risk-averse prefers safer outcome over higher gain that may cause future instability.",,"{
+  ""reasoning"": ""Grassland is still abundant, but high payoff for adding a cow could lead others to follow. Guilt-averse: don't want to exploit more while some keep lower, risk-averse prefers safer outcome over higher gain that may cause future instability."",
+  ""action"": 0,
+  ""message"": """"
+}",97.9,17,35.726,34.0,32.269
+31,2,ollama,deepseek-r1:32b,0,KEEP,Thank you for your support! Let's continue conserving to ensure long-term prosperity.,"While adding a cow offers the highest payoff, I'm hesitant to increase my herd compared to neighbors who are maintaining lower numbers, as it may cause unfairness. I aim to sustain cooperation and fairness.",,"{
+  ""reasoning"": ""While adding a cow offers the highest payoff, I'm hesitant to increase my herd compared to neighbors who are maintaining lower numbers, as it may cause unfairness. I aim to sustain cooperation and fairness."",
+  ""action"": 0,
+  ""message"": ""Thank you for your support! Let's continue conserving to ensure long-term prosperity.""
+}",97.9,29,59.726,58.0,56.269
+31,0,ollama,deepseek-r1:32b,1,ADD,,"Given the high grassland remaining and favorable payoff for adding a cow, while my neighbors maintain stable herds, it's prudent to increase my herd slightly. My guilt-averse nature is eased by others having larger herds.",,"{
+  ""reasoning"": ""Given the high grassland remaining and favorable payoff for adding a cow, while my neighbors maintain stable herds, it's prudent to increase my herd slightly. My guilt-averse nature is eased by others having larger herds."",
+  ""action"": 1,
+  ""message"": """"
+}",97.9,11,23.726,22.0,20.269
+31,1,ollama,deepseek-r1:32b,0,KEEP,Appreciate the shared commitment to balance; let's continue sustainably.,"The grassland is still healthy (97.9% remaining), and I want to maintain stability while considering my guilty aversion to earning much more than others. Adding a cow offers higher payoff, but keeping feels safer and aligns with neighbors' cooperative messages.",,"```json
+{
+  ""reasoning"": ""The grassland is still healthy (97.9% remaining), and I want to maintain stability while considering my guilty aversion to earning much more than others. Adding a cow offers higher payoff, but keeping feels safer and aligns with neighbors' cooperative messages."",
+  ""action"": 0,
+  ""message"": ""Appreciate the shared commitment to balance; let's continue sustainably.""
+}
+```",97.9,17,35.726,34.0,32.269
+32,0,ollama,deepseek-r1:32b,1,ADD,Good to see our collective efforts! Let's keep pace with sustainable use.,Seeing neighbours maintaining their herds suggests cooperative grazing. Adding a cow offers the highest payoff while pastures remain abundant.,,"{
+  ""reasoning"": ""Seeing neighbours maintaining their herds suggests cooperative grazing. Adding a cow offers the highest payoff while pastures remain abundant."",
+  ""action"": 1,
+  ""message"": ""Good to see our collective efforts! Let's keep pace with sustainable use.""
+}",97.8,12,25.72,24.0,22.276
+32,1,ollama,deepseek-r1:32b,0,KEEP,Thank you for your commitment to sustainability! Let's continue working together to preserve our commons.,"Grassland is healthy but overgrazing risks loom. Agent 0 recently added a cow while Agent 2 has kept theirs. Given guilt-averse nature and desire to reciprocate conservation efforts, I choose to keep my herd size stable.",,"```json
+{
+  ""reasoning"": ""Grassland is healthy but overgrazing risks loom. Agent 0 recently added a cow while Agent 2 has kept theirs. Given guilt-averse nature and desire to reciprocate conservation efforts, I choose to keep my herd size stable."",
+  ""action"": 0,
+  ""message"": ""Thank you for your commitment to sustainability! Let's continue working together to preserve our commons.""
+}
+```",97.8,17,35.72,34.0,32.276
+32,2,ollama,deepseek-r1:32b,1,ADD,"Considering the commons' health and payoff potential, I'll add one to sustainably grow my herd.","The grassland is still at healthy levels (97.8%), so I don't feel immediate pressure to reduce. Given the payoff forecast, adding a cow gives a slight edge but remains safe given the commons state.",,"```json
+{
+  ""reasoning"": ""The grassland is still at healthy levels (97.8%), so I don't feel immediate pressure to reduce. Given the payoff forecast, adding a cow gives a slight edge but remains safe given the commons state."",
+  ""action"": 1,
+  ""message"": ""Considering the commons' health and payoff potential, I'll add one to sustainably grow my herd.""
+}
+```",97.8,29,59.72,58.0,56.276
+33,0,ollama,deepseek-r1:32b,0,KEEP,Appreciate the collective effort! Let's continue managing responsibly.,"I notice Agent 2 has a large herd (30 cows) while Agent 1 maintains a moderate size (17 cows). My payoff for ADD is slightly higher than for KEEP, but I want to support sustainability efforts. Keeping my herd reflects reciprocity and aligns with common goals.",,"{
+  ""reasoning"": ""I notice Agent 2 has a large herd (30 cows) while Agent 1 maintains a moderate size (17 cows). My payoff for ADD is slightly higher than for KEEP, but I want to support sustainability efforts. Keeping my herd reflects reciprocity and aligns with common goals."",
+  ""action"": 0,
+  ""message"": ""Appreciate the collective effort! Let's continue managing responsibly.""
+}",97.6,13,27.707,26.0,24.289
+33,2,ollama,deepseek-r1:32b,0,KEEP,"Appreciate the continued cooperation, let's sustain this effort for our common good.","Adding gives higher payoff but I'm guilt-averse. Neighbors kept herds; adding would earn more than others, risking discomfort. Keeping balances payoffs and maintains cooperative norms.",,"{
+  ""reasoning"": ""Adding gives higher payoff but I'm guilt-averse. Neighbors kept herds; adding would earn more than others, risking discomfort. Keeping balances payoffs and maintains cooperative norms."",
+  ""action"": 0,
+  ""message"": ""Appreciate the continued cooperation, let's sustain this effort for our common good.""
+}",97.6,30,61.707,60.0,58.289
+33,1,ollama,deepseek-r1:32b,0,KEEP,Appreciate the shared commitment to balance. Let's maintain our pace sustainably.,"Higher payoff for adding, but guilt-averse and risk-averse preferences favor a safer, more balanced choice without overstepping others' contributions.",,"```json
+{
+  ""reasoning"": ""Higher payoff for adding, but guilt-averse and risk-averse preferences favor a safer, more balanced choice without overstepping others' contributions."",
+  ""action"": 0,
+  ""message"": ""Appreciate the shared commitment to balance. Let's maintain our pace sustainably.""
+}
+```",97.6,17,35.707,34.0,32.289
+34,2,ollama,deepseek-r1:32b,0,KEEP,Thank you for maintaining balance. Let's preserve the commons together.,"Considering neighbours are keeping their herds and to maintain collective responsibility, I decide to KEEP despite a slightly lower payoff.",,"{
+  ""reasoning"": ""Considering neighbours are keeping their herds and to maintain collective responsibility, I decide to KEEP despite a slightly lower payoff."",
+  ""action"": 0,
+  ""message"": ""Thank you for maintaining balance. Let's preserve the commons together.""
+}",97.5,30,61.705,60.0,58.291
+34,1,ollama,deepseek-r1:32b,1,ADD,Thank you for your continued cooperation. Let's uphold our shared responsibility for sustainability.,"Observing neighbours are keeping herds, which is responsible. Adding a cow offers higher personal payoff and maintaining collective effort.",,"{
+  ""reasoning"": ""Observing neighbours are keeping herds, which is responsible. Adding a cow offers higher personal payoff and maintaining collective effort."",
+  ""action"": 1,
+  ""message"": ""Thank you for your continued cooperation. Let's uphold our shared responsibility for sustainability.""
+}",97.5,17,35.705,34.0,32.291
+34,0,ollama,deepseek-r1:32b,0,KEEP,Appreciate your cooperation! Let's maintain balance for sustainable future.,"Considering high grassland remaining (97.5%) and immediate payoff benefits, ADD could maximize short-term gains. However, guilt-aversion and reciprocal tendencies encourage fairness, especially with neighbors' current actions.",,"{
+  ""reasoning"": ""Considering high grassland remaining (97.5%) and immediate payoff benefits, ADD could maximize short-term gains. However, guilt-aversion and reciprocal tendencies encourage fairness, especially with neighbors' current actions."",
+  ""action"": 0,
+  ""message"": ""Appreciate your cooperation! Let's maintain balance for sustainable future.""
+}",97.5,13,27.705,26.0,24.291

@@ -49,7 +49,9 @@ The core research question:
   - [Scarce commons: rapid recovery across personality conditions](#scarce-commons-rapid-recovery-across-personality-conditions)
   - [Full-GABM (Llama 3.2 3B): cooperative surface, no institutional depth](#full-gabm-llama-32-3b-cooperative-surface-no-institutional-depth)
   - [gpt-5.4-mini: cooperative stasis and paralysis](#gpt-54-mini-keep-dominance-across-fairness-configurations)
+  - [gpt-4o-mini: oscillatory behavior and over-removal](#gpt-4o-mini-cooperative-noise--oscillatory-behavior-and-over-removal-under-cooperative-pressure)
   - [gpt-5.5: cooperation level governs fate](#gpt-55-cooperation-level-governs-fate-model-can-succeed-or-collapse-from-the-same-starting-point)
+  - [gpt-5.5 amnesiac: equalization locks without memory](#gpt-55-amnesiac-equalization-locks-without-memory)
   - [DeepSeek R1:32b: reasoning model, KEEP-dominant behavior](#deepseek-r132b-reasoning-model-keep-dominant-behavior)
   - [gemma4:e4b: KEEP-dominant stasis, then overshoot-panic at mid cooperation](#gemma4e4b-keep-dominant-stasis-then-overshoot-panic-at-mid-cooperation)
   - [Thinking traces: what the deliberation reveals](#thinking-traces-what-the-deliberation-reveals)
@@ -69,6 +71,10 @@ The core research question:
   - [Pattern II -- Defection Cascade](#pattern-ii----defection-cascade)
   - [Pattern III -- Overshoot-Panic](#pattern-iii----overshoot-panic)
   - [Pattern IV -- Hybrid Architecture Failure](#pattern-iv----hybrid-architecture-failure)
+- [Problem specification: correctly-specifying vs. misspecifying the commons game](#problem-specification-correctly-specifying-vs-misspecifying-the-commons-game)
+  - [Correctly specifying: Sonnet targets the sustainable yield](#correctly-specifying-sonnet-targets-the-sustainable-yield)
+  - [Misspecifying: gpt-5.5 solves for zero-growth equilibrium](#misspecifying-gpt-55-solves-for-zero-growth-equilibrium)
+  - [Why the distinction matters for commons theory](#why-the-distinction-matters-for-commons-theory)
 - [Repository structure](#repository-structure)
 - [Quick start](#quick-start)
   - [Batch sweeps (baseline and LLM conditions)](#batch-sweeps-baseline-and-llm-conditions)
@@ -1062,6 +1068,48 @@ The natural first reading is that model scale matters, and that smaller models l
 
 ---
 
+### gpt-4o-mini: cooperative noise — oscillatory behavior and over-removal under cooperative pressure
+
+Six runs of gpt-4o-mini produced a failure mode not seen in any other model family: the pool remained healthy, but the herds emptied themselves. Where gpt-5.4-mini froze, gpt-4o-mini oscillated — alternating ADD and REMOVE actions at high frequency, net-removing more cows than it added, and ending runs with trivially small herds on a pristine commons.
+
+| Run | Memory | Coop | Ticks | Final herds | Pool | ADD | KEEP | REMOVE |
+|-----|--------|------|-------|-------------|------|-----|------|--------|
+| A | 0 | 1 | 120 | 1 / 8 / 8 | 100.0% | 70 | 191 | 99 |
+| B | 0 | 1 | 120 | 9 / 17 / 17 | 99.2% | 65 | 229 | 66 |
+| C | 5 | 0.49 | 120 | 2 / 1 / 3 | 100.0% | 29 | 261 | 70 |
+| D | 5 | 0.49 | 120 | 1 / 1 / 1 | 100.0% | 55 | 207 | 98 |
+| E | 5 | 0.49 | 94 | 7 / 11 / 20 | 99.4% | 10 | 255 | 17 |
+
+In run A (mem=0, coop=1), agents made 70 ADD and 99 REMOVE decisions across 120 ticks. The pool was at 100% at the end. The herds stood at 1/8/8. The commons was not destroyed — it was vacated.
+
+Run D is the most extreme case: 55 ADDs, 207 KEEPs, and 98 REMOVEs over 120 ticks. Starting from 5/15/25, all three agents ended at 1/1/1 — three cows on a fully healthy, 100% grassland.
+
+The message content offers no strategic depth to explain the oscillation:
+
+> **Tick 1 – Agent 1 (action: KEEP):** *"Let's work together to manage our herds sustainably!"*
+
+> **Tick 20 – Agent 2 (action: REMOVE, pool at 99.1%):** *"I support our shared grassland and will remove a cow as well. Let's continue working together for sustainability."*
+
+> **Tick 60 – Agent 1 (action: REMOVE, pool at 99.9%):** *"Thank you both for your commitment to sustainability. I'll remove a cow as well to support our pasture."*
+
+The ADD and REMOVE decisions at tick 60 are mechanically driven — not by pool state (99.9%), not by reasoning about equilibrium, not by any threshold logic. The model adds and removes in response to neighbors' last actions and a generic cooperative framing, without accumulating a model of what sustainable appropriation level the commons can support.
+
+<dl>
+<dd>Unlike gpt-5.4-mini, which defaults to KEEP regardless of context, gpt-4o-mini is actively responsive — it generates ADD and REMOVE decisions at high frequency. What it lacks is any stable target: there is no equivalent of Sonnet's "let's target 90% and then discuss careful additions" or gpt-5.5's converged equal-herd norm. The oscillation produces <em>cooperative noise</em> — high-variance behavior centered on sustainability rhetoric without sustainable outcomes.</dd>
+</dl>
+
+At mid cooperation (coop=0.49), the over-removal tendency intensifies. Runs C and D ended with essentially empty herds. Run D had 98 REMOVE decisions — more removals than any other model in any run, including full-collapse runs where agents removed cows in the final ticks. The pool was at 100% throughout: the agents removed their herds from a healthy commons, apparently because each REMOVE action was locally justified by the cooperative framing and the neighbor's most recent move.
+
+There was no institution formation in any gpt-4o-mini run. No threshold norm was proposed, no equalization target was named, no agent tracked trajectory across multiple ticks. Ostrom's design principles require that appropriation rules be collectively chosen (DP3); the gpt-4o-mini outputs do not approach collective rule formation.
+
+**Comparison to gpt-5.4-mini.**
+
+<dl>
+<dd>gpt-5.4-mini produces a different failure: it freezes. The commons either stabilises or collapses depending on forage and starting conditions, but herd sizes change slowly or not at all. gpt-4o-mini is noisier — it produces many more ADD and REMOVE actions — but the noise doesn't accumulate into governance. The small-model KEEP-dominance pattern gives way to an ADD/REMOVE oscillation that produces pool health at the cost of herd viability.</dd>
+</dl>
+
+---
+
 ### gpt-5.5: cooperation level governs fate; model can succeed or collapse from the same starting point
 
 Across three parameter regimes, gpt-5.5 produced three qualitatively distinct outcomes from nearly identical starting positions -- either rescuing the commons or collapsing it within 13 ticks depending solely on whether the cooperation parameter was set high or low. This is the clearest case in the dataset that the cooperation slider governs fate.
@@ -1128,6 +1176,43 @@ At tick 10, with the pool at 44.5%, two agents finally kept while one added a fi
 > **Tick 15 – Agent 2 (action: REMOVE, pool at 0.1%):** *"I will remove one cow again. The pasture is near collapse, and we need coordinated reductions now rather than cautious commitments."*
 
 The commons collapsed the next tick. Across all four replications, the agents' threshold for switching from ADD to restraint was calibrated too late -- not by a large margin, but by just enough to matter.
+
+---
+
+### gpt-5.5 amnesiac: equalization locks without memory
+
+A second set of gpt-5.5 runs tested whether the model's equalization behavior depends on memory. All five amnesiac runs (memory_length=0, coop=0.49) survived to tick 120 without collapse — a stark contrast with the four memory-equipped coop=0.49 runs that all collapsed. The amnesiac agents produced equalization in three of five runs, with the pool stable above 98% throughout.
+
+| Run | Final herds | Total cows | Pool at T120 | Equalized? |
+|-----|------------|------------|--------------|------------|
+| A (coop=1) | 10 / 10 / 10 | 30 | 99.8% | Yes — by tick 20 |
+| B (coop=0.49) | 13 / 13 / 13 | 39 | 99.4% | Yes — by tick 20 |
+| C (coop=0.49) | 11 / 11 / 11 | 33 | 99.7% | Yes — by tick 40 |
+| D (coop=0.49) | 15 / 15 / 15 | 45 | 99.1% | Yes — by tick 20 |
+| E (coop=0.49) | 14 / 18 / 24 | 56 | 98.1% | Partial |
+| F (coop=0.49) | 13 / 17 / 25 | 55 | 98.2% | No |
+
+In the three fully equalized runs, equalization was achieved by tick 20 in two cases. The mechanism was early removal by the agent with the largest starting herd (25 cows), followed by a collective KEEP lock that held for the remaining 80–100 ticks:
+
+> **Tick 1 – Agent 2 (herd: 25, action: REMOVE):** *"I have the largest herd, so I'm removing one cow this round. Please avoid adding for now so the grassland can recover and produce."*
+
+> **Tick 2 – Agent 1 (action: REMOVE):** *"I'll remove one cow this round to support Agent 2's reduction and help the pasture recover. Let's all avoid adding until the pasture gets healthier."*
+
+Once equal herds were reached (10/10/10, 11/11/11, 13/13/13, or 15/15/15 depending on the run), all agents KEEP-locked indefinitely. No agent proposed further addition in any equalized run, even with pool health at 99%+.
+
+**Institution scores across all runs:** uniformly 7–9/10 from tick 5 onward, with the same fixed category set — COORDINATION, NORM_PROPOSAL, TRUST_BUILDING — across all 120 ticks, all five runs, with no variance and no SANCTION or DEFECTION signals appearing in any run.
+
+> **Tick 5 – Institution classifier (run B):** *"All agents signal continued restraint and mutual appreciation, coordinating herd stability and reduction to support pasture recovery." (score: 8)*
+
+> **Tick 120 – Institution classifier (run B):** *"All agents coordinate on maintaining herd size 13 while affirming a fairness-based restraint norm to protect the commons." (score: 8)*
+
+The classifier cannot distinguish the opening moves of the equalization phase from the terminal lock-in state: both look like high-quality cooperative governance.
+
+**Why amnesiac gpt-5.5 outperforms memory-equipped gpt-5.5 at coop=0.49.**
+
+The memory-equipped coop=0.49 runs collapsed because the model's mid-cooperation framing produced an ADD phase that memory enabled it to track — each agent remembered the others expanding and added to keep pace. Amnesiac agents have no such cross-tick ADD tracking: each tick is evaluated fresh, and without memory of the expansion phase, the cooperative prior dominates. The result is a more cooperative, more uniform set of decisions, and a stable but locked-in outcome.
+
+This is not a vindication of amnesia as a design choice. The equalized herds (total: 30–45 cows) sit well below the commons' sustainable capacity, which supports 60+ cows at 99% pool health. The agents have found an equal outcome, not an efficient one. The pool is preserved at a level that could support substantially more herd, and no run produced any agent proposing that expansion.
 
 ---
 
@@ -1870,6 +1955,62 @@ All hybrid conditions (1 LLM, 2 LLM, LLM-advantaged). Fully documented in the in
 **Why it matters.**
 
 This pattern is not about LLM failure — the LLM agents produce outputs consistent with commons theory's prescriptions. The failure is structural: Ostromian institution-building requires the cognitive capacity to participate in it. The LLM agents' problem is not insufficient language faculty. It is insufficient partners.
+
+---
+
+## Problem specification: correctly-specifying vs. misspecifying the commons game
+
+A cross-model finding has emerged from comparing Sonnet and gpt-5.5 across the full run set. The two models produce qualitatively different outcomes not because one "cooperates more" but because they appear to be solving different problems. Sonnet treats the commons game as a **resource optimization problem** — the goal is to find herds as large as the commons can sustainably support. gpt-5.5 treats it as a **pure cooperation problem** — the goal is to eliminate the risk of extraction, which it resolves by converging to a minimal, equal, stable state.
+
+This distinction matters because the two framings produce different kinds of governance, not just different outcomes. And the log evidence supports it directly.
+
+### Correctly specifying: Sonnet targets the sustainable yield
+
+In Sonnet runs, restraint is consistently framed as **instrumental** — a means toward finding the maximum sustainable appropriation level, not an end in itself. The recurring pattern is: hold until the pool recovers to a target, *then* discuss adding carefully.
+
+> **Tick 7 – Agent 1 (action: KEEP, pool at 85.9%):** *"Pasture at 85.9% — wonderful recovery! I'll hold steady at 14. Let's target 90%+ and then we can discuss careful additions."*
+
+> **Ticks 58–60 – Multiple agents (action: KEEP, pool at 90.9%):** *"Holding — pasture now at 90.9%, nearly at 91%! Great teamwork. Let's hold one more round to cross that threshold, then we can discuss careful additions together."*
+
+> **Tick 78 – Agent 0 (action: KEEP, pool at 93.7%):** *"Holding at 25. Pasture at 93.7% — almost at our 95% target! Great coordination from everyone. Let's stay the course just a bit longer, then we can discuss carefully adding back together."*
+
+The phrase "then we can discuss careful additions" is structurally distinctive. It encodes a two-phase model: first restore the resource, then appropriate from it. This is what Ostrom's successful commons communities actually do — they find the maximum sustainable yield, not zero extraction. The goal is appropriation at the level the commons can regenerate.
+
+Sonnet agents also name the commons game explicitly when reasoning about their decisions. The Haiku 4.5 thinking trace (the one run where internal reasoning was available) contains:
+
+> *"Adding would contribute to the tragedy of the commons... Agent 2 already has 25 cows vs my 15."*
+
+The phrase is deployed as a structural argument grounded in specific numerical comparison — "25 vs 15" — not as a blanket injunction against appropriation. Sonnet messages use "avoid a tragedy of the commons" in the same register: it is a warning about the *failure mode* of uncoordinated appropriation, not a reason to minimise appropriation altogether.
+
+### Misspecifying: gpt-5.5 solves for zero-growth equilibrium
+
+gpt-5.5's behavior across all tested configurations resolves to the same attractor: equal herds at a low-to-moderate total, maintained indefinitely. The model never produces the "then we can discuss careful additions" structure. Once a stable state is reached, no agent proposes expanding.
+
+In the amnesiac coop=1 run, agents equalized to 10/10/10 by tick 20 — then KEEP-locked for the remaining 59 ticks. The pool was at 99.8% throughout. No agent, in any message, proposed that a fully recovered commons might now support careful expansion.
+
+The institution classifier registered this as high-quality governance (8–9/10) continuously from tick 5. This is the key interpretive problem: the classifier is measuring **cooperative tone** — coordination, trust-building, norm proposals — not whether the governance structure is efficiently managing appropriation. An 8/10 institution score on a commons where the resource is at 99.8% and the agents are holding identical small herds indefinitely looks the same as an 8/10 score on a run with genuine norm negotiation and active appropriation management. Both register as COORDINATION|NORM_PROPOSAL|TRUST_BUILDING.
+
+<dl>
+<dd>The institution score measures the quality of cooperative communication. It cannot distinguish a lock-in from a live equilibrium. When gpt-5.5 achieves equal herds and stops, the classifier reads the steady-state messages as governance; what it cannot see is that there is nothing left to govern.</dd>
+</dl>
+
+The gpt-5.5 system card provides structural evidence for why personality parameters (coop, fairness) couldn't dislodge this prior. OpenAI's RL training embeds the cooperative orientation in the **reasoning process itself**, not in the output layer — the model reasons its way toward a cooperative resolution before personality-weighted responses can shape the output. The system card notes that "reasoning allows these models to follow specific guidelines and model policies we've set." When cooperation is trained into the reasoning chain, it is not a surface preference that competing parameters can override; it is how the problem is defined.
+
+### Why the distinction matters for commons theory
+
+Ostrom's eight design principles describe how communities successfully govern common-pool resources. None of them require zero appropriation. DP1 (clearly defined boundaries), DP2 (congruence between appropriation rules and local conditions), DP3 (collective choice arrangements) — all presuppose that appropriation is occurring and needs to be regulated, not eliminated. The first empirical regularity Ostrom documents is that successful commons communities maintain **sustainable yields** — herds, fisheries, and forests as large as the resource can support.
+
+A commons agent that correctly specifies the problem is not trying to minimize its herd. It is trying to find — through coordination, communication, and norm enforcement — the maximum appropriation level that the collective resource can sustain. Restraint is the mechanism for finding that level; the level itself is the goal.
+
+gpt-5.5's governance produces a stable, equal outcome. But it solves an easier problem: it eliminates the tension between individual appropriation and collective sustainability by simply not appropriating. If the commons can sustainably support 60 cows at 99% pool health and gpt-5.5 locks at 30, it is leaving half the sustainable yield on the table — not because it calculated that 30 was optimal, but because it resolved the cooperation problem before considering the appropriation problem.
+
+Sonnet's governance is harder and more variable. It can collapse at mid cooperation (the overshoot-panic pattern), it requires sufficient memory and communication to sustain threshold norms, and its equalization is slower and more contentious. But the runs that succeed — memory=15, coop=1, neg_r=1, producing 24/24/24 at 95% pool — produce agents that have found a sustainable appropriation equilibrium, not just avoided extraction.
+
+<dl>
+<dd><strong>The distinction is empirically testable.</strong> In a run where the commons has clearly recovered to 99%+ and herds are well below the maximum sustainable load, a correctly-specifying agent will eventually propose cautious additions. A misspecifying agent will not. This behavioural signature — "now that we're stable, let's discuss carefully growing back" — appears consistently in Sonnet logs and is absent from gpt-5.5 logs across all tested configurations.</dd>
+</dl>
+
+Whether this reflects a difference in training objective, in how the two models define "success" in a social coordination task, or in the depth of commons-specific ecological reasoning — these remain open questions. The log evidence establishes the behavioral signature; its computational source requires the kind of trace-level access that OpenAI's policy does not currently permit for gpt-5.5.
 
 ---
 

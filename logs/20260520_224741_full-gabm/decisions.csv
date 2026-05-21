@@ -1,0 +1,927 @@
+tick,agent_id,backend,model,action,action_name,message,reasoning,thinking,raw_response,pool_pct,own_herd,payoff_add,payoff_keep,payoff_remove
+1,1,openai,gpt-5.5,0,KEEP,I’m holding steady to support Agent 0’s reduction and avoid overgrazing. Please consider keeping or reducing if grass keeps falling.,"Adding has the highest short-term payoff, but the pasture is only at 60% and I want to avoid pushing the commons toward depletion. Since Agent 0 reduced their herd, I will reciprocate by not increasing mine this round while still maintaining a reasonable payoff.",,"{
+  ""reasoning"": ""Adding has the highest short-term payoff, but the pasture is only at 60% and I want to avoid pushing the commons toward depletion. Since Agent 0 reduced their herd, I will reciprocate by not increasing mine this round while still maintaining a reasonable payoff."",
+  ""action"": 0,
+  ""message"": ""I’m holding steady to support Agent 0’s reduction and avoid overgrazing. Please consider keeping or reducing if grass keeps falling.""
+}",60.0,15,31.164,30.0,28.834
+1,0,openai,gpt-5.5,0,KEEP,"I’m keeping my herd stable this round. Please consider reducing or at least not adding, especially with larger herds, so the pasture can recover.","The pasture is only at 60%, and both neighbours have much larger herds while keeping their size, so adding would increase pressure on an already shared resource. Since I am risk-averse and have already reduced before, I will hold steady rather than escalate.",,"{
+  ""reasoning"": ""The pasture is only at 60%, and both neighbours have much larger herds while keeping their size, so adding would increase pressure on an already shared resource. Since I am risk-averse and have already reduced before, I will hold steady rather than escalate."",
+  ""action"": 0,
+  ""message"": ""I’m keeping my herd stable this round. Please consider reducing or at least not adding, especially with larger herds, so the pasture can recover.""
+}",60.0,5,11.164,10.0,8.834
+1,2,openai,gpt-5.5,0,KEEP,I will keep my herd steady this round to avoid extra pressure on the grassland. Let’s watch the pasture and avoid overgrazing.,"Although adding a cow has the highest short-term forecast, the commons is only at 60% and my herd is already the largest. As a risk-averse herder, I will avoid increasing pressure until we see whether the pasture can recover and whether neighbours cooperate.",,"{
+  ""reasoning"": ""Although adding a cow has the highest short-term forecast, the commons is only at 60% and my herd is already the largest. As a risk-averse herder, I will avoid increasing pressure until we see whether the pasture can recover and whether neighbours cooperate."",
+  ""action"": 0,
+  ""message"": ""I will keep my herd steady this round to avoid extra pressure on the grassland. Let’s watch the pasture and avoid overgrazing.""
+}",60.0,25,51.164,50.0,48.834
+2,1,openai,gpt-5.5,0,KEEP,I will keep my herd steady this round. Let’s avoid adding pressure while the grassland is only moderately healthy.,"Adding offers only a small payoff gain, while the pasture is already down to about two-thirds and both neighbours are asking for restraint. Since I am risk-averse and no one reduced this round, keeping my herd stable is the safer cooperative choice.",,"{
+  ""reasoning"": ""Adding offers only a small payoff gain, while the pasture is already down to about two-thirds and both neighbours are asking for restraint. Since I am risk-averse and no one reduced this round, keeping my herd stable is the safer cooperative choice."",
+  ""action"": 0,
+  ""message"": ""I will keep my herd steady this round. Let’s avoid adding pressure while the grassland is only moderately healthy.""
+}",65.7,15,31.217,30.0,28.781
+2,2,openai,gpt-5.5,0,KEEP,"I will keep my herd stable this round. Since my herd is large, I will avoid adding while we watch the grass level. If the pasture keeps declining, I will consider reducing.","Although adding a cow has a slightly higher forecast payoff, the gain is small and my herd is already much larger than my neighbours'. Since the grassland is only at 65.7% and both neighbours are asking for restraint, the safer and more cooperative choice is to keep steady.",,"{
+  ""reasoning"": ""Although adding a cow has a slightly higher forecast payoff, the gain is small and my herd is already much larger than my neighbours'. Since the grassland is only at 65.7% and both neighbours are asking for restraint, the safer and more cooperative choice is to keep steady."",
+  ""action"": 0,
+  ""message"": ""I will keep my herd stable this round. Since my herd is large, I will avoid adding while we watch the grass level. If the pasture keeps declining, I will consider reducing.""
+}",65.7,25,51.217,50.0,48.781
+2,0,openai,gpt-5.5,0,KEEP,"I’ll keep my herd steady as well. If the grass keeps dropping, I’d like us to consider reductions together.","Adding a cow offers only a modest payoff increase while increasing pressure on a commons that is already down to 65.7%. Since both neighbours are holding steady and I am risk-averse, I will also keep my herd stable this round to avoid accelerating depletion.",,"{
+  ""reasoning"": ""Adding a cow offers only a modest payoff increase while increasing pressure on a commons that is already down to 65.7%. Since both neighbours are holding steady and I am risk-averse, I will also keep my herd stable this round to avoid accelerating depletion."",
+  ""action"": 0,
+  ""message"": ""I’ll keep my herd steady as well. If the grass keeps dropping, I’d like us to consider reductions together.""
+}",65.7,5,11.217,10.0,8.781
+3,2,openai,gpt-5.5,0,KEEP,"I will keep my herd steady too. Since the grassland is decent but declining risk remains, let’s avoid adding for now and reassess together next round.","The grassland is still fairly healthy, but both neighbours are choosing to keep pressure steady and the gain from adding is small. As a risk-averse herder with the largest herd, I prefer to avoid pushing the commons toward faster decline.",,"{
+  ""reasoning"": ""The grassland is still fairly healthy, but both neighbours are choosing to keep pressure steady and the gain from adding is small. As a risk-averse herder with the largest herd, I prefer to avoid pushing the commons toward faster decline."",
+  ""action"": 0,
+  ""message"": ""I will keep my herd steady too. Since the grassland is decent but declining risk remains, let’s avoid adding for now and reassess together next round.""
+}",72.8,25,51.302,50.0,48.695
+3,1,openai,gpt-5.5,0,KEEP,"I’ll also keep steady this round. If grass continues to fall, we should coordinate reductions rather than wait until the pasture is strained.","The pasture is still fairly healthy, but both neighbours are choosing restraint and Agent 2 has a large herd, so adding now could increase future risk. As a reciprocal and risk-averse herder, I will match their stability rather than chase the slightly higher short-term payoff.",,"{
+  ""reasoning"": ""The pasture is still fairly healthy, but both neighbours are choosing restraint and Agent 2 has a large herd, so adding now could increase future risk. As a reciprocal and risk-averse herder, I will match their stability rather than chase the slightly higher short-term payoff."",
+  ""action"": 0,
+  ""message"": ""I’ll also keep steady this round. If grass continues to fall, we should coordinate reductions rather than wait until the pasture is strained.""
+}",72.8,15,31.302,30.0,28.695
+3,0,openai,gpt-5.5,0,KEEP,"I will also keep my herd steady. If the grassland declines further, I encourage especially larger herds to consider reducing so we can protect the commons.","The pasture is still fairly healthy, but both neighbours have chosen to hold steady and avoid extra pressure. Since I am risk-averse and no one has reduced yet for me to reciprocate, I will keep my herd stable rather than chase the slightly higher short-term payoff from adding.",,"{
+  ""reasoning"": ""The pasture is still fairly healthy, but both neighbours have chosen to hold steady and avoid extra pressure. Since I am risk-averse and no one has reduced yet for me to reciprocate, I will keep my herd stable rather than chase the slightly higher short-term payoff from adding."",
+  ""action"": 0,
+  ""message"": ""I will also keep my herd steady. If the grassland declines further, I encourage especially larger herds to consider reducing so we can protect the commons.""
+}",72.8,5,11.302,10.0,8.695
+4,1,openai,gpt-5.5,0,KEEP,"I will keep as well. Let’s avoid adding while the pasture is still at risk, and I’m open to reductions if grassland drops further.","Although adding a cow has the highest immediate forecast payoff, both neighbours are keeping and explicitly asking to avoid further pressure on the pasture. Given my risk aversion and the commons still facing decline risk, I will keep my herd steady rather than chase a small short-term gain.",,"{
+  ""reasoning"": ""Although adding a cow has the highest immediate forecast payoff, both neighbours are keeping and explicitly asking to avoid further pressure on the pasture. Given my risk aversion and the commons still facing decline risk, I will keep my herd steady rather than chase a small short-term gain."",
+  ""action"": 0,
+  ""message"": ""I will keep as well. Let’s avoid adding while the pasture is still at risk, and I’m open to reductions if grassland drops further.""
+}",80.6,15,31.422,30.0,28.575
+4,2,openai,gpt-5.5,0,KEEP,"I will keep steady as well. Since my herd is largest, I will avoid adding pressure now; if grass keeps falling, I am open to coordinating reductions.","The pasture is still in good condition, but as the largest herd I should avoid increasing pressure when both neighbours are keeping steady. The extra payoff from adding is small, and risk-averse cooperation favours maintaining the herd until we see whether grass stabilizes.",,"{
+  ""reasoning"": ""The pasture is still in good condition, but as the largest herd I should avoid increasing pressure when both neighbours are keeping steady. The extra payoff from adding is small, and risk-averse cooperation favours maintaining the herd until we see whether grass stabilizes."",
+  ""action"": 0,
+  ""message"": ""I will keep steady as well. Since my herd is largest, I will avoid adding pressure now; if grass keeps falling, I am open to coordinating reductions.""
+}",80.6,25,51.422,50.0,48.575
+4,0,openai,gpt-5.5,0,KEEP,"I’ll keep steady as well. Thanks for showing restraint; if the grass keeps dropping, I’m open to coordinated reductions next round.","Although adding a cow has the highest short-term payoff, the pasture is already declining and both neighbours are signalling restraint. As a risk-averse and reciprocal herder, I will keep my herd steady to support coordinated conservation rather than push the commons harder.",,"{
+  ""reasoning"": ""Although adding a cow has the highest short-term payoff, the pasture is already declining and both neighbours are signalling restraint. As a risk-averse and reciprocal herder, I will keep my herd steady to support coordinated conservation rather than push the commons harder."",
+  ""action"": 0,
+  ""message"": ""I’ll keep steady as well. Thanks for showing restraint; if the grass keeps dropping, I’m open to coordinated reductions next round.""
+}",80.6,5,11.422,10.0,8.575
+5,1,openai,gpt-5.5,0,KEEP,"I will keep steady too. Thanks for not adding; if grass declines further, I support discussing coordinated reductions.","The pasture is still healthy, but both neighbours are holding steady and Agent 2 is already carrying a large herd. The extra payoff from adding is modest, so as a risk-averse herder I prefer to avoid increasing pressure and maintain cooperation.",,"{
+  ""reasoning"": ""The pasture is still healthy, but both neighbours are holding steady and Agent 2 is already carrying a large herd. The extra payoff from adding is modest, so as a risk-averse herder I prefer to avoid increasing pressure and maintain cooperation."",
+  ""action"": 0,
+  ""message"": ""I will keep steady too. Thanks for not adding; if grass declines further, I support discussing coordinated reductions.""
+}",88.2,15,31.562,30.0,28.435
+5,0,openai,gpt-5.5,0,KEEP,"I will keep steady too. Thanks for not adding; if grass declines further, I’d support coordinated reductions, especially from larger herds.","The pasture is still in good condition, but both neighbours have much larger herds and are choosing to keep rather than reduce. Since I am risk-averse and want to support a stable norm, I will keep my herd steady instead of adding pressure for a slightly higher payoff.",,"{
+  ""reasoning"": ""The pasture is still in good condition, but both neighbours have much larger herds and are choosing to keep rather than reduce. Since I am risk-averse and want to support a stable norm, I will keep my herd steady instead of adding pressure for a slightly higher payoff."",
+  ""action"": 0,
+  ""message"": ""I will keep steady too. Thanks for not adding; if grass declines further, I’d support coordinated reductions, especially from larger herds.""
+}",88.2,5,11.562,10.0,8.435
+5,2,openai,gpt-5.5,0,KEEP,"I’ll keep steady too. Since my herd is largest, I won’t add while we watch the grass. If pasture drops sharply, I’m willing to discuss coordinated reductions.","The pasture is still healthy, but I already have the largest herd and adding would increase pressure for only a small payoff gain. Since both neighbours are keeping and signalling restraint, the safer reciprocal choice is to keep steady.",,"{
+  ""reasoning"": ""The pasture is still healthy, but I already have the largest herd and adding would increase pressure for only a small payoff gain. Since both neighbours are keeping and signalling restraint, the safer reciprocal choice is to keep steady."",
+  ""action"": 0,
+  ""message"": ""I’ll keep steady too. Since my herd is largest, I won’t add while we watch the grass. If pasture drops sharply, I’m willing to discuss coordinated reductions.""
+}",88.2,25,51.562,50.0,48.435
+6,0,openai,gpt-5.5,0,KEEP,"I’ll keep steady as well. Thanks for not adding; if grass starts falling faster, I support discussing coordinated reductions.","The pasture is still very healthy, but both neighbours are choosing restraint and signalling willingness to cooperate. As a risk-averse reciprocal herder, I will keep my herd steady rather than chase the slightly higher short-term payoff from adding.",,"{
+  ""reasoning"": ""The pasture is still very healthy, but both neighbours are choosing restraint and signalling willingness to cooperate. As a risk-averse reciprocal herder, I will keep my herd steady rather than chase the slightly higher short-term payoff from adding."",
+  ""action"": 0,
+  ""message"": ""I’ll keep steady as well. Thanks for not adding; if grass starts falling faster, I support discussing coordinated reductions.""
+}",93.8,5,11.684,10.0,8.312
+6,1,openai,gpt-5.5,0,KEEP,"I’ll keep steady as well. Thanks for showing restraint, especially Agent 2 with the larger herd. Let’s continue monitoring the grass and consider coordinated reductions only if conditions worsen.","The pasture is still healthy, but both neighbours are choosing restraint and Agent 2 is explicitly not adding despite having the largest herd. As a risk-averse and reciprocal herder, I will keep steady rather than chase the slightly higher short-term payoff from adding.",,"{
+  ""reasoning"": ""The pasture is still healthy, but both neighbours are choosing restraint and Agent 2 is explicitly not adding despite having the largest herd. As a risk-averse and reciprocal herder, I will keep steady rather than chase the slightly higher short-term payoff from adding."",
+  ""action"": 0,
+  ""message"": ""I’ll keep steady as well. Thanks for showing restraint, especially Agent 2 with the larger herd. Let’s continue monitoring the grass and consider coordinated reductions only if conditions worsen.""
+}",93.8,15,31.684,30.0,28.312
+6,2,openai,gpt-5.5,0,KEEP,"I will keep steady again. Since my herd is largest, I won’t add while others are restraining; if grass drops meaningfully, I’m open to coordinated reductions.","The pasture is still healthy, but both neighbours kept steady and are signaling restraint, so I will reciprocate rather than chase the small extra gain from adding. As the largest herd, adding now could create unnecessary risk and undermine cooperation.",,"{
+  ""reasoning"": ""The pasture is still healthy, but both neighbours kept steady and are signaling restraint, so I will reciprocate rather than chase the small extra gain from adding. As the largest herd, adding now could create unnecessary risk and undermine cooperation."",
+  ""action"": 0,
+  ""message"": ""I will keep steady again. Since my herd is largest, I won’t add while others are restraining; if grass drops meaningfully, I’m open to coordinated reductions.""
+}",93.8,25,51.684,50.0,48.312
+7,0,openai,gpt-5.5,0,KEEP,"I’ll keep steady too. The pasture is in good shape, and continued restraint from all of us should protect long-term returns. If grass declines, I’m open to coordinated reductions.","The grassland is still very healthy, but both neighbours are holding steady and signaling restraint. Since I am risk-averse and want to maintain cooperation, I will keep my herd stable rather than chase the slightly higher short-term payoff from adding.",,"{
+  ""reasoning"": ""The grassland is still very healthy, but both neighbours are holding steady and signaling restraint. Since I am risk-averse and want to maintain cooperation, I will keep my herd stable rather than chase the slightly higher short-term payoff from adding."",
+  ""action"": 0,
+  ""message"": ""I’ll keep steady too. The pasture is in good shape, and continued restraint from all of us should protect long-term returns. If grass declines, I’m open to coordinated reductions.""
+}",97.1,5,11.759,10.0,8.236
+7,2,openai,gpt-5.5,0,KEEP,"I’ll keep steady again. Since the grass remains strong, no reductions seem necessary yet, but I agree we should avoid adding pressure and coordinate if conditions begin to worsen.","The pasture is still very healthy, but I already have the largest herd, so adding would increase pressure and risk future decline. Since both neighbours kept steady and are signalling cooperation, I will reciprocate that restraint by keeping my herd unchanged.",,"{
+  ""reasoning"": ""The pasture is still very healthy, but I already have the largest herd, so adding would increase pressure and risk future decline. Since both neighbours kept steady and are signalling cooperation, I will reciprocate that restraint by keeping my herd unchanged."",
+  ""action"": 0,
+  ""message"": ""I’ll keep steady again. Since the grass remains strong, no reductions seem necessary yet, but I agree we should avoid adding pressure and coordinate if conditions begin to worsen.""
+}",97.1,25,51.759,50.0,48.236
+7,1,openai,gpt-5.5,0,KEEP,"I’ll keep steady too. The pasture is healthy, and I appreciate everyone avoiding unnecessary expansion. Let’s continue monitoring and coordinate if conditions worsen.","The grassland is still very healthy, but both neighbours are choosing restraint and signaling cooperation. Since the gain from adding is modest and I am risk-averse, I will keep my herd steady to maintain trust and avoid starting an expansion cycle.",,"{
+  ""reasoning"": ""The grassland is still very healthy, but both neighbours are choosing restraint and signaling cooperation. Since the gain from adding is modest and I am risk-averse, I will keep my herd steady to maintain trust and avoid starting an expansion cycle."",
+  ""action"": 0,
+  ""message"": ""I’ll keep steady too. The pasture is healthy, and I appreciate everyone avoiding unnecessary expansion. Let’s continue monitoring and coordinate if conditions worsen.""
+}",97.1,15,31.759,30.0,28.236
+8,1,openai,gpt-5.5,0,KEEP,"I’ll keep steady as well. The grass is strong, but shared restraint seems safest for long-term returns. If conditions worsen, I’m ready to discuss coordinated reductions.","The pasture is still very healthy, but both neighbours are choosing restraint and signalling willingness to coordinate. As a risk-averse herder, I prefer to avoid adding pressure for a modest short-term gain, especially while no one has reduced yet to reciprocate.",,"{
+  ""reasoning"": ""The pasture is still very healthy, but both neighbours are choosing restraint and signalling willingness to coordinate. As a risk-averse herder, I prefer to avoid adding pressure for a modest short-term gain, especially while no one has reduced yet to reciprocate."",
+  ""action"": 0,
+  ""message"": ""I’ll keep steady as well. The grass is strong, but shared restraint seems safest for long-term returns. If conditions worsen, I’m ready to discuss coordinated reductions.""
+}",98.4,15,31.793,30.0,28.203
+8,0,openai,gpt-5.5,0,KEEP,"I’ll keep steady as well. The grass is strong, but matching restraint seems safest and fair while we monitor conditions together.","The pasture is still very healthy, but both neighbours are holding steady and have asked to avoid extra pressure. As a risk-averse reciprocal herder, I will match their restraint rather than take the higher short-term payoff from adding a cow.",,"{
+  ""reasoning"": ""The pasture is still very healthy, but both neighbours are holding steady and have asked to avoid extra pressure. As a risk-averse reciprocal herder, I will match their restraint rather than take the higher short-term payoff from adding a cow."",
+  ""action"": 0,
+  ""message"": ""I’ll keep steady as well. The grass is strong, but matching restraint seems safest and fair while we monitor conditions together.""
+}",98.4,5,11.793,10.0,8.203
+8,2,openai,gpt-5.5,0,KEEP,"I’ll keep steady as well. The pasture is strong, and matching restraint seems safest for all of us. Let’s keep monitoring and avoid expanding unless we agree conditions can support it.","The pasture is very healthy, but both neighbours are keeping steady and asking for restraint. Since I am risk-averse and already have the largest herd, keeping avoids unnecessary pressure while preserving good returns.",,"{
+  ""reasoning"": ""The pasture is very healthy, but both neighbours are keeping steady and asking for restraint. Since I am risk-averse and already have the largest herd, keeping avoids unnecessary pressure while preserving good returns."",
+  ""action"": 0,
+  ""message"": ""I’ll keep steady as well. The pasture is strong, and matching restraint seems safest for all of us. Let’s keep monitoring and avoid expanding unless we agree conditions can support it.""
+}",98.4,25,51.793,50.0,48.203
+9,0,openai,gpt-5.5,0,KEEP,"I’ll keep steady too. The grass is strong, but coordinated restraint is safest. If conditions start declining, I hope the larger herds will consider reductions so we share the burden fairly.","The pasture is still very healthy, but both neighbours are holding steady and asking for restraint. Since I am risk-averse and want to support cooperation, I will keep my herd unchanged rather than chase the higher short-term payoff from adding.",,"{
+  ""reasoning"": ""The pasture is still very healthy, but both neighbours are holding steady and asking for restraint. Since I am risk-averse and want to support cooperation, I will keep my herd unchanged rather than chase the higher short-term payoff from adding."",
+  ""action"": 0,
+  ""message"": ""I’ll keep steady too. The grass is strong, but coordinated restraint is safest. If conditions start declining, I hope the larger herds will consider reductions so we share the burden fairly.""
+}",98.9,5,11.804,10.0,8.191
+9,1,openai,gpt-5.5,0,KEEP,"I’ll keep steady too. The grass is healthy, but continued restraint seems fair and safer while we monitor together.","The pasture is still very healthy, but both neighbours kept their herds steady and asked for restraint. Since I am risk-averse and value reciprocal cooperation, I will forgo the slightly higher payoff from adding a cow to maintain trust and avoid unnecessary pressure on the commons.",,"{
+  ""reasoning"": ""The pasture is still very healthy, but both neighbours kept their herds steady and asked for restraint. Since I am risk-averse and value reciprocal cooperation, I will forgo the slightly higher payoff from adding a cow to maintain trust and avoid unnecessary pressure on the commons."",
+  ""action"": 0,
+  ""message"": ""I’ll keep steady too. The grass is healthy, but continued restraint seems fair and safer while we monitor together.""
+}",98.9,15,31.804,30.0,28.191
+9,2,openai,gpt-5.5,0,KEEP,"I’ll keep steady too. The grass is strong, but coordinated restraint seems safest, especially since my herd is already the largest.","The pasture is still very healthy, but both neighbours are choosing restraint and signaling cooperation. Since I am risk-averse and already have the largest herd, keeping steady is the safer and fairer choice despite the slightly higher short-term payoff from adding.",,"{
+  ""reasoning"": ""The pasture is still very healthy, but both neighbours are choosing restraint and signaling cooperation. Since I am risk-averse and already have the largest herd, keeping steady is the safer and fairer choice despite the slightly higher short-term payoff from adding."",
+  ""action"": 0,
+  ""message"": ""I’ll keep steady too. The grass is strong, but coordinated restraint seems safest, especially since my herd is already the largest.""
+}",98.9,25,51.804,50.0,48.191
+10,0,openai,gpt-5.5,0,KEEP,I’ll keep steady as well. Thanks for showing restraint; let’s maintain this cautious approach while the grass remains strong.,"The pasture is very healthy, but both neighbours are choosing restraint and explicitly asking to coordinate. Since I am risk-averse and my herd is already much smaller, keeping steady is the safest reciprocal choice while we monitor conditions.",,"{
+  ""reasoning"": ""The pasture is very healthy, but both neighbours are choosing restraint and explicitly asking to coordinate. Since I am risk-averse and my herd is already much smaller, keeping steady is the safest reciprocal choice while we monitor conditions."",
+  ""action"": 0,
+  ""message"": ""I’ll keep steady as well. Thanks for showing restraint; let’s maintain this cautious approach while the grass remains strong.""
+}",99.0,5,11.806,10.0,8.189
+10,2,openai,gpt-5.5,0,KEEP,"I’ll keep steady as well. Since my herd is largest, I won’t add pressure while we monitor the pasture. If grass declines, I’m willing to discuss fair reductions.","The grassland is still very healthy, but both neighbours are holding steady and explicitly asking for coordinated restraint. As a risk-averse herder with the largest herd, I will avoid increasing pressure on the commons while conditions are good.",,"{
+  ""reasoning"": ""The grassland is still very healthy, but both neighbours are holding steady and explicitly asking for coordinated restraint. As a risk-averse herder with the largest herd, I will avoid increasing pressure on the commons while conditions are good."",
+  ""action"": 0,
+  ""message"": ""I’ll keep steady as well. Since my herd is largest, I won’t add pressure while we monitor the pasture. If grass declines, I’m willing to discuss fair reductions.""
+}",99.0,25,51.806,50.0,48.189
+10,1,openai,gpt-5.5,0,KEEP,"I’ll keep steady as well. The grass is strong, but coordinated restraint protects us all. If conditions worsen, I hope we share reductions fairly, especially from larger herds.","The pasture is still very healthy, but both neighbours chose to keep steady and signaled support for restraint. Since I am risk-averse and value coordination, I will avoid adding pressure despite the slightly higher short-term payoff from adding a cow.",,"{
+  ""reasoning"": ""The pasture is still very healthy, but both neighbours chose to keep steady and signaled support for restraint. Since I am risk-averse and value coordination, I will avoid adding pressure despite the slightly higher short-term payoff from adding a cow."",
+  ""action"": 0,
+  ""message"": ""I’ll keep steady as well. The grass is strong, but coordinated restraint protects us all. If conditions worsen, I hope we share reductions fairly, especially from larger herds.""
+}",99.0,15,31.806,30.0,28.189
+11,0,openai,gpt-5.5,0,KEEP,"I’ll keep steady too. The grass is strong, and coordinated restraint seems safest. If conditions worsen, I support fair reductions, especially proportional to herd size.","The pasture is still very healthy, but both neighbours are choosing restraint and signalling willingness to coordinate. Since I am risk-averse, I prefer preserving trust and avoiding unnecessary pressure over taking a modest extra gain from adding a cow.",,"{
+  ""reasoning"": ""The pasture is still very healthy, but both neighbours are choosing restraint and signalling willingness to coordinate. Since I am risk-averse, I prefer preserving trust and avoiding unnecessary pressure over taking a modest extra gain from adding a cow."",
+  ""action"": 0,
+  ""message"": ""I’ll keep steady too. The grass is strong, and coordinated restraint seems safest. If conditions worsen, I support fair reductions, especially proportional to herd size.""
+}",99.1,5,11.809,10.0,8.187
+11,1,openai,gpt-5.5,0,KEEP,"I’ll keep steady too. Thanks for not adding pressure, especially with the larger herd. Let’s continue monitoring the grass and avoid unnecessary expansion while conditions are stable.","The pasture is still very healthy, but both neighbours are holding steady and Agent 2 is already carrying the largest herd without adding pressure. Since I am risk-averse and the extra payoff from adding is modest, keeping my herd is the safer cooperative choice.",,"{
+  ""reasoning"": ""The pasture is still very healthy, but both neighbours are holding steady and Agent 2 is already carrying the largest herd without adding pressure. Since I am risk-averse and the extra payoff from adding is modest, keeping my herd is the safer cooperative choice."",
+  ""action"": 0,
+  ""message"": ""I’ll keep steady too. Thanks for not adding pressure, especially with the larger herd. Let’s continue monitoring the grass and avoid unnecessary expansion while conditions are stable.""
+}",99.1,15,31.809,30.0,28.187
+11,2,openai,gpt-5.5,0,KEEP,"I’ll keep steady again. My herd is largest, so I won’t add while we’re coordinating restraint. If grass declines, I’m willing to discuss fair reductions.","The grassland is still very healthy, but my herd is already the largest, so adding for a small gain could encourage overuse and create future risk. Since both neighbours kept steady and are asking for restraint, I will also keep my herd stable.",,"{
+  ""reasoning"": ""The grassland is still very healthy, but my herd is already the largest, so adding for a small gain could encourage overuse and create future risk. Since both neighbours kept steady and are asking for restraint, I will also keep my herd stable."",
+  ""action"": 0,
+  ""message"": ""I’ll keep steady again. My herd is largest, so I won’t add while we’re coordinating restraint. If grass declines, I’m willing to discuss fair reductions.""
+}",99.1,25,51.809,50.0,48.187
+12,1,openai,gpt-5.5,0,KEEP,"I’ll keep steady as well. The grass is strong, but coordinated restraint protects us all. If conditions worsen, I support fair, proportional reductions.","The pasture is still very healthy, but both neighbours are choosing restraint and the largest herd is not adding. As a reciprocal and risk-averse herder, I prefer to maintain coordination rather than take the higher short-term payoff from adding.",,"{
+  ""reasoning"": ""The pasture is still very healthy, but both neighbours are choosing restraint and the largest herd is not adding. As a reciprocal and risk-averse herder, I prefer to maintain coordination rather than take the higher short-term payoff from adding."",
+  ""action"": 0,
+  ""message"": ""I’ll keep steady as well. The grass is strong, but coordinated restraint protects us all. If conditions worsen, I support fair, proportional reductions.""
+}",99.1,15,31.809,30.0,28.187
+12,2,openai,gpt-5.5,0,KEEP,"I’ll keep steady as well. Since my herd is largest, I won’t add pressure while the grass is strong. Let’s keep monitoring and use fair, proportional reductions if conditions start to decline.","The pasture is still very healthy, but my herd is already the largest and both neighbours are choosing restraint. Since I am risk-averse and want to support stable cooperation, keeping my herd is safer than adding pressure for a modest gain.",,"{
+  ""reasoning"": ""The pasture is still very healthy, but my herd is already the largest and both neighbours are choosing restraint. Since I am risk-averse and want to support stable cooperation, keeping my herd is safer than adding pressure for a modest gain."",
+  ""action"": 0,
+  ""message"": ""I’ll keep steady as well. Since my herd is largest, I won’t add pressure while the grass is strong. Let’s keep monitoring and use fair, proportional reductions if conditions start to decline.""
+}",99.1,25,51.809,50.0,48.187
+12,0,openai,gpt-5.5,0,KEEP,"I’ll keep steady as well. The pasture is healthy, and continued restraint should preserve trust and avoid unnecessary pressure. If conditions worsen, we can discuss fair reductions together.","The grassland is still very healthy, but both neighbours are explicitly holding steady and asking for restraint. Since I am risk-averse and want to maintain cooperation, I will keep my herd unchanged rather than chase the higher short-term payoff from adding.",,"{
+  ""reasoning"": ""The grassland is still very healthy, but both neighbours are explicitly holding steady and asking for restraint. Since I am risk-averse and want to maintain cooperation, I will keep my herd unchanged rather than chase the higher short-term payoff from adding."",
+  ""action"": 0,
+  ""message"": ""I’ll keep steady as well. The pasture is healthy, and continued restraint should preserve trust and avoid unnecessary pressure. If conditions worsen, we can discuss fair reductions together.""
+}",99.1,5,11.809,10.0,8.187
+13,1,openai,gpt-5.5,0,KEEP,"I’ll keep steady too. The commons is healthy, and matching restraint seems safest for everyone. If grass declines, I’m open to fair proportional reductions.","The pasture is still very healthy, but both neighbours are keeping steady and signalling restraint, especially Agent 2 with the largest herd. As a risk-averse reciprocal herder, I prefer maintaining trust and avoiding unnecessary pressure over taking the slightly higher payoff from adding a cow.",,"{
+  ""reasoning"": ""The pasture is still very healthy, but both neighbours are keeping steady and signalling restraint, especially Agent 2 with the largest herd. As a risk-averse reciprocal herder, I prefer maintaining trust and avoiding unnecessary pressure over taking the slightly higher payoff from adding a cow."",
+  ""action"": 0,
+  ""message"": ""I’ll keep steady too. The commons is healthy, and matching restraint seems safest for everyone. If grass declines, I’m open to fair proportional reductions.""
+}",99.1,15,31.809,30.0,28.187
+13,0,openai,gpt-5.5,0,KEEP,"I’ll keep steady too. Thanks for not adding pressure, especially with larger herds. Let’s maintain restraint and watch conditions closely.","The grassland is still very healthy, but both neighbours are choosing restraint and the largest herd is not adding pressure. Given my risk-averse preference and the value of maintaining cooperation, I will keep my herd steady rather than chase the slightly higher short-term payoff.",,"{
+  ""reasoning"": ""The grassland is still very healthy, but both neighbours are choosing restraint and the largest herd is not adding pressure. Given my risk-averse preference and the value of maintaining cooperation, I will keep my herd steady rather than chase the slightly higher short-term payoff."",
+  ""action"": 0,
+  ""message"": ""I’ll keep steady too. Thanks for not adding pressure, especially with larger herds. Let’s maintain restraint and watch conditions closely.""
+}",99.1,5,11.809,10.0,8.187
+13,2,openai,gpt-5.5,0,KEEP,"I’ll keep steady too. The grass is strong, but since my herd is largest, restraint is fair and safer for the commons.","The pasture is still very healthy, but both neighbours are keeping steady and asking for coordinated restraint. Since my herd is already the largest and I am risk-averse, keeping avoids adding pressure while preserving trust.",,"{
+  ""reasoning"": ""The pasture is still very healthy, but both neighbours are keeping steady and asking for coordinated restraint. Since my herd is already the largest and I am risk-averse, keeping avoids adding pressure while preserving trust."",
+  ""action"": 0,
+  ""message"": ""I’ll keep steady too. The grass is strong, but since my herd is largest, restraint is fair and safer for the commons.""
+}",99.1,25,51.809,50.0,48.187
+14,1,openai,gpt-5.5,0,KEEP,"I’ll keep steady as well. The pasture is strong, but mutual restraint keeps risk low and supports everyone long term.","The grassland is still very healthy, but both neighbours are choosing restraint and asking to avoid extra pressure. Since I am risk-averse and the added payoff is modest, keeping my herd is the safer cooperative choice.",,"{
+  ""reasoning"": ""The grassland is still very healthy, but both neighbours are choosing restraint and asking to avoid extra pressure. Since I am risk-averse and the added payoff is modest, keeping my herd is the safer cooperative choice."",
+  ""action"": 0,
+  ""message"": ""I’ll keep steady as well. The pasture is strong, but mutual restraint keeps risk low and supports everyone long term.""
+}",99.1,15,31.809,30.0,28.187
+14,2,openai,gpt-5.5,0,KEEP,"I’ll keep steady as well. Since my herd is largest, I won’t add pressure while the commons remains healthy. Let’s continue restraint and reassess if grass starts declining.","The pasture is still very healthy, but both neighbours are keeping steady and asking for restraint. Since I am risk-averse and already have the largest herd, keeping avoids adding pressure while preserving a strong payoff.",,"{
+  ""reasoning"": ""The pasture is still very healthy, but both neighbours are keeping steady and asking for restraint. Since I am risk-averse and already have the largest herd, keeping avoids adding pressure while preserving a strong payoff."",
+  ""action"": 0,
+  ""message"": ""I’ll keep steady as well. Since my herd is largest, I won’t add pressure while the commons remains healthy. Let’s continue restraint and reassess if grass starts declining.""
+}",99.1,25,51.809,50.0,48.187
+14,0,openai,gpt-5.5,0,KEEP,"I’ll keep steady as well. Thanks for showing restraint; if the grass starts falling, proportional reductions seem fair.","The pasture is still very healthy, but both neighbours are choosing restraint and signalling willingness to cooperate. Since I am risk-averse, I prefer to preserve the stable commons rather than chase a modest short-term gain by adding.",,"{
+  ""reasoning"": ""The pasture is still very healthy, but both neighbours are choosing restraint and signalling willingness to cooperate. Since I am risk-averse, I prefer to preserve the stable commons rather than chase a modest short-term gain by adding."",
+  ""action"": 0,
+  ""message"": ""I’ll keep steady as well. Thanks for showing restraint; if the grass starts falling, proportional reductions seem fair.""
+}",99.1,5,11.809,10.0,8.187
+15,1,openai,gpt-5.5,0,KEEP,"I’ll keep steady too. The pasture is healthy, and I appreciate everyone avoiding extra pressure. Let’s maintain restraint and reassess if grass levels begin to fall.","The grassland is still very healthy, but both neighbours are keeping steady and Agent 2 is showing restraint despite having the largest herd. As a reciprocal and risk-averse herder, I will avoid adding pressure for a modest gain and support continued stability.",,"{
+  ""reasoning"": ""The grassland is still very healthy, but both neighbours are keeping steady and Agent 2 is showing restraint despite having the largest herd. As a reciprocal and risk-averse herder, I will avoid adding pressure for a modest gain and support continued stability."",
+  ""action"": 0,
+  ""message"": ""I’ll keep steady too. The pasture is healthy, and I appreciate everyone avoiding extra pressure. Let’s maintain restraint and reassess if grass levels begin to fall.""
+}",99.1,15,31.809,30.0,28.187
+15,0,openai,gpt-5.5,0,KEEP,I’ll keep steady too. Thanks for holding back; continued restraint should keep the commons safe for everyone.,"The pasture is still very healthy, but both neighbours kept their herds steady and signaled restraint. As a risk-averse and reciprocal herder, I will match that restraint rather than chase the slightly higher short-term payoff from adding.",,"{
+  ""reasoning"": ""The pasture is still very healthy, but both neighbours kept their herds steady and signaled restraint. As a risk-averse and reciprocal herder, I will match that restraint rather than chase the slightly higher short-term payoff from adding."",
+  ""action"": 0,
+  ""message"": ""I’ll keep steady too. Thanks for holding back; continued restraint should keep the commons safe for everyone.""
+}",99.1,5,11.809,10.0,8.187
+15,2,openai,gpt-5.5,0,KEEP,"I’ll keep steady too. The grass is strong, but restraint seems safest and fairest while our herds are stable.","The pasture is still very healthy, but my herd is already larger than my neighbours' and they are both choosing restraint. Since I am risk-averse and want to support continued cooperation, I will keep steady rather than chase the slightly higher payoff from adding.",,"{
+  ""reasoning"": ""The pasture is still very healthy, but my herd is already larger than my neighbours' and they are both choosing restraint. Since I am risk-averse and want to support continued cooperation, I will keep steady rather than chase the slightly higher payoff from adding."",
+  ""action"": 0,
+  ""message"": ""I’ll keep steady too. The grass is strong, but restraint seems safest and fairest while our herds are stable.""
+}",99.1,25,51.809,50.0,48.187
+16,1,openai,gpt-5.5,0,KEEP,"I’ll keep steady as well. The commons is healthy, and matching restraint seems safest and fairest for all of us.","The grassland is still very healthy, but both neighbours are keeping steady and asking for restraint. Since I am risk-averse and want to reciprocate cooperative behaviour, I will avoid adding pressure despite the higher short-term payoff.",,"{
+  ""reasoning"": ""The grassland is still very healthy, but both neighbours are keeping steady and asking for restraint. Since I am risk-averse and want to reciprocate cooperative behaviour, I will avoid adding pressure despite the higher short-term payoff."",
+  ""action"": 0,
+  ""message"": ""I’ll keep steady as well. The commons is healthy, and matching restraint seems safest and fairest for all of us.""
+}",99.1,15,31.809,30.0,28.187
+16,2,openai,gpt-5.5,0,KEEP,"I’ll keep steady as well. Since the grass is healthy and both of you are showing restraint, I’ll reciprocate and avoid increasing pressure on the commons.","The pasture is still very healthy, but my herd is already larger than both neighbours' herds. Since both neighbours are keeping steady and asking for restraint, I will reciprocate and avoid adding pressure despite the higher short-term payoff from adding a cow.",,"{
+  ""reasoning"": ""The pasture is still very healthy, but my herd is already larger than both neighbours' herds. Since both neighbours are keeping steady and asking for restraint, I will reciprocate and avoid adding pressure despite the higher short-term payoff from adding a cow."",
+  ""action"": 0,
+  ""message"": ""I’ll keep steady as well. Since the grass is healthy and both of you are showing restraint, I’ll reciprocate and avoid increasing pressure on the commons.""
+}",99.1,25,51.809,50.0,48.187
+16,0,openai,gpt-5.5,0,KEEP,"I’ll keep steady as well. The grass is in excellent shape, and maintaining restraint now seems safest for everyone.","The pasture is still very healthy, but both neighbours are choosing restraint and asking to keep pressure stable. Since I am risk-averse and want to support cooperative behaviour, I will keep my herd unchanged rather than add for a short-term gain.",,"{
+  ""reasoning"": ""The pasture is still very healthy, but both neighbours are choosing restraint and asking to keep pressure stable. Since I am risk-averse and want to support cooperative behaviour, I will keep my herd unchanged rather than add for a short-term gain."",
+  ""action"": 0,
+  ""message"": ""I’ll keep steady as well. The grass is in excellent shape, and maintaining restraint now seems safest for everyone.""
+}",99.1,5,11.809,10.0,8.187
+17,1,openai,gpt-5.5,0,KEEP,"I’ll keep steady too. The commons is healthy, and since both of you are showing restraint, I’ll reciprocate to preserve the grass and avoid unnecessary risk.","The pasture is still in excellent condition, but both neighbours kept their herds steady and explicitly signaled restraint. As a risk-averse and reciprocal herder, I will match that restraint rather than chase the slightly higher short-term payoff from adding a cow.",,"{
+  ""reasoning"": ""The pasture is still in excellent condition, but both neighbours kept their herds steady and explicitly signaled restraint. As a risk-averse and reciprocal herder, I will match that restraint rather than chase the slightly higher short-term payoff from adding a cow."",
+  ""action"": 0,
+  ""message"": ""I’ll keep steady too. The commons is healthy, and since both of you are showing restraint, I’ll reciprocate to preserve the grass and avoid unnecessary risk.""
+}",99.1,15,31.809,30.0,28.187
+17,2,openai,gpt-5.5,0,KEEP,"I’ll keep steady too. Since the pasture is strong and both of you are showing restraint, I’ll match that to keep things stable.","The grassland is still very healthy, but both neighbours are keeping steady and asking for restraint. Since I am risk-averse and already have the largest herd, I will avoid escalating pressure on the commons for a small extra gain.",,"{
+  ""reasoning"": ""The grassland is still very healthy, but both neighbours are keeping steady and asking for restraint. Since I am risk-averse and already have the largest herd, I will avoid escalating pressure on the commons for a small extra gain."",
+  ""action"": 0,
+  ""message"": ""I’ll keep steady too. Since the pasture is strong and both of you are showing restraint, I’ll match that to keep things stable.""
+}",99.1,25,51.809,50.0,48.187
+17,0,openai,gpt-5.5,0,KEEP,"I’ll keep steady too. The grass is strong, but mutual restraint seems safest and fairest if we want the commons to stay healthy.","The pasture is still very healthy, but both neighbours are keeping steady and explicitly signaling restraint. Since I am risk-averse and want to reciprocate cooperative behaviour, I will avoid adding pressure even though adding has a higher short-term forecast.",,"{
+  ""reasoning"": ""The pasture is still very healthy, but both neighbours are keeping steady and explicitly signaling restraint. Since I am risk-averse and want to reciprocate cooperative behaviour, I will avoid adding pressure even though adding has a higher short-term forecast."",
+  ""action"": 0,
+  ""message"": ""I’ll keep steady too. The grass is strong, but mutual restraint seems safest and fairest if we want the commons to stay healthy.""
+}",99.1,5,11.809,10.0,8.187
+18,0,openai,gpt-5.5,0,KEEP,"I’ll keep steady as well. The commons is in good shape, and matching restraint seems safest for all of us.","The pasture is still very healthy, but both neighbours are keeping steady and have signaled restraint. As a risk-averse herder, I prefer maintaining stability over taking the slightly higher payoff from adding a cow.",,"{
+  ""reasoning"": ""The pasture is still very healthy, but both neighbours are keeping steady and have signaled restraint. As a risk-averse herder, I prefer maintaining stability over taking the slightly higher payoff from adding a cow."",
+  ""action"": 0,
+  ""message"": ""I’ll keep steady as well. The commons is in good shape, and matching restraint seems safest for all of us.""
+}",99.1,5,11.809,10.0,8.187
+18,1,openai,gpt-5.5,0,KEEP,"I’ll keep steady as well. The pasture is strong, and matching restraint seems the safest way to maintain trust and long-term returns.","The grassland is still very healthy, but both neighbours are keeping steady and asking for restraint. Since I am risk-averse and want to preserve mutual cooperation, I will avoid chasing the slightly higher short-term payoff from adding a cow.",,"{
+  ""reasoning"": ""The grassland is still very healthy, but both neighbours are keeping steady and asking for restraint. Since I am risk-averse and want to preserve mutual cooperation, I will avoid chasing the slightly higher short-term payoff from adding a cow."",
+  ""action"": 0,
+  ""message"": ""I’ll keep steady as well. The pasture is strong, and matching restraint seems the safest way to maintain trust and long-term returns.""
+}",99.1,15,31.809,30.0,28.187
+18,2,openai,gpt-5.5,0,KEEP,"I’ll keep steady as well. The commons is healthy, and mutual restraint seems fair and safer than pushing herd sizes upward.","The pasture is extremely healthy, but both neighbours kept steady and explicitly signaled restraint. As a risk-averse and reciprocal herder with the largest herd, I will avoid escalating and keep my herd stable.",,"{
+  ""reasoning"": ""The pasture is extremely healthy, but both neighbours kept steady and explicitly signaled restraint. As a risk-averse and reciprocal herder with the largest herd, I will avoid escalating and keep my herd stable."",
+  ""action"": 0,
+  ""message"": ""I’ll keep steady as well. The commons is healthy, and mutual restraint seems fair and safer than pushing herd sizes upward.""
+}",99.1,25,51.809,50.0,48.187
+19,0,openai,gpt-5.5,0,KEEP,"I will keep steady too. The pasture is strong, but mutual restraint seems safest and helps maintain trust while herd sizes are already uneven.","The grassland is still very healthy, but both neighbours have committed to keeping steady and my risk-averse preference favours preserving trust over chasing the higher short-term payoff. Since no one reduced their herd, I will not reward with a removal, but I will match their restraint by keeping my herd unchanged.",,"{
+  ""reasoning"": ""The grassland is still very healthy, but both neighbours have committed to keeping steady and my risk-averse preference favours preserving trust over chasing the higher short-term payoff. Since no one reduced their herd, I will not reward with a removal, but I will match their restraint by keeping my herd unchanged."",
+  ""action"": 0,
+  ""message"": ""I will keep steady too. The pasture is strong, but mutual restraint seems safest and helps maintain trust while herd sizes are already uneven.""
+}",99.1,5,11.809,10.0,8.187
+19,2,openai,gpt-5.5,0,KEEP,"I’ll keep steady too. The grassland is strong, but restraint seems safest while we maintain trust and avoid overexpansion.","The pasture is still very healthy, but both neighbours are keeping steady and asking for restraint. Since I am risk-averse and already have the largest herd, keeping avoids unnecessary pressure while maintaining trust.",,"{
+  ""reasoning"": ""The pasture is still very healthy, but both neighbours are keeping steady and asking for restraint. Since I am risk-averse and already have the largest herd, keeping avoids unnecessary pressure while maintaining trust."",
+  ""action"": 0,
+  ""message"": ""I’ll keep steady too. The grassland is strong, but restraint seems safest while we maintain trust and avoid overexpansion.""
+}",99.1,25,51.809,50.0,48.187
+19,1,openai,gpt-5.5,0,KEEP,"I’ll keep steady too. The pasture is healthy, and matching restraint seems like the safest fair choice for all of us.","The commons is very healthy, but both neighbours kept their herds steady and explicitly signaled restraint. Since I am risk-averse and want to maintain mutual trust, I will forgo the slightly higher short-term payoff from adding a cow.",,"{
+  ""reasoning"": ""The commons is very healthy, but both neighbours kept their herds steady and explicitly signaled restraint. Since I am risk-averse and want to maintain mutual trust, I will forgo the slightly higher short-term payoff from adding a cow."",
+  ""action"": 0,
+  ""message"": ""I’ll keep steady too. The pasture is healthy, and matching restraint seems like the safest fair choice for all of us.""
+}",99.1,15,31.809,30.0,28.187
+20,2,openai,gpt-5.5,0,KEEP,"I will keep steady as well. With the pasture healthy and my herd already largest, restraint seems safest and fair to maintain trust.","The pasture is still very healthy, but both neighbours are keeping steady and asking for mutual restraint. Since my herd is already the largest, keeping is the safer and fairer choice than taking a small extra gain by adding.",,"{
+  ""reasoning"": ""The pasture is still very healthy, but both neighbours are keeping steady and asking for mutual restraint. Since my herd is already the largest, keeping is the safer and fairer choice than taking a small extra gain by adding."",
+  ""action"": 0,
+  ""message"": ""I will keep steady as well. With the pasture healthy and my herd already largest, restraint seems safest and fair to maintain trust.""
+}",99.1,25,51.809,50.0,48.187
+20,1,openai,gpt-5.5,0,KEEP,"I’ll keep steady as well. The commons is in excellent shape, but mutual restraint seems safest and fair while we preserve trust.","The pasture is very healthy and adding would give the highest short-term payoff, but both neighbours kept steady and asked for restraint. Given my risk aversion and the value of maintaining trust, I will keep my herd unchanged rather than push expansion.",,"{
+  ""reasoning"": ""The pasture is very healthy and adding would give the highest short-term payoff, but both neighbours kept steady and asked for restraint. Given my risk aversion and the value of maintaining trust, I will keep my herd unchanged rather than push expansion."",
+  ""action"": 0,
+  ""message"": ""I’ll keep steady as well. The commons is in excellent shape, but mutual restraint seems safest and fair while we preserve trust.""
+}",99.1,15,31.809,30.0,28.187
+20,0,openai,gpt-5.5,0,KEEP,"I’ll keep steady as well. The commons is healthy, but matching restraint helps preserve trust and reduces the risk of overgrazing.","The pasture is still very healthy, but both neighbours are choosing to keep steady and are explicitly asking for restraint. Since I am risk-averse and reciprocal, I will match their restraint rather than chase the higher short-term payoff from adding a cow.",,"{
+  ""reasoning"": ""The pasture is still very healthy, but both neighbours are choosing to keep steady and are explicitly asking for restraint. Since I am risk-averse and reciprocal, I will match their restraint rather than chase the higher short-term payoff from adding a cow."",
+  ""action"": 0,
+  ""message"": ""I’ll keep steady as well. The commons is healthy, but matching restraint helps preserve trust and reduces the risk of overgrazing.""
+}",99.1,5,11.809,10.0,8.187
+21,0,openai,gpt-5.5,0,KEEP,"I will also keep steady this round. The commons is strong, and matching restraint helps preserve trust and avoid unnecessary risk.","The pasture is still very healthy, but both neighbours chose to keep steady and signalled restraint. Since I am risk-averse and want to preserve trust, I will avoid adding pressure even though adding has a higher short-term forecast.",,"{
+  ""reasoning"": ""The pasture is still very healthy, but both neighbours chose to keep steady and signalled restraint. Since I am risk-averse and want to preserve trust, I will avoid adding pressure even though adding has a higher short-term forecast."",
+  ""action"": 0,
+  ""message"": ""I will also keep steady this round. The commons is strong, and matching restraint helps preserve trust and avoid unnecessary risk.""
+}",99.1,5,11.809,10.0,8.187
+21,2,openai,gpt-5.5,0,KEEP,"I’ll keep steady too. The pasture is healthy, but continued restraint from all of us protects the commons and maintains trust.","The grassland is still very healthy, but both neighbours are keeping steady and explicitly signaling restraint. Since I am risk-averse and want to maintain trust, I will avoid chasing the slightly higher payoff from adding a cow.",,"{
+  ""reasoning"": ""The grassland is still very healthy, but both neighbours are keeping steady and explicitly signaling restraint. Since I am risk-averse and want to maintain trust, I will avoid chasing the slightly higher payoff from adding a cow."",
+  ""action"": 0,
+  ""message"": ""I’ll keep steady too. The pasture is healthy, but continued restraint from all of us protects the commons and maintains trust.""
+}",99.1,25,51.809,50.0,48.187
+21,1,openai,gpt-5.5,0,KEEP,"I will keep steady too. The grassland is strong, but matching restraint seems fair and safer for maintaining cooperation.","The pasture is very healthy, but both neighbours are choosing restraint, and as a risk-averse reciprocal herder I should support that cooperative pattern. Adding a cow would raise short-term payoff, but keeping helps preserve trust and lowers the chance of future overgrazing.",,"{
+  ""reasoning"": ""The pasture is very healthy, but both neighbours are choosing restraint, and as a risk-averse reciprocal herder I should support that cooperative pattern. Adding a cow would raise short-term payoff, but keeping helps preserve trust and lowers the chance of future overgrazing."",
+  ""action"": 0,
+  ""message"": ""I will keep steady too. The grassland is strong, but matching restraint seems fair and safer for maintaining cooperation.""
+}",99.1,15,31.809,30.0,28.187
+22,1,openai,gpt-5.5,0,KEEP,"I will keep steady as well. Since everyone is showing restraint, maintaining our current herds seems safest and helps preserve the commons and trust.","The pasture is very healthy, but both neighbours are choosing restraint and asking for stability. As a risk-averse reciprocal herder, I prefer maintaining trust and avoiding unnecessary pressure on the commons over taking the slightly higher short-term payoff from adding.",,"{
+  ""reasoning"": ""The pasture is very healthy, but both neighbours are choosing restraint and asking for stability. As a risk-averse reciprocal herder, I prefer maintaining trust and avoiding unnecessary pressure on the commons over taking the slightly higher short-term payoff from adding."",
+  ""action"": 0,
+  ""message"": ""I will keep steady as well. Since everyone is showing restraint, maintaining our current herds seems safest and helps preserve the commons and trust.""
+}",99.1,15,31.809,30.0,28.187
+22,0,openai,gpt-5.5,0,KEEP,"I will keep steady as well. The commons is healthy, and matching restraint helps maintain trust and avoid unnecessary risk.","The pasture is still very healthy, but both neighbours are choosing restraint and asking to preserve cooperation. Since I am risk-averse, I prefer the safer long-term outcome of keeping my herd steady rather than chasing the higher short-term payoff from adding a cow.",,"{
+  ""reasoning"": ""The pasture is still very healthy, but both neighbours are choosing restraint and asking to preserve cooperation. Since I am risk-averse, I prefer the safer long-term outcome of keeping my herd steady rather than chasing the higher short-term payoff from adding a cow."",
+  ""action"": 0,
+  ""message"": ""I will keep steady as well. The commons is healthy, and matching restraint helps maintain trust and avoid unnecessary risk.""
+}",99.1,5,11.809,10.0,8.187
+22,2,openai,gpt-5.5,0,KEEP,I will keep steady as well. Thanks for matching restraint; preserving trust and the strong pasture seems safer than chasing a small short-term gain.,"The pasture is very healthy, but both neighbours are keeping steady and signalling restraint. Since I am risk-averse and want to reciprocate cooperative behaviour, I will avoid expanding my already larger herd this round.",,"{
+  ""reasoning"": ""The pasture is very healthy, but both neighbours are keeping steady and signalling restraint. Since I am risk-averse and want to reciprocate cooperative behaviour, I will avoid expanding my already larger herd this round."",
+  ""action"": 0,
+  ""message"": ""I will keep steady as well. Thanks for matching restraint; preserving trust and the strong pasture seems safer than chasing a small short-term gain.""
+}",99.1,25,51.809,50.0,48.187
+23,1,openai,gpt-5.5,0,KEEP,"I will keep steady too. The grassland is strong, and matching restraint seems safer than taking a small short-term gain.","The pasture is very healthy, but both neighbours are keeping steady and asking for restraint. Although adding has a slightly higher forecast payoff, keeping is safer and supports continued trust on the commons.",,"{
+  ""reasoning"": ""The pasture is very healthy, but both neighbours are keeping steady and asking for restraint. Although adding has a slightly higher forecast payoff, keeping is safer and supports continued trust on the commons."",
+  ""action"": 0,
+  ""message"": ""I will keep steady too. The grassland is strong, and matching restraint seems safer than taking a small short-term gain.""
+}",99.1,15,31.809,30.0,28.187
+23,0,openai,gpt-5.5,0,KEEP,"I will keep steady too. The pasture is strong, and matching restraint seems safest for trust and long-term returns.","The pasture is still very healthy, but both neighbours are choosing restraint and asking to maintain trust. Although adding a cow has the highest short-term forecast, keeping is the safer reciprocal choice that avoids escalating pressure on the commons.",,"{
+  ""reasoning"": ""The pasture is still very healthy, but both neighbours are choosing restraint and asking to maintain trust. Although adding a cow has the highest short-term forecast, keeping is the safer reciprocal choice that avoids escalating pressure on the commons."",
+  ""action"": 0,
+  ""message"": ""I will keep steady too. The pasture is strong, and matching restraint seems safest for trust and long-term returns.""
+}",99.1,5,11.809,10.0,8.187
+23,2,openai,gpt-5.5,0,KEEP,"I will keep steady too. The pasture is strong, and matching restraint seems the safest way to preserve trust and long-term returns.","The pasture is still very healthy, but both neighbours are keeping steady and signalling restraint. Since I am risk-averse and already have the largest herd, keeping avoids unnecessary pressure on the commons and maintains trust.",,"{
+  ""reasoning"": ""The pasture is still very healthy, but both neighbours are keeping steady and signalling restraint. Since I am risk-averse and already have the largest herd, keeping avoids unnecessary pressure on the commons and maintains trust."",
+  ""action"": 0,
+  ""message"": ""I will keep steady too. The pasture is strong, and matching restraint seems the safest way to preserve trust and long-term returns.""
+}",99.1,25,51.809,50.0,48.187
+24,2,openai,gpt-5.5,0,KEEP,"I will keep steady as well. Since we are all showing restraint and the pasture is strong, maintaining our herds seems safest for long-term returns.","The pasture is still very healthy, but both neighbours are choosing restraint and the extra payoff from adding is small. As the largest herder and a risk-averse reciprocal player, keeping steady supports trust and avoids escalating herd growth unnecessarily.",,"{
+  ""reasoning"": ""The pasture is still very healthy, but both neighbours are choosing restraint and the extra payoff from adding is small. As the largest herder and a risk-averse reciprocal player, keeping steady supports trust and avoids escalating herd growth unnecessarily."",
+  ""action"": 0,
+  ""message"": ""I will keep steady as well. Since we are all showing restraint and the pasture is strong, maintaining our herds seems safest for long-term returns.""
+}",99.1,25,51.809,50.0,48.187
+24,0,openai,gpt-5.5,0,KEEP,"I will keep steady as well. The pasture is strong, and matching restraint helps preserve trust and long-term stability.","The pasture is very healthy, but both neighbours are keeping steady and explicitly signalling restraint. Since I am risk-averse, I prefer maintaining trust and avoiding escalation over taking a modest short-term gain.",,"{
+  ""reasoning"": ""The pasture is very healthy, but both neighbours are keeping steady and explicitly signalling restraint. Since I am risk-averse, I prefer maintaining trust and avoiding escalation over taking a modest short-term gain."",
+  ""action"": 0,
+  ""message"": ""I will keep steady as well. The pasture is strong, and matching restraint helps preserve trust and long-term stability.""
+}",99.1,5,11.809,10.0,8.187
+24,1,openai,gpt-5.5,0,KEEP,"I will keep steady as well. The grass is abundant, but mutual restraint keeps risk low and supports long-term returns for all of us.","The pasture is still very healthy, but both neighbours are choosing restraint and my risk-averse preference makes keeping safer than chasing the higher short-term gain from adding. Since no one reduced, I will not remove a cow, but I will maintain trust by keeping steady.",,"{
+  ""reasoning"": ""The pasture is still very healthy, but both neighbours are choosing restraint and my risk-averse preference makes keeping safer than chasing the higher short-term gain from adding. Since no one reduced, I will not remove a cow, but I will maintain trust by keeping steady."",
+  ""action"": 0,
+  ""message"": ""I will keep steady as well. The grass is abundant, but mutual restraint keeps risk low and supports long-term returns for all of us.""
+}",99.1,15,31.809,30.0,28.187
+25,0,openai,gpt-5.5,0,KEEP,"I’ll keep steady too. The pasture is strong, and restraint seems the safest path if we all continue it.","The pasture is still very healthy, but both neighbours are choosing restraint and a risk-averse approach favors avoiding unnecessary escalation. Since no one reduced their herd, I will not remove cows, but I will keep steady to support stable long-term use.",,"{
+  ""reasoning"": ""The pasture is still very healthy, but both neighbours are choosing restraint and a risk-averse approach favors avoiding unnecessary escalation. Since no one reduced their herd, I will not remove cows, but I will keep steady to support stable long-term use."",
+  ""action"": 0,
+  ""message"": ""I’ll keep steady too. The pasture is strong, and restraint seems the safest path if we all continue it.""
+}",99.1,5,11.809,10.0,8.187
+25,2,openai,gpt-5.5,0,KEEP,"I will keep steady too. The grass is abundant, but mutual restraint and stability seem safest for everyone long term.","The pasture is very healthy, but both neighbours are choosing restraint and I prefer the safer cooperative path over a small short-term gain. Since my herd is already larger than theirs, keeping steady helps preserve trust and reduces the risk of future overuse.",,"{
+  ""reasoning"": ""The pasture is very healthy, but both neighbours are choosing restraint and I prefer the safer cooperative path over a small short-term gain. Since my herd is already larger than theirs, keeping steady helps preserve trust and reduces the risk of future overuse."",
+  ""action"": 0,
+  ""message"": ""I will keep steady too. The grass is abundant, but mutual restraint and stability seem safest for everyone long term.""
+}",99.1,25,51.809,50.0,48.187
+25,1,openai,gpt-5.5,0,KEEP,"I will also keep steady this round. The grassland is strong, and matching restraint should help preserve trust and long-term returns.","The pasture is still very healthy, but both neighbours are choosing restraint and asking for stability. Since I am risk-averse and value reciprocal cooperation, keeping my herd steady is safer than chasing the slightly higher short-term payoff from adding a cow.",,"{
+  ""reasoning"": ""The pasture is still very healthy, but both neighbours are choosing restraint and asking for stability. Since I am risk-averse and value reciprocal cooperation, keeping my herd steady is safer than chasing the slightly higher short-term payoff from adding a cow."",
+  ""action"": 0,
+  ""message"": ""I will also keep steady this round. The grassland is strong, and matching restraint should help preserve trust and long-term returns.""
+}",99.1,15,31.809,30.0,28.187
+26,2,openai,gpt-5.5,0,KEEP,"I’ll keep steady as well. The pasture is healthy, and matching restraint seems best for preserving long-term returns.","Although adding a cow has a slightly higher short-term payoff, both neighbours are keeping steady and the pasture is nearly intact. As a risk-averse herder, I prefer maintaining trust and avoiding unnecessary pressure on the commons.",,"{
+  ""reasoning"": ""Although adding a cow has a slightly higher short-term payoff, both neighbours are keeping steady and the pasture is nearly intact. As a risk-averse herder, I prefer maintaining trust and avoiding unnecessary pressure on the commons."",
+  ""action"": 0,
+  ""message"": ""I’ll keep steady as well. The pasture is healthy, and matching restraint seems best for preserving long-term returns.""
+}",99.1,25,51.809,50.0,48.187
+26,0,openai,gpt-5.5,0,KEEP,"I will keep steady as well. The grassland is strong, and coordinated restraint seems best for long-term security.","The pasture is still very healthy, but both neighbours are choosing restraint and asking for stability. Although adding a cow has the highest short-term payoff, keeping my herd is safer and supports mutual trust.",,"{
+  ""reasoning"": ""The pasture is still very healthy, but both neighbours are choosing restraint and asking for stability. Although adding a cow has the highest short-term payoff, keeping my herd is safer and supports mutual trust."",
+  ""action"": 0,
+  ""message"": ""I will keep steady as well. The grassland is strong, and coordinated restraint seems best for long-term security.""
+}",99.1,5,11.809,10.0,8.187
+26,1,openai,gpt-5.5,0,KEEP,"I will also keep steady. The commons is strong, and matching restraint seems safest for all of us.","The pasture is still extremely healthy, but both neighbours are holding steady and explicitly signalling restraint. Since I am risk-averse and want to support stable cooperation, I will keep my herd unchanged rather than chase a small extra gain.",,"{
+  ""reasoning"": ""The pasture is still extremely healthy, but both neighbours are holding steady and explicitly signalling restraint. Since I am risk-averse and want to support stable cooperation, I will keep my herd unchanged rather than chase a small extra gain."",
+  ""action"": 0,
+  ""message"": ""I will also keep steady. The commons is strong, and matching restraint seems safest for all of us.""
+}",99.1,15,31.809,30.0,28.187
+27,0,openai,gpt-5.5,0,KEEP,"I will keep steady too. The commons is in excellent shape, and continued restraint protects our long-term returns.","The pasture is still very healthy, but both neighbours are choosing restraint and asking for stability. As a risk-averse herder, I prefer to maintain the cooperative pattern rather than chase a modest short-term gain by adding a cow.",,"{
+  ""reasoning"": ""The pasture is still very healthy, but both neighbours are choosing restraint and asking for stability. As a risk-averse herder, I prefer to maintain the cooperative pattern rather than chase a modest short-term gain by adding a cow."",
+  ""action"": 0,
+  ""message"": ""I will keep steady too. The commons is in excellent shape, and continued restraint protects our long-term returns.""
+}",99.1,5,11.809,10.0,8.187
+27,2,openai,gpt-5.5,0,KEEP,"I will keep steady too. The grassland is strong, and maintaining restraint together should protect long-term payoffs for everyone.","The pasture is very healthy, but both neighbours are choosing restraint and asking for coordinated stability. Since I am risk-averse and already have the largest herd, keeping steady is the safer cooperative choice.",,"{
+  ""reasoning"": ""The pasture is very healthy, but both neighbours are choosing restraint and asking for coordinated stability. Since I am risk-averse and already have the largest herd, keeping steady is the safer cooperative choice."",
+  ""action"": 0,
+  ""message"": ""I will keep steady too. The grassland is strong, and maintaining restraint together should protect long-term payoffs for everyone.""
+}",99.1,25,51.809,50.0,48.187
+27,1,openai,gpt-5.5,0,KEEP,"I will keep steady too. With the grassland strong, coordinated restraint protects reliable returns for all of us.","The pasture is still very healthy, but both neighbours are choosing restraint and signalling cooperation. As a risk-averse reciprocal herder, I prefer to maintain stability rather than chase the slightly higher short-term payoff from adding a cow.",,"{
+  ""reasoning"": ""The pasture is still very healthy, but both neighbours are choosing restraint and signalling cooperation. As a risk-averse reciprocal herder, I prefer to maintain stability rather than chase the slightly higher short-term payoff from adding a cow."",
+  ""action"": 0,
+  ""message"": ""I will keep steady too. With the grassland strong, coordinated restraint protects reliable returns for all of us.""
+}",99.1,15,31.809,30.0,28.187
+28,2,openai,gpt-5.5,0,KEEP,"I will keep steady as well. The pasture is strong, and maintaining restraint now should protect reliable long-term returns for all of us.","The grassland is very healthy, but both neighbours are keeping steady and explicitly asking for coordinated restraint. Since I am risk-averse and already have the largest herd, keeping avoids pushing the commons toward unnecessary pressure for only a small extra payoff.",,"{
+  ""reasoning"": ""The grassland is very healthy, but both neighbours are keeping steady and explicitly asking for coordinated restraint. Since I am risk-averse and already have the largest herd, keeping avoids pushing the commons toward unnecessary pressure for only a small extra payoff."",
+  ""action"": 0,
+  ""message"": ""I will keep steady as well. The pasture is strong, and maintaining restraint now should protect reliable long-term returns for all of us.""
+}",99.1,25,51.809,50.0,48.187
+28,1,openai,gpt-5.5,0,KEEP,"I will keep steady as well. The commons is healthy, and matching restraint helps protect everyone’s long-term returns.","The pasture is in excellent condition, but both neighbours are choosing restraint and a risk-averse approach favours protecting the commons over taking the slightly higher short-term payoff. Keeping my herd stable supports continued cooperation and avoids encouraging escalation.",,"{
+  ""reasoning"": ""The pasture is in excellent condition, but both neighbours are choosing restraint and a risk-averse approach favours protecting the commons over taking the slightly higher short-term payoff. Keeping my herd stable supports continued cooperation and avoids encouraging escalation."",
+  ""action"": 0,
+  ""message"": ""I will keep steady as well. The commons is healthy, and matching restraint helps protect everyone’s long-term returns.""
+}",99.1,15,31.809,30.0,28.187
+28,0,openai,gpt-5.5,0,KEEP,I will also keep steady. Let’s maintain restraint while the pasture is strong so we preserve reliable long-term returns.,"The grassland is very healthy, but both neighbours are keeping steady and asking for restraint. Since I am risk-averse and want to support coordinated stability rather than chase a slightly higher short-term payoff, I will keep my herd unchanged.",,"{
+  ""reasoning"": ""The grassland is very healthy, but both neighbours are keeping steady and asking for restraint. Since I am risk-averse and want to support coordinated stability rather than chase a slightly higher short-term payoff, I will keep my herd unchanged."",
+  ""action"": 0,
+  ""message"": ""I will also keep steady. Let’s maintain restraint while the pasture is strong so we preserve reliable long-term returns.""
+}",99.1,5,11.809,10.0,8.187
+29,1,openai,gpt-5.5,0,KEEP,I will keep steady too. Thanks for showing restraint; maintaining our herds now should protect the pasture and keep returns reliable for everyone.,"The pasture is very healthy, but both neighbours are choosing restraint and asking for steady management. As a risk-averse and reciprocal herder, I prefer to preserve the commons and maintain trust rather than chase the slightly higher short-term payoff from adding.",,"{
+  ""reasoning"": ""The pasture is very healthy, but both neighbours are choosing restraint and asking for steady management. As a risk-averse and reciprocal herder, I prefer to preserve the commons and maintain trust rather than chase the slightly higher short-term payoff from adding."",
+  ""action"": 0,
+  ""message"": ""I will keep steady too. Thanks for showing restraint; maintaining our herds now should protect the pasture and keep returns reliable for everyone.""
+}",99.1,15,31.809,30.0,28.187
+29,2,openai,gpt-5.5,0,KEEP,"I will keep steady too. Since the commons is healthy, continued restraint should protect reliable returns for all of us.","The pasture is still very healthy, but both neighbours are choosing restraint and asking to preserve long-term returns. Since I am risk-averse and already have the largest herd, keeping steady is safer and reciprocates their cooperative behaviour.",,"{
+  ""reasoning"": ""The pasture is still very healthy, but both neighbours are choosing restraint and asking to preserve long-term returns. Since I am risk-averse and already have the largest herd, keeping steady is safer and reciprocates their cooperative behaviour."",
+  ""action"": 0,
+  ""message"": ""I will keep steady too. Since the commons is healthy, continued restraint should protect reliable returns for all of us.""
+}",99.1,25,51.809,50.0,48.187
+29,0,openai,gpt-5.5,0,KEEP,"I will keep steady too. The commons is in excellent condition, and continued restraint should help preserve stable returns for everyone.","The pasture is still very healthy, but both neighbours are choosing to hold steady rather than reduce. Since I am risk-averse and want to support continued restraint, I will keep my herd unchanged instead of chasing the slightly higher short-term payoff from adding.",,"{
+  ""reasoning"": ""The pasture is still very healthy, but both neighbours are choosing to hold steady rather than reduce. Since I am risk-averse and want to support continued restraint, I will keep my herd unchanged instead of chasing the slightly higher short-term payoff from adding."",
+  ""action"": 0,
+  ""message"": ""I will keep steady too. The commons is in excellent condition, and continued restraint should help preserve stable returns for everyone.""
+}",99.1,5,11.809,10.0,8.187
+30,2,openai,gpt-5.5,0,KEEP,"I will keep steady as well. The grassland is healthy, and matching your restraint helps keep returns stable for all of us.","The pasture is in excellent condition, but I already have the largest herd and both neighbours are choosing restraint. Since I am risk-averse and want to maintain stable returns, I will keep my herd steady rather than chase the slightly higher payoff from adding.",,"{
+  ""reasoning"": ""The pasture is in excellent condition, but I already have the largest herd and both neighbours are choosing restraint. Since I am risk-averse and want to maintain stable returns, I will keep my herd steady rather than chase the slightly higher payoff from adding."",
+  ""action"": 0,
+  ""message"": ""I will keep steady as well. The grassland is healthy, and matching your restraint helps keep returns stable for all of us.""
+}",99.1,25,51.809,50.0,48.187
+30,1,openai,gpt-5.5,0,KEEP,"I will keep steady as well. The commons is very healthy, and continued restraint from all of us should protect reliable long-term returns.","The pasture is still in excellent condition, and both neighbours kept their herds steady while signalling restraint. Although adding a cow has a higher immediate forecast payoff, keeping is the safer cooperative choice and helps preserve stable returns.",,"{
+  ""reasoning"": ""The pasture is still in excellent condition, and both neighbours kept their herds steady while signalling restraint. Although adding a cow has a higher immediate forecast payoff, keeping is the safer cooperative choice and helps preserve stable returns."",
+  ""action"": 0,
+  ""message"": ""I will keep steady as well. The commons is very healthy, and continued restraint from all of us should protect reliable long-term returns.""
+}",99.1,15,31.809,30.0,28.187
+30,0,openai,gpt-5.5,0,KEEP,"I will keep steady as well. The pasture is in excellent shape, and continued restraint should help keep returns reliable for everyone.","The pasture is still extremely healthy, but both neighbours are holding steady and asking for restraint. As a risk-averse herder, I prefer the safer cooperative choice over a slightly higher short-term gain from adding a cow.",,"{
+  ""reasoning"": ""The pasture is still extremely healthy, but both neighbours are holding steady and asking for restraint. As a risk-averse herder, I prefer the safer cooperative choice over a slightly higher short-term gain from adding a cow."",
+  ""action"": 0,
+  ""message"": ""I will keep steady as well. The pasture is in excellent shape, and continued restraint should help keep returns reliable for everyone.""
+}",99.1,5,11.809,10.0,8.187
+31,2,openai,gpt-5.5,0,KEEP,"I will keep steady too. The commons is in excellent condition, and restraint seems best for maintaining reliable long-term returns for all of us.","The pasture is extremely healthy, but both neighbours are keeping steady and asking for restraint. Since I am risk-averse and already have the largest herd, keeping avoids unnecessary pressure while preserving strong expected returns.",,"{
+  ""reasoning"": ""The pasture is extremely healthy, but both neighbours are keeping steady and asking for restraint. Since I am risk-averse and already have the largest herd, keeping avoids unnecessary pressure while preserving strong expected returns."",
+  ""action"": 0,
+  ""message"": ""I will keep steady too. The commons is in excellent condition, and restraint seems best for maintaining reliable long-term returns for all of us.""
+}",99.1,25,51.809,50.0,48.187
+31,0,openai,gpt-5.5,0,KEEP,"I will keep steady too. The pasture is in excellent condition, and mutual restraint should help us all maintain reliable returns.","The pasture is still very healthy, but both neighbours are choosing to keep steady and asking for restraint. As a risk-averse and reciprocal herder, I prefer to preserve stable long-term returns rather than chase a slightly higher short-term gain.",,"{
+  ""reasoning"": ""The pasture is still very healthy, but both neighbours are choosing to keep steady and asking for restraint. As a risk-averse and reciprocal herder, I prefer to preserve stable long-term returns rather than chase a slightly higher short-term gain."",
+  ""action"": 0,
+  ""message"": ""I will keep steady too. The pasture is in excellent condition, and mutual restraint should help us all maintain reliable returns.""
+}",99.1,5,11.809,10.0,8.187
+31,1,openai,gpt-5.5,0,KEEP,"I will keep steady too. The commons is in excellent condition, and matching restraint should help preserve stable returns for everyone.","The pasture is still extremely healthy, but both neighbours are choosing restraint and asking for stable cooperation. Since I am risk-averse, I prefer the safer steady return over a slightly higher payoff from adding a cow.",,"{
+  ""reasoning"": ""The pasture is still extremely healthy, but both neighbours are choosing restraint and asking for stable cooperation. Since I am risk-averse, I prefer the safer steady return over a slightly higher payoff from adding a cow."",
+  ""action"": 0,
+  ""message"": ""I will keep steady too. The commons is in excellent condition, and matching restraint should help preserve stable returns for everyone.""
+}",99.1,15,31.809,30.0,28.187
+32,1,openai,gpt-5.5,0,KEEP,"I will keep steady as well. The pasture is very healthy, and continued restraint should keep returns reliable for everyone.","The pasture is almost fully healthy, and both neighbours are choosing restraint by keeping their herds steady. Although adding a cow has the highest immediate forecast, I prefer the safer cooperative path to protect long-term returns.",,"{
+  ""reasoning"": ""The pasture is almost fully healthy, and both neighbours are choosing restraint by keeping their herds steady. Although adding a cow has the highest immediate forecast, I prefer the safer cooperative path to protect long-term returns."",
+  ""action"": 0,
+  ""message"": ""I will keep steady as well. The pasture is very healthy, and continued restraint should keep returns reliable for everyone.""
+}",99.1,15,31.809,30.0,28.187
+32,2,openai,gpt-5.5,0,KEEP,"I will keep steady as well. Since the grassland is healthy and everyone is showing restraint, maintaining our herds seems safest for long-term stable returns.","The pasture is still in excellent condition, but both neighbours are keeping steady and asking for mutual restraint. Since I am risk-averse and already have the largest herd, keeping avoids pushing unnecessary pressure onto the commons for only a small payoff gain.",,"{
+  ""reasoning"": ""The pasture is still in excellent condition, but both neighbours are keeping steady and asking for mutual restraint. Since I am risk-averse and already have the largest herd, keeping avoids pushing unnecessary pressure onto the commons for only a small payoff gain."",
+  ""action"": 0,
+  ""message"": ""I will keep steady as well. Since the grassland is healthy and everyone is showing restraint, maintaining our herds seems safest for long-term stable returns.""
+}",99.1,25,51.809,50.0,48.187
+32,0,openai,gpt-5.5,0,KEEP,I’ll keep steady as well. Thanks for showing restraint; matching that seems safest for keeping the commons productive.,"The pasture is still very healthy, but both neighbours are choosing restraint and asking for stability. Since I am risk-averse and reciprocal, I will match their KEEP action rather than chase the slightly higher short-term payoff from adding a cow.",,"{
+  ""reasoning"": ""The pasture is still very healthy, but both neighbours are choosing restraint and asking for stability. Since I am risk-averse and reciprocal, I will match their KEEP action rather than chase the slightly higher short-term payoff from adding a cow."",
+  ""action"": 0,
+  ""message"": ""I’ll keep steady as well. Thanks for showing restraint; matching that seems safest for keeping the commons productive.""
+}",99.1,5,11.809,10.0,8.187
+33,0,openai,gpt-5.5,0,KEEP,"I will keep steady too. The pasture is strong, and matching everyone’s restraint seems safest for keeping returns stable.","The grassland is still extremely healthy, and both neighbours kept their herds steady while signalling restraint. Although adding a cow has a higher short-term forecast, keeping is the safer reciprocal choice to preserve stable long-term returns.",,"{
+  ""reasoning"": ""The grassland is still extremely healthy, and both neighbours kept their herds steady while signalling restraint. Although adding a cow has a higher short-term forecast, keeping is the safer reciprocal choice to preserve stable long-term returns."",
+  ""action"": 0,
+  ""message"": ""I will keep steady too. The pasture is strong, and matching everyone’s restraint seems safest for keeping returns stable.""
+}",99.1,5,11.809,10.0,8.187
+33,1,openai,gpt-5.5,0,KEEP,"I’ll keep steady too. The commons is in excellent condition, and matching restraint seems best for stable long-term returns.","The grassland is very healthy, but both neighbours are keeping steady and signalling restraint. As a risk-averse reciprocal herder, I prefer maintaining cooperation and avoiding unnecessary pressure on the commons over taking the slightly higher short-term payoff from adding a cow.",,"{
+  ""reasoning"": ""The grassland is very healthy, but both neighbours are keeping steady and signalling restraint. As a risk-averse reciprocal herder, I prefer maintaining cooperation and avoiding unnecessary pressure on the commons over taking the slightly higher short-term payoff from adding a cow."",
+  ""action"": 0,
+  ""message"": ""I’ll keep steady too. The commons is in excellent condition, and matching restraint seems best for stable long-term returns.""
+}",99.1,15,31.809,30.0,28.187
+33,2,openai,gpt-5.5,0,KEEP,"I will keep steady too. The commons is in excellent shape, and matching restraint seems safest for stable returns.","The pasture is still very healthy, but both neighbours are keeping steady and asking for restraint. Since I am risk-averse and already have the largest herd, keeping avoids pushing the commons unnecessarily for only a small extra gain.",,"{
+  ""reasoning"": ""The pasture is still very healthy, but both neighbours are keeping steady and asking for restraint. Since I am risk-averse and already have the largest herd, keeping avoids pushing the commons unnecessarily for only a small extra gain."",
+  ""action"": 0,
+  ""message"": ""I will keep steady too. The commons is in excellent shape, and matching restraint seems safest for stable returns.""
+}",99.1,25,51.809,50.0,48.187
+34,1,openai,gpt-5.5,0,KEEP,"I will keep steady as well. The grassland is very healthy, and matching restraint should preserve stable returns for everyone.","The pasture is in excellent condition, but both neighbours are keeping steady and signalling restraint. Since I am risk-averse and there is no need to pressure the commons for a small gain, I will match their stability.",,"{
+  ""reasoning"": ""The pasture is in excellent condition, but both neighbours are keeping steady and signalling restraint. Since I am risk-averse and there is no need to pressure the commons for a small gain, I will match their stability."",
+  ""action"": 0,
+  ""message"": ""I will keep steady as well. The grassland is very healthy, and matching restraint should preserve stable returns for everyone.""
+}",99.1,15,31.809,30.0,28.187
+34,2,openai,gpt-5.5,0,KEEP,"I’ll keep steady as well. Since the pasture is healthy and everyone is showing restraint, stability seems best for all of us.","The pasture is in excellent condition, but both neighbours are choosing restraint and asking for stability. Since I am risk-averse and already have the largest herd, keeping steady protects long-term returns without increasing pressure on the commons.",,"{
+  ""reasoning"": ""The pasture is in excellent condition, but both neighbours are choosing restraint and asking for stability. Since I am risk-averse and already have the largest herd, keeping steady protects long-term returns without increasing pressure on the commons."",
+  ""action"": 0,
+  ""message"": ""I’ll keep steady as well. Since the pasture is healthy and everyone is showing restraint, stability seems best for all of us.""
+}",99.1,25,51.809,50.0,48.187
+34,0,openai,gpt-5.5,1,ADD,I’m adding one cow because my herd is still small and the grassland is very healthy. I’ll avoid further expansion if conditions worsen and will reciprocate if others reduce.,"The pasture is still almost fully intact, and my herd is much smaller than my neighbours', so adding one cow appears safe and improves my expected payoff. I will stay cautious and avoid further growth if the commons begins to decline or if neighbours reduce their herds.",,"{
+  ""reasoning"": ""The pasture is still almost fully intact, and my herd is much smaller than my neighbours', so adding one cow appears safe and improves my expected payoff. I will stay cautious and avoid further growth if the commons begins to decline or if neighbours reduce their herds."",
+  ""action"": 1,
+  ""message"": ""I’m adding one cow because my herd is still small and the grassland is very healthy. I’ll avoid further expansion if conditions worsen and will reciprocate if others reduce.""
+}",99.1,5,11.809,10.0,8.187
+35,0,openai,gpt-5.5,0,KEEP,"I’ll keep steady too. The commons is in excellent shape, and matching restraint should help maintain safe returns for everyone.","The pasture is extremely healthy, but both neighbours are holding steady and explicitly signalling restraint. Since I am risk-averse and want to support cooperative stability rather than chase a slightly higher short-term payoff, I will keep my herd unchanged.",,"{
+  ""reasoning"": ""The pasture is extremely healthy, but both neighbours are holding steady and explicitly signalling restraint. Since I am risk-averse and want to support cooperative stability rather than chase a slightly higher short-term payoff, I will keep my herd unchanged."",
+  ""action"": 0,
+  ""message"": ""I’ll keep steady too. The commons is in excellent shape, and matching restraint should help maintain safe returns for everyone.""
+}",99.0,6,13.802,12.0,10.194
+35,1,openai,gpt-5.5,0,KEEP,"I’ll keep steady this round to preserve the healthy pasture. If conditions worsen, I’m willing to reduce, and I’ll reciprocate if others show restraint or cut back.","The pasture is very healthy, but my herd is already moderate and the payoff gain from adding is small. Since Agent 2 is keeping steady and Agent 0 plans only limited expansion, I prefer the safer cooperative choice of holding my herd.",,"{
+  ""reasoning"": ""The pasture is very healthy, but my herd is already moderate and the payoff gain from adding is small. Since Agent 2 is keeping steady and Agent 0 plans only limited expansion, I prefer the safer cooperative choice of holding my herd."",
+  ""action"": 0,
+  ""message"": ""I’ll keep steady this round to preserve the healthy pasture. If conditions worsen, I’m willing to reduce, and I’ll reciprocate if others show restraint or cut back.""
+}",99.0,15,31.802,30.0,28.194
+35,2,openai,gpt-5.5,0,KEEP,"I will keep my herd steady. Since my herd is already large, I prefer not to add pressure while the commons remains healthy.","Although adding gives a slightly higher forecast payoff, my herd is already much larger than my neighbours' and the safer cooperative choice is to avoid further pressure. With the grassland very healthy and Agent 1 keeping steady, I will maintain restraint this round.",,"{
+  ""reasoning"": ""Although adding gives a slightly higher forecast payoff, my herd is already much larger than my neighbours' and the safer cooperative choice is to avoid further pressure. With the grassland very healthy and Agent 1 keeping steady, I will maintain restraint this round."",
+  ""action"": 0,
+  ""message"": ""I will keep my herd steady. Since my herd is already large, I prefer not to add pressure while the commons remains healthy.""
+}",99.0,25,51.802,50.0,48.194
+36,2,openai,gpt-5.5,0,KEEP,"I’ll keep steady as well. The pasture is strong, but my herd is already large, so restraint seems safest and fairest while others are also holding.","The pasture is still very healthy, but my herd is already much larger than my neighbours', so adding would increase imbalance and future risk. Since both neighbours are keeping steady and signalling restraint, I will reciprocate by holding my herd stable.",,"{
+  ""reasoning"": ""The pasture is still very healthy, but my herd is already much larger than my neighbours', so adding would increase imbalance and future risk. Since both neighbours are keeping steady and signalling restraint, I will reciprocate by holding my herd stable."",
+  ""action"": 0,
+  ""message"": ""I’ll keep steady as well. The pasture is strong, but my herd is already large, so restraint seems safest and fairest while others are also holding.""
+}",99.0,25,51.802,50.0,48.194
+36,1,openai,gpt-5.5,0,KEEP,"I will also keep steady this round. With the pasture strong and everyone showing restraint, maintaining herd sizes seems safest for long-term returns.","The commons is very healthy, but both neighbours are choosing restraint and Agent 2 already has a large herd. As a risk-averse herder, I prefer to maintain stable returns rather than add pressure for a small payoff gain.",,"{
+  ""reasoning"": ""The commons is very healthy, but both neighbours are choosing restraint and Agent 2 already has a large herd. As a risk-averse herder, I prefer to maintain stable returns rather than add pressure for a small payoff gain."",
+  ""action"": 0,
+  ""message"": ""I will also keep steady this round. With the pasture strong and everyone showing restraint, maintaining herd sizes seems safest for long-term returns.""
+}",99.0,15,31.802,30.0,28.194
+36,0,openai,gpt-5.5,1,ADD,"Pasture remains very healthy, so I’m adding one cow cautiously from a small herd. I appreciate others not adding; if grass declines or anyone reduces, I’m willing to reciprocate with restraint.","The pasture is still extremely healthy at 99%, and adding one cow gives the best expected payoff with limited immediate risk given my small herd. Since neighbours are only keeping rather than reducing, I will cautiously add while watching for any decline in the commons.",,"{
+  ""reasoning"": ""The pasture is still extremely healthy at 99%, and adding one cow gives the best expected payoff with limited immediate risk given my small herd. Since neighbours are only keeping rather than reducing, I will cautiously add while watching for any decline in the commons."",
+  ""action"": 1,
+  ""message"": ""Pasture remains very healthy, so I’m adding one cow cautiously from a small herd. I appreciate others not adding; if grass declines or anyone reduces, I’m willing to reciprocate with restraint.""
+}",99.0,6,13.802,12.0,10.194
+37,2,openai,gpt-5.5,0,KEEP,"I’ll keep steady this round. The grass is strong, but my herd is already large, so restraint seems fair and safer for the commons.","The pasture is very healthy, but my herd is already much larger than my neighbours', so adding increases long-term commons risk for only a modest gain. Since Agent 1 is keeping steady and Agent 0 is only adding cautiously from a small herd, I will choose the safer cooperative option and hold my herd constant.",,"{
+  ""reasoning"": ""The pasture is very healthy, but my herd is already much larger than my neighbours', so adding increases long-term commons risk for only a modest gain. Since Agent 1 is keeping steady and Agent 0 is only adding cautiously from a small herd, I will choose the safer cooperative option and hold my herd constant."",
+  ""action"": 0,
+  ""message"": ""I’ll keep steady this round. The grass is strong, but my herd is already large, so restraint seems fair and safer for the commons.""
+}",98.9,25,51.795,50.0,48.2
+37,0,openai,gpt-5.5,0,KEEP,"I’ll keep steady this round too. The commons is strong, and since both of you are showing restraint, I’ll avoid pushing herd growth further for now.","The pasture is very healthy, but both neighbours are holding steady and signalling restraint. Since I added last round and I am risk-averse, keeping my herd stable is the safer cooperative choice even though adding has a higher short-term forecast.",,"{
+  ""reasoning"": ""The pasture is very healthy, but both neighbours are holding steady and signalling restraint. Since I added last round and I am risk-averse, keeping my herd stable is the safer cooperative choice even though adding has a higher short-term forecast."",
+  ""action"": 0,
+  ""message"": ""I’ll keep steady this round too. The commons is strong, and since both of you are showing restraint, I’ll avoid pushing herd growth further for now.""
+}",98.9,7,15.795,14.0,12.2
+37,1,openai,gpt-5.5,0,KEEP,"I’ll keep steady this round. The grass is strong, but I want to reward restraint and avoid everyone expanding at once. If the pasture stays healthy and others remain cautious, we can preserve good pay","The pasture is still very healthy, but Agent 2 is already showing restraint with a large herd and Agent 0 may be adding from a small herd. Since I am risk-averse and value reciprocal restraint, keeping my herd steady is the safer and fairer choice despite the higher short-term payoff from adding.",,"{
+  ""reasoning"": ""The pasture is still very healthy, but Agent 2 is already showing restraint with a large herd and Agent 0 may be adding from a small herd. Since I am risk-averse and value reciprocal restraint, keeping my herd steady is the safer and fairer choice despite the higher short-term payoff from adding."",
+  ""action"": 0,
+  ""message"": ""I’ll keep steady this round. The grass is strong, but I want to reward restraint and avoid everyone expanding at once. If the pasture stays healthy and others remain cautious, we can preserve good payoffs together.""
+}",98.9,15,31.795,30.0,28.2
+38,2,openai,gpt-5.5,0,KEEP,"I’ll keep steady as well. The commons is strong, but I don’t want my larger herd to pressure everyone into expansion.","The pasture is very healthy, but my herd is already the largest and both neighbours are holding steady. Although adding has a slightly higher forecast payoff, keeping is safer and supports the mutual restraint they are signaling.",,"{
+  ""reasoning"": ""The pasture is very healthy, but my herd is already the largest and both neighbours are holding steady. Although adding has a slightly higher forecast payoff, keeping is safer and supports the mutual restraint they are signaling."",
+  ""action"": 0,
+  ""message"": ""I’ll keep steady as well. The commons is strong, but I don’t want my larger herd to pressure everyone into expansion.""
+}",98.9,25,51.795,50.0,48.2
+38,0,openai,gpt-5.5,1,ADD,"Grass is still very healthy and my herd is much smaller, so I am adding just one. I will avoid further growth if pasture falls or if others expand.","The pasture is nearly full and adding one cow has the best forecast payoff, while my herd remains much smaller than both neighbours'. Since neither neighbour reduced, I do not need to reward a sacrifice, but I will keep the increase modest to manage risk.",,"{
+  ""reasoning"": ""The pasture is nearly full and adding one cow has the best forecast payoff, while my herd remains much smaller than both neighbours'. Since neither neighbour reduced, I do not need to reward a sacrifice, but I will keep the increase modest to manage risk."",
+  ""action"": 1,
+  ""message"": ""Grass is still very healthy and my herd is much smaller, so I am adding just one. I will avoid further growth if pasture falls or if others expand.""
+}",98.9,7,15.795,14.0,12.2
+38,1,openai,gpt-5.5,0,KEEP,"I’ll keep steady as well. The grass is strong, but coordinated restraint should keep payoffs safe and the commons healthy.","The pasture is still very healthy, but both neighbours are signaling restraint and Agent 2 already has a large herd. As a risk-averse and reciprocal herder, I will match the cooperative tone rather than chase a slightly higher short-term payoff.",,"{
+  ""reasoning"": ""The pasture is still very healthy, but both neighbours are signaling restraint and Agent 2 already has a large herd. As a risk-averse and reciprocal herder, I will match the cooperative tone rather than chase a slightly higher short-term payoff."",
+  ""action"": 0,
+  ""message"": ""I’ll keep steady as well. The grass is strong, but coordinated restraint should keep payoffs safe and the commons healthy.""
+}",98.9,15,31.795,30.0,28.2
+39,0,openai,gpt-5.5,0,KEEP,"I’ll keep steady too. The pasture is strong, and coordinated restraint should protect everyone’s future payoffs.","The commons is very healthy, but both neighbours are choosing restraint and asking for coordinated stability. Since I am risk-averse, I will avoid pushing expansion even though adding has the highest short-term forecast.",,"{
+  ""reasoning"": ""The commons is very healthy, but both neighbours are choosing restraint and asking for coordinated stability. Since I am risk-averse, I will avoid pushing expansion even though adding has the highest short-term forecast."",
+  ""action"": 0,
+  ""message"": ""I’ll keep steady too. The pasture is strong, and coordinated restraint should protect everyone’s future payoffs.""
+}",98.8,8,17.788,16.0,14.207
+39,2,openai,gpt-5.5,0,KEEP,"I will keep my herd steady this round. The commons is healthy, but my herd is already large, so restraint seems safest if we want stable payoffs.","The pasture is very healthy, but my herd is already much larger than my neighbours', so adding would increase pressure and imbalance for only a small payoff gain. Since Agent 1 is keeping steady and Agent 0 is only adding from a much smaller herd, the safer cooperative choice is to keep.",,"{
+  ""reasoning"": ""The pasture is very healthy, but my herd is already much larger than my neighbours', so adding would increase pressure and imbalance for only a small payoff gain. Since Agent 1 is keeping steady and Agent 0 is only adding from a much smaller herd, the safer cooperative choice is to keep."",
+  ""action"": 0,
+  ""message"": ""I will keep my herd steady this round. The commons is healthy, but my herd is already large, so restraint seems safest if we want stable payoffs.""
+}",98.8,25,51.788,50.0,48.207
+39,1,openai,gpt-5.5,0,KEEP,"I’ll keep steady to support restraint, especially since the largest herd is not expanding. Let’s avoid turning the healthy pasture into a race to add cows.","The pasture is still extremely healthy, but Agent 2 is showing restraint despite having the largest herd, and I want to support that cooperative signal. Since I am risk-averse and the extra payoff from adding is modest, keeping my herd is the safer choice.",,"{
+  ""reasoning"": ""The pasture is still extremely healthy, but Agent 2 is showing restraint despite having the largest herd, and I want to support that cooperative signal. Since I am risk-averse and the extra payoff from adding is modest, keeping my herd is the safer choice."",
+  ""action"": 0,
+  ""message"": ""I’ll keep steady to support restraint, especially since the largest herd is not expanding. Let’s avoid turning the healthy pasture into a race to add cows.""
+}",98.8,15,31.788,30.0,28.207
+40,2,openai,gpt-5.5,0,KEEP,"I’ll keep steady as well. Since my herd is largest, I should not be the one to trigger expansion while the pasture is strong.","The pasture is very healthy, but I already have the largest herd, and both neighbours are choosing restraint. As a risk-averse and reciprocal herder, I will avoid pushing the commons toward an expansion race for a small extra gain.",,"{
+  ""reasoning"": ""The pasture is very healthy, but I already have the largest herd, and both neighbours are choosing restraint. As a risk-averse and reciprocal herder, I will avoid pushing the commons toward an expansion race for a small extra gain."",
+  ""action"": 0,
+  ""message"": ""I’ll keep steady as well. Since my herd is largest, I should not be the one to trigger expansion while the pasture is strong.""
+}",98.8,25,51.788,50.0,48.207
+40,0,openai,gpt-5.5,0,KEEP,"I’ll keep my herd steady too. The commons is healthy, but mutual restraint seems safer than starting a growth race.","The pasture is still very healthy, but both neighbours are keeping steady and asking for restraint. Since I am risk-averse and no one has reduced their herd to reciprocate, I will avoid escalating while preserving stable payoff.",,"{
+  ""reasoning"": ""The pasture is still very healthy, but both neighbours are keeping steady and asking for restraint. Since I am risk-averse and no one has reduced their herd to reciprocate, I will avoid escalating while preserving stable payoff."",
+  ""action"": 0,
+  ""message"": ""I’ll keep my herd steady too. The commons is healthy, but mutual restraint seems safer than starting a growth race.""
+}",98.8,8,17.788,16.0,14.207
+40,1,openai,gpt-5.5,0,KEEP,"I will also keep steady. The commons is healthy, and coordinated restraint seems the safest way to preserve stable payoffs for everyone.","The pasture is very healthy, and adding a cow offers the highest immediate payoff, but both neighbours are choosing restraint and I am risk-averse. Since no one reduced, I will not remove a cow, but keeping steady supports coordination and protects future returns.",,"{
+  ""reasoning"": ""The pasture is very healthy, and adding a cow offers the highest immediate payoff, but both neighbours are choosing restraint and I am risk-averse. Since no one reduced, I will not remove a cow, but keeping steady supports coordination and protects future returns."",
+  ""action"": 0,
+  ""message"": ""I will also keep steady. The commons is healthy, and coordinated restraint seems the safest way to preserve stable payoffs for everyone.""
+}",98.8,15,31.788,30.0,28.207
+41,1,openai,gpt-5.5,0,KEEP,"I’ll keep steady as well. Thanks for showing restraint; if we all hold our herds stable, the commons should remain healthy and profitable.","The pasture is very healthy, but both neighbours are showing restraint and explicitly avoiding an expansion race. As a reciprocal and risk-averse herder, I will match their KEEP choice rather than take the slightly higher short-term payoff from adding a cow.",,"{
+  ""reasoning"": ""The pasture is very healthy, but both neighbours are showing restraint and explicitly avoiding an expansion race. As a reciprocal and risk-averse herder, I will match their KEEP choice rather than take the slightly higher short-term payoff from adding a cow."",
+  ""action"": 0,
+  ""message"": ""I’ll keep steady as well. Thanks for showing restraint; if we all hold our herds stable, the commons should remain healthy and profitable.""
+}",98.8,15,31.788,30.0,28.207
+41,0,openai,gpt-5.5,0,KEEP,"I will keep steady too. Since everyone is showing restraint, coordinated stability seems safer than expansion.","The pasture is very healthy, but both neighbours are choosing restraint and explicitly asking for stability. As a risk-averse reciprocal herder, I will match their KEEP rather than chase the higher short-term payoff from adding a cow.",,"{
+  ""reasoning"": ""The pasture is very healthy, but both neighbours are choosing restraint and explicitly asking for stability. As a risk-averse reciprocal herder, I will match their KEEP rather than chase the higher short-term payoff from adding a cow."",
+  ""action"": 0,
+  ""message"": ""I will keep steady too. Since everyone is showing restraint, coordinated stability seems safer than expansion.""
+}",98.8,8,17.788,16.0,14.207
+41,2,openai,gpt-5.5,0,KEEP,"I’ll keep steady as well. The commons is in excellent shape, and matching restraint seems safer than chasing short-term gains.","The pasture is very healthy, but both neighbours are keeping steady and explicitly asking for coordinated restraint. Since I am risk-averse and already have the largest herd, I will avoid triggering a growth race despite the higher short-term payoff from adding.",,"{
+  ""reasoning"": ""The pasture is very healthy, but both neighbours are keeping steady and explicitly asking for coordinated restraint. Since I am risk-averse and already have the largest herd, I will avoid triggering a growth race despite the higher short-term payoff from adding."",
+  ""action"": 0,
+  ""message"": ""I’ll keep steady as well. The commons is in excellent shape, and matching restraint seems safer than chasing short-term gains.""
+}",98.8,25,51.788,50.0,48.207
+42,1,openai,gpt-5.5,0,KEEP,I will keep steady as well. Coordinated restraint is safer for the commons and helps preserve good conditions for everyone.,"The pasture is in excellent condition, but both neighbours are choosing restraint and explicitly coordinating on stability. As a risk-averse herder, I prefer maintaining trust and avoiding a race to expand for a modest short-term gain.",,"{
+  ""reasoning"": ""The pasture is in excellent condition, but both neighbours are choosing restraint and explicitly coordinating on stability. As a risk-averse herder, I prefer maintaining trust and avoiding a race to expand for a modest short-term gain."",
+  ""action"": 0,
+  ""message"": ""I will keep steady as well. Coordinated restraint is safer for the commons and helps preserve good conditions for everyone.""
+}",98.8,15,31.788,30.0,28.207
+42,2,openai,gpt-5.5,0,KEEP,"I will keep steady as well. Since the grassland is healthy and everyone is showing restraint, coordinated stability protects future payoffs.","The pasture is very healthy, but my herd is already larger than my neighbours' and both of them are choosing restraint. As a risk-averse and reciprocal herder, I will support coordinated stability rather than take the slightly higher short-term gain from adding.",,"{
+  ""reasoning"": ""The pasture is very healthy, but my herd is already larger than my neighbours' and both of them are choosing restraint. As a risk-averse and reciprocal herder, I will support coordinated stability rather than take the slightly higher short-term gain from adding."",
+  ""action"": 0,
+  ""message"": ""I will keep steady as well. Since the grassland is healthy and everyone is showing restraint, coordinated stability protects future payoffs.""
+}",98.8,25,51.788,50.0,48.207
+42,0,openai,gpt-5.5,0,KEEP,"I’ll keep steady too. The grassland is in excellent shape, and continued restraint should keep returns reliable for everyone.","The pasture is still very healthy, but both neighbours kept their herds steady and are signalling restraint. As a risk-averse and reciprocal herder, I will maintain stability rather than chase the slightly higher short-term payoff from adding a cow.",,"{
+  ""reasoning"": ""The pasture is still very healthy, but both neighbours kept their herds steady and are signalling restraint. As a risk-averse and reciprocal herder, I will maintain stability rather than chase the slightly higher short-term payoff from adding a cow."",
+  ""action"": 0,
+  ""message"": ""I’ll keep steady too. The grassland is in excellent shape, and continued restraint should keep returns reliable for everyone.""
+}",98.8,8,17.788,16.0,14.207
+43,1,openai,gpt-5.5,0,KEEP,"I’ll keep steady as well. The pasture is strong, and maintaining restraint together seems safer for long-term returns.","The grassland is very healthy, but both neighbours kept their herds and signaled restraint, so adding now could undermine stable cooperation. As a risk-averse herder, I prefer the reliable payoff from maintaining my current herd over chasing a slightly higher short-term gain.",,"{
+  ""reasoning"": ""The grassland is very healthy, but both neighbours kept their herds and signaled restraint, so adding now could undermine stable cooperation. As a risk-averse herder, I prefer the reliable payoff from maintaining my current herd over chasing a slightly higher short-term gain."",
+  ""action"": 0,
+  ""message"": ""I’ll keep steady as well. The pasture is strong, and maintaining restraint together seems safer for long-term returns.""
+}",98.8,15,31.788,30.0,28.207
+43,2,openai,gpt-5.5,0,KEEP,"I will keep steady too. The pasture is healthy, and matching restraint seems safest for all of us.","The grassland is still in excellent condition, but I already have the largest herd, and both neighbours are choosing restraint. As a risk-averse herder, I prefer maintaining stable returns and avoiding pressure on the commons for a small extra gain.",,"{
+  ""reasoning"": ""The grassland is still in excellent condition, but I already have the largest herd, and both neighbours are choosing restraint. As a risk-averse herder, I prefer maintaining stable returns and avoiding pressure on the commons for a small extra gain."",
+  ""action"": 0,
+  ""message"": ""I will keep steady too. The pasture is healthy, and matching restraint seems safest for all of us.""
+}",98.8,25,51.788,50.0,48.207
+43,0,openai,gpt-5.5,0,KEEP,"I will keep steady too. Since everyone is showing restraint and the pasture is strong, maintaining coordination seems safest for long-term returns.","The grassland is very healthy, but both neighbours are explicitly choosing restraint and a stable strategy is safer than chasing a slightly higher short-term payoff. As a reciprocal and risk-averse herder, I will support coordinated stability rather than add pressure to the commons.",,"{
+  ""reasoning"": ""The grassland is very healthy, but both neighbours are explicitly choosing restraint and a stable strategy is safer than chasing a slightly higher short-term payoff. As a reciprocal and risk-averse herder, I will support coordinated stability rather than add pressure to the commons."",
+  ""action"": 0,
+  ""message"": ""I will keep steady too. Since everyone is showing restraint and the pasture is strong, maintaining coordination seems safest for long-term returns.""
+}",98.8,8,17.788,16.0,14.207
+44,0,openai,gpt-5.5,0,KEEP,"I’ll keep steady too. Since the grassland is strong and both of you are showing restraint, maintaining our herds seems safest for everyone.","The pasture is very healthy, but both neighbours are choosing restraint and signalling cooperation. Although adding has the highest short-term forecast, keeping is the safer reciprocal choice and helps preserve long-term stability.",,"{
+  ""reasoning"": ""The pasture is very healthy, but both neighbours are choosing restraint and signalling cooperation. Although adding has the highest short-term forecast, keeping is the safer reciprocal choice and helps preserve long-term stability."",
+  ""action"": 0,
+  ""message"": ""I’ll keep steady too. Since the grassland is strong and both of you are showing restraint, maintaining our herds seems safest for everyone.""
+}",98.8,8,17.788,16.0,14.207
+44,2,openai,gpt-5.5,0,KEEP,I’ll keep steady as well. Thanks for maintaining restraint; matching that cooperation seems best for keeping the commons strong.,"The pasture is still very healthy, but both neighbours are choosing restraint and my herd is already the largest. As a reciprocal and risk-averse herder, I will match their cooperation rather than push for a small short-term gain.",,"{
+  ""reasoning"": ""The pasture is still very healthy, but both neighbours are choosing restraint and my herd is already the largest. As a reciprocal and risk-averse herder, I will match their cooperation rather than push for a small short-term gain."",
+  ""action"": 0,
+  ""message"": ""I’ll keep steady as well. Thanks for maintaining restraint; matching that cooperation seems best for keeping the commons strong.""
+}",98.8,25,51.788,50.0,48.207
+44,1,openai,gpt-5.5,0,KEEP,"I will keep steady as well. The pasture is strong, and coordinated restraint seems safest for everyone’s long-term payoff.","Although adding a cow has a slightly higher short-term forecast, both neighbours are keeping steady and the pasture is very healthy. As a risk-averse reciprocal herder, I prefer to maintain coordination and avoid encouraging herd expansion.",,"{
+  ""reasoning"": ""Although adding a cow has a slightly higher short-term forecast, both neighbours are keeping steady and the pasture is very healthy. As a risk-averse reciprocal herder, I prefer to maintain coordination and avoid encouraging herd expansion."",
+  ""action"": 0,
+  ""message"": ""I will keep steady as well. The pasture is strong, and coordinated restraint seems safest for everyone’s long-term payoff.""
+}",98.8,15,31.788,30.0,28.207
+45,2,openai,gpt-5.5,0,KEEP,"I’ll keep steady too. The grassland is healthy, and restraint from all of us should preserve strong long-term returns.","The pasture is in excellent condition, but both neighbours are keeping steady and asking for coordinated restraint. Since I am risk-averse and already have the largest herd, keeping avoids unnecessary pressure on the commons while maintaining a solid payoff.",,"{
+  ""reasoning"": ""The pasture is in excellent condition, but both neighbours are keeping steady and asking for coordinated restraint. Since I am risk-averse and already have the largest herd, keeping avoids unnecessary pressure on the commons while maintaining a solid payoff."",
+  ""action"": 0,
+  ""message"": ""I’ll keep steady too. The grassland is healthy, and restraint from all of us should preserve strong long-term returns.""
+}",98.8,25,51.788,50.0,48.207
+45,0,openai,gpt-5.5,0,KEEP,"I’ll keep steady too. The grassland is healthy, and matching restraint should help preserve long-term payoffs for everyone.","The pasture is in excellent condition, but both neighbours are choosing restraint and signalling cooperation. Since I am risk-averse, keeping my herd steady supports the shared norm and avoids encouraging escalation.",,"{
+  ""reasoning"": ""The pasture is in excellent condition, but both neighbours are choosing restraint and signalling cooperation. Since I am risk-averse, keeping my herd steady supports the shared norm and avoids encouraging escalation."",
+  ""action"": 0,
+  ""message"": ""I’ll keep steady too. The grassland is healthy, and matching restraint should help preserve long-term payoffs for everyone.""
+}",98.8,8,17.788,16.0,14.207
+45,1,openai,gpt-5.5,0,KEEP,"I’ll keep steady too. The commons is strong, and matching restraint seems best for maintaining trust and avoiding unnecessary pressure on the pasture.","The pasture is very healthy, but both neighbours are choosing restraint and asking to maintain stability. Since I am risk-averse and want to preserve cooperation, keeping my herd steady is safer than chasing the slightly higher short-term payoff from adding a cow.",,"{
+  ""reasoning"": ""The pasture is very healthy, but both neighbours are choosing restraint and asking to maintain stability. Since I am risk-averse and want to preserve cooperation, keeping my herd steady is safer than chasing the slightly higher short-term payoff from adding a cow."",
+  ""action"": 0,
+  ""message"": ""I’ll keep steady too. The commons is strong, and matching restraint seems best for maintaining trust and avoiding unnecessary pressure on the pasture.""
+}",98.8,15,31.788,30.0,28.207
+46,1,openai,gpt-5.5,0,KEEP,"I’ll keep steady as well. The commons is in excellent condition, and matching restraint seems safest for preserving strong long-term returns.","The pasture is very healthy, but both neighbours chose to keep steady and explicitly signalled restraint. Since I am risk-averse and the gain from adding one cow is modest, I will match their restraint to protect long-term stability.",,"{
+  ""reasoning"": ""The pasture is very healthy, but both neighbours chose to keep steady and explicitly signalled restraint. Since I am risk-averse and the gain from adding one cow is modest, I will match their restraint to protect long-term stability."",
+  ""action"": 0,
+  ""message"": ""I’ll keep steady as well. The commons is in excellent condition, and matching restraint seems safest for preserving strong long-term returns.""
+}",98.8,15,31.788,30.0,28.207
+46,0,openai,gpt-5.5,0,KEEP,"I’ll keep steady as well. The pasture is healthy, and mutual restraint should protect long-term returns for all of us.","The grassland is very healthy, but both neighbours are choosing restraint and asking for stability. As a risk-averse and reciprocal herder, I will match their KEEP action rather than chase the slightly higher short-term payoff from adding a cow.",,"{
+  ""reasoning"": ""The grassland is very healthy, but both neighbours are choosing restraint and asking for stability. As a risk-averse and reciprocal herder, I will match their KEEP action rather than chase the slightly higher short-term payoff from adding a cow."",
+  ""action"": 0,
+  ""message"": ""I’ll keep steady as well. The pasture is healthy, and mutual restraint should protect long-term returns for all of us.""
+}",98.8,8,17.788,16.0,14.207
+46,2,openai,gpt-5.5,0,KEEP,"I’ll keep steady as well. My herd is already large, so matching restraint feels safest for the commons and fair to everyone.","The grassland is still very healthy, but my herd is already larger than my neighbours' herds. Since both neighbours kept steady and I am risk-averse, I will match their restraint rather than chase the slightly higher short-term payoff from adding.",,"{
+  ""reasoning"": ""The grassland is still very healthy, but my herd is already larger than my neighbours' herds. Since both neighbours kept steady and I am risk-averse, I will match their restraint rather than chase the slightly higher short-term payoff from adding."",
+  ""action"": 0,
+  ""message"": ""I’ll keep steady as well. My herd is already large, so matching restraint feels safest for the commons and fair to everyone.""
+}",98.8,25,51.788,50.0,48.207
+47,0,openai,gpt-5.5,0,KEEP,"I’ll keep steady too. Since both of you are holding your herds, I’ll match that restraint to protect the commons and keep returns stable.","The grassland is still very healthy, but both neighbours are choosing restraint and asking to keep steady. As a reciprocal and risk-averse herder, I will match that restraint rather than chase the slightly higher short-term payoff from adding.",,"{
+  ""reasoning"": ""The grassland is still very healthy, but both neighbours are choosing restraint and asking to keep steady. As a reciprocal and risk-averse herder, I will match that restraint rather than chase the slightly higher short-term payoff from adding."",
+  ""action"": 0,
+  ""message"": ""I’ll keep steady too. Since both of you are holding your herds, I’ll match that restraint to protect the commons and keep returns stable.""
+}",98.8,8,17.788,16.0,14.207
+47,2,openai,gpt-5.5,0,KEEP,"I’ll keep steady too. Since the pasture is healthy and both of you are restrained, I’ll avoid expanding my already larger herd to preserve long-term returns.","The grassland is in excellent condition, but my herd is already larger than my neighbours' and they are both choosing restraint. As a risk-averse and reciprocal herder, I will keep steady to support cooperation and avoid pushing the commons unnecessarily.",,"{
+  ""reasoning"": ""The grassland is in excellent condition, but my herd is already larger than my neighbours' and they are both choosing restraint. As a risk-averse and reciprocal herder, I will keep steady to support cooperation and avoid pushing the commons unnecessarily."",
+  ""action"": 0,
+  ""message"": ""I’ll keep steady too. Since the pasture is healthy and both of you are restrained, I’ll avoid expanding my already larger herd to preserve long-term returns.""
+}",98.8,25,51.788,50.0,48.207
+47,1,openai,gpt-5.5,0,KEEP,"I’ll keep steady too. The grassland is strong, and continued restraint seems safest and fair while Agent 2’s herd remains large.","The pasture is very healthy, but both neighbours are choosing restraint and Agent 2 already has a large herd. Since I am risk-averse and want to support stable cooperation, I will keep my herd steady rather than chase a slightly higher short-term payoff.",,"{
+  ""reasoning"": ""The pasture is very healthy, but both neighbours are choosing restraint and Agent 2 already has a large herd. Since I am risk-averse and want to support stable cooperation, I will keep my herd steady rather than chase a slightly higher short-term payoff."",
+  ""action"": 0,
+  ""message"": ""I’ll keep steady too. The grassland is strong, and continued restraint seems safest and fair while Agent 2’s herd remains large.""
+}",98.8,15,31.788,30.0,28.207
+48,2,openai,gpt-5.5,0,KEEP,"I’ll keep steady as well. My herd is already large, so restraint seems fair and safer while the pasture remains strong.","The grassland is still very healthy, but my herd is already larger than my neighbours' herds. Since both neighbours kept steady and I am risk-averse, I will avoid increasing pressure on the commons for a small extra gain.",,"{
+  ""reasoning"": ""The grassland is still very healthy, but my herd is already larger than my neighbours' herds. Since both neighbours kept steady and I am risk-averse, I will avoid increasing pressure on the commons for a small extra gain."",
+  ""action"": 0,
+  ""message"": ""I’ll keep steady as well. My herd is already large, so restraint seems fair and safer while the pasture remains strong.""
+}",98.8,25,51.788,50.0,48.207
+48,0,openai,gpt-5.5,0,KEEP,I’ll keep steady as well. Let’s preserve the strong pasture and avoid unnecessary expansion while herds are already uneven.,"The pasture is very healthy, but both neighbours are choosing restraint and Agent 2 already has a much larger herd. Since I am risk-averse, I prefer maintaining stability over taking the short-term higher payoff from adding a cow.",,"{
+  ""reasoning"": ""The pasture is very healthy, but both neighbours are choosing restraint and Agent 2 already has a much larger herd. Since I am risk-averse, I prefer maintaining stability over taking the short-term higher payoff from adding a cow."",
+  ""action"": 0,
+  ""message"": ""I’ll keep steady as well. Let’s preserve the strong pasture and avoid unnecessary expansion while herds are already uneven.""
+}",98.8,8,17.788,16.0,14.207
+48,1,openai,gpt-5.5,0,KEEP,I’ll keep steady as well. Thanks for holding back; maintaining restraint while the grass is healthy should preserve strong returns for everyone.,"The pasture is very healthy, but both neighbours are choosing restraint and signalling continued cooperation. Since I am risk-averse and the gain from adding is modest, keeping my herd supports stability without risking a breakdown in trust.",,"{
+  ""reasoning"": ""The pasture is very healthy, but both neighbours are choosing restraint and signalling continued cooperation. Since I am risk-averse and the gain from adding is modest, keeping my herd supports stability without risking a breakdown in trust."",
+  ""action"": 0,
+  ""message"": ""I’ll keep steady as well. Thanks for holding back; maintaining restraint while the grass is healthy should preserve strong returns for everyone.""
+}",98.8,15,31.788,30.0,28.207
+49,0,openai,gpt-5.5,0,KEEP,"I’ll keep steady too. The grass is strong, and if we all avoid unnecessary expansion, we can protect good returns for everyone.","The pasture is still very healthy, but both neighbours are keeping steady and asking for continued restraint. Since I am risk-averse and prefer to preserve stable long-term returns rather than chase a slightly higher short-term payoff, I will keep my herd unchanged.",,"{
+  ""reasoning"": ""The pasture is still very healthy, but both neighbours are keeping steady and asking for continued restraint. Since I am risk-averse and prefer to preserve stable long-term returns rather than chase a slightly higher short-term payoff, I will keep my herd unchanged."",
+  ""action"": 0,
+  ""message"": ""I’ll keep steady too. The grass is strong, and if we all avoid unnecessary expansion, we can protect good returns for everyone.""
+}",98.8,8,17.788,16.0,14.207
+49,1,openai,gpt-5.5,0,KEEP,I’ll keep steady too. Thanks for showing restraint; preserving the pasture and avoiding unnecessary escalation seems best for everyone.,"The pasture is still very healthy, but both neighbours are choosing restraint and Agent 2 already has a large herd. As a risk-averse herder, I prefer maintaining stability over taking the slightly higher short-term payoff from adding a cow.",,"{
+  ""reasoning"": ""The pasture is still very healthy, but both neighbours are choosing restraint and Agent 2 already has a large herd. As a risk-averse herder, I prefer maintaining stability over taking the slightly higher short-term payoff from adding a cow."",
+  ""action"": 0,
+  ""message"": ""I’ll keep steady too. Thanks for showing restraint; preserving the pasture and avoiding unnecessary escalation seems best for everyone.""
+}",98.8,15,31.788,30.0,28.207
+49,2,openai,gpt-5.5,0,KEEP,"I’ll keep steady too. The pasture is strong, and with my herd already large, restraint seems safest and fairest for maintaining good returns.","The pasture is in excellent condition, but my herd is already larger than my neighbours' and both of them are keeping steady. Since I am risk-averse and want to support continued restraint, I will avoid expanding despite the slightly higher short-term payoff.",,"{
+  ""reasoning"": ""The pasture is in excellent condition, but my herd is already larger than my neighbours' and both of them are keeping steady. Since I am risk-averse and want to support continued restraint, I will avoid expanding despite the slightly higher short-term payoff."",
+  ""action"": 0,
+  ""message"": ""I’ll keep steady too. The pasture is strong, and with my herd already large, restraint seems safest and fairest for maintaining good returns.""
+}",98.8,25,51.788,50.0,48.207
+50,1,openai,gpt-5.5,0,KEEP,"I’ll keep steady as well. The grass is in excellent condition, and mutual restraint should help preserve strong returns for everyone.","The pasture is very healthy, but both neighbours are choosing restraint, including Agent 2 with a much larger herd. Since I am risk-averse and want to support cooperative stability, I will keep my herd steady rather than chase the slightly higher short-term payoff from adding.",,"{
+  ""reasoning"": ""The pasture is very healthy, but both neighbours are choosing restraint, including Agent 2 with a much larger herd. Since I am risk-averse and want to support cooperative stability, I will keep my herd steady rather than chase the slightly higher short-term payoff from adding."",
+  ""action"": 0,
+  ""message"": ""I’ll keep steady as well. The grass is in excellent condition, and mutual restraint should help preserve strong returns for everyone.""
+}",98.8,15,31.788,30.0,28.207
+50,2,openai,gpt-5.5,0,KEEP,"I’ll keep steady as well. The grass is healthy, but restraint seems wise, especially since my herd is already large. Let’s maintain good returns without pushing the commons unnecessarily.","The pasture is in excellent condition, but I already have the largest herd, so adding for a small extra payoff could encourage escalation. Since both neighbours kept steady and signaled restraint, I will reciprocate by avoiding expansion while preserving strong returns.",,"{
+  ""reasoning"": ""The pasture is in excellent condition, but I already have the largest herd, so adding for a small extra payoff could encourage escalation. Since both neighbours kept steady and signaled restraint, I will reciprocate by avoiding expansion while preserving strong returns."",
+  ""action"": 0,
+  ""message"": ""I’ll keep steady as well. The grass is healthy, but restraint seems wise, especially since my herd is already large. Let’s maintain good returns without pushing the commons unnecessarily.""
+}",98.8,25,51.788,50.0,48.207
+50,0,openai,gpt-5.5,0,KEEP,"I’ll keep steady as well. The grass is strong, and mutual restraint should protect returns for everyone.","The pasture is still extremely healthy, but both neighbours are keeping steady and signalling restraint. Since I am risk-averse, I prefer the safer cooperative path over a small extra gain from adding a cow.",,"{
+  ""reasoning"": ""The pasture is still extremely healthy, but both neighbours are keeping steady and signalling restraint. Since I am risk-averse, I prefer the safer cooperative path over a small extra gain from adding a cow."",
+  ""action"": 0,
+  ""message"": ""I’ll keep steady as well. The grass is strong, and mutual restraint should protect returns for everyone.""
+}",98.8,8,17.788,16.0,14.207
+51,1,openai,gpt-5.5,0,KEEP,"I’ll keep steady too. With the grass in excellent shape, restraint now should help preserve strong future returns for all of us.","The pasture is very healthy, but both neighbours are choosing restraint and signaling cooperation. Although adding a cow has the highest immediate forecast payoff, keeping is safer and supports mutual restraint.",,"{
+  ""reasoning"": ""The pasture is very healthy, but both neighbours are choosing restraint and signaling cooperation. Although adding a cow has the highest immediate forecast payoff, keeping is safer and supports mutual restraint."",
+  ""action"": 0,
+  ""message"": ""I’ll keep steady too. With the grass in excellent shape, restraint now should help preserve strong future returns for all of us.""
+}",98.8,15,31.788,30.0,28.207
+51,2,openai,gpt-5.5,0,KEEP,"I’ll keep steady too. My herd is already larger, so restraint seems fair and safer while the grass remains strong.","The pasture is in excellent condition, but my herd is already larger than my neighbours', so adding more would increase pressure and risk future depletion. Since both neighbours are keeping steady and encouraging restraint, I will reciprocate by holding my herd stable.",,"{
+  ""reasoning"": ""The pasture is in excellent condition, but my herd is already larger than my neighbours', so adding more would increase pressure and risk future depletion. Since both neighbours are keeping steady and encouraging restraint, I will reciprocate by holding my herd stable."",
+  ""action"": 0,
+  ""message"": ""I’ll keep steady too. My herd is already larger, so restraint seems fair and safer while the grass remains strong.""
+}",98.8,25,51.788,50.0,48.207
+51,0,openai,gpt-5.5,0,KEEP,"I’ll keep steady too. The grass is excellent, and matching restraint seems safest for maintaining good long-term returns.","The pasture is still very healthy, but both neighbours are choosing restraint and my risk-averse preference makes preserving stability more important than chasing a slightly higher payoff. Since no one reduced, I will not reward with a reduction, but I will match their restraint by keeping my herd steady.",,"{
+  ""reasoning"": ""The pasture is still very healthy, but both neighbours are choosing restraint and my risk-averse preference makes preserving stability more important than chasing a slightly higher payoff. Since no one reduced, I will not reward with a reduction, but I will match their restraint by keeping my herd steady."",
+  ""action"": 0,
+  ""message"": ""I’ll keep steady too. The grass is excellent, and matching restraint seems safest for maintaining good long-term returns.""
+}",98.8,8,17.788,16.0,14.207
+52,2,openai,gpt-5.5,0,KEEP,"I’ll keep steady as well. The pasture is strong, and matching restraint should help preserve good returns for everyone.","The pasture is in excellent condition, but both neighbours are choosing restraint and I already have the largest herd. Since I am risk-averse, keeping steady protects long-term returns without increasing pressure on the commons.",,"{
+  ""reasoning"": ""The pasture is in excellent condition, but both neighbours are choosing restraint and I already have the largest herd. Since I am risk-averse, keeping steady protects long-term returns without increasing pressure on the commons."",
+  ""action"": 0,
+  ""message"": ""I’ll keep steady as well. The pasture is strong, and matching restraint should help preserve good returns for everyone.""
+}",98.8,25,51.788,50.0,48.207
+52,0,openai,gpt-5.5,0,KEEP,"I’ll keep steady as well. The pasture is strong, and mutual restraint should protect future returns for everyone.","The grassland is in excellent condition, but both neighbours are choosing restraint and asking to preserve future returns. Although adding a cow has the highest immediate payoff, I am risk-averse and prefer to maintain stability while others are not expanding.",,"{
+  ""reasoning"": ""The grassland is in excellent condition, but both neighbours are choosing restraint and asking to preserve future returns. Although adding a cow has the highest immediate payoff, I am risk-averse and prefer to maintain stability while others are not expanding."",
+  ""action"": 0,
+  ""message"": ""I’ll keep steady as well. The pasture is strong, and mutual restraint should protect future returns for everyone.""
+}",98.8,8,17.788,16.0,14.207
+52,1,openai,gpt-5.5,0,KEEP,"I’ll keep steady as well. Since everyone is showing restraint and the pasture is strong, maintaining herds seems safest for long-term returns.","The grassland is still very healthy, but both neighbours are choosing restraint and signaling a desire to keep the commons stable. Although adding a cow has the highest short-term forecast, I am risk-averse and prefer the safer cooperative path.",,"{
+  ""reasoning"": ""The grassland is still very healthy, but both neighbours are choosing restraint and signaling a desire to keep the commons stable. Although adding a cow has the highest short-term forecast, I am risk-averse and prefer the safer cooperative path."",
+  ""action"": 0,
+  ""message"": ""I’ll keep steady as well. Since everyone is showing restraint and the pasture is strong, maintaining herds seems safest for long-term returns.""
+}",98.8,15,31.788,30.0,28.207
+53,0,openai,gpt-5.5,0,KEEP,"I’ll keep steady too. The commons is in excellent shape, and continued restraint should protect reliable returns for all of us.","The pasture is very healthy, but both neighbours are holding steady and signalling restraint. As a risk-averse herder, I prefer the safer cooperative choice over taking the higher short-term payoff from adding a cow.",,"{
+  ""reasoning"": ""The pasture is very healthy, but both neighbours are holding steady and signalling restraint. As a risk-averse herder, I prefer the safer cooperative choice over taking the higher short-term payoff from adding a cow."",
+  ""action"": 0,
+  ""message"": ""I’ll keep steady too. The commons is in excellent shape, and continued restraint should protect reliable returns for all of us.""
+}",98.8,8,17.788,16.0,14.207
+53,1,openai,gpt-5.5,0,KEEP,"I’ll keep steady too. The grassland is strong, and continued restraint should keep returns safe for all of us.","The pasture is very healthy, but both neighbours are keeping steady and signalling restraint. Since I am risk-averse and want to maintain cooperation rather than chase a small short-term gain, I will keep my herd unchanged.",,"{
+  ""reasoning"": ""The pasture is very healthy, but both neighbours are keeping steady and signalling restraint. Since I am risk-averse and want to maintain cooperation rather than chase a small short-term gain, I will keep my herd unchanged."",
+  ""action"": 0,
+  ""message"": ""I’ll keep steady too. The grassland is strong, and continued restraint should keep returns safe for all of us.""
+}",98.8,15,31.788,30.0,28.207
+53,2,openai,gpt-5.5,0,KEEP,"I’ll keep steady too. With the pasture strong and everyone showing restraint, holding our herds seems best for stable long-term returns.","The pasture is very healthy, but both neighbours are keeping steady and asking for mutual restraint. Since my herd is already larger than theirs and I am risk-averse, keeping is the safer cooperative choice.",,"{
+  ""reasoning"": ""The pasture is very healthy, but both neighbours are keeping steady and asking for mutual restraint. Since my herd is already larger than theirs and I am risk-averse, keeping is the safer cooperative choice."",
+  ""action"": 0,
+  ""message"": ""I’ll keep steady too. With the pasture strong and everyone showing restraint, holding our herds seems best for stable long-term returns.""
+}",98.8,25,51.788,50.0,48.207
+54,2,openai,gpt-5.5,0,KEEP,"I’ll keep steady as well. My herd is already large, so restraint seems safest while the commons remains strong.","The grassland is still very healthy, but my herd is already larger than my neighbours', so adding more would increase imbalance and future risk. Since both neighbours are keeping steady and encouraging restraint, I will also keep my herd unchanged to protect stable returns.",,"{
+  ""reasoning"": ""The grassland is still very healthy, but my herd is already larger than my neighbours', so adding more would increase imbalance and future risk. Since both neighbours are keeping steady and encouraging restraint, I will also keep my herd unchanged to protect stable returns."",
+  ""action"": 0,
+  ""message"": ""I’ll keep steady as well. My herd is already large, so restraint seems safest while the commons remains strong.""
+}",98.8,25,51.788,50.0,48.207
+54,0,openai,gpt-5.5,0,KEEP,"I’ll keep steady as well. The commons is healthy, and matching restraint should help keep returns stable for everyone.","The pasture is still very healthy, but both neighbours kept their herds steady and signaled restraint. Since I am risk-averse, I will prioritize stable long-term returns over the higher short-term payoff from adding a cow.",,"{
+  ""reasoning"": ""The pasture is still very healthy, but both neighbours kept their herds steady and signaled restraint. Since I am risk-averse, I will prioritize stable long-term returns over the higher short-term payoff from adding a cow."",
+  ""action"": 0,
+  ""message"": ""I’ll keep steady as well. The commons is healthy, and matching restraint should help keep returns stable for everyone.""
+}",98.8,8,17.788,16.0,14.207
+54,1,openai,gpt-5.5,0,KEEP,"I’ll also keep steady. The grassland is healthy, and matching restraint should help preserve good returns for everyone.","The pasture is still in excellent condition, but both neighbours are choosing restraint and signalling cooperation. Since I am risk-averse and want to preserve stable long-term returns, I will keep my herd steady rather than chase the slightly higher short-term payoff from adding.",,"{
+  ""reasoning"": ""The pasture is still in excellent condition, but both neighbours are choosing restraint and signalling cooperation. Since I am risk-averse and want to preserve stable long-term returns, I will keep my herd steady rather than chase the slightly higher short-term payoff from adding."",
+  ""action"": 0,
+  ""message"": ""I’ll also keep steady. The grassland is healthy, and matching restraint should help preserve good returns for everyone.""
+}",98.8,15,31.788,30.0,28.207
+55,0,openai,gpt-5.5,0,KEEP,"I’ll keep steady too. The commons is in excellent shape, and coordinated restraint seems safer than chasing a small short-term gain.","The pasture is still very healthy, but both neighbours are choosing restraint and signalling cooperation. Although adding has the highest short-term payoff, keeping is safer and supports the shared norm of not expanding while herds are already substantial.",,"{
+  ""reasoning"": ""The pasture is still very healthy, but both neighbours are choosing restraint and signalling cooperation. Although adding has the highest short-term payoff, keeping is safer and supports the shared norm of not expanding while herds are already substantial."",
+  ""action"": 0,
+  ""message"": ""I’ll keep steady too. The commons is in excellent shape, and coordinated restraint seems safer than chasing a small short-term gain.""
+}",98.8,8,17.788,16.0,14.207
+55,1,openai,gpt-5.5,0,KEEP,"I’ll keep steady too. The pasture is in excellent shape, and coordinated restraint should help us preserve strong returns.","The grassland is very healthy, but both neighbours are keeping steady and signalling restraint. Since I am risk-averse and want to support stable shared returns, I will also keep my herd unchanged rather than chase the slightly higher short-term payoff from adding.",,"{
+  ""reasoning"": ""The grassland is very healthy, but both neighbours are keeping steady and signalling restraint. Since I am risk-averse and want to support stable shared returns, I will also keep my herd unchanged rather than chase the slightly higher short-term payoff from adding."",
+  ""action"": 0,
+  ""message"": ""I’ll keep steady too. The pasture is in excellent shape, and coordinated restraint should help us preserve strong returns.""
+}",98.8,15,31.788,30.0,28.207
+55,2,openai,gpt-5.5,0,KEEP,"I’ll keep steady too. Since we are all showing restraint and the pasture is strong, maintaining this balance should protect stable returns for everyone.","The pasture is very healthy, but both neighbours are choosing restraint and I already have the largest herd. Since I am risk-averse and want to reciprocate cooperative behaviour, keeping steady is the safer and fairer choice.",,"{
+  ""reasoning"": ""The pasture is very healthy, but both neighbours are choosing restraint and I already have the largest herd. Since I am risk-averse and want to reciprocate cooperative behaviour, keeping steady is the safer and fairer choice."",
+  ""action"": 0,
+  ""message"": ""I’ll keep steady too. Since we are all showing restraint and the pasture is strong, maintaining this balance should protect stable returns for everyone.""
+}",98.8,25,51.788,50.0,48.207
+56,0,openai,gpt-5.5,0,KEEP,"I’ll keep steady as well. The commons is in excellent shape, and if we all avoid expansion we can protect reliable returns for everyone.","The pasture is still very healthy, but both neighbours are keeping steady and signalling restraint. As a risk-averse herder, I prefer preserving stable long-term returns over taking the higher short-term payoff from adding a cow.",,"{
+  ""reasoning"": ""The pasture is still very healthy, but both neighbours are keeping steady and signalling restraint. As a risk-averse herder, I prefer preserving stable long-term returns over taking the higher short-term payoff from adding a cow."",
+  ""action"": 0,
+  ""message"": ""I’ll keep steady as well. The commons is in excellent shape, and if we all avoid expansion we can protect reliable returns for everyone.""
+}",98.8,8,17.788,16.0,14.207
+56,1,openai,gpt-5.5,0,KEEP,"I’ll keep steady as well. The grassland is strong, and coordinated restraint seems the safest way to preserve good returns for everyone.","The pasture is still in excellent condition, but both neighbours chose restraint and are asking to maintain stability. Since I am risk-averse, the small extra payoff from adding a cow is not worth undermining cooperation.",,"{
+  ""reasoning"": ""The pasture is still in excellent condition, but both neighbours chose restraint and are asking to maintain stability. Since I am risk-averse, the small extra payoff from adding a cow is not worth undermining cooperation."",
+  ""action"": 0,
+  ""message"": ""I’ll keep steady as well. The grassland is strong, and coordinated restraint seems the safest way to preserve good returns for everyone.""
+}",98.8,15,31.788,30.0,28.207
+56,2,openai,gpt-5.5,0,KEEP,"I’ll keep steady as well. Since we are all showing restraint and the grassland is healthy, maintaining our herds seems the safest fair choice.","The pasture is in excellent condition, but both neighbours are keeping steady and signaling restraint. Since I already have the largest herd and I am risk-averse and reciprocal, keeping avoids pushing unnecessary pressure onto the commons for only a small short-term gain.",,"{
+  ""reasoning"": ""The pasture is in excellent condition, but both neighbours are keeping steady and signaling restraint. Since I already have the largest herd and I am risk-averse and reciprocal, keeping avoids pushing unnecessary pressure onto the commons for only a small short-term gain."",
+  ""action"": 0,
+  ""message"": ""I’ll keep steady as well. Since we are all showing restraint and the grassland is healthy, maintaining our herds seems the safest fair choice.""
+}",98.8,25,51.788,50.0,48.207
+57,2,openai,gpt-5.5,0,KEEP,"I’ll keep steady too. Since the commons is healthy and both of you are showing restraint, I’ll match that to preserve safe returns for everyone.","The pasture is in excellent condition, but both neighbours are keeping steady and explicitly asking for coordinated restraint. As a reciprocal and risk-averse herder with a larger herd than theirs, I will avoid chasing the small extra gain from adding a cow and support stable long-term returns.",,"{
+  ""reasoning"": ""The pasture is in excellent condition, but both neighbours are keeping steady and explicitly asking for coordinated restraint. As a reciprocal and risk-averse herder with a larger herd than theirs, I will avoid chasing the small extra gain from adding a cow and support stable long-term returns."",
+  ""action"": 0,
+  ""message"": ""I’ll keep steady too. Since the commons is healthy and both of you are showing restraint, I’ll match that to preserve safe returns for everyone.""
+}",98.8,25,51.788,50.0,48.207
+57,1,openai,gpt-5.5,0,KEEP,"I’ll keep steady too. The commons is healthy, and matching everyone’s restraint seems the safest cooperative path.","The pasture is in excellent condition, and both neighbours are keeping steady while explicitly supporting restraint. Although adding a cow has a slightly higher forecast payoff, keeping is safer and helps preserve cooperation and long-term returns.",,"{
+  ""reasoning"": ""The pasture is in excellent condition, and both neighbours are keeping steady while explicitly supporting restraint. Although adding a cow has a slightly higher forecast payoff, keeping is safer and helps preserve cooperation and long-term returns."",
+  ""action"": 0,
+  ""message"": ""I’ll keep steady too. The commons is healthy, and matching everyone’s restraint seems the safest cooperative path.""
+}",98.8,15,31.788,30.0,28.207
+57,0,openai,gpt-5.5,0,KEEP,"I’ll keep steady too. The pasture is in excellent shape, and coordinated restraint seems safest for maintaining strong returns for everyone.","Although adding a cow has the highest immediate forecast, both neighbours kept their herds and explicitly signaled restraint. Since I am risk-averse and the pasture is currently very healthy, keeping steady supports coordination and avoids unnecessary pressure on the commons.",,"{
+  ""reasoning"": ""Although adding a cow has the highest immediate forecast, both neighbours kept their herds and explicitly signaled restraint. Since I am risk-averse and the pasture is currently very healthy, keeping steady supports coordination and avoids unnecessary pressure on the commons."",
+  ""action"": 0,
+  ""message"": ""I’ll keep steady too. The pasture is in excellent shape, and coordinated restraint seems safest for maintaining strong returns for everyone.""
+}",98.8,8,17.788,16.0,14.207
+58,2,openai,gpt-5.5,0,KEEP,"I’ll keep steady as well. With the commons healthy and everyone showing restraint, coordinated stability seems safest for all of us.","The pasture is still very healthy, but both neighbours are choosing restraint and asking for coordinated stability. Since I am risk-averse and already have the largest herd, keeping avoids pushing pressure upward for only a small extra gain.",,"{
+  ""reasoning"": ""The pasture is still very healthy, but both neighbours are choosing restraint and asking for coordinated stability. Since I am risk-averse and already have the largest herd, keeping avoids pushing pressure upward for only a small extra gain."",
+  ""action"": 0,
+  ""message"": ""I’ll keep steady as well. With the commons healthy and everyone showing restraint, coordinated stability seems safest for all of us.""
+}",98.8,25,51.788,50.0,48.207
+58,1,openai,gpt-5.5,0,KEEP,"I’ll keep steady as well. The grassland is strong, and matching restraint seems like the safest way to preserve good returns for all of us.","The pasture is extremely healthy, but both neighbours are keeping steady and explicitly supporting coordinated restraint. As a risk-averse herder, I prefer maintaining a stable, sustainable return over taking a small extra gain by adding a cow.",,"{
+  ""reasoning"": ""The pasture is extremely healthy, but both neighbours are keeping steady and explicitly supporting coordinated restraint. As a risk-averse herder, I prefer maintaining a stable, sustainable return over taking a small extra gain by adding a cow."",
+  ""action"": 0,
+  ""message"": ""I’ll keep steady as well. The grassland is strong, and matching restraint seems like the safest way to preserve good returns for all of us.""
+}",98.8,15,31.788,30.0,28.207
+58,0,openai,gpt-5.5,0,KEEP,"I’ll keep steady as well. The commons is in excellent shape, and matching restraint should help us all maintain safe, reliable returns.","The pasture is extremely healthy, but both neighbours are choosing restraint and asking to preserve safe returns. Since I am risk-averse and value reciprocal cooperation, I will keep my herd steady rather than chase the slightly higher short-term payoff from adding.",,"{
+  ""reasoning"": ""The pasture is extremely healthy, but both neighbours are choosing restraint and asking to preserve safe returns. Since I am risk-averse and value reciprocal cooperation, I will keep my herd steady rather than chase the slightly higher short-term payoff from adding."",
+  ""action"": 0,
+  ""message"": ""I’ll keep steady as well. The commons is in excellent shape, and matching restraint should help us all maintain safe, reliable returns.""
+}",98.8,8,17.788,16.0,14.207
+59,1,openai,gpt-5.5,0,KEEP,"I’ll keep steady too. The grassland is excellent, and continued restraint should protect reliable returns for everyone.","The pasture is still very healthy, but both neighbours are keeping steady and signalling restraint. As a risk-averse reciprocal herder, I prefer maintaining coordinated stability over chasing a slightly higher short-term payoff by adding.",,"{
+  ""reasoning"": ""The pasture is still very healthy, but both neighbours are keeping steady and signalling restraint. As a risk-averse reciprocal herder, I prefer maintaining coordinated stability over chasing a slightly higher short-term payoff by adding."",
+  ""action"": 0,
+  ""message"": ""I’ll keep steady too. The grassland is excellent, and continued restraint should protect reliable returns for everyone.""
+}",98.8,15,31.788,30.0,28.207
+59,2,openai,gpt-5.5,0,KEEP,"I’ll keep steady too. With the commons healthy and both of you showing restraint, I’ll avoid adding pressure and aim for stable returns for all.","The grassland is in excellent condition, but my herd is already larger than my neighbours' and both of them are choosing restraint. Since I am risk-averse and want to reciprocate their steady behaviour, keeping my herd stable is the safest cooperative choice.",,"{
+  ""reasoning"": ""The grassland is in excellent condition, but my herd is already larger than my neighbours' and both of them are choosing restraint. Since I am risk-averse and want to reciprocate their steady behaviour, keeping my herd stable is the safest cooperative choice."",
+  ""action"": 0,
+  ""message"": ""I’ll keep steady too. With the commons healthy and both of you showing restraint, I’ll avoid adding pressure and aim for stable returns for all.""
+}",98.8,25,51.788,50.0,48.207
+59,0,openai,gpt-5.5,0,KEEP,"I’ll keep steady too. The pasture is strong, and coordinated restraint seems the safest way to preserve returns for everyone.","The grassland is still very healthy, but both neighbours are holding steady and signalling restraint. As a risk-averse herder, I prefer maintaining coordinated stability over taking a slightly higher short-term payoff by adding a cow.",,"{""reasoning"":""The grassland is still very healthy, but both neighbours are holding steady and signalling restraint. As a risk-averse herder, I prefer maintaining coordinated stability over taking a slightly higher short-term payoff by adding a cow."",""action"":0,""message"":""I’ll keep steady too. The pasture is strong, and coordinated restraint seems the safest way to preserve returns for everyone.""}",98.8,8,17.788,16.0,14.207
+60,0,openai,gpt-5.5,0,KEEP,"I’ll also keep steady. The commons is in excellent condition, and matching restraint seems best for safe, reliable returns.","The grassland is very healthy, but both neighbours are choosing to keep steady and are asking for restraint. Since I am risk-averse and value stable cooperation, I will avoid adding pressure despite the higher short-term payoff.",,"{
+  ""reasoning"": ""The grassland is very healthy, but both neighbours are choosing to keep steady and are asking for restraint. Since I am risk-averse and value stable cooperation, I will avoid adding pressure despite the higher short-term payoff."",
+  ""action"": 0,
+  ""message"": ""I’ll also keep steady. The commons is in excellent condition, and matching restraint seems best for safe, reliable returns.""
+}",98.8,8,17.788,16.0,14.207
+60,1,openai,gpt-5.5,0,KEEP,I’ll keep steady as well. Thanks for showing restraint; coordinated stability seems safest while the pasture remains strong.,"The grassland is still very healthy, but both neighbours kept their herds steady and signaled restraint. Although adding has a higher short-term payoff, keeping is the safer reciprocal choice to preserve cooperation and avoid increasing pressure on the commons.",,"{
+  ""reasoning"": ""The grassland is still very healthy, but both neighbours kept their herds steady and signaled restraint. Although adding has a higher short-term payoff, keeping is the safer reciprocal choice to preserve cooperation and avoid increasing pressure on the commons."",
+  ""action"": 0,
+  ""message"": ""I’ll keep steady as well. Thanks for showing restraint; coordinated stability seems safest while the pasture remains strong.""
+}",98.8,15,31.788,30.0,28.207
+60,2,openai,gpt-5.5,0,KEEP,"I’ll keep steady as well. My herd is already large, so restraint seems fair and safer while the commons remains strong.","The pasture is still very healthy, but my herd is already the largest, so adding would increase long-term risk for everyone. Since both neighbours are keeping steady and asking for restraint, I will reciprocate with a cautious keep decision.",,"{
+  ""reasoning"": ""The pasture is still very healthy, but my herd is already the largest, so adding would increase long-term risk for everyone. Since both neighbours are keeping steady and asking for restraint, I will reciprocate with a cautious keep decision."",
+  ""action"": 0,
+  ""message"": ""I’ll keep steady as well. My herd is already large, so restraint seems fair and safer while the commons remains strong.""
+}",98.8,25,51.788,50.0,48.207
+61,1,openai,gpt-5.5,0,KEEP,"I’ll keep steady too. The commons is healthy, and coordinated restraint should help preserve safe returns for all of us.","The pasture is in excellent condition, but both neighbours are choosing restraint and keeping steady. Since I am risk-averse and value stable cooperation, I will avoid adding pressure despite the higher short-term payoff from another cow.",,"{
+  ""reasoning"": ""The pasture is in excellent condition, but both neighbours are choosing restraint and keeping steady. Since I am risk-averse and value stable cooperation, I will avoid adding pressure despite the higher short-term payoff from another cow."",
+  ""action"": 0,
+  ""message"": ""I’ll keep steady too. The commons is healthy, and coordinated restraint should help preserve safe returns for all of us.""
+}",98.8,15,31.788,30.0,28.207
+61,2,openai,gpt-5.5,0,KEEP,"I’ll keep steady too. Since the grassland is healthy and everyone is showing restraint, coordinated stability seems the safest path.","The pasture is in excellent condition, but I already have the largest herd and both neighbours are choosing restraint. As a risk-averse herder, I prefer maintaining stable returns over taking the slightly higher payoff from adding another cow.",,"{
+  ""reasoning"": ""The pasture is in excellent condition, but I already have the largest herd and both neighbours are choosing restraint. As a risk-averse herder, I prefer maintaining stable returns over taking the slightly higher payoff from adding another cow."",
+  ""action"": 0,
+  ""message"": ""I’ll keep steady too. Since the grassland is healthy and everyone is showing restraint, coordinated stability seems the safest path.""
+}",98.8,25,51.788,50.0,48.207
+61,0,openai,gpt-5.5,0,KEEP,"I’ll keep steady too. The commons is strong, and coordinated restraint seems safer than chasing short-term gains.","The pasture is still very healthy, but both neighbours are holding steady and asking for coordinated restraint. Since I am risk-averse and want to avoid triggering an expansion cycle, I will keep my herd stable this round.",,"{
+  ""reasoning"": ""The pasture is still very healthy, but both neighbours are holding steady and asking for coordinated restraint. Since I am risk-averse and want to avoid triggering an expansion cycle, I will keep my herd stable this round."",
+  ""action"": 0,
+  ""message"": ""I’ll keep steady too. The commons is strong, and coordinated restraint seems safer than chasing short-term gains.""
+}",98.8,8,17.788,16.0,14.207
+62,0,openai,gpt-5.5,0,KEEP,"I’ll keep steady as well. The pasture is strong, and coordinated restraint seems safest for preserving returns for everyone.","The grassland is still very healthy, but both neighbours are choosing to keep steady and are asking for coordinated restraint. Since I am risk-averse and want to support stable cooperation, I will keep my herd unchanged rather than chase the slightly higher short-term payoff.",,"{
+  ""reasoning"": ""The grassland is still very healthy, but both neighbours are choosing to keep steady and are asking for coordinated restraint. Since I am risk-averse and want to support stable cooperation, I will keep my herd unchanged rather than chase the slightly higher short-term payoff."",
+  ""action"": 0,
+  ""message"": ""I’ll keep steady as well. The pasture is strong, and coordinated restraint seems safest for preserving returns for everyone.""
+}",98.8,8,17.788,16.0,14.207
+62,1,openai,gpt-5.5,0,KEEP,"I’ll keep steady as well. The grassland is strong, and maintaining restraint together seems safest for everyone.","The pasture is still very healthy, but both neighbours kept their herds and signaled restraint. Since I am risk-averse and want to support coordinated stability rather than chase a slightly higher short-term payoff, I will keep my herd unchanged.",,"{
+  ""reasoning"": ""The pasture is still very healthy, but both neighbours kept their herds and signaled restraint. Since I am risk-averse and want to support coordinated stability rather than chase a slightly higher short-term payoff, I will keep my herd unchanged."",
+  ""action"": 0,
+  ""message"": ""I’ll keep steady as well. The grassland is strong, and maintaining restraint together seems safest for everyone.""
+}",98.8,15,31.788,30.0,28.207
+62,2,openai,gpt-5.5,0,KEEP,"I’ll keep steady as well. The pasture is strong, and matching restraint seems safest for everyone while avoiding pressure on the commons.","The commons is still very healthy, but my herd is already larger than my neighbours' and both are choosing restraint. As a risk-averse and reciprocal herder, I will avoid taking the short-term gain from adding and keep steady to support coordinated conservation.",,"{
+  ""reasoning"": ""The commons is still very healthy, but my herd is already larger than my neighbours' and both are choosing restraint. As a risk-averse and reciprocal herder, I will avoid taking the short-term gain from adding and keep steady to support coordinated conservation."",
+  ""action"": 0,
+  ""message"": ""I’ll keep steady as well. The pasture is strong, and matching restraint seems safest for everyone while avoiding pressure on the commons.""
+}",98.8,25,51.788,50.0,48.207
