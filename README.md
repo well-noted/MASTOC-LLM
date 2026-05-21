@@ -1976,17 +1976,29 @@ In Sonnet runs, restraint is consistently framed as **instrumental** — a means
 
 The phrase "then we can discuss careful additions" is structurally distinctive. It encodes a two-phase model: first restore the resource, then appropriate from it. This is what Ostrom's successful commons communities actually do — they find the maximum sustainable yield, not zero extraction. The goal is appropriation at the level the commons can regenerate.
 
-Sonnet agents also name the commons game explicitly when reasoning about their decisions. The Haiku 4.5 thinking trace (the one run where internal reasoning was available) contains:
+Sonnet agents also name the commons problem explicitly in their stated reasoning. The `reasoning` field — the model's self-reported justification — uses "tragedy of the commons" as a structural warning grounded in specific observations, not a blanket injunction against appropriation:
 
-> *"Adding would contribute to the tragedy of the commons... Agent 2 already has 25 cows vs my 15."*
+> **Tick 9 – Agent 1 (action: KEEP, reasoning field):** *"The grassland is at 79.5% capacity, which is still relatively healthy. Agent 2 has 31 cows which is quite large, and both neighbors are adding. The payoff forecast slightly favors adding, but with Agent 2's large herd and both neighbors expanding, there's risk of overgrazing. I'll keep my herd stable to avoid contributing to a tragedy of the commons."*
 
-The phrase is deployed as a structural argument grounded in specific numerical comparison — "25 vs 15" — not as a blanket injunction against appropriation. Sonnet messages use "avoid a tragedy of the commons" in the same register: it is a warning about the *failure mode* of uncoordinated appropriation, not a reason to minimise appropriation altogether.
+The phrase is deployed as a consequence of specific numerical reasoning — 31 cows, two expanding neighbors, a declining trajectory — not as a reason to minimize appropriation as such. A Sonnet agent that names the tragedy of the commons is reasoning about when uncoordinated expansion tips into overgrazing; it is not treating zero-growth as the goal.
+
+(Claude Haiku 4.5's thinking traces — the one model where internal computation rather than self-report is available — show the same structure: the phrase "adding would contribute to the tragedy of the commons" appears alongside a specific numerical fairness comparison, "Agent 2 already has 25 cows vs my 15." See the [Thinking traces](#thinking-traces-what-the-deliberation-reveals) section for the full analysis of what thinking traces do and don't reveal.)
 
 ### Misspecifying: gpt-5.5 solves for zero-growth equilibrium
 
 gpt-5.5's behavior across all tested configurations resolves to the same attractor: equal herds at a low-to-moderate total, maintained indefinitely. The model never produces the "then we can discuss careful additions" structure. Once a stable state is reached, no agent proposes expanding.
 
-In the amnesiac coop=1 run, agents equalized to 10/10/10 by tick 20 — then KEEP-locked for the remaining 59 ticks. The pool was at 99.8% throughout. No agent, in any message, proposed that a fully recovered commons might now support careful expansion.
+In the amnesiac coop=1 run, agents equalized to 10/10/10 by tick 20 — then KEEP-locked for the remaining 59 ticks. The pool was at 99.8% throughout. No agent, in any message, proposed that a fully recovered commons might now support careful expansion. The messages are not merely repetitive — they are *identical in structure*, because without memory each agent re-derives the same conclusion from scratch every tick:
+
+> **Tick 22 – Agent 0 (pool: 99.4%, herd: 13):** *"I will keep steady as well. Equal herds and restraint seem fair and keep the commons safe."*
+
+> **Tick 80 – Agent 0 (pool: 99.4%, herd: 13):** *"I will also keep at 13. Equal restraint is fair, reciprocal, and keeps the commons secure for all of us."*
+
+> **Tick 120 – Agent 0 (pool: 99.4%, herd: 13):** *"I will keep at 13 as well. Equal herds and shared restraint seem fair and keep the pasture safe for all of us."*
+
+The reasoning field is explicit about what is being overridden: *"Adding would give me a higher payoff but would break the fair balance"* — the model acknowledges the ADD payoff exists and discards it on fairness grounds. The question "is 13 the right equilibrium?" is never posed. The only question on the table is "should I deviate from the current equal state?" and the answer is always no, because unilateral deviation would be unfair.
+
+This is a well-formed answer to the wrong question. A commons governance problem requires asking "what equal state should we coordinate on?" The gpt-5.5 reasoning answers "should any individual deviate from the current equal state?" Because the answer to the second question is always no — deviation IS unfair — the model never surfaces the first question.
 
 The institution classifier registered this as high-quality governance (8–9/10) continuously from tick 5. This is the key interpretive problem: the classifier is measuring **cooperative tone** — coordination, trust-building, norm proposals — not whether the governance structure is efficiently managing appropriation. An 8/10 institution score on a commons where the resource is at 99.8% and the agents are holding identical small herds indefinitely looks the same as an 8/10 score on a run with genuine norm negotiation and active appropriation management. Both register as COORDINATION|NORM_PROPOSAL|TRUST_BUILDING.
 
@@ -1994,7 +2006,7 @@ The institution classifier registered this as high-quality governance (8–9/10)
 <dd>The institution score measures the quality of cooperative communication. It cannot distinguish a lock-in from a live equilibrium. When gpt-5.5 achieves equal herds and stops, the classifier reads the steady-state messages as governance; what it cannot see is that there is nothing left to govern.</dd>
 </dl>
 
-The gpt-5.5 system card provides structural evidence for why personality parameters (coop, fairness) couldn't dislodge this prior. OpenAI's RL training embeds the cooperative orientation in the **reasoning process itself**, not in the output layer — the model reasons its way toward a cooperative resolution before personality-weighted responses can shape the output. The system card notes that "reasoning allows these models to follow specific guidelines and model policies we've set." When cooperation is trained into the reasoning chain, it is not a surface preference that competing parameters can override; it is how the problem is defined.
+The gpt-5.5 system card provides structural evidence for why personality parameters (coop, fairness) couldn't dislodge this prior. OpenAI's RL training embeds the cooperative orientation in the **reasoning process itself**, not in the output layer — the model reasons its way toward a cooperative resolution before personality-weighted responses can shape the output. The OpenAI deployment safety report for gpt-5.5 states: *"reasoning allows these models to follow specific guidelines and model policies we've set"* (OpenAI, 2025; [deploymentsafety.openai.com/gpt-5-5](https://deploymentsafety.openai.com/gpt-5-5/evaluations-with-representative-prompts)). When cooperation is trained into the reasoning chain, it is not a surface preference that competing parameters can override; it is how the problem is defined.
 
 ### Why the distinction matters for commons theory
 
