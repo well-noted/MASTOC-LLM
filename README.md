@@ -136,7 +136,7 @@ Each tick, every LLM agent:
 4. Calls the LLM, which returns a structured JSON decision with reasoning and an optional 60-word message to send to neighbors
 5. Acts on the decision; the message is delivered to all neighbors before their next decision (no-op when `communication?` is off)
 
-A secondary LLM pass runs every 5 ticks to classify agent messages for Ostrom institutional signals (norm proposals, sanctions, coordination, trust-building, defection).
+A secondary LLM pass runs every 5 ticks to classify agent messages for Ostrom institutional signals (norm proposals, sanctions, coordination, trust-building, defection). The classifier always uses **agent 0's backend and model**; in a mixed-backend run it silently inherits agent 0's provider.
 
 ---
 

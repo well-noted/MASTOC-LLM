@@ -103,6 +103,8 @@ MASTOC-LLM/
 | **communication?** | Switch | Whether agents can send messages to neighbours |
 | **detect-institutions** | Switch | Run secondary Ostrom classifier each round |
 | **institution-check-interval** | Slider | Run classifier every N ticks |
+
+> **Which backend does the institution detector use?** The classifier always uses **agent 0's backend and model**. In a uniform run (all agents on the same provider) this is invisible. In a hypothetical mixed-backend run, the detector silently inherits agent 0's provider — there is currently no separate configuration for it.
 | **cooperation-level** | Slider | Self-interest ↔ cooperative framing in prompt |
 | **negative-reciprocity** | Slider | Retaliatory response to others removing cows |
 | **positive-reciprocity** | Slider | Cooperative response to others removing cows |
