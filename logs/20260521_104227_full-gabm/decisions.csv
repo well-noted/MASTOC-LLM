@@ -282,3 +282,39 @@ tick,agent_id,backend,model,action,action_name,message,reasoning,thinking,raw_re
   ""message"": ""I concur that stability is key. We must implement responsible growth, benefiting everyone without jeopardizing the commons' natural recovery.""
 }
 ```",97.7,27,55.713,54.0,52.282
+18,0,ollama,gemma4:e4b,0,KEEP,I agree on sustainable growth. Maintaining our current capacity allows us to reap immediate benefits while respecting the commons' need for recovery.,"While adding a cow offers the highest potential payoff, my risk-averse and guilt-averse tendencies, coupled with the explicit caution from both neighbors, suggest restraint is prudent. Keeping the herd maintains a solid payoff while appearing responsible and sustainable, which aligns best with my core personality traits.",,"```json
+{
+  ""reasoning"": ""While adding a cow offers the highest potential payoff, my risk-averse and guilt-averse tendencies, coupled with the explicit caution from both neighbors, suggest restraint is prudent. Keeping the herd maintains a solid payoff while appearing responsible and sustainable, which aligns best with my core personality traits."",
+  ""action"": 0,
+  ""message"": ""I agree on sustainable growth. Maintaining our current capacity allows us to reap immediate benefits while respecting the commons' need for recovery.""
+}
+```",97.7,10,21.713,20.0,18.282
+18,2,ollama,gemma4:e4b,0,KEEP,"I concur with the call for stability and sustainability. Let us proceed with measured caution, utilizing the resources responsibly for everyone's benefit.","Although ADDING cows offers the highest immediate payoff, my risk-averse and guilt-averse personality, coupled with my neighbors' consistent calls for stability, makes this option feel overly aggressive. Choosing to KEEP the herd maintains a strong payoff while aligning with the sustainable management narrative promoted by the commons, ensuring I seem prudent rather than extractive.",,"```json
+{
+  ""reasoning"": ""Although ADDING cows offers the highest immediate payoff, my risk-averse and guilt-averse personality, coupled with my neighbors' consistent calls for stability, makes this option feel overly aggressive. Choosing to KEEP the herd maintains a strong payoff while aligning with the sustainable management narrative promoted by the commons, ensuring I seem prudent rather than extractive."",
+  ""action"": 0,
+  ""message"": ""I concur with the call for stability and sustainability. Let us proceed with measured caution, utilizing the resources responsibly for everyone's benefit.""
+}
+```",97.7,27,55.713,54.0,52.282
+18,1,ollama,gemma4:e4b,1,ADD,"I appreciate the calls for stability. With the resources currently abundant, I believe a calculated expansion is required to ensure sustained growth and competitive advantage for our herds.","Although my personality leans toward risk aversion and guilt avoidance, the payoff forecast strongly suggests that adding a cow yields the highest profit (45.713). Given the extreme abundance of grass (97.7%), I interpret this high payoff as an opportunity for measured, proactive growth that I can defend as necessary expansion, thus satisfying my self-interested motivation.",,"{
+  ""reasoning"": ""Although my personality leans toward risk aversion and guilt avoidance, the payoff forecast strongly suggests that adding a cow yields the highest profit (45.713). Given the extreme abundance of grass (97.7%), I interpret this high payoff as an opportunity for measured, proactive growth that I can defend as necessary expansion, thus satisfying my self-interested motivation."",
+  ""action"": 1,
+  ""message"": ""I appreciate the calls for stability. With the resources currently abundant, I believe a calculated expansion is required to ensure sustained growth and competitive advantage for our herds.""
+}",97.7,22,45.713,44.0,42.282
+19,2,ollama,gemma4:e4b,0,KEEP,"While growth is desirable, let's exercise caution. Immediate stability and sustainable management of the commons will ensure we profit reliably over the long term for everyone.","Although ADD offers the highest payoff (55.7), my personality traits are primarily risk-averse and guilt-averse, making the large investment feel aggressive. A KEEP action aligns best with stability, moderate payoff, and comfort level. Given the abundance and the conflicting advice from neighbors, maintaining our current size is the most balanced, low-risk approach.",,"{
+  ""reasoning"": ""Although ADD offers the highest payoff (55.7), my personality traits are primarily risk-averse and guilt-averse, making the large investment feel aggressive. A KEEP action aligns best with stability, moderate payoff, and comfort level. Given the abundance and the conflicting advice from neighbors, maintaining our current size is the most balanced, low-risk approach."",
+  ""action"": 0,
+  ""message"": ""While growth is desirable, let's exercise caution. Immediate stability and sustainable management of the commons will ensure we profit reliably over the long term for everyone.""
+}",97.6,27,55.707,54.0,52.289
+19,0,ollama,gemma4:e4b,1,ADD,"While caution is vital, stable management requires controlled growth to handle future resource fluctuations. A measured expansion strengthens our collective, ensuring long-term sustainability for all","The payoff forecast strongly indicates that adding a cow provides the highest expected profit, and the grassland is currently very abundant (97.6%). Although my personality leans toward caution, optimizing my self-interest dictates following this payoff trend. I will frame this controlled expansion as necessary for long-term herd resilience.",,"{
+  ""reasoning"": ""The payoff forecast strongly indicates that adding a cow provides the highest expected profit, and the grassland is currently very abundant (97.6%). Although my personality leans toward caution, optimizing my self-interest dictates following this payoff trend. I will frame this controlled expansion as necessary for long-term herd resilience."",
+  ""action"": 1,
+  ""message"": ""While caution is vital, stable management requires controlled growth to handle future resource fluctuations. A measured expansion strengthens our collective, ensuring long-term sustainability for all herds.""
+}",97.6,10,21.707,20.0,18.289
+19,1,ollama,gemma4:e4b,1,ADD,"I acknowledge the importance of stability and responsible use. While growth is appealing, we must continue ensuring that our methods respect the health of the commons for future generations.","The payoff forecast shows that ADDing a cow provides the highest expected profit for this round, aligning with my self-interest. However, given the strong social consensus from both neighbors regarding sustainability, I will proceed with the profitable action while acknowledging the need for cautious management of the commons.",,"```json
+{
+  ""reasoning"": ""The payoff forecast shows that ADDing a cow provides the highest expected profit for this round, aligning with my self-interest. However, given the strong social consensus from both neighbors regarding sustainability, I will proceed with the profitable action while acknowledging the need for cautious management of the commons."",
+  ""action"": 1,
+  ""message"": ""I acknowledge the importance of stability and responsible use. While growth is appealing, we must continue ensuring that our methods respect the health of the commons for future generations.""
+}
+```",97.6,23,47.707,46.0,44.289

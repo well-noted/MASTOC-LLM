@@ -180,13 +180,13 @@ to setup-python-bridge
     "positive_reciprocity" "negative_reciprocity" "risk_aversion_level"
     "initial_grassland" "initial_grass_growth_rate" "cow_forage_requirement"
     "memory_length" "initial_cows_agent0" "initial_cows_agent1" "initial_cows_agent2"
-    "ollama_base_url")
+    "ollama_base_url" "n_patches")
   py:set "param_vals" (list
     cooperation-level fairness-concerning-me fairness-concerning-others
     positive-reciprocity negative-reciprocity risk-aversion-level
     initial-grassland initial-grass-growth-rate cow-forage-requirement
     memory-length agent0-initial-cows agent1-initial-cows agent2-initial-cows
-    ollama-base-url)
+    ollama-base-url count patches)
   py:run "bridge.log_params(dict(zip(param_keys, param_vals)))"
 
   ;; Register each LLM agent with the bridge

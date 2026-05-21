@@ -243,12 +243,26 @@ def log_params(params: dict) -> None:
     Append arbitrary experiment parameters to run_meta.json.
     Call once after configure() with a dict of all slider/env values so every
     log folder is fully self-describing for reproducibility.
+
+    Also computes and stores `carrying_capacity` — the theoretical maximum
+    sustainable total herd size given the current grass-growth and forage
+    parameters.  Derived from the logistic grass-regrowth equilibrium:
+        N_max = r * 4 * M^2 / (27 * f)
+    where r = initial_grass_growth_rate, M = n_patches, f = cow_forage_requirement.
+    A value of 0 is stored if forage requirement is zero (division guard).
     """
     meta_path = Path(_cfg["log_dir"]) / _run_id / "run_meta.json"
     try:
         with open(meta_path, "r", encoding="utf-8") as f:
             meta = json.load(f)
         meta["experiment_params"] = {str(k): v for k, v in params.items()}
+
+        # Carrying capacity: theoretical max sustainable herd for these params
+        r = float(params.get("initial_grass_growth_rate", 0.001))
+        M = float(params.get("n_patches", 1089))   # 33×33 grid default
+        f = float(params.get("cow_forage_requirement", 2))
+        meta["carrying_capacity"] = int(r * 4 * M * M / (27 * f)) if f > 0 else 0
+
         with open(meta_path, "w", encoding="utf-8") as f:
             json.dump(meta, f, indent=2)
     except Exception as exc:
@@ -939,6 +953,11 @@ def _flush_logs() -> None:
             fh.flush()
         except Exception:
             pass
+
+
+def close() -> None:
+    """Public entry point called by NetLogo's close-bridge procedure at simulation end."""
+    _close_logs()
 
 
 def _close_logs() -> None:

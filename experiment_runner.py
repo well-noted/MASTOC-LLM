@@ -357,17 +357,19 @@ def analyse_results(log_dir: str, data_dir: str = "Data") -> None:
             continue
         with open(meta_file, encoding="utf-8") as f:
             meta = json.load(f)
-        run_id    = meta.get("run_id", run_dir.name)
-        condition = meta.get("condition", "unknown")
+        run_id           = meta.get("run_id", run_dir.name)
+        condition        = meta.get("condition", "unknown")
+        carrying_capacity = meta.get("carrying_capacity", None)
 
         res_file = run_dir / "resources.csv"
         if res_file.exists() and res_file.stat().st_size > 0:
             with open(res_file, newline="", encoding="utf-8") as f:
                 reader = csv.DictReader(f)
                 for row in reader:
-                    row["run_id"]    = run_id
-                    row["condition"] = condition
-                    row["source"]    = "logs/"
+                    row["run_id"]            = run_id
+                    row["condition"]         = condition
+                    row["source"]            = "logs/"
+                    row["carrying_capacity"] = carrying_capacity
                     resources_rows.append(row)
 
         dec_file = run_dir / "decisions.csv"
