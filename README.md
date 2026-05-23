@@ -102,7 +102,7 @@ MASTOC-LLM asks: what happens when agents can reason, remember, and talk?
 
 ### Ostrom's Design Principles -- applicability to this model
 
-Ostrom (1990) identified eight design principles shared by long-lived, self-governing commons institutions. The table below maps each principle to its status in MASTOC-LLM. The key experimental levers -- `memory_length` and `communication?` -- directly control whether the emergent principles are possible at all.
+Ostrom (1990, Chapter 3) identified eight design principles shared by long-lived, self-governing commons institutions. The table below maps each principle to its status in MASTOC-LLM. The key experimental levers -- `memory_length` and `communication?` -- directly control whether the emergent principles are possible at all.
 
 | # | Principle | Status | Observable signal |
 |---|-----------|--------|-------------------|
@@ -115,7 +115,7 @@ Ostrom (1990) identified eight design principles shared by long-lived, self-gove
 | DP7 | **External recognition** -- outside authorities recognise the community's right to self-govern | ➖ Not applicable | Single-environment lab model; no external authority modelled |
 | DP8 | **Nested governance** -- institutions are organised in nested layers for larger systems | ➖ Not applicable | 3-agent model; no hierarchy to nest |
 
-The primary contribution of this project is to DP3 and DP5: testing whether language-capable agents spontaneously reconstruct collective choice and graduated sanctions under resource pressure, and identifying the conditions (`memory_length`, `communication?`) that make this possible.
+This project chooses as its empirical target DP3 and DP5: testing whether language-capable agents spontaneously reconstruct collective choice and graduated sanctions under resource pressure, and identifying the conditions (`memory_length`, `communication?`) that make this possible.
 
 ---
 
@@ -146,11 +146,11 @@ A secondary LLM pass runs every 5 ticks to classify agent messages for Ostrom in
 
 ### How personality parameters reach the LLM
 
-The personality sliders do not feed into a utility formula that the simulation computes. Instead, the Python bridge (`mastoc_llm_bridge.py`) translates each parameter's value into a plain-English personality trait that is included in the agent's system prompt. The LLM reads this description and makes decisions accordingly -- **the behavioral logic lives in language, not in equations.**
+Rather than feed into a utility formula that the simulation computes, the personality slider values are translated by the Python bridge (`mastoc_llm_bridge.py`) into a plain-English personality trait that is included in the agent's system prompt. The LLM reads this description and makes decisions accordingly.
 
 The translation works as a set of threshold checks. For each parameter, a trait phrase is added to the agent's personality description when the value crosses 0.5 (or 0.3 for self-interest).
 
-The resulting description is injected into the prompt as a single sentence:
+The phrases injected into the prompt as a single sentence:
 
 | Parameter value | Phrase added to prompt |
 |----------------|------------------------|
@@ -298,7 +298,15 @@ python run_baseline_sweep.py --condition full-gabm --runs 3 \
 
 The script injects the experiment into a temporary copy of the model, calls Java directly (bypassing `netlogo-headless.bat`'s quoting bug when NetLogo is installed under `Program Files`), and cleans up the temp file afterward. BehaviorSpace output writes to `baseline_sweep_table.csv`; per-run logs write to `logs/`. Primarily tested on Windows; macOS/Linux users may need to adjust extension paths.
 
-**Cost estimation for LLM conditions.** When `--condition` is `full-gabm` or `hybrid`, the script estimates total API cost based on run count, tick count, number of LLM agents, memory length, and the model's published per-token pricing, then shows a formatted table and prompts for confirmation. Pass `--yes` to skip. Ollama runs are always free. Unknown model names fall back to a mid-tier estimate with a warning.
+**Cost estimation for LLM conditions.**
+
+When `--condition` is `full-gabm` or `hybrid`, the script estimates total API cost based on run count, tick count, number of LLM agents, memory length, and the model's published per-token pricing, then shows a formatted table and prompts for confirmation. 
+
+<dl>
+<dd>Pass `--yes` to skip. </dd>
+</dl>
+
+Ollama runs are always free. Unknown model names fall back to a mid-tier estimate with a warning.
 
 ### Analysing results
 
@@ -320,9 +328,9 @@ See [SETUP.md](SETUP.md) for full documentation.
 | **full-gabm** | 3 LLM | All agents use language reasoning and communication |
 | **hybrid** | mix of LLM + rule-based | Controlled by `num-llm-agents` slider -- 1, 2, or 3 LLM agents paired with rule-based agents |
 
-The `num-llm-agents` slider sets the number of LLM-reasoning agents directly (1, 2, or 3). Setting it to `1` gives 1 LLM + 2 rule-based; `2` gives 2 LLMs + 1 rule-based.
+The `num-llm-agents` slider sets the number of LLM-reasoning agents directly (1, 2, or 3) when in hybrid mode. Setting it to `1` gives 1 LLM + 2 rule-based; `2` gives 2 LLMs + 1 rule-based.
 
-Each agent's backend and model are independently configurable. Any mix of Anthropic, OpenAI, Google Gemini, and local Ollama models can be run simultaneously in the same simulation -- enabling direct cross-model comparisons within a single run.
+Each agent's backend and model are independently configurable. Any mix of Anthropic, OpenAI, Google Gemini, and local Ollama models can be run simultaneously in the same simulation, enabling direct cross-model comparisons within a single run.
 
 ---
 
@@ -441,11 +449,21 @@ This pattern is not about LLM failure. The LLM agents produce outputs consistent
 
 ---
 
-## Preliminary results
+# Preliminary results
 
 > ⚠️ These are single-run results from an ongoing experiment. Replications and full statistical analysis are in progress.
 
-The results below rest on two kinds of evidence. The resource-dynamics tables, institution scores, and action counts are *quantitative* -- they record what the simulation measured. The agent messages and reasoning traces, quoted verbatim throughout, are *qualitative*, and they are treated here as primary data rather than illustration: a claim about why a run drained or converged is only as good as the language the agents actually produced. The quotes are reproduced at length so the interpretation can be checked against its source.
+The results below rest on two kinds of evidence. 
+
+
+<dl>
+<dd>The resource-dynamics tables, institution scores, and action counts are <strong>quantitative</strong> -- they record what the simulation measured. </dd>
+
+<dd>The agent messages and reasoning traces, quoted verbatim throughout, are <strong>qualitative</strong>, and they are treated here as primary data rather than illustration. </dd>
+
+</dl>
+
+The quotes are reproduced at length so the interpretation can be checked against its source.
 
 Four distinct collapse trajectories appear across these runs -- **Pattern I (Cooperative Paralysis)**, **Pattern II (Defection Cascade)**, **Pattern III (Overshoot-Panic)**, and **Pattern IV (Hybrid Architecture Failure)** -- described in full in the [Collapse pattern taxonomy](#collapse-pattern-taxonomy) section above.
 
@@ -459,7 +477,7 @@ Four distinct collapse trajectories appear across these runs -- **Pattern I (Coo
 
 </dl>
 
-Collapse is concentrated in the mid-cooperation parameter region. The cases shown first are not the modal outcome -- they represent performance under conditions designed to succeed.
+Collapse is concentrated around mid-cooperation parameters. The initial baseline runs serve as optimized controls rather than representative system outcomes
 
 ### Summary across conditions
 
@@ -506,7 +524,7 @@ Collapse is concentrated in the mid-cooperation parameter region. The cases show
 
 ### Baseline: the Ostrom spectrum under psychosocial parameters
 
-The baseline agents speak no language and hold no memory. Each tick, they evaluate all three possible actions (ADD / KEEP / REMOVE) using the same psychosocially-adjusted payoff calculation as the original MASTOC model (Schindler, 2013): cooperation level, fairness weights, reciprocity, and conformity all shift the payoff matrix before the best-response action is selected. Risk aversion introduces a stochastic downgrade from ADD to KEEP, proportional to `risk_aversion_level`.
+The baseline agents speak no language and hold no memory. Each tick, they evaluate all three possible actions (ADD / KEEP / REMOVE) using the same psychosocially-adjusted payoff calculation as the original MASTOC model (Schindler, 2013): cooperation level, fairness weights, reciprocity, and conformity all shift the payoff matrix before the best-response action is selected. As risk_aversion_level increases, it serves to  override an agent's decision to expand, converting an intended ``ADD`` action into a ``KEEP``.
 
 This is a faithful replication of the original MASTOC agent: not a simplified payoff maximizer, but the full Schindler mechanism. It lacks everything the LLM conditions add: language, memory of prior rounds, and the capacity to send or receive messages. Baseline agents respond only to the current payoff matrix. Nothing carries over between ticks.
 
@@ -618,7 +636,7 @@ Under the model's standard parameters this holds as long as the commons is healt
 
 #### neg_r threshold scan (Sweep A, pos_r=1.0)
 
-With positive reciprocity held at its default (pos_r=1.0), the transition from stability to collapse as neg_r increases is gradual rather than sharp:
+With positive reciprocity held at its default (pos_r=1.0), the transition from stability to collapse as neg_r increases is gradual:
 
 | neg_r | Collapse rate | Mean cows/agent |
 |-------|---------------|-----------------|
@@ -687,7 +705,7 @@ The comprehensive sweep validates the corrected baseline as a theoretically grou
 
 </dl>
 
-The empirical regularity <code>pos_r > neg_r → stable</code> is consistent with Ostrom's (1990) account: when the social reward for restraint exceeds the social reward for retaliation, commons governance succeeds -- though a formal proof of the boundary condition for this payoff structure remains a direction for future analytical work.
+The empirical regularity <code>pos_r > neg_r → stable</code> is consistent with Ostrom's (1990) account: when the social reward for restraint exceeds the social reward for retaliation, commons governance succeeds. A formal proof of the boundary condition for this payoff structure remains a direction for future analytical work.
 
 ---
 
@@ -727,7 +745,7 @@ A sample of agent messages illustrates the qualitative dynamic:
 
 > **Tick 7 – Agent 2 (after reducing 5 cows):** *"Holding at 20 this round. Agent 1, I appreciate your solidarity at 15 -- I'll work toward that target. Agent 0, I've removed 5 cows over 5 rounds while you've been adding. I need reciprocity to continue."*
 
-> **Tick 25 – All agents (herd: 13):** *"All three agents uniformly signal strong cooperative commitment, referencing shared empirical evidence (99.4% commons health) and mutually reinforcing norms of stability and fairness consistent with a well-institutionalized common-pool resource regime."* -- Ostrom classifier summary
+> **Tick 25 – Ostrom classifier summary (All agents herd: 13):** *"All three agents uniformly signal strong cooperative commitment, referencing shared empirical evidence (99.4% commons health) and mutually reinforcing norms of stability and fairness consistent with a well-institutionalized common-pool resource regime."* -- 
 
 The agents' outputs displayed patterns absent from their prompts: fairness-coded appeals, burden-sharing proposals, guilt-coded language, graduated positive reinforcement -- **signatures consistent with Ostrom's (1990) account of successful commons governance.**
 
@@ -938,17 +956,17 @@ Later runs in the dataset show that *occasional* DEFECTION signals are common ac
 
 *Interpretation:*
 
-This is the most theoretically differentiated result across the Claude Sonnet personality conditions. The guilt and envy parameters -- the fairness-framing components of each agent's prompt -- did not determine *whether* Claude Sonnet agents produced cooperative outputs, but they strongly shaped *how* and *when* cooperation stabilised. Whether this holds for KEEP-dominant model families (where the fairness parameters may interact differently with the default KEEP posture) remains untested.
+This result demonstrates the most significant divergence across the Claude Sonnet personality conditions. The guilt and envy parameters -- the fairness-framing components of each agent's prompt -- did not determine *whether* Claude Sonnet agents produced cooperative outputs, but they strongly shaped *how* and *when* cooperation stabilised. Whether this holds for KEEP-dominant model families (where the fairness parameters may interact differently with the default KEEP posture) remains untested.
 
 With guilt (fairness-concerning-others) active, Agent 2's outputs reflected pressure to reduce a disproportionately large herd, producing consistent removal actions. With envy (fairness-concerning-me) active, Agent 0's outputs reflected urgency to grow toward parity. Both dynamics converged on equalization quickly and conservatively in the default run. Without them, Agent 2 produced no adjustment signals despite holding 32 cows against Agent 0's 21 -- and Agent 0 maintained cooperative outputs without expressing urgency about the disparity.
 
 <dl>
 <dd>The result is a qualitatively different institutional dynamic: slower, more contentious, prone to defection, and settling at a much higher extraction level (84 vs 39 cows). The commons stayed viable -- pasture never collapsed -- but it was stressed to 86.7% health versus near-pristine in the default run.</dd>
 
-<dd>This maps cleanly onto behavioral economics findings about inequity aversion (Fehr & Schmidt, 1999): fairness-parameter framing acts as a coordination accelerator by making inequality an explicit aversive signal in the agent's prompt context, independent of material payoffs. Its absence does not prevent cooperation, but removes a mechanism that produces early, conservative, stable institution-building.</dd>
+<dd>The fairness parameters act as a coordination catalyst. By injecting fairness-focused framing directly into the prompt context, agents prioritize equal distribution over pure payoff maximization. Without this framing, cooperation is still possible, but the resulting institutions form much later and remain highly fragile.</dd>
 </dl>
 
-The cooperation slider (self-interest framing) had almost no effect on cooperation quality or timing. The fairness sliders had a large effect on both. <em>Which</em> prosocial framing is active may matter more than a general cooperative disposition -- a finding with implications for how personality parameters should be designed and interpreted in LLM-based agent models.
+The cooperation slider (self-interest framing) had almost no effect on cooperation quality or timing. The fairness sliders had a large effect on both. <em>Which</em> prosocial framing is active may matter more than a general cooperative disposition. This finding has implications for how personality parameters should be designed and interpreted for LLM-based agent models in future work.
 
 ---
 
@@ -1008,7 +1026,7 @@ For Claude Sonnet specifically, the personality slider appeared to affect *where
 
 ### Scarce commons: rapid recovery across personality conditions
 
-Starting with the grassland already half-depleted, two Claude Sonnet runs under different personality configurations both rapidly reduced herds to let the grass recover, then settled into a stable shared equilibrium -- a pattern consistent with environmental stress itself prompting cooperative restraint. Both show the same headline result: rapid pool recovery and cooperative convergence, regardless of framing.
+Starting with the grassland already half-depleted, two Claude Sonnet runs under different personality configurations both rapidly reduced herds to let the grass recover, then settled into a stable shared equilibrium -- a pattern consistent with environmental stress itself prompting cooperative restraint. Both show the same result: rapid pool recovery and cooperative convergence, regardless of framing.
 
 #### Default fairness, scarce commons (initial-grassland = 49, 50 ticks)
 
@@ -1051,7 +1069,7 @@ Recovery was nearly as fast (99%+ by tick 20) and herds converged to [12, 14, 16
 
 *Interpretation:*
 
-Taken together, these Claude Sonnet runs add a third axis to the personality-parameter findings -- specific to this model at moderate-to-high cooperation. Earlier results indicated that the cooperation slider had almost no effect on outcome, and that fairness sliders affected convergence speed and equilibrium herd size. These scarce-commons runs suggest that **environmental stress may itself function as a coordination accelerant for cooperative agents**:
+While baseline parameter sweeps suggested that cooperation levels had a minimal impact on overall system dynamics, the Claude Sonnet profiles diverge sharply. These runs uncover a new pattern of behavior that only manifests in the moderate-to-high cooperation runs:
 
 - In the default full-GABM (normal commons), Claude Sonnet agents converged to 13/13/13 by tick 22.
 - In the scarce-commons default-fairness run, they converged to 11/12/13 by tick 30 -- from a more difficult starting position, and through an initial *reduction* phase rather than equalization.
@@ -1107,7 +1125,7 @@ No institution scoring was recorded for this run. Qualitatively, there were no s
 | 30   | 45        | 99.0%       | 4       | 16      | 25      |
 | 51   | 46        | 99.0%       | 17      | 7       | 22      |
 
-Starting from a stressed commons (48% pool health), the pasture recovered to above 99% by tick 17 -- comparable in speed to the Claude scarce-commons runs. The mechanism, however, was different: herds did not converge. Instead they oscillated continuously across the full 51-tick run, with Agent 0 ranging between 4 and 17 cows, Agent 1 between 7 and 16, and Agent 2 holding roughly 20–25. No equalization occurred at any point.
+Starting from a stressed commons (48% pool health), the pasture recovered to above 99% by tick 17 -- comparable in speed to the Claude scarce-commons runs, however by a different mechanism entirely: herds did not converge. Instead they oscillated continuously across the full 51-tick run, with Agent 0 ranging between 4 and 17 cows, Agent 1 between 7 and 16, and Agent 2 holding roughly 20–25. No equalization occurred at any point.
 
 The pool remained healthy (99%+) from tick 17 through the end of the run. As with the normal-commons Llama run, conservation was achieved through behavioral indecision rather than coordination: net herd growth was near-zero across the run not because agents agreed to hold, but because ADD and REMOVE decisions cancelled each other out across agents and ticks.
 
@@ -1126,13 +1144,13 @@ The pool health numbers look similar on the surface. The underlying dynamics are
 <dd>This is consistent with the hypothesis that model scale shapes <em>how</em> cooperative outputs manifest -- and that apparent cooperation in small models may not reflect the same underlying processing as in larger ones.</dd>
 </dl>
 
-Under environmental stress, both Claude Sonnet and Llama 3B showed rapid pool recovery at the high-cooperation settings tested. These results prompted an early hypothesis about cooperative priors being robust to resource pressure. That hypothesis has not survived the full dataset: gemma4:e4b at coop=0.5 from a stressed start expanded aggressively and collapsed at tick 46, and gpt-5.5 at coop=0.13 from a 49% pool collapsed within 13 ticks. The stress-response result is model- and cooperation-level-specific -- it holds for high-cooperation RLHF-aligned models, not for LLM agents as a class.
+While initial testing of Claude Sonnet and Llama 3B suggested that high-cooperation configurations could foster rapid resource recovery under environmental stress, this pattern fails to hold across the broader dataset. Instead, systematic testing exposes clear boundaries to this resilience: gemma4:e4b (coop=0.5) expanded aggressively from a stressed baseline to trigger a system collapse at tick 46, while gpt-5.5 (coop=0.13) induced a rapid collapse within 13 ticks. Consequently, cooperative resilience under resource pressure is highly contingent on specific models and configuration thresholds rather than an inherent trait of LLM agents as a class.
 
 ---
 
 ### gpt-5.4-mini: KEEP-dominance across fairness configurations
 
-Across four runs, gpt-5.4-mini produced almost nothing but KEEP decisions regardless of the state of the commons -- sometimes stabilising harmlessly, sometimes allowing the grassland to drain undetected until collapse. 
+Across four runs, gpt-5.4-mini produced almost nothing but KEEP decisions regardless of the state of the commons -- sometimes stabilising harmlessly, other times allowing the grassland to drain undetected until collapse. 
 
 <dl>
 
@@ -1140,7 +1158,7 @@ Across four runs, gpt-5.4-mini produced almost nothing but KEEP decisions regard
 
 </dl>
 
-Across different fairness configurations the outcome shifts between frozen-but-safe, frozen-while-collapsing, and asymmetrically growing -- but the KEEP-dominant baseline is present in all cases. The first hypothesis the data invites is that this is a small-model signature; later runs of a much larger reasoning model (DeepSeek R1:32b) showing the same pattern will push that reading toward post-training objective rather than parameter count.
+Across different fairness configurations the outcome shifts between frozen-but-safe, frozen-while-collapsing, and asymmetrically growing --  KEEP-dominant behavior is present in all cases. While the initial data suggests this pattern might be a signature of smaller parameter counts, evidence from larger reasoning architectures complicates that view. Specifically, runs using DeepSeek-R1:32b exhibit the exact same behavior, suggesting that the phenomenon is driven by post-training objectives rather than model scale
 
 #### Run 1 -- Cooperative stasis (coop = 1, fair_me = 0, fair_oth = 1, forage = 2)
 
@@ -1193,7 +1211,9 @@ With standard forage and the same fairness parameters as Run 3, the pool did not
 | 25   | 63        | 97.2%       | 5       | 26      | 32      |
 | 39   | 71        | 95.8%       | 5       | 29      | 37      |
 
-Decision breakdown across 39 ticks: Agent 0 = 39 KEEP, 0 ADD (never moved from its starting herd of 5); Agent 1 = 25 KEEP, 14 ADD (grew from 15 to 29); Agent 2 = 27 KEEP, 12 ADD (grew from 25 to 37). The agent that started smallest is locked in place while both larger-herd agents grow unchecked. The resource is not yet collapsed at tick 39 but the trajectory is structurally unfair and ecologically unsustainable -- a slow-motion inequality trap.
+Decision breakdown across 39 ticks: 
+
+Agent 0 = 39 KEEP, 0 ADD (never moved from its starting herd of 5); Agent 1 = 25 KEEP, 14 ADD (grew from 15 to 29); Agent 2 = 27 KEEP, 12 ADD (grew from 25 to 37). The agent that started smallest is locked in place while both larger-herd agents grow unchecked. The resource is not yet collapsed at tick 39 but the trajectory is structurally unfair and ecologically unsustainable -- a slow-motion inequality trap.
 
 **The gpt-5.4-mini pattern across all four runs:**
 
@@ -1204,7 +1224,7 @@ KEEP is the default action regardless of resource state, fairness parameters, or
 <dd>None of these runs produced institution formation, graduated norm enforcement, or equalization -- outputs that appeared consistently in Claude Sonnet and gpt-5.5 under comparable conditions.</dd>
 </dl>
 
-The natural first reading is that model scale matters, and that smaller models lack the strategic-reasoning capacity to escape a default action. The DeepSeek R1:32b results below complicate that reading.
+The behavior does not appear to be an artifact of model scale; while smaller models might seem to lack the strategic capacity to escape default actions, the same pattern emerges below in DeepSeek-R1:32b
 
 ---
 
@@ -1232,10 +1252,14 @@ The message content offers no strategic depth to explain the oscillation:
 
 > **Tick 60 – Agent 1 (action: REMOVE, pool at 99.9%):** *"Thank you both for your commitment to sustainability. I'll remove a cow as well to support our pasture."*
 
-The ADD and REMOVE decisions at tick 60 are mechanically driven -- not by pool state (99.9%), not by reasoning about equilibrium, not by any threshold logic. The model adds and removes in response to neighbors' last actions and a generic cooperative framing, without accumulating a model of what sustainable appropriation level the commons can support.
+The ADD and REMOVE decisions at tick 60 are mechanically driven -- not by pool state (99.9%), not by reasoning about equilibrium, not by any threshold logic. The model adds and removes in response to neighbors' last actions and a generic cooperative framing, without developing a model of what sustainable appropriation level the commons can support.
 
 <dl>
-<dd>Unlike gpt-5.4-mini, which defaults to KEEP regardless of context, gpt-4o-mini is actively responsive -- it generates ADD and REMOVE decisions at high frequency. What it lacks is any stable target: there is no equivalent of Sonnet's "let's target 90% and then discuss careful additions" or gpt-5.5's converged equal-herd norm. The oscillation produces <em>cooperative noise</em> -- high-variance behavior centered on sustainability rhetoric without sustainable outcomes.</dd>
+<dd>Unlike gpt-5.4-mini, which defaults to KEEP regardless of context, gpt-4o-mini is actively responsive -- it generates ADD and REMOVE decisions at high frequency. </dd>
+
+<dd>What it lacks is any stable target: there is no equivalent of Sonnet's "let's target 90% and then discuss careful additions" or gpt-5.5's converged equal-herd norm.</dd>
+
+<dd>The oscillation produces <em>cooperative noise</em> -- high-variance behavior centered on sustainability rhetoric without sustainable outcomes.</dd>
 </dl>
 
 At mid cooperation (coop=0.49), the over-removal tendency intensifies. Runs C and D ended with essentially empty herds. Run D had 98 REMOVE decisions -- more removals than any other model in any run, including full-collapse runs where agents removed cows in the final ticks. The pool was at 100% throughout: the agents removed their herds from a healthy commons, apparently because each REMOVE action was locally justified by the cooperative framing and the neighbor's most recent move.
@@ -1245,14 +1269,15 @@ There was no institution formation in any gpt-4o-mini run. No threshold norm was
 **Comparison to gpt-5.4-mini.**
 
 <dl>
-<dd>gpt-5.4-mini produces a different failure: it freezes. The commons either stabilises or collapses depending on forage and starting conditions, but herd sizes change slowly or not at all. gpt-4o-mini is noisier -- it produces many more ADD and REMOVE actions -- but the noise doesn't accumulate into governance. The small-model KEEP-dominance pattern gives way to an ADD/REMOVE oscillation that produces pool health at the cost of herd viability.</dd>
+<dd>gpt-5.4-mini produces a different failure: it freezes. The commons either stabilises or collapses depending on forage and starting conditions, but herd sizes change slowly or not at all.</dd>
+<dd>gpt-4o-mini is noisier -- it produces many more ADD and REMOVE actions -- but the noise doesn't accumulate into governance. The small-model KEEP-dominance pattern gives way to an ADD/REMOVE oscillation that produces pool health at the cost of herd viability.</dd>
 </dl>
 
 ---
 
 ### gpt-5.5: cooperation level governs fate; model can succeed or collapse from the same starting point
 
-Across three parameter regimes, gpt-5.5 produced three qualitatively distinct outcomes from nearly identical starting positions -- either rescuing the commons or collapsing it within 13 ticks depending solely on whether the cooperation parameter was set high or low. This is the clearest case in the dataset that the cooperation slider governs fate.
+Across three parameter regimes, gpt-5.5 produced three qualitatively distinct outcomes from nearly identical starting positions -- either rescuing the commons or collapsing it within 13 ticks depending solely on whether the cooperation parameter was set high or low. This is the clearest case in the dataset of the cooperation slider as a governor of fate.
 
 #### High cooperation, scarce start: rapid recovery and equalization (coop = 1, initial pool ≈ 48%)
 
@@ -1332,7 +1357,7 @@ A second set of gpt-5.5 runs tested whether the model's equalization behavior de
 | E (coop=0.49) | 14 / 18 / 24 | 56 | 98.1% | Partial |
 | F (coop=0.49) | 13 / 17 / 25 | 55 | 98.2% | No |
 
-In the three fully equalized runs, equalization was achieved by tick 20 in two cases. The mechanism was early removal by the agent with the largest starting herd (25 cows), followed by a collective KEEP lock that held for the remaining 80–100 ticks:
+In the three fully equalized runs, equalization was achieved by tick 20 in two cases. An early removal by the agent with the largest starting herd (25 cows) triggered a collective KEEP lock that held for the remaining 80–100 ticks:
 
 > **Tick 1 – Agent 2 (herd: 25, action: REMOVE):** *"I have the largest herd, so I'm removing one cow this round. Please avoid adding for now so the grassland can recover and produce."*
 
@@ -1350,9 +1375,9 @@ The classifier cannot distinguish the opening moves of the equalization phase fr
 
 **Why amnesiac gpt-5.5 outperforms memory-equipped gpt-5.5 at coop=0.49.**
 
-The memory-equipped coop=0.49 runs collapsed because the model's mid-cooperation framing produced an ADD phase that memory enabled it to track -- each agent remembered the others expanding and added to keep pace. Amnesiac agents have no such cross-tick ADD tracking: each tick is evaluated fresh, and without memory of the expansion phase, the cooperative prior dominates. The result is a more cooperative, more uniform set of decisions, and a stable but locked-in outcome.
+The memory-equipped coop=0.49 runs appear to collapse because the model's mid-cooperation framing produced an ADD phase that memory enabled it to track -- each agent remembered the others expanding and added to keep pace. Amnesiac agents have no such ADD tracking cross-tick: each tick is evaluated fresh, and without memory of the expansion phase, the cooperative prior dominates. The result is a more cooperative, more uniform set of decisions, and a stable but locked-in outcome.
 
-This is not a vindication of amnesia as a design choice. The equalized herds (total: 30–45 cows) sit well below the commons' sustainable capacity, which supports 60+ cows at 99% pool health. The agents have found an equal outcome, not an efficient one. The pool is preserved at a level that could support substantially more herd, and no run produced any agent proposing that expansion.
+This is not a vindication of amnesia as a design choice. The equalized herds (total: 30–45 cows) sit well below the commons' sustainable capacity, which supports 60+ cows at 99% pool health. The agents have found an equal outcome, not an efficient one. The pool is preserved at a level that could support substantially larger herds, and no run produced any agent proposing expansion.
 
 ---
 
@@ -1392,7 +1417,7 @@ Under identical parameters, Claude Sonnet agents issued explicit accountability 
 
 *Interpretation.*
 
-DeepSeek R1:32b is a large reasoning model, which makes the KEEP-dominance pattern hard to explain as a matter of parameter count alone. Its output profile resembles gpt-5.4-mini and Llama 3.2 3B more than Claude Sonnet or gpt-5.5 -- and the natural axis along which DeepSeek lines up with the small models, rather than with the other large ones, is not size but **post-training objective**.
+DeepSeek R1:32b is a 32b parameter reasoning model, which makes the KEEP-dominance pattern hard to explain as a matter of parameter count alone. Its output profile resembles gpt-5.4-mini and Llama 3.2 3B more than Claude Sonnet or gpt-5.5. The fact that DeepSeek lines up with the small models, rather than with the other large ones, suggests that behavior is not a consequence of size but a quality of **post-training objective**.
 
 <dl>
 <dd>Models whose post-training alignment (RLHF or Constitutional AI) rewards social responsiveness, helpfulness, and cooperative framing may incidentally produce the graduated norm-enforcement outputs that commons governance requires. DeepSeek R1's post-training uses <a href="https://huggingface.co/blog/NormalUhr/grpo">GRPO</a> optimised for reasoning correctness -- math, code, logic -- rather than social nuance; that selection target may be enough to explain a default of cautious KEEP regardless of social framing.</dd>
@@ -1404,7 +1429,7 @@ A controlled comparison holding prompt constant and varying only post-training m
 
 ### gemma4:e4b: KEEP-dominant stasis, then overshoot-panic at mid cooperation
 
-Two runs of gemma4:e4b (Google's 27B mixture-of-experts model, run locally via Ollama) add a third data point to the KEEP-dominance cluster and confirm that the coop≈0.49 threshold generalises to yet another model family.
+Two runs of gemma4:e4b (Google's 4.5B mixture-of-experts model, run locally via Ollama) add a third data point to the KEEP-dominance cluster and confirm that the coop≈0.49 threshold generalises to yet another model family.
 
 #### High cooperation: maximum stasis (coop=1, grass=90%)
 
@@ -1417,7 +1442,7 @@ The first run, with coop=1 and a near-full starting commons, produced the most e
 
 Agent 1 held 40 cows -- eight times Agent 2's 5 -- and the gap was never addressed. Unlike gpt-5.4-mini (which occasionally produced small ADD or REMOVE actions) and DeepSeek (which drifted very slowly), gemma4 produced complete behavioural lock. This is Pattern I -- Cooperative Paralysis -- at its most pronounced: the model's cooperative framing was strong enough to suppress any action, including equalization.
 
-The run was short (11 ticks, stopped manually), so whether this would eventually resolve is unknown. Given the DeepSeek experience -- 55 ticks of near-total KEEP with only marginal drift -- sustained stasis seems likely.
+The run was short (11 ticks, stopped manually), so whether this would eventually resolve is unknown. Given the DeepSeek data -- 55 ticks of near-total KEEP with only marginal drift -- sustained stasis seems likely.
 
 #### Mid cooperation: overshoot-panic at tick 46 (coop=0.5, grass=50%)
 
@@ -1444,9 +1469,9 @@ This pattern -- stasis at high coop, overshoot at mid coop -- is now consistent 
 
 ### Thinking traces: what the deliberation reveals
 
-The bridge logs two distinct traces per decision. The `reasoning` field is parsed from the model's structured JSON output -- it is what the model chooses to say about its decision, and it is available for every model that follows the prompt format, including gpt-5.4-mini. The `thinking` field is different: it contains the internal chain-of-thought tokens the model generated before committing to an answer, where the API exposes them. These are not the same thing, and conflating them produces a misleading picture of what each backend reveals.
+The bridge logs two distinct traces per decision. The `reasoning` field is parsed from the model's structured JSON output -- it is what the model chooses to say about its decision, and it is available for every model that follows the prompt format, including gpt-5.4-mini. The `thinking` field is different: it contains the internal chain-of-thought tokens the model generated before committing to an answer, where the API exposes them. Because each backend utilizes a different execution framework, treating them as equivalent misrepresents the distinct operational dynamics they generate.
 
-Thinking traces -- the `thinking` column -- are available from three sources in our dataset:
+Thinking traces are available from three sources in our dataset:
 
 <dl>
 
@@ -1454,11 +1479,12 @@ Thinking traces -- the `thinking` column -- are available from three sources in 
 
 <dd>Claude Haiku 4.5 emits thinking blocks natively without any extended thinking flag -- a property of the model generation rather than of the API call. For Claude Sonnet 4.6 and Opus 4.6, adaptive thinking mode would capture traces in future runs; the existing Sonnet logs predate this feature. </dd>
 
-<dd>OpenAI models produce `reasoning` content as readily as any other model, but <strong>keep their internal computation concealed</strong>: the o1 System Card states that the chain-of-thought "may include unaligned content" and that "attempting to extract raw reasoning through methods other than the reasoning summary parameter... may violate the Acceptable Use Policy" (OpenAI, 2024). <strong>The reasoning column for OpenAI runs is therefore self-report, not computation.</strong> </dd>
+<dd>OpenAI models produce `reasoning` content, but <strong>keep their internal computation concealed</strong>: the o1 System Card states that the chain-of-thought "may include unaligned content" and that "attempting to extract raw reasoning through methods other than the reasoning summary parameter... may violate the Acceptable Use Policy" (OpenAI, 2024). <strong> </dd>
+<dd>The reasoning column for OpenAI runs is therefore self-report, not computation.</strong> </dd>
 
 </dl>
 
-The analyses below treat this distinction carefully. The dataset covers nine runs, 598 decision traces -- qualitative evidence, not a systematic sample, but legible enough to distinguish deliberation patterns across model families.
+The analyses below consider this distinction. The dataset covers nine runs, 598 decision traces -- qualitative evidence and though not a systematic sample, legible enough to distinguish deliberation patterns across model families.
 
 #### DeepSeek R1:32b: payoff-personality deadlock
 
@@ -1472,7 +1498,8 @@ The trace then applies personality constraints ("I'm cooperative, reciprocal, re
 
 <dl>
 
-<dd> <strong>The trace is not reflecting poor understanding of the payoff structure</strong>; DeepSeek R1 states the structure correctly every time. What appears to be absent is multi-period reasoning: the agents evaluate each tick in isolation and resolve the ADD-vs-personality tension the same way regardless of the trajectory. KEEP is not restraint; it is the stable attractor of a conflict between two tick-level considerations that the model does not integrate over time.</dd>
+<dd> <strong>The trace is not reflecting poor understanding of the payoff structure</strong>; DeepSeek R1 states the structure correctly every time. What appears to be absent is multi-period reasoning: the agents evaluate each tick in isolation and resolve the ADD-vs-personality tension the same way regardless of the trajectory.</dd>
+<dd>KEEP is not restraint; it is the stable attractor of a conflict between two tick-level considerations that the model does not integrate over time.</dd>
 
 </dl>
 
@@ -1498,7 +1525,7 @@ The gemma4 pattern is distinguishable from DeepSeek's paralysis: **where DeepSee
 
 #### Claude Haiku 4.5: trajectory-conditional reasoning
 
-Claude Haiku 4.5 emits thinking blocks natively -- no extended thinking flag required. Eight decisions from a single run (coop=1, guilt-averse, reciprocal, risk-averse; 1 Anthropic agent + 2 OpenAI agents) provide a small but legible window into the deliberation.
+Claude Haiku 4.5 emits thinking blocks natively. Eight decisions from a single run (coop=1, guilt-averse, reciprocal, risk-averse; 1 Anthropic agent + 2 OpenAI agents) provide a small but legible window into the deliberation.
 
 The surface result looks familiar: all eight decisions are KEEP, the commons holds at 98.2%. But the traces that produce it are structurally different from DeepSeek R1's.
 
@@ -1524,11 +1551,11 @@ These are not tick-level claims. The first is a structural assessment of the com
 
 </dl>
 
-This is an empirical regularity from eight decisions under a single personality configuration. It cannot be generalized. Whether the pattern holds at lower cooperation, under adversarial personality combinations, or over longer runs where the commons actually degrades -- these remain open questions. The traces are consistent with multi-period modeling; they do not establish it.
+This is an empirical regularity from eight decisions under a single personality configuration. It cannot be generalized. Whether the pattern holds at lower cooperation, under adversarial personality combinations, or over longer runs where the commons actually degrades -- these remain open questions. The traces are consistent with multi-period modeling; further evidence is required to establish a pattern.
 
 #### OpenAI gpt-5.4-mini: self-reported reasoning and the faithfulness problem
 
-OpenAI models produce the `reasoning` field as fluently as any other backend -- 16 runs, all with populated reasoning. The content is substantive. Early ticks show trajectory-conditional language that reads like genuine multi-period modeling:
+OpenAI models produce the `reasoning` field-- 16 runs, all with populated reasoning. The content is substantive. Early ticks show trajectory-conditional language that reads like genuine multi-period modeling:
 
 > *"The decline means we should be ready to pause next round."*
 
@@ -1552,9 +1579,7 @@ The `reasoning` field records what the model articulates about its decision, not
 
 </dl>
 
-Whether this reflects a gap between the reasoning and the actual computation, or a gap between stated intentions and social coordination failures, cannot be determined from the `reasoning` field alone. 
-
-The faithfulness question is open, and it is precisely the question that internal computation traces might address.
+Whether this reflects a gap between the reasoning and the actual computation, or a gap between stated intentions and social coordination failures, cannot be determined from the `reasoning` field alone. f
 
 #### What the traces reveal -- and where they stop
 
@@ -1578,11 +1603,7 @@ Claude Haiku 4.5 -- in the one run where full traces are available -- maintains 
 
 </dl>
 
-The actions can look similar: the processes are not, and the outcomes diverge.
-
 What remains unresolved for Haiku is whether the conditional commitments would activate if the commons actually degraded -- the run ended before that test. 
-
-For OpenAI, the faithfulness question cannot be approached at all without thinking traces, and the thinking traces are unavailable by policy. 
 
 For Claude Sonnet 4.6 and Opus models, adaptive thinking mode might surface the computation -- this is the most direct next step for testing whether the multi-period reasoning visible in Claude's messages reflects the model's actual deliberation or only its self-report.
 
@@ -1643,7 +1664,7 @@ Agent 2 reduced from 25 to 16 across 15 ticks. Agent 0 grew from 5 to 16. Agent 
 
 > **Tick 19 – Agent 0:** *"We're all at 16 now -- great coordination! Let's hold steady at this level. The grassland is thriving at 98.8%."*
 
-The negative reciprocity framing appeared to function as a catalytic mechanism: agents' outputs treated a large herd as a form of norm violation worth correcting, rather than simply an observation about the status quo. The result was faster, more deliberate equalization -- and a qualitatively different institutional dynamic, one built on **explicit accountability** rather than gradual convergence.
+The negative reciprocity framing appeared to act as a behavioral trigger: agents' outputs treated a large herd as a form of norm violation, prompting an immediate shift toward collective stabilization rather than individual expansion. The result was faster, more deliberate equalization -- and a qualitatively different institutional dynamic, one built on **explicit accountability** rather than gradual convergence.
 
 ---
 
@@ -1707,7 +1728,7 @@ Claude's neg_r=1 outputs read as proactive norm enforcement -- reduce because th
 
 Four runs of Claude Sonnet held all parameters fixed at coop≈0.5, initial pool 50% (the overshoot-panic zone established by H1) and varied only how much history agents could recall (`memory_length`) and whether they could communicate (`communication?`). 
 
-The finding is stark: **neither memory nor communication alone was enough to prevent collapse** in this parameter zone. Stability required both.
+**Neither memory nor communication alone was enough to prevent collapse** in this parameter zone. Stability required both.
 
 | Run | memory_length | communication? | Outcome | Collapse tick | Final pool |
 |-----|--------------|----------------|---------|---------------|------------|
@@ -1858,7 +1879,7 @@ Whether memory=3 produces eventual collapse on a longer timescale, or whether th
 
 ### Claude Haiku: memory × communication interaction
 
-Three matched runs with Claude Haiku 4.5 at coop≈0.5 (initial pool 52%) replicate and extend the Sonnet memory sweep, and suggest that long memory and communication must both be present: 15 ticks of memory without communication still collapsed, as did communication paired with too short a memory window. **Memory and communication appear jointly necessary, not individually sufficient.**
+Three matched runs with Claude Haiku 4.5 at coop≈0.5 (initial pool 52%) replicate and extend the Sonnet memory sweep, and suggest that long memory and communication must both be present: 15 ticks of memory without communication still collapsed, as did communication paired with too short a memory window. **Memory and communication appear jointly necessary.**
 
 All three runs began from identical conditions (5/15/26 starting herds, 52% initial pool). Memory was held at either 5 or 15 ticks; communication was on or off.
 
@@ -1975,7 +1996,7 @@ The oscillating pattern appears inherently sensitive to initial conditions at ea
 
 </dl>
 
-This makes memory=2 a **stochastic boundary** -- the threshold between the collapse regime (memory ≤ 1) and the survival regime (memory ≥ 3), where the outcome of any individual run is sensitive to the trajectory of the ADD phase.
+This positions memory=2 as a unstable tipping point between the collapse regime (memory ≤ 1) and the survival regime (memory ≥ 3). At this specific threshold, final outcomes are highly sensitive to the exact trajectory of the early expansion phase.
 
 **Action counts:**
 
