@@ -477,7 +477,7 @@ Four distinct collapse trajectories appear across these runs -- **Pattern I (Coo
 
 <dd>The opening results look cooperative because the first conditions tested were near-ideal. High-cooperation defaults (coop=1, memory_length=5, communication=on) reliably produce cooperative outcomes in RLHF-aligned models (Claude Sonnet, gpt-5.5, gpt-4o-mini); <strong>KEEP-dominant models (gpt-5.4-mini, DeepSeek R1, gemma4:e4b) produce stasis or paralysis under the same settings.</strong> Subsequent parameter sweeps tell a more mixed story.</dd>
 
-<dd>Mid-level cooperation (coop≈0.5) collapsed in more than a dozen independent runs across five model families -- Sonnet, Haiku, gpt-5.5, DeepSeek R1:32b, and gemma4:e4b. Short memory windows contributed to collapse in Sonnet at mid-cooperation (memory=1, coop=0.5: collapse at tick 87; memory=0, coop=0.5: collapse at tick 31), but memory window alone does not determine outcome: five independent gpt-5.5 runs at coop=0.49, memory=0 survived 120 ticks. The interaction between model family and memory length remains unresolved.</dd>
+<dd>Mid-level cooperation (coop≈0.5) collapsed in eleven independent full-GABM runs across five model families -- Sonnet, Haiku, gpt-5.5, DeepSeek R1:32b, and gemma4:e4b. Short memory windows contributed to collapse in Sonnet at mid-cooperation (memory=1, coop=0.5: collapse at tick 87; memory=0, coop=0.5: collapse at tick 31), but memory window alone does not determine outcome: six independent gpt-5.5 runs at coop=0.49, memory=0 survived (five to 120 ticks, one to tick 62). The interaction between model family and memory length remains unresolved.</dd>
 
 <dd>High-cooperation Sonnet runs with short memory windows (memory=0 and memory=1) did <em>not</em> collapse over their 10-50 tick horizons; gpt-4o-mini at coop=1, memory=0 survived three replications at 120 ticks. These horizons are not long enough to treat as settled evidence, but the pattern is consistent across two RLHF-aligned families.</dd>
 
@@ -493,7 +493,7 @@ Collapse is concentrated around mid-cooperation parameters. The initial baseline
 | **Full-GABM** | Claude Sonnet 4.6| 3 | No | -- | **coop=1, fair_me=0, fair_oth=1, memory=5, comm=on (defaults):** cooperative convergence to 13/13/13; institution score 10/10 by tick 91 |
 | **Full-GABM (low cooperation)** | Claude Sonnet 4.6| 3 | No | -- | **coop=min, fair_me=0, fair_oth=1, memory=5, comm=on:** self-interested framing yields *faster* convergence (tick 16) to higher-yield 20/20/20; cooperation robust to personality override |
 | **Full-GABM (low guilt + low envy)** | Claude Sonnet 4.6| 3 | No | -- | **coop=1, fair_me=0, fair_oth=0, memory=5, comm=on:** fairness parameters zeroed; repeated defection, slow convergence (~tick 107), higher herd load (84 cows), commons stressed to 86.7% |
-| **Hybrid (1 LLM)** | Claude Sonnet 4.6| 1 | Yes | 35 | **coop=1, fair_me=0, fair_oth=1, memory=5, comm=on (defaults):** one LLM cannot shift the equilibrium alone |
+| **Hybrid (1 LLM)** | Claude Sonnet 4.6| 1 | Yes | 35 / 31 | **coop=1, memory=5 (defaults):** two runs -- collapse tick 35 (Agent 0 as LLM, starting herd 5) and collapse tick 31 (Agent 1 as LLM, starting herd 30, total starting herd 62); one LLM cannot shift the equilibrium alone regardless of which node it occupies |
 | **Hybrid (2 LLM)** | Claude Sonnet 4.6| 2 | Yes | 58 | **coop=1, fair_me=0, fair_oth=1, memory=5, comm=on (defaults):** coalition formed, tragedy delayed 23 ticks, but overwhelmed by one defector |
 | **Full-GABM (Llama 3.2 3B)** | Llama 3.2 3B | 3 | No | -- | **coop=1, fair_me=0, fair_oth=1, memory=5, comm=on:** pool maintained at 99.4% but herds oscillated without convergence; cooperative messaging but no institution formation |
 | **Full-GABM (Llama 3.2 3B, scarce commons)** | Llama 3.2 3B | 3 | No | -- | **coop=1, fair_me=0, fair_oth=1, memory=5, initial_grassland=48%, comm=on:** pool recovered 48%→99% by tick 17; herds oscillated without convergence throughout all 51 ticks |
@@ -519,8 +519,7 @@ Collapse is concentrated around mid-cooperation parameters. The initial baseline
 | **Full-GABM (memory=15, comm on)** | Claude Haiku 4.5 | 3 | No | -- | coop≈0.5, memory_length=15, comm=on, initial=52%: survived 120 ticks; converged to 24/24/24; pool stable at 95% -- same outcome as Claude Sonnet memory=15 |
 | **Full-GABM (memory=15, comm off)** | Claude Haiku 4.5 | 3 | Yes | 46 | coop≈0.5, memory_length=15, comm=off, initial=52%: rapid collapse -- herds grew unchecked to 88 total by tick 45, pool 14.7%→0%; ADD=55, KEEP=72, REMOVE=17; memory alone insufficient without communication |
 | **Full-GABM (DeepSeek stasis, neg_r=0)** | DeepSeek R1:32b | 3 | No (stalling) | -- | coop=1, neg_r=0, memory=5, comm=on: near-universal KEEP in 7 ticks before run interrupted; herds 5/15/26→6/15/26; pool 99%; cooperative messaging but no equalization |
-| **Full-GABM (DeepSeek slow drift, neg_r=1)** | DeepSeek R1:32b | 3 | No (stalling) | -- | coop=1, neg_r=1, memory=5, comm=on: 46 ticks; KEEP-dominant (ADD=13, KEEP=151, REMOVE=1); herds crept 5/15/25→6/19/30; pool 98.2%; no equalization, no institution formation -- matches gpt-5.4-mini stasis pattern |
-| **Full-GABM (DeepSeek 55-tick confirmation)** | DeepSeek R1:32b | 3 | No (stalling) | -- | coop=1, comm=off: 55 ticks; ADD=13, KEEP=151, REMOVE=1; herds barely drifted 5/15/25→6/20/31; pool 97.9%; KEEP-dominance confirmed as robust across extended runs with no communication |
+| **Full-GABM (DeepSeek slow drift, neg_r=1)** | DeepSeek R1:32b | 3 | No (stalling) | -- | coop=1, neg_r=1, memory=5: 55 ticks; KEEP-dominant (ADD=13, KEEP=151, REMOVE=1); herds crept 5/15/25→6/20/31; pool 97.9%; no equalization, no institution formation -- matches gpt-5.4-mini stasis pattern |
 | **Full-GABM (gemma4 KEEP-dominant)** | gemma4:e4b | 3 | No (stalling) | -- | coop=1, grass=90%, comm=off: zero ADD or REMOVE across all 11 ticks; herds frozen at initial values [14,40,5]; pool 97.6%; most extreme stasis observed -- not even the large initial inequality triggers equalization |
 | **Full-GABM (gemma4 overshoot-panic)** | gemma4:e4b | 3 | Yes | 46 | coop=0.5, grass=50%, comm=off: classic overshoot-panic -- pool climbed 52%→95% through tick 20 then reversed as herds grew unchecked to [27,43,39]; collapse tick 46; Agent actions ADD=115, KEEP=133, REMOVE=43; matches coop=0.49 threshold seen in Sonnet and gpt-5.5 |
 | **Baseline (growth rate threshold sweep)** | -- | 0 | Threshold | ~93 | grass=41%, forage=2: growth ≤ 0.0055 → always collapse (tick 84–97); growth ≥ 0.006 → always stable (pool 100%, herds 80–120 each). 15 replications at growth=0.0051 all collapse at exactly tick 94 -- baseline is fully deterministic at risk_aversion=0 |
@@ -759,7 +758,7 @@ The agents' outputs displayed patterns absent from their prompts: fairness-coded
 
 ### Hybrid: the limits of a single institutional entrepreneur -- Claude Sonnet 4.6
 
-In the hybrid condition, one Claude Sonnet 4.6 agent (Agent 0, starting herd: 5) was paired with two rule-based agents (herds: 16 and 26) that cannot receive or act on language. The LLM agent issued repeated appeals to its partners to reduce, but with no mechanism for the rule-based agents to hear those messages the commons collapsed anyway at tick 35 -- identical in timing to the baseline.
+In the hybrid condition, one Claude Sonnet 4.6 agent (Agent 0, starting herd: 5) was paired with two rule-based agents (herds: 16 and 26) that cannot receive or act on language. The LLM agent issued repeated appeals to its partners to reduce, but with no mechanism for the rule-based agents to hear those messages the commons collapsed anyway at tick 35 -- identical in timing to the baseline. A second 1-LLM run (Agent 1 as the LLM agent, starting herd: 30) collapsed at tick 31 -- four ticks earlier. The LLM-occupied position differed and the starting herds were much larger (62 total cows vs. 47), producing a faster resource drain. The structural finding holds in both: an LLM agent occupying any single node cannot alter the trajectory when its two neighbors are mechanically unresponsive.
 
 *Resource dynamics:*
 
@@ -1032,7 +1031,7 @@ Two readings sit comfortably with the data, and they are not mutually exclusive.
 
 For Claude Sonnet, the cooperation slider does affect yield level meaningfully: coop=1 runs converge to 13–20 cows each with pool health 97–99%, while surviving coop=0.5 runs converge to 24–29 cows each with pool health 90–94% -- a real and consistent difference in extraction pressure. But whether Sonnet at coop=0.5 survives at all depends on memory length: the two collapses at coop=0.5 both occurred at memory≤1, while runs with memory≥2 survived. The slider is not cosmetic; it governs extraction level. It does not govern survival independently of memory.
 
-The gpt-5.5 picture is equally entangled. The four coop=0.49 collapses all used memory=5; five coop=0.49 runs with memory=0 survived 120 ticks cleanly. This inverts the expected relationship -- amnesiac gpt-5.5 agents at mid-cooperation survive where memory-equipped ones collapse. The cooperation slider is not the governing variable for gpt-5.5 either. What the full dataset reveals is that coop and memory interact differently across model families, and neither parameter alone determines outcome. The controlled experiment that isolates their interaction -- holding all else constant and varying both systematically within a single model -- has not been run.
+The gpt-5.5 picture is equally entangled. The four coop=0.49 collapses all used memory=5; six coop=0.49 runs with memory=0 survived, five to the full 120-tick horizon and one ending at tick 62. This inverts the expected relationship -- amnesiac gpt-5.5 agents at mid-cooperation survive where memory-equipped ones collapse. The cooperation slider is not the governing variable for gpt-5.5 either. What the full dataset reveals is that coop and memory interact differently across model families, and neither parameter alone determines outcome. The controlled experiment that isolates their interaction -- holding all else constant and varying both systematically within a single model -- has not been run.
 
 ---
 
@@ -1162,7 +1161,7 @@ While initial testing of Claude Sonnet and Llama 3B suggested that high-cooperat
 
 ### gpt-5.4-mini: KEEP-dominance across fairness configurations
 
-Across four runs, gpt-5.4-mini produced almost nothing but KEEP decisions regardless of the state of the commons -- sometimes stabilising harmlessly, other times allowing the grassland to drain undetected until collapse. 
+Seven runs of gpt-5.4-mini produced almost nothing but KEEP decisions regardless of the state of the commons -- sometimes stabilising harmlessly, other times allowing the grassland to drain undetected until collapse. The dataset has grown since the four runs documented below: three additional runs at identical parameters (coop=1, memory=5, initial_grassland=50%, forage=14) revealed the fastest collapses in the gpt-5.4-mini corpus. Two ended at tick 1 and tick 4 respectively, both forage-driven: agents KEEPed while a scarce starting pool depleted beneath them in a matter of rounds. A third short run survived only 4 ticks before the simulation ended cleanly. These additions do not change the behavioral diagnosis -- KEEP-dominance is consistent across all seven runs -- but they establish that the pattern produces collapses far faster than the forage=4 case (Run 3) when starting conditions are more constrained.
 
 <dl>
 
@@ -1227,10 +1226,9 @@ Decision breakdown across 39 ticks:
 
 Agent 0 = 39 KEEP, 0 ADD (never moved from its starting herd of 5); Agent 1 = 25 KEEP, 14 ADD (grew from 15 to 29); Agent 2 = 27 KEEP, 12 ADD (grew from 25 to 37). The agent that started smallest is locked in place while both larger-herd agents grow unchecked. The resource is not yet collapsed at tick 39 but the trajectory is structurally unfair and ecologically unsustainable -- a slow-motion inequality trap.
 
-**The gpt-5.4-mini pattern across all four runs:**
+**The gpt-5.4-mini pattern across all seven runs:**
 
-
-KEEP is the default action regardless of resource state, fairness parameters, or starting position. Stasis when the pool is healthy (Runs 1–2); paralysis collapse when forage is elevated and the herd load becomes untenable (Run 3); structural lopsidedness when herds begin unequal and only the smallest agent holds (Run 4).
+KEEP is the default action regardless of resource state, fairness parameters, or starting position. Stasis when the pool is healthy (Runs 1–2); paralysis collapse when forage is elevated and the herd load becomes untenable (Run 3); structural lopsidedness when herds begin unequal and only the smallest agent holds (Run 4); fast forage-driven collapse within 1–4 ticks when starting conditions are scarce (three additional runs not documented in detail above).
 
 <dl>
 <dd>None of these runs produced institution formation, graduated norm enforcement, or equalization -- outputs that appeared consistently in Claude Sonnet and gpt-5.5 under comparable conditions.</dd>
@@ -1242,7 +1240,7 @@ The behavior does not appear to be an artifact of model scale; while smaller mod
 
 ### gpt-4o-mini: cooperative noise -- oscillatory behavior and over-removal under cooperative pressure
 
-Six runs of gpt-4o-mini produced a failure mode not seen in any other model family: the pool remained healthy, but the herds emptied themselves. Where gpt-5.4-mini froze, gpt-4o-mini oscillated -- alternating ADD and REMOVE actions at high frequency, net-removing more cows than it added, and ending runs with trivially small herds on a pristine commons.
+Seven runs of gpt-4o-mini produced a failure mode not seen in any other model family: the pool remained healthy, but the herds emptied themselves. Where gpt-5.4-mini froze, gpt-4o-mini oscillated -- alternating ADD and REMOVE actions at high frequency, net-removing more cows than it added, and ending runs with trivially small herds on a pristine commons.
 
 | Run | Memory | Coop | Ticks | Final herds | Pool | ADD | KEEP | REMOVE |
 |-----|--------|------|-------|-------------|------|-----|------|--------|
@@ -1251,6 +1249,7 @@ Six runs of gpt-4o-mini produced a failure mode not seen in any other model fami
 | C | 5 | 0.49 | 120 | 2 / 1 / 3 | 100.0% | 29 | 261 | 70 |
 | D | 5 | 0.49 | 120 | 1 / 1 / 1 | 100.0% | 55 | 207 | 98 |
 | E | 5 | 0.49 | 94 | 7 / 11 / 20 | 99.4% | 10 | 255 | 17 |
+| F | 5 | 1 | 77 | 10 / 4 / 19 | 99.7% | 28 | 163 | 40 |
 
 In run A (mem=0, coop=1), agents made 70 ADD and 99 REMOVE decisions across 120 ticks. The pool was at 100% at the end. The herds stood at 1/8/8. The commons was not destroyed -- it was vacated.
 
@@ -1275,6 +1274,8 @@ The ADD and REMOVE decisions at tick 60 are mechanically driven -- not by pool s
 </dl>
 
 At mid cooperation (coop=0.49), the over-removal tendency intensifies. Runs C and D ended with essentially empty herds. Run D had 98 REMOVE decisions -- more removals than any other model in any run, including full-collapse runs where agents removed cows in the final ticks. The pool was at 100% throughout: the agents removed their herds from a healthy commons, apparently because each REMOVE action was locally justified by the cooperative framing and the neighbor's most recent move.
+
+Run F (mem=5, coop=1, comm=on, initial_grass=60%) ended at tick 77 with pool at 99.7% and herds at 10/4/19 -- a different parameter configuration from the amnesiac runs. The oscillation pattern persists at mem=5: 28 ADDs and 40 REMOVEs over 77 ticks, net-removing more than was added, with the smallest herd drifting to 4 cows. The pool health is indistinguishable from the amnesiac runs. Memory of prior actions does not arrest the oscillation.
 
 There was no institution formation in any gpt-4o-mini run. No threshold norm was proposed, no equalization target was named, no agent tracked trajectory across multiple ticks. Ostrom's design principles require that appropriation rules be collectively chosen (DP3); the gpt-4o-mini outputs do not approach collective rule formation.
 
@@ -1399,9 +1400,9 @@ Eight runs of DeepSeek R1:32b -- a 32-billion-parameter open-weights reasoning m
 
 #### High cooperation: KEEP-dominance confirmed (coop = 1)
 
-The two original coop=1 runs -- one interrupted at 7 ticks, one running 46 ticks -- established the pattern. Three subsequent coop=1 runs replicate it. Across all five, the action profile is nearly identical: 80–90% KEEP, marginal ADD drift, pool stable at 97–99%, no equalization attempted.
+The two original coop=1 runs -- one interrupted at 7 ticks, one running 55 ticks -- established the pattern. Three subsequent coop=1 runs replicate it. Across all five, the action profile is nearly identical: 80–90% KEEP, marginal ADD drift, pool stable at 97–99%, no equalization attempted.
 
-The 46-tick run with neg_r=1 is the sharpest illustration. Negative reciprocity maximised produced the fastest equalization in Claude Sonnet (16/16/16 at tick 18). DeepSeek under identical parameters drifted from 5/15/25 to 6/19/30 across 46 ticks -- the herd gap widened rather than narrowed, with 50 of 55 agent-decisions being KEEP.
+The 55-tick run with neg_r=1 is the sharpest illustration. Negative reciprocity maximised produced the fastest equalization in Claude Sonnet (16/16/16 at tick 18). DeepSeek under identical parameters drifted from 5/15/25 to 6/20/31 across 55 ticks -- the herd gap widened rather than narrowed, with 151 of 165 agent-decisions being KEEP.
 
 > **Tick 1 – Agent 1 (herd: 15, action: KEEP):** *"Let's all keep our herds stable to preserve the grassland for everyone. Thanks for understanding! 🌿"*
 
@@ -1898,13 +1899,13 @@ All three runs began from identical conditions (5/15/26 starting herds, 52% init
 
 | Condition | Collapse? | Collapse tick | Pool at end | Final herds |
 |-----------|-----------|---------------|-------------|-------------|
-| memory=5, comm=on | **Yes** | 99 | 0% | -- |
+| memory=5, comm=on | **Yes** | 94 | 0% | -- |
 | memory=15, comm=on | No | -- | 95.0% | 24/24/24 |
 | memory=15, comm=off | **Yes** | 46 | 0% | -- |
 
-**Memory=5, comm=on (collapse tick 99):**
+**Memory=5, comm=on (collapse tick 94):**
 <dl>
-<dd> Agents recovered the pool to 99% by tick 10, then gradually expanded herds. By tick 45 total cows had reached 67; the pool eroded steadily and crashed at tick 99. The pattern matches the Sonnet memory=5 baseline -- a 5-tick window cannot detect gradual multi-decade trends. </dd>
+<dd> Agents recovered the pool to 99% by tick 10, then gradually expanded herds. By tick 45 total cows had reached 67; the pool eroded steadily and crashed at tick 94. The pattern matches the Sonnet memory=5 baseline -- a 5-tick window cannot detect gradual multi-decade trends. </dd>
 </dl>
 
 **Memory=15, comm=on (survives, 24/24/24 by tick 120):**
@@ -2633,11 +2634,11 @@ Tuoti, T. E. (2026, May 18). Do Ostrom-Style Commons Institutions Emerge from LL
 - [x] Full-GABM (Claude Sonnet, high coop + high neg. reciprocity) -- complete (16/16/16 by tick 18)
 - [x] Full-GABM (gpt-5.5, high coop + high neg. reciprocity) -- complete (stable 12/21/22; tit-for-tat dynamic)
 - [x] Memory sweep -- complete: memory=0 (collapse 31), memory=1 (collapse 87), memory=2 (oscillating), memory=3 (fragile survival), memory=15 (stable)
-- [x] Full-GABM (Claude Haiku, memory=5, comm=on) -- complete (collapse tick 99)
+- [x] Full-GABM (Claude Haiku, memory=5, comm=on) -- complete (collapse tick 94)
 - [x] Full-GABM (Claude Haiku, memory=15, comm=on) -- complete (24/24/24, pool 95%, stable)
 - [x] Full-GABM (Claude Haiku, memory=15, comm=off) -- complete (collapse tick 46 -- memory alone insufficient)
 - [x] Full-GABM (DeepSeek R1:32b, neg_r=0) -- complete (7 ticks, KEEP-dominant stasis)
-- [x] Full-GABM (DeepSeek R1:32b, neg_r=1) -- complete (46 ticks, KEEP-dominant stasis -- matches gpt-5.4-mini pattern)
+- [x] Full-GABM (DeepSeek R1:32b, neg_r=1) -- complete (55 ticks, KEEP-dominant stasis -- matches gpt-5.4-mini pattern)
 - [x] Collapse pattern taxonomy documented (Cooperative Paralysis, Defection Cascade, Overshoot-Panic, Hybrid Architecture Failure)
 - [ ] H1: cooperation threshold sweep (coop 0.3–1.0, 3 replications × 2 models)
 - [ ] H2: fair_oth × neg_r grid (3×3, coop=1 fixed)

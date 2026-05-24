@@ -1976,19 +1976,19 @@ LLM bridge architecture inspired by swarm_gpt (Jimenez-Romero et al. 2025).]]></
                 <value value="&quot;ollama&quot;"></value>
               </enumeratedValueSet>
               <enumeratedValueSet variable="agent0-model">
-                <value value="&quot;llama3.2:3b-instruct-q4_0&quot;"></value>
+                <value value="&quot;gemma4:26b&quot;"></value>
               </enumeratedValueSet>
               <enumeratedValueSet variable="agent1-backend">
                 <value value="&quot;ollama&quot;"></value>
               </enumeratedValueSet>
               <enumeratedValueSet variable="agent1-model">
-                <value value="&quot;llama3.2:3b-instruct-q4_0&quot;"></value>
+                <value value="&quot;gemma4:26b&quot;"></value>
               </enumeratedValueSet>
               <enumeratedValueSet variable="agent2-backend">
                 <value value="&quot;ollama&quot;"></value>
               </enumeratedValueSet>
               <enumeratedValueSet variable="agent2-model">
-                <value value="&quot;llama3.2:3b-instruct-q4_0&quot;"></value>
+                <value value="&quot;gemma4:26b&quot;"></value>
               </enumeratedValueSet>
               <enumeratedValueSet variable="ollama-base-url">
                 <value value="&quot;http://192.168.86.26:11434/v1&quot;"></value>
