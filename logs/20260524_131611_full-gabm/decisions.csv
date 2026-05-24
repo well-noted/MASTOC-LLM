@@ -1077,3 +1077,18 @@ tick,agent_id,backend,model,action,action_name,message,reasoning,thinking,raw_re
   ""action"": 0,
   ""message"": """"
 }",76.9,40,81.232,80.0,78.766
+73,2,ollama,llama3:8b-instruct-q4_0,0,KEEP,,"Conservative action due to strong possibility of receiving better payoffs from either keeping or removing a cow, given the decent state of the pasture and neighbours' recent actions.",,"{
+  ""reasoning"": ""Conservative action due to strong possibility of receiving better payoffs from either keeping or removing a cow, given the decent state of the pasture and neighbours' recent actions."",
+  ""action"": 0,
+  ""message"": """"
+}",74.2,41,83.202,82.0,80.796
+73,1,ollama,llama3:8b-instruct-q4_0,1,ADD,"Will increase herd size, keep an eye on situation","I consider adding a cow since the grassland is still abundant, but I'm reluctant to deviate from my recent 'keep' actions. My neighbours are growing their herds, so I might respond with a reciprocal action.",,"{
+  ""reasoning"": ""I consider adding a cow since the grassland is still abundant, but I'm reluctant to deviate from my recent 'keep' actions. My neighbours are growing their herds, so I might respond with a reciprocal action."",
+  ""action"": 1,
+  ""message"": ""Will increase herd size, keep an eye on situation""
+}",74.2,40,81.202,80.0,78.796
+73,0,ollama,llama3:8b-instruct-q4_0,0,KEEP,,"Neighbours are still growing their herds, so I should reconsider my actions and take a more cautious approach. With the grassland not fully utilised, it's safer to keep the herd size stable for now.",,"{
+  ""reasoning"": ""Neighbours are still growing their herds, so I should reconsider my actions and take a more cautious approach. With the grassland not fully utilised, it's safer to keep the herd size stable for now."",
+  ""action"": 0,
+  ""message"": """"
+}",74.2,18,37.202,36.0,34.796

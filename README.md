@@ -242,6 +242,8 @@ set GOOGLE_API_KEY=...             # Google Gemini
 # Ollama needs no key -- just run it locally
 ```
 
+> **No GPU?** You can run the Ollama backend for free on Kaggle's cloud GPUs (30 hrs/week, T4 × 2, no cost) using ngrok to expose the server. See [SETUP.md → Running LLM agents without a local GPU](SETUP.md#running-llm-agents-without-a-local-gpu-free-via-kaggle) for a step-by-step walkthrough.
+
 ### Running a simulation
 
 1. Open `MASTOC-LLM.nlogo` in NetLogo 7

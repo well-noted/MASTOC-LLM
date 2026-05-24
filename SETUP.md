@@ -328,6 +328,93 @@ When `pos_r > neg_r`, collapse rate is 0% (or ~1% at the extreme near-boundary).
 
 ---
 
+## Running LLM agents without a local GPU (free via Kaggle)
+
+If you don't have a GPU-equipped machine available, you can run the LLM conditions for free using [Kaggle](https://www.kaggle.com) — Google's data-science platform — as a remote Ollama server, accessed via ngrok. The free tier gives you **30 GPU hours per week** (NVIDIA T4 × 2, 32 GB VRAM combined), which is enough to run substantial full-GABM or hybrid sweeps. Each session can run for up to 12 hours before timing out.
+
+The architecture is: Kaggle notebook runs Ollama → ngrok exposes it as a public URL → MASTOC-LLM's `--ollama-url` flag points at that URL. No API key, no cost.
+
+### What you need
+
+1. A [Kaggle account](https://www.kaggle.com) — sign up with email or Google. **Verify your phone number** to unlock GPU access (required).
+2. An [ngrok account](https://ngrok.com) — free tier is sufficient. After signing up, copy your **auth token** from the ngrok dashboard.
+
+### Step 1 — Create a Kaggle notebook
+
+In Kaggle, click **New → Notebook**. Give it a name (e.g. `mastoc-ollama`).
+
+Under **Settings → Accelerator**, select **GPU T4 × 2**. This gives you 32 GB of VRAM — enough for models up to ~27B parameters in 4-bit quantisation.
+
+### Step 2 — Add the notebook code cells
+
+Kaggle adds a placeholder Python cell by default. Replace it with the following four cells, running each one in order by clicking the ▶ button beside it.
+
+**Cell 1 — Install dependencies:**
+```python
+!apt-get install -y zstd
+!pip install pyngrok
+!curl -fsSL https://ollama.com/install.sh | sh
+```
+
+**Cell 2 — Authenticate ngrok** (replace the token with yours):
+```python
+from pyngrok import ngrok
+ngrok.set_auth_token("paste-your-ngrok-auth-token-here")
+```
+
+**Cell 3 — Start Ollama and pull a model:**
+```python
+import subprocess, time, os
+os.environ["OLLAMA_HOST"] = "0.0.0.0"
+os.environ["OLLAMA_ORIGINS"] = "*"
+subprocess.Popen(["ollama", "serve"])
+time.sleep(5)
+!ollama pull llama3.2
+```
+
+Replace `llama3.2` with whichever model you want to run. Any model listed on [ollama.com/library](https://ollama.com/library) works — for example `deepseek-r1:32b`, `gemma3:27b`, or `llama3.2:3b`. Kaggle's 1–2 GBps download speeds make even large model pulls fast.
+
+**Cell 4 — Get the public URL:**
+```python
+import subprocess, time, requests
+subprocess.Popen(["ngrok", "http", "11434", "--request-header-add", "ngrok-skip-browser-warning:true"])
+time.sleep(3)
+tunnels = requests.get("http://localhost:4040/api/tunnels").json()
+print(tunnels["tunnels"][0]["public_url"])
+```
+
+This prints a URL like `https://abc123.ngrok-free.app`. **Copy it** — this is your Ollama endpoint.
+
+### Step 3 — Point MASTOC-LLM at the Kaggle server
+
+Use the `--ollama-url` flag with the URL printed in Cell 4:
+
+```powershell
+# Full-GABM sweep using the Kaggle-hosted model
+python run_baseline_sweep.py --condition full-gabm --runs 5 `
+    --backend ollama --llm-model llama3.2 `
+    --ollama-url https://abc123.ngrok-free.app --yes
+
+# Hybrid condition with a larger model
+python run_baseline_sweep.py --condition hybrid --num-llm-agents 1 `
+    --backend ollama --llm-model deepseek-r1:32b `
+    --ollama-url https://abc123.ngrok-free.app --yes
+```
+
+The model name in `--llm-model` must match what you pulled in Cell 3.
+
+For interactive GUI runs, open `MASTOC-LLM.nlogox` in NetLogo, set **Backend** to `ollama`, and paste the ngrok URL into the **Ollama URL** input field.
+
+### Practical notes
+
+- **Session limit.** Each Kaggle session runs for up to 12 hours before timing out. When it times out, Cell 4 will give you a new ngrok URL — update `--ollama-url` accordingly for subsequent runs.
+- **Weekly quota.** The free tier provides 30 GPU hours per week. CPU usage is unlimited and unmetered. Baseline sweeps (no LLM calls) run fine without touching the GPU quota.
+- **Cost.** Ollama runs are always free — the `run_baseline_sweep.py` cost estimator reports $0.00 for Ollama backends, so you can pass `--yes` to skip the confirmation prompt.
+- **Model availability.** The full Ollama library is accessible. If you want to run a model you've seen in the results tables (DeepSeek R1:32b, gemma3:27b, Llama 3.2 3B), just change the model name in Cell 3 and `--llm-model`.
+- **Keeping the session alive.** Kaggle notebooks time out if left idle. If you're running a long sweep headlessly, the session will stay active as long as a cell is executing.
+
+---
+
 ## Troubleshooting
 
 **`'py' extension not found` warning**
