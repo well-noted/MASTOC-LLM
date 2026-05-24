@@ -306,3 +306,24 @@ tick,agent_id,backend,model,action,action_name,message,reasoning,thinking,raw_re
   ""message"": ""Agent 0, I agree with your commitment to stability. Agent 1, let's monitor the grass levels before we consider any expansion.""
 }
 ```",96.4,27,55.651,54.0,52.345
+16,2,ollama,gemma4:26b,0,KEEP,I agree with the commitment to stability. Let's maintain our current levels to ensure the pasture stays healthy for the long term.,"The pasture is still very healthy, and my neighbors have expressed a clear commitment to stability. Since adding a cow would increase the gap between my herd and theirs, I will keep my herd steady to avoid guilt and maintain our shared equilibrium.",,"```json
+{
+  ""reasoning"": ""The pasture is still very healthy, and my neighbors have expressed a clear commitment to stability. Since adding a cow would increase the gap between my herd and theirs, I will keep my herd steady to avoid guilt and maintain our shared equilibrium."",
+  ""action"": 0,
+  ""message"": ""I agree with the commitment to stability. Let's maintain our current levels to ensure the pasture stays healthy for the long term.""
+}
+```",96.3,27,55.649,54.0,52.347
+16,0,ollama,gemma4:26b,0,KEEP,I appreciate the commitment to stability. Let's continue to monitor the grass levels closely.,"The neighbors have explicitly committed to stability, and since the grass levels remain very high, keeping my herd size steady is the most prudent and risk-averse approach to honor our shared agreement.",,"```json
+{
+  ""reasoning"": ""The neighbors have explicitly committed to stability, and since the grass levels remain very high, keeping my herd size steady is the most prudent and risk-averse approach to honor our shared agreement."",
+  ""action"": 0,
+  ""message"": ""I appreciate the commitment to stability. Let's continue to monitor the grass levels closely.""
+}
+```",96.3,15,31.649,30.0,28.347
+16,1,ollama,gemma4:26b,0,KEEP,I hear you both. I agree with the focus on stability; let's continue to monitor the grass levels before making any changes.,"The grass levels are still high, but both neighbors have explicitly expressed a desire for stability. Given my guilt-averse and risk-averse nature, I will choose to keep my current herd to maintain cooperation.",,"```json
+{
+  ""reasoning"": ""The grass levels are still high, but both neighbors have explicitly expressed a desire for stability. Given my guilt-averse and risk-averse nature, I will choose to keep my current herd to maintain cooperation."",
+  ""action"": 0,
+  ""message"": ""I hear you both. I agree with the focus on stability; let's continue to monitor the grass levels before making any changes.""
+}
+```",96.3,25,51.649,50.0,48.347

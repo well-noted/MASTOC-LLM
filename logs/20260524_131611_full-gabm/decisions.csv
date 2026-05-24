@@ -598,3 +598,48 @@ tick,agent_id,backend,model,action,action_name,message,reasoning,thinking,raw_re
   ""action"": ""0"",
   ""message"": """"
 }",95.4,24,49.609,48.0,46.387
+41,1,ollama,llama3:8b-instruct-q4_0,0,KEEP,,"I'm considering adding to my herd, but I don't want to overdo it since the grassland is still okay. Since my neighbours are keeping their herds the same size, I'll follow suit.",,"{
+  ""reasoning"": ""I'm considering adding to my herd, but I don't want to overdo it since the grassland is still okay. Since my neighbours are keeping their herds the same size, I'll follow suit."",
+  ""action"": 0,
+  ""message"": """"
+}",95.3,24,49.607,48.0,46.389
+41,0,ollama,llama3:8b-instruct-q4_0,0,KEEP,"I'm choosing to keep my current herd size for now, let's see how things unfold.",The pasture condition is still very good with plenty of grass available. I'm self-interested and don't want to remove any cows yet as it will likely have a greater impact on my future payoffs. Keeping the herd size same seems like the safest bet.,,"{
+  ""reasoning"": ""The pasture condition is still very good with plenty of grass available. I'm self-interested and don't want to remove any cows yet as it will likely have a greater impact on my future payoffs. Keeping the herd size same seems like the safest bet."",
+  ""action"": 0,
+  ""message"": ""I'm choosing to keep my current herd size for now, let's see how things unfold.""
+}",95.3,10,21.607,20.0,18.389
+41,2,ollama,llama3:8b-instruct-q4_0,0,KEEP,"I understand the temptation to add more cows, let's be mindful of the long-term sustainability.","The grassland is still abundant, but I'm considering the potential impact on our shared resources. Since neighbours haven't reduced their herds yet, I'll try to moderate my actions.",,"{
+  ""reasoning"": ""The grassland is still abundant, but I'm considering the potential impact on our shared resources. Since neighbours haven't reduced their herds yet, I'll try to moderate my actions."",
+  ""action"": 0,
+  ""message"": ""I understand the temptation to add more cows, let's be mindful of the long-term sustainability.""
+}",95.3,38,77.607,76.0,74.389
+42,0,ollama,llama3:8b-instruct-q4_0,0,KEEP,,I've seen no significant changes in pasture state or neighbour's actions recently. The expected payoffs for adding or removing a cow don't seem significantly different from keeping my current herd. I'm also influenced by Agent 2's message about sustainability.,,"{
+  ""reasoning"": ""I've seen no significant changes in pasture state or neighbour's actions recently. The expected payoffs for adding or removing a cow don't seem significantly different from keeping my current herd. I'm also influenced by Agent 2's message about sustainability."",
+  ""action"": 0,
+  ""message"": """"
+}",95.2,10,21.605,20.0,18.391
+42,2,ollama,llama3:8b-instruct-q4_0,0,KEEP,,"I'll stick with KEEP as the pool isn't drastically changing and neighbors seem to be on a similar page, so it's a cautious but reasonable choice. I've been fairly flexible before and adding more cows might not necessarily change the situation much.",,"{
+  ""reasoning"": ""I'll stick with KEEP as the pool isn't drastically changing and neighbors seem to be on a similar page, so it's a cautious but reasonable choice. I've been fairly flexible before and adding more cows might not necessarily change the situation much."",
+  ""action"": 0,
+  ""message"": """"
+}",95.2,38,77.605,76.0,74.391
+42,1,ollama,llama3:8b-instruct-q4_0,0,KEEP,,I'll keep my herd as grassland conditions are still good and my payoff is decent. Neighbourly messages also suggest a cautious approach.,,"{
+  ""reasoning"": ""I'll keep my herd as grassland conditions are still good and my payoff is decent. Neighbourly messages also suggest a cautious approach."",
+  ""action"": 0,
+  ""message"": """"
+}",95.2,24,49.605,48.0,46.391
+43,2,ollama,llama3:8b-instruct-q4_0,0,KEEP,,I'm cautious about the shared resources and don't want to strain the grassland. Adding another cow seems too risky considering the neighbors' behaviors.,,"{
+  ""reasoning"": ""I'm cautious about the shared resources and don't want to strain the grassland. Adding another cow seems too risky considering the neighbors' behaviors."",
+  ""action"": 0,
+  ""message"": """"
+}",95.2,38,77.605,76.0,74.391
+43,0,ollama,llama3:8b-instruct-q4_0,0,KEEP,,"The pasture is still in good condition, and I'll keep my current herd size to maintain a safe level of profit.",,"{
+""reasoning"": ""The pasture is still in good condition, and I'll keep my current herd size to maintain a safe level of profit."",
+""action"": 0,
+""message"": """"
+}",95.2,10,21.605,20.0,18.391
+43,1,ollama,llama3:8b-instruct-q4_0,1,ADD,Considering adding to your herds as well?,"The grassland is still abundant, and the forecasted payoffs suggest adding a cow should be profitable. However, I'm also cautious about falling behind my neighbours, especially Agent 2 who has a larger herd.",,"{
+  ""reasoning"": ""The grassland is still abundant, and the forecasted payoffs suggest adding a cow should be profitable. However, I'm also cautious about falling behind my neighbours, especially Agent 2 who has a larger herd."",
+  ""action"": 1,
+  ""message"": ""Considering adding to your herds as well?""
+}",95.2,24,49.605,48.0,46.391
