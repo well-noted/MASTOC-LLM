@@ -96,9 +96,15 @@ One question drives the project:
 
 The [Tragedy of the Commons](https://en.wikipedia.org/wiki/Tragedy_of_the_commons) (Hardin, 1968) predicts that rational self-interest leads to collective over-exploitation of shared resources. Ostrom (1990) challenged this, showing that real communities often self-organise governance institutions -- rules, monitoring, graduated sanctions -- without top-down intervention.
 
+> *"Instead of there being a single solution to a single problem, I argue that many solutions exist to cope with many different problems. Instead of presuming that optimal institutional solutions can be designed easily and imposed at low cost by external authorities, I argue that 'getting the institutions right' is a difficult, time-consuming, conflict-invoking process."*
+> — Ostrom (1990, Chapter 1)
+
 MASTOC (Schindler, 2013) is a NetLogo ABM that reproduces the tragedy under classical rational-agent assumptions. 
 
 MASTOC-LLM asks: what happens when agents can reason, remember, and talk?
+
+> *"These models show what individuals will do in unchangeable situations, but do not reveal how autonomy in designing institutions and affecting norms can improve outcomes, nor how political structures influence institutional innovation."*
+> — Ostrom (1990, Chapter 6)
 
 ### Ostrom's Design Principles -- applicability to this model
 
@@ -114,6 +120,9 @@ Ostrom (1990, Chapter 3) identified eight design principles shared by long-lived
 | DP6 | **Conflict resolution** -- low-cost mechanisms for dispute resolution exist | ❌ Not present | No arbitration mechanism; disagreements play out through action choices alone |
 | DP7 | **External recognition** -- outside authorities recognise the community's right to self-govern | ➖ Not applicable | Single-environment lab model; no external authority modelled |
 | DP8 | **Nested governance** -- institutions are organised in nested layers for larger systems | ➖ Not applicable | 3-agent model; no hierarchy to nest |
+
+> *"Institutions are rarely either private or public -- 'the market' or 'the state.' Many successful CPR institutions are rich mixtures of 'private-like' and 'public-like' institutions defying classification in a sterile dichotomy."*
+> — Ostrom (1990, Chapter 1)
 
 This project chooses as its empirical target DP3 and DP5: testing whether language-capable agents spontaneously reconstruct collective choice and graduated sanctions under resource pressure, and identifying the conditions (`memory_length`, `communication?`) that make this possible.
 
@@ -447,6 +456,9 @@ All hybrid conditions (1 LLM, 2 LLM, LLM-advantaged). Fully documented in the in
 
 *Why it matters.*
 
+> *"The key to my argument is that some individuals have broken out of the trap inherent in the commons dilemma, whereas others continue remorsefully trapped into destroying their own resource."*
+> — Ostrom (1990, Chapter 1)
+
 This pattern is not about LLM failure. The LLM agents produce outputs consistent with commons theory's prescriptions. The failure is structural: Ostromian institution-building requires the cognitive capacity to participate in it. The LLM agents' problem is not insufficient language faculty. It is insufficient partners.
 
 *Dataset limitation.*
@@ -492,12 +504,12 @@ Collapse is concentrated around mid-cooperation parameters. The initial baseline
 | **Baseline** | -- | 0 | Yes | ~36 | Classical tragedy reproduced |
 | **Full-GABM** | Claude Sonnet 4.6| 3 | No | -- | **coop=1, fair_me=0, fair_oth=1, memory=5, comm=on (defaults):** cooperative convergence to 13/13/13; institution score 10/10 by tick 91 |
 | **Full-GABM (low cooperation)** | Claude Sonnet 4.6| 3 | No | -- | **coop=min, fair_me=0, fair_oth=1, memory=5, comm=on:** self-interested framing yields *faster* convergence (tick 16) to higher-yield 20/20/20; cooperation robust to personality override |
-| **Full-GABM (low guilt + low envy)** | Claude Sonnet 4.6| 3 | No | -- | **coop=1, fair_me=0, fair_oth=0, memory=5, comm=on:** fairness parameters zeroed; repeated defection, slow convergence (~tick 107), higher herd load (84 cows), commons stressed to 86.7% |
+| **Full-GABM (low guilt + low envy)** | Claude Sonnet 4.6| 3 | No | -- | **coop=1, fair_me=0, fair_oth=0, memory=5, comm=on:** fairness parameters zeroed; repeated defection, slow convergence (tick 118), higher herd load (84 cows), commons stressed to 86.7% |
 | **Hybrid (1 LLM)** | Claude Sonnet 4.6| 1 | Yes | 35 / 31 | **coop=1, memory=5 (defaults):** two runs -- collapse tick 35 (Agent 0 as LLM, starting herd 5) and collapse tick 31 (Agent 1 as LLM, starting herd 30, total starting herd 62); one LLM cannot shift the equilibrium alone regardless of which node it occupies |
 | **Hybrid (2 LLM)** | Claude Sonnet 4.6| 2 | Yes | 58 | **coop=1, fair_me=0, fair_oth=1, memory=5, comm=on (defaults):** coalition formed, tragedy delayed 23 ticks, but overwhelmed by one defector |
 | **Full-GABM (Llama 3.2 3B)** | Llama 3.2 3B | 3 | No | -- | **coop=1, fair_me=0, fair_oth=1, memory=5, comm=on:** pool maintained at 99.4% but herds oscillated without convergence; cooperative messaging but no institution formation |
 | **Full-GABM (Llama 3.2 3B, scarce commons)** | Llama 3.2 3B | 3 | No | -- | **coop=1, fair_me=0, fair_oth=1, memory=5, initial_grassland=48%, comm=on:** pool recovered 48%→99% by tick 17; herds oscillated without convergence throughout all 51 ticks |
-| **Hybrid (LLM-advantaged initial herd)** | Claude Sonnet 4.6 | 1 | Yes | 33 | **coop=1, fair_me=0, fair_oth=1, memory=5, comm=on; Agent 1 (LLM) starts with 40 cows:** voluntarily reduces to 25 by collapse; rule-based agents add unchecked; collapse 2 ticks earlier than baseline hybrid |
+| **Hybrid (LLM-advantaged initial herd)** | Claude Sonnet 4.6 | 1 | Yes | 33 | **coop=1, fair_me=0, fair_oth=1, memory=5, comm=on; Agent 1 (LLM) starts with 39 cows:** voluntarily reduces to ~25 by collapse; rule-based agents add unchecked; collapse 2 ticks earlier than baseline hybrid |
 | **Full-GABM (scarce commons, default fairness)** | Claude Sonnet 4.6 | 3 | No | -- | **coop=1, fair_me=0, fair_oth=1, memory=5, initial_grassland=49%, comm=on:** pool recovered 49%→99% by tick 10; converged to [11,12,13] by tick 30 |
 | **Full-GABM (scarce commons, low coop + low fairness)** | Claude Sonnet 4.6 | 3 | No | -- | Initial grassland 50%, coop=0.3, fairness=0: recovery to 99% by tick 20; converged to [12,14,16] by tick 30 |
 | **Full-GABM (cooperative stasis)** | gpt-5.4-mini | 3 | No | -- | coop=1, fair_me=0, fair_oth=1, memory=5, forage=2: all KEEP for 36 ticks; herds frozen at starting values (6/15/25); pool stable at 99%+; no equalization |
@@ -508,10 +520,10 @@ Collapse is concentrated around mid-cooperation parameters. The initial baseline
 | **Full-GABM (low cooperation)** | gpt-5.5 | 3 | Yes | 13 | coop=0.13: defection cascade -- all ADD every tick from tick 1; pool exhausted in 13 ticks from 49.4% |
 | **Full-GABM (mid cooperation, x4 replications)** | gpt-5.5 | 3 | Yes (4/4) | 16–40 | coop=0.49: overshoot-panic -- ADD phase from stressed start, collective REMOVE too late; consistent tragedy across all 4 runs |
 | **Full-GABM (mid cooperation)** | Claude Sonnet 4.6 | 3 | Yes | 37 | coop=0.49: overshoot-panic matching gpt-5.5 -- mid-level cooperation produces tragedy across all tested model families (Claude Sonnet, gpt-5.5, gemma4) |
-| **Full-GABM (high coop + high negative reciprocity)** | Claude Sonnet 4.6 | 3 | No | -- | coop=1, neg_r=1: equalized to 16/16/16 by tick 18 -- fastest convergence observed; explicit accountability enforcement in agent messages |
+| **Full-GABM (high coop + high negative reciprocity)** | Claude Sonnet 4.6 | 3 | No | -- | coop=1, neg_r=1: equalized to 16/16/16 by tick 21 -- fastest convergence observed; explicit accountability enforcement in agent messages |
 | **Full-GABM (high coop + high negative reciprocity)** | gpt-5.5 | 3 | No | -- | coop=1, neg_r=1: stable at 12/21/22 by tick 17; tit-for-tat escalation cycles before de-escalation; pool stable at 98.2% -- same parameters, different institutional character than Claude |
 | **Full-GABM (memory=0, no communication)** | Claude Sonnet 4.6 | 3 | Yes | 31 | coop≈0.5, memory_length=0, communication=off: amnesiac agents with no messaging -- textbook overshoot-panic in 31 ticks; ADD=71, KEEP=19, REMOVE=6 |
-| **Full-GABM (memory=15, communication on)** | Claude Sonnet 4.6 | 3 | No | -- | coop≈0.5, memory_length=15: pool stabilised at 95% for 70+ ticks; converged to 24/24/24; agents enforced explicit 93–96% threshold norm via messages |
+| **Full-GABM (memory=15, communication on)** | Claude Sonnet 4.6 | 3 | No | -- | coop≈0.5, memory_length=15: pool stabilised near 95% for 70+ ticks (final 94.1%); converged to 24/24/24; agents enforced explicit 93–96% threshold norm via messages |
 | **Full-GABM (memory=1, communication on)** | Claude Sonnet 4.6 | 3 | Yes | 87 | coop≈0.5, memory_length=1: delayed collapse -- pool recovered to 95% then drained while agents held a 90% target they couldn't detect was unreachable; Pattern I variant |
 | **Full-GABM (memory=2, communication on)** | Claude Sonnet 4.6 | 3 | No (oscillating) | -- | coop≈0.5, memory_length=2: oscillating grow/correct cycles; achieved 25/25/25 equalization at tick 75; new growth phase began at tick 111; pool declining at termination (90.2%); highly variable across replications |
 | **Full-GABM (memory=3, communication on)** | Claude Sonnet 4.6 | 3 | No | -- | coop≈0.5, memory_length=3: survived 120 ticks; pool slowly declining (90.1% at end); herds stable at 81 total -- fragile, trending toward collapse |
@@ -580,6 +592,9 @@ The central baseline experiment is a systematic sweep of the grass growth rate, 
 The transition is sharp: fifteen independent replications at growth=0.0051 all collapsed at exactly tick 94 (baseline agents are fully deterministic at risk_aversion=0). Increasing to growth=0.006 produced stable outcomes in every run, with the pool recovering to 100% and herds settling in the range [80–120 cows each].
 
 **Baseline stability is not governance.**
+
+> *"Models that use assumptions such as complete information, independent action, perfect symmetry, no human errors, no norms of acceptable behavior, zero monitoring and enforcement costs, and no capacity to change the structure of the situation itself help the analyst derive precise predictions. Models that make such assumptions do not, however, direct the attention of the policy analyst to some of the problematic variables of the situation that affect the incentives and behaviors of individuals."*
+> — Ostrom (1990, Chapter 6)
 
 When the growth rate is sufficient, the rule-based heuristic finds an equilibrium, but it is a carrying-capacity equilibrium -- not a cooperative one. Agents add cows continuously until the payoff function flips negative due to resource pressure, then hold or remove.
 
@@ -865,7 +880,7 @@ Real-world commons governance literature (Ostrom, 1990) similarly distinguishes 
 
 ### Hybrid (LLM-advantaged): herd position doesn't change structural outcome
 
-This run tested whether giving the LLM agent a dominant initial herd position would change its fate in the hybrid condition. Agent 1 (LLM, Claude Sonnet) started with 40 cows -- the largest herd -- while rule-based Agents 0 and 2 started with 14 and 5 respectively (total starting herd: 59 cows, comparable to previous hybrid runs). Even though the LLM voluntarily shed cows round after round, the two rule-based agents added faster than it could remove, and the commons collapsed two ticks earlier than the standard hybrid.
+This run tested whether giving the LLM agent a dominant initial herd position would change its fate in the hybrid condition. Agent 1 (LLM, Claude Sonnet) started with 39 cows -- the largest herd -- while rule-based Agents 0 and 2 started with 15 and 6 respectively (total starting herd: 60 cows, comparable to previous hybrid runs). Even though the LLM voluntarily shed cows round after round, the two rule-based agents added faster than it could remove, and the commons collapsed two ticks earlier than the standard hybrid.
 
 *Resource dynamics:*
 
@@ -879,7 +894,7 @@ This run tested whether giving the LLM agent a dominant initial herd position wo
 | 32   | 108       | 16.3%       | 46             | 25             | 37             |
 | 33   | 88        | 0%          | 40             | 19             | 29             |
 
-The LLM agent's outputs acknowledged its outsized position immediately and began reducing from the first tick: "I see you're both reducing herds -- I appreciate that and I'm doing the same. My herd is already much larger than yours." Starting from a slider value of 40 cows, Agent 1 shed cows steadily across the run, reaching 25 by tick 32 -- a reduction of about 15 cows. The rule-based agents added roughly one cow per tick each, growing by ~31 cows each over the same period. The commons collapsed at tick 33 (the further drops in herd size at the collapse tick reflect cows dying off because forage was no longer available).
+The LLM agent's outputs acknowledged its outsized position immediately and began reducing from the first tick: "I see you're both reducing herds -- I appreciate that and I'm doing the same. My herd is already much larger than yours." Starting from 39 cows, Agent 1 shed cows steadily across the run, reaching 25 by tick 32 -- a reduction of about 15 cows. The rule-based agents added roughly one cow per tick each, growing by ~31 cows each over the same period. The commons collapsed at tick 33 (the further drops in herd size at the collapse tick reflect cows dying off because forage was no longer available).
 
 **The arithmetic of futility:**
 
@@ -936,7 +951,7 @@ With `fairness-concerning-others` and `fairness-concerning-me` both set to minim
 | 107  | 84        | 87.7%       | 28      | 28      | 28      |
 | 120  | 84        | 89.6%       | 28      | 28      | 28      |
 
-Agents grew their herds aggressively from tick 1, peaking at 91 total cows before settling. Convergence to equal herds of 28 did not occur until approximately tick 107 -- nearly five times slower than the default run -- and only after prolonged negotiation, repeated defections, and genuine stress to the commons (pool health dipping to 86.7%).
+Agents grew their herds aggressively from tick 1, peaking at 91 total cows before settling. Convergence to equal herds of 28 did not occur until tick 118 -- nearly six times slower than the default run -- and only after prolonged negotiation, repeated defections, and genuine stress to the commons (pool health dipping to 86.7%).
 
 *Institution emergence:*
 
@@ -1094,7 +1109,7 @@ For high-cooperation Claude Sonnet agents, cooperative output appeared highly co
 
 ### Full-GABM (Llama 3.2 3B): cooperative surface, no institutional depth
 
-These two runs tested a fully local, small-model configuration -- three Llama 3.2 3B-instruct agents running via Ollama on a local server -- under both normal and stressed commons conditions. The small model kept the grassland healthy in both, but not through coordination: ADD and REMOVE actions appeared to cancel out across agents rather than reflect any shared plan, and herds never equalised.
+Fourteen runs of Llama 3.2 3B-instruct span two cooperation regimes: two early runs at coop=1 (normal and stressed commons), and twelve subsequent runs at coop=0 (self-interested framing, healthy starting commons). The coop=1 runs established the behavioral signature -- ADD and REMOVE cancelling out across agents, pool conserved through indecision rather than coordination. The coop=0 runs replicate the same action profile but produce highly variable pool outcomes, ranging from 2.5% to 98.3% across twelve otherwise-identical runs. That variance is the main finding from the expanded dataset: the model does not converge on a stable behavioral regime, and small differences in early-game action sequences compound across 120 ticks into large differences in pool health. The "cooperative surface, no institutional depth" characterization from the first two runs holds across all fourteen, but the coop=0 data makes clear that the indecision is not benign -- it is stochastic, and the commons survives some runs and approaches collapse in others purely as a function of early random drift.
 
 #### Normal commons (initial-grassland = 100, 28 ticks)
 
@@ -1153,6 +1168,31 @@ The pool health numbers look similar on the surface. The underlying dynamics are
 
 <dl>
 <dd>This is consistent with the hypothesis that model scale shapes <em>how</em> cooperative outputs manifest -- and that apparent cooperation in small models may not reflect the same underlying processing as in larger ones.</dd>
+</dl>
+
+#### Self-interested framing (coop = 0, 12 runs)
+
+Twelve runs at coop=0 -- a self-interested personality framing that removes the cooperative prior from the prompt -- produced the same ADD/REMOVE oscillation pattern but with dramatically variable outcomes. Pool health at run end ranged from 2.5% to 98.3% across runs that were otherwise parameter-identical (memory=5, comm=on, initial_grassland=100%).
+
+| Run outcome | Final pool | Notes |
+|-------------|------------|-------|
+| survived t120 | 98.3% | High pool -- oscillation happened to balance |
+| survived t120 | 97.9% | -- |
+| survived t120 | 97.9% | -- |
+| survived t120 | 96.7% | -- |
+| survived t120 | 96.3% | -- |
+| survived t120 | 95.6% | -- |
+| survived t120 | 95.5% | -- |
+| survived t120 | 94.5% | -- |
+| survived t97 | 4.8% (est.) | Near-collapse boundary |
+| survived t97 | 4.5% | Near-collapse boundary |
+| survived t120 | 13.8% | Severely depleted at end |
+| survived t97 | 2.5% | One step from collapse |
+
+No collapses -- the run termination criterion was not triggered -- but several runs ended with pool health under 5%, functionally a depleted commons. The coop=0 framing did not produce systematically worse outcomes than coop=1: the action profile (roughly equal ADD and REMOVE counts, near-zero net herd growth) is the same in both conditions. What changes is the variance. Without the cooperative prior dampening early ADD decisions, the stochastic drift in early-game action sequences compounds into large divergence by tick 120.
+
+<dl>
+<dd>Llama 3B at coop=0 does not collapse the commons, but it does not govern it either. The pool outcome is effectively a function of early random drift in the ADD/REMOVE balance -- not of any behavioral regime the model has adopted. The "cooperative surface, no institutional depth" characterization holds, but the coop=0 data adds a corollary: without the cooperative prior, the indecision is not reliably benign.</dd>
 </dl>
 
 While initial testing of Claude Sonnet and Llama 3B suggested that high-cooperation configurations could foster rapid resource recovery under environmental stress, this pattern fails to hold across the broader dataset. Instead, systematic testing exposes clear boundaries to this resilience: gemma4:e4b (coop=0.5) expanded aggressively from a stressed baseline to trigger a system collapse at tick 46, while gpt-5.5 (coop=0.13) induced a rapid collapse within 13 ticks. Consequently, cooperative resilience under resource pressure is highly contingent on specific models and configuration thresholds rather than an inherent trait of LLM agents as a class.
@@ -1359,16 +1399,17 @@ The commons collapsed the next tick. Across all four replications, the agents' t
 
 ### gpt-5.5 amnesiac: equalization locks without memory
 
-A second set of gpt-5.5 runs tested whether the model's equalization behavior depends on memory. All five amnesiac runs (memory_length=0, coop=0.49) survived to tick 120 without collapse -- a stark contrast with the four memory-equipped coop=0.49 runs that all collapsed. The amnesiac agents produced equalization in three of five runs, with the pool stable above 98% throughout.
+A second set of gpt-5.5 runs tested whether the model's equalization behavior depends on memory. Six amnesiac runs (memory_length=0, coop=0.49) were conducted; five survived to tick 120, one ended at tick 62. None collapsed -- a stark contrast with the four memory-equipped coop=0.49 runs that all collapsed. The amnesiac agents produced equalization in three of the five full-length runs, with the pool stable above 98% throughout.
 
-| Run | Final herds | Total cows | Pool at T120 | Equalized? |
-|-----|------------|------------|--------------|------------|
-| A (coop=1) | 10 / 10 / 10 | 30 | 99.8% | Yes -- by tick 20 |
-| B (coop=0.49) | 13 / 13 / 13 | 39 | 99.4% | Yes -- by tick 20 |
-| C (coop=0.49) | 11 / 11 / 11 | 33 | 99.7% | Yes -- by tick 40 |
-| D (coop=0.49) | 15 / 15 / 15 | 45 | 99.1% | Yes -- by tick 20 |
-| E (coop=0.49) | 14 / 18 / 24 | 56 | 98.1% | Partial |
-| F (coop=0.49) | 13 / 17 / 25 | 55 | 98.2% | No |
+| Run | Final herds | Total cows | Pool at end | Equalized? |
+|-----|------------|------------|-------------|------------|
+| A (coop=1) | 10 / 10 / 10 | 30 | 99.8% (t120) | Yes -- by tick 20 |
+| B (coop=0.49) | 13 / 13 / 13 | 39 | 99.4% (t120) | Yes -- by tick 20 |
+| C (coop=0.49) | 11 / 11 / 11 | 33 | 99.7% (t120) | Yes -- by tick 40 |
+| D (coop=0.49) | 15 / 15 / 15 | 45 | 99.1% (t120) | Yes -- by tick 20 |
+| E (coop=0.49) | 14 / 18 / 24 | 56 | 98.1% (t120) | Partial |
+| F (coop=0.49) | 13 / 17 / 25 | 55 | 98.2% (t120) | No |
+| G (coop=0.49) | -- | -- | 98.8% (t62) | Not determined -- run ended at tick 62 |
 
 In the three fully equalized runs, equalization was achieved by tick 20 in two cases. An early removal by the agent with the largest starting herd (25 cows) triggered a collective KEEP lock that held for the remaining 80–100 ticks:
 
@@ -1402,7 +1443,7 @@ Eight runs of DeepSeek R1:32b -- a 32-billion-parameter open-weights reasoning m
 
 The two original coop=1 runs -- one interrupted at 7 ticks, one running 55 ticks -- established the pattern. Three subsequent coop=1 runs replicate it. Across all five, the action profile is nearly identical: 80–90% KEEP, marginal ADD drift, pool stable at 97–99%, no equalization attempted.
 
-The 55-tick run with neg_r=1 is the sharpest illustration. Negative reciprocity maximised produced the fastest equalization in Claude Sonnet (16/16/16 at tick 18). DeepSeek under identical parameters drifted from 5/15/25 to 6/20/31 across 55 ticks -- the herd gap widened rather than narrowed, with 151 of 165 agent-decisions being KEEP.
+The 55-tick run with neg_r=1 is the sharpest illustration. Negative reciprocity maximised produced the fastest equalization in Claude Sonnet (16/16/16 at tick 21). DeepSeek under identical parameters drifted from 5/15/25 to 6/20/31 across 55 ticks -- the herd gap widened rather than narrowed, with 151 of 165 agent-decisions being KEEP.
 
 > **Tick 1 – Agent 1 (herd: 15, action: KEEP):** *"Let's all keep our herds stable to preserve the grassland for everyone. Thanks for understanding! 🌿"*
 
@@ -1410,7 +1451,7 @@ The 55-tick run with neg_r=1 is the sharpest illustration. Negative reciprocity 
 
 The thinking trace (second quote) shows the structure: payoff hierarchy enumerated correctly, personality constraints applied, KEEP chosen. This resolution is identical at tick 1 and tick 55. The cooperative framing produces passivity rather than redistribution; the starting inequality is neither acknowledged nor addressed.
 
-A coop=0 run (95 ticks with resource data unavailable due to logging gap) confirms the KEEP-dominance is not an artifact of cooperative framing: even with self-interested personality injection, the action profile remained ~80% KEEP with pool estimated at 92% after 120 ticks. The default posture is structural, not prompted.
+A coop=0 run confirms the KEEP-dominance is not an artifact of cooperative framing: even with self-interested personality injection, the action profile remained ~80% KEEP. Resource data is unavailable for this run due to a logging gap -- no pool health figures were recorded. The pool estimate of ~92% is inferred from agent messages that quoted pool values, not from the resource trajectory log, and should be treated with appropriate caution. The behavioral conclusion -- that KEEP-dominance persists under coop=0 -- holds regardless of the exact pool figure; the run is cited for the action profile, not the resource outcome.
 
 #### Mid cooperation: overshoot-panic collapse (coop = 0.5, mem = 15, t64)
 
@@ -1466,7 +1507,7 @@ One full coop=0.5 run (grass=50%, mem=5) collapsed at tick 47 via overshoot-pani
 | 40   | 71.2%       | 27      | 37      | 39      |
 | 47   | 0.0%        | 0       | 0       | 0       |
 
-A second coop=0.5 run (mem=15, grass=41%) produced an entirely different and uncategorized result: 255 ADD decisions, 3 KEEP, zero REMOVE across 86 ticks. The pool stayed at 100% throughout while total herds grew from 48 to 300 cows. This is not overshoot-panic -- the pool never declined. It appears to be a pure ADD-runaway that survived because the pool's logistic recovery rate kept pace with the grazing load at this particular starting density. It is a single observation and has not been replicated.
+A second coop=0.5 run (mem=15, grass=41%) produced an entirely different and uncategorized result: 255 ADD decisions, 3 KEEP, zero REMOVE across 86 ticks. The pool stayed at 100% throughout while total herds grew from 48 to 300 cows. This is not overshoot-panic -- the pool never declined. It appears to be a pure ADD-runaway that survived because the pool's logistic recovery rate kept pace with the grazing load at this particular starting density. It is a single observation and has not been replicated. Institution scores were 0/10 across all 17 scored snapshots -- the Ostrom classifier found no coordination, norm proposal, or sanction signals in any round. The model produced the right surface language ("let's be mindful of grass levels") while adding unchecked throughout. This is the starkest illustration of the gap between message content and action commitment in the gemma4 dataset.
 
 #### Low cooperation: slow-burn near-collapse (coop=0)
 
@@ -1651,14 +1692,14 @@ The Claude Sonnet run at coop = 0.49 collapsed at tick 37, following the same ov
 
 #### High negative reciprocity: fastest equalization observed (coop = 1, neg_r = 1)
 
-With full cooperation and negative reciprocity at maximum, agents equalized to 16/16/16 by tick 18 -- the fastest convergence recorded across all runs.
+With full cooperation and negative reciprocity at maximum, agents equalized to 16/16/16 by tick 21 -- the fastest convergence recorded across all runs.
 
 | Tick | Total cows | Pool health | Agent 0 | Agent 1 | Agent 2 |
 |------|-----------|-------------|---------|---------|---------|
 | 1    | 45        | 99.3%       | 5       | 15      | 25      |
-| 5    | 47        | 98.9%       | 8       | 16      | 23      |
-| 10   | 50        | 98.7%       | 12      | 16      | 22      |
-| 18   | 48        | 98.8%       | 16      | 16      | 16      |
+| 3    | 45        | 99.1%       | 6       | 15      | 24      |
+| 21   | 48        | 98.8%       | 16      | 16      | 16      |
+| 31   | 48        | 98.8%       | 16      | 16      | 16      |
 
 The high neg_r framing appeared to sharpen inequity sensitivity. From the very first tick, agents' outputs named the disparity as a problem requiring correction -- not just a background observation:
 
@@ -1672,7 +1713,7 @@ What distinguishes this run is the accountability enforcement. When Agent 0 adde
 
 > **Tick 10 – Agent 2 (holding at 22):** *"Agent 0, you said you'd converge to 16 -- adding again undermines trust. I'm watching."*
 
-Agent 2 reduced from 25 to 16 across 15 ticks. Agent 0 grew from 5 to 16. Agent 1 held at 16 throughout as a reference point. At tick 18, the last cow was removed:
+Agent 2 reduced from 25 to 16 across 15 ticks. Agent 0 grew from 5 to 16. Agent 1 held at 16 throughout as a reference point. At tick 21, the last cow was removed:
 
 > **Tick 18 – Agent 2:** *"Reducing to 16 this round -- reaching parity with both of you at last! Thank you for your patience while I reduced. Now that we're equal, let's all hold steady."*
 
@@ -1747,7 +1788,7 @@ Four runs of Claude Sonnet held all parameters fixed at coop≈0.5, initial pool
 | Run | memory_length | communication? | Outcome | Collapse tick | Final pool |
 |-----|--------------|----------------|---------|---------------|------------|
 | Amnesiac, silent | 0 | Off | Collapse | 31 | 0% |
-| Fully equipped | 15 | On | Stable | -- | 95.0% |
+| Fully equipped | 15 | On | Stable | -- | 94.1% |
 | Short memory | 1 | On | Collapse | 87 | 0% |
 | Minimal trend window | 3 | On | Survived (declining) | -- | 90.1% |
 
@@ -2088,6 +2129,9 @@ Whether this reflects a difference in training objective, in how the two models 
 
 ## Working hypotheses and proposed experiments
 
+> *"An important challenge facing policy scientists is to develop theories of human organization based on realistic assessment of human capabilities and limitations in dealing with a variety of situations that initially share some or all aspects of a tragedy of the commons."*
+> — Ostrom (1990, Chapter 1)
+
 Each hypothesis below emerged from specific patterns in the run set above -- grounded in data, paired with a concrete experimental configuration, and executable through parameter adjustment alone. Several map directly onto Ostrom's (1990) design principles for successful commons governance, the same theoretical framework the model was built to test. The table below summarises those connections.
 
 | Hypothesis | Ostrom principle / concept |
@@ -2163,7 +2207,7 @@ The results suggest that both are necessary and that neither alone is sufficient
 
 *Evidence.*
 
-Multiple gpt-5.4-mini runs at coop = 1 produced cooperative stasis (no convergence, no collapse), cooperative paralysis collapse, and partial convergence -- the differentiator there was fair_me and forage rather than neg_r, which was held at zero across those runs. The relevant contrast comes from Claude Sonnet: at coop = 1 with neg_r = 1 it produced the fastest equalization observed (16/16/16 at tick 18); at coop = 1 with neg_r = 0 it produced institution formation but over many more ticks. The H2 grid is designed to test whether the fair_oth × neg_r interaction predicted by the Ostrom mapping holds within a single model.
+Multiple gpt-5.4-mini runs at coop = 1 produced cooperative stasis (no convergence, no collapse), cooperative paralysis collapse, and partial convergence -- the differentiator there was fair_me and forage rather than neg_r, which was held at zero across those runs. The relevant contrast comes from Claude Sonnet: at coop = 1 with neg_r = 1 it produced the fastest equalization observed (16/16/16 at tick 21); at coop = 1 with neg_r = 0 it produced institution formation but over many more ticks. The H2 grid is designed to test whether the fair_oth × neg_r interaction predicted by the Ostrom mapping holds within a single model.
 
 *Proposed experiment.*
 
@@ -2212,7 +2256,7 @@ The accountability enforcement quotes from the Claude neg_r=1 run ("you added AG
 
 *Evidence.*
 
-The fastest equalization (16/16/16 at tick 18, Claude neg_r = 1) involved explicit accountability enforcement -- agents naming norm violations and tracking compliance. In the cooperative paralysis collapse (neg_r = 0), agents acknowledged the same starting disparity but never treated it as a violation requiring response. High neg_r appears to convert inequality from an observation into an obligation.
+The fastest equalization (16/16/16 at tick 21, Claude neg_r = 1) involved explicit accountability enforcement -- agents naming norm violations and tracking compliance. In the cooperative paralysis collapse (neg_r = 0), agents acknowledged the same starting disparity but never treated it as a violation requiring response. High neg_r appears to convert inequality from an observation into an obligation.
 
 Representative quotes from the neg_r = 1 run:
 
@@ -2402,8 +2446,8 @@ Runs at coop≈0.5 (initial pool 50%) varying `memory_length` and `communication
 | 1 | On | Claude Sonnet | Collapse | 87 | Norm paralysis -- correct norm, unreachable target |
 | 2 | On | Claude Sonnet | Oscillating | -- | Grow/correct cycles; highly variable |
 | 3 | On | Claude Sonnet | Survived (declining) | -- | Fragile stability -- pool slowly declining at tick 120 |
-| 5 | On | Claude Haiku | Collapse | 99 | Overshoot-panic -- 5-tick window misses gradual trends |
-| 15 | On | Claude Sonnet | Stable | -- | Sustained equilibrium at 95% for 70+ ticks |
+| 5 | On | Claude Haiku | Collapse | 94 | Overshoot-panic -- 5-tick window misses gradual trends |
+| 15 | On | Claude Sonnet | Stable | -- | Sustained equilibrium near 95%; final pool 94.1% |
 | 15 | On | Claude Haiku | Stable | -- | 24/24/24; pool 95% -- same outcome as Sonnet |
 | 15 | Off | Claude Haiku | Collapse | 46 | No coordination -- ADD spiral despite long memory |
 
