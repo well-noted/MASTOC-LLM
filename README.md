@@ -2529,12 +2529,12 @@ The results reported here hold under a set of structural constraints worth namin
 **Unchanging conditions.** The grassland dynamics are stationary: the growth rate `r`, the forage requirement `f`, and the number of agents are fixed across a run. Real commons face shocks — drought years, population change, external policy shifts. Agents in this model never have to reason about a world whose rules are changing underneath them; they only have to coordinate under stable dynamics. As Ostrom (1990) observed of this class of model:
 
 > *"These models show what individuals will do in unchangeable situations, but do not reveal how autonomy in designing institutions and affecting norms can improve outcomes, nor how political structures influence institutional innovation."*
-> — Ostrom (1990, p. 329)
+> — Ostrom (1990, Chapter 6)
 
 **Perfect monitoring removes a realistic defection pathway.** Each agent sees every other agent's herd size and last action every tick without error or delay. This not only makes coordination easier -- it eliminates a specific escalation dynamic Ostrom identifies as central to how real commons deteriorate. When infractions go undetected, the rule-breaker updates their estimate of the monitoring system's efficacy downward, licensing more frequent violations:
 
 > *"If occasional rule infractions are not discovered, the rule-breaker is even better off in the short run. However, if one were to break the rules several times without discovery, one might revise one's estimate of the efficacy of the current monitoring system in deterring others from similar infractions. That would lead an occasional rule-breaker to adopt a higher rate of rule-breaking behavior."*
-> — Ostrom (1990, p. 333)
+> — Ostrom (1990, Chapter 6)
 
 In this model that pathway is structurally closed. An agent cannot get away with anything, so the gradual normalisation of rule-breaking that Ostrom describes -- and that DP4 and DP5 exist to counteract -- never has the opportunity to develop. The cooperative results may therefore be somewhat flattering: the model tests whether LLM agents can sustain institutions under ideal observability, not whether those institutions are robust to the conditions that make real commons governance genuinely difficult.
 
