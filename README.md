@@ -2522,23 +2522,46 @@ These are not peripheral, but questions the current dataset has sharpened rather
 
 ## Model limitations and extensions
 
-The results reported here hold under a set of structural constraints worth naming explicitly — not as disclaimers, but because relaxing them represents the most direct path toward a more realistic model. These limitations apply even in conditions where the LLM agents succeed.
+> *"Relying on metaphors as the foundation for policy advice can lead to results substantially different from those presumed to be likely."*
+> — Ostrom (1990, Chapter 1)
 
-**Perfect, symmetric information.** Every agent receives the same pool health percentage every tick. There are no private signals, no estimation errors, no agents with better or worse visibility into the resource state. Real commons governance is partly *about* this problem — Ostrom's DP4 (monitoring) is a design principle precisely because shared knowledge of resource state is hard to achieve and costly to maintain. In this model it is free and universal by assumption.
+The results reported here hold under a set of structural constraints worth naming explicitly -- not as disclaimers, but because addressing them would represent the most direct path toward a more realistic model. 
 
-**Unchanging conditions.** The grassland dynamics are stationary: the growth rate `r`, the forage requirement `f`, and the number of agents are fixed across a run. Real commons face shocks — drought years, population change, external policy shifts. Agents in this model never have to reason about a world whose rules are changing underneath them; they only have to coordinate under stable dynamics. As Ostrom (1990) observed of this class of model:
+**Perfect, symmetric information.** 
+
+Every agent receives the same pool health percentage every tick. There are no private signals, no estimation errors, no agents with better or worse visibility into the resource state. Real commons governance is partly *about* this problem — Ostrom's DP4 (monitoring) is a design principle precisely because shared knowledge of resource state is hard to achieve and costly to maintain. In this model it is free and universal by assumption.
+
+**Unchanging conditions.** 
+
+The grassland dynamics are stationary: the growth rate `r`, the forage requirement `f`, and the number of agents are fixed across a run. Real commons face shocks — drought years, population change, external policy shifts. Agents in this model never have to reason about a world whose rules are changing underneath them; they only have to coordinate under stable dynamics. As Ostrom (1990) observed of this class of model:
 
 > *"These models show what individuals will do in unchangeable situations, but do not reveal how autonomy in designing institutions and affecting norms can improve outcomes, nor how political structures influence institutional innovation."*
 > — Ostrom (1990, Chapter 6)
 
-**Perfect monitoring removes a realistic defection pathway.** Each agent sees every other agent's herd size and last action every tick without error or delay. This not only makes coordination easier -- it eliminates a specific escalation dynamic Ostrom identifies as central to how real commons deteriorate. When infractions go undetected, the rule-breaker updates their estimate of the monitoring system's efficacy downward, licensing more frequent violations:
+**Perfect monitoring removes a realistic defection pathway.** 
+
+Each agent sees every other agent's herd size and last action every tick without error or delay. This not only makes coordination easier -- it eliminates a specific escalation dynamic Ostrom identifies as central to how real commons deteriorate. When infractions go undetected, the rule-breaker updates their estimate of the monitoring system's efficacy downward, licensing more frequent violations:
 
 > *"If occasional rule infractions are not discovered, the rule-breaker is even better off in the short run. However, if one were to break the rules several times without discovery, one might revise one's estimate of the efficacy of the current monitoring system in deterring others from similar infractions. That would lead an occasional rule-breaker to adopt a higher rate of rule-breaking behavior."*
 > — Ostrom (1990, Chapter 6)
 
 In this model that pathway is structurally closed. An agent cannot get away with anything, so the gradual normalisation of rule-breaking that Ostrom describes -- and that DP4 and DP5 exist to counteract -- never has the opportunity to develop. The cooperative results may therefore be somewhat flattering: the model tests whether LLM agents can sustain institutions under ideal observability, not whether those institutions are robust to the conditions that make real commons governance genuinely difficult.
 
-**Proposed extensions.** The most tractable paths forward would introduce: (1) **stochastic shocks** to the growth rate or forage requirement, testing whether LLM agents can reason about institutional robustness under changing conditions; (2) **probabilistic monitoring** replacing perfect observation with noisy or delayed signals, opening the defection-escalation pathway Ostrom describes and testing whether graduated sanctions (DP5) can still function; and (3) **private signals** replacing the global pool percentage with per-agent observations that may diverge, testing whether coordination survives information asymmetry -- the condition DP4 is designed to address.
+**Proposed extensions.** 
+
+The most tractable paths forward would introduce: 
+
+<dl>
+
+<dd>(1) **stochastic shocks** to the growth rate or forage requirement, testing whether LLM agents can reason about institutional robustness under changing conditions; </dd>
+
+<dd>(2) **probabilistic monitoring** replacing perfect observation with noisy or delayed signals, opening the defection-escalation pathway Ostrom describes and testing whether graduated sanctions (DP5) can still function; and </dd>
+
+<dd>(3) **private signals** replacing the global pool percentage with per-agent observations that may diverge, testing whether coordination survives information asymmetry -- the condition DP4 is designed to address.</dd>
+
+</dl>
+
+The work of addressing these limitations carries a responsibility that extends beyond simulation fidelity. Social scientists bear responsibility to acknowledge and name where their models break down -- not merely as academic housekeeping, but because oversimplified models are routinely mistranslated by government and corporate interests into policy prescriptions that serve their interests rather than those of the communities whose resources are at stake. By addressing these limitations, future LLM-based CPR models may more closely resemble the behavior of real-world actors than either traditional rule-based models or MASTOC-LLM.
 
 ---
 
