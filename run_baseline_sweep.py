@@ -465,6 +465,12 @@ def run(args):
         # The JVM inherits this env var and passes it on to the py:
         # extension's Python subprocess, where the bridge reads it.
         run_env = os.environ.copy()
+        # Force the py: extension's Python subprocess to use UTF-8 for all
+        # I/O, overriding the Windows default cp1252 locale encoding.
+        # Without this, byte 0x8f (and other non-cp1252 bytes in LLM output)
+        # cause a UnicodeDecodeError inside pyext.py's socket reader.
+        run_env["PYTHONUTF8"] = "1"
+        run_env["PYTHONIOENCODING"] = "utf-8"
         if args.verbose:
             run_env["MASTOC_VERBOSE"] = "1"
 

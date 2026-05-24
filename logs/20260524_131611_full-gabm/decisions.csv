@@ -1062,3 +1062,18 @@ tick,agent_id,backend,model,action,action_name,message,reasoning,thinking,raw_re
   ""action"": 1,
   ""message"": ""Agreed; let's keep an eye on this and reassess our decisions accordingly.""
 }",79.1,39,79.262,78.0,76.736
+72,2,ollama,llama3:8b-instruct-q4_0,0,KEEP,,"Considering my self-interested approach, the forecasted payoff for adding a cow is relatively high. However, I don't want to earn significantly more than others, and Agent 1 has shown interest in conserving the commons. Taking a cue from their message, I decide to maintain the status quo.",,"{
+  ""reasoning"": ""Considering my self-interested approach, the forecasted payoff for adding a cow is relatively high. However, I don't want to earn significantly more than others, and Agent 1 has shown interest in conserving the commons. Taking a cue from their message, I decide to maintain the status quo."",
+  ""action"": 0,
+  ""message"": """"
+}",76.9,41,83.232,82.0,80.766
+72,0,ollama,llama3:8b-instruct-q4_0,1,ADD,,"Considering my neighbors' cautionary advice, I'll add one cow to my herd, as the forecasted payoff is above average. I'll keep an eye on the situation.",,"{
+  ""reasoning"": ""Considering my neighbors' cautionary advice, I'll add one cow to my herd, as the forecasted payoff is above average. I'll keep an eye on the situation."",
+  ""action"": 1,
+  ""message"": """"
+}",76.9,17,35.232,34.0,32.766
+72,1,ollama,llama3:8b-instruct-q4_0,0,KEEP,,"My neighbour, Agent 2, is also considering expansion, which might create competition for resources. I'll wait and see how the situation unfolds before making my move.",,"{
+  ""reasoning"": ""My neighbour, Agent 2, is also considering expansion, which might create competition for resources. I'll wait and see how the situation unfolds before making my move."",
+  ""action"": 0,
+  ""message"": """"
+}",76.9,40,81.232,80.0,78.766
