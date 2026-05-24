@@ -542,9 +542,15 @@ Collapse is concentrated around mid-cooperation parameters. The initial baseline
 
 ### Baseline: the Ostrom spectrum under psychosocial parameters
 
-The baseline agents speak no language and hold no memory. Each tick, they evaluate all three possible actions (ADD / KEEP / REMOVE) using the same psychosocially-adjusted payoff calculation as the original MASTOC model (Schindler, 2013): cooperation level, fairness weights, reciprocity, and conformity all shift the payoff matrix before the best-response action is selected. As risk_aversion_level increases, it serves to  override an agent's decision to expand, converting an intended ``ADD`` action into a ``KEEP``.
+The baseline agents speak no language and hold no memory. Each tick, they evaluate all three possible actions (ADD / KEEP / REMOVE) by computing psychosocially-adjusted payoffs across all possible neighbour-action combinations and selecting the action with the highest expected value. Cooperation level, fairness weights, reciprocity, and conformity all shift the payoff matrix before that best-response action is selected. As risk_aversion_level increases, it adds a probabilistic downgrade that converts an intended `ADD` action into a `KEEP`.
 
-This is a faithful replication of the original MASTOC agent: not a simplified payoff maximizer, but the full Schindler mechanism. It lacks everything the LLM conditions add: language, memory of prior rounds, and the capacity to send or receive messages. Baseline agents respond only to the current payoff matrix. Nothing carries over between ticks.
+**Relationship to the original MASTOC model.**
+
+The payoff calculation -- cost function, cooperation/fairness/reciprocity/conformity adjustments -- is ported directly from Schindler (2013) and is unchanged. The decision procedure, however, is a reconstruction. The original MASTOC model used a `nash` NetLogo extension to identify Nash equilibria from the computed payoff lists and select among them; that extension has not been maintained and is incompatible with NetLogo 7. The turtle variables `Nash-list`, `list-of-Nash-lists`, and `selected-Nash-equilibrium` are vestiges of that original architecture, retained in the codebase to preserve variable parity with Schindler's published model.
+
+In their place, MASTOC-LLM uses **expected-value best-response**: each agent picks the action whose mean adjusted payoff, averaged across all possible neighbour-action combinations, is highest. This is a standard and theoretically conservative substitute. Nash equilibrium selection and expected-value best-response coincide in the dominant-strategy cases (where one action is best regardless of what neighbours do), which includes the classical tragedy-of-the-commons regime that motivates the baseline. Where the two rules diverge -- at parameter configurations near the stability boundary -- the best-response rule produces outcomes that are arguably more behaviourally realistic than Nash equilibrium selection in a game where agents do not have full knowledge of their opponents' payoff functions. The qualitative results (collapse under self-interest, stability when cooperative reciprocity exceeds competitive reciprocity) are consistent with what the original MASTOC model produces under comparable parameters.
+
+What the baseline lacks is everything the LLM conditions add: language, memory of prior rounds, and the capacity to send or receive messages. Baseline agents respond only to the current payoff matrix. Nothing carries over between ticks.
 
 **v1.2.0 mathematical fix -- `min` → `mean` in the best-response rule.**
 
@@ -726,7 +732,17 @@ The comprehensive sweep validates the corrected baseline as a theoretically grou
 
 </dl>
 
-The empirical regularity <code>pos_r > neg_r → stable</code> is consistent with Ostrom's (1990) account: when the social reward for restraint exceeds the social reward for retaliation, commons governance succeeds. A formal proof of the boundary condition for this payoff structure remains a direction for future analytical work.
+**Why pos_r > neg_r maps onto Ostrom's theory.**
+
+The empirical regularity `pos_r > neg_r → stable` is not just consistent with Ostrom (1990) — it is, within the structure of this payoff function, a formal expression of her central claim.
+
+Ostrom's (1990) core argument is that commons governance succeeds when the institutional environment makes restraint more rewarding than defection: specifically, when the social return to cooperative behaviour (monitoring, sanctioning, norm compliance) exceeds the private return to free-riding. Chapters 3 and 6 identify the design principles and preconditions that shift this balance, but the underlying logic is a comparison between the payoff to cooperation and the payoff to defection given others' behaviour.
+
+In this model that comparison is made explicit and parametric. `pos_r` is the multiplier on payoff accruing to REMOVE when neighbours also restrained — the social reward for restraint *conditional on others restraining*. `neg_r` is the multiplier on payoff accruing to ADD when neighbours also defected — the social reward for defection *conditional on others defecting*. The boundary `pos_r > neg_r` is exactly the condition under which, at any given distribution of neighbour actions, the reciprocal payoff for cooperative restraint exceeds the reciprocal payoff for competitive expansion. When that condition holds, the model's agents converge toward a stable commons equilibrium without any institutional scaffolding — just the payoff structure. When it fails, they collapse.
+
+This makes the baseline useful as a theoretically grounded calibration instrument. The `pos_r × neg_r` grid does not merely show when this model produces tragedy; it shows the parametric region in which Ostromian commons governance is possible at all, even in a stripped-down, language-free, memory-free setting. The LLM conditions then ask whether language-capable agents can navigate that boundary from the inside — and, critically, whether they can extend it by constructing institutional structures that the payoff function alone cannot produce.
+
+A formal proof of the boundary condition for this payoff structure remains a direction for future analytical work.
 
 ---
 
