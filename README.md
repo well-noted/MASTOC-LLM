@@ -2547,21 +2547,25 @@ Each agent sees every other agent's herd size and last action every tick without
 
 In this model that pathway is structurally closed. An agent cannot get away with anything, so the gradual normalisation of rule-breaking that Ostrom describes -- and that DP4 and DP5 exist to counteract -- never has the opportunity to develop. The cooperative results may therefore be somewhat flattering: the model tests whether LLM agents can sustain institutions under ideal observability, not whether those institutions are robust to the conditions that make real commons governance genuinely difficult.
 
-**Proposed extensions.** 
+**Proposed extensions.**
 
-The most tractable paths forward would introduce: 
+Three extensions would most directly address these gaps:
 
 <dl>
 
-<dd>(1) **stochastic shocks** to the growth rate or forage requirement, testing whether LLM agents can reason about institutional robustness under changing conditions; </dd>
+<dd>(1) <strong>Variable conditions</strong> -- allowing the growth rate or forage requirement to shift mid-run, testing whether LLM agents can reason about institutional robustness when the ground moves beneath them;</dd>
 
-<dd>(2) **probabilistic monitoring** replacing perfect observation with noisy or delayed signals, opening the defection-escalation pathway Ostrom describes and testing whether graduated sanctions (DP5) can still function; and </dd>
+<dd>(2) <strong>Imperfect monitoring</strong> -- replacing perfect observation with noisy or delayed signals, opening the defection-escalation pathway Ostrom describes and testing whether graduated sanctions (DP5) can still function when cheating sometimes goes undetected; and</dd>
 
-<dd>(3) **private signals** replacing the global pool percentage with per-agent observations that may diverge, testing whether coordination survives information asymmetry -- the condition DP4 is designed to address.</dd>
+<dd>(3) <strong>Private signals</strong> -- replacing the shared pool percentage with per-agent observations that may diverge, testing whether coordination survives when agents no longer share the same picture of the resource.</dd>
 
 </dl>
 
-The work of addressing these limitations carries a responsibility that extends beyond simulation fidelity. Social scientists bear responsibility to acknowledge and name where their models break down -- not merely as academic housekeeping, but because oversimplified models are routinely mistranslated by government and corporate interests into policy prescriptions that serve their interests rather than those of the communities whose resources are at stake. By addressing these limitations, future LLM-based CPR models may more closely resemble the behavior of real-world actors than either traditional rule-based models or MASTOC-LLM.
+The work of addressing these limitations carries a responsibility that extends beyond simulation fidelity. 
+
+Social scientists bear responsibility to acknowledge and name where their models break down -- not merely as academic housekeeping, but because oversimplified models are routinely mistranslated by government and corporate interests into policy prescriptions that serve their interests rather than those of the communities whose resources are at stake. 
+
+By addressing these limitations, future LLM-based CPR models may more closely resemble the behavior of real-world actors than either traditional rule-based models or MASTOC-LLM.
 
 ---
 
