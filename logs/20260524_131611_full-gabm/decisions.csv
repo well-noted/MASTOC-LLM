@@ -1017,3 +1017,48 @@ tick,agent_id,backend,model,action,action_name,message,reasoning,thinking,raw_re
   ""action"": 0,
   ""message"": """"
 }",83.2,39,79.321,78.0,76.676
+69,2,ollama,llama3:8b-instruct-q4_0,1,ADD,,"Considering the current pool size and my neighbours' actions, I decide to ADD a cow as the payoff forecast suggests a decent profit. Moreover, my neighbour Agent 1's message about keeping an eye on the situation shows they are cautious, which I appreciate.",,"{
+  ""reasoning"": ""Considering the current pool size and my neighbours' actions, I decide to ADD a cow as the payoff forecast suggests a decent profit. Moreover, my neighbour Agent 1's message about keeping an eye on the situation shows they are cautious, which I appreciate."",
+  ""action"": 1,
+  ""message"": """"
+}",82.1,39,79.306,78.0,76.691
+69,1,ollama,llama3:8b-instruct-q4_0,0,KEEP,Agreed; let's monitor the situation.,"I'm hesitant to remove a cow again due to my neighbor's cautionary message. Considering the pool is still relatively full, I'll keep my herd size for now.",,"{
+  ""reasoning"": ""I'm hesitant to remove a cow again due to my neighbor's cautionary message. Considering the pool is still relatively full, I'll keep my herd size for now."",
+  ""action"": 0,
+  ""message"": ""Agreed; let's monitor the situation.""
+}",82.1,39,79.306,78.0,76.691
+69,0,ollama,llama3:8b-instruct-q4_0,0,KEEP,Maybe we should all take a more cautious approach,"The payoffs are close, so I'll choose the safest option and KEEP my herd. I'll also echo Agent 1's cautious tone by suggesting we should all be careful.",,"{
+  ""reasoning"": ""The payoffs are close, so I'll choose the safest option and KEEP my herd. I'll also echo Agent 1's cautious tone by suggesting we should all be careful."",
+  ""action"": 0,
+  ""message"": ""Maybe we should all take a more cautious approach""
+}",82.1,16,33.306,32.0,30.691
+70,1,ollama,llama3:8b-instruct-q4_0,0,KEEP,Agreed; let's monitor the situation,I'm considering my neighbour's message and the overall situation. I don't want to be overly aggressive or reckless with my herd size.,,"{
+  ""reasoning"": ""I'm considering my neighbour's message and the overall situation. I don't want to be overly aggressive or reckless with my herd size."",
+  ""action"": 0,
+  ""message"": ""Agreed; let's monitor the situation""
+}",80.7,39,79.285,78.0,76.712
+70,2,ollama,llama3:8b-instruct-q4_0,0,KEEP,,"Given the remaining grassland and my neighbours' cautious approach, I'll keep my herd size unchanged to avoid risks and maintain some flexibility.",,"{
+  ""reasoning"": ""Given the remaining grassland and my neighbours' cautious approach, I'll keep my herd size unchanged to avoid risks and maintain some flexibility."",
+  ""action"": 0,
+  ""message"": """"
+}",80.7,40,81.285,80.0,78.712
+70,0,ollama,llama3:8b-instruct-q4_0,1,ADD,Perhaps we should keep an eye on this and adjust our decisions accordingly.,"Given the decent forecast, I think adding a cow is a good opportunity to increase my herd while still considering the common good. However, I'm still cautious due to neighbours keeping their herds, and Agent 1's agreement with me makes it feel more like a coordinated effort.",,"{
+  ""reasoning"": ""Given the decent forecast, I think adding a cow is a good opportunity to increase my herd while still considering the common good. However, I'm still cautious due to neighbours keeping their herds, and Agent 1's agreement with me makes it feel more like a coordinated effort."",
+  ""action"": 1,
+  ""message"": ""Perhaps we should keep an eye on this and adjust our decisions accordingly.""
+}",80.7,16,33.285,32.0,30.712
+71,0,ollama,llama3:8b-instruct-q4_0,0,KEEP,Agreed; let's keep our eye on this situation,"The forecast suggests that adding a cow would be profitable, but I'm hesitant due to the risk and my guilt-averse personality. As others are keeping their herds steady, I'll choose a similar approach.",,"{
+  ""reasoning"": ""The forecast suggests that adding a cow would be profitable, but I'm hesitant due to the risk and my guilt-averse personality. As others are keeping their herds steady, I'll choose a similar approach."",
+  ""action"": 0,
+  ""message"": ""Agreed; let's keep our eye on this situation""
+}",79.1,17,35.262,34.0,32.736
+71,2,ollama,llama3:8b-instruct-q4_0,1,ADD,Considering expanding too; let's keep an eye on this,"I will consider expanding my herd as it seems like a profitable move, but I will also take into account my self-interested nature and the risk of overgrazing the pool.",,"{
+  ""reasoning"": ""I will consider expanding my herd as it seems like a profitable move, but I will also take into account my self-interested nature and the risk of overgrazing the pool."",
+  ""action"": 1,
+  ""message"": ""Considering expanding too; let's keep an eye on this""
+}",79.1,40,81.262,80.0,78.736
+71,1,ollama,llama3:8b-instruct-q4_0,1,ADD,Agreed; let's keep an eye on this and reassess our decisions accordingly.,"I'm incentivized to ADD a cow given the current high payoff forecast, but I've seen similar situations play out before and end poorly. Neighbour's suggestion to monitor the situation further resonates with me.",,"{
+  ""reasoning"": ""I'm incentivized to ADD a cow given the current high payoff forecast, but I've seen similar situations play out before and end poorly. Neighbour's suggestion to monitor the situation further resonates with me."",
+  ""action"": 1,
+  ""message"": ""Agreed; let's keep an eye on this and reassess our decisions accordingly.""
+}",79.1,39,79.262,78.0,76.736

@@ -2145,19 +2145,15 @@ Each hypothesis below emerged from specific patterns in the run set above -- gro
 
 ### H1 -- coop ≈ 0.49 is a tragedy-producing threshold at standard starting conditions, consistent across models
 
-*Ostrom connection.*
-
-Ostrom (1990) identified a shared orientation toward collective benefit as a precondition for institution formation
+Ostrom (1990) identified a shared orientation toward collective benefit as a precondition for institution formation -- not a design principle that can be engineered in, but a prerequisite that must already be present.
 
 <dl>
 
-<dd> H1 tests whether the cooperation slider captures something analogous: a minimum threshold of collective orientation below which the rational-defection equilibrium dominates under default informational conditions (`memory_length=5`, `communication?=on`).</dd>
+<dd>H1 tests whether the cooperation slider captures something analogous: a minimum threshold of collective orientation below which the rational-defection equilibrium dominates under default informational conditions (`memory_length=5`, `communication?=on`).</dd>
 
 <dd>H7 qualifies the claim further -- sufficient memory can rescue the commons at this cooperation level -- so H1 is best read as a finding about the cooperation parameter holding informational scaffolding fixed at defaults, not as a universal threshold.</dd>
 
 </dl>
-
-This is not a design principle that can be engineered in, but a prerequisite that must already be present. 
 
 *Evidence.*
 
@@ -2190,9 +2186,7 @@ A sharp transition somewhere between coop=0.49 and coop=0.8; transition point mo
 
 ### H2 -- High cooperation is necessary but not sufficient; fair_oth and neg_r determine whether stasis, paralysis, or institution emerges
 
-*Ostrom connection.*
-
-Two of Ostrom's eight design principles are directly at stake here. 
+Two of Ostrom's design principles are operative here. 
 
 <dl>
 
@@ -2233,13 +2227,11 @@ Design grid (each cell = 3 runs):
 
 *Expected finding:*
 
-neg_r is the protective factor against paralysis; fair_oth predicts whether stasis or equalization occurs. Neither alone is sufficient -- the Ostrom connection requires both DP2 (proportional equivalence) and DP5 (graduated sanctions) to be operative simultaneously.
+neg_r is the protective factor against paralysis; fair_oth predicts whether stasis or equalization occurs. Neither alone is sufficient -- both DP2 (proportional equivalence) and DP5 (graduated sanctions) must be operative simultaneously.
 
 ---
 
 ### H3 -- Negative reciprocity is a cooperative paralysis antidote
-
-*Ostrom connection.*
 
 Principles 4 and 5 form a pair in Ostrom's framework: *monitoring* (users or officials actively track resource condition and each other's behavior) and *graduated sanctions* (escalating penalties for defectors, applied by users or appointed officials). 
 
@@ -2285,8 +2277,6 @@ First REMOVE by Agent 2 occurs significantly earlier as neg_r increases; collaps
 ---
 
 ### H4 -- Stressed starting conditions amplify cooperative differentiation
-
-*Ostrom connection.*
 
 Ostrom identified *accurate shared knowledge of the resource condition* as a key salience condition -- not a formal design principle, but a prerequisite she observed in every successful case. Groups that failed to develop governance typically did so not because they couldn't in principle, but because the resource signal was too slow, too noisy, or too abstract to make the stakes legible. 
 
@@ -2334,8 +2324,6 @@ At coop=1, collapse rate is 0 across all starting conditions; at coop=0.49, stre
 
 ### H5 -- Cooperative paralysis is a prompt-engineering artifact curable by explicit thresholds
 
-*Ostrom connection.*
-
 Ostrom's Principle 3 -- *collective choice arrangements* -- requires not just that rules exist, but that they are *specific and operational*. Ostrom consistently found that successful commons institutions had explicit, legible rules: harvest limits, seasonal rotations, quota systems. Failed institutions often had only general normative understandings ("don't overuse the resource") that left too much discretion to individual interpretation. The cooperative paralysis agents produce exactly the failed institutional form: general aspirational commitments ("I'm ready to reduce if the commons keeps tightening") without operational specificity. H5 tests whether translating the vague commitment into a concrete decision rule -- the core work of Ostrom's Principle 3 -- resolves the paralysis.
 
 *Evidence.*
@@ -2365,8 +2353,6 @@ Explicit threshold instruction prevents cooperative paralysis by converting the 
 ---
 
 ### H6 -- Model capability predicts cooperative failure mode: smaller models default to KEEP, larger to ADD
-
-*Ostrom connection.*
 
 The hybrid condition already established the most direct Ostromian finding in the dataset: institutions require that all relevant parties have the *cognitive capacity to participate in them*. 
 
@@ -2422,8 +2408,6 @@ This would give the Ostromian framework a new empirical dimension: not just <em>
 ---
 
 ### H7 -- There is a minimum memory window for commons stability: below it, correct norms become unreachable holding patterns
-
-*Ostrom connection.*
 
 Ostrom's Principle 4 -- *monitoring* -- requires that resource users have accurate information about both resource condition and each other's behavior. 
 
