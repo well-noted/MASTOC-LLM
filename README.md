@@ -2563,7 +2563,11 @@ Three extensions would most directly address these gaps:
 
 The work of addressing these limitations carries a responsibility that extends beyond simulation fidelity. 
 
-Social scientists bear responsibility to acknowledge and name where their models break down -- not merely as academic housekeeping, but because oversimplified models are routinely mistranslated by government and corporate interests into policy prescriptions that serve their interests rather than those of the communities whose resources are at stake. 
+<dl>
+
+<dd>Social scientists bear responsibility to acknowledge and name where their models break down -- not merely as academic housekeeping, but because oversimplified models are routinely mistranslated by government and corporate interests into policy prescriptions that serve their interests rather than those of the communities whose resources are at stake. </dd>
+
+</dl>
 
 By addressing these limitations, future LLM-based CPR models may more closely resemble the behavior of real-world actors than either traditional rule-based models or MASTOC-LLM.
 

@@ -957,3 +957,63 @@ tick,agent_id,backend,model,action,action_name,message,reasoning,thinking,raw_re
   ""action"": 0,
   ""message"": """"
 }",86.7,15,31.382,30.0,28.615
+65,0,ollama,llama3:8b-instruct-q4_0,0,KEEP,I'm thinking carefully about adding new cows for now; perhaps others could adjust their herds first?,"I'm currently quite profitable and the grassland is still abundant, so I can afford to be a bit more cautious this round. Adding another cow might benefit me slightly more in terms of overall payoff, but I don't want to overdo it and risk causing tension with my neighbors.",,"{
+""reasoning"": ""I'm currently quite profitable and the grassland is still abundant, so I can afford to be a bit more cautious this round. Adding another cow might benefit me slightly more in terms of overall payoff, but I don't want to overdo it and risk causing tension with my neighbors."",
+""action"": 0,
+""message"": ""I'm thinking carefully about adding new cows for now; perhaps others could adjust their herds first?""
+}",85.8,15,31.365,30.0,28.632
+65,2,ollama,llama3:8b-instruct-q4_0,-1,REMOVE,,"I'll prefer a safe option, given the overall state of the pasture and my neighbours' actions. Removing a cow seems like a conservative choice, considering I won't drastically harm my profit.",,"{
+  ""reasoning"": ""I'll prefer a safe option, given the overall state of the pasture and my neighbours' actions. Removing a cow seems like a conservative choice, considering I won't drastically harm my profit."",
+  ""action"": -1,
+  ""message"": """"
+}",85.8,39,79.365,78.0,76.632
+65,1,ollama,llama3:8b-instruct-q4_0,1,ADD,Will consider herd adjustments based on your decisions.,"Myself motivated by personal profit, but discomfort with high payoff difference from others. With ADD yielding best expected payoff, I'll follow this approach.",,"{
+  ""reasoning"": ""Myself motivated by personal profit, but discomfort with high payoff difference from others. With ADD yielding best expected payoff, I'll follow this approach."",
+  ""action"": 1,
+  ""message"": ""Will consider herd adjustments based on your decisions.""
+}",85.8,38,77.365,76.0,74.632
+66,0,ollama,llama3:8b-instruct-q4_0,-1,REMOVE,,"Considering the neighbours' moves and my personal preferences, I think removing a cow to reduce pressure on the shared resource is a good idea. I'll also try to discourage others from increasing their herds by being clear with my decision.",,"{
+  ""reasoning"": ""Considering the neighbours' moves and my personal preferences, I think removing a cow to reduce pressure on the shared resource is a good idea. I'll also try to discourage others from increasing their herds by being clear with my decision."",
+  ""action"": -1,
+  ""message"": """"
+}",84.9,15,31.352,30.0,28.645
+66,2,ollama,llama3:8b-instruct-q4_0,0,KEEP,,"Considering my neighbours' cautious messages and the stable payout forecast, I'll follow a similar path and KEEP my current herd size.",,"{
+  ""reasoning"": ""Considering my neighbours' cautious messages and the stable payout forecast, I'll follow a similar path and KEEP my current herd size."",
+  ""action"": 0,
+  ""message"": """"
+}",84.9,38,77.352,76.0,74.645
+66,1,ollama,llama3:8b-instruct-q4_0,0,KEEP,,"Considering the mixed messages from neighbors, I prioritize maintaining my herd size to balance personal profit with guilt aversion.",,"{
+  ""reasoning"": ""Considering the mixed messages from neighbors, I prioritize maintaining my herd size to balance personal profit with guilt aversion."",
+  ""action"": 0,
+  ""message"": """"
+}",84.9,39,79.352,78.0,76.645
+67,0,ollama,llama3:8b-instruct-q4_0,1,ADD,,"The projected payoff for ADD a cow is the highest, but removing one would also provide a decent gain. Since my neighbour's herds haven't changed, I won't send a message to them.",,"{
+  ""reasoning"": ""The projected payoff for ADD a cow is the highest, but removing one would also provide a decent gain. Since my neighbour's herds haven't changed, I won't send a message to them."",
+  ""action"": 1,
+  ""message"": """"
+}",84.3,14,29.345,28.0,26.652
+67,2,ollama,llama3:8b-instruct-q4_0,1,ADD,Considering expanding too,"I'd rather add a cow than remove one given the favorable forecast. I'm not willing to lag behind Agent 1's herd size or deviate significantly from my own target. Plus, I aim to maintain some surplus for guilt aversion.",,"{
+  ""reasoning"": ""I'd rather add a cow than remove one given the favorable forecast. I'm not willing to lag behind Agent 1's herd size or deviate significantly from my own target. Plus, I aim to maintain some surplus for guilt aversion."",
+  ""action"": 1,
+  ""message"": ""Considering expanding too""
+}",84.3,38,77.345,76.0,74.652
+67,1,ollama,llama3:8b-instruct-q4_0,1,ADD,,"I will ADD a cow as the expected payoff is highest compared to keeping or removing one. Considering my self-interested personality, I prioritize personal profit, and the higher forecasted payout justifies adding another cow.",,"{
+  ""reasoning"": ""I will ADD a cow as the expected payoff is highest compared to keeping or removing one. Considering my self-interested personality, I prioritize personal profit, and the higher forecasted payout justifies adding another cow."",
+  ""action"": 1,
+  ""message"": """"
+}",84.3,39,79.345,78.0,76.652
+68,0,ollama,llama3:8b-instruct-q4_0,1,ADD,Maybe we should all take a more cautious approach?,"I'm not eager to over-extend myself in this relatively prosperous grassland, and considering Agent 2's message, I want to pace the expansion. A slightly expanded herd seems safe enough.",,"{
+""reasoning"": ""I'm not eager to over-extend myself in this relatively prosperous grassland, and considering Agent 2's message, I want to pace the expansion. A slightly expanded herd seems safe enough."",
+""action"": 1,
+""message"": ""Maybe we should all take a more cautious approach?""
+}",83.2,15,31.321,30.0,28.676
+68,1,ollama,llama3:8b-instruct-q4_0,-1,REMOVE,Will keep an eye on situation,I'll consider reducing my herd as there's space to grow for now and don't want to overstretch,,"{
+  ""reasoning"": ""I'll consider reducing my herd as there's space to grow for now and don't want to overstretch"",
+  ""action"": -1,
+  ""message"": ""Will keep an eye on situation""
+}",83.2,40,81.321,80.0,78.676
+68,2,ollama,llama3:8b-instruct-q4_0,0,KEEP,,I'm risk-averse and don't want to sacrifice my current situation for a higher payoff. I also consider the guilt discomfort of earning much more than Agent 1.,,"{
+  ""reasoning"": ""I'm risk-averse and don't want to sacrifice my current situation for a higher payoff. I also consider the guilt discomfort of earning much more than Agent 1."",
+  ""action"": 0,
+  ""message"": """"
+}",83.2,39,79.321,78.0,76.676
