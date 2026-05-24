@@ -330,7 +330,7 @@ When `pos_r > neg_r`, collapse rate is 0% (or ~1% at the extreme near-boundary).
 
 ## Running LLM agents without a local GPU (free via Kaggle)
 
-If you don't have a GPU-equipped machine available, you can run the LLM conditions for free using [Kaggle](https://www.kaggle.com) — Google's data-science platform — as a remote Ollama server, accessed via ngrok. The free tier gives you **30 GPU hours per week** (NVIDIA T4 × 2, 32 GB VRAM combined), which is enough to run substantial full-GABM or hybrid sweeps. Each session can run for up to 12 hours before timing out.
+If you don't have a GPU-equipped machine available, you can run the LLM conditions for free using [Kaggle](https://www.kaggle.com) -- Google's data-science platform -- as a remote Ollama server, accessed via ngrok. The free tier gives you **30 GPU hours per week** (NVIDIA T4 × 2, 32 GB VRAM combined), which is enough to run substantial full-GABM or hybrid sweeps. Each session can run for up to 12 hours before timing out.
 
 The architecture is: Kaggle notebook runs Ollama → ngrok exposes it as a public URL → MASTOC-LLM's `--ollama-url` flag points at that URL. No API key, no cost.
 
@@ -410,7 +410,7 @@ For interactive GUI runs, open `MASTOC-LLM.nlogox` in NetLogo, set **Backend** t
 - **Session limit.** Each Kaggle session runs for up to 12 hours before timing out. When it times out, Cell 4 will give you a new ngrok URL — update `--ollama-url` accordingly for subsequent runs.
 - **Weekly quota.** The free tier provides 30 GPU hours per week. CPU usage is unlimited and unmetered. Baseline sweeps (no LLM calls) run fine without touching the GPU quota.
 - **Cost.** Ollama runs are always free — the `run_baseline_sweep.py` cost estimator reports $0.00 for Ollama backends, so you can pass `--yes` to skip the confirmation prompt.
-- **Model availability.** The full Ollama library is accessible. If you want to run a model you've seen in the results tables (DeepSeek R1:32b, gemma3:27b, Llama 3.2 3B), just change the model name in Cell 3 and `--llm-model`.
+- **Model size limit.** The T4 × 2 configuration provides 32 GB of VRAM combined. In practice this caps you at roughly **32B-parameter models in 4-bit quantisation** (e.g. `deepseek-r1:32b`, `gemma3:27b`). Larger models (70B+) will fail to load. Smaller models (`llama3.2:3b`, `llama3.2`, `gemma3:4b`) run comfortably and generate tokens faster. Check the model's listed size on [ollama.com/library](https://ollama.com/library) before pulling.
 - **Keeping the session alive.** Kaggle notebooks time out if left idle. If you're running a long sweep headlessly, the session will stay active as long as a cell is executing.
 
 ---

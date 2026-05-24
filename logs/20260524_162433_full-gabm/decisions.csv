@@ -1,0 +1,106 @@
+tick,agent_id,backend,model,action,action_name,message,reasoning,thinking,raw_response,pool_pct,own_herd,payoff_add,payoff_keep,payoff_remove
+1,2,ollama,qwen2.5:14b,0,KEEP,,"My current herd size is larger than my neighbors', and I am risk-averse, so keeping the herd stable would be safer. However, earning more from adding a cow is tempting, but considering my guilt-averse trait, maintaining parity with or slightly surpassing neighbors without leading would be prudent.",,"{
+  ""reasoning"": ""My current herd size is larger than my neighbors', and I am risk-averse, so keeping the herd stable would be safer. However, earning more from adding a cow is tempting, but considering my guilt-averse trait, maintaining parity with or slightly surpassing neighbors without leading would be prudent."",
+  ""action"": 0,
+  ""message"": """"
+}",100.0,25,51.832,50.0,48.163
+1,1,ollama,qwen2.5:14b,0,KEEP,"I'm keeping my herd at 15 cows for now, hoping others will follow a sustainable path too.","Considering my personality traits and the payoff forecast, I would prefer to maintain my current herd size as it offers a moderate payoff. My risk-averse nature discourages me from adding another cow despite its high expected payoff. Keeping our herd sizes similar with neighbors also aligns with my reciprocal tendencies.",,"{
+  ""reasoning"": ""Considering my personality traits and the payoff forecast, I would prefer to maintain my current herd size as it offers a moderate payoff. My risk-averse nature discourages me from adding another cow despite its high expected payoff. Keeping our herd sizes similar with neighbors also aligns with my reciprocal tendencies."",
+  ""action"": 0,
+  ""message"": ""I'm keeping my herd at 15 cows for now, hoping others will follow a sustainable path too.""
+}",100.0,15,31.832,30.0,28.163
+1,0,ollama,qwen2.5:14b,0,KEEP,Let's maintain current herd sizes for stable growth.,"Considering the grassland is abundant and my neighbors have large herds, adding a cow would increase immediate profit. However, I'm risk-averse and prefer balancing gain with safety. Keeping herd size steady matches my neighbor's recent actions, fostering reciprocity without overexploiting the commons.",,"{
+  ""reasoning"": ""Considering the grassland is abundant and my neighbors have large herds, adding a cow would increase immediate profit. However, I'm risk-averse and prefer balancing gain with safety. Keeping herd size steady matches my neighbor's recent actions, fostering reciprocity without overexploiting the commons."",
+  ""action"": 0,
+  ""message"": ""Let's maintain current herd sizes for stable growth.""
+}",100.0,5,11.832,10.0,8.163
+2,0,ollama,qwen2.5:14b,0,KEEP,"I will maintain my herd at 5 cows as well, hoping others consider sustainability too.","Considering the grassland state and forecasted payoffs, adding a cow yields the highest personal benefit. However, given my reciprocal nature and risk aversion, I prefer to observe if neighbors reduce their herds. Agent 1's message suggests caution towards over-grazing.",,"{
+  ""reasoning"": ""Considering the grassland state and forecasted payoffs, adding a cow yields the highest personal benefit. However, given my reciprocal nature and risk aversion, I prefer to observe if neighbors reduce their herds. Agent 1's message suggests caution towards over-grazing."",
+  ""action"": 0,
+  ""message"": ""I will maintain my herd at 5 cows as well, hoping others consider sustainability too.""
+}",99.3,5,11.813,10.0,8.182
+2,2,ollama,qwen2.5:14b,0,KEEP,I'll maintain my herd size of 25 cows for sustainable growth alongside the commons health.,"Considering the current pasture state and neighbour actions, adding a cow seems advantageous with an expected payoff of 51.813. However, due to guilt-aversion and risk-averse tendencies, I choose to KEEP my herd rather than taking a risky chance that could lead to negative comparisons with neighbours who keep stable.",,"{
+  ""reasoning"": ""Considering the current pasture state and neighbour actions, adding a cow seems advantageous with an expected payoff of 51.813. However, due to guilt-aversion and risk-averse tendencies, I choose to KEEP my herd rather than taking a risky chance that could lead to negative comparisons with neighbours who keep stable."",
+  ""action"": 0,
+  ""message"": ""I'll maintain my herd size of 25 cows for sustainable growth alongside the commons health.""
+}",99.3,25,51.813,50.0,48.182
+2,1,ollama,qwen2.5:14b,1,ADD,I'll add one more cow to slightly increase my herd size.,"The forecast shows a slight but positive increase in payoff by adding a cow despite the risk. However, given my reciprocal nature and discomfort with significant earnings disparity, I prefer not to outcompete neighbors excessively while aiming to maintain herd stability.",,"{
+  ""reasoning"": ""The forecast shows a slight but positive increase in payoff by adding a cow despite the risk. However, given my reciprocal nature and discomfort with significant earnings disparity, I prefer not to outcompete neighbors excessively while aiming to maintain herd stability."",
+  ""action"": 1,
+  ""message"": ""I'll add one more cow to slightly increase my herd size.""
+}",99.3,15,31.813,30.0,28.182
+3,0,ollama,qwen2.5:14b,0,KEEP,I will keep my herd size unchanged to encourage sustainable practices among neighbors.,"Considering my personality and current pool status, adding a cow offers a significant payoff. However, given my guilt-averse nature and the unsustainable behavior of my neighbors, maintaining the status quo seems less risky and more aligned with reciprocity principles.",,"{
+  ""reasoning"": ""Considering my personality and current pool status, adding a cow offers a significant payoff. However, given my guilt-averse nature and the unsustainable behavior of my neighbors, maintaining the status quo seems less risky and more aligned with reciprocity principles."",
+  ""action"": 0,
+  ""message"": ""I will keep my herd size unchanged to encourage sustainable practices among neighbors.""
+}",99.1,5,11.804,10.0,8.191
+3,2,ollama,qwen2.5:14b,0,KEEP,"I will stick to my herd of 25 cows for now, encouraging sustainable practices among us.","Considering the grassland is slightly depleted and I am guilt-averse and risk-averse, maintaining my herd size feels like a balanced approach. Although adding could yield higher immediate returns, it risks long-term sustainability and alignment with neighbors who are conservative.",,"{
+  ""reasoning"": ""Considering the grassland is slightly depleted and I am guilt-averse and risk-averse, maintaining my herd size feels like a balanced approach. Although adding could yield higher immediate returns, it risks long-term sustainability and alignment with neighbors who are conservative."",
+  ""action"": 0,
+  ""message"": ""I will stick to my herd of 25 cows for now, encouraging sustainable practices among us.""
+}",99.1,25,51.804,50.0,48.191
+3,1,ollama,qwen2.5:14b,0,KEEP,I'll keep my herd at 16 cows for balance between growth and sustainability.,"I am tempted to add another cow, but considering my risk-averse nature and guilt about earning significantly more than others, I should prefer a stable payoff over risking further depletion. Agent 0 maintains their smaller herd, while Agent 2 keeps the high number of cows; thus, adding could put too much pressure on the shared resource without guaranteeing better return.",,"{
+  ""reasoning"": ""I am tempted to add another cow, but considering my risk-averse nature and guilt about earning significantly more than others, I should prefer a stable payoff over risking further depletion. Agent 0 maintains their smaller herd, while Agent 2 keeps the high number of cows; thus, adding could put too much pressure on the shared resource without guaranteeing better return."",
+  ""action"": 0,
+  ""message"": ""I'll keep my herd at 16 cows for balance between growth and sustainability.""
+}",99.1,16,33.804,32.0,30.191
+4,1,ollama,qwen2.5:14b,-1,REMOVE,I choose to remove a cow to promote sustainable practices and balance the pasture pressure among us.,"Despite the forecast suggesting a higher payoff from adding a cow, the risk remains high and could lead to overgrazing. Maintaining or slightly reducing the herd aligns with my reciprocal nature towards more responsible neighbors.",,"{
+  ""reasoning"": ""Despite the forecast suggesting a higher payoff from adding a cow, the risk remains high and could lead to overgrazing. Maintaining or slightly reducing the herd aligns with my reciprocal nature towards more responsible neighbors."",
+  ""action"": -1,
+  ""message"": ""I choose to remove a cow to promote sustainable practices and balance the pasture pressure among us.""
+}",99.0,16,33.802,32.0,30.194
+4,0,ollama,qwen2.5:14b,0,KEEP,"I'll stick with my herd at 5 cows, promoting balanced growth and sustainability.","Despite the forecasted payoff advantage of adding a cow, sticking with KEEP seems better due to risk aversion and the peer's herd sizes indicating a balance point. Removing could be risky given neighbor's stability.",,"{
+  ""reasoning"": ""Despite the forecasted payoff advantage of adding a cow, sticking with KEEP seems better due to risk aversion and the peer's herd sizes indicating a balance point. Removing could be risky given neighbor's stability."",
+  ""action"": 0,
+  ""message"": ""I'll stick with my herd at 5 cows, promoting balanced growth and sustainability.""
+}",99.0,5,11.802,10.0,8.194
+4,2,ollama,qwen2.5:14b,0,KEEP,Keeping herd stable at 25 cows for balance and sustainability.,"Considering the current state of the commons and neighbors' actions, keeping my herd stable aligns with risk-averse and guilt-averse tendencies. The slight advantage in payoff from adding a cow outweighs potential risks to common resources.",,"{
+  ""reasoning"": ""Considering the current state of the commons and neighbors' actions, keeping my herd stable aligns with risk-averse and guilt-averse tendencies. The slight advantage in payoff from adding a cow outweighs potential risks to common resources."",
+  ""action"": 0,
+  ""message"": ""Keeping herd stable at 25 cows for balance and sustainability.""
+}",99.0,25,51.802,50.0,48.194
+5,2,ollama,qwen2.5:14b,0,KEEP,I will maintain my herd at 25 cows while appreciating your balanced approach in reducing the pressure on our shared pasture.,"Given my personality traits and the current situation on the commons, maintaining herd size at 25 cows seems balanced between personal profit and communal sustainability. Although adding more cattle would increase my payoff, it goes against my risk-averse nature and discomfort with earning much more than others. Also, Agent 1's recent action to remove a cow aligns with sustainable practices which I should support.",,"{
+  ""reasoning"": ""Given my personality traits and the current situation on the commons, maintaining herd size at 25 cows seems balanced between personal profit and communal sustainability. Although adding more cattle would increase my payoff, it goes against my risk-averse nature and discomfort with earning much more than others. Also, Agent 1's recent action to remove a cow aligns with sustainable practices which I should support."",
+  ""action"": 0,
+  ""message"": ""I will maintain my herd at 25 cows while appreciating your balanced approach in reducing the pressure on our shared pasture.""
+}",99.1,25,51.809,50.0,48.187
+5,1,ollama,qwen2.5:14b,0,KEEP,I'll maintain my herd at 15 cows to promote balanced growth and sustainability.,"Considering the forecasted payoffs, I am slighty uncomfortable with significantly outperforming neighbors who are maintaining smaller herds while aiming for balance. My risk-averse nature also gives me pause over slightly risky high payoff of adding a cow.",,"{
+  ""reasoning"": ""Considering the forecasted payoffs, I am slighty uncomfortable with significantly outperforming neighbors who are maintaining smaller herds while aiming for balance. My risk-averse nature also gives me pause over slightly risky high payoff of adding a cow."",
+  ""action"": 0,
+  ""message"": ""I'll maintain my herd at 15 cows to promote balanced growth and sustainability.""
+}",99.1,15,31.809,30.0,28.187
+5,0,ollama,qwen2.5:14b,0,KEEP,"I will keep my herd unchanged in response to your cooperative gesture, promoting sustainable practices","Considering my personality traits, I value reciprocal behavior and risk aversion. Despite the tempting forecast for adding another cow, observing Agent 1's removal of cattle motivates me to offer a balanced approach by keeping herd size constant. This decision aims at sustainability while not earning significantly more than those who are reducing their herds.",,"{
+  ""reasoning"": ""Considering my personality traits, I value reciprocal behavior and risk aversion. Despite the tempting forecast for adding another cow, observing Agent 1's removal of cattle motivates me to offer a balanced approach by keeping herd size constant. This decision aims at sustainability while not earning significantly more than those who are reducing their herds."",
+  ""action"": 0,
+  ""message"": ""I will keep my herd unchanged in response to your cooperative gesture, promoting sustainable practices""
+}",99.1,5,11.809,10.0,8.187
+6,2,ollama,qwen2.5:14b,0,KEEP,"Balancing sustainability with profitability, I'll keep herd at 25 cows.","Given the risk-averse personality trait, I opt for a safer medium payoff rather than the higher but risky one from adding another cow. Despite neighbors keeping their herds stable, adding can slightly increase personal payoffs without diverging too much due to self-interested and guilt-averse traits.",,"{
+  ""reasoning"": ""Given the risk-averse personality trait, I opt for a safer medium payoff rather than the higher but risky one from adding another cow. Despite neighbors keeping their herds stable, adding can slightly increase personal payoffs without diverging too much due to self-interested and guilt-averse traits."",
+  ""action"": 0,
+  ""message"": ""Balancing sustainability with profitability, I'll keep herd at 25 cows.""
+}",99.1,25,51.809,50.0,48.187
+6,0,ollama,qwen2.5:14b,1,ADD,"I'll add one more cow, reaching six cows to cautiously balance between personal gain and sustainability.","Given that my neighbours are keeping their herd sizes constant, there's potential for a slightly higher payoff by adding a cow. However, as the grassland isn't under immediate stress (99.1% remaining), I will take a slight risk to increase personal profit while remaining cautious due to concerns about exceeding my neighbor’s actions.",,"{
+  ""reasoning"": ""Given that my neighbours are keeping their herd sizes constant, there's potential for a slightly higher payoff by adding a cow. However, as the grassland isn't under immediate stress (99.1% remaining), I will take a slight risk to increase personal profit while remaining cautious due to concerns about exceeding my neighbor’s actions."",
+  ""action"": 1,
+  ""message"": ""I'll add one more cow, reaching six cows to cautiously balance between personal gain and sustainability.""
+}",99.1,5,11.809,10.0,8.187
+6,1,ollama,qwen2.5:14b,0,KEEP,I'll stick to keeping my herd at 15 cows in support of our shared grassland sustainability.,"Despite a forecasted increase from adding another cow, maintaining one’s current herd is safer and aligns with risk-averse tendencies. Agent 0's message signals reciprocal consideration for sustainable practices.",,"{
+  ""reasoning"": ""Despite a forecasted increase from adding another cow, maintaining one’s current herd is safer and aligns with risk-averse tendencies. Agent 0's message signals reciprocal consideration for sustainable practices."",
+  ""action"": 0,
+  ""message"": ""I'll stick to keeping my herd at 15 cows in support of our shared grassland sustainability.""
+}",99.1,15,31.809,30.0,28.187
+7,1,ollama,qwen2.5:14b,-1,REMOVE,"Reflecting on group sustainability, I'll remove a cow to encourage responsible grazing practices","The grassland level is high enough that adding a cow would increase my immediate payoff. However, given that Agent 2 has maintained a large herd without reducing it, I am cautious about contributing to overgrazing. Although the risk-averse and reciprocal traits suggest keeping or slightly reducing herd size for sustainability reasons.",,"{
+  ""reasoning"": ""The grassland level is high enough that adding a cow would increase my immediate payoff. However, given that Agent 2 has maintained a large herd without reducing it, I am cautious about contributing to overgrazing. Although the risk-averse and reciprocal traits suggest keeping or slightly reducing herd size for sustainability reasons."",
+  ""action"": -1,
+  ""message"": ""Reflecting on group sustainability, I'll remove a cow to encourage responsible grazing practices""
+}",99.0,15,31.802,30.0,28.194
+7,0,ollama,qwen2.5:14b,0,KEEP,I will maintain my herd size to support the shared grassland sustainability while aiming for balanced profitability.,"Considering the forecasted payoffs and the need for reciprocity towards Agent 1's reduction, adding another cow is tempting as it offers a higher payoff. However, since I am risk-averse and want to encourage sustainable practices, keeping my herd stable aligns better with balancing personal gain and communal responsibility.",,"{
+  ""reasoning"": ""Considering the forecasted payoffs and the need for reciprocity towards Agent 1's reduction, adding another cow is tempting as it offers a higher payoff. However, since I am risk-averse and want to encourage sustainable practices, keeping my herd stable aligns better with balancing personal gain and communal responsibility."",
+  ""action"": 0,
+  ""message"": ""I will maintain my herd size to support the shared grassland sustainability while aiming for balanced profitability.""
+}",99.0,6,13.802,12.0,10.194
+7,2,ollama,qwen2.5:14b,0,KEEP,I will keep my herd at 25 cows to encourage continued sustainability efforts amongst our community.,"The pasture is stable with ample grass remaining. Though adding a cow would increase my profit, being guilt-averse and balancing reciprocity suggests maintaining the herd size helps promote sustainable practices among neighbors who are also mindful of the commons.",,"{
+  ""reasoning"": ""The pasture is stable with ample grass remaining. Though adding a cow would increase my profit, being guilt-averse and balancing reciprocity suggests maintaining the herd size helps promote sustainable practices among neighbors who are also mindful of the commons."",
+  ""action"": 0,
+  ""message"": ""I will keep my herd at 25 cows to encourage continued sustainability efforts amongst our community.""
+}",99.0,25,51.802,50.0,48.194
