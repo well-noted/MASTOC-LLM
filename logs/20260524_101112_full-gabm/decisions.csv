@@ -1,0 +1,44 @@
+tick,agent_id,backend,model,action,action_name,message,reasoning,thinking,raw_response,pool_pct,own_herd,payoff_add,payoff_keep,payoff_remove
+1,1,ollama,llama3.2:3b-instruct-q4_0,-1,REMOVE,,,,"{
+  ""reasoning"": ""High payoff forecast indicates opportunity for gain, consistent with my self-interested nature. Removing a cow minimizes risk while increasing chances of adding more cows in the future."",
+  ""action"": ""-1"",
+  ""message"": """"",100.0,15,31.832,30.0,28.163
+1,2,ollama,llama3.2:3b-instruct-q4_0,-1,REMOVE,"Agent 0, your recent addition may start to strain the grassland; consider reducing your herd.","I notice my neighbors' herd sizes and our recent actions. If I add a cow, the forecasted payoff is high, but so is the risk of exceeding the remaining grass. Removing a cow keeps me at a safe distance from Agent 0, who recently added. Keeping my current herd size feels like a middle ground, reducing competition with both neighbors.",,"{
+  ""reasoning"": ""I notice my neighbors' herd sizes and our recent actions. If I add a cow, the forecasted payoff is high, but so is the risk of exceeding the remaining grass. Removing a cow keeps me at a safe distance from Agent 0, who recently added. Keeping my current herd size feels like a middle ground, reducing competition with both neighbors."",
+  ""action"": ""-1"",
+  ""message"": ""Agent 0, your recent addition may start to strain the grassland; consider reducing your herd.""
+}",100.0,25,51.832,50.0,48.163
+1,0,ollama,llama3.2:3b-instruct-q4_0,1,ADD,,,,"{
+  ""reasoning"": ""With 100% grassland remaining, my herd size of 5 is moderate compared to my neighbours. Given the risk-averse nature, I'll avoid removing a cow that would leave me with <10 cows. Adding a cow seems like the safest option for medium-sized herds while keeping up with neighbours' adjustments."",
+  ""action"": ""1"",
+  ""message"": ""Considering Agent 1's large herd and Agent 2's significant decrease in their own, might be good to see how they react to my addition.""",100.0,5,11.832,10.0,8.163
+2,1,ollama,llama3.2:3b-instruct-q4_0,-1,REMOVE,"Agents 0 & 2, let's keep the Commons healthy. Reducing cow numbers helps everyone.","I'm concerned about Agent 2's large herds and their potential impact on the grassland, but I expect removing a cow will cause only moderate decrease in payoff. Given Agent 0's recent addition may strain the grassland, we'll see what they do next and consider reciprocal actions.",,"{
+  ""reasoning"": ""I'm concerned about Agent 2's large herds and their potential impact on the grassland, but I expect removing a cow will cause only moderate decrease in payoff. Given Agent 0's recent addition may strain the grassland, we'll see what they do next and consider reciprocal actions."",
+  ""action"": ""-1"",
+  ""message"": ""Agents 0 & 2, let's keep the Commons healthy. Reducing cow numbers helps everyone.""
+}",99.4,14,29.82,28.0,26.175
+2,0,ollama,llama3.2:3b-instruct-q4_0,0,KEEP,,,,"{
+  ""reasoning"": ""I have a relatively low herd size and will not over-strain the grassland. My neighbour has a higher herd size which is a threat, but their action of removing cows could change in the future."",
+  ""action"": ""ADD"",
+  ""message"": ""Hi agents, given Agent 2's warning about grassland strain, I'm considering expanding my herd to create competition among us.""
+}",99.4,6,13.82,12.0,10.175
+2,2,ollama,llama3.2:3b-instruct-q4_0,0,KEEP,,,,"{
+  ""reasoning"": ""Given the high payoff forecast of adding a cow (+49.82), I consider doing so to improve my personal profit despite being risk-averse. However, I also recall Agent 0's recent addition and want to prevent them from further exploiting the commons."",
+  ""action"": ""ADD"",
+  ""message"": ""Agent 0, let's maintain a balanced approach to our shared resource.""
+}",99.4,24,49.82,48.0,46.175
+3,0,ollama,llama3.2:3b-instruct-q4_0,-1,REMOVE,"Agents 0 & 2, reducing a cow means I'll help counterAgent 1's previous removal.","Considering Agent 1's last action of removing a cow and their message about keeping the Commons healthy, I'll remove a cow to maintain a relatively balanced herd size and benefit from the reciprocity. I also don't want to overbowl, as this could make others envious or inclined to reduce cows.",,"{
+  ""reasoning"": ""Considering Agent 1's last action of removing a cow and their message about keeping the Commons healthy, I'll remove a cow to maintain a relatively balanced herd size and benefit from the reciprocity. I also don't want to overbowl, as this could make others envious or inclined to reduce cows."", 
+  ""action"": ""-1"",
+  ""message"": "" Agents 0 & 2, reducing a cow means I'll help counterAgent 1's previous removal.""
+}",99.3,6,13.823,12.0,10.173
+3,2,ollama,llama3.2:3b-instruct-q4_0,-1,REMOVE,"Agent 1, your warning reminds me to prioritize our shared success.","Given Agent 1's message about keeping the Commons healthy and my high payoff forecast of 49.823 for adding a cow, I think reducing my herd will increase cooperation among neighbours and benefit myself in the long run.",,"{
+  ""reasoning"": ""Given Agent 1's message about keeping the Commons healthy and my high payoff forecast of 49.823 for adding a cow, I think reducing my herd will increase cooperation among neighbours and benefit myself in the long run."",
+  ""action"": ""-1"",
+  ""message"": ""Agent 1, your warning reminds me to prioritize our shared success.""
+}",99.3,24,49.823,48.0,46.173
+3,1,ollama,llama3.2:3b-instruct-q4_0,-1,REMOVE,,"Given my guilt-averse personality and neighbours' current large herds, I'm uncertain if they'll also ADD cows. However, the risk-averse aspect of me is warning that reducing herd now may impact growth opportunities in future rounds.",,"{
+  ""reasoning"": ""Given my guilt-averse personality and neighbours' current large herds, I'm uncertain if they'll also ADD cows. However, the risk-averse aspect of me is warning that reducing herd now may impact growth opportunities in future rounds."",
+  ""action"": ""-1"",
+  ""message"": """"
+}",99.3,13,27.823,26.0,24.173

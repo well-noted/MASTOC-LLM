@@ -17,9 +17,10 @@ instead of running to --ticks.
 
 Pass --verbose to stream NetLogo's print/show output live (the equivalent of
 watching the Command Center during a GUI run), plus the full Java command and
-injected BehaviorSpace XML.  Without it, NetLogo's stdout is captured silently
-and only surfaced if the process exits with a non-zero return code.  JVM stderr
-noise is suppressed in both modes.
+injected BehaviorSpace XML.  Without it, run-header lines ("Run N of M |
+Simulation started ...") are still printed as each run begins; all other
+NetLogo stdout is buffered and only surfaced if the process exits with a
+non-zero return code.  JVM stderr noise is suppressed in both modes.
 
 Usage examples
 --------------
@@ -475,16 +476,43 @@ def run(args):
             result = subprocess.run(cmd, check=False, env=run_env)
             captured_output = None
         else:
-            # Capture NetLogo stdout silently; surface it only on failure.
-            # JVM stderr is suppressed in both modes -- it is just startup noise.
-            result = subprocess.run(
-                cmd, check=False,
+            # Stream stdout line-by-line.  Run-header lines (the ones that
+            # start with "Run ") are always printed so the user can see
+            # progress.  Everything else is buffered and only surfaced on
+            # failure.  JVM stderr is suppressed in both modes.
+            import threading
+
+            proc = subprocess.Popen(
+                cmd,
                 stdout=subprocess.PIPE,
                 stderr=subprocess.DEVNULL,
                 text=True,
                 env=run_env,
             )
-            captured_output = result.stdout
+
+            buffered_lines: list[str] = []
+
+            def _stream():
+                assert proc.stdout is not None
+                for line in proc.stdout:
+                    line = line.rstrip("\n")
+                    if line.startswith("Run "):
+                        print(line, flush=True)
+                    else:
+                        buffered_lines.append(line)
+
+            t = threading.Thread(target=_stream, daemon=True)
+            t.start()
+            proc.wait()
+            t.join()
+
+            captured_output = "\n".join(buffered_lines)
+
+            # Build a thin result-like object so the code below can use
+            # result.returncode / captured_output unchanged.
+            class _Result:
+                returncode = proc.returncode
+            result = _Result()
 
         print("=" * 60)
         if result.returncode == 0:
