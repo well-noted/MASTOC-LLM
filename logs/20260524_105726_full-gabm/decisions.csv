@@ -285,3 +285,24 @@ tick,agent_id,backend,model,action,action_name,message,reasoning,thinking,raw_re
   ""message"": ""I am glad to see everyone committing to stability. I will also keep my herd size steady to help maintain the pasture's health.""
 }
 ```",96.6,27,55.659,54.0,52.337
+15,0,ollama,gemma4:26b,0,KEEP,"Agent 1, expanding now might lead to depletion later. I'll stay steady with Agent 2 to ensure the pasture remains healthy for us all.","Agent 1 is expanding their herd, which increases the risk of rapid grassland depletion. To remain risk-averse and support the stability mentioned by Agent 2, I will not add any more cows.",,"```json
+{
+  ""reasoning"": ""Agent 1 is expanding their herd, which increases the risk of rapid grassland depletion. To remain risk-averse and support the stability mentioned by Agent 2, I will not add any more cows."",
+  ""action"": 0,
+  ""message"": ""Agent 1, expanding now might lead to depletion later. I'll stay steady with Agent 2 to ensure the pasture remains healthy for us all.""
+}
+```",96.4,15,31.651,30.0,28.345
+15,1,ollama,gemma4:26b,0,KEEP,I agree with the commitment to stability. I will keep my herd size steady to support our shared goals.,"The grassland remains healthy, and both neighbors have expressed a commitment to stability. By keeping my herd size steady, I align with their approach, avoid increasing the disparity with Agent 0, and maintain a stable payoff.",,"```json
+{
+  ""reasoning"": ""The grassland remains healthy, and both neighbors have expressed a commitment to stability. By keeping my herd size steady, I align with their approach, avoid increasing the disparity with Agent 0, and maintain a stable payoff."",
+  ""action"": 0,
+  ""message"": ""I agree with the commitment to stability. I will keep my herd size steady to support our shared goals.""
+}
+```",96.4,25,51.651,50.0,48.345
+15,2,ollama,gemma4:26b,0,KEEP,"Agent 0, I agree with your commitment to stability. Agent 1, let's monitor the grass levels before we consider any expansion.",The marginal payoff increase from adding a cow is not worth the increased risk to the grassland or the growing disparity between my herd and Agent 0's. I will prioritize stability to align with Agent 0's commitment.,,"```json
+{
+  ""reasoning"": ""The marginal payoff increase from adding a cow is not worth the increased risk to the grassland or the growing disparity between my herd and Agent 0's. I will prioritize stability to align with Agent 0's commitment."",
+  ""action"": 0,
+  ""message"": ""Agent 0, I agree with your commitment to stability. Agent 1, let's monitor the grass levels before we consider any expansion.""
+}
+```",96.4,27,55.651,54.0,52.345

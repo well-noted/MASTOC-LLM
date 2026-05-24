@@ -103,9 +103,6 @@ MASTOC (Schindler, 2013) is a NetLogo ABM that reproduces the tragedy under clas
 
 MASTOC-LLM asks: what happens when agents can reason, remember, and talk?
 
-> *"These models show what individuals will do in unchangeable situations, but do not reveal how autonomy in designing institutions and affecting norms can improve outcomes, nor how political structures influence institutional innovation."*
-> — Ostrom (1990, Chapter 6)
-
 ### Ostrom's Design Principles -- applicability to this model
 
 Ostrom (1990, Chapter 3) identified eight design principles shared by long-lived, self-governing commons institutions. The table below maps each principle to its status in MASTOC-LLM. The key experimental levers -- `memory_length` and `communication?` -- directly control whether the emergent principles are possible at all.
@@ -196,6 +193,13 @@ V_max = 1089 (the 33 × 33 patch grid). The cost function captures the marginal 
 $$V(t+1) = V(t) + r \cdot V(t) \cdot \left(1 - \frac{V(t)}{V_{\max}}\right) - \sum_i k_i \cdot f$$
 
 Each tick, cows graze first (each consuming f patches), then surviving grass regrows logistically. Cows that cannot find f patches die.
+
+These equations are the model's numerical skeleton. They assume complete information about grass levels, independent action by each agent, and no capacity to change the structure of the situation itself -- precisely the assumptions that make the dynamics tractable. As Ostrom (1990) observed of this class of model:
+
+> *"These models show what individuals will do in unchangeable situations, but do not reveal how autonomy in designing institutions and affecting norms can improve outcomes, nor how political structures influence institutional innovation."*
+> — Ostrom (1990, p. 329)
+
+This is an acknowledged constraint of the architecture. The payoff equations tell you what an individually-rational agent *should* do given the current state; they cannot represent an agent reasoning about whether to change the rules of the game. That capacity -- proposing norms, negotiating thresholds, sanctioning defectors -- is what the LLM layer adds, and what the experimental conditions are designed to test.
 
 ---
 
