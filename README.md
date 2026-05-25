@@ -169,7 +169,7 @@ The phrases injected into the prompt as a single sentence:
 | `negative_reciprocity` > 0.5 | *"retaliatory -- you punish neighbors who expand their herds"* |
 | `risk_aversion_level` > 0.5 | *"risk-averse -- you prefer safer outcomes over risky high payoffs"* |
 
-The two reciprocity parameters deserve explicit distinction, because their similarity in name masks an important asymmetry in function. Both encode a conditional response to what neighbours did last tick -- but they are conditioned on opposite ends of the action space. `positive_reciprocity` (pos_r) amplifies the payoff for *restraint* when neighbours also restrained: it rewards cooperative moves with a cooperative neighbourhood. `negative_reciprocity` (neg_r) amplifies the payoff for *expansion* when neighbours also expanded: it rewards defection in kind. Neither is simply "prosocial" or "antisocial" -- pos_r is a mechanism for stabilizing cooperation, neg_r is a mechanism for escalating competition. When pos_r exceeds neg_r, restraint compounds faster than defection; when neg_r meets or exceeds pos_r, the escalation dynamic dominates. This asymmetry drives the empirical regularity reported in the [baseline parameter sweep](#core-stability-rule-pos_r--neg_r) below.
+The two reciprocity parameters deserve explicit distinction, because their similarity in name masks an important asymmetry in function. Both encode a conditional response to what neighbors did last tick -- but they are conditioned on opposite ends of the action space. `positive_reciprocity` (pos_r) amplifies the payoff for *restraint* when neighbors also restrained: it rewards cooperative moves with a cooperative neighborhood. `negative_reciprocity` (neg_r) amplifies the payoff for *expansion* when neighbors also expanded: it rewards defection in kind. Neither is simply "prosocial" or "antisocial" -- pos_r is a mechanism for stabilizing cooperation, neg_r is a mechanism for escalating competition. When pos_r exceeds neg_r, restraint compounds faster than defection; when neg_r meets or exceeds pos_r, the escalation dynamic dominates. This asymmetry drives the empirical regularity reported in the [baseline parameter sweep](#core-stability-rule-pos_r--neg_r) below.
 
 A run at default settings (coop=1, fairness=0.5, neg_r=0, pos_r=0) would produce: *"cooperative -- values collective outcomes over personal gain; guilt-averse -- uncomfortable earning much more than others."*
 
@@ -356,7 +356,7 @@ Four distinct trajectories to commons collapse recur across the run set: agents 
 | **I -- Cooperative Paralysis** | Agents coordinate on inaction via mutual reassurance; threshold for action calibrated too conservatively | All agents KEEP for many ticks while pool drains; near-identical conditional promises repeated round after round; REMOVE only at single-digit pool health | gpt-5.4-mini (coop=1, fair_oth=0.5), collapse tick 26; memory=1 variant (pool drained over 50 ticks while agents held the 90% norm) |
 | **II -- Defection Cascade** | Low cooperative framing suppresses resistance to defection; each ADD justifies the next | All agents ADD every tick from tick 1; pool exhausted within 10–14 ticks; conditional cooperation language circulates but never executes | gpt-5.5 (coop=0.13), collapse tick 13 |
 | **III -- Overshoot-Panic** | Mid-level cooperation produces agents whose outputs are too ADD-inclined to defect outright but too hesitant to act preventively | ADD phase from stressed start; belated pivot to KEEP/REMOVE triggered by visible crisis; agreed threshold stated and violated simultaneously | gpt-5.5 and Claude Sonnet (coop=0.49), 6 independent replications, collapses ticks 16–40; memory=0 (collapse tick 31) |
-| **IV -- Hybrid Architecture Failure** | LLM agents cooperate fully; rule-based agents add unchecked and are unreachable by social signals | LLM herd stable or shrinking; rule-based herds grow +1/tick; institution score moderate but not stabilising; LLM appeals escalate and continue after collapse | All hybrid conditions (1 LLM: tick 35; 2 LLM: tick 58; LLM-advantaged: tick 33) |
+| **IV -- Hybrid Architecture Failure** | LLM agents cooperate fully; rule-based agents add unchecked and are unreachable by social signals | LLM herd stable or shrinking; rule-based herds grow +1/tick; institution score moderate but not stabilizing; LLM appeals escalate and continue after collapse | All hybrid conditions (1 LLM: tick 35; 2 LLM: tick 58; LLM-advantaged: tick 33) |
 
 ### Pattern I -- Cooperative Paralysis
 
@@ -450,7 +450,7 @@ One or more LLM agents produce fully cooperative outputs and appeal to unrespons
 
 *Signature.*
 
-LLM herd grows slowly or shrinks; rule-based herds grow by 1 cow per tick per agent; institution score remains moderate without stabilising; LLM appeals escalate in urgency, continuing after collapse.
+LLM herd grows slowly or shrinks; rule-based herds grow by 1 cow per tick per agent; institution score remains moderate without stabilizing; LLM appeals escalate in urgency, continuing after collapse.
 
 *Key runs.*
 
@@ -525,7 +525,7 @@ Collapse is concentrated around mid-cooperation parameters. The initial baseline
 | **Full-GABM (high coop + high negative reciprocity)** | Claude Sonnet 4.6 | 3 | No | -- | coop=1, neg_r=1: equalized to 16/16/16 by tick 21 -- fastest convergence observed; explicit accountability enforcement in agent messages |
 | **Full-GABM (high coop + high negative reciprocity)** | gpt-5.5 | 3 | No | -- | coop=1, neg_r=1: stable at 12/21/22 by tick 17; tit-for-tat escalation cycles before de-escalation; pool stable at 98.2% -- same parameters, different institutional character than Claude |
 | **Full-GABM (memory=0, no communication)** | Claude Sonnet 4.6 | 3 | Yes | 31 | coop≈0.5, memory_length=0, communication=off: amnesiac agents with no messaging -- textbook overshoot-panic in 31 ticks; ADD=71, KEEP=19, REMOVE=6 |
-| **Full-GABM (memory=15, communication on)** | Claude Sonnet 4.6 | 3 | No | -- | coop≈0.5, memory_length=15: pool stabilised near 95% for 70+ ticks (final 94.1%); converged to 24/24/24; agents enforced explicit 93–96% threshold norm via messages |
+| **Full-GABM (memory=15, communication on)** | Claude Sonnet 4.6 | 3 | No | -- | coop≈0.5, memory_length=15: pool stabilized near 95% for 70+ ticks (final 94.1%); converged to 24/24/24; agents enforced explicit 93–96% threshold norm via messages |
 | **Full-GABM (memory=1, communication on)** | Claude Sonnet 4.6 | 3 | Yes | 87 | coop≈0.5, memory_length=1: delayed collapse -- pool recovered to 95% then drained while agents held a 90% target they couldn't detect was unreachable; Pattern I variant |
 | **Full-GABM (memory=2, communication on)** | Claude Sonnet 4.6 | 3 | No (oscillating) | -- | coop≈0.5, memory_length=2: oscillating grow/correct cycles; achieved 25/25/25 equalization at tick 75; new growth phase began at tick 111; pool declining at termination (90.2%); highly variable across replications |
 | **Full-GABM (memory=3, communication on)** | Claude Sonnet 4.6 | 3 | No | -- | coop≈0.5, memory_length=3: survived 120 ticks; pool slowly declining (90.1% at end); herds stable at 81 total -- fragile, trending toward collapse |
@@ -557,7 +557,7 @@ What the baseline lacks is everything the LLM conditions add: language, memory o
 
 **v1.2.0 mathematical fix -- `min` → `mean` in the best-response rule.**
 
-The decision rule compares expected payoffs across the three actions using a list of payoffs from all possible neighbour-state combinations. Prior to v1.2.0, the rule selected the action whose *minimum* payoff in that list was highest (maximin / worst-case reasoning). 
+The decision rule compares expected payoffs across the three actions using a list of payoffs from all possible neighbor-state combinations. Prior to v1.2.0, the rule selected the action whose *minimum* payoff in that list was highest (maximin / worst-case reasoning). 
 
 <dl>
 <dd>This caused agents to always choose REMOVE regardless of resource state -- not because they were greedy, but because the worst case for REMOVE was always better than the worst case for ADD under standard parameters.</dd>
@@ -646,13 +646,13 @@ Across all 25 tested combinations, collapse rate is 0% whenever <code>pos_r > ne
 
 **Why the formula is consistent with this boundary.**
 
-The code computes reciprocity adjustments for each candidate action before the agent picks the best-response. Letting *d*⁺ = number of neighbours who added last tick and *d*⁻ = number who removed:
+The code computes reciprocity adjustments for each candidate action before the agent picks the best-response. Letting *d*⁺ = number of neighbors who added last tick and *d*⁻ = number who removed:
 
-- **REMOVE** (xi = −1) gains: `payoff × pos_r × (d⁻ + 0.5 × d°) / (n−1)` -- cooperative restraint is rewarded when neighbours also restrained, scaled by pos_r.
-- **ADD** (xi = +1) gains: `payoff × neg_r × (d⁺ + 0.5 × d°) / (n−1)` -- defection is rewarded when neighbours also defected, scaled by neg_r.
+- **REMOVE** (xi = −1) gains: `payoff × pos_r × (d⁻ + 0.5 × d°) / (n−1)` -- cooperative restraint is rewarded when neighbors also restrained, scaled by pos_r.
+- **ADD** (xi = +1) gains: `payoff × neg_r × (d⁺ + 0.5 × d°) / (n−1)` -- defection is rewarded when neighbors also defected, scaled by neg_r.
 - **KEEP** (xi = 0) gains the average of both terms.
 
-When `pos_r > neg_r`, the REMOVE bonus exceeds the ADD bonus at any given neighbour-state distribution: cooperation-when-others-cooperate is more profitable than defection-when-others-defect. The commons converges toward a removing/keeping equilibrium. When `pos_r ≤ neg_r`, the ADD bonus dominates and agents enter a race-to-ADD spiral.
+When `pos_r > neg_r`, the REMOVE bonus exceeds the ADD bonus at any given neighbor-state distribution: cooperation-when-others-cooperate is more profitable than defection-when-others-defect. The commons converges toward a removing/keeping equilibrium. When `pos_r ≤ neg_r`, the ADD bonus dominates and agents enter a race-to-ADD spiral.
 
 **The `neg_r=0, pos_r=0` corner** deserves a separate note: 
 
@@ -677,13 +677,13 @@ With positive reciprocity held at its default (pos_r=1.0), the transition from s
 
 At pos_r=1.0, the commons survives even moderately high negative reciprocity (up to neg_r=0.7 with 0% collapse). The transition zone at 0.8–0.9 reflects stochastic competition between the two reciprocity mechanisms: in most runs the cooperative reciprocity wins, but in a growing fraction it loses.
 
-#### Risk aversion has no independent stabilising effect (Sweep D)
+#### Risk aversion has no independent stabilizing effect (Sweep D)
 
-Sweep D varied risk aversion from 0.0 to 1.0 at neg_r=0.0 and pos_r=1.0 (isolating its independent effect). **Every level, including risk=0.0, produced 0% collapse** -- identical to the default risk=1.0 outcome. Risk aversion has no independent stabilising effect when positive reciprocity is active: the cooperative reciprocity mechanism is entirely sufficient to maintain the commons equilibrium, and removing risk aversion changes nothing.
+Sweep D varied risk aversion from 0.0 to 1.0 at neg_r=0.0 and pos_r=1.0 (isolating its independent effect). **Every level, including risk=0.0, produced 0% collapse** -- identical to the default risk=1.0 outcome. Risk aversion has no independent stabilizing effect when positive reciprocity is active: the cooperative reciprocity mechanism is entirely sufficient to maintain the commons equilibrium, and removing risk aversion changes nothing.
 
 This corrects an earlier claim:
 
-Risk aversion is not a structural stabiliser of the corrected baseline. Its role matters only in the legacy (pre-v1.2.0) fixed-payoff-maximiser regime. In the corrected model, positive reciprocity is the stabilising mechanism; risk aversion is secondary.
+Risk aversion is not a structural stabilizer of the corrected baseline. Its role matters only in the legacy (pre-v1.2.0) fixed-payoff-maximizer regime. In the corrected model, positive reciprocity is the stabilizing mechanism; risk aversion is secondary.
 
 #### Conformity amplifies instability at intermediate neg_r, partially mitigates it at high neg_r (Sweep E)
 
@@ -723,7 +723,7 @@ Starting grassland (50%, 75%, 100%) has no effect on the qualitative outcome:
 - **neg_r=0.0–0.5**: 0% collapse at all three levels.
 - **neg_r=0.75**: 5% collapse at grass=50% (1/20 runs), 0% at 75% and 100% -- a marginal difference at the near-boundary case only.
 
-Starting from a degraded commons (50% grassland) does not change agent behaviour enough to shift outcomes: the reciprocity regime dominates, not the initial resource state.
+Starting from a degraded commons (50% grassland) does not change agent behavior enough to shift outcomes: the reciprocity regime dominates, not the initial resource state.
 
 #### Summary
 
@@ -827,7 +827,7 @@ Agent 0 continued issuing recovery norms for 19+ ticks after collapse, holding i
 | 26–35 | 3           | COORDINATION, NORM_PROPOSAL, SANCTION |
 | 36–50 | 5–6         | COORDINATION, NORM_PROPOSAL, TRUST_BUILDING |
 
-Institution scores remained moderate throughout and never stabilised into governance. The score paradoxically rose after collapse (tick 36–50) as Agent 0 issued increasingly urgent appeals -- signaling norm-richness under conditions where no institutional scaffolding could take hold.
+Institution scores remained moderate throughout and never stabilized into governance. The score paradoxically rose after collapse (tick 36–50) as Agent 0 issued increasingly urgent appeals -- signaling norm-richness under conditions where no institutional scaffolding could take hold.
 
 *Interpretation:*
 
@@ -1000,7 +1000,7 @@ The six DEFECTION ticks are not themselves the finding. In the mid-cooperation c
 
 *Interpretation:*
 
-This result demonstrates the most significant divergence across the Claude Sonnet personality conditions. The guilt and envy parameters -- the fairness-framing components of each agent's prompt -- did not determine *whether* Claude Sonnet agents produced cooperative outputs, but they strongly shaped *how* and *when* cooperation stabilised. Whether this holds for KEEP-dominant model families (where the fairness parameters may interact differently with the default KEEP posture) remains untested.
+This result demonstrates the most significant divergence across the Claude Sonnet personality conditions. The guilt and envy parameters -- the fairness-framing components of each agent's prompt -- did not determine *whether* Claude Sonnet agents produced cooperative outputs, but they strongly shaped *how* and *when* cooperation stabilized. Whether this holds for KEEP-dominant model families (where the fairness parameters may interact differently with the default KEEP posture) remains untested.
 
 With guilt (fairness-concerning-others) active, Agent 2's outputs reflected pressure to reduce a disproportionately large herd, producing consistent removal actions. With envy (fairness-concerning-me) active, Agent 0's outputs reflected urgency to grow toward parity. Both dynamics converged on equalization quickly and conservatively in the default run. Without them, Agent 2 produced no adjustment signals despite holding 32 cows against Agent 0's 21 -- and Agent 0 maintained cooperative outputs without expressing urgency about the disparity.
 
@@ -1052,7 +1052,7 @@ Institution scores reached 9/10 by tick 15 and were sustained through tick 120, 
 
 *Interpretation:*
 
-The most notable aspect of this result is what it suggests about the relationship between personality framing and LLM cooperative behavior. A prompt description of "self-interested -- focused primarily on personal profit" did not suppress institution formation. If anything, the agents' outputs shifted toward *maximising* sustainable yield rather than *minimising* risk: they anchored at 20 cows per agent (the higher sustainable ceiling) rather than the 13 cows per agent found in the default run.
+The most notable aspect of this result is what it suggests about the relationship between personality framing and LLM cooperative behavior. A prompt description of "self-interested -- focused primarily on personal profit" did not suppress institution formation. If anything, the agents' outputs shifted toward *maximizing* sustainable yield rather than *minimizing* risk: they anchored at 20 cows per agent (the higher sustainable ceiling) rather than the 13 cows per agent found in the default run.
 
 This raises a methodological question: **how much does the cooperation personality slider actually govern LLM agent behavior?** The agents' outputs appear to treat the personality description as weak guidance, overridden by the structural logic of the commons situation -- resource depletion is visible, payoffs are clear, and the optimal collective strategy (coordinate down then hold) is legible from the context alone.
 
@@ -1221,7 +1221,7 @@ While initial testing of Claude Sonnet and Llama 3B suggested that high-cooperat
 
 ### gpt-5.4-mini: KEEP-dominance across fairness configurations
 
-Seven runs of gpt-5.4-mini produced almost nothing but KEEP decisions regardless of the state of the commons -- sometimes stabilising harmlessly, other times allowing the grassland to drain undetected until collapse. The dataset has grown since the four runs documented below: three additional runs at identical parameters (coop=1, memory=5, initial_grassland=50%, forage=14) revealed the fastest collapses in the gpt-5.4-mini corpus. Two ended at tick 1 and tick 4 respectively, both forage-driven: agents KEEPed while a scarce starting pool depleted beneath them in a matter of rounds. A third short run survived only 4 ticks before the simulation ended cleanly. These additions do not change the behavioral diagnosis -- KEEP-dominance is consistent across all seven runs -- but they establish that the pattern produces collapses far faster than the forage=4 case (Run 3) when starting conditions are more constrained.
+Seven runs of gpt-5.4-mini produced almost nothing but KEEP decisions regardless of the state of the commons -- sometimes stabilizing harmlessly, other times allowing the grassland to drain undetected until collapse. The dataset has grown since the four runs documented below: three additional runs at identical parameters (coop=1, memory=5, initial_grassland=50%, forage=14) revealed the fastest collapses in the gpt-5.4-mini corpus. Two ended at tick 1 and tick 4 respectively, both forage-driven: agents KEEPed while a scarce starting pool depleted beneath them in a matter of rounds. A third short run survived only 4 ticks before the simulation ended cleanly. These additions do not change the behavioral diagnosis -- KEEP-dominance is consistent across all seven runs -- but they establish that the pattern produces collapses far faster than the forage=4 case (Run 3) when starting conditions are more constrained.
 
 <dl>
 
@@ -1342,7 +1342,7 @@ There was no institution formation in any gpt-4o-mini run. No threshold norm was
 **Comparison to gpt-5.4-mini.**
 
 <dl>
-<dd>gpt-5.4-mini produces a different failure: it freezes. The commons either stabilises or collapses depending on forage and starting conditions, but herd sizes change slowly or not at all.</dd>
+<dd>gpt-5.4-mini produces a different failure: it freezes. The commons either stabilizes or collapses depending on forage and starting conditions, but herd sizes change slowly or not at all.</dd>
 <dd>gpt-4o-mini is noisier -- it produces many more ADD and REMOVE actions -- but the noise doesn't accumulate into governance. The small-model KEEP-dominance pattern gives way to an ADD/REMOVE oscillation that produces pool health at the cost of herd viability.</dd>
 </dl>
 
@@ -1463,7 +1463,7 @@ Eight runs of DeepSeek R1:32b -- a 32-billion-parameter open-weights reasoning m
 
 The two original coop=1 runs -- one interrupted at 7 ticks, one running 55 ticks -- established the pattern. Three subsequent coop=1 runs replicate it. Across all five, the action profile is nearly identical: 80–90% KEEP, marginal ADD drift, pool stable at 97–99%, no equalization attempted.
 
-The 55-tick run with neg_r=1 is the sharpest illustration. Negative reciprocity maximised produced the fastest equalization in Claude Sonnet (16/16/16 at tick 21). DeepSeek under identical parameters drifted from 5/15/25 to 6/20/31 across 55 ticks -- the herd gap widened rather than narrowed, with 151 of 165 agent-decisions being KEEP.
+The 55-tick run with neg_r=1 is the sharpest illustration. Negative reciprocity maximized produced the fastest equalization in Claude Sonnet (16/16/16 at tick 21). DeepSeek under identical parameters drifted from 5/15/25 to 6/20/31 across 55 ticks -- the herd gap widened rather than narrowed, with 151 of 165 agent-decisions being KEEP.
 
 > **Tick 1 – Agent 1 (herd: 15, action: KEEP):** *"Let's all keep our herds stable to preserve the grassland for everyone. Thanks for understanding! 🌿"*
 
@@ -1514,7 +1514,7 @@ Three runs at coop=1 produced the most extreme stasis in the dataset: zero or ne
 | 1    | 93.4%       | 14      | 40      | 5       |
 | 11   | 97.6%       | 14      | 40      | 5       |
 
-Unlike gpt-5.4-mini (occasional small ADD or REMOVE) and DeepSeek (marginal drift), gemma4 produced complete behavioural lock. This is Pattern I -- Cooperative Paralysis -- at its most pronounced.
+Unlike gpt-5.4-mini (occasional small ADD or REMOVE) and DeepSeek (marginal drift), gemma4 produced complete behavioral lock. This is Pattern I -- Cooperative Paralysis -- at its most pronounced.
 
 #### Mid cooperation: overshoot-panic (coop=0.5)
 
@@ -1932,7 +1932,7 @@ With no memory and no communication, agents reasoned purely from the current poo
 The 15-round memory window allowed agents to detect multi-tick trends and reference them explicitly. An **explicit threshold norm** -- "hold until 93–96% before adding" -- emerged through communication and was consistently enforced.
 
 <dl>
-<dd>ADD=39, KEEP=207, REMOVE=12. The pool stabilised at 95% for the final 25 ticks; herds converged to equal 24/24/24. The threshold norm was explicitly named and mutually enforced across 70+ ticks -- a sustained instance of DP3 (collective choice) and DP5 (graduated sanctions through message-based accountability).</dd>
+<dd>ADD=39, KEEP=207, REMOVE=12. The pool stabilized at 95% for the final 25 ticks; herds converged to equal 24/24/24. The threshold norm was explicitly named and mutually enforced across 70+ ticks -- a sustained instance of DP3 (collective choice) and DP5 (graduated sanctions through message-based accountability).</dd>
 </dl>
 
 > **Tick 30 – Agent 0:** *"Holding at 24. Grassland stable at 93.7% -- coordination is working. Committed to the 93% threshold: will remove if it drops below that. Let's keep holding steady together."*
@@ -2018,7 +2018,7 @@ With memory=3 and communication on, agents survived 120 ticks without collapse -
 | 99   | 83        | 90.1%       | 24      | 29      | 30      |
 | 120  | 81        | 90.1%       | 24      | 28      | 29      |
 
-The 3-round memory window was sufficient to detect multi-tick trends. Agents established an explicit 90–93% threshold norm through early-game communication and enforced it via coordinated removals. The pool stabilised in the 90–95% range for most of the run.
+The 3-round memory window was sufficient to detect multi-tick trends. Agents established an explicit 90–93% threshold norm through early-game communication and enforced it via coordinated removals. The pool stabilized in the 90–95% range for most of the run.
 
 > **Tick 4 – Agent 1 (action: KEEP):** *"Holding at 15. Total herd is 46 -- right in our target range. Pasture at 60.5% is a good sign. Let's keep total around 45–47 and continue this recovery."*
 
@@ -2222,7 +2222,7 @@ gpt-5.5's governance produces a stable, equal outcome. But it solves an easier p
 Sonnet's governance is harder and more variable. It can collapse at mid cooperation (the overshoot-panic pattern), it requires sufficient memory and communication to sustain threshold norms, and its equalization is slower and more contentious. But the runs that succeed -- memory=15, coop=1, neg_r=1, producing 24/24/24 at 95% pool -- produce agents that have found a sustainable appropriation equilibrium, not just avoided extraction.
 
 <dl>
-<dd><strong>The distinction is empirically testable.</strong> In a run where the commons has clearly recovered to 99%+ and herds are well below the maximum sustainable load, a correctly-specifying agent will eventually propose cautious additions. A misspecifying agent will not. This behavioural signature -- "now that we're stable, let's discuss carefully growing back" -- appears consistently in Sonnet logs. In gpt-5.5 logs it is absent in the amnesiac and healthy-start configurations, but present in the scarce-start memory=5 run -- suggesting the lock is not unconditional but depends on whether resource stress has already made the appropriation problem salient before equalization sets in.</dd>
+<dd><strong>The distinction is empirically testable.</strong> In a run where the commons has clearly recovered to 99%+ and herds are well below the maximum sustainable load, a correctly-specifying agent will eventually propose cautious additions. A misspecifying agent will not. This behavioral signature -- "now that we're stable, let's discuss carefully growing back" -- appears consistently in Sonnet logs. In gpt-5.5 logs it is absent in the amnesiac and healthy-start configurations, but present in the scarce-start memory=5 run -- suggesting the lock is not unconditional but depends on whether resource stress has already made the appropriation problem salient before equalization sets in.</dd>
 </dl>
 
 Whether this reflects a difference in training objective, in how the two models define "success" in a social coordination task, or in the depth of commons-specific ecological reasoning -- these remain open questions. The log evidence establishes the behavioral signature; its computational source requires the kind of trace-level access that OpenAI's policy does not currently permit for gpt-5.5.
@@ -2735,7 +2735,7 @@ Key terms from Ostrom (1990), *Governing the Commons*, as used in this paper.
 | **Provision** | Maintenance of or investment in a CPR. In MASTOC: removing cows (reducing pressure on the grassland) |
 | **Second-order collective action problem** | The problem of enforcing rules about commons use -- who monitors, who sanctions, and who bears the cost of doing so |
 | **Design principles** | Eight structural features observed in long-surviving CPR institutions (Ostrom, 1990, pp. 90–102). See the table below |
-| **Graduated sanctions** | Penalties for rule violations that escalate with repeat offences -- starting with low-cost social censure and rising to exclusion. Partially operationalised here via `negative_reciprocity`, which works at two levels: (1) a behavioral tendency to match a neighbour's ADD with an ADD of your own (retaliatory defection rather than true peer sanctioning), and (2) activation of social sanctioning language in messages when communication is on. The second level is closer to Ostrom's intent; the first is a proxy. True graduated sanctions -- where one agent imposes an escalating cost *on another* -- are not structurally enforceable in this model, and that gap is itself a finding. |
+| **Graduated sanctions** | Penalties for rule violations that escalate with repeat offences -- starting with low-cost social censure and rising to exclusion. Partially operationalised here via `negative_reciprocity`, which works at two levels: (1) a behavioral tendency to match a neighbor's ADD with an ADD of your own (retaliatory defection rather than true peer sanctioning), and (2) activation of social sanctioning language in messages when communication is on. The second level is closer to Ostrom's intent; the first is a proxy. True graduated sanctions -- where one agent imposes an escalating cost *on another* -- are not structurally enforceable in this model, and that gap is itself a finding. |
 | **Monitoring** | Active observation of both resource condition and other users' behavior by participants or designated monitors |
 | **Operational rules** | Day-to-day rules governing who may appropriate, how much, and when. Distinguished from *collective choice rules* (who may change the operational rules) and *constitutional rules* (who may change the collective choice rules) |
 | **Proportional equivalence** | Design principle 2 -- rules distributing costs and benefits should be proportional to each user's situation. Operationalised here as `fairness_concerning_others` |
@@ -2752,7 +2752,7 @@ Key terms from Ostrom (1990), *Governing the Commons*, as used in this paper.
 | 4 | Monitoring of resource and users | Operationalised by agents observing pool health and neighbor actions each tick |
 | 5 | Graduated sanctions | Tested via `negative_reciprocity`; activated in H3 |
 | 6 | Conflict resolution mechanisms | Emergent in 2-LLM hybrid (coalition ultimatums); absent in 1-LLM hybrid |
-| 7 | Minimal recognition of rights to organise | Fixed: all LLM agents have equal standing |
+| 7 | Minimal recognition of rights to organize | Fixed: all LLM agents have equal standing |
 | 8 | Nested enterprises | Not tested; relevant to future multi-scale extensions |
 
 ---
