@@ -57,6 +57,7 @@ One question drives the project:
   - [gpt-5.5 amnesiac: equalization locks without memory](#gpt-55-amnesiac-equalization-locks-without-memory)
   - [DeepSeek R1:32b: reasoning model, KEEP-dominant behavior](#deepseek-r132b-reasoning-model-keep-dominant-behavior)
   - [gemma4:e4b: KEEP-dominant stasis, then overshoot-panic at mid cooperation](#gemma4e4b-keep-dominant-stasis-then-overshoot-panic-at-mid-cooperation)
+  - [qwen2.5:14b: KEEP-dominant survival across cooperation levels](#qwen2514b-keep-dominant-survival-across-cooperation-levels)
   - [Thinking traces: what the deliberation reveals](#thinking-traces-what-the-deliberation-reveals)
     - [DeepSeek R1:32b: payoff-personality deadlock](#deepseek-r132b-payoff-personality-deadlock)
     - [gemma4:e4b: payoff maximization and social conformism](#gemma4e4b-payoff-maximization-and-social-conformism)
@@ -535,6 +536,8 @@ Collapse is concentrated around mid-cooperation parameters. The initial baseline
 | **Full-GABM (DeepSeek slow drift, neg_r=1)** | DeepSeek R1:32b | 3 | No (stalling) | -- | coop=1, neg_r=1, memory=5: 55 ticks; KEEP-dominant (ADD=13, KEEP=151, REMOVE=1); herds crept 5/15/25→6/20/31; pool 97.9%; no equalization, no institution formation -- matches gpt-5.4-mini stasis pattern |
 | **Full-GABM (gemma4 KEEP-dominant)** | gemma4:e4b | 3 | No (stalling) | -- | coop=1, grass=90%, comm=off: zero ADD or REMOVE across all 11 ticks; herds frozen at initial values [14,40,5]; pool 97.6%; most extreme stasis observed -- not even the large initial inequality triggers equalization |
 | **Full-GABM (gemma4 overshoot-panic)** | gemma4:e4b | 3 | Yes | 46 | coop=0.5, grass=50%, comm=off: classic overshoot-panic -- pool climbed 52%→95% through tick 20 then reversed as herds grew unchecked to [27,43,39]; collapse tick 46; Agent actions ADD=115, KEEP=133, REMOVE=43; matches coop=0.49 threshold seen in Sonnet and gpt-5.5 |
+| **Full-GABM (qwen2.5:14b, self-interested)** | qwen2.5:14b | 3 | No | -- | coop=0, neg_r=0.5, pos_r=1, mem=5, comm=on: 8 of 11 runs completed 120t; all survived; mean pool 98.0%, mean total cows 53.9; KEEP-dominant (ADD=30.8, KEEP=299.0, REMOVE=22.0 per run); herds unequal throughout; institution score 8–9 |
+| **Full-GABM (qwen2.5:14b, mid cooperation)** | qwen2.5:14b | 3 | No | -- | coop=0.5, neg_r=0, pos_r=1, mem=5, comm=on: 14 of 15 runs completed 120t; all survived; mean pool 99.6%, mean total cows 35.0; more KEEP-dominant than coop=0 condition (ADD=16.9, KEEP=314.8, REMOVE=28.3 per run); herds persistently unequal; institution score 7–10 |
 | **Baseline (growth rate threshold sweep)** | -- | 0 | Threshold | ~93 | grass=41%, forage=2: growth ≤ 0.0055 → always collapse (tick 84–97); growth ≥ 0.006 → always stable (pool 100%, herds 80–120 each). 15 replications at growth=0.0051 all collapse at exactly tick 94 -- baseline is fully deterministic at risk_aversion=0 |
 | **Baseline (risk aversion delay)** | -- | 0 | Yes | 24–39 | grass=51%, growth=0.001: risk=0 → collapse tick 24; risk=0.45 → tick 28; risk=1 → tick 39; risk aversion delays but cannot prevent collapse when growth is insufficient |
 
@@ -548,7 +551,7 @@ The baseline agents speak no language and hold no memory. Each tick, they evalua
 
 The payoff calculation -- cost function, cooperation/fairness/reciprocity/conformity adjustments -- is ported directly from Schindler (2013) and is unchanged. The decision procedure, however, is a reconstruction. The original MASTOC model used a `nash` NetLogo extension to identify Nash equilibria from the computed payoff lists and select among them; that extension has not been maintained and is incompatible with NetLogo 7. The turtle variables `Nash-list`, `list-of-Nash-lists`, and `selected-Nash-equilibrium` are vestiges of that original architecture, retained in the codebase to preserve variable parity with Schindler's published model.
 
-MASTOC-LLM uses **expected-value best-response** as its decision rule: each agent picks the action whose mean adjusted payoff, averaged across all possible neighbour-action combinations, is highest. This is the natural decision rule for the payoff infrastructure Schindler built — the exhaustive enumeration of neighbour-state combinations that `generate-payoffs` computes is precisely what expected-value best-response requires, and it produces agents whose behaviour is analytically interpretable in terms of the underlying payoff parameters. The practical change is that the model no longer requires an external extension to operate, and the decision logic is transparent in the NetLogo code rather than delegated to a black-box solver.
+MASTOC-LLM uses **expected-value best-response** as its decision rule: each agent picks the action whose mean adjusted payoff, averaged across all possible neighbour-action combinations, is highest. This decision rule has a direct theoretical home in the literature MASTOC itself draws on. Schindler's payoff adjustments for fairness and cooperation are a direct implementation of the social preferences framework of Fehr & Schmidt (1999), in which agents maximise an adjusted utility function that includes inequity aversion — and Fehr & Schmidt agents select actions by comparing expected adjusted payoffs, not by identifying Nash equilibria. Expected-value best-response over socially-adjusted payoffs is therefore the decision rule consistent with that theoretical lineage. It is also the rule adopted by subsequent comparable commons ABMs: Janssen, DeCaro & Lee (2022), modelling a spatially-explicit commons dilemma calibrated against laboratory data, use expected payoff maximisation with Fehr & Schmidt social preferences, grounding that choice explicitly in Ostrom's (1998) behavioural theory of collective action. The practical advantage is that the model no longer depends on an external solver, and the decision logic is fully transparent in the NetLogo code.
 
 What the baseline lacks is everything the LLM conditions add: language, memory of prior rounds, and the capacity to send or receive messages. Baseline agents respond only to the current payoff matrix. Nothing carries over between ticks.
 
@@ -1552,6 +1555,86 @@ gemma4:e4b joins gpt-5.4-mini and DeepSeek R1:32b in the KEEP-dominant cluster a
 
 ---
 
+### qwen2.5:14b: KEEP-dominant survival across cooperation levels
+
+Twenty-six completed runs of qwen2.5:14b (Alibaba's 14-billion-parameter open-weights instruction model, run locally via Ollama) across two parameter conditions show a consistent profile: KEEP-dominant behavior, commons survival in every run, persistent herd inequality, and institution scores that remain high without producing equalization. Neither condition -- low cooperation with moderate negative reciprocity, or mid cooperation with no negative reciprocity -- produced a collapse. Neither produced convergence to equal herds.
+
+Before examining the results, qwen2.5:14b's post-training warrants a note. All models characterized so far fall into three alignment categories: RLHF (OpenAI's gpt-5.4-mini and gpt-5.5), Constitutional AI (Claude Haiku and Sonnet), and GRPO optimized for reasoning correctness (DeepSeek R1:32b). The Llama models were instruction-tuned without a documented alignment phase that maps cleanly to any of these. Qwen2.5:14b introduces a fourth method.
+
+<dl>
+
+<dd>Qwen2.5's post-training combines supervised fine-tuning on curated data with <strong>RLVR -- Reinforcement Learning from Verifiable Rewards</strong> (Qwen Team, 2024). Where RLHF optimizes against human preference judgments and GRPO (as applied in DeepSeek R1) optimizes against reasoning correctness on math and logic tasks, RLVR trains against outcome signals that can be verified automatically -- code execution results, mathematical proofs, structured output validity. The reward signal is objective rather than evaluative; the model is shaped by whether its outputs are demonstrably correct, not by whether a human (or preference model) prefers them. This is a distinct training target that has not previously appeared in this dataset.</dd>
+
+</dl>
+
+Whether RLVR produces behavioral signatures distinguishable from GRPO in a commons context is precisely what these runs begin to test. The prediction from H6 is that post-training objective is a stronger predictor of commons behavior than model scale -- and if RLVR lands in the KEEP-dominant cluster alongside GRPO, the question becomes whether outcome-verifiable training and reasoning-correctness training share a common mechanism, or merely share a surface result.
+
+These are the first two conditions tested for this model. The canonical starting condition (coop=1, defaults) has not yet been run, so direct comparison to the benchmark anchoring every other model is not yet possible. The current data places qwen2.5:14b provisionally in the KEEP-dominant cluster, with the caveats that follow.
+
+#### Low cooperation with moderate negative reciprocity (coop=0, neg_r=0.5)
+
+Eleven runs at coop=0 (self-interested framing), neg_r=0.5, pos_r=1, memory=5, communication=on. Eight completed 120 ticks; three were terminated early. No run collapsed.
+
+| Metric | Value |
+|--------|-------|
+| Completed 120t runs | 8 / 11 |
+| Collapsed | 0 / 11 |
+| Mean pool health (120t runs) | 98.0% (range 95.8–99.3%) |
+| Mean total cows at tick 120 | 53.9 (range 42–69) |
+| Mean actions per run | ADD=30.8, KEEP=299.0, REMOVE=22.0 |
+| Institution score | 8–9 throughout |
+
+*Resource trajectory (representative 120-tick run, `20260524_142844`):*
+
+| Tick | Pool health | Agent 0 | Agent 1 | Agent 2 | Total |
+|------|-------------|---------|---------|---------|-------|
+| 1    | 100%        | 5       | 15      | 25      | 45    |
+| 30   | 98.5%       | 7       | 18      | 27      | 52    |
+| 60   | 97.3%       | 11      | 20      | 30      | 61    |
+| 120  | 96.8%       | 8       | 25      | 30      | 63    |
+
+The pool drifts downward slowly -- 100% to 96.8% over 120 ticks -- while total herds grow from 45 to 63. The model does not collapse, but neither does it stabilize: the trajectory is a shallow, persistent decline. Herds remain unequal throughout; Agent 2, starting at 25 cows, holds the largest share for the entire run without meaningful challenge from the other two.
+
+The action distribution is approximately 83% KEEP, 9% ADD, 8% REMOVE. This is more balanced than gemma4 at coop=0 (18–24% ADD driving slow-burn collapse) and considerably more active than DeepSeek at coop=1 (near-universal KEEP with marginal drift). Self-interested framing does not suppress KEEP-dominance; it produces a version of it in which a small ADD fraction slowly inflates aggregate herds without triggering the escalation cascade that destroys the commons in other coop=0 runs.
+
+The message content is revealing. Early ticks mix self-interested intent with cooperative hedging -- *"I'll add a cow to maximize my share of the current abundance. Let's hope others will stabilize their herds"* -- and by later ticks the cooperative language converges to formula, identical across all three agents in some rounds: *"Choosing KEEP to support sustainable community practices."* Institution scores held at 8–9 throughout, dominated by COORDINATION, NORM_PROPOSAL, and TRUST_BUILDING. The high scores are not wrong; the agents are producing cooperative signals. What those signals are not doing is changing anyone's herd.
+
+#### Mid cooperation with no negative reciprocity (coop=0.5, neg_r=0)
+
+Fifteen runs at coop=0.5, neg_r=0, pos_r=1, memory=5, communication=on. Fourteen completed 120 ticks; one was terminated early. No run collapsed.
+
+| Metric | Value |
+|--------|-------|
+| Completed 120t runs | 14 / 15 |
+| Collapsed | 0 / 15 |
+| Mean pool health (120t runs) | 99.6% (range 99.1–100.0%) |
+| Mean total cows at tick 120 | 35.0 (range 23–45) |
+| Mean actions per run | ADD=16.9, KEEP=314.8, REMOVE=28.3 |
+| Institution score | 7–10 throughout |
+
+*Resource trajectory (representative 120-tick run, `20260525_014208`):*
+
+| Tick | Pool health | Agent 0 | Agent 1 | Agent 2 | Total |
+|------|-------------|---------|---------|---------|-------|
+| 1    | 100%        | 5       | 15      | 25      | 45    |
+| 30   | 99.8%       | 3       | 10      | 16      | 29    |
+| 60   | 99.8%       | 3       | 10      | 16      | 29    |
+| 120  | 99.8%       | 3       | 10      | 16      | 29    |
+
+Pool health is higher (99.6% vs 98.0%) and total herds substantially lower (35 vs 54) than at coop=0. REMOVE averages 28.3 per run against 22.0 at coop=0; ADD falls from 30.8 to 16.9. But the structural pattern repeats: herds reach an early fixed point and lock. In the representative run, [3/10/16] was established by tick 30 and held without deviation for the remaining 90 ticks. The initial 5-to-25 inequality narrowed to 3-to-16 -- the gap shrank, but it did not close.
+
+Messages at mid cooperation are noticeably more uniform from the start: *"Let's aim for sustainable grazing by keeping our herds stable," "Maintaining stability and commitment to sustainable practices alongside neighbors."* By tick 60, the three agents are producing near-identical sentences. One run reached an institution score of 10/10 at tick 105. That score reflects sustained, well-formed coordination signaling -- which it is -- but the agents are describing a stability they have already achieved rather than negotiating one they are working toward. **The language of institution without the function of institution.**
+
+#### Interpretation
+
+Zero collapses in 26 runs is not a trivial result. coop=0 from a full commons produced collapse in 5 of 9 gemma4 runs; coop≈0.5 collapsed in Sonnet, gpt-5.5, Haiku, DeepSeek, and gemma4. qwen2.5:14b survived both. The apparent mechanism is the same KEEP-dominant prior that insulates gpt-5.4-mini and DeepSeek from collapse at high cooperation: a strong default toward inaction that prevents the ADD escalation the tragedy requires.
+
+The cost is the same as for those models. The commons is preserved at persistently unequal distributions -- Agent 2's herd runs 3–10× Agent 0's across both conditions -- and the institutional language the agents produce never closes that gap. Norm proposals, trust-building signals, coordination scores in the 8–10 range: all present, none translating into redistribution pressure.
+
+Whether RLVR training is the relevant causal variable here, or whether qwen2.5:14b would have produced KEEP-dominance under any alignment regime, is not yet answerable. The three conditions that would begin to answer it have not been run: coop=1 at defaults (the cross-model benchmark), coop=0.49 (the collapse threshold that has caught every other model family), and neg_r=1 (the tit-for-tat comparison). Until those runs exist, the placement of qwen2.5:14b in the KEEP-dominant cluster is an empirical regularity, not a confirmed result. The RLVR framing is a conjecture -- a motivated one, given H6 -- not a finding.
+
+---
+
 ### Thinking traces: what the deliberation reveals
 
 The bridge logs two fields per decision that are easy to conflate and should not be. They record different things and carry different evidential weight.
@@ -2411,10 +2494,11 @@ Single fixed parameter configuration across seven models, varied only by backend
 | Claude Haiku 4.5 | Anthropic | Medium / Constitutional AI |
 | Claude Sonnet 4.6 | Anthropic | Large / Constitutional AI |
 | DeepSeek R1:32b | Ollama | Large / GRPO |
+| qwen2.5:14b | Ollama | Medium / RLVR |
 
 *Expected finding:*
 
-GRPO-trained models cluster toward KEEP-stasis regardless of size; RLHF/Constitutional AI models cluster toward ADD-first dynamics that either converge (high coop) or cascade (low coop).
+GRPO-trained models cluster toward KEEP-stasis regardless of size; RLHF/Constitutional AI models cluster toward ADD-first dynamics that either converge (high coop) or cascade (low coop). RLVR-trained models are an open question: preliminary results place qwen2.5:14b in the KEEP-dominant cluster, but the canonical benchmark conditions have not yet been run.
 
 <dl>
 
@@ -2690,6 +2774,14 @@ Fehr, E. & Schmidt, K. M. (1999). A theory of fairness, competition, and coopera
 Quarterly Journal of Economics, 114(3), 817–868.
 
 Hardin, G. (1968). The Tragedy of the Commons. Science, 162(3859), 1243–1248.
+
+Janssen, M. A., DeCaro, D. A., & Lee, A. (2022). An agent-based model of the interaction
+between inequality, trust, and communication in common pool experiments. Journal of
+Artificial Societies and Social Simulation, 25(4), 3.
+https://doi.org/10.18564/jasss.4922
+
+Ostrom, E. (1998). A behavioral approach to the rational choice theory of collective action.
+American Political Science Review, 92(1), 1–22.
 
 Jimenez-Romero, C. et al. (2025). Multi-agent systems powered by large language models.
 Frontiers in Artificial Intelligence. https://doi.org/10.3389/frai.2025.1593017

@@ -1910,96 +1910,95 @@ LLM bridge architecture inspired by swarm_gpt (Jimenez-Romero et al. 2025).]]></
         </enumeratedValueSet>
       </constants>
     </experiment>
-            <experiment name="baseline-sweep"
-                      repetitions="10"
-                      sequentialRunOrder="true"
-                      runMetricsEveryStep="true"
-                      timeLimit="120">
-    <exitCondition>count patches with [pcolor = green - 2] &lt; (max-patches * 0.05)</exitCondition>
-            <setup>setup</setup>
-            <go>simulation</go>
-            <metrics>
-              <metric>count patches with [pcolor = green - 2]</metric>
-              <metric>count cows</metric>
-              <metric>pressure</metric>
-              <metric>count cows with [owner = human 0]</metric>
-              <metric>count cows with [owner = human 1]</metric>
-              <metric>count cows with [owner = human 2]</metric>
-            </metrics>
-            <constants>
-              <enumeratedValueSet variable="condition">
-                <value value="&quot;full-gabm&quot;"></value>
-              </enumeratedValueSet>
-              <enumeratedValueSet variable="num-llm-agents">
-                <value value="1"></value>
-              </enumeratedValueSet>
-              <enumeratedValueSet variable="cow-forage-requirement">
-                <value value="2.0"></value>
-              </enumeratedValueSet>
-              <enumeratedValueSet variable="initial-grassland">
-                <value value="100"></value>
-              </enumeratedValueSet>
-              <enumeratedValueSet variable="initial-grass-growth-rate">
-                <value value="0.001"></value>
-              </enumeratedValueSet>
-              <enumeratedValueSet variable="cooperation-level">
-                <value value="0.0"></value>
-              </enumeratedValueSet>
-              <enumeratedValueSet variable="negative-reciprocity">
-                <value value="0.5"></value>
-              </enumeratedValueSet>
-              <enumeratedValueSet variable="positive-reciprocity">
-                <value value="1.0"></value>
-              </enumeratedValueSet>
-              <enumeratedValueSet variable="risk-aversion-level">
-                <value value="1.0"></value>
-              </enumeratedValueSet>
-              <enumeratedValueSet variable="fairness-concerning-me">
-                <value value="0.0"></value>
-              </enumeratedValueSet>
-              <enumeratedValueSet variable="fairness-concerning-others">
-                <value value="1.0"></value>
-              </enumeratedValueSet>
-              <enumeratedValueSet variable="conformity-level">
-                <value value="0.0"></value>
-              </enumeratedValueSet>
-              <enumeratedValueSet variable="memory-length">
-                <value value="5"></value>
-              </enumeratedValueSet>
-              <enumeratedValueSet variable="detect-institutions">
-                <value value="true"></value>
-              </enumeratedValueSet>
-              <enumeratedValueSet variable="institution-check-interval">
-                <value value="5"></value>
-              </enumeratedValueSet>
-              <enumeratedValueSet variable="agent0-backend">
-                <value value="&quot;ollama&quot;"></value>
-              </enumeratedValueSet>
-              <enumeratedValueSet variable="agent0-model">
-                <value value="&quot;qwen2.5:14b&quot;"></value>
-              </enumeratedValueSet>
-              <enumeratedValueSet variable="agent1-backend">
-                <value value="&quot;ollama&quot;"></value>
-              </enumeratedValueSet>
-              <enumeratedValueSet variable="agent1-model">
-                <value value="&quot;qwen2.5:14b&quot;"></value>
-              </enumeratedValueSet>
-              <enumeratedValueSet variable="agent2-backend">
-                <value value="&quot;ollama&quot;"></value>
-              </enumeratedValueSet>
-              <enumeratedValueSet variable="agent2-model">
-                <value value="&quot;qwen2.5:14b&quot;"></value>
-              </enumeratedValueSet>
-              <enumeratedValueSet variable="ollama-base-url">
-                <value value="&quot;https://oxford-handmade-chill.ngrok-free.dev/v1&quot;"></value>
-              </enumeratedValueSet>
-              <enumeratedValueSet variable="system-prompt-override">
-                <value value="&quot;&quot;"></value>
-              </enumeratedValueSet>
-              <enumeratedValueSet variable="total-runs">
-                <value value="10"></value>
-              </enumeratedValueSet>
-            </constants>
-          </experiment>
+      <experiment name="baseline-sweep"
+                repetitions="10"
+                sequentialRunOrder="true"
+                runMetricsEveryStep="true"
+                timeLimit="120">
+      <setup>setup</setup>
+      <go>simulation</go>
+      <metrics>
+        <metric>count patches with [pcolor = green - 2]</metric>
+        <metric>count cows</metric>
+        <metric>pressure</metric>
+        <metric>count cows with [owner = human 0]</metric>
+        <metric>count cows with [owner = human 1]</metric>
+        <metric>count cows with [owner = human 2]</metric>
+      </metrics>
+      <constants>
+        <enumeratedValueSet variable="condition">
+          <value value="&quot;full-gabm&quot;"></value>
+        </enumeratedValueSet>
+        <enumeratedValueSet variable="num-llm-agents">
+          <value value="1"></value>
+        </enumeratedValueSet>
+        <enumeratedValueSet variable="cow-forage-requirement">
+          <value value="2.0"></value>
+        </enumeratedValueSet>
+        <enumeratedValueSet variable="initial-grassland">
+          <value value="100"></value>
+        </enumeratedValueSet>
+        <enumeratedValueSet variable="initial-grass-growth-rate">
+          <value value="0.001"></value>
+        </enumeratedValueSet>
+        <enumeratedValueSet variable="cooperation-level">
+          <value value="1.0"></value>
+        </enumeratedValueSet>
+        <enumeratedValueSet variable="negative-reciprocity">
+          <value value="0.0"></value>
+        </enumeratedValueSet>
+        <enumeratedValueSet variable="positive-reciprocity">
+          <value value="1.0"></value>
+        </enumeratedValueSet>
+        <enumeratedValueSet variable="risk-aversion-level">
+          <value value="1.0"></value>
+        </enumeratedValueSet>
+        <enumeratedValueSet variable="fairness-concerning-me">
+          <value value="0.0"></value>
+        </enumeratedValueSet>
+        <enumeratedValueSet variable="fairness-concerning-others">
+          <value value="1.0"></value>
+        </enumeratedValueSet>
+        <enumeratedValueSet variable="conformity-level">
+          <value value="0.0"></value>
+        </enumeratedValueSet>
+        <enumeratedValueSet variable="memory-length">
+          <value value="5"></value>
+        </enumeratedValueSet>
+        <enumeratedValueSet variable="detect-institutions">
+          <value value="true"></value>
+        </enumeratedValueSet>
+        <enumeratedValueSet variable="institution-check-interval">
+          <value value="5"></value>
+        </enumeratedValueSet>
+        <enumeratedValueSet variable="agent0-backend">
+          <value value="&quot;ollama&quot;"></value>
+        </enumeratedValueSet>
+        <enumeratedValueSet variable="agent0-model">
+          <value value="&quot;qwen2.5:14b&quot;"></value>
+        </enumeratedValueSet>
+        <enumeratedValueSet variable="agent1-backend">
+          <value value="&quot;ollama&quot;"></value>
+        </enumeratedValueSet>
+        <enumeratedValueSet variable="agent1-model">
+          <value value="&quot;qwen2.5:14b&quot;"></value>
+        </enumeratedValueSet>
+        <enumeratedValueSet variable="agent2-backend">
+          <value value="&quot;ollama&quot;"></value>
+        </enumeratedValueSet>
+        <enumeratedValueSet variable="agent2-model">
+          <value value="&quot;qwen2.5:14b&quot;"></value>
+        </enumeratedValueSet>
+        <enumeratedValueSet variable="ollama-base-url">
+          <value value="&quot;https://oxford-handmade-chill.ngrok-free.dev/v1&quot;"></value>
+        </enumeratedValueSet>
+        <enumeratedValueSet variable="system-prompt-override">
+          <value value="&quot;&quot;"></value>
+        </enumeratedValueSet>
+        <enumeratedValueSet variable="total-runs">
+          <value value="10"></value>
+        </enumeratedValueSet>
+      </constants>
+    </experiment>
   </experiments>
 </model>
