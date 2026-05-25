@@ -507,3 +507,33 @@ tick,agent_id,backend,model,action,action_name,message,reasoning,thinking,raw_re
   ""action"": 1,
   ""message"": """"
 }",93.0,29,59.541,58.0,56.455
+35,2,ollama,llama3:8b-instruct-q4_0,0,KEEP,Let's maintain our current herd size and assess the situation further before making any changes.,"The grassland is still relatively abundant, but it's always a good idea to keep an eye on the neighbours. Agent 1 added more cows recently, so I'll consider whether their action has a positive or negative effect.",,"{
+  ""reasoning"": ""The grassland is still relatively abundant, but it's always a good idea to keep an eye on the neighbours. Agent 1 added more cows recently, so I'll consider whether their action has a positive or negative effect."",
+  ""action"": 0,
+  ""message"": ""Let's maintain our current herd size and assess the situation further before making any changes.""
+}",93.0,34,69.538,68.0,66.459
+35,1,ollama,llama3:8b-instruct-q4_0,1,ADD,,"The odds are in my favor to add a cow considering the higher forecasted payoff. However, I'll be cautious due to being risk-averse and keep an eye on others' actions.",,"{
+  ""reasoning"": ""The odds are in my favor to add a cow considering the higher forecasted payoff. However, I'll be cautious due to being risk-averse and keep an eye on others' actions."",
+  ""action"": 1,
+  ""message"": """"
+}",93.0,30,61.538,60.0,58.459
+35,0,ollama,llama3:8b-instruct-q4_0,0,KEEP,,"I'm comfortable with the current grassland state and my neighbour's recent actions, so I'll keep my herd to maintain our collective resource.",,"{
+  ""reasoning"": ""I'm comfortable with the current grassland state and my neighbour's recent actions, so I'll keep my herd to maintain our collective resource."",
+  ""action"": 0,
+  ""message"": """"
+}",93.0,14,29.538,28.0,26.459
+36,2,ollama,llama3:8b-instruct-q4_0,0,KEEP,Let's indeed work together to maintain this healthy commons.,"Given the stable pasture state, I'll maintain my current herd size to avoid risk.",,"{
+  ""reasoning"": ""Given the stable pasture state, I'll maintain my current herd size to avoid risk."",
+  ""action"": 0,
+  ""message"": ""Let's indeed work together to maintain this healthy commons.""
+}",92.9,34,69.532,68.0,66.464
+36,0,ollama,llama3:8b-instruct-q4_0,0,KEEP,,"I will KEEP my current herd size since the grassland is still relatively abundant, and I don't want to take an unnecessary risk by increasing or decreasing my herd.",,"{
+  ""reasoning"": ""I will KEEP my current herd size since the grassland is still relatively abundant, and I don't want to take an unnecessary risk by increasing or decreasing my herd."",
+  ""action"": 0,
+  ""message"": """"
+}",92.9,14,29.532,28.0,26.464
+36,1,ollama,llama3:8b-instruct-q4_0,0,KEEP,,"I'll keep my current herd size as the forecasted payoffs are similar, and I don't want to deviate significantly from my neighbours' actions. Also, considering Agent 2's message asking us to assess the situation first.",,"{
+  ""reasoning"": ""I'll keep my current herd size as the forecasted payoffs are similar, and I don't want to deviate significantly from my neighbours' actions. Also, considering Agent 2's message asking us to assess the situation first."",
+  ""action"": 0,
+  ""message"": """"
+}",92.9,31,63.532,62.0,60.464
