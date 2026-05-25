@@ -374,16 +374,58 @@ time.sleep(5)
 
 Replace `llama3.2` with whichever model you want to run. Any model listed on [ollama.com/library](https://ollama.com/library) works — for example `deepseek-r1:32b`, `gemma3:27b`, or `llama3.2:3b`. Kaggle's 1–2 GBps download speeds make even large model pulls fast.
 
-**Cell 4 — Get the public URL:**
+**Cell 4 — Start ngrok and keep the session alive:**
 ```python
-import subprocess, time, requests
-subprocess.Popen(["ngrok", "http", "11434", "--request-header-add", "ngrok-skip-browser-warning:true"])
-time.sleep(3)
-tunnels = requests.get("http://localhost:4040/api/tunnels").json()
-print(tunnels["tunnels"][0]["public_url"])
+import subprocess
+import time
+import requests
+import os
+
+print("Cleaning up any existing ngrok tunnels...")
+# Force kill any zombie ngrok processes to prevent 'endpoint already online' errors
+try:
+    subprocess.run(["killall", "ngrok"], stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+    time.sleep(2)
+except Exception:
+    pass
+
+print("Launching ngrok tunnel on port 11434...")
+# Start the ngrok tunnel and inject the header to bypass the browser warning page
+subprocess.Popen([
+    "ngrok", "http", "11434",
+    "--request-header-add", "ngrok-skip-browser-warning:true"
+])
+time.sleep(5)
+
+try:
+    # Query the local ngrok API to extract your new public URL
+    tunnels = requests.get("http://localhost:4040/api/tunnels").json()
+    public_url = tunnels["tunnels"][0]["public_url"]
+
+    print("\n" + "="*60)
+    print("  YOUR OLLAMA BACKEND IS ONLINE!")
+    print(f"  Base URL: {public_url}")
+    print(f"  OpenAI/Custom Endpoint URL: {public_url}/v1")
+    print("="*60 + "\n")
+
+except Exception as e:
+    print(f"Error retrieving ngrok URL: {e}")
+    print("Please check if your ngrok Auth Token in Cell 2 was accepted correctly.")
+
+# THE ALIVE LOOP: Keeps the cell actively executing to beat the idle timeout
+print("Entering persistence loop to keep Kaggle alive. Press 'Stop' in Kaggle to terminate.")
+try:
+    start_time = time.time()
+    while True:
+        # Sleep for 10 minutes between heartbeats
+        time.sleep(600)
+        elapsed_hours = (time.time() - start_time) / 3600
+        print(f"Heartbeat | Server active | Running for: {elapsed_hours:.2f} hours | Timestamp: {time.strftime('%H:%M:%S')}")
+except KeyboardInterrupt:
+    print("\nServer loop stopped manually.")
 ```
 
-This prints a URL like `https://abc123.ngrok-free.app`. **Copy it** — this is your Ollama endpoint.
+This cell does three things: kills any zombie ngrok processes left over from a previous run (which would otherwise cause an "endpoint already online" error), prints your public URL clearly, and enters a heartbeat loop that emits a status line every 10 minutes to keep Kaggle from triggering its 40-minute idle timeout. **Copy the `Base URL` printed in the output** — that is your Ollama endpoint. The cell will keep running until you click **Stop** in Kaggle.
 
 ### Step 3 — Point MASTOC-LLM at the Kaggle server
 
@@ -411,7 +453,7 @@ For interactive GUI runs, open `MASTOC-LLM.nlogox` in NetLogo, set **Backend** t
 - **Weekly quota.** The free tier provides 30 GPU hours per week. CPU usage is unlimited and unmetered. Baseline sweeps (no LLM calls) run fine without touching the GPU quota.
 - **Cost.** Ollama runs are always free — the `run_baseline_sweep.py` cost estimator reports $0.00 for Ollama backends, so you can pass `--yes` to skip the confirmation prompt.
 - **Model size limit.** The T4 × 2 configuration provides 32 GB of VRAM combined. In practice this caps you at roughly **32B-parameter models in 4-bit quantisation** (e.g. `deepseek-r1:32b`, `gemma3:27b`). Larger models (70B+) will fail to load. Smaller models (`llama3.2:3b`, `llama3.2`, `gemma3:4b`) run comfortably and generate tokens faster. Check the model's listed size on [ollama.com/library](https://ollama.com/library) before pulling.
-- **Keeping the session alive.** Kaggle notebooks time out if left idle. If you're running a long sweep headlessly, the session will stay active as long as a cell is executing.
+- **Keeping the session alive.** Kaggle triggers an idle warning after ~40 minutes of inactivity and will eventually terminate the session. Cell 4's heartbeat loop prevents this by keeping a cell actively executing. Leave it running for the duration of your sweep; click **Stop** in Kaggle when you're done.
 
 ---
 
