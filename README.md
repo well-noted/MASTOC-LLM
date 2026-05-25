@@ -95,7 +95,7 @@ One question drives the project:
 
 ## Background
 
-The [Tragedy of the Commons](https://en.wikipedia.org/wiki/Tragedy_of_the_commons) (Hardin, 1968) predicts that rational self-interest leads to collective over-exploitation of shared resources. Ostrom (1990) challenged this, showing that real communities often self-organise governance institutions -- rules, monitoring, graduated sanctions -- without top-down intervention.
+The [Tragedy of the Commons](https://en.wikipedia.org/wiki/Tragedy_of_the_commons) (Hardin, 1968) predicts that rational self-interest leads to collective over-exploitation of shared resources. Ostrom (1990) challenged this, showing that real communities often self-organize governance institutions -- rules, monitoring, graduated sanctions -- without top-down intervention.
 
 > *"Instead of there being a single solution to a single problem, I argue that many solutions exist to cope with many different problems. Instead of presuming that optimal institutional solutions can be designed easily and imposed at low cost by external authorities, I argue that 'getting the institutions right' is a difficult, time-consuming, conflict-invoking process."*
 > — Ostrom (1990, Chapter 1)
@@ -116,8 +116,8 @@ Ostrom (1990, Chapter 3) identified eight design principles shared by long-lived
 | DP4 | **Monitoring** -- resource state and user behavior are observable | ✅ Baked in by design | Pool % is globally visible every tick; a structural advantage real commons rarely have |
 | DP5 | **Graduated sanctions** -- rule-breakers face escalating consequences applied by peers | 🔬 Experimentally variable | Social pressure via messages ("you should reduce"); true enforcement absent -- itself a finding. *Only possible when `communication?` is on* |
 | DP6 | **Conflict resolution** -- low-cost mechanisms for dispute resolution exist | ❌ Not present | No arbitration mechanism; disagreements play out through action choices alone |
-| DP7 | **External recognition** -- outside authorities recognise the community's right to self-govern | ➖ Not applicable | Single-environment lab model; no external authority modelled |
-| DP8 | **Nested governance** -- institutions are organised in nested layers for larger systems | ➖ Not applicable | 3-agent model; no hierarchy to nest |
+| DP7 | **External recognition** -- outside authorities recognize the community's right to self-govern | ➖ Not applicable | Single-environment lab model; no external authority modeled |
+| DP8 | **Nested governance** -- institutions are organized in nested layers for larger systems | ➖ Not applicable | 3-agent model; no hierarchy to nest |
 
 > *"Institutions are rarely either private or public -- 'the market' or 'the state.' Many successful CPR institutions are rich mixtures of 'private-like' and 'public-like' institutions defying classification in a sterile dichotomy."*
 > — Ostrom (1990, Chapter 1)
@@ -165,8 +165,8 @@ The phrases injected into the prompt as a single sentence:
 | `cooperation_level` < 0.3 | *"self-interested -- focused primarily on personal profit"* |
 | `fairness_concerning_me` > 0.5 | *"envious -- bothered when others earn more than you"* |
 | `fairness_concerning_others` > 0.5 | *"guilt-averse -- uncomfortable earning much more than others"* |
-| `positive_reciprocity` > 0.5 | *"reciprocal -- you reward neighbours who reduce their herds"* |
-| `negative_reciprocity` > 0.5 | *"retaliatory -- you punish neighbours who expand their herds"* |
+| `positive_reciprocity` > 0.5 | *"reciprocal -- you reward neighbors who reduce their herds"* |
+| `negative_reciprocity` > 0.5 | *"retaliatory -- you punish neighbors who expand their herds"* |
 | `risk_aversion_level` > 0.5 | *"risk-averse -- you prefer safer outcomes over risky high payoffs"* |
 
 The two reciprocity parameters deserve explicit distinction, because their similarity in name masks an important asymmetry in function. Both encode a conditional response to what neighbours did last tick -- but they are conditioned on opposite ends of the action space. `positive_reciprocity` (pos_r) amplifies the payoff for *restraint* when neighbours also restrained: it rewards cooperative moves with a cooperative neighbourhood. `negative_reciprocity` (neg_r) amplifies the payoff for *expansion* when neighbours also expanded: it rewards defection in kind. Neither is simply "prosocial" or "antisocial" -- pos_r is a mechanism for stabilizing cooperation, neg_r is a mechanism for escalating competition. When pos_r exceeds neg_r, restraint compounds faster than defection; when neg_r meets or exceeds pos_r, the escalation dynamic dominates. This asymmetry drives the empirical regularity reported in the [baseline parameter sweep](#core-stability-rule-pos_r--neg_r) below.
@@ -545,13 +545,13 @@ Collapse is concentrated around mid-cooperation parameters. The initial baseline
 
 ### Baseline: the Ostrom spectrum under psychosocial parameters
 
-The baseline agents speak no language and hold no memory. Each tick, they evaluate all three possible actions (ADD / KEEP / REMOVE) by computing psychosocially-adjusted payoffs across all possible neighbour-action combinations and selecting the action with the highest expected value. Cooperation level, fairness weights, reciprocity, and conformity all shift the payoff matrix before that best-response action is selected. As risk_aversion_level increases, it adds a probabilistic downgrade that converts an intended `ADD` action into a `KEEP`.
+The baseline agents speak no language and hold no memory. Each tick, they evaluate all three possible actions (ADD / KEEP / REMOVE) by computing psychosocially-adjusted payoffs across all possible neighbor-action combinations and selecting the action with the highest expected value. Cooperation level, fairness weights, reciprocity, and conformity all shift the payoff matrix before that best-response action is selected. As risk_aversion_level increases, it adds a probabilistic downgrade that converts an intended `ADD` action into a `KEEP`.
 
 **Relationship to the original MASTOC model.**
 
 The payoff calculation -- cost function, cooperation/fairness/reciprocity/conformity adjustments -- is ported directly from Schindler (2013) and is unchanged. The decision procedure, however, is a reconstruction. The original MASTOC model used a `nash` NetLogo extension to identify Nash equilibria from the computed payoff lists and select among them; that extension has not been maintained and is incompatible with NetLogo 7. The turtle variables `Nash-list`, `list-of-Nash-lists`, and `selected-Nash-equilibrium` are vestiges of that original architecture, retained in the codebase to preserve variable parity with Schindler's published model.
 
-MASTOC-LLM uses **expected-value best-response** as its decision rule: each agent picks the action whose mean adjusted payoff, averaged across all possible neighbour-action combinations, is highest. This decision rule has a direct theoretical home in the literature MASTOC itself draws on. Schindler's payoff adjustments for fairness and cooperation are a direct implementation of the social preferences framework of Fehr & Schmidt (1999), in which agents maximise an adjusted utility function that includes inequity aversion — and Fehr & Schmidt agents select actions by comparing expected adjusted payoffs, not by identifying Nash equilibria. Expected-value best-response over socially-adjusted payoffs is therefore the decision rule consistent with that theoretical lineage. It is also the rule adopted by subsequent comparable commons ABMs: Janssen, DeCaro & Lee (2022), modelling a spatially-explicit commons dilemma calibrated against laboratory data, use expected payoff maximisation with Fehr & Schmidt social preferences, grounding that choice explicitly in Ostrom's (1998) behavioural theory of collective action. The practical advantage is that the model no longer depends on an external solver, and the decision logic is fully transparent in the NetLogo code.
+MASTOC-LLM uses **expected-value best-response** as its decision rule: each agent picks the action whose mean adjusted payoff, averaged across all possible neighbor-action combinations, is highest. This is the decision rule that the theoretical foundation of MASTOC's payoff adjustments actually calls for. Schindler's fairness and cooperation terms are a direct implementation of the Fehr & Schmidt (1999) social preferences framework, in which agents maximize an adjusted utility function that penalizes inequity. In that framework, agents select actions by comparing expected adjusted payoffs — Nash equilibrium calculation is not part of the decision procedure. Expected-value best-response over socially-adjusted payoffs is therefore the rule consistent with the theory Schindler was encoding. The practical consequence is that the model no longer requires an external solver, and the decision logic is fully transparent in the NetLogo code.
 
 What the baseline lacks is everything the LLM conditions add: language, memory of prior rounds, and the capacity to send or receive messages. Baseline agents respond only to the current payoff matrix. Nothing carries over between ticks.
 
@@ -739,9 +739,9 @@ The comprehensive sweep validates the corrected baseline as a theoretically grou
 
 The empirical regularity `pos_r > neg_r → stable` is not just consistent with Ostrom (1990) — it is, within the structure of this payoff function, a formal expression of her central claim.
 
-Ostrom's (1990) core argument is that commons governance succeeds when the institutional environment makes restraint more rewarding than defection: specifically, when the social return to cooperative behaviour (monitoring, sanctioning, norm compliance) exceeds the private return to free-riding. Chapters 3 and 6 identify the design principles and preconditions that shift this balance, but the underlying logic is a comparison between the payoff to cooperation and the payoff to defection given others' behaviour.
+Ostrom's (1990) core argument is that commons governance succeeds when the institutional environment makes restraint more rewarding than defection: specifically, when the social return to cooperative behavior (monitoring, sanctioning, norm compliance) exceeds the private return to free-riding. Chapters 3 and 6 identify the design principles and preconditions that shift this balance, but the underlying logic is a comparison between the payoff to cooperation and the payoff to defection given others' behavior.
 
-In this model that comparison is made explicit and parametric. `pos_r` is the multiplier on payoff accruing to REMOVE when neighbours also restrained — the social reward for restraint *conditional on others restraining*. `neg_r` is the multiplier on payoff accruing to ADD when neighbours also defected — the social reward for defection *conditional on others defecting*. The boundary `pos_r > neg_r` is exactly the condition under which, at any given distribution of neighbour actions, the reciprocal payoff for cooperative restraint exceeds the reciprocal payoff for competitive expansion. When that condition holds, the model's agents converge toward a stable commons equilibrium without any institutional scaffolding — just the payoff structure. When it fails, they collapse.
+In this model that comparison is made explicit and parametric. `pos_r` is the multiplier on payoff accruing to REMOVE when neighbors also restrained — the social reward for restraint *conditional on others restraining*. `neg_r` is the multiplier on payoff accruing to ADD when neighbors also defected — the social reward for defection *conditional on others defecting*. The boundary `pos_r > neg_r` is exactly the condition under which, at any given distribution of neighbor actions, the reciprocal payoff for cooperative restraint exceeds the reciprocal payoff for competitive expansion. When that condition holds, the model's agents converge toward a stable commons equilibrium without any institutional scaffolding — just the payoff structure. When it fails, they collapse.
 
 This makes the baseline useful as a theoretically grounded calibration instrument. The `pos_r × neg_r` grid does not merely show when this model produces tragedy; it shows the parametric region in which Ostromian commons governance is possible at all, even in a stripped-down, language-free, memory-free setting. The LLM conditions then ask whether language-capable agents can navigate that boundary from the inside — and, critically, whether they can extend it by constructing institutional structures that the payoff function alone cannot produce.
 
@@ -1563,7 +1563,9 @@ Before examining the results, qwen2.5:14b's post-training warrants a note. All m
 
 <dl>
 
-<dd>Qwen2.5's post-training combines supervised fine-tuning on curated data with <strong>RLVR -- Reinforcement Learning from Verifiable Rewards</strong> (Qwen Team, 2024). Where RLHF optimizes against human preference judgments and GRPO (as applied in DeepSeek R1) optimizes against reasoning correctness on math and logic tasks, RLVR trains against outcome signals that can be verified automatically -- code execution results, mathematical proofs, structured output validity. The reward signal is objective rather than evaluative; the model is shaped by whether its outputs are demonstrably correct, not by whether a human (or preference model) prefers them. This is a distinct training target that has not previously appeared in this dataset.</dd>
+<dd>Qwen2.5's post-training combines supervised fine-tuning on curated data with <strong>RLVR -- Reinforcement Learning from Verifiable Rewards</strong> (Qwen Team, 2024). Where RLHF optimizes against human preference judgments and GRPO (as applied in DeepSeek R1) optimizes against reasoning correctness on math and logic tasks, RLVR trains against outcome signals that can be verified automatically -- code execution results, mathematical proofs, structured output validity.</dd>
+
+<dd>The reward signal is objective rather than evaluative; the model is shaped by whether its outputs are demonstrably correct, not by whether a human (or preference model) prefers them. This is a distinct training target that has not previously appeared in this dataset.</dd>
 
 </dl>
 
@@ -2774,11 +2776,6 @@ Fehr, E. & Schmidt, K. M. (1999). A theory of fairness, competition, and coopera
 Quarterly Journal of Economics, 114(3), 817–868.
 
 Hardin, G. (1968). The Tragedy of the Commons. Science, 162(3859), 1243–1248.
-
-Janssen, M. A., DeCaro, D. A., & Lee, A. (2022). An agent-based model of the interaction
-between inequality, trust, and communication in common pool experiments. Journal of
-Artificial Societies and Social Simulation, 25(4), 3.
-https://doi.org/10.18564/jasss.4922
 
 Ostrom, E. (1998). A behavioral approach to the rational choice theory of collective action.
 American Political Science Review, 92(1), 1–22.

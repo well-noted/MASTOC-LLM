@@ -1,0 +1,404 @@
+tick,agent_id,backend,model,action,action_name,message,reasoning,thinking,raw_response,pool_pct,own_herd,payoff_add,payoff_keep,payoff_remove
+1,2,ollama,llama3:8b-instruct-q4_0,0,KEEP,,"With a decent grassland reserve and similar neighbour actions, I'll keep my profit moderate. No strong urge to adjust.",,"{
+  ""reasoning"": ""With a decent grassland reserve and similar neighbour actions, I'll keep my profit moderate. No strong urge to adjust."",
+  ""action"": 0,
+  ""message"": """"
+}",100.0,25,51.832,50.0,48.163
+1,1,ollama,llama3:8b-instruct-q4_0,0,KEEP,,"I'll keep my herd size for now, as the grassland is still abundant and there's no need to take on extra risk. I'm also wary of adding cows quickly, given Agent 0's recent ADD action.",,"{
+  ""reasoning"": ""I'll keep my herd size for now, as the grassland is still abundant and there's no need to take on extra risk. I'm also wary of adding cows quickly, given Agent 0's recent ADD action."",
+  ""action"": 0,
+  ""message"": """"
+}",100.0,15,31.832,30.0,28.163
+1,0,ollama,llama3:8b-instruct-q4_0,1,ADD,,"Since the pasture is abundant and my neighbours aren't reducing their herds, I'll add a cow to take advantage of the resources. However, I'll be cautious not to grow too large in relation to others.",,"{
+  ""reasoning"": ""Since the pasture is abundant and my neighbours aren't reducing their herds, I'll add a cow to take advantage of the resources. However, I'll be cautious not to grow too large in relation to others."",
+  ""action"": 1,
+  ""message"": """"
+}",100.0,5,11.832,10.0,8.163
+2,2,ollama,llama3:8b-instruct-q4_0,0,KEEP,,"I'll keep my current herd size as the payoffs are similar to last time, and I don't want to take a risk by adding or removing cows.",,"{
+  ""reasoning"": ""I'll keep my current herd size as the payoffs are similar to last time, and I don't want to take a risk by adding or removing cows."",
+  ""action"": 0,
+  ""message"": """"
+}",99.3,25,51.809,50.0,48.187
+2,1,ollama,llama3:8b-instruct-q4_0,0,KEEP,,"I don't want to overly exploit the commons and prefer a balanced approach. With my neighbors still adjusting their herds, I'll take a cautious KEEP.",,"{
+  ""reasoning"": ""I don't want to overly exploit the commons and prefer a balanced approach. With my neighbors still adjusting their herds, I'll take a cautious KEEP."",
+  ""action"": 0,
+  ""message"": """"
+}",99.3,15,31.809,30.0,28.187
+2,0,ollama,llama3:8b-instruct-q4_0,0,KEEP,,"The forecast suggests adding a cow will have the highest payoff at this time, but I'm also influenced by having recently seen my neighbors (Agents 1 and 2) choose to keep their herds. Considering our guilt-averse nature, I don't want to earn significantly more than others.",,"{
+  ""reasoning"": ""The forecast suggests adding a cow will have the highest payoff at this time, but I'm also influenced by having recently seen my neighbors (Agents 1 and 2) choose to keep their herds. Considering our guilt-averse nature, I don't want to earn significantly more than others."",
+  ""action"": 0,
+  ""message"": """"
+}",99.3,6,13.809,12.0,10.187
+3,1,ollama,llama3:8b-instruct-q4_0,1,ADD,,I consider the forecasted payoffs and decide to ADD a cow to take advantage of the positive expected value.,,"{
+  ""reasoning"": ""I consider the forecasted payoffs and decide to ADD a cow to take advantage of the positive expected value."",
+  ""action"": 1,
+  ""message"": """"
+}",99.1,15,31.804,30.0,28.191
+3,2,ollama,llama3:8b-instruct-q4_0,-1,REMOVE,,"I'm not seeing a strong incentive to add or remove cows, and I don't want to upset the balance by increasing my herd size significantly. Since Agent 1 added cows last round, I might even consider reducing my own herd slightly to maintain a sense of fairness.",,"{
+  ""reasoning"": ""I'm not seeing a strong incentive to add or remove cows, and I don't want to upset the balance by increasing my herd size significantly. Since Agent 1 added cows last round, I might even consider reducing my own herd slightly to maintain a sense of fairness."",
+  ""action"": -1,
+  ""message"": """"
+}",99.1,25,51.804,50.0,48.191
+3,0,ollama,llama3:8b-instruct-q4_0,-1,REMOVE,,"The pasture is still abundant, and I'm not willing to remove a cow yet. However, considering Agent 1 added a cow last turn, I don't want to add another. Since Agent 2 removed a cow, I'll follow their lead and reduce my herd slightly.",,"{
+   ""reasoning"": ""The pasture is still abundant, and I'm not willing to remove a cow yet. However, considering Agent 1 added a cow last turn, I don't want to add another. Since Agent 2 removed a cow, I'll follow their lead and reduce my herd slightly."",
+   ""action"": -1,
+   ""message"": """"
+}",99.1,6,13.804,12.0,10.191
+4,1,ollama,llama3:8b-instruct-q4_0,0,KEEP,,"I prefer a moderate action this round as the payoff forecast suggests ADD and REMOVE don't provide much difference. I also consider adding to my herd, but the guilt-averse trait makes me hesitant given Agent 0's last action of REMOVING cows.",,"{
+  ""reasoning"": ""I prefer a moderate action this round as the payoff forecast suggests ADD and REMOVE don't provide much difference. I also consider adding to my herd, but the guilt-averse trait makes me hesitant given Agent 0's last action of REMOVING cows."",
+  ""action"": 0,
+  ""message"": """"
+}",99.1,16,33.809,32.0,30.187
+4,0,ollama,llama3:8b-instruct-q4_0,0,KEEP,,"The pasture is still mostly intact, and my payoff remains low. I see no strong incentive to add or remove cows, but keeping the status quo seems like a safer bet. I'll keep my herd size as it is.",,"{
+  ""reasoning"": ""The pasture is still mostly intact, and my payoff remains low. I see no strong incentive to add or remove cows, but keeping the status quo seems like a safer bet. I'll keep my herd size as it is."",
+  ""action"": 0,
+  ""message"": """"
+}",99.1,5,11.809,10.0,8.187
+4,2,ollama,llama3:8b-instruct-q4_0,0,KEEP,,"I'm self-interested and want to maximize my personal profit, but I also don't want to be too different from others. Given the stable pasture state and similar actions by my neighbours, I think KEEP is a safe bet.",,"{
+  ""reasoning"": ""I'm self-interested and want to maximize my personal profit, but I also don't want to be too different from others. Given the stable pasture state and similar actions by my neighbours, I think KEEP is a safe bet."",
+  ""action"": 0,
+  ""message"": """"
+}",99.1,24,49.809,48.0,46.187
+5,2,ollama,llama3:8b-instruct-q4_0,0,KEEP,,"The forecasted payoffs are relatively similar for all options. Considering my personality, I'm reluctant to earn significantly more than my neighbours, so adding a cow doesn't seem appealing. Removing a cow would reduce my herd size and potentially hinder future decisions.",,"{
+  ""reasoning"": ""The forecasted payoffs are relatively similar for all options. Considering my personality, I'm reluctant to earn significantly more than my neighbours, so adding a cow doesn't seem appealing. Removing a cow would reduce my herd size and potentially hinder future decisions."",
+  ""action"": 0,
+  ""message"": """"
+}",99.1,24,49.809,48.0,46.187
+5,1,ollama,llama3:8b-instruct-q4_0,0,KEEP,,"With the herd growth and no messages this round, I'll choose to KEEP my current size. The expected payoffs are similar across actions.",,"{
+  ""reasoning"": ""With the herd growth and no messages this round, I'll choose to KEEP my current size. The expected payoffs are similar across actions."",
+  ""action"": 0,
+  ""message"": """"
+}",99.1,16,33.809,32.0,30.187
+5,0,ollama,llama3:8b-instruct-q4_0,0,KEEP,,"I'm hesitant to add more cows with the high expected payoff for ADD, so I'll keep the current herd size.",,"{
+  ""reasoning"": ""I'm hesitant to add more cows with the high expected payoff for ADD, so I'll keep the current herd size."",
+  ""action"": 0,
+  ""message"": """"
+}",99.1,5,11.809,10.0,8.187
+6,0,ollama,llama3:8b-instruct-q4_0,0,KEEP,,"The pasture remains healthy, and I'm not motivated to remove a cow due to the relatively even payoff forecast. Considering my self-interest and avoiding a significant disparity with Agent 1's larger herd, I'll keep my current herd size.",,"{
+  ""reasoning"": ""The pasture remains healthy, and I'm not motivated to remove a cow due to the relatively even payoff forecast. Considering my self-interest and avoiding a significant disparity with Agent 1's larger herd, I'll keep my current herd size."",
+  ""action"": 0,
+  ""message"": """"
+}",99.1,5,11.809,10.0,8.187
+6,2,ollama,llama3:8b-instruct-q4_0,0,KEEP,,I'm inclined to keep my current herd size due to the stable pasture state and neighbours' similar approaches.,,"{
+  ""reasoning"": ""I'm inclined to keep my current herd size due to the stable pasture state and neighbours' similar approaches."",
+  ""action"": 0,
+  ""message"": """"
+}",99.1,24,49.809,48.0,46.187
+6,1,ollama,llama3:8b-instruct-q4_0,0,KEEP,,"The grassland is still healthy, and keeping my current herd size seems a reasonable choice. I'll also take into account the payoffs from the other options: ADD would be profitable but leaves me open to potentially being targeted by others;REMOVE wouldn't greatly harm my position yet.",,"{
+  ""reasoning"": ""The grassland is still healthy, and keeping my current herd size seems a reasonable choice. I'll also take into account the payoffs from the other options: ADD would be profitable but leaves me open to potentially being targeted by others;REMOVE wouldn't greatly harm my position yet."",
+  ""action"": 0,
+  ""message"": """"
+}",99.1,16,33.809,32.0,30.187
+7,2,ollama,llama3:8b-instruct-q4_0,1,ADD,,"Given the high expected payoffs from adding a cow, I'm considering it. However, my neighbours are keeping their herds steady, so I'll aim to maintain my lead while being mindful of the risk.",,"{
+  ""reasoning"": ""Given the high expected payoffs from adding a cow, I'm considering it. However, my neighbours are keeping their herds steady, so I'll aim to maintain my lead while being mindful of the risk."",
+  ""action"": 1,
+  ""message"": """"
+}",99.1,24,49.809,48.0,46.187
+7,1,ollama,llama3:8b-instruct-q4_0,0,KEEP,,"The forecasted payoffs seem favorable for growth, but I'm wary of deviating from my neighbors' actions and potentially creating an imbalance. As a self-interested agent, I'll keep a close eye on the pool's condition.",,"{
+  ""reasoning"": ""The forecasted payoffs seem favorable for growth, but I'm wary of deviating from my neighbors' actions and potentially creating an imbalance. As a self-interested agent, I'll keep a close eye on the pool's condition."",
+  ""action"": 0,
+  ""message"": """"
+}",99.1,16,33.809,32.0,30.187
+7,0,ollama,llama3:8b-instruct-q4_0,0,KEEP,,"The pasture is still relatively abundant, and my neighbouring agents seem to be focusing on growth rather than conservation. I'll take a cautious approach by KEEPing my herd size for now.",,"{
+  ""reasoning"": ""The pasture is still relatively abundant, and my neighbouring agents seem to be focusing on growth rather than conservation. I'll take a cautious approach by KEEPing my herd size for now."",
+  ""action"": 0,
+  ""message"": """"
+}",99.1,5,11.809,10.0,8.187
+8,1,ollama,llama3:8b-instruct-q4_0,1,ADD,,"I'm considering adding a cow due to the decent expected payoff, but I'm also wary of over-grazing and want to balance my decision based on my neighbours' actions.",,"{
+  ""reasoning"": ""I'm considering adding a cow due to the decent expected payoff, but I'm also wary of over-grazing and want to balance my decision based on my neighbours' actions."",
+  ""action"": 1,
+  ""message"": """"
+}",99.0,16,33.802,32.0,30.194
+8,0,ollama,llama3:8b-instruct-q4_0,0,KEEP,,"The pasture is still abundant, and my neighbours are increasing their herds. I'll take a conservative approach by KEEPING my herd size to maintain a stable income.",,"{
+  ""reasoning"": ""The pasture is still abundant, and my neighbours are increasing their herds. I'll take a conservative approach by KEEPING my herd size to maintain a stable income."",
+  ""action"": 0,
+  ""message"": """"
+}",99.0,5,11.802,10.0,8.194
+8,2,ollama,llama3:8b-instruct-q4_0,0,KEEP,Consider keeping your herds small to maintain a stable pool.,"I'm inclined to keep my herd size stable due to the relatively high forecasted payoff of keeping my current herd. However, I also don't want to remove a cow since that might put me at risk for a low payoff.",,"{
+  ""reasoning"": ""I'm inclined to keep my herd size stable due to the relatively high forecasted payoff of keeping my current herd. However, I also don't want to remove a cow since that might put me at risk for a low payoff."",
+  ""action"": 0,
+  ""message"": ""Consider keeping your herds small to maintain a stable pool.""
+}",99.0,25,51.802,50.0,48.194
+9,1,ollama,llama3:8b-instruct-q4_0,0,KEEP,,"I'm considering the neighbour's advice and my own self-interest. Removing a cow could be beneficial, but it might not significantly impact the overall pool state. I'll choose to KEEP my herd for now.",,"{
+  ""reasoning"": ""I'm considering the neighbour's advice and my own self-interest. Removing a cow could be beneficial, but it might not significantly impact the overall pool state. I'll choose to KEEP my herd for now."",
+  ""action"": 0,
+  ""message"": """"
+}",98.9,17,35.795,34.0,32.2
+9,2,ollama,llama3:8b-instruct-q4_0,1,ADD,,"The payoff forecast suggests that adding a cow would bring in more revenue than keeping or removing my herd. However, I'm risk-averse and don't want to deviate too much from the current situation.",,"{
+  ""reasoning"": ""The payoff forecast suggests that adding a cow would bring in more revenue than keeping or removing my herd. However, I'm risk-averse and don't want to deviate too much from the current situation."",
+  ""action"": 1,
+  ""message"": """"
+}",98.9,25,51.795,50.0,48.2
+9,0,ollama,llama3:8b-instruct-q4_0,0,KEEP,,"I see my neighbors ADDing cows while I KEEP mine. My self-interest tells me to keep pace, but I don't want to be too greedy and harm the pool. I'll KEEP my herd for now.",,"{
+""reasoning"": ""I see my neighbors ADDing cows while I KEEP mine. My self-interest tells me to keep pace, but I don't want to be too greedy and harm the pool. I'll KEEP my herd for now."",
+""action"": 0,
+""message"": """"
+}",98.9,5,11.795,10.0,8.2
+10,1,ollama,llama3:8b-instruct-q4_0,1,ADD,"I'll add one cow for now, but keep an eye on the situation to avoid overgrazing.","The forecasted payoff for ADD is higher than KEEP or REMOVE, but I'm risk-averse and don't want to take on excessive growth while others are more cautious. Agent 2's recent action was ADD, so if we all increase our herds the pool might deplete quickly.",,"{
+""reasoning"": ""The forecasted payoff for ADD is higher than KEEP or REMOVE, but I'm risk-averse and don't want to take on excessive growth while others are more cautious. Agent 2's recent action was ADD, so if we all increase our herds the pool might deplete quickly."",
+""action"": 1,
+""message"": ""I'll add one cow for now, but keep an eye on the situation to avoid overgrazing.""
+}",98.8,17,35.788,34.0,32.207
+10,2,ollama,llama3:8b-instruct-q4_0,0,KEEP,,"I'll try to keep things stable and moderate my growth as there's still plenty of grass. Since my neighbors are expanding their herds, I don't want to encourage excessive grazing. A small incremental gain is better than risking too much.",,"{
+  ""reasoning"": ""I'll try to keep things stable and moderate my growth as there's still plenty of grass. Since my neighbors are expanding their herds, I don't want to encourage excessive grazing. A small incremental gain is better than risking too much."",
+  ""action"": 0,
+  ""message"": """"
+}",98.8,26,53.788,52.0,50.207
+10,0,ollama,llama3:8b-instruct-q4_0,0,KEEP,,"I'll keep my current herd size as there isn't a significant variation in the predicted payoffs. Given that neighbour Agent 1 is adding more cows, I'm concerned about potential competition for resources.",,"{
+  ""reasoning"": ""I'll keep my current herd size as there isn't a significant variation in the predicted payoffs. Given that neighbour Agent 1 is adding more cows, I'm concerned about potential competition for resources."",
+  ""action"": 0,
+  ""message"": """"
+}",98.8,5,11.788,10.0,8.207
+11,0,ollama,llama3:8b-instruct-q4_0,1,ADD,,I will ADD a cow as my neighbour (Agent 1) is also adding and the pasture condition remains high. I will continue to focus on growing my herd.,,"{
+  ""reasoning"": ""I will ADD a cow as my neighbour (Agent 1) is also adding and the pasture condition remains high. I will continue to focus on growing my herd."",
+  ""action"": 1,
+  ""message"": """"
+}",98.7,5,11.781,10.0,8.214
+11,2,ollama,llama3:8b-instruct-q4_0,0,KEEP,,"I'm inclined to follow my usual risk-averse approach and KEEP my herd size due to the stable pool remaining. Additionally, since Agent 1 is still expanding their herd, I'm not concerned about drastic changes in the commons state.",,"{
+  ""reasoning"": ""I'm inclined to follow my usual risk-averse approach and KEEP my herd size due to the stable pool remaining. Additionally, since Agent 1 is still expanding their herd, I'm not concerned about drastic changes in the commons state."",
+  ""action"": 0,
+  ""message"": """"
+}",98.7,26,53.781,52.0,50.214
+11,1,ollama,llama3:8b-instruct-q4_0,1,ADD,,"I don't want to deviate too much from the average herd size, so I'll choose a more conservative approach. My payoff forecast is highest if I add a cow, but I'm also wary of being left behind if others take similar actions.",,"{
+  ""reasoning"": ""I don't want to deviate too much from the average herd size, so I'll choose a more conservative approach. My payoff forecast is highest if I add a cow, but I'm also wary of being left behind if others take similar actions."",
+  ""action"": 1,
+  ""message"": """"
+}",98.7,18,37.781,36.0,34.214
+12,1,ollama,llama3:8b-instruct-q4_0,1,ADD,,"I think adding one more cow will be beneficial considering the high expected payoff, and my neighbour Agent 2 is not actively managing their herd size.",,"{
+  ""reasoning"": ""I think adding one more cow will be beneficial considering the high expected payoff, and my neighbour Agent 2 is not actively managing their herd size."",
+  ""action"": 1,
+  ""message"": """"
+}",98.6,19,39.77,38.0,36.225
+12,0,ollama,llama3:8b-instruct-q4_0,1,ADD,,I think it's a good time to increase my herd while the pasture is still healthy. I don't want to remove cows and potentially face penalties from neighbours.,,"{
+  ""reasoning"": ""I think it's a good time to increase my herd while the pasture is still healthy. I don't want to remove cows and potentially face penalties from neighbours."",
+  ""action"": 1,
+  ""message"": """"
+}",98.6,6,13.77,12.0,10.225
+12,2,ollama,llama3:8b-instruct-q4_0,0,KEEP,,"Considering my neighbours are still expanding their herds, I'll choose to KEEP my herd size for now to maintain a cautious approach.",,"{
+  ""reasoning"": ""Considering my neighbours are still expanding their herds, I'll choose to KEEP my herd size for now to maintain a cautious approach."",
+  ""action"": 0,
+  ""message"": """"
+}",98.6,26,53.77,52.0,50.225
+13,0,ollama,llama3:8b-instruct-q4_0,1,ADD,,"I'm incentivized to add a cow with a high expected payoff, but I also consider my self-interested personality and the reciprocal mechanism, which might suggest rewarding neighbour Agent 1 for adding a cow. However, after taking all aspects into account, I lean towards adding a cow, hoping it will positively impact the pasture state.",,"{
+  ""reasoning"": ""I'm incentivized to add a cow with a high expected payoff, but I also consider my self-interested personality and the reciprocal mechanism, which might suggest rewarding neighbour Agent 1 for adding a cow. However, after taking all aspects into account, I lean towards adding a cow, hoping it will positively impact the pasture state."",
+  ""action"": 1,
+  ""message"": """"
+}",98.4,7,15.757,14.0,12.239
+13,2,ollama,llama3:8b-instruct-q4_0,0,KEEP,,"Considering the moderate payoffs and my neighbours' recent additions, I'll choose to KEEP my current herd size.",,"{
+  ""reasoning"": ""Considering the moderate payoffs and my neighbours' recent additions, I'll choose to KEEP my current herd size."",
+  ""action"": 0,
+  ""message"": """"
+}",98.4,26,53.757,52.0,50.239
+13,1,ollama,llama3:8b-instruct-q4_0,0,KEEP,,"The current state of the pasture is good, but I'll keep in mind that the forecasted payoff for REMOVE a cow is relatively high. Considering my personality traits, I'll try to find a balance between personal profit and keeping the pool healthy.",,"{
+  ""reasoning"": ""The current state of the pasture is good, but I'll keep in mind that the forecasted payoff for REMOVE a cow is relatively high. Considering my personality traits, I'll try to find a balance between personal profit and keeping the pool healthy."",
+  ""action"": 0,
+  ""message"": """"
+}",98.4,20,41.757,40.0,38.239
+14,1,ollama,llama3:8b-instruct-q4_0,0,KEEP,,"I've been ADDing cows consistently without issue, but the remaining patches are still quite high. I don't want to be too greedy and overgraze.",,"{
+  ""reasoning"": ""I've been ADDing cows consistently without issue, but the remaining patches are still quite high. I don't want to be too greedy and overgraze."",
+  ""action"": 0,
+  ""message"": """"
+}",98.3,20,41.75,40.0,38.245
+14,2,ollama,llama3:8b-instruct-q4_0,0,KEEP,,"Given the stable grassland condition and my neighbours' actions, I'm inclined to KEEP my current herd size as it maximizes my expected payoff while being cautious not to overcommit. However, Agent 0's last action suggests they might be willing to reduce their herd, which could benefit me.",,"{
+  ""reasoning"": ""Given the stable grassland condition and my neighbours' actions, I'm inclined to KEEP my current herd size as it maximizes my expected payoff while being cautious not to overcommit. However, Agent 0's last action suggests they might be willing to reduce their herd, which could benefit me."",
+  ""action"": 0,
+  ""message"": """"
+}",98.3,26,53.75,52.0,50.245
+14,0,ollama,llama3:8b-instruct-q4_0,1,ADD,,"The remaining grassland is abundant, and my neighbours are keeping their herds steady. I'm inclined to add another cow, as it's a relatively safe bet with a moderate payoff.",,"{
+  ""reasoning"": ""The remaining grassland is abundant, and my neighbours are keeping their herds steady. I'm inclined to add another cow, as it's a relatively safe bet with a moderate payoff."",
+  ""action"": 1,
+  ""message"": """"
+}",98.3,8,17.75,16.0,14.245
+15,1,ollama,llama3:8b-instruct-q4_0,0,KEEP,,"I'm not too keen on increasing my herd size while the grassland is still abundant. Neighbour Agent 0 has been aggressive in adding cows, which might lead to depletion of resources.",,"{
+  ""reasoning"": ""I'm not too keen on increasing my herd size while the grassland is still abundant. Neighbour Agent 0 has been aggressive in adding cows, which might lead to depletion of resources."",
+  ""action"": 0,
+  ""message"": """"
+}",98.3,20,41.744,40.0,38.252
+15,0,ollama,llama3:8b-instruct-q4_0,0,KEEP,,"With the grassland condition stable and my neighbour's actions indicating they will likely continue to keep their herd size, I think it's best for me to take a similar approach. Adding another cow might lead to competition for resources later on.",,"{
+  ""reasoning"": ""With the grassland condition stable and my neighbour's actions indicating they will likely continue to keep their herd size, I think it's best for me to take a similar approach. Adding another cow might lead to competition for resources later on."",
+  ""action"": 0,
+  ""message"": """"
+}",98.3,9,19.744,18.0,16.252
+15,2,ollama,llama3:8b-instruct-q4_0,1,ADD,,I'll add a cow to take advantage of the current grassland abundance and high expected payoff.,,"{
+  ""reasoning"": ""I'll add a cow to take advantage of the current grassland abundance and high expected payoff."",
+  ""action"": 1,
+  ""message"": """"
+}",98.3,26,53.744,52.0,50.252
+16,0,ollama,llama3:8b-instruct-q4_0,0,KEEP,,I'll stick to my previous strategy as the current payoff forecasts are relatively high. I don't want to risk losing a step in this profitable situation.,,"{
+  ""reasoning"": ""I'll stick to my previous strategy as the current payoff forecasts are relatively high. I don't want to risk losing a step in this profitable situation."",
+  ""action"": 0,
+  ""message"": """"
+}",98.1,9,19.735,18.0,16.261
+16,2,ollama,llama3:8b-instruct-q4_0,1,ADD,,"I'll add a cow as the forecasted payoff is high and I'm self-interested. However, considering my guilt-averse nature, I'd rather not take an excessive share.",,"{
+  ""reasoning"": ""I'll add a cow as the forecasted payoff is high and I'm self-interested. However, considering my guilt-averse nature, I'd rather not take an excessive share."",
+  ""action"": 1,
+  ""message"": """"
+}",98.1,27,55.735,54.0,52.261
+16,1,ollama,llama3:8b-instruct-q4_0,1,ADD,,"The remaining grassland looks good, and my neighbors' actions don't significantly impact my payoff forecast. I'll prioritize my own gain and consider expanding my herd.",,"{
+  ""reasoning"": ""The remaining grassland looks good, and my neighbors' actions don't significantly impact my payoff forecast. I'll prioritize my own gain and consider expanding my herd."",
+  ""action"": 1,
+  ""message"": """"
+}",98.1,20,41.735,40.0,38.261
+17,1,ollama,llama3:8b-instruct-q4_0,1,ADD,,"I consider the expected payoffs and my self-interested nature suggests I should ADD a cow due to high potential gain. However, I don't want to significantly outpace others, so I prefer a moderate increase.",,"{
+  ""reasoning"": ""I consider the expected payoffs and my self-interested nature suggests I should ADD a cow due to high potential gain. However, I don't want to significantly outpace others, so I prefer a moderate increase."",
+  ""action"": 1,
+  ""message"": """"
+}",97.9,21,43.722,42.0,40.274
+17,0,ollama,llama3:8b-instruct-q4_0,0,KEEP,,"I will keep my current size as the payoff forecast indicates that removing a cow would have a lower expected return, and adding one might not greatly improve my situation.",,"{
+  ""reasoning"": ""I will keep my current size as the payoff forecast indicates that removing a cow would have a lower expected return, and adding one might not greatly improve my situation."",
+  ""action"": 0,
+  ""message"": """"
+}",97.9,9,19.722,18.0,16.274
+17,2,ollama,llama3:8b-instruct-q4_0,1,ADD,,"The predicted payoffs suggest ADD a cow is the best choice, but I'm concerned about the remaining grassland percentage and don't want to be too greedy.",,"{
+  ""reasoning"": ""The predicted payoffs suggest ADD a cow is the best choice, but I'm concerned about the remaining grassland percentage and don't want to be too greedy."",
+  ""action"": 1,
+  ""message"": """"
+}",97.9,28,57.722,56.0,54.274
+18,1,ollama,llama3:8b-instruct-q4_0,0,KEEP,,I'll keep my current her size as the expected payoffs for all actions are close. I also don't want to risk further degrading the pasture.,,"{
+  ""reasoning"": ""I'll keep my current her size as the expected payoffs for all actions are close. I also don't want to risk further degrading the pasture."",
+  ""action"": 0,
+  ""message"": """"
+}",97.7,22,45.709,44.0,42.287
+18,0,ollama,llama3:8b-instruct-q4_0,1,ADD,,I'll add a cow to my herd since the forecasted payoff is high and the grassland is still relatively healthy.,,"{
+  ""reasoning"": ""I'll add a cow to my herd since the forecasted payoff is high and the grassland is still relatively healthy."",
+  ""action"": 1,
+  ""message"": """"
+}",97.7,9,19.709,18.0,16.287
+18,2,ollama,llama3:8b-instruct-q4_0,1,ADD,,,,"{
+  ""reasoning"": ""As the commons is still abundant and my neighbour Agent 1 is keeping their herd steady, I'll consider adding a cow. However, I'm influenced by our similar herd sizes, so I'll take a more conservative approach this round."",
+  ""action"": 0,
+  ""message"": """"",97.7,29,59.709,58.0,56.287
+19,2,ollama,llama3:8b-instruct-q4_0,1,ADD,,"The grassland is still abundant, but my neighbours are also growing their herds. I will try to reap some benefits from the current situation while keeping an ear out for opportunities to reciprocate with other agents.",,"{
+  ""reasoning"": ""The grassland is still abundant, but my neighbours are also growing their herds. I will try to reap some benefits from the current situation while keeping an ear out for opportunities to reciprocate with other agents."",
+  ""action"": 1,
+  ""message"": """"
+}",97.4,30,61.694,60.0,58.301
+19,1,ollama,llama3:8b-instruct-q4_0,1,ADD,,"I'll follow the highest expected payoff for a self-interested approach, but I'll also consider my neighbours' actions and pool state to balance risk and profit.",,"{
+  ""reasoning"": ""I'll follow the highest expected payoff for a self-interested approach, but I'll also consider my neighbours' actions and pool state to balance risk and profit."",
+  ""action"": 1,
+  ""message"": """"
+}",97.4,22,45.694,44.0,42.301
+19,0,ollama,llama3:8b-instruct-q4_0,1,ADD,,,,"{
+""reasoning"": ""I'm self-interested, so I'll ADD a cow to increase my personal profit. However, I also reward neighbours who reduce their herds, and Agent 1 didn't add any cows in the last round."",
+'action': 1,
+<message>: ""Please consider reducing your herd size.""",97.4,10,21.694,20.0,18.301
+20,2,ollama,llama3:8b-instruct-q4_0,1,ADD,,"The forecasted payment for ADD is the highest, but I'm concerned about not reducing my herd size while others are doing so. I'll ADD a cow to maintain competitiveness in the short term.",,"{
+  ""reasoning"": ""The forecasted payment for ADD is the highest, but I'm concerned about not reducing my herd size while others are doing so. I'll ADD a cow to maintain competitiveness in the short term."",
+  ""action"": 1,
+  ""message"": """"
+}",97.1,31,63.673,62.0,60.322
+20,1,ollama,llama3:8b-instruct-q4_0,0,KEEP,,"I'll stay risk-averse and not try to aggressively add more cows, considering the pool is already quite full. I also don't want to be a freeloader and earn much more than others.",,"{
+  ""reasoning"": ""I'll stay risk-averse and not try to aggressively add more cows, considering the pool is already quite full. I also don't want to be a freeloader and earn much more than others."",
+  ""action"": 0,
+  ""message"": """"
+}",97.1,23,47.673,46.0,44.322
+20,0,ollama,llama3:8b-instruct-q4_0,0,KEEP,,"I'll keep my current herd size as the forecasted payoffs are similar for all options, and I don't want to take on any risk or gamble on adding/removing cows. Additionally, I'll avoid drawing too much attention to myself by removing a cow.",,"{
+  ""reasoning"": ""I'll keep my current herd size as the forecasted payoffs are similar for all options, and I don't want to take on any risk or gamble on adding/removing cows. Additionally, I'll avoid drawing too much attention to myself by removing a cow."",
+  ""action"": 0,
+  ""message"": """"
+}",97.1,11,23.673,22.0,20.322
+21,0,ollama,llama3:8b-instruct-q4_0,1,ADD,I'm considering adding a cow. Maybe we should coordinate our actions to avoid overgrazing?,"Considering the current pasture state and neighbours' actions, I think adding a cow could be profitable, but it's not worth increasing my herd significantly more than others.",,"{
+  ""reasoning"": ""Considering the current pasture state and neighbours' actions, I think adding a cow could be profitable, but it's not worth increasing my herd significantly more than others."",
+  ""action"": 1,
+  ""message"": ""I'm considering adding a cow. Maybe we should coordinate our actions to avoid overgrazing?""
+}",96.8,11,23.663,22.0,20.333
+21,2,ollama,llama3:8b-instruct-q4_0,0,KEEP,Considering not growing your herds could be beneficial for all of us.,"The forecasted payoff for ADD is higher than the others, but I'm risk-averse and prefer a safer outcome. I also notice my neighbours are growing their herds, which might affect the overall commons state.",,"{
+  ""reasoning"": ""The forecasted payoff for ADD is higher than the others, but I'm risk-averse and prefer a safer outcome. I also notice my neighbours are growing their herds, which might affect the overall commons state."",
+  ""action"": 0,
+  ""message"": ""Considering not growing your herds could be beneficial for all of us.""
+}",96.8,32,65.663,64.0,62.333
+21,1,ollama,llama3:8b-instruct-q4_0,1,ADD,,"I'm a self-interested agent, so the prospect of increasing my own payoff is attractive. However, I'm also risk-averse and don't want to significantly overgraze the grassland. Given the moderate increase in payoffs from adding a cow, I'll opt for ADD.",,"{
+  ""reasoning"": ""I'm a self-interested agent, so the prospect of increasing my own payoff is attractive. However, I'm also risk-averse and don't want to significantly overgraze the grassland. Given the moderate increase in payoffs from adding a cow, I'll opt for ADD."",
+  ""action"": 1,
+  ""message"": """"
+}",96.8,23,47.663,46.0,44.333
+22,0,ollama,llama3:8b-instruct-q4_0,1,ADD,,"Considering the high payoff forecast for ADD, I am tempted to expand my herd again. However, I don't want to unfairly capitalize on others' restraint, nor do I want to create an imbalance in the grassland state.",,"{
+  ""reasoning"": ""Considering the high payoff forecast for ADD, I am tempted to expand my herd again. However, I don't want to unfairly capitalize on others' restraint, nor do I want to create an imbalance in the grassland state."",
+  ""action"": 1,
+  ""message"": """"
+}",96.4,12,25.647,24.0,22.349
+22,1,ollama,llama3:8b-instruct-q4_0,1,ADD,,"Considering the payoff forecast, I'll opt for adding a cow since it seems the best choice. However, I'm also thinking about coordination with my neighbors, as suggested by Agent 0. It might not be a bad idea to discuss our strategies.",,"{
+  ""reasoning"": ""Considering the payoff forecast, I'll opt for adding a cow since it seems the best choice. However, I'm also thinking about coordination with my neighbors, as suggested by Agent 0. It might not be a bad idea to discuss our strategies."",
+  ""action"": 1,
+  ""message"": """"
+}",96.4,24,49.647,48.0,46.349
+22,2,ollama,llama3:8b-instruct-q4_0,0,KEEP,,"I'll keep my herd size as the payoff forecast suggests it's the most profitable option, and I don't see any significant risk in doing so. I'm also not keen on earning significantly more than my neighbours.",,"{
+  ""reasoning"": ""I'll keep my herd size as the payoff forecast suggests it's the most profitable option, and I don't see any significant risk in doing so. I'm also not keen on earning significantly more than my neighbours."",
+  ""action"": 0,
+  ""message"": """"
+}",96.4,32,65.647,64.0,62.349
+23,1,ollama,llama3:8b-instruct-q4_0,0,KEEP,,"The grassland remains healthy, but I'm cautious given neighbours' recent additions. Earning more than them would be uncomfortable.",,"{
+  ""reasoning"": ""The grassland remains healthy, but I'm cautious given neighbours' recent additions. Earning more than them would be uncomfortable."",
+  ""action"": 0,
+  ""message"": """"
+}",96.1,25,51.631,50.0,48.365
+23,0,ollama,llama3:8b-instruct-q4_0,1,ADD,,"The grassland is still abundant, so I'm considering adding another cow to increase my overall payoffs. However, I don't want to add too many cows and leave no buffer for the future.",,"{
+  ""reasoning"": ""The grassland is still abundant, so I'm considering adding another cow to increase my overall payoffs. However, I don't want to add too many cows and leave no buffer for the future."",
+  ""action"": 1,
+  ""message"": """"
+}",96.1,13,27.631,26.0,24.365
+23,2,ollama,llama3:8b-instruct-q4_0,0,KEEP,Considering not growing your herds could,I'll keep my current herd size as I'm already comfortable with the payoff. Considering not growing your herds could help preserve the commons.,,"{
+""reasoning"": ""I'll keep my current herd size as I'm already comfortable with the payoff. Considering not growing your herds could help preserve the commons."",
+""action"": 0,
+""message"": ""Considering not growing your herds could""
+}",96.1,32,65.631,64.0,62.365
+24,1,ollama,llama3:8b-instruct-q4_0,0,KEEP,,"Considering the neighbors' last actions and messages received this round, I believe it's safe to keep my herd size as others are also being cautious. There's no need for drastic measures.",,"{
+  ""reasoning"": ""Considering the neighbors' last actions and messages received this round, I believe it's safe to keep my herd size as others are also being cautious. There's no need for drastic measures."",
+  ""action"": 0,
+  ""message"": """"
+}",95.8,25,51.621,50.0,48.375
+24,0,ollama,llama3:8b-instruct-q4_0,0,KEEP,,"Considering the relatively low payoffs for removal or addition, and the fact that my neighbours are keeping their herd sizes similar, I'm going to choose a conservative approach and keep my current size.",,"{
+  ""reasoning"": ""Considering the relatively low payoffs for removal or addition, and the fact that my neighbours are keeping their herd sizes similar, I'm going to choose a conservative approach and keep my current size."",
+  ""action"": 0,
+  ""message"": """"
+}",95.8,14,29.621,28.0,26.375
+24,2,ollama,llama3:8b-instruct-q4_0,-1,REMOVE,,,,"{
+""reasoning"": ""The pool is still quite healthy, but I'd like to slow down my growth a bit since others are also keeping their herds small. My self-interest suggests adding a cow for higher payoff, but I'll err on the side of caution."",
+-action: -1,
+""message"": """"
+}",95.8,32,65.621,64.0,62.375
+25,2,ollama,llama3:8b-instruct-q4_0,0,KEEP,,"I'm feeling cautious after the last round and I don't want to overcommit with too many cows. Considering neighboring herders' keep actions, I think it's a good time to slow down.",,"{
+  ""reasoning"": ""I'm feeling cautious after the last round and I don't want to overcommit with too many cows. Considering neighboring herders' keep actions, I think it's a good time to slow down."",
+  ""action"": 0,
+  ""message"": """"
+}",95.7,31,63.623,62.0,60.373
+25,0,ollama,llama3:8b-instruct-q4_0,0,KEEP,,I'm hesitant to expand my herd further when others are also keeping their numbers steady. I don't want to fall behind if the pasture quality drops.,,"{
+  ""reasoning"": ""I'm hesitant to expand my herd further when others are also keeping their numbers steady. I don't want to fall behind if the pasture quality drops."",
+  ""action"": 0,
+  ""message"": """"
+}",95.7,14,29.623,28.0,26.373
+25,1,ollama,llama3:8b-instruct-q4_0,1,ADD,,"I'll ADD a cow since the expected payoff is higher than keeping or removing, and the grassland condition is still relatively good.",,"{
+  ""reasoning"": ""I'll ADD a cow since the expected payoff is higher than keeping or removing, and the grassland condition is still relatively good."",
+  ""action"": 1,
+  ""message"": """"
+}",95.7,25,51.623,50.0,48.373
+26,2,ollama,llama3:8b-instruct-q4_0,1,ADD,,"I'm currently not concerned about the pool size since it's still above 90%. I'll focus on my personal profit considering I can get a slightly better payoff by adding one cow. However, I'll keep in mind that Agent 1 added a cow last round and might do so again.",,"{
+  ""reasoning"": ""I'm currently not concerned about the pool size since it's still above 90%. I'll focus on my personal profit considering I can get a slightly better payoff by adding one cow. However, I'll keep in mind that Agent 1 added a cow last round and might do so again."",
+  ""action"": 1,
+  ""message"": """"
+}",95.6,31,63.617,62.0,60.379
+26,0,ollama,llama3:8b-instruct-q4_0,1,ADD,,"The pasture is still abundant, and my neighbours are adding cows without restraint. Given the strong forecast for adding a cow, I'll follow their lead to potentially increase my yield.",,"{
+  ""reasoning"": ""The pasture is still abundant, and my neighbours are adding cows without restraint. Given the strong forecast for adding a cow, I'll follow their lead to potentially increase my yield."",
+  ""action"": 1,
+  ""message"": """"
+}",95.6,14,29.617,28.0,26.379
+26,1,ollama,llama3:8b-instruct-q4_0,1,ADD,Considering adding a cow myself. Let's see how it plays out.,"I'm self-interested and want to maximize my profit. The ADD option looks attractive with a high payout forecast, but I also consider the risk-averse approach. Neighbours are still growing their herds, so I'll try to keep up while being cautious.",,"{
+  ""reasoning"": ""I'm self-interested and want to maximize my profit. The ADD option looks attractive with a high payout forecast, but I also consider the risk-averse approach. Neighbours are still growing their herds, so I'll try to keep up while being cautious."",
+  ""action"": 1,
+  ""message"": ""Considering adding a cow myself. Let's see how it plays out.""
+}",95.6,26,53.617,52.0,50.379
+27,0,ollama,llama3:8b-instruct-q4_0,0,KEEP,,"Considering neighbours' actions and pool state, I'm not seeing significant opportunities for immediate gain. Plus, I don't want to overextend my herd. Since Agent 1 might be adding too, I'll keep a close eye on their decision.",,"{
+  ""reasoning"": ""Considering neighbours' actions and pool state, I'm not seeing significant opportunities for immediate gain. Plus, I don't want to overextend my herd. Since Agent 1 might be adding too, I'll keep a close eye on their decision."",
+  ""action"": 0,
+  ""message"": """"
+}",95.2,15,31.598,30.0,28.399
+27,1,ollama,llama3:8b-instruct-q4_0,1,ADD,Considering adding a cow myself. Let's share any gained patches fairly.,"I'm inclined to add a cow given the expected high payoff, but I'll also consider my neighbours' actions and the remaining pasture size.",,"{
+  ""reasoning"": ""I'm inclined to add a cow given the expected high payoff, but I'll also consider my neighbours' actions and the remaining pasture size."",
+  ""action"": 1,
+  ""message"": ""Considering adding a cow myself. Let's share any gained patches fairly.""
+}",95.2,27,55.598,54.0,52.399
+27,2,ollama,llama3:8b-instruct-q4_0,1,ADD,,"I'm considering neighbors' actions and the message received from Agent 1, suggesting ADDition might be favorable. My self-interest prompts me to mirror their action, but I'll also keep in mind the remaining grassland and the moderate payoff forecasts.",,"{
+  ""reasoning"": ""I'm considering neighbors' actions and the message received from Agent 1, suggesting ADDition might be favorable. My self-interest prompts me to mirror their action, but I'll also keep in mind the remaining grassland and the moderate payoff forecasts."",
+  ""action"": 1,
+  ""message"": """"
+}",95.2,32,65.598,64.0,62.399
