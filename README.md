@@ -551,11 +551,11 @@ The baseline agents speak no language and hold no memory. Each tick, they evalua
 
 The payoff calculation -- cost function, cooperation/fairness/reciprocity/conformity adjustments -- is ported directly from Schindler (2013) and is unchanged. The decision procedure, however, is a reconstruction. The original MASTOC model used a `nash` NetLogo extension to identify Nash equilibria from the computed payoff lists and select among them; that extension has not been maintained and is incompatible with NetLogo 7. The turtle variables `Nash-list`, `list-of-Nash-lists`, and `selected-Nash-equilibrium` are vestiges of that original architecture, retained in the codebase to preserve variable parity with Schindler's published model.
 
-MASTOC-LLM substitutes **expected-value best-response**: each agent picks the action whose mean adjusted payoff, averaged across all possible neighbor-action combinations, is highest. This is not a claim of perfect procedural fidelity. We cannot run the original model to verify that Nash selection and expected-value best-response produce identical behavior -- the `nash` extension is gone, and with it the ability to make that comparison directly. What we can say is that the payoff structure Schindler designed does not require Nash equilibrium computation to generate ecologically meaningful behavior; the substitution is a reconstruction, not a replication.
+MASTOC-LLM substitutes **expected-value best-response**: each agent picks the action with the highest mean adjusted payoff across all possible neighbor-action combinations. It cannot be verified that this produces identical behavior to Nash selection. The `nash` extension is no longer supported, so a comparison cannot be made directly.
 
-The stronger defense comes from Schindler herself. In a companion paper published at the European Conference on Modelling and Simulation (Schindler, 2012), she introduced a simplified variant of MASTOC in which Nash equilibrium selection was explicitly abandoned. The stated rationale: Nash equilibria "do not realistically represent human behavior," and their computation imposed prohibitive overhead as neighborhood sizes grew. The replacement was a set of reactive, probabilistic agents -- a different architecture than ours, but sharing the same motivation. Schindler's own published trajectory runs directly parallel to the substitution made here.
+What can be verified is that the payoff infrastructure -- the same equations, the same disposition adjustments -- produces qualitatively consistent results. Schindler's own sensitivity analysis (Tables 3 and 4 in Schindler, 2012) shows cooperativeness and positive reciprocity associated with commons survival, negative reciprocity associated with failure. The 2,140-run sweep here recovers the same directional pattern. 
 
-More concretely: that paper reports disposition-sustainability correlations (Table 3) and grass-cover sensitivity results (Table 4) that align closely with the pattern MASTOC-LLM recovers across 2,140 baseline runs. Cooperativeness associates positively with commons survival in both; negative reciprocity associates negatively. **The `pos_r > neg_r` stability boundary this implementation identifies is not an artifact of the decision rule substitution -- it is an empirical regularity predicted by the social preferences literature and recovered here with the same sign and structure Schindler (2012) reported.** That convergence across different decision architectures, different codebases, and different parameter sweeps is the functional validation: not that we have faithfully reproduced Schindler's Nash selection, but that we have recovered the same ecologically interpretable signal from the same payoff infrastructure.
+**The `pos_r > neg_r` stability boundary is a pattern the original model's published results anticipate, recovered here from the same payoff infrastructure under a different decision architecture.**
 
 What the baseline lacks is everything the LLM conditions add: language, memory of prior rounds, and the capacity to send or receive messages. Baseline agents respond only to the current payoff matrix. Nothing carries over between ticks.
 
@@ -2767,17 +2767,12 @@ Key terms from Ostrom (1990), *Governing the Commons*, as used in this paper.
 Bai, Y. et al. (2022). Constitutional AI: Harmlessness from AI feedback. Anthropic.
 https://arxiv.org/abs/2212.08073
 
-Axelrod, R. (1984). The Evolution of Cooperation. Basic Books.
-
-Epstein, J. M., & Axtell, R. (1996). Growing Artificial Societies: Social Science from
-the Bottom Up. Brookings Institution Press / MIT Press.
-
 Julia Schindler (2013, April 27). “MASTOC - A Multi-Agent System of the Tragedy Of The Commons” (Version 1.1.0). CoMSES Computational Model Library.
 Retrieved from: https://www.comses.net/codebases/2283/releases/1.1.0/
 
-Schindler, J. (2012). Rethinking the tragedy of the commons: Simulating the social
-dimensions of resource appropriation. In Proceedings of the European Conference on
-Modelling and Simulation (ECMS 2012). Koblenz, Germany.
+Schindler, J. (2012). Rethinking the tragedy of the commons: The integration of
+socio-psychological dispositions. Journal of Artificial Societies and Social Simulation,
+15(1), 4. http://jasss.soc.surrey.ac.uk/15/1/4.html
 
 Christiano, P. et al. (2017). Deep reinforcement learning from human preferences. NeurIPS.
 https://arxiv.org/abs/1706.03741
@@ -2803,6 +2798,11 @@ OpenAI. (2024, December 5). OpenAI o1 System Card. https://cdn.openai.com/o1-sys
 Ostrom, E. (1990). Governing the Commons. Cambridge University Press.
 
 Tuoti, T. E. (2026, May 18). Do Ostrom-Style Commons Institutions Emerge from LLM Agents? A Pre-Registration of Confirmatory Hypotheses for MASTOC-LLM. https://doi.org/10.17605/OSF.IO/WBVHT
+
+Qwen Team. (2024). Qwen2.5 Technical Report. Alibaba Cloud. https://arxiv.org/abs/2412.15115
+
+OpenAI. (2025). GPT-5.5 Deployment Safety Report.
+https://deploymentsafety.openai.com/gpt-5-5
 ```
 
 ---
