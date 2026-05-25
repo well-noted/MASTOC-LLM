@@ -492,3 +492,18 @@ tick,agent_id,backend,model,action,action_name,message,reasoning,thinking,raw_re
   ""action"": -1,
   ""message"": """"
 }",92.8,30,61.527,60.0,58.47
+34,0,ollama,llama3:8b-instruct-q4_0,0,KEEP,,I'll keep the status quo given the stable grassland state and my neighbours' recent actions. I also take into account their pleas for cooperation.,,"{
+  ""reasoning"": ""I'll keep the status quo given the stable grassland state and my neighbours' recent actions. I also take into account their pleas for cooperation."",
+  ""action"": 0,
+  ""message"": """"
+}",93.0,14,29.541,28.0,26.455
+34,2,ollama,llama3:8b-instruct-q4_0,0,KEEP,,"As the grassland is still abundant and my neighbours are not aggressively expanding their herds, I'll focus on maintaining a comfortable size for myself. Additionally, given my personality traits, I'm less concerned with maximizing my payoff as long as others don't over-consume.",,"{
+  ""reasoning"": ""As the grassland is still abundant and my neighbours are not aggressively expanding their herds, I'll focus on maintaining a comfortable size for myself. Additionally, given my personality traits, I'm less concerned with maximizing my payoff as long as others don't over-consume."",
+  ""action"": 0,
+  ""message"": """"
+}",93.0,34,69.541,68.0,66.455
+34,1,ollama,llama3:8b-instruct-q4_0,1,ADD,,"I'll ADD a cow myself since the forecast suggests it's the most profitable option, and I'm not concerned about earning much more than others. However, I'll keep an eye on my neighbors' actions and adjust accordingly.",,"{
+  ""reasoning"": ""I'll ADD a cow myself since the forecast suggests it's the most profitable option, and I'm not concerned about earning much more than others. However, I'll keep an eye on my neighbors' actions and adjust accordingly."",
+  ""action"": 1,
+  ""message"": """"
+}",93.0,29,59.541,58.0,56.455

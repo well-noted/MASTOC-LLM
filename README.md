@@ -551,7 +551,9 @@ The baseline agents speak no language and hold no memory. Each tick, they evalua
 
 The payoff calculation -- cost function, cooperation/fairness/reciprocity/conformity adjustments -- is ported directly from Schindler (2013) and is unchanged. The decision procedure, however, is a reconstruction. The original MASTOC model used a `nash` NetLogo extension to identify Nash equilibria from the computed payoff lists and select among them; that extension has not been maintained and is incompatible with NetLogo 7. The turtle variables `Nash-list`, `list-of-Nash-lists`, and `selected-Nash-equilibrium` are vestiges of that original architecture, retained in the codebase to preserve variable parity with Schindler's published model.
 
-MASTOC-LLM uses **expected-value best-response** as its decision rule: each agent picks the action whose mean adjusted payoff, averaged across all possible neighbor-action combinations, is highest. This is the decision rule that the theoretical foundation of MASTOC's payoff adjustments actually calls for. Schindler's fairness and cooperation terms are a direct implementation of the Fehr & Schmidt (1999) social preferences framework, in which agents maximize an adjusted utility function that penalizes inequity. In that framework, agents select actions by comparing expected adjusted payoffs — Nash equilibrium calculation is not part of the decision procedure. Expected-value best-response over socially-adjusted payoffs is therefore the rule consistent with the theory Schindler was encoding. The practical consequence is that the model no longer requires an external solver, and the decision logic is fully transparent in the NetLogo code.
+MASTOC-LLM uses **expected-value best-response** in its place: each agent picks the action whose mean adjusted payoff, averaged across all possible neighbor-action combinations, is highest. Expected-value best-response is the default decision rule in most agent-based modeling work -- the assumption that agents select whichever option maximizes expected utility, given uncertainty about what others will do (Axelrod, 1984; Epstein & Axtell, 1996). Nash equilibrium selection is the more demanding claim: that agents find the strategic fixed point at which no one can improve by deviating unilaterally. Schindler's use of Gambit to compute that fixed point was a deliberate methodological choice, not a necessity of the payoff structure.
+
+The two rules converge in the cases that drive this model's behavior. When the commons is healthy and `pos_r ≤ neg_r`, ADD dominates regardless of what neighbors do -- it is a Nash equilibrium and the expected-value best response simultaneously. When the commons is depleted, REMOVE dominates by the same logic. The configurations where Nash and expected-value best-response could diverge -- near the stability boundary, where multiple equilibria are possible -- are precisely the configurations the psychosocial parameter sweep is designed to characterize empirically rather than resolve analytically. The sweep across 2,140 runs, producing the clean `pos_r > neg_r` boundary and the theoretically expected collapse patterns under self-interest, is the functional validation: the reconstruction behaves as a faithful implementation of Schindler's payoff structure should.
 
 What the baseline lacks is everything the LLM conditions add: language, memory of prior rounds, and the capacity to send or receive messages. Baseline agents respond only to the current payoff matrix. Nothing carries over between ticks.
 
@@ -2762,6 +2764,11 @@ Key terms from Ostrom (1990), *Governing the Commons*, as used in this paper.
 ```
 Bai, Y. et al. (2022). Constitutional AI: Harmlessness from AI feedback. Anthropic.
 https://arxiv.org/abs/2212.08073
+
+Axelrod, R. (1984). The Evolution of Cooperation. Basic Books.
+
+Epstein, J. M., & Axtell, R. (1996). Growing Artificial Societies: Social Science from
+the Bottom Up. Brookings Institution Press / MIT Press.
 
 Julia Schindler (2013, April 27). “MASTOC - A Multi-Agent System of the Tragedy Of The Commons” (Version 1.1.0). CoMSES Computational Model Library.
 Retrieved from: https://www.comses.net/codebases/2283/releases/1.1.0/
