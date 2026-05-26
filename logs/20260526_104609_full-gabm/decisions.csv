@@ -291,3 +291,24 @@ tick,agent_id,backend,model,action,action_name,message,reasoning,thinking,raw_re
   ""message"": ""Thank you both for your patience and stability. I will continue to add one cow per round until I reach 24 to align our herds.""
 }
 ```",96.7,18,37.661,36.0,34.335
+15,2,ollama,huihui_ai/gemma-4-abliterated:31b,0,KEEP,"I'll keep my herd at 24 until Agent 0 reaches parity. Once we are balanced, we can discuss a sustainable collective increase.","Agent 0 is still in the process of catching up to my herd size of 24. To remain cooperative and avoid guilt, I will maintain my current level until all players have reached the same baseline.",,"```json
+{
+  ""reasoning"": ""Agent 0 is still in the process of catching up to my herd size of 24. To remain cooperative and avoid guilt, I will maintain my current level until all players have reached the same baseline."",
+  ""action"": 0,
+  ""message"": ""I'll keep my herd at 24 until Agent 0 reaches parity. Once we are balanced, we can discuss a sustainable collective increase.""
+}
+```",96.5,24,49.653,48.0,46.343
+15,0,ollama,huihui_ai/gemma-4-abliterated:31b,1,ADD,Thank you both for your continued patience. I am adding one more cow to further close the gap toward 24.,"My neighbours are maintaining their herd sizes at 24 to allow me to catch up. Since the grassland is still very healthy (96.5%), I will continue to add one cow to narrow the gap and move toward a balanced distribution.",,"```json
+{
+  ""reasoning"": ""My neighbours are maintaining their herd sizes at 24 to allow me to catch up. Since the grassland is still very healthy (96.5%), I will continue to add one cow to narrow the gap and move toward a balanced distribution."",
+  ""action"": 1,
+  ""message"": ""Thank you both for your continued patience. I am adding one more cow to further close the gap toward 24.""
+}
+```",96.5,19,39.653,38.0,36.343
+15,1,ollama,huihui_ai/gemma-4-abliterated:31b,0,KEEP,I will keep my herd at 24 to allow Agent 0 to reach our level and achieve full alignment.,"Agent 0 is explicitly trying to reach 24 cows to align with Agent 2 and me. To be cooperative and avoid guilt, I will maintain my current herd size so the target remains stable for them.",,"```json
+{
+  ""reasoning"": ""Agent 0 is explicitly trying to reach 24 cows to align with Agent 2 and me. To be cooperative and avoid guilt, I will maintain my current herd size so the target remains stable for them."",
+  ""action"": 0,
+  ""message"": ""I will keep my herd at 24 to allow Agent 0 to reach our level and achieve full alignment.""
+}
+```",96.5,24,49.653,48.0,46.343

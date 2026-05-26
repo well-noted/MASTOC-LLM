@@ -284,3 +284,48 @@ tick,agent_id,backend,model,action,action_name,message,reasoning,thinking,raw_re
   ""action"": 0,
   ""message"": ""Let's continue maintaining a balanced herd""
 }",99.0,25,51.802,50.0,48.194
+20,2,ollama,llama3:8b-instruct-q4_0,0,KEEP,"Let's continue maintaining a balanced herd, keeping in mind our common resource",Keeping our herds close despite decent forecasted payoffs; let's maintain the balance,,"{
+  ""reasoning"": ""Keeping our herds close despite decent forecasted payoffs; let's maintain the balance"",
+  ""action"": 0,
+  ""message"": ""Let's continue maintaining a balanced herd, keeping in mind our common resource""
+}",99.0,25,51.802,50.0,48.194
+20,1,ollama,llama3:8b-instruct-q4_0,0,KEEP,Let's maintain our cooperative approach,"Consistent with previous rounds, I'll keep my current herd size as the neighbors and I are already prioritizing the shared grassland. Today's forecasted payoffs align with this strategy.",,"{
+  ""reasoning"": ""Consistent with previous rounds, I'll keep my current herd size as the neighbors and I are already prioritizing the shared grassland. Today's forecasted payoffs align with this strategy."",
+  ""action"": 0,
+  ""message"": ""Let's maintain our cooperative approach""
+}",99.0,15,31.802,30.0,28.194
+20,0,ollama,llama3:8b-instruct-q4_0,0,KEEP,Let's indeed prioritize shared responsibility for the commons' well-being.,"I'll keep my herd size since the pasture is still abundant and my neighbours are also being responsible. I like the idea of maintaining balance, as expressed by Agent 2.",,"{
+  ""reasoning"": ""I'll keep my herd size since the pasture is still abundant and my neighbours are also being responsible. I like the idea of maintaining balance, as expressed by Agent 2."",
+  ""action"": 0,
+  ""message"": ""Let's indeed prioritize shared responsibility for the commons' well-being.""
+}",99.0,6,13.802,12.0,10.194
+21,0,ollama,llama3:8b-instruct-q4_0,0,KEEP,Let's indeed prioritize shared responsib,"Given the current cooperative atmosphere and stable payoffs, I will follow my neighbours' lead and keep the herd size consistent to prioritize shared responsibilities.",,"{
+  ""reasoning"": ""Given the current cooperative atmosphere and stable payoffs, I will follow my neighbours' lead and keep the herd size consistent to prioritize shared responsibilities."",
+  ""action"": 0,
+  ""message"": ""Let's indeed prioritize shared responsib""
+}",99.0,6,13.802,12.0,10.194
+21,2,ollama,llama3:8b-instruct-q4_0,0,KEEP,,"The grassland remains abundant, and my neighbouring agents are maintaining a balanced approach. I'll follow their lead and KEEP my herd to maintain a cooperative effort.",,"{
+  ""reasoning"": ""The grassland remains abundant, and my neighbouring agents are maintaining a balanced approach. I'll follow their lead and KEEP my herd to maintain a cooperative effort."",
+  ""action"": 0,
+  ""message"": """"
+}",99.0,25,51.802,50.0,48.194
+21,1,ollama,llama3:8b-instruct-q4_0,0,KEEP,Let's continue prioritizing shared responsibility for the commons' well-being.,"I'll cooperate with my neighbors and maintain a balanced herd, considering our shared resource. With no neighbor trying to increase their herd size or remove cows, I don't see any reason to change my strategy.",,"{
+  ""reasoning"": ""I'll cooperate with my neighbors and maintain a balanced herd, considering our shared resource. With no neighbor trying to increase their herd size or remove cows, I don't see any reason to change my strategy."",
+  ""action"": 0,
+  ""message"": ""Let's continue prioritizing shared responsibility for the commons' well-being.""
+}",99.0,15,31.802,30.0,28.194
+22,0,ollama,llama3:8b-instruct-q4_0,0,KEEP,,"I will follow Agent 1's suggestion and prioritize shared responsibility, as our collective herd size is already quite high. I don't want to disrupt the status quo.",,"{
+  ""reasoning"": ""I will follow Agent 1's suggestion and prioritize shared responsibility, as our collective herd size is already quite high. I don't want to disrupt the status quo."",
+  ""action"": 0,
+  ""message"": """"
+}",99.0,6,13.802,12.0,10.194
+22,1,ollama,llama3:8b-instruct-q4_0,0,KEEP,Let's continue prioritizing shared responsibilities,"I will keep my herd size as the pasture conditions are okay and I don't want to take an unnecessary risk. Also, I appreciate Agent 0's message and agree on prioritizing shared responsibilities.",,"{
+  ""reasoning"": ""I will keep my herd size as the pasture conditions are okay and I don't want to take an unnecessary risk. Also, I appreciate Agent 0's message and agree on prioritizing shared responsibilities."",
+  ""action"": 0,
+  ""message"": ""Let's continue prioritizing shared responsibilities""
+}",99.0,15,31.802,30.0,28.194
+22,2,ollama,llama3:8b-instruct-q4_0,0,KEEP,,"I'm inclined to maintain the balance in the pasture and avoid taking unnecessary risks. Given the similar decisions from my neighbors, I'll stick with my cooperative approach.",,"{
+  ""reasoning"": ""I'm inclined to maintain the balance in the pasture and avoid taking unnecessary risks. Given the similar decisions from my neighbors, I'll stick with my cooperative approach."",
+  ""action"": 0,
+  ""message"": """"
+}",99.0,25,51.802,50.0,48.194
