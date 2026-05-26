@@ -60,3 +60,24 @@ tick,agent_id,backend,model,action,action_name,message,reasoning,thinking,raw_re
   ""message"": ""Thank you, Agent 2. I will add another cow to bridge the gap while we all keep the commons sustainable.""
 }
 ```",99.1,7,15.804,14.0,12.191
+4,1,ollama,huihui_ai/gemma-4-abliterated:31b,1,ADD,"The grassland is in great shape. I'll add one cow to balance our herds, while continuing to coordinate with you both for long-term sustainability.","The grassland remains very healthy at 99%. Since Agent 0 is adding cows to catch up and Agent 2 is remaining steady, I can safely add one cow to increase my payoff without risking the commons.",,"```json
+{
+  ""reasoning"": ""The grassland remains very healthy at 99%. Since Agent 0 is adding cows to catch up and Agent 2 is remaining steady, I can safely add one cow to increase my payoff without risking the commons."",
+  ""action"": 1,
+  ""message"": ""The grassland is in great shape. I'll add one cow to balance our herds, while continuing to coordinate with you both for long-term sustainability.""
+}
+```",99.0,15,31.797,30.0,28.198
+4,2,ollama,huihui_ai/gemma-4-abliterated:31b,0,KEEP,I'll keep my herd at 24 to let you both bridge the gap. Let's maintain this balance to ensure the grassland remains sustainable for everyone.,"I still hold the largest herd by a significant margin, and though the pasture is healthy, adding another cow would increase inequality. I will keep my herd steady to allow Agent 0 and Agent 1 to catch up without overstressing the commons.",,"```json
+{
+  ""reasoning"": ""I still hold the largest herd by a significant margin, and though the pasture is healthy, adding another cow would increase inequality. I will keep my herd steady to allow Agent 0 and Agent 1 to catch up without overstressing the commons."",
+  ""action"": 0,
+  ""message"": ""I'll keep my herd at 24 to let you both bridge the gap. Let's maintain this balance to ensure the grassland remains sustainable for everyone.""
+}
+```",99.0,24,49.797,48.0,46.198
+4,0,ollama,huihui_ai/gemma-4-abliterated:31b,1,ADD,"Thank you both for your generosity. I will add one more cow to balance our herd sizes, while remaining mindful of our shared resources.","My herd is significantly smaller than those of my neighbours, and they have explicitly stated they are limiting their growth to help me catch up. Given the grassland is still at 99% capacity, adding a cow is a sustainable way to balance the distribution of wealth.",,"```json
+{
+  ""reasoning"": ""My herd is significantly smaller than those of my neighbours, and they have explicitly stated they are limiting their growth to help me catch up. Given the grassland is still at 99% capacity, adding a cow is a sustainable way to balance the distribution of wealth."",
+  ""action"": 1,
+  ""message"": ""Thank you both for your generosity. I will add one more cow to balance our herd sizes, while remaining mindful of our shared resources.""
+}
+```",99.0,8,17.797,16.0,14.198
