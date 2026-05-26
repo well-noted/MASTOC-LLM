@@ -29,3 +29,33 @@ tick,agent_id,backend,model,action,action_name,message,reasoning,thinking,raw_re
 	""action"": 0,
 	""message"": """"
 }",99.3,5,11.813,10.0,8.182
+3,2,ollama,llama3:8b-instruct-q4_0,0,KEEP,,"I'm considering the stability of the commons and my personal values as a cooperative herder. I want to maintain the grassland's health and avoid guilt from exploiting more than others. Since the forecast suggests no major risks or gains, I'll choose a conservative approach.",,"{
+  ""reasoning"": ""I'm considering the stability of the commons and my personal values as a cooperative herder. I want to maintain the grassland's health and avoid guilt from exploiting more than others. Since the forecast suggests no major risks or gains, I'll choose a conservative approach."",
+  ""action"": 0,
+  ""message"": """"
+}",99.1,25,51.809,50.0,48.187
+3,1,ollama,llama3:8b-instruct-q4_0,0,KEEP,,I'm staying cooperative and choosing the safest option that maintains fairness; keeping my current herd size.,,"{
+  ""reasoning"": ""I'm staying cooperative and choosing the safest option that maintains fairness; keeping my current herd size."",
+  ""action"": 0,
+  ""message"": """"
+}",99.1,15,31.809,30.0,28.187
+3,0,ollama,llama3:8b-instruct-q4_0,0,KEEP,Let's keep our herds moderate and ensure a sustainable future for all.,I'll avoid changing the size of my herd to maintain fairness and collective well-being. The remaining grassland is still sufficient.,,"{
+ ""reasoning"": ""I'll avoid changing the size of my herd to maintain fairness and collective well-being. The remaining grassland is still sufficient."",
+ ""action"": 0,
+ ""message"": ""Let's keep our herds moderate and ensure a sustainable future for all.""
+}",99.1,5,11.809,10.0,8.187
+4,0,ollama,llama3:8b-instruct-q4_0,0,KEEP,Let's keep our herds moderate and ensure the commons health,"I'll keep my herd size the same since all neighbors are also keeping their herds, ensuring a relatively stable commons state. I'm concerned about not upsetting the balance, even if it means a slight decrease in payoff.",,"{
+  ""reasoning"": ""I'll keep my herd size the same since all neighbors are also keeping their herds, ensuring a relatively stable commons state. I'm concerned about not upsetting the balance, even if it means a slight decrease in payoff."",
+  ""action"": 0,
+  ""message"": ""Let's keep our herds moderate and ensure the commons health""
+}",99.1,5,11.809,10.0,8.187
+4,1,ollama,llama3:8b-instruct-q4_0,0,KEEP,,"I follow my cooperative nature and consider the messages received this round, deciding to KEEP my current herd size to maintain a balanced approach. Additionally, I'm influenced by Agent 0's suggestion to keep herds moderate.",,"{
+  ""reasoning"": ""I follow my cooperative nature and consider the messages received this round, deciding to KEEP my current herd size to maintain a balanced approach. Additionally, I'm influenced by Agent 0's suggestion to keep herds moderate."",
+  ""action"": 0,
+  ""message"": """"
+}",99.1,15,31.809,30.0,28.187
+4,2,ollama,llama3:8b-instruct-q4_0,0,KEEP,"Let's continue to prioritize sustainability together, neighbors!",I'm inclined to follow my cooperative nature and keep the grassland healthy by maintaining my current herd size. I'll also consider Agent 0's suggestion of keeping herds moderate.,,"{
+  ""reasoning"": ""I'm inclined to follow my cooperative nature and keep the grassland healthy by maintaining my current herd size. I'll also consider Agent 0's suggestion of keeping herds moderate."",
+  ""action"": 0,
+  ""message"": ""Let's continue to prioritize sustainability together, neighbors!""
+}",99.1,25,51.809,50.0,48.187
