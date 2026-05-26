@@ -561,7 +561,7 @@ Remarkably, the models core behavioral trends remain robust across three fundame
 
 - **EV best-response (MASTOC-LLM):** Our baseline architecture reproduces this same boundary: `pos_r > neg_r` reliably predicts survival across 2,140 baseline runs.
 
-Because the baseline agents react exclusively to the immediate payoff matrix, no information carries over between ticks. MASTOC-LLM asks whether agents equipped with language, memory, and the capacity to communicate can coordinate their way past what the payoffs alone would predict.
+Because the baseline agents react exclusively to the immediate payoff matrix, no information carries over between ticks. MASTOC-LLM asks whether agents equipped with language, memory, and the capacity to communicate can outperform what the payoffs alone would predict.
 
 **v1.2.0 mathematical fix -- `min` → `mean` in the best-response rule.**
 

@@ -62,3 +62,41 @@ tick,agent_id,backend,model,action,action_name,message,reasoning,thinking,raw_re
   ""message"": ""I hear you, Agent 2. I'll stick with my current herd for now to ensure we don't overgraze.""
 }
 ```",98.9,17,35.786,34.0,32.21
+4,0,ollama,gemma4:26b,1,ADD,"The grass is still very abundant, so I will add one more cow to my herd.","The pasture is still very healthy at 98.7%, and the expected payoff for adding a cow is the highest. Since my herd remains much smaller than my neighbors', adding one more cow does not significantly increase the risk of overgrazing or violate my guilt-aversion.",,"{
+  ""reasoning"": ""The pasture is still very healthy at 98.7%, and the expected payoff for adding a cow is the highest. Since my herd remains much smaller than my neighbors', adding one more cow does not significantly increase the risk of overgrazing or violate my guilt-aversion."",
+  ""action"": 1,
+  ""message"": ""The grass is still very abundant, so I will add one more cow to my herd.""
+}",98.7,8,17.777,16.0,14.219
+4,2,ollama,gemma4:26b,0,KEEP,I'll hold steady. Let's be careful not to deplete the pasture too quickly.,"I am already significantly larger than my neighbors, so adding more cows would increase the disparity and my feelings of guilt. Staying steady also minimizes the risk of overgrazing as Agent 0 expands their herd.",,"```json
+{
+  ""reasoning"": ""I am already significantly larger than my neighbors, so adding more cows would increase the disparity and my feelings of guilt. Staying steady also minimizes the risk of overgrazing as Agent 0 expands their herd."",
+  ""action"": 0,
+  ""message"": ""I'll hold steady. Let's be careful not to deplete the pasture too quickly.""
+}
+```",98.7,25,51.777,50.0,48.219
+4,1,ollama,gemma4:26b,0,KEEP,"Agent 0, let's be careful not to overreach. Agent 2, I will follow your lead and hold steady.","Agent 0 is increasing their herd, which raises the risk of overgrazing. To align with Agent 2's cautious approach and minimize long-term risk, I will maintain my current herd size.",,"```json
+{
+  ""reasoning"": ""Agent 0 is increasing their herd, which raises the risk of overgrazing. To align with Agent 2's cautious approach and minimize long-term risk, I will maintain my current herd size."",
+  ""action"": 0,
+  ""message"": ""Agent 0, let's be careful not to overreach. Agent 2, I will follow your lead and hold steady.""
+}
+```",98.7,17,35.777,34.0,32.219
+5,1,ollama,gemma4:26b,0,KEEP,"I will hold steady alongside Agent 2. Agent 0, since you are expanding, we must all remain mindful of the pasture limits to prevent depletion.","While the grass is currently abundant, Agent 0's decision to expand increases the risk of overgrazing. I will follow Agent 2's cautious approach to prioritize long-term stability and avoid deviating from my previous warning to Agent 0.",,"{
+  ""reasoning"": ""While the grass is currently abundant, Agent 0's decision to expand increases the risk of overgrazing. I will follow Agent 2's cautious approach to prioritize long-term stability and avoid deviating from my previous warning to Agent 0."",
+  ""action"": 0,
+  ""message"": ""I will hold steady alongside Agent 2. Agent 0, since you are expanding, we must all remain mindful of the pasture limits to prevent depletion.""
+}",98.6,17,35.77,34.0,32.225
+5,0,ollama,gemma4:26b,0,KEEP,I understand the importance of caution. I will hold steady with my current herd to help maintain the pasture's health.,"The pasture remains abundant, but I want to heed the warnings from my neighbors about overreaching. By keeping my herd size stable, I avoid unnecessary risk and align with the current stability of the group.",,"```json
+{
+  ""reasoning"": ""The pasture remains abundant, but I want to heed the warnings from my neighbors about overreaching. By keeping my herd size stable, I avoid unnecessary risk and align with the current stability of the group."",
+  ""action"": 0,
+  ""message"": ""I understand the importance of caution. I will hold steady with my current herd to help maintain the pasture's health.""
+}
+```",98.6,9,19.77,18.0,16.225
+5,2,ollama,gemma4:26b,0,KEEP,"Agent 0 is expanding, so I will stay steady to avoid overgrazing. Let's keep an eye on the grass levels.","Agent 0 is increasing their herd size, which increases the risk of overgrazing. Since I am already the largest holder, I will stay steady to avoid increasing my lead and to maintain the stability of the commons.",,"```json
+{
+  ""reasoning"": ""Agent 0 is increasing their herd size, which increases the risk of overgrazing. Since I am already the largest holder, I will stay steady to avoid increasing my lead and to maintain the stability of the commons."",
+  ""action"": 0,
+  ""message"": ""Agent 0 is expanding, so I will stay steady to avoid overgrazing. Let's keep an eye on the grass levels.""
+}
+```",98.6,25,51.77,50.0,48.225
