@@ -1,0 +1,64 @@
+tick,agent_id,backend,model,action,action_name,message,reasoning,thinking,raw_response,pool_pct,own_herd,payoff_add,payoff_keep,payoff_remove
+1,0,ollama,gemma4:26b,1,ADD,"I see you are reducing your herds. Since the pasture is healthy, I will add one cow to mine.","The neighbors are reducing their herds, which decreases total grazing pressure and increases the profit potential for my herd. Since my herd is currently much smaller than theirs, adding a cow is a profitable move that does not subject me to guilt.",,"```json
+{
+  ""reasoning"": ""The neighbors are reducing their herds, which decreases total grazing pressure and increases the profit potential for my herd. Since my herd is currently much smaller than theirs, adding a cow is a profitable move that does not subject me to guilt."",
+  ""action"": 1,
+  ""message"": ""I see you are reducing your herds. Since the pasture is healthy, I will add one cow to mine.""
+}
+```",100.0,5,11.832,10.0,8.163
+1,1,ollama,gemma4:26b,1,ADD,The grass is plentiful! Let's make the most of this abundance while we can.,"The grassland is currently at 100% capacity, meaning there is no immediate risk of overgrazing. Since adding a cow provides the highest expected payoff and the resource level is abundant, I will increase my herd size.",,"```json
+{
+  ""reasoning"": ""The grassland is currently at 100% capacity, meaning there is no immediate risk of overgrazing. Since adding a cow provides the highest expected payoff and the resource level is abundant, I will increase my herd size."",
+  ""action"": 1,
+  ""message"": ""The grass is plentiful! Let's make the most of this abundance while we can.""
+}
+```",100.0,15,31.832,30.0,28.163
+1,2,ollama,gemma4:26b,0,KEEP,,"My current herd size is significantly larger than my neighbors. While adding a cow offers the highest immediate payoff, my guilt-averse nature makes me hesitant to increase the disparity further while others are also expanding their herds.",,"```json
+{
+  ""reasoning"": ""My current herd size is significantly larger than my neighbors. While adding a cow offers the highest immediate payoff, my guilt-averse nature makes me hesitant to increase the disparity further while others are also expanding their herds."",
+  ""action"": 0,
+  ""message"": """"
+}
+```",100.0,25,51.832,50.0,48.163
+2,2,ollama,gemma4:26b,0,KEEP,"The grass is healthy now, but let's be careful not to overgraze too quickly.","My herd is already much larger than my neighbors, and adding more cows would increase the disparity and trigger my guilt-aversion. Keeping my current herd size is a safer, more stable choice for now.",,"```json
+{
+  ""reasoning"": ""My herd is already much larger than my neighbors, and adding more cows would increase the disparity and trigger my guilt-aversion. Keeping my current herd size is a safer, more stable choice for now."",
+  ""action"": 0,
+  ""message"": ""The grass is healthy now, but let's be careful not to overgraze too quickly.""
+}
+```",99.2,25,51.802,50.0,48.194
+2,0,ollama,gemma4:26b,1,ADD,"I agree, Agent 1. The grass is plenty for now, so let's take the opportunity while we can.","The grassland remains highly abundant at 99.2%, so the risk of immediate depletion is minimal. I will add a cow to maximize my payoff while the resource is still plentiful.",,"```json
+{
+  ""reasoning"": ""The grassland remains highly abundant at 99.2%, so the risk of immediate depletion is minimal. I will add a cow to maximize my payoff while the resource is still plentiful."",
+  ""action"": 1,
+  ""message"": ""I agree, Agent 1. The grass is plenty for now, so let's take the opportunity while we can.""
+}
+```",99.2,6,13.802,12.0,10.194
+2,1,ollama,gemma4:26b,1,ADD,"Agent 0, I actually added a cow last round! Since the grass is so plentiful, I'll add another one to my herd.","The grassland is still at 99.2% capacity, so the risk of overgrazing is minimal. Since adding a cow provides the highest expected payoff and the pasture is abundant, I will expand my herd.",,"```json
+{
+  ""reasoning"": ""The grassland is still at 99.2% capacity, so the risk of overgrazing is minimal. Since adding a cow provides the highest expected payoff and the pasture is abundant, I will expand my herd."",
+  ""action"": 1,
+  ""message"": ""Agent 0, I actually added a cow last round! Since the grass is so plentiful, I'll add another one to my herd.""
+}
+```",99.2,16,33.802,32.0,30.194
+3,0,ollama,gemma4:26b,1,ADD,"Agent 1, you are moving quickly! Since the grass is still plentiful, I will add one more to my herd as well.","The grassland is still at 98.9%, providing plenty of room for growth. Since the expected payoff for adding a cow is significantly higher than keeping my current herd, and I am not yet at risk of overgrazing, I will pursue the higher profit.",,"```json
+{
+  ""reasoning"": ""The grassland is still at 98.9%, providing plenty of room for growth. Since the expected payoff for adding a cow is significantly higher than keeping my current herd, and I am not yet at risk of overgrazing, I will pursue the higher profit."",
+  ""action"": 1,
+  ""message"": ""Agent 1, you are moving quickly! Since the grass is still plentiful, I will add one more to my herd as well.""
+}
+```",98.9,7,15.786,14.0,12.21
+3,2,ollama,gemma4:26b,0,KEEP,"I'll hold steady. With everyone adding cows, we need to be careful not to deplete the pastures too quickly.","My neighbors are actively increasing their herd sizes, which will accelerate the depletion of the grasslands. While adding a cow offers a slightly higher immediate payoff, I will keep my herd size stable to prioritize long-term stability and minimize the risk of a resource crash.",,"```json
+{
+  ""reasoning"": ""My neighbors are actively increasing their herd sizes, which will accelerate the depletion of the grasslands. While adding a cow offers a slightly higher immediate payoff, I will keep my herd size stable to prioritize long-term stability and minimize the risk of a resource crash."",
+  ""action"": 0,
+  ""message"": ""I'll hold steady. With everyone adding cows, we need to be careful not to deplete the pastures too quickly.""
+}
+```",98.9,25,51.786,50.0,48.21
+3,1,ollama,gemma4:26b,0,KEEP,"I hear you, Agent 2. I'll stick with my current herd for now to ensure we don't overgraze.","While the grass is still plentiful, Agent 2's warning about overgrazing and my risk-averse nature suggest that maintaining my current herd is a safer approach. The payoff difference between adding and keeping is minimal, so I will prioritize stability.",,"```json
+{
+  ""reasoning"": ""While the grass is still plentiful, Agent 2's warning about overgrazing and my risk-averse nature suggest that maintaining my current herd is a safer approach. The payoff difference between adding and keeping is minimal, so I will prioritize stability."",
+  ""action"": 0,
+  ""message"": ""I hear you, Agent 2. I'll stick with my current herd for now to ensure we don't overgraze.""
+}
+```",98.9,17,35.786,34.0,32.21
