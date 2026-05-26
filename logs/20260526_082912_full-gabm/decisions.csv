@@ -20,3 +20,24 @@ tick,agent_id,backend,model,action,action_name,message,reasoning,thinking,raw_re
   ""message"": ""Let's prioritize sustainability over quick gains. I'll keep my herd steady to ensure we don't deplete the commons too quickly.""
 }
 ```",100.0,15,31.832,30.0,28.163
+3,0,ollama,huihui_ai/gemma-4-abliterated:31b,1,ADD,"I am still far behind you both. I'll add one cow to balance things, but I am committed to sustainability as the pasture declines.","My herd is significantly smaller than my neighbours', and the grassland remains nearly full. Adding a cow balances the distribution while remaining well within sustainable limits.",,"```json
+{
+  ""reasoning"": ""My herd is significantly smaller than my neighbours', and the grassland remains nearly full. Adding a cow balances the distribution while remaining well within sustainable limits."",
+  ""action"": 1,
+  ""message"": ""I am still far behind you both. I'll add one cow to balance things, but I am committed to sustainability as the pasture declines.""
+}
+```",99.3,6,13.809,12.0,10.187
+3,2,ollama,huihui_ai/gemma-4-abliterated:31b,0,KEEP,I am mindful that my herd is the largest. I'll keep it steady to ensure we maintain sustainability while you both balance your numbers.,"I currently possess the largest herd, which makes me feel guilty given my cooperative nature. Since the grassland is still very healthy, I will keep my herd size steady to allow my neighbours to catch up without further depleting the resource.",,"```json
+{
+  ""reasoning"": ""I currently possess the largest herd, which makes me feel guilty given my cooperative nature. Since the grassland is still very healthy, I will keep my herd size steady to allow my neighbours to catch up without further depleting the resource."",
+  ""action"": 0,
+  ""message"": ""I am mindful that my herd is the largest. I'll keep it steady to ensure we maintain sustainability while you both balance your numbers.""
+}
+```",99.3,25,51.809,50.0,48.187
+3,1,ollama,huihui_ai/gemma-4-abliterated:31b,1,ADD,"The grass is still plentiful, so I will add one cow. Let's continue to monitor the totals so we don't overgraze as we balance our herds.","The grassland is currently in excellent condition (99.3%), meaning there is plenty of room for growth. Since Agent 0 is still catching up and Agent 2 is stable, adding one cow allows me to increase my payoff without significantly threatening the collective resource.",,"```json
+{
+  ""reasoning"": ""The grassland is currently in excellent condition (99.3%), meaning there is plenty of room for growth. Since Agent 0 is still catching up and Agent 2 is stable, adding one cow allows me to increase my payoff without significantly threatening the collective resource."",
+  ""action"": 1,
+  ""message"": ""The grass is still plentiful, so I will add one cow. Let's continue to monitor the totals so we don't overgraze as we balance our herds.""
+}
+```",99.3,15,31.809,30.0,28.187
