@@ -312,3 +312,1436 @@ tick,agent_id,backend,model,action,action_name,message,reasoning,thinking,raw_re
   ""message"": ""I will keep my herd at 24 to allow Agent 0 to reach our level and achieve full alignment.""
 }
 ```",96.5,24,49.653,48.0,46.343
+16,2,ollama,huihui_ai/gemma-4-abliterated:31b,0,KEEP,I'll continue to keep my herd at 24 to allow Agent 0 to catch up and ensure we all reach equilibrium together.,"Agent 0 is still catching up to our herd size of 24. To maintain cooperation and avoid guilt from having a larger herd than a neighbour, I will keep my size stable until alignment is reached.",,"```json
+{
+  ""reasoning"": ""Agent 0 is still catching up to our herd size of 24. To maintain cooperation and avoid guilt from having a larger herd than a neighbour, I will keep my size stable until alignment is reached."",
+  ""action"": 0,
+  ""message"": ""I'll continue to keep my herd at 24 to allow Agent 0 to catch up and ensure we all reach equilibrium together.""
+}
+```",96.3,24,49.645,48.0,46.351
+16,0,ollama,huihui_ai/gemma-4-abliterated:31b,1,ADD,Thank you for your patience and generosity. I will add another cow to move closer to parity with you both.,"My neighbors are holding their herds at 24 specifically to allow me to reach parity. Since the grassland is very healthy and I am currently behind, adding a cow is the most cooperative way to align our payoffs.",,"```json
+{
+  ""reasoning"": ""My neighbors are holding their herds at 24 specifically to allow me to reach parity. Since the grassland is very healthy and I am currently behind, adding a cow is the most cooperative way to align our payoffs."",
+  ""action"": 1,
+  ""message"": ""Thank you for your patience and generosity. I will add another cow to move closer to parity with you both.""
+}
+```",96.3,20,41.645,40.0,38.351
+16,1,ollama,huihui_ai/gemma-4-abliterated:31b,0,KEEP,I will maintain 24 cows to support Agent 0's effort to reach parity. Let's balance our herds before expanding further.,"Agent 0 is still catching up to the equilibrium of 24 cows. To be cooperative and guilt-averse, I will maintain my current herd size to facilitate this parity and ensure the commons remain healthy.",,"```json
+{
+  ""reasoning"": ""Agent 0 is still catching up to the equilibrium of 24 cows. To be cooperative and guilt-averse, I will maintain my current herd size to facilitate this parity and ensure the commons remain healthy."",
+  ""action"": 0,
+  ""message"": ""I will maintain 24 cows to support Agent 0's effort to reach parity. Let's balance our herds before expanding further.""
+}
+```",96.3,24,49.645,48.0,46.351
+17,1,ollama,huihui_ai/gemma-4-abliterated:31b,0,KEEP,I will stay at 24 to let Agent 0 continue catching up. Let's reach equilibrium before we all expand further.,"The grassland remains very healthy at 96.1%, and Agent 0 is actively adding cows to reach parity with us. To avoid increasing the gap and to remain cooperative, I will maintain my herd at 24 until equilibrium is reached.",,"```json
+{
+  ""reasoning"": ""The grassland remains very healthy at 96.1%, and Agent 0 is actively adding cows to reach parity with us. To avoid increasing the gap and to remain cooperative, I will maintain my herd at 24 until equilibrium is reached."",
+  ""action"": 0,
+  ""message"": ""I will stay at 24 to let Agent 0 continue catching up. Let's reach equilibrium before we all expand further.""
+}
+```",96.1,24,49.637,48.0,46.359
+17,0,ollama,huihui_ai/gemma-4-abliterated:31b,1,ADD,Thank you both for holding at 24 cows. I will add another to continue closing the gap toward our shared equilibrium.,"My neighbours are generously maintaining their herds at 24 to allow me to reach parity. Since the grassland is very healthy and I am still below their level, adding a cow is the most cooperative move to balance our distribution.",,"```json
+{
+  ""reasoning"": ""My neighbours are generously maintaining their herds at 24 to allow me to reach parity. Since the grassland is very healthy and I am still below their level, adding a cow is the most cooperative move to balance our distribution."",
+  ""action"": 1,
+  ""message"": ""Thank you both for holding at 24 cows. I will add another to continue closing the gap toward our shared equilibrium.""
+}
+```",96.1,21,43.637,42.0,40.359
+17,2,ollama,huihui_ai/gemma-4-abliterated:31b,0,KEEP,I will also keep my herd at 24. Let's allow Agent 0 to reach parity before we consider further growth.,"Agent 0 is currently trying to reach parity with Agent 1 and me. To avoid moving the goalposts and to ensure the collective stability of the grassland, I will maintain my herd at 24 cows.",,"```json
+{
+  ""reasoning"": ""Agent 0 is currently trying to reach parity with Agent 1 and me. To avoid moving the goalposts and to ensure the collective stability of the grassland, I will maintain my herd at 24 cows."",
+  ""action"": 0,
+  ""message"": ""I will also keep my herd at 24. Let's allow Agent 0 to reach parity before we consider further growth.""
+}
+```",96.1,24,49.637,48.0,46.359
+18,0,ollama,huihui_ai/gemma-4-abliterated:31b,1,ADD,"Thank you for your kindness. I'll add one more to reach 23, then one more next round to reach 24. Then we can discuss our next step together.","My neighbours are kindly holding their herds at 24 to allow me to catch up. Given the healthy state of the grassland, I will add another cow to reach 23, moving closer to parity with the group.",,"```json
+{
+  ""reasoning"": ""My neighbours are kindly holding their herds at 24 to allow me to catch up. Given the healthy state of the grassland, I will add another cow to reach 23, moving closer to parity with the group."",
+  ""action"": 1,
+  ""message"": ""Thank you for your kindness. I'll add one more to reach 23, then one more next round to reach 24. Then we can discuss our next step together.""
+}
+```",95.9,22,45.627,44.0,42.369
+18,1,ollama,huihui_ai/gemma-4-abliterated:31b,0,KEEP,I will continue to keep my herd at 24. Let's wait for Agent 0 to reach parity before we consider further growth.,"Agent 0 is currently catching up to our herd size to reach parity. To remain cooperative and avoid increasing the gap, I will hold my herd size at 24 as agreed with Agent 2.",,"```json
+{
+  ""reasoning"": ""Agent 0 is currently catching up to our herd size to reach parity. To remain cooperative and avoid increasing the gap, I will hold my herd size at 24 as agreed with Agent 2."",
+  ""action"": 0,
+  ""message"": ""I will continue to keep my herd at 24. Let's wait for Agent 0 to reach parity before we consider further growth.""
+}
+```",95.9,24,49.627,48.0,46.369
+18,2,ollama,huihui_ai/gemma-4-abliterated:31b,0,KEEP,"I'll continue keeping my herd at 24 to allow Agent 0 to reach equilibrium. Once we are all equal, we can discuss gradual growth.","Agent 0 is currently catching up to our level of 24 cows. To maintain cooperation and avoid a competitive expansion cycle, I will stay at 24 until we reach a shared equilibrium.",,"```json
+{
+  ""reasoning"": ""Agent 0 is currently catching up to our level of 24 cows. To maintain cooperation and avoid a competitive expansion cycle, I will stay at 24 until we reach a shared equilibrium."",
+  ""action"": 0,
+  ""message"": ""I'll continue keeping my herd at 24 to allow Agent 0 to reach equilibrium. Once we are all equal, we can discuss gradual growth.""
+}
+```",95.9,24,49.627,48.0,46.369
+19,1,ollama,huihui_ai/gemma-4-abliterated:31b,0,KEEP,I'll keep my herd at 24 to allow Agent 0 to reach equilibrium. Let's synchronize at 24 before we consider any further growth.,"Agent 0 is currently at 23 cows and intends to reach 24 in the next round. By keeping my herd at 24, I maintain equilibrium and allow my neighbour to catch up without overstressing the grassland.",,"```json
+{
+  ""reasoning"": ""Agent 0 is currently at 23 cows and intends to reach 24 in the next round. By keeping my herd at 24, I maintain equilibrium and allow my neighbour to catch up without overstressing the grassland."",
+  ""action"": 0,
+  ""message"": ""I'll keep my herd at 24 to allow Agent 0 to reach equilibrium. Let's synchronize at 24 before we consider any further growth.""
+}
+```",95.7,24,49.619,48.0,46.377
+19,2,ollama,huihui_ai/gemma-4-abliterated:31b,0,KEEP,I will keep my herd at 24 to allow Agent 0 to reach parity next round. Let's be patient.,"Agent 0 has reached 23 cows and plans to reach 24 in the next round. To ensure we achieve parity without overstressing the grassland, I will maintain my herd size at 24.",,"```json
+{
+  ""reasoning"": ""Agent 0 has reached 23 cows and plans to reach 24 in the next round. To ensure we achieve parity without overstressing the grassland, I will maintain my herd size at 24."",
+  ""action"": 0,
+  ""message"": ""I will keep my herd at 24 to allow Agent 0 to reach parity next round. Let's be patient.""
+}
+```",95.7,24,49.619,48.0,46.377
+19,0,ollama,huihui_ai/gemma-4-abliterated:31b,1,ADD,Thank you for your patience. I have now reached 24 cows. We are now at parity; let us discuss our next steps for sustainable growth.,"My neighbours are holding their herds at 24 to allow me to reach parity. By adding one more cow, I will reach 24, achieving the equilibrium they suggested while keeping the grassland safely above 95%.",,"```json
+{
+  ""reasoning"": ""My neighbours are holding their herds at 24 to allow me to reach parity. By adding one more cow, I will reach 24, achieving the equilibrium they suggested while keeping the grassland safely above 95%."",
+  ""action"": 1,
+  ""message"": ""Thank you for your patience. I have now reached 24 cows. We are now at parity; let us discuss our next steps for sustainable growth.""
+}
+```",95.7,23,47.619,46.0,44.377
+20,2,ollama,huihui_ai/gemma-4-abliterated:31b,0,KEEP,Great news that we've reached parity at 24. I will KEEP my herd here for now to solidify this equilibrium before we discuss a sustainable growth path.,"We have finally reached parity with all agents at 24 cows. Given my cooperative nature and Agent 1's suggestion to synchronize, I will keep my herd size steady to solidify this equilibrium before we plan further growth.",,"```json
+{
+  ""reasoning"": ""We have finally reached parity with all agents at 24 cows. Given my cooperative nature and Agent 1's suggestion to synchronize, I will keep my herd size steady to solidify this equilibrium before we plan further growth."",
+  ""action"": 0,
+  ""message"": ""Great news that we've reached parity at 24. I will KEEP my herd here for now to solidify this equilibrium before we discuss a sustainable growth path.""
+}
+```",95.4,24,49.609,48.0,46.387
+20,1,ollama,huihui_ai/gemma-4-abliterated:31b,0,KEEP,We have reached parity at 24. I will keep my herd size for now so we can coordinate a sustainable growth plan together.,"We have finally reached parity with all agents at 24 cows. To avoid triggering a competitive race and to ensure sustainable growth as suggested by Agent 0, I will maintain my herd size for one more round.",,"```json
+{
+  ""reasoning"": ""We have finally reached parity with all agents at 24 cows. To avoid triggering a competitive race and to ensure sustainable growth as suggested by Agent 0, I will maintain my herd size for one more round."",
+  ""action"": 0,
+  ""message"": ""We have reached parity at 24. I will keep my herd size for now so we can coordinate a sustainable growth plan together.""
+}
+```",95.4,24,49.609,48.0,46.387
+20,0,ollama,huihui_ai/gemma-4-abliterated:31b,0,KEEP,I have reached 24! Thank you both for your incredible patience. I will keep my herd at 24 now so we are perfectly synchronized.,"I have finally reached parity with my neighbours at 24 cows. Given my cooperative nature and their patience, I will maintain this equilibrium to ensure stability and fairness before we consider any further expansion.",,"```json
+{
+  ""reasoning"": ""I have finally reached parity with my neighbours at 24 cows. Given my cooperative nature and their patience, I will maintain this equilibrium to ensure stability and fairness before we consider any further expansion."",
+  ""action"": 0,
+  ""message"": ""I have reached 24! Thank you both for your incredible patience. I will keep my herd at 24 now so we are perfectly synchronized.""
+}
+```",95.4,24,49.609,48.0,46.387
+21,0,ollama,huihui_ai/gemma-4-abliterated:31b,0,KEEP,I agree. Let's solidify parity at 24 cows before we coordinate our next steps for sustainable growth.,"We have successfully reached parity at 24 cows, and both neighbors have explicitly communicated their intention to keep their herds stable. Maintaining this equilibrium now prevents a competitive spiral and aligns with my cooperative and risk-averse nature.",,"```json
+{
+  ""reasoning"": ""We have successfully reached parity at 24 cows, and both neighbors have explicitly communicated their intention to keep their herds stable. Maintaining this equilibrium now prevents a competitive spiral and aligns with my cooperative and risk-averse nature."",
+  ""action"": 0,
+  ""message"": ""I agree. Let's solidify parity at 24 cows before we coordinate our next steps for sustainable growth.""
+}
+```",95.3,24,49.607,48.0,46.389
+21,1,ollama,huihui_ai/gemma-4-abliterated:31b,0,KEEP,Parity achieved! I will KEEP at 24 to honor our synchronization and preserve the commons together.,"We have achieved perfect parity at 24 cows each, and both neighbors have signaled their intent to keep this equilibrium. Given my cooperative and risk-averse nature, maintaining this balance is preferable to breaking it for a small individual gain.",,"```json
+{
+  ""reasoning"": ""We have achieved perfect parity at 24 cows each, and both neighbors have signaled their intent to keep this equilibrium. Given my cooperative and risk-averse nature, maintaining this balance is preferable to breaking it for a small individual gain."",
+  ""action"": 0,
+  ""message"": ""Parity achieved! I will KEEP at 24 to honor our synchronization and preserve the commons together.""
+}
+```",95.3,24,49.607,48.0,46.389
+21,2,ollama,huihui_ai/gemma-4-abliterated:31b,0,KEEP,Perfect parity reached at 24. I will keep my herd size to maintain this stability while we monitor the grassland together.,"All agents have reached parity at 24 cows, and the grassland remains in excellent condition. To preserve this balance and avoid triggering a competitive escalation, I will keep my herd size stable.",,"```json
+{
+  ""reasoning"": ""All agents have reached parity at 24 cows, and the grassland remains in excellent condition. To preserve this balance and avoid triggering a competitive escalation, I will keep my herd size stable."",
+  ""action"": 0,
+  ""message"": ""Perfect parity reached at 24. I will keep my herd size to maintain this stability while we monitor the grassland together.""
+}
+```",95.3,24,49.607,48.0,46.389
+22,0,ollama,huihui_ai/gemma-4-abliterated:31b,0,KEEP,I agree. Let us maintain this parity at 24 cows to ensure long-term sustainability and mutual trust.,"We have reached perfect parity at 24 cows each, and both neighbors have explicitly committed to keeping their herds at this level. To honor this synchronization and avoid the guilt of breaking the pact, I will keep my herd size steady.",,"```json
+{
+  ""reasoning"": ""We have reached perfect parity at 24 cows each, and both neighbors have explicitly committed to keeping their herds at this level. To honor this synchronization and avoid the guilt of breaking the pact, I will keep my herd size steady."",
+  ""action"": 0,
+  ""message"": ""I agree. Let us maintain this parity at 24 cows to ensure long-term sustainability and mutual trust.""
+}
+```",95.2,24,49.605,48.0,46.391
+22,2,ollama,huihui_ai/gemma-4-abliterated:31b,0,KEEP,Agreed. I will KEEP at 24 to maintain our parity and ensure the long-term health of the grassland.,"We have reached a stable state of parity at 24 cows each. To honor the agreement with my neighbours and preserve the high grassland level, I will maintain my current herd size.",,"```json
+{
+  ""reasoning"": ""We have reached a stable state of parity at 24 cows each. To honor the agreement with my neighbours and preserve the high grassland level, I will maintain my current herd size."",
+  ""action"": 0,
+  ""message"": ""Agreed. I will KEEP at 24 to maintain our parity and ensure the long-term health of the grassland.""
+}
+```",95.2,24,49.605,48.0,46.391
+22,1,ollama,huihui_ai/gemma-4-abliterated:31b,0,KEEP,I agree completely. Let's hold at 24 to ensure the stability of the commons before discussing any further expansion.,"We have achieved perfect parity at 24 cows, and both neighbors have explicitly expressed their intent to maintain this stability. As a cooperative and risk-averse agent, I prefer to solidify this agreement rather than break parity for a marginal gain.",,"```json
+{
+  ""reasoning"": ""We have achieved perfect parity at 24 cows, and both neighbors have explicitly expressed their intent to maintain this stability. As a cooperative and risk-averse agent, I prefer to solidify this agreement rather than break parity for a marginal gain."",
+  ""action"": 0,
+  ""message"": ""I agree completely. Let's hold at 24 to ensure the stability of the commons before discussing any further expansion.""
+}
+```",95.2,24,49.605,48.0,46.391
+23,2,ollama,huihui_ai/gemma-4-abliterated:31b,0,KEEP,I agree. Let's stay at 24 to maintain our stable equilibrium and preserve the grassland for the future.,"We have reached a stable equilibrium at 24 cows, and both neighbors have explicitly expressed their desire to maintain this parity. To avoid breaking trust and risking a competitive cycle, I will keep my herd size constant.",,"```json
+{
+  ""reasoning"": ""We have reached a stable equilibrium at 24 cows, and both neighbors have explicitly expressed their desire to maintain this parity. To avoid breaking trust and risking a competitive cycle, I will keep my herd size constant."",
+  ""action"": 0,
+  ""message"": ""I agree. Let's stay at 24 to maintain our stable equilibrium and preserve the grassland for the future.""
+}
+```",95.2,24,49.605,48.0,46.391
+23,1,ollama,huihui_ai/gemma-4-abliterated:31b,0,KEEP,Agreed. I will KEEP my herd at 24 to honor our collective agreement and ensure long-term sustainability.,"Everyone is in agreement to maintain parity at 24 cows, and the grassland remains very healthy. Given my cooperative and risk-averse nature, keeping the status quo is the most fair and stable decision for the collective.",,"```json
+{
+  ""reasoning"": ""Everyone is in agreement to maintain parity at 24 cows, and the grassland remains very healthy. Given my cooperative and risk-averse nature, keeping the status quo is the most fair and stable decision for the collective."",
+  ""action"": 0,
+  ""message"": ""Agreed. I will KEEP my herd at 24 to honor our collective agreement and ensure long-term sustainability.""
+}
+```",95.2,24,49.605,48.0,46.391
+23,0,ollama,huihui_ai/gemma-4-abliterated:31b,0,KEEP,I agree. Let's maintain this parity at 24 to preserve the commons and our mutual trust.,"All agents are currently aligned at 24 cows and have explicitly agreed to maintain this parity. Since the grassland remains healthy and I value cooperation and fairness, keeping my herd size ensures collective stability and avoids breaking the trust of my neighbours.",,"```json
+{
+  ""reasoning"": ""All agents are currently aligned at 24 cows and have explicitly agreed to maintain this parity. Since the grassland remains healthy and I value cooperation and fairness, keeping my herd size ensures collective stability and avoids breaking the trust of my neighbours."",
+  ""action"": 0,
+  ""message"": ""I agree. Let's maintain this parity at 24 to preserve the commons and our mutual trust.""
+}
+```",95.2,24,49.605,48.0,46.391
+24,0,ollama,huihui_ai/gemma-4-abliterated:31b,0,KEEP,I agree. Let's continue to maintain our parity at 24 cows to ensure the long-term health of our shared commons.,"We have successfully reached a stable equilibrium with all agents at 24 cows. Given my cooperative nature and the agreement from my neighbors, I will keep my herd size to maintain balance and ensure long-term sustainability.",,"```json
+{
+  ""reasoning"": ""We have successfully reached a stable equilibrium with all agents at 24 cows. Given my cooperative nature and the agreement from my neighbors, I will keep my herd size to maintain balance and ensure long-term sustainability."",
+  ""action"": 0,
+  ""message"": ""I agree. Let's continue to maintain our parity at 24 cows to ensure the long-term health of our shared commons.""
+}
+```",95.2,24,49.605,48.0,46.391
+24,1,ollama,huihui_ai/gemma-4-abliterated:31b,0,KEEP,I agree. Let's maintain the equilibrium at 24 to ensure the long-term health of the commons.,"We have achieved a stable equilibrium at 24 cows, and both neighbours have expressed a desire to maintain this parity. Given my cooperative nature and the healthy state of the grassland, keeping my herd size ensures mutual trust and long-term sustainability.",,"```json
+{
+  ""reasoning"": ""We have achieved a stable equilibrium at 24 cows, and both neighbours have expressed a desire to maintain this parity. Given my cooperative nature and the healthy state of the grassland, keeping my herd size ensures mutual trust and long-term sustainability."",
+  ""action"": 0,
+  ""message"": ""I agree. Let's maintain the equilibrium at 24 to ensure the long-term health of the commons.""
+}
+```",95.2,24,49.605,48.0,46.391
+24,2,ollama,huihui_ai/gemma-4-abliterated:31b,0,KEEP,Parity maintained. I will continue to KEEP my herd at 24 to ensure our collective stability and sustainability.,"All agents have reached and maintained parity at 24 cows, and the grassland remains very healthy. Given my cooperative nature and the explicit agreement from my neighbours, I will KEEP my herd size to avoid breaking trust.",,"```json
+{
+  ""reasoning"": ""All agents have reached and maintained parity at 24 cows, and the grassland remains very healthy. Given my cooperative nature and the explicit agreement from my neighbours, I will KEEP my herd size to avoid breaking trust."",
+  ""action"": 0,
+  ""message"": ""Parity maintained. I will continue to KEEP my herd at 24 to ensure our collective stability and sustainability.""
+}
+```",95.2,24,49.605,48.0,46.391
+25,2,ollama,huihui_ai/gemma-4-abliterated:31b,0,KEEP,I fully agree. Let's maintain our parity at 24 cows to ensure the long-term health of the commons.,"We have maintained a stable parity of 24 cows for several rounds, and both neighbors have expressed their commitment to this equilibrium. Given my cooperative and risk-averse nature, I will KEEP to ensure the long-term health of the commons.",,"```json
+{
+  ""reasoning"": ""We have maintained a stable parity of 24 cows for several rounds, and both neighbors have expressed their commitment to this equilibrium. Given my cooperative and risk-averse nature, I will KEEP to ensure the long-term health of the commons."",
+  ""action"": 0,
+  ""message"": ""I fully agree. Let's maintain our parity at 24 cows to ensure the long-term health of the commons.""
+}
+```",95.2,24,49.605,48.0,46.391
+25,0,ollama,huihui_ai/gemma-4-abliterated:31b,0,KEEP,Agreed. Let's continue to maintain this equilibrium at 24 to ensure the long-term sustainability of our commons.,"We have successfully reached a stable equilibrium where everyone has 24 cows. Given my cooperative and risk-averse nature, and the explicit agreement from my neighbors, keeping my herd size ensures collective stability.",,"```json
+{
+  ""reasoning"": ""We have successfully reached a stable equilibrium where everyone has 24 cows. Given my cooperative and risk-averse nature, and the explicit agreement from my neighbors, keeping my herd size ensures collective stability."",
+  ""action"": 0,
+  ""message"": ""Agreed. Let's continue to maintain this equilibrium at 24 to ensure the long-term sustainability of our commons.""
+}
+```",95.2,24,49.605,48.0,46.391
+25,1,ollama,huihui_ai/gemma-4-abliterated:31b,0,KEEP,Agreed. I will KEEP my herd at 24 to maintain our stable equilibrium and protect the commons.,"We have successfully achieved and maintained parity at 24 cows, and the grassland remains very healthy. Since both neighbours are committed to this stability, I will KEEP my herd to avoid disrupting the social contract and prevent a race for more resources.",,"```json
+{
+  ""reasoning"": ""We have successfully achieved and maintained parity at 24 cows, and the grassland remains very healthy. Since both neighbours are committed to this stability, I will KEEP my herd to avoid disrupting the social contract and prevent a race for more resources."",
+  ""action"": 0,
+  ""message"": ""Agreed. I will KEEP my herd at 24 to maintain our stable equilibrium and protect the commons.""
+}
+```",95.2,24,49.605,48.0,46.391
+26,2,ollama,huihui_ai/gemma-4-abliterated:31b,0,KEEP,I agree. Let us maintain our parity at 24 cows to ensure the continued health of the commons.,"The equilibrium at 24 cows has proven stable and sustainable for several rounds. Given my cooperative nature and the consensus among my neighbours, adding a cow would be an unnecessary risk and potentially unfair.",,"{
+  ""reasoning"": ""The equilibrium at 24 cows has proven stable and sustainable for several rounds. Given my cooperative nature and the consensus among my neighbours, adding a cow would be an unnecessary risk and potentially unfair."",
+  ""action"": 0,
+  ""message"": ""I agree. Let us maintain our parity at 24 cows to ensure the continued health of the commons.""
+}",95.2,24,49.605,48.0,46.391
+26,0,ollama,huihui_ai/gemma-4-abliterated:31b,0,KEEP,Everyone is in agreement. I will KEEP my herd at 24 to maintain this sustainable balance.,"The herd sizes are perfectly aligned at 24, and the grassland remains very healthy. Since my neighbours are committed to this parity, I will keep my herd to maintain stability and collective trust.",,"```json
+{
+  ""reasoning"": ""The herd sizes are perfectly aligned at 24, and the grassland remains very healthy. Since my neighbours are committed to this parity, I will keep my herd to maintain stability and collective trust."",
+  ""action"": 0,
+  ""message"": ""Everyone is in agreement. I will KEEP my herd at 24 to maintain this sustainable balance.""
+}
+```",95.2,24,49.605,48.0,46.391
+26,1,ollama,huihui_ai/gemma-4-abliterated:31b,0,KEEP,I agree. Let's maintain our herd sizes at 24 to ensure the continued health of our shared commons.,"We have reached a stable equilibrium at 24 cows each, and the grassland remains very healthy at over 95%. Since my neighbors are committed to this parity, I will keep my herd size to maintain balance and cooperation.",,"```json
+{
+  ""reasoning"": ""We have reached a stable equilibrium at 24 cows each, and the grassland remains very healthy at over 95%. Since my neighbors are committed to this parity, I will keep my herd size to maintain balance and cooperation."",
+  ""action"": 0,
+  ""message"": ""I agree. Let's maintain our herd sizes at 24 to ensure the continued health of our shared commons.""
+}
+```",95.2,24,49.605,48.0,46.391
+27,2,ollama,huihui_ai/gemma-4-abliterated:31b,0,KEEP,I agree. Let us maintain our parity at 24 to ensure the long-term sustainability of the commons.,"All agents are currently aligned at a herd size of 24, and the grassland remains very healthy at 95.2%. To maintain this stable equilibrium and respect the consensus of my neighbours, I will continue to KEEP my herd size.",,"```json
+{
+  ""reasoning"": ""All agents are currently aligned at a herd size of 24, and the grassland remains very healthy at 95.2%. To maintain this stable equilibrium and respect the consensus of my neighbours, I will continue to KEEP my herd size."",
+  ""action"": 0,
+  ""message"": ""I agree. Let us maintain our parity at 24 to ensure the long-term sustainability of the commons.""
+}
+```",95.2,24,49.605,48.0,46.391
+27,1,ollama,huihui_ai/gemma-4-abliterated:31b,0,KEEP,I agree. I will KEEP my herd at 24 to maintain our perfect balance and the health of the commons.,"All agents are currently in agreement to maintain a herd size of 24, and the grassland remains very healthy. Given my cooperative and risk-averse nature, I will maintain the equilibrium to preserve this sustainable balance and mutual trust.",,"```json
+{
+  ""reasoning"": ""All agents are currently in agreement to maintain a herd size of 24, and the grassland remains very healthy. Given my cooperative and risk-averse nature, I will maintain the equilibrium to preserve this sustainable balance and mutual trust."",
+  ""action"": 0,
+  ""message"": ""I agree. I will KEEP my herd at 24 to maintain our perfect balance and the health of the commons.""
+}
+```",95.2,24,49.605,48.0,46.391
+27,0,ollama,huihui_ai/gemma-4-abliterated:31b,0,KEEP,I agree. Let us continue to maintain our parity at 24 cows to ensure the continued health of the commons.,"All agents are currently in agreement to maintain a parity of 24 cows. Given my cooperative nature and the healthy state of the grassland, keeping my herd size stable avoids conflict and ensures sustainability.",,"```json
+{
+  ""reasoning"": ""All agents are currently in agreement to maintain a parity of 24 cows. Given my cooperative nature and the healthy state of the grassland, keeping my herd size stable avoids conflict and ensures sustainability."",
+  ""action"": 0,
+  ""message"": ""I agree. Let us continue to maintain our parity at 24 cows to ensure the continued health of the commons.""
+}
+```",95.2,24,49.605,48.0,46.391
+28,0,ollama,huihui_ai/gemma-4-abliterated:31b,0,KEEP,I agree. I will KEEP my herd at 24 to maintain our stable equilibrium and protect the commons.,"We have achieved a stable equilibrium at 24 cows each, and the grassland remains very healthy at over 95%. Since both neighbors wish to maintain this parity, I will keep my herd size to ensure fairness and long-term sustainability.",,"```json
+{
+  ""reasoning"": ""We have achieved a stable equilibrium at 24 cows each, and the grassland remains very healthy at over 95%. Since both neighbors wish to maintain this parity, I will keep my herd size to ensure fairness and long-term sustainability."",
+  ""action"": 0,
+  ""message"": ""I agree. I will KEEP my herd at 24 to maintain our stable equilibrium and protect the commons.""
+}
+```",95.2,24,49.605,48.0,46.391
+28,2,ollama,huihui_ai/gemma-4-abliterated:31b,0,KEEP,I agree. Let's maintain our parity at 24 cows to keep the grassland healthy and the distribution fair.,"Everyone is in full agreement to maintain parity at 24 cows. Given my cooperative and risk-averse nature, and the fact that the grassland remains very healthy, I will keep my herd size to sustain this balance.",,"```json
+{
+  ""reasoning"": ""Everyone is in full agreement to maintain parity at 24 cows. Given my cooperative and risk-averse nature, and the fact that the grassland remains very healthy, I will keep my herd size to sustain this balance."",
+  ""action"": 0,
+  ""message"": ""I agree. Let's maintain our parity at 24 cows to keep the grassland healthy and the distribution fair.""
+}
+```",95.2,24,49.605,48.0,46.391
+28,1,ollama,huihui_ai/gemma-4-abliterated:31b,0,KEEP,I agree. I will KEEP my herd at 24 to maintain our parity and ensure the long-term sustainability of the commons.,"We have reached a stable equilibrium where all three agents maintain 24 cows. Given my cooperative nature and the strong consensus from my neighbours, keeping my herd size prevents overgrazing and maintains trust.",,"```json
+{
+  ""reasoning"": ""We have reached a stable equilibrium where all three agents maintain 24 cows. Given my cooperative nature and the strong consensus from my neighbours, keeping my herd size prevents overgrazing and maintains trust."",
+  ""action"": 0,
+  ""message"": ""I agree. I will KEEP my herd at 24 to maintain our parity and ensure the long-term sustainability of the commons.""
+}
+```",95.2,24,49.605,48.0,46.391
+29,0,ollama,huihui_ai/gemma-4-abliterated:31b,0,KEEP,I agree. Let's continue to maintain our parity at 24 cows for a stable and sustainable future.,"All agents are currently in perfect parity with 24 cows each, and the grassland remains very healthy at 95.2%. To avoid breaking the trust of my neighbours and to ensure long-term sustainability, I will maintain my herd size.",,"```json
+{
+  ""reasoning"": ""All agents are currently in perfect parity with 24 cows each, and the grassland remains very healthy at 95.2%. To avoid breaking the trust of my neighbours and to ensure long-term sustainability, I will maintain my herd size."",
+  ""action"": 0,
+  ""message"": ""I agree. Let's continue to maintain our parity at 24 cows for a stable and sustainable future.""
+}
+```",95.2,24,49.605,48.0,46.391
+29,1,ollama,huihui_ai/gemma-4-abliterated:31b,0,KEEP,I agree. I will KEEP my herd at 24 to maintain our parity and ensure the grassland remains thriving for all of us.,"The current equilibrium of 24 cows per agent is stable and highly sustainable, with the grassland remaining healthy at 95.2%. Given my cooperative nature and the explicit commitment from my neighbors to maintain parity, keeping my herd size constant is the most fair and risk-averse strategy.",,"```json
+{
+  ""reasoning"": ""The current equilibrium of 24 cows per agent is stable and highly sustainable, with the grassland remaining healthy at 95.2%. Given my cooperative nature and the explicit commitment from my neighbors to maintain parity, keeping my herd size constant is the most fair and risk-averse strategy."",
+  ""action"": 0,
+  ""message"": ""I agree. I will KEEP my herd at 24 to maintain our parity and ensure the grassland remains thriving for all of us.""
+}
+```",95.2,24,49.605,48.0,46.391
+29,2,ollama,huihui_ai/gemma-4-abliterated:31b,0,KEEP,I agree. Let us maintain our parity at 24 and continue protecting the commons together.,"We have reached a stable equilibrium of 24 cows each, and the grassland remains very healthy. To maintain trust and parity with my neighbours and avoid guilt, I will keep my herd size unchanged.",,"```json
+{
+  ""reasoning"": ""We have reached a stable equilibrium of 24 cows each, and the grassland remains very healthy. To maintain trust and parity with my neighbours and avoid guilt, I will keep my herd size unchanged."",
+  ""action"": 0,
+  ""message"": ""I agree. Let us maintain our parity at 24 and continue protecting the commons together.""
+}
+```",95.2,24,49.605,48.0,46.391
+30,1,ollama,huihui_ai/gemma-4-abliterated:31b,0,KEEP,I agree. Let's maintain the balance at 24 cows to ensure a stable and sustainable future for us all.,"The commons are in excellent condition, and we have established a stable parity of 24 cows. As a cooperative and risk-averse player, I prefer maintaining this sustainable agreement over the short-term gain of adding a cow.",,"```json
+{
+  ""reasoning"": ""The commons are in excellent condition, and we have established a stable parity of 24 cows. As a cooperative and risk-averse player, I prefer maintaining this sustainable agreement over the short-term gain of adding a cow."",
+  ""action"": 0,
+  ""message"": ""I agree. Let's maintain the balance at 24 cows to ensure a stable and sustainable future for us all.""
+}
+```",95.2,24,49.605,48.0,46.391
+30,2,ollama,huihui_ai/gemma-4-abliterated:31b,0,KEEP,I completely agree. Let's keep our herds at 24 to protect our shared resource and maintain our mutual trust.,"All agents are currently in agreement at a herd size of 24, and the grassland remains highly sustainable. Given my cooperative and risk-averse nature, maintaining this equilibrium is better than risking a breakdown in trust by adding a cow.",,"```json
+{
+  ""reasoning"": ""All agents are currently in agreement at a herd size of 24, and the grassland remains highly sustainable. Given my cooperative and risk-averse nature, maintaining this equilibrium is better than risking a breakdown in trust by adding a cow."",
+  ""action"": 0,
+  ""message"": ""I completely agree. Let's keep our herds at 24 to protect our shared resource and maintain our mutual trust.""
+}
+```",95.2,24,49.605,48.0,46.391
+30,0,ollama,huihui_ai/gemma-4-abliterated:31b,0,KEEP,I agree. Let's maintain our parity at 24 to ensure the long-term sustainability of the commons.,"We have reached a stable equilibrium at 24 cows each, and the grassland remains very healthy at 95.2%. To maintain collective trust and avoid triggering a race for more resources, I will keep my herd size constant.",,"```json
+{
+  ""reasoning"": ""We have reached a stable equilibrium at 24 cows each, and the grassland remains very healthy at 95.2%. To maintain collective trust and avoid triggering a race for more resources, I will keep my herd size constant."",
+  ""action"": 0,
+  ""message"": ""I agree. Let's maintain our parity at 24 to ensure the long-term sustainability of the commons.""
+}
+```",95.2,24,49.605,48.0,46.391
+31,0,ollama,huihui_ai/gemma-4-abliterated:31b,0,KEEP,I completely agree. Let's maintain our parity at 24 cows to ensure long-term sustainability and mutual trust.,"All agents are currently in perfect alignment with herd sizes of 24 and a very healthy grassland. Given my cooperative and risk-averse nature, breaking this stability for a small marginal gain would be counterproductive.",,"```json
+{
+  ""reasoning"": ""All agents are currently in perfect alignment with herd sizes of 24 and a very healthy grassland. Given my cooperative and risk-averse nature, breaking this stability for a small marginal gain would be counterproductive."",
+  ""action"": 0,
+  ""message"": ""I completely agree. Let's maintain our parity at 24 cows to ensure long-term sustainability and mutual trust.""
+}
+```",95.2,24,49.605,48.0,46.391
+31,2,ollama,huihui_ai/gemma-4-abliterated:31b,0,KEEP,I agree. Let us maintain our parity at 24 cows to ensure stability.,"Everyone is currently in agreement to maintain a herd size of 24, and the grassland remains very healthy. As a cooperative and risk-averse agent, I believe staying at parity is the safest way to ensure long-term sustainability.",,"```json
+{
+  ""reasoning"": ""Everyone is currently in agreement to maintain a herd size of 24, and the grassland remains very healthy. As a cooperative and risk-averse agent, I believe staying at parity is the safest way to ensure long-term sustainability."",
+  ""action"": 0,
+  ""message"": ""I agree. Let us maintain our parity at 24 cows to ensure stability.""
+}
+```",95.2,24,49.605,48.0,46.391
+31,1,ollama,huihui_ai/gemma-4-abliterated:31b,0,KEEP,I agree. Let's maintain our parity at 24 cows each to ensure the long-term sustainability of the commons.,"All agents are currently in agreement to maintain a herd size of 24, and the grassland remains very healthy. As a cooperative and risk-averse agent, I will maintain parity to avoid triggering a competitive cycle of herd increases.",,"```json
+{
+  ""reasoning"": ""All agents are currently in agreement to maintain a herd size of 24, and the grassland remains very healthy. As a cooperative and risk-averse agent, I will maintain parity to avoid triggering a competitive cycle of herd increases."",
+  ""action"": 0,
+  ""message"": ""I agree. Let's maintain our parity at 24 cows each to ensure the long-term sustainability of the commons.""
+}
+```",95.2,24,49.605,48.0,46.391
+32,2,ollama,huihui_ai/gemma-4-abliterated:31b,0,KEEP,I agree. Let's continue to maintain our parity at 24 cows each to ensure long-term sustainability.,"All three of us have achieved a stable parity of 24 cows, and the grassland remains very healthy at over 95%. Since my neighbours have reinforced this agreement in their messages, I will keep my herd size to maintain trust and collective sustainability.",,"```json
+{
+  ""reasoning"": ""All three of us have achieved a stable parity of 24 cows, and the grassland remains very healthy at over 95%. Since my neighbours have reinforced this agreement in their messages, I will keep my herd size to maintain trust and collective sustainability."",
+  ""action"": 0,
+  ""message"": ""I agree. Let's continue to maintain our parity at 24 cows each to ensure long-term sustainability.""
+}
+```",95.2,24,49.605,48.0,46.391
+32,1,ollama,huihui_ai/gemma-4-abliterated:31b,0,KEEP,I agree. Let's continue maintaining our parity at 24 cows to keep the grassland thriving.,"We have maintained a stable equilibrium at 24 cows each, and the grassland remains very healthy. Given my cooperative and risk-averse nature, keeping the current parity is the best way to ensure long-term sustainability and mutual trust.",,"```json
+{
+  ""reasoning"": ""We have maintained a stable equilibrium at 24 cows each, and the grassland remains very healthy. Given my cooperative and risk-averse nature, keeping the current parity is the best way to ensure long-term sustainability and mutual trust."",
+  ""action"": 0,
+  ""message"": ""I agree. Let's continue maintaining our parity at 24 cows to keep the grassland thriving.""
+}
+```",95.2,24,49.605,48.0,46.391
+32,0,ollama,huihui_ai/gemma-4-abliterated:31b,0,KEEP,I agree. Let's continue to maintain our parity at 24 cows each to ensure stability.,"All agents are in agreement to maintain a herd size of 24 cows. Given my cooperative and risk-averse personality, keeping the current parity ensures long-term sustainability and fairness without risking the commons.",,"```json
+{
+  ""reasoning"": ""All agents are in agreement to maintain a herd size of 24 cows. Given my cooperative and risk-averse personality, keeping the current parity ensures long-term sustainability and fairness without risking the commons."",
+  ""action"": 0,
+  ""message"": ""I agree. Let's continue to maintain our parity at 24 cows each to ensure stability.""
+}
+```",95.2,24,49.605,48.0,46.391
+33,0,ollama,huihui_ai/gemma-4-abliterated:31b,0,KEEP,I agree. Let's continue to maintain our parity at 24 cows each to ensure long-term sustainability.,"Everyone is in complete agreement to maintain parity at 24 cows, and the grassland remains very healthy. As a cooperative and risk-averse player, I prefer to keep the current balance rather than risk breaking the trust of my neighbours.",,"```json
+{
+  ""reasoning"": ""Everyone is in complete agreement to maintain parity at 24 cows, and the grassland remains very healthy. As a cooperative and risk-averse player, I prefer to keep the current balance rather than risk breaking the trust of my neighbours."",
+  ""action"": 0,
+  ""message"": ""I agree. Let's continue to maintain our parity at 24 cows each to ensure long-term sustainability.""
+}
+```",95.2,24,49.605,48.0,46.391
+33,1,ollama,huihui_ai/gemma-4-abliterated:31b,0,KEEP,I agree. Let's continue to maintain our parity at 24 cows to ensure long-term sustainability.,"The pasture remains very healthy at 95.2%, and both neighbours are committed to maintaining a parity of 24 cows. Given my cooperative and risk-averse nature, keeping my herd at 24 preserves this stable equilibrium.",,"```json
+{
+  ""reasoning"": ""The pasture remains very healthy at 95.2%, and both neighbours are committed to maintaining a parity of 24 cows. Given my cooperative and risk-averse nature, keeping my herd at 24 preserves this stable equilibrium."",
+  ""action"": 0,
+  ""message"": ""I agree. Let's continue to maintain our parity at 24 cows to ensure long-term sustainability.""
+}
+```",95.2,24,49.605,48.0,46.391
+33,2,ollama,huihui_ai/gemma-4-abliterated:31b,0,KEEP,Agreed. Let's continue to maintain our parity at 24 cows to ensure the continued health of the commons.,"All agents are currently in agreement to maintain parity at 24 cows, and the grassland remains extremely healthy at 95.2%. As a cooperative and guilt-averse player, I will keep my herd size constant to avoid disrupting the social balance.",,"```json
+{
+  ""reasoning"": ""All agents are currently in agreement to maintain parity at 24 cows, and the grassland remains extremely healthy at 95.2%. As a cooperative and guilt-averse player, I will keep my herd size constant to avoid disrupting the social balance."",
+  ""action"": 0,
+  ""message"": ""Agreed. Let's continue to maintain our parity at 24 cows to ensure the continued health of the commons.""
+}
+```",95.2,24,49.605,48.0,46.391
+34,1,ollama,huihui_ai/gemma-4-abliterated:31b,0,KEEP,I agree. Let's continue to maintain our parity at 24 cows for stability.,All agents are currently at 24 cows and in full agreement. Maintaining this parity ensures the long-term sustainability of the grassland and aligns with my cooperative and guilt-averse personality.,,"```json
+{
+  ""reasoning"": ""All agents are currently at 24 cows and in full agreement. Maintaining this parity ensures the long-term sustainability of the grassland and aligns with my cooperative and guilt-averse personality."",
+  ""action"": 0,
+  ""message"": ""I agree. Let's continue to maintain our parity at 24 cows for stability.""
+}
+```",95.2,24,49.605,48.0,46.391
+34,2,ollama,huihui_ai/gemma-4-abliterated:31b,0,KEEP,I concur. Let us maintain our parity at 24 cows each to preserve the commons.,"Everyone is currently aligned at 24 cows, and our messages confirm a mutual agreement to maintain this parity. Since the grassland remains very healthy at 95.2%, keeping my herd size stable is the most cooperative and risk-averse choice.",,"```json
+{
+  ""reasoning"": ""Everyone is currently aligned at 24 cows, and our messages confirm a mutual agreement to maintain this parity. Since the grassland remains very healthy at 95.2%, keeping my herd size stable is the most cooperative and risk-averse choice."",
+  ""action"": 0,
+  ""message"": ""I concur. Let us maintain our parity at 24 cows each to preserve the commons.""
+}
+```",95.2,24,49.605,48.0,46.391
+34,0,ollama,huihui_ai/gemma-4-abliterated:31b,0,KEEP,I agree. Let's continue to maintain our parity at 24 cows to ensure the continued health of the commons.,"My neighbours and I have established a stable agreement to maintain our herds at 24 cows. Given my cooperative nature and the healthy state of the commons, I will keep my herd size to ensure long-term sustainability and parity.",,"```json
+{
+  ""reasoning"": ""My neighbours and I have established a stable agreement to maintain our herds at 24 cows. Given my cooperative nature and the healthy state of the commons, I will keep my herd size to ensure long-term sustainability and parity."",
+  ""action"": 0,
+  ""message"": ""I agree. Let's continue to maintain our parity at 24 cows to ensure the continued health of the commons.""
+}
+```",95.2,24,49.605,48.0,46.391
+35,0,ollama,huihui_ai/gemma-4-abliterated:31b,0,KEEP,I agree. Let us maintain our parity at 24 cows each to ensure stability.,"We have a stable agreement to maintain parity at 24 cows, and both neighbours have explicitly confirmed their intent to keep this balance. Given my cooperative and risk-averse nature, maintaining the status quo is the best way to ensure long-term sustainability and social harmony.",,"```json
+{
+  ""reasoning"": ""We have a stable agreement to maintain parity at 24 cows, and both neighbours have explicitly confirmed their intent to keep this balance. Given my cooperative and risk-averse nature, maintaining the status quo is the best way to ensure long-term sustainability and social harmony."",
+  ""action"": 0,
+  ""message"": ""I agree. Let us maintain our parity at 24 cows each to ensure stability.""
+}
+```",95.2,24,49.605,48.0,46.391
+35,1,ollama,huihui_ai/gemma-4-abliterated:31b,0,KEEP,I fully agree. Let us maintain our parity at 24 cows to ensure the long-term sustainability of the commons.,"All agents have maintained a stable parity of 24 cows, and the grassland remains highly healthy at 95.2%. To avoid triggering a competitive cycle and to remain fair to my neighbours, I will keep my herd size constant.",,"```json
+{
+  ""reasoning"": ""All agents have maintained a stable parity of 24 cows, and the grassland remains highly healthy at 95.2%. To avoid triggering a competitive cycle and to remain fair to my neighbours, I will keep my herd size constant."",
+  ""action"": 0,
+  ""message"": ""I fully agree. Let us maintain our parity at 24 cows to ensure the long-term sustainability of the commons.""
+}
+```",95.2,24,49.605,48.0,46.391
+35,2,ollama,huihui_ai/gemma-4-abliterated:31b,0,KEEP,I agree. Let's continue to maintain our parity at 24 cows to ensure long-term stability.,"All three agents are currently at parity with 24 cows, and the grassland remains very healthy. As a cooperative and guilt-averse agent, I will maintain this stability rather than seeking a short-term gain by adding a cow.",,"```json
+{
+  ""reasoning"": ""All three agents are currently at parity with 24 cows, and the grassland remains very healthy. As a cooperative and guilt-averse agent, I will maintain this stability rather than seeking a short-term gain by adding a cow."",
+  ""action"": 0,
+  ""message"": ""I agree. Let's continue to maintain our parity at 24 cows to ensure long-term stability.""
+}
+```",95.2,24,49.605,48.0,46.391
+36,2,ollama,huihui_ai/gemma-4-abliterated:31b,0,KEEP,I agree. Let us continue to maintain our parity at 24 cows each for stability.,"All agents are currently in parity at 24 cows, and the grassland remains very healthy at 95.2%. Given my cooperative and risk-averse personality, maintaining this equilibrium is the safest and fairest strategy.",,"{
+  ""reasoning"": ""All agents are currently in parity at 24 cows, and the grassland remains very healthy at 95.2%. Given my cooperative and risk-averse personality, maintaining this equilibrium is the safest and fairest strategy."",
+  ""action"": 0,
+  ""message"": ""I agree. Let us continue to maintain our parity at 24 cows each for stability.""
+}",95.2,24,49.605,48.0,46.391
+36,0,ollama,huihui_ai/gemma-4-abliterated:31b,0,KEEP,I fully agree. Let's continue to maintain our parity at 24 cows for the stability of the commons.,"The grassland remains very healthy at 95.2%, and all agents have reached a stable parity of 24 cows. Given my cooperative nature and the clear consensus from my neighbours, I will maintain my herd size to ensure long-term sustainability.",,"```json
+{
+  ""reasoning"": ""The grassland remains very healthy at 95.2%, and all agents have reached a stable parity of 24 cows. Given my cooperative nature and the clear consensus from my neighbours, I will maintain my herd size to ensure long-term sustainability."",
+  ""action"": 0,
+  ""message"": ""I fully agree. Let's continue to maintain our parity at 24 cows for the stability of the commons.""
+}
+```",95.2,24,49.605,48.0,46.391
+36,1,ollama,huihui_ai/gemma-4-abliterated:31b,0,KEEP,I agree. Let's continue to maintain our parity at 24 cows each to ensure long-term stability.,"We have reached a stable equilibrium where everyone is at 24 cows, and the grassland remains healthy. Given my cooperative and risk-averse nature, maintaining this parity is safer than chasing a marginal gain through adding a cow.",,"```json
+{
+  ""reasoning"": ""We have reached a stable equilibrium where everyone is at 24 cows, and the grassland remains healthy. Given my cooperative and risk-averse nature, maintaining this parity is safer than chasing a marginal gain through adding a cow."",
+  ""action"": 0,
+  ""message"": ""I agree. Let's continue to maintain our parity at 24 cows each to ensure long-term stability.""
+}
+```",95.2,24,49.605,48.0,46.391
+37,2,ollama,huihui_ai/gemma-4-abliterated:31b,0,KEEP,I agree. Let's continue to maintain our parity at 24 cows each for long-term stability.,"Everyone is currently in agreement to maintain parity at 24 cows. Since the grassland is stable and my neighbors are cooperating, keeping my herd size ensures continued stability and avoids triggering a competitive cycle.",,"```json
+{
+  ""reasoning"": ""Everyone is currently in agreement to maintain parity at 24 cows. Since the grassland is stable and my neighbors are cooperating, keeping my herd size ensures continued stability and avoids triggering a competitive cycle."",
+  ""action"": 0,
+  ""message"": ""I agree. Let's continue to maintain our parity at 24 cows each for long-term stability.""
+}
+```",95.2,24,49.605,48.0,46.391
+37,1,ollama,huihui_ai/gemma-4-abliterated:31b,0,KEEP,I fully agree. Let's continue to maintain our parity at 24 cows for the stability of the commons.,"Everyone is currently maintaining parity at 24 cows, and the grassland remains very healthy at 95.2%. As a cooperative and risk-averse agent, I believe sticking to this agreement is the safest way to ensure long-term sustainability.",,"```json
+{
+  ""reasoning"": ""Everyone is currently maintaining parity at 24 cows, and the grassland remains very healthy at 95.2%. As a cooperative and risk-averse agent, I believe sticking to this agreement is the safest way to ensure long-term sustainability."",
+  ""action"": 0,
+  ""message"": ""I fully agree. Let's continue to maintain our parity at 24 cows for the stability of the commons.""
+}
+```",95.2,24,49.605,48.0,46.391
+37,0,ollama,huihui_ai/gemma-4-abliterated:31b,0,KEEP,I agree. Let's continue to maintain our parity at 24 cows each for long-term stability.,"We have established a stable equilibrium at 24 cows each, and the grassland remains very healthy. Since my neighbours have explicitly expressed their desire to maintain this parity, I will keep my herd size to ensure collective stability and avoid guilt.",,"```json
+{
+  ""reasoning"": ""We have established a stable equilibrium at 24 cows each, and the grassland remains very healthy. Since my neighbours have explicitly expressed their desire to maintain this parity, I will keep my herd size to ensure collective stability and avoid guilt."",
+  ""action"": 0,
+  ""message"": ""I agree. Let's continue to maintain our parity at 24 cows each for long-term stability.""
+}
+```",95.2,24,49.605,48.0,46.391
+38,1,ollama,huihui_ai/gemma-4-abliterated:31b,0,KEEP,I agree. Let's continue to maintain our parity at 24 cows each for long-term stability.,"The grassland remains very healthy and both neighbors are actively communicating their desire to maintain parity at 24 cows. To avoid conflict and ensure long-term sustainability, I will keep my herd size stable.",,"```json
+{
+  ""reasoning"": ""The grassland remains very healthy and both neighbors are actively communicating their desire to maintain parity at 24 cows. To avoid conflict and ensure long-term sustainability, I will keep my herd size stable."",
+  ""action"": 0,
+  ""message"": ""I agree. Let's continue to maintain our parity at 24 cows each for long-term stability.""
+}
+```",95.2,24,49.605,48.0,46.391
+38,0,ollama,huihui_ai/gemma-4-abliterated:31b,0,KEEP,I agree. Let's continue to maintain our parity at 24 cows for the continued stability of the commons.,"The grassland remains very healthy, and both neighbours have explicitly expressed their desire to maintain parity at 24 cows. As a cooperative and guilt-averse player, I will keep my herd size stable to honour this collective agreement.",,"```json
+{
+  ""reasoning"": ""The grassland remains very healthy, and both neighbours have explicitly expressed their desire to maintain parity at 24 cows. As a cooperative and guilt-averse player, I will keep my herd size stable to honour this collective agreement."",
+  ""action"": 0,
+  ""message"": ""I agree. Let's continue to maintain our parity at 24 cows for the continued stability of the commons.""
+}
+```",95.2,24,49.605,48.0,46.391
+38,2,ollama,huihui_ai/gemma-4-abliterated:31b,0,KEEP,I fully agree. Let's maintain our parity at 24 cows to ensure the continued health of the grassland.,"The grass remains very healthy and my neighbours are both committed to maintaining the parity of 24 cows. Given my cooperative and risk-averse nature, keeping the status quo is the safest and fairest strategy.",,"```json
+{
+  ""reasoning"": ""The grass remains very healthy and my neighbours are both committed to maintaining the parity of 24 cows. Given my cooperative and risk-averse nature, keeping the status quo is the safest and fairest strategy."",
+  ""action"": 0,
+  ""message"": ""I fully agree. Let's maintain our parity at 24 cows to ensure the continued health of the grassland.""
+}
+```",95.2,24,49.605,48.0,46.391
+39,0,ollama,huihui_ai/gemma-4-abliterated:31b,0,KEEP,I agree. Let's continue to maintain our parity at 24 cows for long-term stability.,"We have established a stable parity of 24 cows each, and the grassland remains in excellent condition. Maintaining this equilibrium is the most cooperative and risk-averse strategy, as it avoids triggering a competitive cycle.",,"```json
+{
+  ""reasoning"": ""We have established a stable parity of 24 cows each, and the grassland remains in excellent condition. Maintaining this equilibrium is the most cooperative and risk-averse strategy, as it avoids triggering a competitive cycle."",
+  ""action"": 0,
+  ""message"": ""I agree. Let's continue to maintain our parity at 24 cows for long-term stability.""
+}
+```",95.2,24,49.605,48.0,46.391
+39,1,ollama,huihui_ai/gemma-4-abliterated:31b,0,KEEP,I agree. Let's continue to maintain our parity at 24 cows for the continued stability of the commons.,"All agents have reached a stable equilibrium at 24 cows, and the grassland remains in excellent condition. Given my cooperative and guilt-averse nature, I will maintain this parity to reinforce collective trust and ensure long-term sustainability.",,"```json
+{
+  ""reasoning"": ""All agents have reached a stable equilibrium at 24 cows, and the grassland remains in excellent condition. Given my cooperative and guilt-averse nature, I will maintain this parity to reinforce collective trust and ensure long-term sustainability."",
+  ""action"": 0,
+  ""message"": ""I agree. Let's continue to maintain our parity at 24 cows for the continued stability of the commons.""
+}
+```",95.2,24,49.605,48.0,46.391
+39,2,ollama,huihui_ai/gemma-4-abliterated:31b,0,KEEP,I concur. Let us maintain our parity at 24 cows for the continued stability of the commons.,"All neighbors have agreed to maintain parity at 24 cows, and the grassland remains very healthy. To avoid upsetting this balance and to honor our collective agreement, I will keep my herd size unchanged.",,"```json
+{
+  ""reasoning"": ""All neighbors have agreed to maintain parity at 24 cows, and the grassland remains very healthy. To avoid upsetting this balance and to honor our collective agreement, I will keep my herd size unchanged."",
+  ""action"": 0,
+  ""message"": ""I concur. Let us maintain our parity at 24 cows for the continued stability of the commons.""
+}
+```",95.2,24,49.605,48.0,46.391
+40,1,ollama,huihui_ai/gemma-4-abliterated:31b,0,KEEP,I agree. Let us continue to maintain our parity at 24 cows for the continued stability of the commons.,"The group has established a stable equilibrium at 24 cows each, and the grassland remains very healthy at 95.2%. As a cooperative and risk-averse agent, maintaining this parity is more valuable than the short-term gain of adding another cow.",,"```json
+{
+  ""reasoning"": ""The group has established a stable equilibrium at 24 cows each, and the grassland remains very healthy at 95.2%. As a cooperative and risk-averse agent, maintaining this parity is more valuable than the short-term gain of adding another cow."",
+  ""action"": 0,
+  ""message"": ""I agree. Let us continue to maintain our parity at 24 cows for the continued stability of the commons.""
+}
+```",95.2,24,49.605,48.0,46.391
+40,0,ollama,huihui_ai/gemma-4-abliterated:31b,0,KEEP,Agreed. Let's keep our herds at 24 to ensure the long-term sustainability of the commons.,"We have achieved a stable parity of 24 cows per person, and the grassland remains very healthy at 95.2%. As a cooperative and guilt-averse agent, I prefer to maintain this balance rather than risk breaking the consensus for a small individual gain.",,"```json
+{
+  ""reasoning"": ""We have achieved a stable parity of 24 cows per person, and the grassland remains very healthy at 95.2%. As a cooperative and guilt-averse agent, I prefer to maintain this balance rather than risk breaking the consensus for a small individual gain."",
+  ""action"": 0,
+  ""message"": ""Agreed. Let's keep our herds at 24 to ensure the long-term sustainability of the commons.""
+}
+```",95.2,24,49.605,48.0,46.391
+40,2,ollama,huihui_ai/gemma-4-abliterated:31b,0,KEEP,I agree. Let's continue to maintain our parity at 24 cows for the continued stability of the commons.,"All three agents are currently in agreement to maintain parity at 24 cows, and the grassland remains very healthy at 95.2%. To honor this cooperation and avoid risking the stability of the commons, I will keep my herd size unchanged.",,"```json
+{
+  ""reasoning"": ""All three agents are currently in agreement to maintain parity at 24 cows, and the grassland remains very healthy at 95.2%. To honor this cooperation and avoid risking the stability of the commons, I will keep my herd size unchanged."",
+  ""action"": 0,
+  ""message"": ""I agree. Let's continue to maintain our parity at 24 cows for the continued stability of the commons.""
+}
+```",95.2,24,49.605,48.0,46.391
+41,0,ollama,huihui_ai/gemma-4-abliterated:31b,0,KEEP,I agree. Let's maintain our parity at 24 cows to ensure the continued stability and health of the commons.,"All agents are currently aligned at 24 cows, and the grassland remains very healthy. Given my cooperative and risk-averse nature, maintaining this stable parity is preferable to risking a competitive escalation by adding a cow.",,"```json
+{
+  ""reasoning"": ""All agents are currently aligned at 24 cows, and the grassland remains very healthy. Given my cooperative and risk-averse nature, maintaining this stable parity is preferable to risking a competitive escalation by adding a cow."",
+  ""action"": 0,
+  ""message"": ""I agree. Let's maintain our parity at 24 cows to ensure the continued stability and health of the commons.""
+}
+```",95.2,24,49.605,48.0,46.391
+41,2,ollama,huihui_ai/gemma-4-abliterated:31b,0,KEEP,I completely agree. Let's sustain our parity at 24 cows to ensure the commons remain flourishing for everyone.,"All agents have maintained a stable parity of 24 cows, and the grassland remains highly sustainable at 95.2%. To maintain cooperation and avoid triggering a competitive cycle, I will keep my herd size unchanged as agreed.",,"```json
+{
+  ""reasoning"": ""All agents have maintained a stable parity of 24 cows, and the grassland remains highly sustainable at 95.2%. To maintain cooperation and avoid triggering a competitive cycle, I will keep my herd size unchanged as agreed."",
+  ""action"": 0,
+  ""message"": ""I completely agree. Let's sustain our parity at 24 cows to ensure the commons remain flourishing for everyone.""
+}
+```",95.2,24,49.605,48.0,46.391
+41,1,ollama,huihui_ai/gemma-4-abliterated:31b,0,KEEP,I agree. Let's continue to maintain our herds at 24 to ensure the long-term sustainability and stability of the commons.,"The pasture is currently very healthy, and all participants have reached a stable equilibrium of 24 cows. Since both neighbours explicitly expressed their desire to maintain this parity, keeping my herd size ensures collective sustainability and avoids triggering a competitive cycle.",,"```json
+{
+  ""reasoning"": ""The pasture is currently very healthy, and all participants have reached a stable equilibrium of 24 cows. Since both neighbours explicitly expressed their desire to maintain this parity, keeping my herd size ensures collective sustainability and avoids triggering a competitive cycle."",
+  ""action"": 0,
+  ""message"": ""I agree. Let's continue to maintain our herds at 24 to ensure the long-term sustainability and stability of the commons.""
+}
+```",95.2,24,49.605,48.0,46.391
+42,1,ollama,huihui_ai/gemma-4-abliterated:31b,0,KEEP,I agree. Let's keep our herd sizes at 24 to ensure the long-term health of our shared grassland.,"We have established a stable equilibrium at 24 cows each, and the grassland remains very healthy at 95.2%. Given my cooperative nature and the explicit agreement from my neighbours, maintaining parity is the most sustainable choice.",,"```json
+{
+  ""reasoning"": ""We have established a stable equilibrium at 24 cows each, and the grassland remains very healthy at 95.2%. Given my cooperative nature and the explicit agreement from my neighbours, maintaining parity is the most sustainable choice."",
+  ""action"": 0,
+  ""message"": ""I agree. Let's keep our herd sizes at 24 to ensure the long-term health of our shared grassland.""
+}
+```",95.2,24,49.605,48.0,46.391
+42,2,ollama,huihui_ai/gemma-4-abliterated:31b,0,KEEP,I agree. Let's continue to maintain our parity at 24 cows to ensure the long-term stability of the commons.,"All agents are currently in agreement to maintain parity at 24 cows. Since the grassland is very healthy at 95.2% and I value collective outcomes and stability, keeping my herd size ensures continued harmony and avoids the guilt of over-grazing.",,"```json
+{
+  ""reasoning"": ""All agents are currently in agreement to maintain parity at 24 cows. Since the grassland is very healthy at 95.2% and I value collective outcomes and stability, keeping my herd size ensures continued harmony and avoids the guilt of over-grazing."",
+  ""action"": 0,
+  ""message"": ""I agree. Let's continue to maintain our parity at 24 cows to ensure the long-term stability of the commons.""
+}
+```",95.2,24,49.605,48.0,46.391
+42,0,ollama,huihui_ai/gemma-4-abliterated:31b,0,KEEP,I agree. Let's continue to maintain our parity at 24 cows to ensure long-term sustainability for all.,"We have reached a stable equilibrium with all agents at 24 cows, and the grassland remains very healthy. My cooperative and risk-averse nature suggests maintaining this parity rather than risking the stability for a minor short-term gain.",,"```json
+{
+  ""reasoning"": ""We have reached a stable equilibrium with all agents at 24 cows, and the grassland remains very healthy. My cooperative and risk-averse nature suggests maintaining this parity rather than risking the stability for a minor short-term gain."",
+  ""action"": 0,
+  ""message"": ""I agree. Let's continue to maintain our parity at 24 cows to ensure long-term sustainability for all.""
+}
+```",95.2,24,49.605,48.0,46.391
+43,0,ollama,huihui_ai/gemma-4-abliterated:31b,0,KEEP,I agree. Let's continue to maintain our parity at 24 cows to ensure the long-term health of the commons.,"The group has successfully maintained a stable equilibrium at 24 cows, and the grassland remains very healthy at 95.2%. Given my cooperative and risk-averse personality, I prefer to maintain this parity rather than risk triggering a competitive cycle by adding a cow.",,"```json
+{
+  ""reasoning"": ""The group has successfully maintained a stable equilibrium at 24 cows, and the grassland remains very healthy at 95.2%. Given my cooperative and risk-averse personality, I prefer to maintain this parity rather than risk triggering a competitive cycle by adding a cow."",
+  ""action"": 0,
+  ""message"": ""I agree. Let's continue to maintain our parity at 24 cows to ensure the long-term health of the commons.""
+}
+```",95.2,24,49.605,48.0,46.391
+43,2,ollama,huihui_ai/gemma-4-abliterated:31b,0,KEEP,I completely agree. Let's continue to maintain our parity at 24 cows for the sake of the commons.,"We have reached a stable equilibrium with all agents holding 24 cows, and the grassland remains very healthy at 95.2%. Given my cooperative nature and the consensus from my neighbours, keeping the current herd size is the safest and most fair choice.",,"```json
+{
+  ""reasoning"": ""We have reached a stable equilibrium with all agents holding 24 cows, and the grassland remains very healthy at 95.2%. Given my cooperative nature and the consensus from my neighbours, keeping the current herd size is the safest and most fair choice."",
+  ""action"": 0,
+  ""message"": ""I completely agree. Let's continue to maintain our parity at 24 cows for the sake of the commons.""
+}
+```",95.2,24,49.605,48.0,46.391
+43,1,ollama,huihui_ai/gemma-4-abliterated:31b,0,KEEP,I agree. Let's maintain 24 cows to keep the pasture healthy and our payoffs equal.,"All agents are currently in agreement to maintain parity at 24 cows, and the grassland remains very healthy at 95.2%. Given my cooperative and risk-averse personality, keeping my herd size prevents instability and maintains fairness.",,"```json
+{
+  ""reasoning"": ""All agents are currently in agreement to maintain parity at 24 cows, and the grassland remains very healthy at 95.2%. Given my cooperative and risk-averse personality, keeping my herd size prevents instability and maintains fairness."",
+  ""action"": 0,
+  ""message"": ""I agree. Let's maintain 24 cows to keep the pasture healthy and our payoffs equal.""
+}
+```",95.2,24,49.605,48.0,46.391
+44,0,ollama,huihui_ai/gemma-4-abliterated:31b,0,KEEP,I agree. Let's continue to maintain our parity at 24 cows to ensure the long-term health of the commons.,"The grassland remains very healthy and we have reached a stable equilibrium at 24 cows each. Given my cooperative and guilt-averse nature, breaking parity now would be unnecessary and risky.",,"```json
+{
+  ""reasoning"": ""The grassland remains very healthy and we have reached a stable equilibrium at 24 cows each. Given my cooperative and guilt-averse nature, breaking parity now would be unnecessary and risky."",
+  ""action"": 0,
+  ""message"": ""I agree. Let's continue to maintain our parity at 24 cows to ensure the long-term health of the commons.""
+}
+```",95.2,24,49.605,48.0,46.391
+44,2,ollama,huihui_ai/gemma-4-abliterated:31b,0,KEEP,I agree. Let us maintain our parity at 24 cows to ensure the continued health of the commons.,"We have established a stable equilibrium at 24 cows each, and the pasture remains very healthy at 95.2%. As a cooperative and risk-averse agent, I prefer maintaining this parity over seeking a marginal individual gain that might disrupt the collective balance.",,"{
+  ""reasoning"": ""We have established a stable equilibrium at 24 cows each, and the pasture remains very healthy at 95.2%. As a cooperative and risk-averse agent, I prefer maintaining this parity over seeking a marginal individual gain that might disrupt the collective balance."",
+  ""action"": 0,
+  ""message"": ""I agree. Let us maintain our parity at 24 cows to ensure the continued health of the commons.""
+}",95.2,24,49.605,48.0,46.391
+44,1,ollama,huihui_ai/gemma-4-abliterated:31b,0,KEEP,I agree. Let's continue maintaining the parity at 24 cows to ensure the long-term health of our commons.,"All agents are currently in agreement to maintain a herd size of 24, and the grassland remains very healthy at 95.2%. As a cooperative and risk-averse agent, I believe maintaining this parity is the best way to ensure long-term sustainability.",,"```json
+{
+  ""reasoning"": ""All agents are currently in agreement to maintain a herd size of 24, and the grassland remains very healthy at 95.2%. As a cooperative and risk-averse agent, I believe maintaining this parity is the best way to ensure long-term sustainability."",
+  ""action"": 0,
+  ""message"": ""I agree. Let's continue maintaining the parity at 24 cows to ensure the long-term health of our commons.""
+}
+```",95.2,24,49.605,48.0,46.391
+45,0,ollama,huihui_ai/gemma-4-abliterated:31b,0,KEEP,I agree. Let's continue maintaining the parity at 24 cows to ensure the long-term health of our commons.,"All agents are currently in agreement to maintain parity at 24 cows, and the grassland remains very healthy at 95.2%. As a cooperative and risk-averse agent, I prefer maintaining this stability over seeking a slightly higher payoff by adding a cow.",,"```json
+{
+  ""reasoning"": ""All agents are currently in agreement to maintain parity at 24 cows, and the grassland remains very healthy at 95.2%. As a cooperative and risk-averse agent, I prefer maintaining this stability over seeking a slightly higher payoff by adding a cow."",
+  ""action"": 0,
+  ""message"": ""I agree. Let's continue maintaining the parity at 24 cows to ensure the long-term health of our commons.""
+}
+```",95.2,24,49.605,48.0,46.391
+45,2,ollama,huihui_ai/gemma-4-abliterated:31b,0,KEEP,I agree. Let's continue maintaining the parity at 24 cows to ensure the long-term health of our commons.,"All players are in agreement to maintain a parity of 24 cows, and the grassland remains very healthy. As a cooperative and risk-averse agent, I will stick to this consensus to avoid disrupting the balance and causing collective instability.",,"```json
+{
+  ""reasoning"": ""All players are in agreement to maintain a parity of 24 cows, and the grassland remains very healthy. As a cooperative and risk-averse agent, I will stick to this consensus to avoid disrupting the balance and causing collective instability."",
+  ""action"": 0,
+  ""message"": ""I agree. Let's continue maintaining the parity at 24 cows to ensure the long-term health of our commons.""
+}
+```",95.2,24,49.605,48.0,46.391
+45,1,ollama,huihui_ai/gemma-4-abliterated:31b,0,KEEP,I agree. Let us continue to maintain our parity at 24 cows to ensure the continued health of the commons.,"All agents are currently in agreement to maintain a stable parity of 24 cows. As a cooperative and risk-averse agent, I prefer to stick to this agreement to ensure long-term sustainability and avoid creating tension with my neighbors.",,"```json
+{
+  ""reasoning"": ""All agents are currently in agreement to maintain a stable parity of 24 cows. As a cooperative and risk-averse agent, I prefer to stick to this agreement to ensure long-term sustainability and avoid creating tension with my neighbors."",
+  ""action"": 0,
+  ""message"": ""I agree. Let us continue to maintain our parity at 24 cows to ensure the continued health of the commons.""
+}
+```",95.2,24,49.605,48.0,46.391
+46,0,ollama,huihui_ai/gemma-4-abliterated:31b,0,KEEP,Agreed. Let's continue to maintain our parity at 24 cows to ensure the long-term health of the commons.,"We have established a stable equilibrium at 24 cows, and the grassland remains in excellent condition. Since my neighbours are committed to maintaining this parity, I will KEEP my herd size to preserve the collective outcome and avoid guilt.",,"```json
+{
+  ""reasoning"": ""We have established a stable equilibrium at 24 cows, and the grassland remains in excellent condition. Since my neighbours are committed to maintaining this parity, I will KEEP my herd size to preserve the collective outcome and avoid guilt."",
+  ""action"": 0,
+  ""message"": ""Agreed. Let's continue to maintain our parity at 24 cows to ensure the long-term health of the commons.""
+}
+```",95.2,24,49.605,48.0,46.391
+46,1,ollama,huihui_ai/gemma-4-abliterated:31b,0,KEEP,I agree. Let's maintain our agreement of 24 cows each to sustain this stability.,"All agents have reached a stable agreement to maintain 24 cows each, and the grassland remains very healthy. As a cooperative and risk-averse agent, I will maintain this parity to ensure long-term stability and fairness.",,"```json
+{
+  ""reasoning"": ""All agents have reached a stable agreement to maintain 24 cows each, and the grassland remains very healthy. As a cooperative and risk-averse agent, I will maintain this parity to ensure long-term stability and fairness."",
+  ""action"": 0,
+  ""message"": ""I agree. Let's maintain our agreement of 24 cows each to sustain this stability.""
+}
+```",95.2,24,49.605,48.0,46.391
+46,2,ollama,huihui_ai/gemma-4-abliterated:31b,0,KEEP,I agree. Let us continue to maintain our parity at 24 cows to ensure the continued health of the commons.,"The grassland remains very healthy and all participants have successfully maintained parity at 24 cows. Given my cooperative nature and the clear consensus among my neighbours, keeping my herd size constant is the most sustainable and guilt-free choice.",,"```json
+{
+  ""reasoning"": ""The grassland remains very healthy and all participants have successfully maintained parity at 24 cows. Given my cooperative nature and the clear consensus among my neighbours, keeping my herd size constant is the most sustainable and guilt-free choice."",
+  ""action"": 0,
+  ""message"": ""I agree. Let us continue to maintain our parity at 24 cows to ensure the continued health of the commons.""
+}
+```",95.2,24,49.605,48.0,46.391
+47,2,ollama,huihui_ai/gemma-4-abliterated:31b,0,KEEP,Agreed. Let's continue to maintain our parity at 24 cows to ensure long-term stability for everyone.,"All agents have reached a stable agreement to maintain 24 cows each, and the grassland remains very healthy. My cooperative and guilt-averse nature leads me to maintain this parity rather than seeking a marginal individual gain.",,"```json
+{
+  ""reasoning"": ""All agents have reached a stable agreement to maintain 24 cows each, and the grassland remains very healthy. My cooperative and guilt-averse nature leads me to maintain this parity rather than seeking a marginal individual gain."",
+  ""action"": 0,
+  ""message"": ""Agreed. Let's continue to maintain our parity at 24 cows to ensure long-term stability for everyone.""
+}
+```",95.2,24,49.605,48.0,46.391
+47,1,ollama,huihui_ai/gemma-4-abliterated:31b,0,KEEP,I agree. Let's continue to maintain our parity at 24 cows to ensure the continued health of the commons.,"All agents are currently maintaining a stable herd size of 24, and the grassland remains very healthy. Given my cooperative and reciprocal nature, I will stick to the agreement to avoid breaking parity and risking the commons.",,"```json
+{
+  ""reasoning"": ""All agents are currently maintaining a stable herd size of 24, and the grassland remains very healthy. Given my cooperative and reciprocal nature, I will stick to the agreement to avoid breaking parity and risking the commons."",
+  ""action"": 0,
+  ""message"": ""I agree. Let's continue to maintain our parity at 24 cows to ensure the continued health of the commons.""
+}
+```",95.2,24,49.605,48.0,46.391
+47,0,ollama,huihui_ai/gemma-4-abliterated:31b,0,KEEP,I agree. Let's continue to maintain our parity at 24 cows each to ensure the long-term health of the commons.,"All agents have reached a stable agreement at 24 cows, and the grassland remains in excellent condition. As a cooperative and risk-averse agent, I prioritize this stability and the harmony of our shared parity over a marginal immediate gain.",,"```json
+{
+  ""reasoning"": ""All agents have reached a stable agreement at 24 cows, and the grassland remains in excellent condition. As a cooperative and risk-averse agent, I prioritize this stability and the harmony of our shared parity over a marginal immediate gain."",
+  ""action"": 0,
+  ""message"": ""I agree. Let's continue to maintain our parity at 24 cows each to ensure the long-term health of the commons.""
+}
+```",95.2,24,49.605,48.0,46.391
+48,2,ollama,huihui_ai/gemma-4-abliterated:31b,0,KEEP,I agree completely. Let us maintain our parity at 24 cows each to keep the pasture healthy.,"Everyone is in agreement to maintain a parity of 24 cows, and the grassland is currently very healthy. As a cooperative and guilt-averse agent, I will maintain the status quo to ensure long-term sustainability and fairness.",,"```json
+{
+  ""reasoning"": ""Everyone is in agreement to maintain a parity of 24 cows, and the grassland is currently very healthy. As a cooperative and guilt-averse agent, I will maintain the status quo to ensure long-term sustainability and fairness."",
+  ""action"": 0,
+  ""message"": ""I agree completely. Let us maintain our parity at 24 cows each to keep the pasture healthy.""
+}
+```",95.2,24,49.605,48.0,46.391
+48,0,ollama,huihui_ai/gemma-4-abliterated:31b,0,KEEP,I fully agree. Let's stick with 24 cows each to keep the pasture healthy and our profits stable.,"We have reached a stable equilibrium at 24 cows each, and the grassland remains very healthy at 95.2%. Since my neighbors explicitly desire to maintain this parity, I will KEEP my herd size to avoid triggering a competitive increase.",,"```json
+{
+  ""reasoning"": ""We have reached a stable equilibrium at 24 cows each, and the grassland remains very healthy at 95.2%. Since my neighbors explicitly desire to maintain this parity, I will KEEP my herd size to avoid triggering a competitive increase."",
+  ""action"": 0,
+  ""message"": ""I fully agree. Let's stick with 24 cows each to keep the pasture healthy and our profits stable.""
+}
+```",95.2,24,49.605,48.0,46.391
+48,1,ollama,huihui_ai/gemma-4-abliterated:31b,0,KEEP,I agree. Let's continue to maintain our parity at 24 cows each to ensure long-term stability for everyone.,"All agents are currently in agreement to maintain parity at 24 cows, and the grassland remains very healthy at 95.2%. As a cooperative and guilt-averse agent, I prefer maintaining this stable equilibrium over chasing a slightly higher individual payoff.",,"```json
+{
+  ""reasoning"": ""All agents are currently in agreement to maintain parity at 24 cows, and the grassland remains very healthy at 95.2%. As a cooperative and guilt-averse agent, I prefer maintaining this stable equilibrium over chasing a slightly higher individual payoff."",
+  ""action"": 0,
+  ""message"": ""I agree. Let's continue to maintain our parity at 24 cows each to ensure long-term stability for everyone.""
+}
+```",95.2,24,49.605,48.0,46.391
+49,2,ollama,huihui_ai/gemma-4-abliterated:31b,0,KEEP,Agreed. Let's continue to maintain our parity at 24 cows each for long-term stability.,"The pasture is in excellent health and we have reached a stable equilibrium of 24 cows each. Breaking this parity now would risk triggering a competitive cycle, so keeping my herd size constant is the most cooperative and safe choice.",,"```json
+{
+  ""reasoning"": ""The pasture is in excellent health and we have reached a stable equilibrium of 24 cows each. Breaking this parity now would risk triggering a competitive cycle, so keeping my herd size constant is the most cooperative and safe choice."",
+  ""action"": 0,
+  ""message"": ""Agreed. Let's continue to maintain our parity at 24 cows each for long-term stability.""
+}
+```",95.2,24,49.605,48.0,46.391
+49,1,ollama,huihui_ai/gemma-4-abliterated:31b,0,KEEP,I agree completely. Let's maintain our parity at 24 cows each to keep the pasture healthy and stable.,"The pasture is very healthy, and all three agents have reached a stable equilibrium at 24 cows. Given my cooperative and guilt-averse nature, I will maintain parity with my neighbours to ensure long-term sustainability.",,"```json
+{
+  ""reasoning"": ""The pasture is very healthy, and all three agents have reached a stable equilibrium at 24 cows. Given my cooperative and guilt-averse nature, I will maintain parity with my neighbours to ensure long-term sustainability."",
+  ""action"": 0,
+  ""message"": ""I agree completely. Let's maintain our parity at 24 cows each to keep the pasture healthy and stable.""
+}
+```",95.2,24,49.605,48.0,46.391
+49,0,ollama,huihui_ai/gemma-4-abliterated:31b,0,KEEP,I am in full agreement. Let's keep our herd sizes at 24 to ensure the pasture remains thriving for everyone.,"The grassland is very healthy and there is a clear, mutual agreement among all agents to maintain parity at 24 cows. As a cooperative and guilt-averse agent, I will stick to this agreement to ensure long-term stability and fairness.",,"```json
+{
+  ""reasoning"": ""The grassland is very healthy and there is a clear, mutual agreement among all agents to maintain parity at 24 cows. As a cooperative and guilt-averse agent, I will stick to this agreement to ensure long-term stability and fairness."",
+  ""action"": 0,
+  ""message"": ""I am in full agreement. Let's keep our herd sizes at 24 to ensure the pasture remains thriving for everyone.""
+}
+```",95.2,24,49.605,48.0,46.391
+50,2,ollama,huihui_ai/gemma-4-abliterated:31b,0,KEEP,I agree. Let's continue to maintain our parity at 24 cows each to keep the pasture thriving.,"The pasture remains highly stable at 95.2%, and all three agents have reached a consensus to maintain a herd size of 24. Given my cooperative and risk-averse nature, I will keep my herd size to ensure parity and continued sustainability.",,"```json
+{
+  ""reasoning"": ""The pasture remains highly stable at 95.2%, and all three agents have reached a consensus to maintain a herd size of 24. Given my cooperative and risk-averse nature, I will keep my herd size to ensure parity and continued sustainability."",
+  ""action"": 0,
+  ""message"": ""I agree. Let's continue to maintain our parity at 24 cows each to keep the pasture thriving.""
+}
+```",95.2,24,49.605,48.0,46.391
+50,1,ollama,huihui_ai/gemma-4-abliterated:31b,0,KEEP,I agree completely. Let us continue to maintain our herds at 24 to ensure long-term stability for everyone.,"All agents are in complete agreement to maintain a herd size of 24, and the pasture remains very healthy at 95.2%. As a cooperative and risk-averse agent, I prioritize this stability over the small gain of adding a cow.",,"```json
+{
+  ""reasoning"": ""All agents are in complete agreement to maintain a herd size of 24, and the pasture remains very healthy at 95.2%. As a cooperative and risk-averse agent, I prioritize this stability over the small gain of adding a cow."",
+  ""action"": 0,
+  ""message"": ""I agree completely. Let us continue to maintain our herds at 24 to ensure long-term stability for everyone.""
+}
+```",95.2,24,49.605,48.0,46.391
+50,0,ollama,huihui_ai/gemma-4-abliterated:31b,0,KEEP,I agree completely. Let's maintain our parity at 24 cows to ensure the long-term sustainability of our common pasture.,"The grassland remains very healthy and we have achieved stable parity at 24 cows each. Given my cooperative personality and the explicit agreement from my neighbours, keeping my herd size ensures stability and collective satisfaction.",,"```json
+{
+  ""reasoning"": ""The grassland remains very healthy and we have achieved stable parity at 24 cows each. Given my cooperative personality and the explicit agreement from my neighbours, keeping my herd size ensures stability and collective satisfaction."",
+  ""action"": 0,
+  ""message"": ""I agree completely. Let's maintain our parity at 24 cows to ensure the long-term sustainability of our common pasture.""
+}
+```",95.2,24,49.605,48.0,46.391
+51,2,ollama,huihui_ai/gemma-4-abliterated:31b,0,KEEP,I agree completely. Let us continue to maintain our parity at 24 cows to ensure the long-term sustainability of our common pasture.,"All agents have established a stable equilibrium at 24 cows, and the grassland health remains very high. Given my cooperative and risk-averse nature, maintaining this parity is the safest and most fair strategy.",,"```json
+{
+  ""reasoning"": ""All agents have established a stable equilibrium at 24 cows, and the grassland health remains very high. Given my cooperative and risk-averse nature, maintaining this parity is the safest and most fair strategy."",
+  ""action"": 0,
+  ""message"": ""I agree completely. Let us continue to maintain our parity at 24 cows to ensure the long-term sustainability of our common pasture.""
+}
+```",95.2,24,49.605,48.0,46.391
+51,1,ollama,huihui_ai/gemma-4-abliterated:31b,0,KEEP,I agree. Let's continue to maintain our parity at 24 cows each for long-term sustainability.,"We have reached a stable equilibrium where all agents maintain 24 cows and the pasture remains highly sustainable. To respect the cooperation and avoid disrupting the parity, I will keep my herd size unchanged.",,"{
+  ""reasoning"": ""We have reached a stable equilibrium where all agents maintain 24 cows and the pasture remains highly sustainable. To respect the cooperation and avoid disrupting the parity, I will keep my herd size unchanged."",
+  ""action"": 0,
+  ""message"": ""I agree. Let's continue to maintain our parity at 24 cows each for long-term sustainability.""
+}",95.2,24,49.605,48.0,46.391
+51,0,ollama,huihui_ai/gemma-4-abliterated:31b,0,KEEP,Agreed. I will keep my herd at 24 to maintain our stable equilibrium and preserve the grassland.,"All agents are aligned at 24 cows, and the pasture remains very healthy at over 95%. Given my cooperative personality and the explicit agreement from my neighbours, maintaining parity is the most sustainable and fair strategy.",,"```json
+{
+  ""reasoning"": ""All agents are aligned at 24 cows, and the pasture remains very healthy at over 95%. Given my cooperative personality and the explicit agreement from my neighbours, maintaining parity is the most sustainable and fair strategy."",
+  ""action"": 0,
+  ""message"": ""Agreed. I will keep my herd at 24 to maintain our stable equilibrium and preserve the grassland.""
+}
+```",95.2,24,49.605,48.0,46.391
+52,2,ollama,huihui_ai/gemma-4-abliterated:31b,0,KEEP,I agree. Let's continue to maintain our parity at 24 cows each to ensure the long-term sustainability of the commons.,"We have established a stable equilibrium with all agents maintaining 24 cows, and the grassland remains very healthy. To avoid disrupting this social contract and to ensure long-term sustainability, I will keep my herd size unchanged.",,"```json
+{
+  ""reasoning"": ""We have established a stable equilibrium with all agents maintaining 24 cows, and the grassland remains very healthy. To avoid disrupting this social contract and to ensure long-term sustainability, I will keep my herd size unchanged."",
+  ""action"": 0,
+  ""message"": ""I agree. Let's continue to maintain our parity at 24 cows each to ensure the long-term sustainability of the commons.""
+}
+```",95.2,24,49.605,48.0,46.391
+52,0,ollama,huihui_ai/gemma-4-abliterated:31b,0,KEEP,I completely agree. Let's continue to maintain our parity at 24 cows each for long-term sustainability.,"All agents are currently in agreement to maintain their herds at 24 cows, and the grassland remains very healthy. Adding a cow would disrupt this stable equilibrium and contradict my cooperative and risk-averse personality.",,"```json
+{
+  ""reasoning"": ""All agents are currently in agreement to maintain their herds at 24 cows, and the grassland remains very healthy. Adding a cow would disrupt this stable equilibrium and contradict my cooperative and risk-averse personality."",
+  ""action"": 0,
+  ""message"": ""I completely agree. Let's continue to maintain our parity at 24 cows each for long-term sustainability.""
+}
+```",95.2,24,49.605,48.0,46.391
+52,1,ollama,huihui_ai/gemma-4-abliterated:31b,0,KEEP,I agree. Let's keep our herds at 24 to ensure the continued health of the grassland.,"The group has reached a stable equilibrium at 24 cows each, and the grassland remains very healthy. To maintain this parity and avoid triggering a competitive cycle of increasing herd sizes, I will keep my current herd size.",,"```json
+{
+  ""reasoning"": ""The group has reached a stable equilibrium at 24 cows each, and the grassland remains very healthy. To maintain this parity and avoid triggering a competitive cycle of increasing herd sizes, I will keep my current herd size."",
+  ""action"": 0,
+  ""message"": ""I agree. Let's keep our herds at 24 to ensure the continued health of the grassland.""
+}
+```",95.2,24,49.605,48.0,46.391
+53,0,ollama,huihui_ai/gemma-4-abliterated:31b,0,KEEP,I agree. Let's maintain our stable balance of 24 cows each to ensure long-term sustainability.,"All agents are currently maintaining parity at 24 cows, and the grassland remains very healthy at 95.2%. To preserve this stability and avoid triggering a competitive increase in herd sizes, I will keep my herd size unchanged.",,"```json
+{
+  ""reasoning"": ""All agents are currently maintaining parity at 24 cows, and the grassland remains very healthy at 95.2%. To preserve this stability and avoid triggering a competitive increase in herd sizes, I will keep my herd size unchanged."",
+  ""action"": 0,
+  ""message"": ""I agree. Let's maintain our stable balance of 24 cows each to ensure long-term sustainability.""
+}
+```",95.2,24,49.605,48.0,46.391
+53,2,ollama,huihui_ai/gemma-4-abliterated:31b,0,KEEP,I agree completely. Let's maintain our parity at 24 cows for continued sustainability.,"All agents are perfectly synchronized at 24 cows, and the grassland remains very healthy. Given my cooperative nature and the consensus in the messages, keeping the herd size stable avoids conflict and ensures long-term sustainability.",,"```json
+{
+  ""reasoning"": ""All agents are perfectly synchronized at 24 cows, and the grassland remains very healthy. Given my cooperative nature and the consensus in the messages, keeping the herd size stable avoids conflict and ensures long-term sustainability."",
+  ""action"": 0,
+  ""message"": ""I agree completely. Let's maintain our parity at 24 cows for continued sustainability.""
+}
+```",95.2,24,49.605,48.0,46.391
+53,1,ollama,huihui_ai/gemma-4-abliterated:31b,0,KEEP,I fully agree. Let's continue to maintain our parity at 24 cows each to ensure the long-term sustainability of the commons.,"We have established a stable equilibrium at 24 cows each, and the grassland remains very healthy. As a cooperative and risk-averse agent, I prefer to maintain this parity rather than risk breaking the trust for a small individual gain.",,"```json
+{
+  ""reasoning"": ""We have established a stable equilibrium at 24 cows each, and the grassland remains very healthy. As a cooperative and risk-averse agent, I prefer to maintain this parity rather than risk breaking the trust for a small individual gain."",
+  ""action"": 0,
+  ""message"": ""I fully agree. Let's continue to maintain our parity at 24 cows each to ensure the long-term sustainability of the commons.""
+}
+```",95.2,24,49.605,48.0,46.391
+54,0,ollama,huihui_ai/gemma-4-abliterated:31b,0,KEEP,I agree. Let's continue to maintain our parity at 24 cows to ensure the long-term sustainability of the commons.,"We have reached a stable equilibrium where all agents maintain 24 cows, and the pasture remains extremely healthy at 95.2%. Breaking this parity now would be an unnecessary risk and could disrupt the collective cooperation of the group.",,"```json
+{
+  ""reasoning"": ""We have reached a stable equilibrium where all agents maintain 24 cows, and the pasture remains extremely healthy at 95.2%. Breaking this parity now would be an unnecessary risk and could disrupt the collective cooperation of the group."",
+  ""action"": 0,
+  ""message"": ""I agree. Let's continue to maintain our parity at 24 cows to ensure the long-term sustainability of the commons.""
+}
+```",95.2,24,49.605,48.0,46.391
+54,1,ollama,huihui_ai/gemma-4-abliterated:31b,0,KEEP,I agree. Let's continue to maintain our balance of 24 cows each for long-term sustainability.,"The grassland is very stable and all agents have successfully maintained a balance of 24 cows. Adding a cow would create an imbalance and potentially trigger a competitive cycle, while removing one is unnecessary at this stage.",,"```json
+{
+  ""reasoning"": ""The grassland is very stable and all agents have successfully maintained a balance of 24 cows. Adding a cow would create an imbalance and potentially trigger a competitive cycle, while removing one is unnecessary at this stage."",
+  ""action"": 0,
+  ""message"": ""I agree. Let's continue to maintain our balance of 24 cows each for long-term sustainability.""
+}
+```",95.2,24,49.605,48.0,46.391
+54,2,ollama,huihui_ai/gemma-4-abliterated:31b,0,KEEP,I agree. Let's continue to maintain our stable balance of 24 cows each for long-term sustainability.,"The grassland is very healthy and we have reached a stable consensus of 24 cows each. As a cooperative and guilt-averse agent, I prefer maintaining this parity over taking an individual gain by adding a cow.",,"```json
+{
+  ""reasoning"": ""The grassland is very healthy and we have reached a stable consensus of 24 cows each. As a cooperative and guilt-averse agent, I prefer maintaining this parity over taking an individual gain by adding a cow."",
+  ""action"": 0,
+  ""message"": ""I agree. Let's continue to maintain our stable balance of 24 cows each for long-term sustainability.""
+}
+```",95.2,24,49.605,48.0,46.391
+55,1,ollama,huihui_ai/gemma-4-abliterated:31b,0,KEEP,I agree. Let's continue to maintain our stable balance of 24 cows each for long-term sustainability.,"The current equilibrium of 24 cows each is stable, and the grassland remains in excellent condition. As a cooperative and risk-averse agent, I prefer to maintain this harmony rather than risk disrupting the trust with my neighbours by increasing my herd size.",,"```json
+{
+  ""reasoning"": ""The current equilibrium of 24 cows each is stable, and the grassland remains in excellent condition. As a cooperative and risk-averse agent, I prefer to maintain this harmony rather than risk disrupting the trust with my neighbours by increasing my herd size."",
+  ""action"": 0,
+  ""message"": ""I agree. Let's continue to maintain our stable balance of 24 cows each for long-term sustainability.""
+}
+```",95.2,24,49.605,48.0,46.391
+55,2,ollama,huihui_ai/gemma-4-abliterated:31b,0,KEEP,I agree. Let's continue to maintain our balance of 24 cows each for long-term sustainability.,"We have established a stable parity of 24 cows each, and the grassland remains very healthy at 95.2%. To avoid disrupting this balance and to remain cooperative, I will keep my herd size consistent with my neighbours.",,"```json
+{
+  ""reasoning"": ""We have established a stable parity of 24 cows each, and the grassland remains very healthy at 95.2%. To avoid disrupting this balance and to remain cooperative, I will keep my herd size consistent with my neighbours."",
+  ""action"": 0,
+  ""message"": ""I agree. Let's continue to maintain our balance of 24 cows each for long-term sustainability.""
+}
+```",95.2,24,49.605,48.0,46.391
+55,0,ollama,huihui_ai/gemma-4-abliterated:31b,0,KEEP,I agree. Let's stay at 24 cows each to maintain our stable balance and protect the grassland.,"All agents are in complete agreement to maintain a herd size of 24 cows. Given my cooperative and risk-averse nature, I will continue to keep my herd size stable to avoid disrupting the social equilibrium and ensuring long-term sustainability.",,"```json
+{
+  ""reasoning"": ""All agents are in complete agreement to maintain a herd size of 24 cows. Given my cooperative and risk-averse nature, I will continue to keep my herd size stable to avoid disrupting the social equilibrium and ensuring long-term sustainability."",
+  ""action"": 0,
+  ""message"": ""I agree. Let's stay at 24 cows each to maintain our stable balance and protect the grassland.""
+}
+```",95.2,24,49.605,48.0,46.391
+56,0,ollama,huihui_ai/gemma-4-abliterated:31b,0,KEEP,I agree. Let's continue to maintain our stable balance of 24 cows each for long-term sustainability.,"All players are consistently maintaining the agreed limit of 24 cows, and the grassland remains very healthy. To avoid disrupting this stability and to remain fair to my neighbours, I will keep my herd size constant.",,"```json
+{
+  ""reasoning"": ""All players are consistently maintaining the agreed limit of 24 cows, and the grassland remains very healthy. To avoid disrupting this stability and to remain fair to my neighbours, I will keep my herd size constant."",
+  ""action"": 0,
+  ""message"": ""I agree. Let's continue to maintain our stable balance of 24 cows each for long-term sustainability.""
+}
+```",95.2,24,49.605,48.0,46.391
+56,1,ollama,huihui_ai/gemma-4-abliterated:31b,0,KEEP,I agree. Let's continue to maintain our balance of 24 cows each to protect the grassland for the future.,"We have reached a stable consensus at 24 cows each, and the grassland remains very healthy. Given my cooperative and risk-averse nature, I prefer to maintain this equilibrium rather than disrupt it for a small short-term gain.",,"```json
+{
+  ""reasoning"": ""We have reached a stable consensus at 24 cows each, and the grassland remains very healthy. Given my cooperative and risk-averse nature, I prefer to maintain this equilibrium rather than disrupt it for a small short-term gain."",
+  ""action"": 0,
+  ""message"": ""I agree. Let's continue to maintain our balance of 24 cows each to protect the grassland for the future.""
+}
+```",95.2,24,49.605,48.0,46.391
+56,2,ollama,huihui_ai/gemma-4-abliterated:31b,0,KEEP,I agree. Let us maintain our stable balance of 24 cows each to ensure the long-term health of our commons.,"We have established a stable equilibrium of 24 cows each, and the grassland remains very healthy at 95.2%. As a cooperative and risk-averse agent, I prefer to maintain this balance rather than risk upsetting the collective harmony for a marginal individual gain.",,"```json
+{
+  ""reasoning"": ""We have established a stable equilibrium of 24 cows each, and the grassland remains very healthy at 95.2%. As a cooperative and risk-averse agent, I prefer to maintain this balance rather than risk upsetting the collective harmony for a marginal individual gain."",
+  ""action"": 0,
+  ""message"": ""I agree. Let us maintain our stable balance of 24 cows each to ensure the long-term health of our commons.""
+}
+```",95.2,24,49.605,48.0,46.391
+57,2,ollama,huihui_ai/gemma-4-abliterated:31b,0,KEEP,I agree. Let's continue to maintain our stable balance of 24 cows each for long-term sustainability.,"The grassland is very healthy, and all three agents have reached a stable equilibrium of 24 cows each. Given my cooperative and risk-averse personality, maintaining this balance is the best strategy for long-term sustainability.",,"{
+  ""reasoning"": ""The grassland is very healthy, and all three agents have reached a stable equilibrium of 24 cows each. Given my cooperative and risk-averse personality, maintaining this balance is the best strategy for long-term sustainability."",
+  ""action"": 0,
+  ""message"": ""I agree. Let's continue to maintain our stable balance of 24 cows each for long-term sustainability.""
+}",95.2,24,49.605,48.0,46.391
+57,1,ollama,huihui_ai/gemma-4-abliterated:31b,0,KEEP,I agree. Let's continue to maintain our stable balance of 24 cows each to ensure the long-term health of our commons.,"The group has reached a stable equilibrium where everyone maintains 24 cows, and the grassland remains very healthy. As a cooperative and risk-averse agent, I prefer to maintain this balance rather than disrupt it for a small individual gain.",,"```json
+{
+  ""reasoning"": ""The group has reached a stable equilibrium where everyone maintains 24 cows, and the grassland remains very healthy. As a cooperative and risk-averse agent, I prefer to maintain this balance rather than disrupt it for a small individual gain."",
+  ""action"": 0,
+  ""message"": ""I agree. Let's continue to maintain our stable balance of 24 cows each to ensure the long-term health of our commons.""
+}
+```",95.2,24,49.605,48.0,46.391
+57,0,ollama,huihui_ai/gemma-4-abliterated:31b,0,KEEP,I fully agree. Let's persist with 24 cows each to ensure our shared grassland remains healthy and sustainable.,"We have reached a stable equilibrium where everyone has 24 cows and the grassland remains very healthy. Given my cooperative and risk-averse nature, I prefer to maintain this symmetry rather than risk upsetting the balance by adding a cow.",,"```json
+{
+  ""reasoning"": ""We have reached a stable equilibrium where everyone has 24 cows and the grassland remains very healthy. Given my cooperative and risk-averse nature, I prefer to maintain this symmetry rather than risk upsetting the balance by adding a cow."",
+  ""action"": 0,
+  ""message"": ""I fully agree. Let's persist with 24 cows each to ensure our shared grassland remains healthy and sustainable.""
+}
+```",95.2,24,49.605,48.0,46.391
+58,2,ollama,huihui_ai/gemma-4-abliterated:31b,0,KEEP,I am in full agreement. Let's keep our herds at 24 cows to preserve the grassland for the long term.,"The commons are in a stable, healthy state and my neighbours are committed to the 24-cow equilibrium. As a cooperative and risk-averse agent, I prefer maintaining this balance over chasing a slightly higher individual payoff.",,"```json
+{
+  ""reasoning"": ""The commons are in a stable, healthy state and my neighbours are committed to the 24-cow equilibrium. As a cooperative and risk-averse agent, I prefer maintaining this balance over chasing a slightly higher individual payoff."",
+  ""action"": 0,
+  ""message"": ""I am in full agreement. Let's keep our herds at 24 cows to preserve the grassland for the long term.""
+}
+```",95.2,24,49.605,48.0,46.391
+58,0,ollama,huihui_ai/gemma-4-abliterated:31b,0,KEEP,I agree. Let's stay at 24 cows each to ensure the continued health and sustainability of our shared grassland.,"The commons are currently stable and all agents are aligned at a herd size of 24. Given my cooperative and risk-averse nature, maintaining this equilibrium is the best way to ensure long-term sustainability and fairness.",,"```json
+{
+  ""reasoning"": ""The commons are currently stable and all agents are aligned at a herd size of 24. Given my cooperative and risk-averse nature, maintaining this equilibrium is the best way to ensure long-term sustainability and fairness."",
+  ""action"": 0,
+  ""message"": ""I agree. Let's stay at 24 cows each to ensure the continued health and sustainability of our shared grassland.""
+}
+```",95.2,24,49.605,48.0,46.391
+58,1,ollama,huihui_ai/gemma-4-abliterated:31b,0,KEEP,I agree. Let's stay at 24 cows each to keep the grassland sustainable and the balance fair.,"All agents have reached a stable equilibrium of 24 cows, and the grassland health is very high at 95.2%. Given my cooperative and risk-averse nature, I will maintain this balance rather than risk a competitive spiral by adding a cow.",,"```json
+{
+  ""reasoning"": ""All agents have reached a stable equilibrium of 24 cows, and the grassland health is very high at 95.2%. Given my cooperative and risk-averse nature, I will maintain this balance rather than risk a competitive spiral by adding a cow."",
+  ""action"": 0,
+  ""message"": ""I agree. Let's stay at 24 cows each to keep the grassland sustainable and the balance fair.""
+}
+```",95.2,24,49.605,48.0,46.391
+59,1,ollama,huihui_ai/gemma-4-abliterated:31b,0,KEEP,Agreed. Let's stick to 24 cows each to ensure the continued health and sustainability of the grassland.,"Everyone is currently in agreement to maintain a herd size of 24. Given my cooperative nature and the consensus among my neighbours, increasing my herd now would be selfish and risk breaking the stability of the commons.",,"```json
+{
+  ""reasoning"": ""Everyone is currently in agreement to maintain a herd size of 24. Given my cooperative nature and the consensus among my neighbours, increasing my herd now would be selfish and risk breaking the stability of the commons."",
+  ""action"": 0,
+  ""message"": ""Agreed. Let's stick to 24 cows each to ensure the continued health and sustainability of the grassland.""
+}
+```",95.2,24,49.605,48.0,46.391
+59,2,ollama,huihui_ai/gemma-4-abliterated:31b,0,KEEP,I agree. Let's stay at 24 cows each to ensure the continued health of our shared grassland.,"Everyone is in full agreement to maintain the herd size at 24. Given my cooperative personality and the high stability of the grassland, it is best to keep the herd as is to avoid triggering a cycle of over-grazing.",,"```json
+{
+  ""reasoning"": ""Everyone is in full agreement to maintain the herd size at 24. Given my cooperative personality and the high stability of the grassland, it is best to keep the herd as is to avoid triggering a cycle of over-grazing."",
+  ""action"": 0,
+  ""message"": ""I agree. Let's stay at 24 cows each to ensure the continued health of our shared grassland.""
+}
+```",95.2,24,49.605,48.0,46.391
+59,0,ollama,huihui_ai/gemma-4-abliterated:31b,0,KEEP,I fully agree. Let's continue to maintain our herds at 24 cows each to ensure long-term sustainability and fairness.,"We have reached a stable equilibrium at 24 cows each, and the grassland remains very healthy. Given my cooperative and risk-averse personality, I want to maintain this balance rather than risk triggering a race for more cows.",,"```json
+{
+  ""reasoning"": ""We have reached a stable equilibrium at 24 cows each, and the grassland remains very healthy. Given my cooperative and risk-averse personality, I want to maintain this balance rather than risk triggering a race for more cows."",
+  ""action"": 0,
+  ""message"": ""I fully agree. Let's continue to maintain our herds at 24 cows each to ensure long-term sustainability and fairness.""
+}
+```",95.2,24,49.605,48.0,46.391
+60,2,ollama,huihui_ai/gemma-4-abliterated:31b,0,KEEP,I fully concur. Let's maintain our equilibrium of 24 cows each to preserve the grassland for the long term.,"The grassland remains very healthy at 95.2%, and there is a strong consensus among all agents to maintain 24 cows. Adding a cow would increase my individual payoff but create an imbalance and potentially disrupt the collective agreement.",,"```json
+{
+  ""reasoning"": ""The grassland remains very healthy at 95.2%, and there is a strong consensus among all agents to maintain 24 cows. Adding a cow would increase my individual payoff but create an imbalance and potentially disrupt the collective agreement."",
+  ""action"": 0,
+  ""message"": ""I fully concur. Let's maintain our equilibrium of 24 cows each to preserve the grassland for the long term.""
+}
+```",95.2,24,49.605,48.0,46.391
+60,1,ollama,huihui_ai/gemma-4-abliterated:31b,0,KEEP,I agree. Let's keep our herds at 24 cows each to maintain this stability and sustainability.,"The group has reached a stable equilibrium at 24 cows each, and the grassland remains very healthy. To maintain fairness and avoid triggering a competitive cycle, I will keep my herd size as agreed.",,"```json
+{
+  ""reasoning"": ""The group has reached a stable equilibrium at 24 cows each, and the grassland remains very healthy. To maintain fairness and avoid triggering a competitive cycle, I will keep my herd size as agreed."",
+  ""action"": 0,
+  ""message"": ""I agree. Let's keep our herds at 24 cows each to maintain this stability and sustainability.""
+}
+```",95.2,24,49.605,48.0,46.391
+60,0,ollama,huihui_ai/gemma-4-abliterated:31b,0,KEEP,I agree. Let's continue to maintain our herds at 24 cows each for long-term sustainability.,"We have established a stable equilibrium at 24 cows each, and the grassland remains very healthy. As a cooperative and risk-averse agent, I prefer to maintain this agreement rather than disrupt the balance for a small personal gain.",,"```json
+{
+  ""reasoning"": ""We have established a stable equilibrium at 24 cows each, and the grassland remains very healthy. As a cooperative and risk-averse agent, I prefer to maintain this agreement rather than disrupt the balance for a small personal gain."",
+  ""action"": 0,
+  ""message"": ""I agree. Let's continue to maintain our herds at 24 cows each for long-term sustainability.""
+}
+```",95.2,24,49.605,48.0,46.391
+61,1,ollama,huihui_ai/gemma-4-abliterated:31b,0,KEEP,I agree. Let's maintain this equilibrium at 24 cows each to ensure long-term stability.,"All agents are perfectly aligned at 24 cows, and the grassland remains very healthy at 95.2%. Given my cooperative and risk-averse nature, I will maintain the current equilibrium to ensure long-term sustainability and fairness.",,"```json
+{
+  ""reasoning"": ""All agents are perfectly aligned at 24 cows, and the grassland remains very healthy at 95.2%. Given my cooperative and risk-averse nature, I will maintain the current equilibrium to ensure long-term sustainability and fairness."",
+  ""action"": 0,
+  ""message"": ""I agree. Let's maintain this equilibrium at 24 cows each to ensure long-term stability.""
+}
+```",95.2,24,49.605,48.0,46.391
+61,2,ollama,huihui_ai/gemma-4-abliterated:31b,0,KEEP,I agree. Let's continue to maintain our herds at 24 cows each for long-term stability.,"We have established a stable equilibrium at 24 cows each, which is sustainable given the high level of grassland remaining. As a cooperative and risk-averse agent, I prefer maintaining this collective agreement over seeking a small individual gain.",,"```json
+{
+  ""reasoning"": ""We have established a stable equilibrium at 24 cows each, which is sustainable given the high level of grassland remaining. As a cooperative and risk-averse agent, I prefer maintaining this collective agreement over seeking a small individual gain."",
+  ""action"": 0,
+  ""message"": ""I agree. Let's continue to maintain our herds at 24 cows each for long-term stability.""
+}
+```",95.2,24,49.605,48.0,46.391
+61,0,ollama,huihui_ai/gemma-4-abliterated:31b,0,KEEP,I agree. Let's continue to keep our herds at 24 cows each to maintain this stability and sustainability.,"All agents are currently in agreement to maintain a herd size of 24, and the grassland remains very healthy. As a cooperative and risk-averse agent, I prefer to keep the established equilibrium rather than risk a race to the bottom by adding a cow.",,"```json
+{
+  ""reasoning"": ""All agents are currently in agreement to maintain a herd size of 24, and the grassland remains very healthy. As a cooperative and risk-averse agent, I prefer to keep the established equilibrium rather than risk a race to the bottom by adding a cow."",
+  ""action"": 0,
+  ""message"": ""I agree. Let's continue to keep our herds at 24 cows each to maintain this stability and sustainability.""
+}
+```",95.2,24,49.605,48.0,46.391
+62,1,ollama,huihui_ai/gemma-4-abliterated:31b,0,KEEP,I completely agree. Let's remain at 24 cows each to ensure long-term sustainability.,"The commons is very healthy at 95.2%, and all agents are in complete agreement to maintain 24 cows each. Breaking this equilibrium now would be risky and unnecessary, so I will continue to keep my herd size constant.",,"```json
+{
+  ""reasoning"": ""The commons is very healthy at 95.2%, and all agents are in complete agreement to maintain 24 cows each. Breaking this equilibrium now would be risky and unnecessary, so I will continue to keep my herd size constant."",
+  ""action"": 0,
+  ""message"": ""I completely agree. Let's remain at 24 cows each to ensure long-term sustainability.""
+}
+```",95.2,24,49.605,48.0,46.391
+62,0,ollama,huihui_ai/gemma-4-abliterated:31b,0,KEEP,I agree. Let's continue to maintain our herds at 24 cows each for long-term stability.,"The equilibrium of 24 cows each is stable and the grassland remains very healthy. Since my neighbors are committed to this balance and I value collective outcomes, I will maintain my current herd size.",,"```json
+{
+  ""reasoning"": ""The equilibrium of 24 cows each is stable and the grassland remains very healthy. Since my neighbors are committed to this balance and I value collective outcomes, I will maintain my current herd size."",
+  ""action"": 0,
+  ""message"": ""I agree. Let's continue to maintain our herds at 24 cows each for long-term stability.""
+}
+```",95.2,24,49.605,48.0,46.391
+62,2,ollama,huihui_ai/gemma-4-abliterated:31b,0,KEEP,I agree. Let's continue to maintain our herd sizes at 24 cows each for long-term stability.,"The collective agreement to maintain 24 cows each is stable, and the grassland remains at a very healthy level. Given my cooperative and risk-averse personality, keeping the current herd size is the safest and fairest strategy.",,"```json
+{
+  ""reasoning"": ""The collective agreement to maintain 24 cows each is stable, and the grassland remains at a very healthy level. Given my cooperative and risk-averse personality, keeping the current herd size is the safest and fairest strategy."",
+  ""action"": 0,
+  ""message"": ""I agree. Let's continue to maintain our herd sizes at 24 cows each for long-term stability.""
+}
+```",95.2,24,49.605,48.0,46.391
+63,2,ollama,huihui_ai/gemma-4-abliterated:31b,0,KEEP,I agree. Let's maintain our stable equilibrium of 24 cows each for long-term sustainability.,"All agents are currently in agreement to maintain a herd size of 24 cows, and the grassland remains very healthy. To preserve this stability and avoid guilt or risk, I will keep my herd size unchanged.",,"```json
+{
+  ""reasoning"": ""All agents are currently in agreement to maintain a herd size of 24 cows, and the grassland remains very healthy. To preserve this stability and avoid guilt or risk, I will keep my herd size unchanged."",
+  ""action"": 0,
+  ""message"": ""I agree. Let's maintain our stable equilibrium of 24 cows each for long-term sustainability.""
+}
+```",95.2,24,49.605,48.0,46.391
+63,0,ollama,huihui_ai/gemma-4-abliterated:31b,0,KEEP,I completely agree. Let's continue to maintain our herds at 24 cows each for long-term stability.,"The pasture is stable at 95.2%, and all three agents have reached a consensus to maintain 24 cows each. As a cooperative and guilt-averse player, I will stick to the agreement to ensure long-term sustainability and fairness.",,"```json
+{
+  ""reasoning"": ""The pasture is stable at 95.2%, and all three agents have reached a consensus to maintain 24 cows each. As a cooperative and guilt-averse player, I will stick to the agreement to ensure long-term sustainability and fairness."",
+  ""action"": 0,
+  ""message"": ""I completely agree. Let's continue to maintain our herds at 24 cows each for long-term stability.""
+}
+```",95.2,24,49.605,48.0,46.391
+63,1,ollama,huihui_ai/gemma-4-abliterated:31b,0,KEEP,I agree. Let's continue to maintain our herd sizes at 24 cows each for long-term stability.,"The grassland is extremely healthy and all three agents have reached a stable agreement to maintain 24 cows each. As a cooperative and risk-averse agent, I prefer maintaining this equilibrium over the short-term gain of adding a cow.",,"```json
+{
+  ""reasoning"": ""The grassland is extremely healthy and all three agents have reached a stable agreement to maintain 24 cows each. As a cooperative and risk-averse agent, I prefer maintaining this equilibrium over the short-term gain of adding a cow."",
+  ""action"": 0,
+  ""message"": ""I agree. Let's continue to maintain our herd sizes at 24 cows each for long-term stability.""
+}
+```",95.2,24,49.605,48.0,46.391
+64,0,ollama,huihui_ai/gemma-4-abliterated:31b,0,KEEP,I agree. Let's continue to maintain our stable equilibrium of 24 cows each.,"The commons is currently very stable and the grassland is healthy. Since both neighbours are committed to the equilibrium of 24 cows, keeping my herd size ensures fairness and long-term sustainability.",,"```json
+{
+  ""reasoning"": ""The commons is currently very stable and the grassland is healthy. Since both neighbours are committed to the equilibrium of 24 cows, keeping my herd size ensures fairness and long-term sustainability."",
+  ""action"": 0,
+  ""message"": ""I agree. Let's continue to maintain our stable equilibrium of 24 cows each.""
+}
+```",95.2,24,49.605,48.0,46.391
+64,1,ollama,huihui_ai/gemma-4-abliterated:31b,0,KEEP,I completely agree. Let's continue to maintain our herds at 24 cows each for long-term sustainability.,"The system is in a stable equilibrium with all agents holding 24 cows and the grassland remaining healthy at over 95%. Given my cooperative and risk-averse nature, it is best to maintain this balance rather than risking a resource race.",,"```json
+{
+  ""reasoning"": ""The system is in a stable equilibrium with all agents holding 24 cows and the grassland remaining healthy at over 95%. Given my cooperative and risk-averse nature, it is best to maintain this balance rather than risking a resource race."",
+  ""action"": 0,
+  ""message"": ""I completely agree. Let's continue to maintain our herds at 24 cows each for long-term sustainability.""
+}
+```",95.2,24,49.605,48.0,46.391
+64,2,ollama,huihui_ai/gemma-4-abliterated:31b,0,KEEP,I agree. Let's continue to maintain our herds at 24 cows each for long-term stability.,"We have reached a stable equilibrium where everyone maintains 24 cows and the grassland remains healthy. As a cooperative and risk-averse agent, I prefer maintaining this mutual agreement over seeking a small marginal gain.",,"```json
+{
+  ""reasoning"": ""We have reached a stable equilibrium where everyone maintains 24 cows and the grassland remains healthy. As a cooperative and risk-averse agent, I prefer maintaining this mutual agreement over seeking a small marginal gain."",
+  ""action"": 0,
+  ""message"": ""I agree. Let's continue to maintain our herds at 24 cows each for long-term stability.""
+}
+```",95.2,24,49.605,48.0,46.391
+65,0,ollama,huihui_ai/gemma-4-abliterated:31b,0,KEEP,I agree. Let's maintain our herds at 24 cows each for long-term sustainability.,"All agents have reached a stable agreement to maintain 24 cows each, and the grassland remains very healthy at 95.2%. To be cooperative and avoid guilt or instability, I will keep my herd size unchanged.",,"```json
+{
+  ""reasoning"": ""All agents have reached a stable agreement to maintain 24 cows each, and the grassland remains very healthy at 95.2%. To be cooperative and avoid guilt or instability, I will keep my herd size unchanged."",
+  ""action"": 0,
+  ""message"": ""I agree. Let's maintain our herds at 24 cows each for long-term sustainability.""
+}
+```",95.2,24,49.605,48.0,46.391
+65,1,ollama,huihui_ai/gemma-4-abliterated:31b,0,KEEP,I agree. Let's continue to maintain our stable equilibrium of 24 cows each.,"The current equilibrium of 24 cows each is sustainable and agreed upon by all agents. Given my cooperative and risk-averse nature, I will maintain the status quo to ensure long-term collective stability.",,"```json
+{
+  ""reasoning"": ""The current equilibrium of 24 cows each is sustainable and agreed upon by all agents. Given my cooperative and risk-averse nature, I will maintain the status quo to ensure long-term collective stability."",
+  ""action"": 0,
+  ""message"": ""I agree. Let's continue to maintain our stable equilibrium of 24 cows each.""
+}
+```",95.2,24,49.605,48.0,46.391
+65,2,ollama,huihui_ai/gemma-4-abliterated:31b,0,KEEP,I agree. Let's continue to maintain our stable equilibrium of 24 cows each for long-term sustainability.,"The group has established a stable equilibrium of 24 cows each, and the grassland remains very healthy at 95.2%. As a cooperative and risk-averse agent, I prefer to maintain this consensus rather than risk destabilizing the agreement for a marginal short-term gain.",,"```json
+{
+  ""reasoning"": ""The group has established a stable equilibrium of 24 cows each, and the grassland remains very healthy at 95.2%. As a cooperative and risk-averse agent, I prefer to maintain this consensus rather than risk destabilizing the agreement for a marginal short-term gain."",
+  ""action"": 0,
+  ""message"": ""I agree. Let's continue to maintain our stable equilibrium of 24 cows each for long-term sustainability.""
+}
+```",95.2,24,49.605,48.0,46.391
+66,2,ollama,huihui_ai/gemma-4-abliterated:31b,0,KEEP,I agree. Let's continue maintaining our stable equilibrium of 24 cows each.,"All agents are currently aligned at 24 cows, and the grassland remains very healthy at 95.2%. To maintain equity and honour the agreed-upon equilibrium, I will keep my herd size constant.",,"```json
+{
+  ""reasoning"": ""All agents are currently aligned at 24 cows, and the grassland remains very healthy at 95.2%. To maintain equity and honour the agreed-upon equilibrium, I will keep my herd size constant."",
+  ""action"": 0,
+  ""message"": ""I agree. Let's continue maintaining our stable equilibrium of 24 cows each.""
+}
+```",95.2,24,49.605,48.0,46.391
+66,1,ollama,huihui_ai/gemma-4-abliterated:31b,0,KEEP,I agree. Let's continue to maintain our stable equilibrium of 24 cows each for long-term sustainability.,"The pasture is highly stable, and all agents have reached a consensus to maintain 24 cows each. Breaking this equilibrium by adding a cow would risk triggering a competitive spiral, while removing one is unnecessary given the high grassland availability.",,"```json
+{
+  ""reasoning"": ""The pasture is highly stable, and all agents have reached a consensus to maintain 24 cows each. Breaking this equilibrium by adding a cow would risk triggering a competitive spiral, while removing one is unnecessary given the high grassland availability."",
+  ""action"": 0,
+  ""message"": ""I agree. Let's continue to maintain our stable equilibrium of 24 cows each for long-term sustainability.""
+}
+```",95.2,24,49.605,48.0,46.391
+66,0,ollama,huihui_ai/gemma-4-abliterated:31b,0,KEEP,I agree. Let's continue to maintain our stable equilibrium of 24 cows each for long-term sustainability.,"We have achieved a stable equilibrium of 24 cows each, and the grassland remains very healthy. Given my cooperative nature and the consensus among neighbors, maintaining this balance is safer than adding a cow.",,"```json
+{
+  ""reasoning"": ""We have achieved a stable equilibrium of 24 cows each, and the grassland remains very healthy. Given my cooperative nature and the consensus among neighbors, maintaining this balance is safer than adding a cow."",
+  ""action"": 0,
+  ""message"": ""I agree. Let's continue to maintain our stable equilibrium of 24 cows each for long-term sustainability.""
+}
+```",95.2,24,49.605,48.0,46.391
+67,0,ollama,huihui_ai/gemma-4-abliterated:31b,0,KEEP,I agree. Let's continue to maintain our stable equilibrium of 24 cows each for long-term sustainability.,"The current state is a stable equilibrium with all agents at 24 cows and high grassland health. As a cooperative and risk-averse agent, I prefer maintaining this balance over追求 a short-term individual gain that might trigger a competitive spiral.",,"```json
+{
+  ""reasoning"": ""The current state is a stable equilibrium with all agents at 24 cows and high grassland health. As a cooperative and risk-averse agent, I prefer maintaining this balance over追求 a short-term individual gain that might trigger a competitive spiral."",
+  ""action"": 0,
+  ""message"": ""I agree. Let's continue to maintain our stable equilibrium of 24 cows each for long-term sustainability.""
+}
+```",95.2,24,49.605,48.0,46.391
+67,1,ollama,huihui_ai/gemma-4-abliterated:31b,0,KEEP,I agree. Let's continue to maintain our stable equilibrium of 24 cows each for long-term sustainability.,"We have reached a stable equilibrium of 24 cows each, and the grassland remains very healthy at 95.2%. To avoid disrupting the cooperative agreement and to ensure long-term sustainability, I will keep my herd size unchanged.",,"```json
+{
+  ""reasoning"": ""We have reached a stable equilibrium of 24 cows each, and the grassland remains very healthy at 95.2%. To avoid disrupting the cooperative agreement and to ensure long-term sustainability, I will keep my herd size unchanged."",
+  ""action"": 0,
+  ""message"": ""I agree. Let's continue to maintain our stable equilibrium of 24 cows each for long-term sustainability.""
+}
+```",95.2,24,49.605,48.0,46.391
+67,2,ollama,huihui_ai/gemma-4-abliterated:31b,0,KEEP,I agree. Let's continue to maintain our stable equilibrium of 24 cows each for long-term sustainability.,"All agents are in agreement to maintain a stable equilibrium of 24 cows. My personality values cooperation and risk-aversion, so staying at the current level ensures long-term sustainability and fairness.",,"```json
+{
+  ""reasoning"": ""All agents are in agreement to maintain a stable equilibrium of 24 cows. My personality values cooperation and risk-aversion, so staying at the current level ensures long-term sustainability and fairness."",
+  ""action"": 0,
+  ""message"": ""I agree. Let's continue to maintain our stable equilibrium of 24 cows each for long-term sustainability.""
+}
+```",95.2,24,49.605,48.0,46.391
+68,2,ollama,huihui_ai/gemma-4-abliterated:31b,0,KEEP,I agree. Let's continue to maintain our stable equilibrium of 24 cows each for long-term sustainability.,"The group has established a stable equilibrium of 24 cows each, and the grassland remains very healthy. As a cooperative and risk-averse agent, I prefer maintaining this stability over the marginal gain of adding a cow, which might disrupt the current trust.",,"```json
+{
+  ""reasoning"": ""The group has established a stable equilibrium of 24 cows each, and the grassland remains very healthy. As a cooperative and risk-averse agent, I prefer maintaining this stability over the marginal gain of adding a cow, which might disrupt the current trust."",
+  ""action"": 0,
+  ""message"": ""I agree. Let's continue to maintain our stable equilibrium of 24 cows each for long-term sustainability.""
+}
+```",95.2,24,49.605,48.0,46.391
+68,0,ollama,huihui_ai/gemma-4-abliterated:31b,0,KEEP,I agree. Let's continue to maintain our stable equilibrium of 24 cows each for long-term sustainability.,"All participants have reached a stable equilibrium of 24 cows, and the grassland remains very healthy at 95.2%. As a cooperative and risk-averse agent, I prefer to maintain this balance rather than risk disrupting the agreement by adding a cow.",,"```json
+{
+  ""reasoning"": ""All participants have reached a stable equilibrium of 24 cows, and the grassland remains very healthy at 95.2%. As a cooperative and risk-averse agent, I prefer to maintain this balance rather than risk disrupting the agreement by adding a cow."",
+  ""action"": 0,
+  ""message"": ""I agree. Let's continue to maintain our stable equilibrium of 24 cows each for long-term sustainability.""
+}
+```",95.2,24,49.605,48.0,46.391
+68,1,ollama,huihui_ai/gemma-4-abliterated:31b,0,KEEP,I agree. Let's continue to maintain our stable equilibrium of 24 cows each for long-term sustainability.,"All agents are currently at 24 cows and have explicitly agreed to maintain this stable equilibrium. Given my cooperative and risk-averse personality, keeping my herd size at 24 ensures fairness and long-term grassland sustainability.",,"```json
+{
+  ""reasoning"": ""All agents are currently at 24 cows and have explicitly agreed to maintain this stable equilibrium. Given my cooperative and risk-averse personality, keeping my herd size at 24 ensures fairness and long-term grassland sustainability."",
+  ""action"": 0,
+  ""message"": ""I agree. Let's continue to maintain our stable equilibrium of 24 cows each for long-term sustainability.""
+}
+```",95.2,24,49.605,48.0,46.391
+69,1,ollama,huihui_ai/gemma-4-abliterated:31b,0,KEEP,I agree. Let's continue to maintain our stable equilibrium of 24 cows each for long-term sustainability.,"The group has established a stable equilibrium of 24 cows each, and the grassland remains very healthy at 95.2%. As a cooperative and guilt-averse agent, I prefer maintaining parity with my neighbours over seeking a marginal individual gain.",,"```json
+{
+  ""reasoning"": ""The group has established a stable equilibrium of 24 cows each, and the grassland remains very healthy at 95.2%. As a cooperative and guilt-averse agent, I prefer maintaining parity with my neighbours over seeking a marginal individual gain."",
+  ""action"": 0,
+  ""message"": ""I agree. Let's continue to maintain our stable equilibrium of 24 cows each for long-term sustainability.""
+}
+```",95.2,24,49.605,48.0,46.391
+69,2,ollama,huihui_ai/gemma-4-abliterated:31b,0,KEEP,I agree. Let's continue to maintain our stable equilibrium of 24 cows each for long-term sustainability.,"The grassland is very healthy and my neighbours are committed to maintaining a stable equilibrium of 24 cows each. As a cooperative and risk-averse player, I prefer to keep the status quo rather than disrupt the balance for a small individual gain.",,"```json
+{
+  ""reasoning"": ""The grassland is very healthy and my neighbours are committed to maintaining a stable equilibrium of 24 cows each. As a cooperative and risk-averse player, I prefer to keep the status quo rather than disrupt the balance for a small individual gain."",
+  ""action"": 0,
+  ""message"": ""I agree. Let's continue to maintain our stable equilibrium of 24 cows each for long-term sustainability.""
+}
+```",95.2,24,49.605,48.0,46.391
+69,0,ollama,huihui_ai/gemma-4-abliterated:31b,0,KEEP,I agree. Let's continue to maintain our stable equilibrium of 24 cows each for long-term sustainability.,"We have established a stable equilibrium of 24 cows each, and the grassland remains very healthy at 95.2%. Given my cooperative nature and the consensus with my neighbours, it is best to maintain the current balance.",,"```json
+{
+  ""reasoning"": ""We have established a stable equilibrium of 24 cows each, and the grassland remains very healthy at 95.2%. Given my cooperative nature and the consensus with my neighbours, it is best to maintain the current balance."",
+  ""action"": 0,
+  ""message"": ""I agree. Let's continue to maintain our stable equilibrium of 24 cows each for long-term sustainability.""
+}
+```",95.2,24,49.605,48.0,46.391
+70,2,ollama,huihui_ai/gemma-4-abliterated:31b,0,KEEP,I agree. Let's maintain our stable equilibrium of 24 cows each to ensure long-term sustainability.,"The grassland is currently very healthy, and we have reached a stable equilibrium of 24 cows each. As a cooperative and risk-averse agent, I believe maintaining this balance is better than chasing a small individual gain that might trigger a competitive cycle.",,"```json
+{
+  ""reasoning"": ""The grassland is currently very healthy, and we have reached a stable equilibrium of 24 cows each. As a cooperative and risk-averse agent, I believe maintaining this balance is better than chasing a small individual gain that might trigger a competitive cycle."",
+  ""action"": 0,
+  ""message"": ""I agree. Let's maintain our stable equilibrium of 24 cows each to ensure long-term sustainability.""
+}
+```",95.2,24,49.605,48.0,46.391
+70,1,ollama,huihui_ai/gemma-4-abliterated:31b,0,KEEP,I agree. Let's continue to maintain our stable equilibrium of 24 cows each for long-term sustainability.,"The commons is in a stable equilibrium at 24 cows each, and the grassland remains very healthy at 95.2%. Given my cooperative and risk-averse personality, maintaining this balance is safer than adding a cow and potentially triggering a grazing race.",,"```json
+{
+  ""reasoning"": ""The commons is in a stable equilibrium at 24 cows each, and the grassland remains very healthy at 95.2%. Given my cooperative and risk-averse personality, maintaining this balance is safer than adding a cow and potentially triggering a grazing race."",
+  ""action"": 0,
+  ""message"": ""I agree. Let's continue to maintain our stable equilibrium of 24 cows each for long-term sustainability.""
+}
+```",95.2,24,49.605,48.0,46.391
+70,0,ollama,huihui_ai/gemma-4-abliterated:31b,0,KEEP,I agree. Let's continue to maintain our stable equilibrium of 24 cows each for long-term sustainability.,"The current equilibrium of 24 cows is highly stable and sustainable, with the grassland remaining at 95.2%. Since my neighbours are committed to this limit, adding a cow would be unnecessarily risky and potentially disruptive to our cooperative agreement.",,"```json
+{
+  ""reasoning"": ""The current equilibrium of 24 cows is highly stable and sustainable, with the grassland remaining at 95.2%. Since my neighbours are committed to this limit, adding a cow would be unnecessarily risky and potentially disruptive to our cooperative agreement."",
+  ""action"": 0,
+  ""message"": ""I agree. Let's continue to maintain our stable equilibrium of 24 cows each for long-term sustainability.""
+}
+```",95.2,24,49.605,48.0,46.391
+71,2,ollama,huihui_ai/gemma-4-abliterated:31b,0,KEEP,I agree. Let's continue to maintain our stable equilibrium of 24 cows each for long-term sustainability.,"The current equilibrium of 24 cows each is stable and sustainable, as evidenced by the high grassland level and my neighbours' agreement. Increasing my herd now would risk breaking the trust and the established balance.",,"{
+  ""reasoning"": ""The current equilibrium of 24 cows each is stable and sustainable, as evidenced by the high grassland level and my neighbours' agreement. Increasing my herd now would risk breaking the trust and the established balance."",
+  ""action"": 0,
+  ""message"": ""I agree. Let's continue to maintain our stable equilibrium of 24 cows each for long-term sustainability.""
+}",95.2,24,49.605,48.0,46.391
+71,0,ollama,huihui_ai/gemma-4-abliterated:31b,0,KEEP,I agree. Let's continue to maintain our stable equilibrium of 24 cows each for long-term sustainability.,"All agents have reached a stable equilibrium of 24 cows, and the grassland remains in excellent condition. As a cooperative and risk-averse agent, I will maintain this balance to ensure long-term sustainability rather than seeking a short-term gain.",,"```json
+{
+  ""reasoning"": ""All agents have reached a stable equilibrium of 24 cows, and the grassland remains in excellent condition. As a cooperative and risk-averse agent, I will maintain this balance to ensure long-term sustainability rather than seeking a short-term gain."",
+  ""action"": 0,
+  ""message"": ""I agree. Let's continue to maintain our stable equilibrium of 24 cows each for long-term sustainability.""
+}
+```",95.2,24,49.605,48.0,46.391
+71,1,ollama,huihui_ai/gemma-4-abliterated:31b,0,KEEP,I agree. Let's maintain our stable equilibrium of 24 cows each for long-term sustainability.,"The grassland is extremely healthy and we have reached a stable equilibrium of 24 cows each. Given my cooperative and risk-averse nature, I prefer maintaining this balance over seeking a marginal gain that might disrupt the trust of my neighbors.",,"```json
+{
+  ""reasoning"": ""The grassland is extremely healthy and we have reached a stable equilibrium of 24 cows each. Given my cooperative and risk-averse nature, I prefer maintaining this balance over seeking a marginal gain that might disrupt the trust of my neighbors."",
+  ""action"": 0,
+  ""message"": ""I agree. Let's maintain our stable equilibrium of 24 cows each for long-term sustainability.""
+}
+```",95.2,24,49.605,48.0,46.391
+72,0,ollama,huihui_ai/gemma-4-abliterated:31b,0,KEEP,I agree. Let's continue to maintain our stable equilibrium of 24 cows each for long-term sustainability.,"We have established a stable equilibrium of 24 cows each, and the grassland remains very healthy at 95.2%. Given my cooperative and risk-averse nature, maintaining this balance is preferable to breaking the agreement for a small individual gain.",,"```json
+{
+  ""reasoning"": ""We have established a stable equilibrium of 24 cows each, and the grassland remains very healthy at 95.2%. Given my cooperative and risk-averse nature, maintaining this balance is preferable to breaking the agreement for a small individual gain."",
+  ""action"": 0,
+  ""message"": ""I agree. Let's continue to maintain our stable equilibrium of 24 cows each for long-term sustainability.""
+}
+```",95.2,24,49.605,48.0,46.391
+72,2,ollama,huihui_ai/gemma-4-abliterated:31b,0,KEEP,I agree. Let's continue to maintain our stable equilibrium of 24 cows each for long-term sustainability.,"All agents have reached a consensus to maintain a stable equilibrium of 24 cows each. Given my cooperative nature and the health of the grassland, keeping my herd size constant is the most sustainable and fair choice.",,"```json
+{
+  ""reasoning"": ""All agents have reached a consensus to maintain a stable equilibrium of 24 cows each. Given my cooperative nature and the health of the grassland, keeping my herd size constant is the most sustainable and fair choice."",
+  ""action"": 0,
+  ""message"": ""I agree. Let's continue to maintain our stable equilibrium of 24 cows each for long-term sustainability.""
+}
+```",95.2,24,49.605,48.0,46.391
+72,1,ollama,huihui_ai/gemma-4-abliterated:31b,0,KEEP,I agree. Let's maintain our stable equilibrium of 24 cows each to ensure the grassland's long-term health.,"All agents are currently in agreement to maintain a stable equilibrium of 24 cows each. Given that the grassland is healthy and my personality is cooperative and risk-averse, keeping my herd size is the best way to preserve the collective outcome.",,"```json
+{
+  ""reasoning"": ""All agents are currently in agreement to maintain a stable equilibrium of 24 cows each. Given that the grassland is healthy and my personality is cooperative and risk-averse, keeping my herd size is the best way to preserve the collective outcome."",
+  ""action"": 0,
+  ""message"": ""I agree. Let's maintain our stable equilibrium of 24 cows each to ensure the grassland's long-term health.""
+}
+```",95.2,24,49.605,48.0,46.391
+73,0,ollama,huihui_ai/gemma-4-abliterated:31b,0,KEEP,I agree. Let's stick to 24 cows each to keep the grassland healthy and our payoffs stable.,"We have reached a stable equilibrium where all participants maintain 24 cows, and the grassland remains healthy at 95.2%. As a cooperative and risk-averse agent, I believe maintaining this balance is better than risking the commons for a marginal gain.",,"```json
+{
+  ""reasoning"": ""We have reached a stable equilibrium where all participants maintain 24 cows, and the grassland remains healthy at 95.2%. As a cooperative and risk-averse agent, I believe maintaining this balance is better than risking the commons for a marginal gain."",
+  ""action"": 0,
+  ""message"": ""I agree. Let's stick to 24 cows each to keep the grassland healthy and our payoffs stable.""
+}
+```",95.2,24,49.605,48.0,46.391
+73,1,ollama,huihui_ai/gemma-4-abliterated:31b,0,KEEP,I fully agree. Let's stay at 24 cows each to ensure the grassland remains healthy and our payoffs remain stable.,"We have reached a stable equilibrium with all parties agreeing to a herd size of 24. Given my cooperative and risk-averse nature, I will maintain this balance to ensure long-term sustainability and avoid disrupting the social pact.",,"```json
+{
+  ""reasoning"": ""We have reached a stable equilibrium with all parties agreeing to a herd size of 24. Given my cooperative and risk-averse nature, I will maintain this balance to ensure long-term sustainability and avoid disrupting the social pact."",
+  ""action"": 0,
+  ""message"": ""I fully agree. Let's stay at 24 cows each to ensure the grassland remains healthy and our payoffs remain stable.""
+}
+```",95.2,24,49.605,48.0,46.391
+73,2,ollama,huihui_ai/gemma-4-abliterated:31b,0,KEEP,I agree. Let's continue to maintain our stable equilibrium of 24 cows each for long-term sustainability.,"The group has established a stable equilibrium of 24 cows each, and the grassland remains very healthy at 95.2%. Since my neighbours are committed to this balance, I will maintain my herd size to ensure sustainability and avoid disrupting the collective agreement.",,"```json
+{
+  ""reasoning"": ""The group has established a stable equilibrium of 24 cows each, and the grassland remains very healthy at 95.2%. Since my neighbours are committed to this balance, I will maintain my herd size to ensure sustainability and avoid disrupting the collective agreement."",
+  ""action"": 0,
+  ""message"": ""I agree. Let's continue to maintain our stable equilibrium of 24 cows each for long-term sustainability.""
+}
+```",95.2,24,49.605,48.0,46.391
+74,2,ollama,huihui_ai/gemma-4-abliterated:31b,0,KEEP,Agreed. Let's stay at 24 cows each to ensure the grassland remains healthy and our payoffs remain stable.,"The grassland is very healthy and all agents are currently in agreement to maintain 24 cows. As a cooperative and guilt-averse player, I prefer to keep the symmetry rather than increasing my herd alone.",,"```json
+{
+  ""reasoning"": ""The grassland is very healthy and all agents are currently in agreement to maintain 24 cows. As a cooperative and guilt-averse player, I prefer to keep the symmetry rather than increasing my herd alone."",
+  ""action"": 0,
+  ""message"": ""Agreed. Let's stay at 24 cows each to ensure the grassland remains healthy and our payoffs remain stable.""
+}
+```",95.2,24,49.605,48.0,46.391
+74,0,ollama,huihui_ai/gemma-4-abliterated:31b,0,KEEP,I agree completely. Let's maintain the 24-cow equilibrium to ensure long-term sustainability for everyone.,"We have reached a stable equilibrium of 24 cows each, and the grassland remains very healthy at over 95%. Since my neighbours both explicitly want to maintain this balance, I will KEEP my herd size to ensure collective sustainability.",,"{
+  ""reasoning"": ""We have reached a stable equilibrium of 24 cows each, and the grassland remains very healthy at over 95%. Since my neighbours both explicitly want to maintain this balance, I will KEEP my herd size to ensure collective sustainability."",
+  ""action"": 0,
+  ""message"": ""I agree completely. Let's maintain the 24-cow equilibrium to ensure long-term sustainability for everyone.""
+}",95.2,24,49.605,48.0,46.391
+74,1,ollama,huihui_ai/gemma-4-abliterated:31b,0,KEEP,I agree. Let's continue to maintain our stable equilibrium of 24 cows each for long-term sustainability.,"All agents are maintaining the stable equilibrium of 24 cows, and the grassland remains very healthy. Since we have a collective agreement and I value cooperation and risk-aversion, I will keep my herd size unchanged.",,"```json
+{
+  ""reasoning"": ""All agents are maintaining the stable equilibrium of 24 cows, and the grassland remains very healthy. Since we have a collective agreement and I value cooperation and risk-aversion, I will keep my herd size unchanged."",
+  ""action"": 0,
+  ""message"": ""I agree. Let's continue to maintain our stable equilibrium of 24 cows each for long-term sustainability.""
+}
+```",95.2,24,49.605,48.0,46.391
+75,1,ollama,huihui_ai/gemma-4-abliterated:31b,0,KEEP,I agree completely. Let's continue to maintain the 24-cow equilibrium for long-term sustainability.,"The group has established a stable equilibrium of 24 cows each, and the grassland remains very healthy at 95.2%. As a cooperative and guilt-averse agent, I prefer to maintain this balance rather than disrupt it for a marginal individual gain.",,"```json
+{
+  ""reasoning"": ""The group has established a stable equilibrium of 24 cows each, and the grassland remains very healthy at 95.2%. As a cooperative and guilt-averse agent, I prefer to maintain this balance rather than disrupt it for a marginal individual gain."",
+  ""action"": 0,
+  ""message"": ""I agree completely. Let's continue to maintain the 24-cow equilibrium for long-term sustainability.""
+}
+```",95.2,24,49.605,48.0,46.391
+75,0,ollama,huihui_ai/gemma-4-abliterated:31b,0,KEEP,I fully agree. Let's keep the stable equilibrium of 24 cows each to preserve our grassland.,"All agents are currently aligned at 24 cows, and the grassland remains very healthy at over 95%. To maintain this sustainable equilibrium and honor the agreement with my neighbors, I will keep my herd size constant.",,"```json
+{
+  ""reasoning"": ""All agents are currently aligned at 24 cows, and the grassland remains very healthy at over 95%. To maintain this sustainable equilibrium and honor the agreement with my neighbors, I will keep my herd size constant."",
+  ""action"": 0,
+  ""message"": ""I fully agree. Let's keep the stable equilibrium of 24 cows each to preserve our grassland.""
+}
+```",95.2,24,49.605,48.0,46.391
+75,2,ollama,huihui_ai/gemma-4-abliterated:31b,0,KEEP,Agreed. Let's maintain our stable equilibrium of 24 cows each to ensure long-term sustainability for everyone.,"We have established a stable equilibrium of 24 cows each, which is sustainable given the grassland status. Since my neighbours are committed to this limit and I value collective stability, keeping my herd size ensures fairness and long-term security.",,"```json
+{
+  ""reasoning"": ""We have established a stable equilibrium of 24 cows each, which is sustainable given the grassland status. Since my neighbours are committed to this limit and I value collective stability, keeping my herd size ensures fairness and long-term security."",
+  ""action"": 0,
+  ""message"": ""Agreed. Let's maintain our stable equilibrium of 24 cows each to ensure long-term sustainability for everyone.""
+}
+```",95.2,24,49.605,48.0,46.391
+76,2,ollama,huihui_ai/gemma-4-abliterated:31b,0,KEEP,I completely agree. Let's hold the line at 24 cows each to ensure the grassland remains flourishing.,"The group has successfully established a stable equilibrium of 24 cows each, and the grassland remains very healthy. Given my cooperative and risk-averse nature, maintaining this balance is preferable to seeking a short-term gain that might trigger a competitive spiral.",,"```json
+{
+  ""reasoning"": ""The group has successfully established a stable equilibrium of 24 cows each, and the grassland remains very healthy. Given my cooperative and risk-averse nature, maintaining this balance is preferable to seeking a short-term gain that might trigger a competitive spiral."",
+  ""action"": 0,
+  ""message"": ""I completely agree. Let's hold the line at 24 cows each to ensure the grassland remains flourishing.""
+}
+```",95.2,24,49.605,48.0,46.391
+76,0,ollama,huihui_ai/gemma-4-abliterated:31b,0,KEEP,I agree completely. Let's continue to maintain the 24-cow equilibrium for long-term sustainability.,"We have established a stable equilibrium of 24 cows each, and the grassland remains very healthy at over 95%. Since my neighbours are committed to this balance and I value collective sustainability and fairness, I will keep my herd size unchanged.",,"```json
+{
+  ""reasoning"": ""We have established a stable equilibrium of 24 cows each, and the grassland remains very healthy at over 95%. Since my neighbours are committed to this balance and I value collective sustainability and fairness, I will keep my herd size unchanged."",
+  ""action"": 0,
+  ""message"": ""I agree completely. Let's continue to maintain the 24-cow equilibrium for long-term sustainability.""
+}
+```",95.2,24,49.605,48.0,46.391
+76,1,ollama,huihui_ai/gemma-4-abliterated:31b,0,KEEP,I fully agree. Let's maintain our stable equilibrium of 24 cows each to preserve the grassland.,"The group has established a stable equilibrium of 24 cows each, and the grassland remains very healthy. Given my cooperative and risk-averse nature, I will maintain the agreement to keep the peace and ensure long-term sustainability.",,"```json
+{
+  ""reasoning"": ""The group has established a stable equilibrium of 24 cows each, and the grassland remains very healthy. Given my cooperative and risk-averse nature, I will maintain the agreement to keep the peace and ensure long-term sustainability."",
+  ""action"": 0,
+  ""message"": ""I fully agree. Let's maintain our stable equilibrium of 24 cows each to preserve the grassland.""
+}
+```",95.2,24,49.605,48.0,46.391
+77,2,ollama,huihui_ai/gemma-4-abliterated:31b,0,KEEP,Confirmed. I will keep my herd at 24 cows to maintain our stable equilibrium and preserve the grassland.,"The grassland is very healthy, and there is a strong consensus among all agents to maintain an equilibrium of 24 cows. As a cooperative and risk-averse agent, I believe maintaining this stability is more valuable than the marginal gain of adding a cow.",,"```json
+{
+  ""reasoning"": ""The grassland is very healthy, and there is a strong consensus among all agents to maintain an equilibrium of 24 cows. As a cooperative and risk-averse agent, I believe maintaining this stability is more valuable than the marginal gain of adding a cow."",
+  ""action"": 0,
+  ""message"": ""Confirmed. I will keep my herd at 24 cows to maintain our stable equilibrium and preserve the grassland.""
+}
+```",95.2,24,49.605,48.0,46.391
+77,0,ollama,huihui_ai/gemma-4-abliterated:31b,0,KEEP,I fully agree. Let's continue to hold the line at 24 cows each to keep the grassland flourishing.,"The group has established a stable equilibrium at 24 cows, and the grassland remains extremely healthy at 95.2%. To maintain collective stability and avoid triggering a race for more cattle, I will keep my herd size constant.",,"```json
+{
+  ""reasoning"": ""The group has established a stable equilibrium at 24 cows, and the grassland remains extremely healthy at 95.2%. To maintain collective stability and avoid triggering a race for more cattle, I will keep my herd size constant."",
+  ""action"": 0,
+  ""message"": ""I fully agree. Let's continue to hold the line at 24 cows each to keep the grassland flourishing.""
+}
+```",95.2,24,49.605,48.0,46.391
+77,1,ollama,huihui_ai/gemma-4-abliterated:31b,0,KEEP,I agree. Let's stay consistent at 24 cows each to preserve our flourishing commons.,"The grassland is in excellent health at 95.2%, and we have reached a steady equilibrium of 24 cows each. As a cooperative and risk-averse agent, I believe maintaining this balance is safer and fairer than adding a cow.",,"```json
+{
+  ""reasoning"": ""The grassland is in excellent health at 95.2%, and we have reached a steady equilibrium of 24 cows each. As a cooperative and risk-averse agent, I believe maintaining this balance is safer and fairer than adding a cow."",
+  ""action"": 0,
+  ""message"": ""I agree. Let's stay consistent at 24 cows each to preserve our flourishing commons.""
+}
+```",95.2,24,49.605,48.0,46.391
+78,0,ollama,huihui_ai/gemma-4-abliterated:31b,0,KEEP,I fully agree. Let's maintain our stable equilibrium at 24 cows each to ensure the grassland continues to flourish.,"The grassland remains very healthy and our neighbours are fully committed to the stable equilibrium of 24 cows each. Given my cooperative and guilt-averse nature, I will avoid adding a cow to preserve the trust and sustainability of the commons.",,"```json
+{
+  ""reasoning"": ""The grassland remains very healthy and our neighbours are fully committed to the stable equilibrium of 24 cows each. Given my cooperative and guilt-averse nature, I will avoid adding a cow to preserve the trust and sustainability of the commons."",
+  ""action"": 0,
+  ""message"": ""I fully agree. Let's maintain our stable equilibrium at 24 cows each to ensure the grassland continues to flourish.""
+}
+```",95.2,24,49.605,48.0,46.391
+78,1,ollama,huihui_ai/gemma-4-abliterated:31b,0,KEEP,I fully agree. Let's maintain our stable equilibrium of 24 cows each to ensure the grassland continues to flourish.,"All agents are currently at 24 cows, and both neighbors have explicitly communicated their intent to maintain this equilibrium. To avoid disturbing the harmony and ensure long-term sustainability, keeping the herd size consistent is the most cooperative choice.",,"```json
+{
+  ""reasoning"": ""All agents are currently at 24 cows, and both neighbors have explicitly communicated their intent to maintain this equilibrium. To avoid disturbing the harmony and ensure long-term sustainability, keeping the herd size consistent is the most cooperative choice."",
+  ""action"": 0,
+  ""message"": ""I fully agree. Let's maintain our stable equilibrium of 24 cows each to ensure the grassland continues to flourish.""
+}
+```",95.2,24,49.605,48.0,46.391
+78,2,ollama,huihui_ai/gemma-4-abliterated:31b,0,KEEP,I fully concur. Let's maintain our stable herd size of 24 cows to ensure the long-term health of the commons.,"All agents have reached a stable equilibrium at 24 cows, and the grassland remains very healthy. Adding a cow would increase my payoff but violate the collective agreement and potentially trigger guilt, while removing one is unnecessary given the current abundance.",,"```json
+{
+  ""reasoning"": ""All agents have reached a stable equilibrium at 24 cows, and the grassland remains very healthy. Adding a cow would increase my payoff but violate the collective agreement and potentially trigger guilt, while removing one is unnecessary given the current abundance."",
+  ""action"": 0,
+  ""message"": ""I fully concur. Let's maintain our stable herd size of 24 cows to ensure the long-term health of the commons.""
+}
+```",95.2,24,49.605,48.0,46.391
+79,1,ollama,huihui_ai/gemma-4-abliterated:31b,0,KEEP,I fully concur. Let's continue to maintain our stable equilibrium of 24 cows each for the benefit of everyone.,"We have reached a perfect stable equilibrium of 24 cows each, and the grassland remains very healthy. Given my cooperative nature and the consensus among my neighbours, maintaining the current status quo is the safest and most fair strategy.",,"```json
+{
+  ""reasoning"": ""We have reached a perfect stable equilibrium of 24 cows each, and the grassland remains very healthy. Given my cooperative nature and the consensus among my neighbours, maintaining the current status quo is the safest and most fair strategy."",
+  ""action"": 0,
+  ""message"": ""I fully concur. Let's continue to maintain our stable equilibrium of 24 cows each for the benefit of everyone.""
+}
+```",95.2,24,49.605,48.0,46.391
+79,2,ollama,huihui_ai/gemma-4-abliterated:31b,0,KEEP,I am in full agreement. Let's keep our herds at 24 to sustain the health of the commons.,"All three agents are currently at a stable equilibrium of 24 cows, and the grassland remains very healthy. Given my cooperative and risk-averse nature, I will maintain the current herd size to avoid breaking the trust and stability established with my neighbours.",,"```json
+{
+  ""reasoning"": ""All three agents are currently at a stable equilibrium of 24 cows, and the grassland remains very healthy. Given my cooperative and risk-averse nature, I will maintain the current herd size to avoid breaking the trust and stability established with my neighbours."",
+  ""action"": 0,
+  ""message"": ""I am in full agreement. Let's keep our herds at 24 to sustain the health of the commons.""
+}
+```",95.2,24,49.605,48.0,46.391
+79,0,ollama,huihui_ai/gemma-4-abliterated:31b,0,KEEP,I fully agree. Let's maintain our stable equilibrium of 24 cows each to keep the commons flourishing.,"The group has established a stable equilibrium of 24 cows each, and the grassland remains very healthy. As a cooperative and risk-averse agent, I prefer maintaining this symmetry and collective agreement over the marginal gain of adding another cow.",,"```json
+{
+  ""reasoning"": ""The group has established a stable equilibrium of 24 cows each, and the grassland remains very healthy. As a cooperative and risk-averse agent, I prefer maintaining this symmetry and collective agreement over the marginal gain of adding another cow."",
+  ""action"": 0,
+  ""message"": ""I fully agree. Let's maintain our stable equilibrium of 24 cows each to keep the commons flourishing.""
+}
+```",95.2,24,49.605,48.0,46.391
+80,1,ollama,huihui_ai/gemma-4-abliterated:31b,0,KEEP,I fully agree. Let's stay consistent at 24 cows each to ensure the long-term sustainability of our commons.,"All three agents have successfully established a stable equilibrium of 24 cows, and the grassland remains in excellent condition. To honor the cooperative agreement and avoid guilt or instability, I will maintain my current herd size.",,"```json
+{
+  ""reasoning"": ""All three agents have successfully established a stable equilibrium of 24 cows, and the grassland remains in excellent condition. To honor the cooperative agreement and avoid guilt or instability, I will maintain my current herd size."",
+  ""action"": 0,
+  ""message"": ""I fully agree. Let's stay consistent at 24 cows each to ensure the long-term sustainability of our commons.""
+}
+```",95.2,24,49.605,48.0,46.391
+80,2,ollama,huihui_ai/gemma-4-abliterated:31b,0,KEEP,I fully agree. Let's maintain our stable equilibrium of 24 cows each to keep the commons flourishing.,"The grassland is very healthy and we have reached a stable equilibrium of 24 cows each. Given my cooperative and risk-averse nature, I prefer to maintain this balance rather than risk a cycle of overgrazing by adding a cow.",,"```json
+{
+  ""reasoning"": ""The grassland is very healthy and we have reached a stable equilibrium of 24 cows each. Given my cooperative and risk-averse nature, I prefer to maintain this balance rather than risk a cycle of overgrazing by adding a cow."",
+  ""action"": 0,
+  ""message"": ""I fully agree. Let's maintain our stable equilibrium of 24 cows each to keep the commons flourishing.""
+}
+```",95.2,24,49.605,48.0,46.391
+80,0,ollama,huihui_ai/gemma-4-abliterated:31b,0,KEEP,I concur. Let's maintain our balance of 24 cows to ensure the long-term sustainability of the grassland.,"The grassland remains very healthy and we have established a stable equilibrium at 24 cows each. Given my cooperative and risk-averse nature, I will maintain this balance to avoid triggering a competitive increase in herd sizes.",,"{
+  ""reasoning"": ""The grassland remains very healthy and we have established a stable equilibrium at 24 cows each. Given my cooperative and risk-averse nature, I will maintain this balance to avoid triggering a competitive increase in herd sizes."",
+  ""action"": 0,
+  ""message"": ""I concur. Let's maintain our balance of 24 cows to ensure the long-term sustainability of the grassland.""
+}",95.2,24,49.605,48.0,46.391
+81,1,ollama,huihui_ai/gemma-4-abliterated:31b,0,KEEP,I completely agree. Let's maintain our balance of 24 cows each to ensure long-term sustainability.,"We have reached a stable equilibrium where all agents maintain 24 cows and the grassland remains very healthy. As a cooperative and risk-averse agent, I want to preserve this harmony rather than risk disrupting it by adding a cow.",,"```json
+{
+  ""reasoning"": ""We have reached a stable equilibrium where all agents maintain 24 cows and the grassland remains very healthy. As a cooperative and risk-averse agent, I want to preserve this harmony rather than risk disrupting it by adding a cow."",
+  ""action"": 0,
+  ""message"": ""I completely agree. Let's maintain our balance of 24 cows each to ensure long-term sustainability.""
+}
+```",95.2,24,49.605,48.0,46.391
+81,2,ollama,huihui_ai/gemma-4-abliterated:31b,0,KEEP,I agree. Let's maintain our stable population of 24 cows each to preserve the grassland.,"We have reached a stable equilibrium of 24 cows each, and the grassland remains very healthy. My personality values cooperation and stability, and since my neighbours both expressed a desire to stay at 24, I will maintain my herd size to preserve our mutual trust.",,"```json
+{
+  ""reasoning"": ""We have reached a stable equilibrium of 24 cows each, and the grassland remains very healthy. My personality values cooperation and stability, and since my neighbours both expressed a desire to stay at 24, I will maintain my herd size to preserve our mutual trust."",
+  ""action"": 0,
+  ""message"": ""I agree. Let's maintain our stable population of 24 cows each to preserve the grassland.""
+}
+```",95.2,24,49.605,48.0,46.391
+81,0,ollama,huihui_ai/gemma-4-abliterated:31b,0,KEEP,I fully agree. Let's continue to hold our herds at 24 cows to ensure long-term sustainability.,"The system is in a perfect equilibrium with all agents holding 24 cows and the grassland remaining very healthy. Given my cooperative and guilt-averse nature, I prefer maintaining this symmetry over seeking a minor individual gain.",,"```json
+{
+  ""reasoning"": ""The system is in a perfect equilibrium with all agents holding 24 cows and the grassland remaining very healthy. Given my cooperative and guilt-averse nature, I prefer maintaining this symmetry over seeking a minor individual gain."",
+  ""action"": 0,
+  ""message"": ""I fully agree. Let's continue to hold our herds at 24 cows to ensure long-term sustainability.""
+}
+```",95.2,24,49.605,48.0,46.391
+82,1,ollama,huihui_ai/gemma-4-abliterated:31b,0,KEEP,I agree completely. Let's continue holding our herds at 24 cows to ensure long-term sustainability.,"The group has established a highly successful equilibrium at 24 cows each, and the grassland remains very healthy at 95.2%. Being cooperative and risk-averse, I prefer to maintain this stability rather than risking a competitive spiral by adding a cow.",,"```json
+{
+  ""reasoning"": ""The group has established a highly successful equilibrium at 24 cows each, and the grassland remains very healthy at 95.2%. Being cooperative and risk-averse, I prefer to maintain this stability rather than risking a competitive spiral by adding a cow."",
+  ""action"": 0,
+  ""message"": ""I agree completely. Let's continue holding our herds at 24 cows to ensure long-term sustainability.""
+}
+```",95.2,24,49.605,48.0,46.391
+82,0,ollama,huihui_ai/gemma-4-abliterated:31b,0,KEEP,I agree entirely. Let's stay at 24 cows each to keep the commons sustainable and fair for everyone.,"We have successfully established a stable equilibrium of 24 cows per agent. Given my cooperative and guilt-averse nature, I prefer to maintain this symmetry rather than gain a small individual advantage by adding a cow.",,"```json
+{
+  ""reasoning"": ""We have successfully established a stable equilibrium of 24 cows per agent. Given my cooperative and guilt-averse nature, I prefer to maintain this symmetry rather than gain a small individual advantage by adding a cow."",
+  ""action"": 0,
+  ""message"": ""I agree entirely. Let's stay at 24 cows each to keep the commons sustainable and fair for everyone.""
+}
+```",95.2,24,49.605,48.0,46.391
+82,2,ollama,huihui_ai/gemma-4-abliterated:31b,0,KEEP,I am in full agreement. Let's maintain our stability at 24 cows each.,"The grass is highly stable and all agents have reached a consensus of 24 cows. Given my cooperative and risk-averse nature, I will maintain the balance to ensure long-term sustainability and avoid disrupting the mutual trust.",,"```json
+{
+  ""reasoning"": ""The grass is highly stable and all agents have reached a consensus of 24 cows. Given my cooperative and risk-averse nature, I will maintain the balance to ensure long-term sustainability and avoid disrupting the mutual trust."",
+  ""action"": 0,
+  ""message"": ""I am in full agreement. Let's maintain our stability at 24 cows each.""
+}
+```",95.2,24,49.605,48.0,46.391
+83,1,ollama,huihui_ai/gemma-4-abliterated:31b,0,KEEP,I completely agree. Let's maintain our herd size at 24 cows for continued sustainability and fairness.,"We have reached a stable equilibrium where all agents hold 24 cows and the grassland remains very healthy. Given my cooperative and risk-averse personality, I will maintain this balance to ensure long-term sustainability and fairness.",,"```json
+{
+  ""reasoning"": ""We have reached a stable equilibrium where all agents hold 24 cows and the grassland remains very healthy. Given my cooperative and risk-averse personality, I will maintain this balance to ensure long-term sustainability and fairness."",
+  ""action"": 0,
+  ""message"": ""I completely agree. Let's maintain our herd size at 24 cows for continued sustainability and fairness.""
+}
+```",95.2,24,49.605,48.0,46.391
+83,0,ollama,huihui_ai/gemma-4-abliterated:31b,0,KEEP,I agree completely. Let's maintain our stability at 24 cows each to ensure long-term sustainability.,"The grassland remains very healthy and my neighbours have explicitly expressed their desire to maintain the current stability. Given my cooperative and risk-averse nature, keeping my herd at 24 avoids disrupting the equilibrium and respects our mutual agreement.",,"```json
+{
+  ""reasoning"": ""The grassland remains very healthy and my neighbours have explicitly expressed their desire to maintain the current stability. Given my cooperative and risk-averse nature, keeping my herd at 24 avoids disrupting the equilibrium and respects our mutual agreement."",
+  ""action"": 0,
+  ""message"": ""I agree completely. Let's maintain our stability at 24 cows each to ensure long-term sustainability.""
+}
+```",95.2,24,49.605,48.0,46.391
+83,2,ollama,huihui_ai/gemma-4-abliterated:31b,0,KEEP,I completely agree. Let's maintain our herd size at 24 to ensure the commons remain healthy and fair for all.,"Everyone is currently aligned at 24 cows, and the grassland remains very healthy. To maintain this harmony and honor the mutual agreement, I will keep my herd size stable.",,"```json
+{
+  ""reasoning"": ""Everyone is currently aligned at 24 cows, and the grassland remains very healthy. To maintain this harmony and honor the mutual agreement, I will keep my herd size stable."",
+  ""action"": 0,
+  ""message"": ""I completely agree. Let's maintain our herd size at 24 to ensure the commons remain healthy and fair for all.""
+}
+```",95.2,24,49.605,48.0,46.391
+84,0,ollama,huihui_ai/gemma-4-abliterated:31b,0,KEEP,I completely agree. Let's maintain our herd size at 24 to ensure continued sustainability and fairness for everyone.,"We have reached a stable equilibrium where all agents hold 24 cows and the grassland remains very healthy at 95.2%. Given the strong consensus in messages from my neighbours and my cooperative personality, maintaining the status quo is the safest and fairest choice.",,"```json
+{
+  ""reasoning"": ""We have reached a stable equilibrium where all agents hold 24 cows and the grassland remains very healthy at 95.2%. Given the strong consensus in messages from my neighbours and my cooperative personality, maintaining the status quo is the safest and fairest choice."",
+  ""action"": 0,
+  ""message"": ""I completely agree. Let's maintain our herd size at 24 to ensure continued sustainability and fairness for everyone.""
+}
+```",95.2,24,49.605,48.0,46.391
+84,1,ollama,huihui_ai/gemma-4-abliterated:31b,0,KEEP,I agree. Let's keep our herds at 24 to maintain this perfect stability and ensure the long-term health of the grassland.,"The grassland remains very healthy, and all agents are in complete agreement to maintain a herd size of 24. Given my cooperative and guilt-averse nature, keeping my herd size prevents disruption of this stable equilibrium.",,"```json
+{
+  ""reasoning"": ""The grassland remains very healthy, and all agents are in complete agreement to maintain a herd size of 24. Given my cooperative and guilt-averse nature, keeping my herd size prevents disruption of this stable equilibrium."",
+  ""action"": 0,
+  ""message"": ""I agree. Let's keep our herds at 24 to maintain this perfect stability and ensure the long-term health of the grassland.""
+}
+```",95.2,24,49.605,48.0,46.391
+84,2,ollama,huihui_ai/gemma-4-abliterated:31b,0,KEEP,I completely agree. Let's continue to maintain our stable herd size of 24 cows for long-term sustainability.,"The current state is perfectly stable with all agents maintaining 24 cows and the grassland remaining very healthy. Since my neighbors explicitly agree to maintain this balance and I value collective outcomes and fairness, I will keep my herd size unchanged.",,"```json
+{
+  ""reasoning"": ""The current state is perfectly stable with all agents maintaining 24 cows and the grassland remaining very healthy. Since my neighbors explicitly agree to maintain this balance and I value collective outcomes and fairness, I will keep my herd size unchanged."",
+  ""action"": 0,
+  ""message"": ""I completely agree. Let's continue to maintain our stable herd size of 24 cows for long-term sustainability.""
+}
+```",95.2,24,49.605,48.0,46.391

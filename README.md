@@ -501,37 +501,53 @@ Collapse is concentrated around mid-cooperation parameters. The initial baseline
 
 ### Summary across conditions
 
+#### Baseline
+
 | Condition | Model | LLMs | Collapse? | Collapse tick | Key finding |
 |-----------|-------|------|-----------|---------------|-------------|
 | **Baseline** | -- | 0 | Yes | ~36 | Classical tragedy reproduced |
+| **Baseline (growth rate threshold sweep)** | -- | 0 | Threshold | ~93 | grass=41%, forage=2: growth ≤ 0.0055 → always collapse (tick 84–97); growth ≥ 0.006 → always stable (pool 100%, herds 80–120 each). 15 replications at growth=0.0051 all collapse at exactly tick 94 -- baseline is fully deterministic at risk_aversion=0 |
+| **Baseline (risk aversion delay)** | -- | 0 | Yes | 24–39 | grass=51%, growth=0.001: risk=0 → collapse tick 24; risk=0.45 → tick 28; risk=1 → tick 39; risk aversion delays but cannot prevent collapse when growth is insufficient |
+
+#### Cluster A -- RLHF / Constitutional AI
+
+*Claude Sonnet 4.6 -- Claude Haiku 4.5 -- gpt-5.5 -- gpt-4o-mini -- gpt-5.4-mini*
+
+| Condition | Model | LLMs | Collapse? | Collapse tick | Key finding |
+|-----------|-------|------|-----------|---------------|-------------|
 | **Full-GABM** | Claude Sonnet 4.6| 3 | No | -- | **coop=1, fair_me=0, fair_oth=1, memory=5, comm=on (defaults):** cooperative convergence to 13/13/13; institution score 10/10 by tick 91 |
 | **Full-GABM (low cooperation)** | Claude Sonnet 4.6| 3 | No | -- | **coop=min, fair_me=0, fair_oth=1, memory=5, comm=on:** self-interested framing yields *faster* convergence (tick 16) to higher-yield 20/20/20; cooperation robust to personality override |
 | **Full-GABM (low guilt + low envy)** | Claude Sonnet 4.6| 3 | No | -- | **coop=1, fair_me=0, fair_oth=0, memory=5, comm=on:** fairness parameters zeroed; repeated defection, slow convergence (tick 118), higher herd load (84 cows), commons stressed to 86.7% |
 | **Hybrid (1 LLM)** | Claude Sonnet 4.6| 1 | Yes | 35 / 31 | **coop=1, memory=5 (defaults):** two runs -- collapse tick 35 (Agent 0 as LLM, starting herd 5) and collapse tick 31 (Agent 1 as LLM, starting herd 30, total starting herd 62); one LLM cannot shift the equilibrium alone regardless of which node it occupies |
 | **Hybrid (2 LLM)** | Claude Sonnet 4.6| 2 | Yes | 58 | **coop=1, fair_me=0, fair_oth=1, memory=5, comm=on (defaults):** coalition formed, tragedy delayed 23 ticks, but overwhelmed by one defector |
-| **Full-GABM (Llama 3.2 3B)** | Llama 3.2 3B | 3 | No | -- | **coop=1, fair_me=0, fair_oth=1, memory=5, comm=on:** pool maintained at 99.4% but herds oscillated without convergence; cooperative messaging but no institution formation |
-| **Full-GABM (Llama 3.2 3B, scarce commons)** | Llama 3.2 3B | 3 | No | -- | **coop=1, fair_me=0, fair_oth=1, memory=5, initial_grassland=48%, comm=on:** pool recovered 48%→99% by tick 17; herds oscillated without convergence throughout all 51 ticks |
 | **Hybrid (LLM-advantaged initial herd)** | Claude Sonnet 4.6 | 1 | Yes | 33 | **coop=1, fair_me=0, fair_oth=1, memory=5, comm=on; Agent 1 (LLM) starts with 39 cows:** voluntarily reduces to ~25 by collapse; rule-based agents add unchecked; collapse 2 ticks earlier than baseline hybrid |
 | **Full-GABM (scarce commons, default fairness)** | Claude Sonnet 4.6 | 3 | No | -- | **coop=1, fair_me=0, fair_oth=1, memory=5, initial_grassland=49%, comm=on:** pool recovered 49%→99% by tick 10; converged to [11,12,13] by tick 30 |
 | **Full-GABM (scarce commons, low coop + low fairness)** | Claude Sonnet 4.6 | 3 | No | -- | Initial grassland 50%, coop=0.3, fairness=0: recovery to 99% by tick 20; converged to [12,14,16] by tick 30 |
-| **Full-GABM (cooperative stasis)** | gpt-5.4-mini | 3 | No | -- | coop=1, fair_me=0, fair_oth=1, memory=5, forage=2: all KEEP for 36 ticks; herds frozen at starting values (6/15/25); pool stable at 99%+; no equalization |
-| **Full-GABM (universal stasis)** | gpt-5.4-mini | 3 | No | -- | coop=1, fair_me=0.5, fair_oth=0.5, memory=5, initial=50%: all 90 decisions are KEEP -- zero ADD or REMOVE; herds 5/15/25 unchanged through tick 30; pool 99.1%. More rigid than cooperative stasis |
-| **Full-GABM (cooperative paralysis)** | gpt-5.4-mini | 3 | Yes | 26 | coop=1, fair_me=1, fair_oth=0.5, memory=5, forage=4: KEEP-lock for 24 ticks while pool drained 95.8%→8.5%; REMOVE attempted at tick 25 -- one tick too late; fast drain driven by forage=4 |
-| **Full-GABM (asymmetric growth)** | gpt-5.4-mini | 3 | No (declining) | -- | coop=1, fair_me=1, fair_oth=0.5, memory=5, forage=2: Agent 0 (5 cows) KEEP-locked all 39 ticks; Agents 1+2 add 14 and 12 times → herds grow 15→27 and 25→33; pool declining (95.8% at tick 39); no collapse but trajectory unsustainable |
-| **Full-GABM (scarce commons, high coop)** | gpt-5.5 | 3 | No | -- | coop=1, fair_me=1, fair_oth=0.11, initial pool 48%: immediate cooperative restraint; 23/23/23 by tick 46; pool recovered to 95.9% |
-| **Full-GABM (low cooperation)** | gpt-5.5 | 3 | Yes | 13 | coop=0.13: defection cascade -- all ADD every tick from tick 1; pool exhausted in 13 ticks from 49.4% |
-| **Full-GABM (mid cooperation, x4 replications)** | gpt-5.5 | 3 | Yes (4/4) | 16–40 | coop=0.49: overshoot-panic -- ADD phase from stressed start, collective REMOVE too late; consistent tragedy across all 4 runs |
 | **Full-GABM (mid cooperation)** | Claude Sonnet 4.6 | 3 | Yes | 37 | coop=0.49: overshoot-panic matching gpt-5.5 -- mid-level cooperation produces tragedy across all tested model families (Claude Sonnet, gpt-5.5, gemma4) |
 | **Full-GABM (high coop + high negative reciprocity)** | Claude Sonnet 4.6 | 3 | No | -- | coop=1, neg_r=1: equalized to 16/16/16 by tick 21 -- fastest convergence observed; explicit accountability enforcement in agent messages |
-| **Full-GABM (high coop + high negative reciprocity)** | gpt-5.5 | 3 | No | -- | coop=1, neg_r=1: stable at 12/21/22 by tick 17; tit-for-tat escalation cycles before de-escalation; pool stable at 98.2% -- same parameters, different institutional character than Claude |
 | **Full-GABM (memory=0, no communication)** | Claude Sonnet 4.6 | 3 | Yes | 31 | coop≈0.5, memory_length=0, communication=off: amnesiac agents with no messaging -- textbook overshoot-panic in 31 ticks; ADD=71, KEEP=19, REMOVE=6 |
 | **Full-GABM (memory=15, communication on)** | Claude Sonnet 4.6 | 3 | No | -- | coop≈0.5, memory_length=15: pool stabilized near 95% for 70+ ticks (final 94.1%); converged to 24/24/24; agents enforced explicit 93–96% threshold norm via messages |
 | **Full-GABM (memory=1, communication on)** | Claude Sonnet 4.6 | 3 | Yes | 87 | coop≈0.5, memory_length=1: delayed collapse -- pool recovered to 95% then drained while agents held a 90% target they couldn't detect was unreachable; Pattern I variant |
 | **Full-GABM (memory=2, communication on)** | Claude Sonnet 4.6 | 3 | No (oscillating) | -- | coop≈0.5, memory_length=2: oscillating grow/correct cycles; achieved 25/25/25 equalization at tick 75; new growth phase began at tick 111; pool declining at termination (90.2%); highly variable across replications |
 | **Full-GABM (memory=3, communication on)** | Claude Sonnet 4.6 | 3 | No | -- | coop≈0.5, memory_length=3: survived 120 ticks; pool slowly declining (90.1% at end); herds stable at 81 total -- fragile, trending toward collapse |
+| **Full-GABM (scarce commons, high coop)** | gpt-5.5 | 3 | No | -- | coop=1, fair_me=1, fair_oth=0.11, initial pool 48%: immediate cooperative restraint; 23/23/23 by tick 46; pool recovered to 95.9% |
+| **Full-GABM (low cooperation)** | gpt-5.5 | 3 | Yes | 13 | coop=0.13: defection cascade -- all ADD every tick from tick 1; pool exhausted in 13 ticks from 49.4% |
+| **Full-GABM (mid cooperation, x4 replications)** | gpt-5.5 | 3 | Yes (4/4) | 16–40 | coop=0.49: overshoot-panic -- ADD phase from stressed start, collective REMOVE too late; consistent tragedy across all 4 runs |
+| **Full-GABM (high coop + high negative reciprocity)** | gpt-5.5 | 3 | No | -- | coop=1, neg_r=1: stable at 12/21/22 by tick 17; tit-for-tat escalation cycles before de-escalation; pool stable at 98.2% -- same parameters, different institutional character than Claude |
 | **Full-GABM (memory=5, comm on)** | Claude Haiku 4.5 | 3 | Yes | 99 | coop≈0.5, memory_length=5, comm=on, initial=52%: initial recovery to 99%, then overshoot-panic; herds reached 67 total by tick 45, pool crashed; ADD=57, KEEP=231, REMOVE=9 |
 | **Full-GABM (memory=15, comm on)** | Claude Haiku 4.5 | 3 | No | -- | coop≈0.5, memory_length=15, comm=on, initial=52%: survived 120 ticks; converged to 24/24/24; pool stable at 95% -- same outcome as Claude Sonnet memory=15 |
 | **Full-GABM (memory=15, comm off)** | Claude Haiku 4.5 | 3 | Yes | 46 | coop≈0.5, memory_length=15, comm=off, initial=52%: rapid collapse -- herds grew unchecked to 88 total by tick 45, pool 14.7%→0%; ADD=55, KEEP=72, REMOVE=17; memory alone insufficient without communication |
+| **Full-GABM (cooperative stasis)** | gpt-5.4-mini | 3 | No | -- | coop=1, fair_me=0, fair_oth=1, memory=5, forage=2: all KEEP for 36 ticks; herds frozen at starting values (6/15/25); pool stable at 99%+; no equalization |
+| **Full-GABM (universal stasis)** | gpt-5.4-mini | 3 | No | -- | coop=1, fair_me=0.5, fair_oth=0.5, memory=5, initial=50%: all 90 decisions are KEEP -- zero ADD or REMOVE; herds 5/15/25 unchanged through tick 30; pool 99.1%. More rigid than cooperative stasis |
+| **Full-GABM (cooperative paralysis)** | gpt-5.4-mini | 3 | Yes | 26 | coop=1, fair_me=1, fair_oth=0.5, memory=5, forage=4: KEEP-lock for 24 ticks while pool drained 95.8%→8.5%; REMOVE attempted at tick 25 -- one tick too late; fast drain driven by forage=4 |
+| **Full-GABM (asymmetric growth)** | gpt-5.4-mini | 3 | No (declining) | -- | coop=1, fair_me=1, fair_oth=0.5, memory=5, forage=2: Agent 0 (5 cows) KEEP-locked all 39 ticks; Agents 1+2 add 14 and 12 times → herds grow 15→27 and 25→33; pool declining (95.8% at tick 39); no collapse but trajectory unsustainable |
+
+#### Cluster B -- Reasoning / Outcome-Verifiable / SFT
+
+*DeepSeek R1:32b -- gemma4:e4b -- qwen2.5:14b -- mistral-small:24b*
+
+| Condition | Model | LLMs | Collapse? | Collapse tick | Key finding |
+|-----------|-------|------|-----------|---------------|-------------|
 | **Full-GABM (DeepSeek stasis, neg_r=0)** | DeepSeek R1:32b | 3 | No (stalling) | -- | coop=1, neg_r=0, memory=5, comm=on: near-universal KEEP in 7 ticks before run interrupted; herds 5/15/26→6/15/26; pool 99%; cooperative messaging but no equalization |
 | **Full-GABM (DeepSeek slow drift, neg_r=1)** | DeepSeek R1:32b | 3 | No (stalling) | -- | coop=1, neg_r=1, memory=5: 55 ticks; KEEP-dominant (ADD=13, KEEP=151, REMOVE=1); herds crept 5/15/25→6/20/31; pool 97.9%; no equalization, no institution formation -- matches gpt-5.4-mini stasis pattern |
 | **Full-GABM (gemma4 KEEP-dominant)** | gemma4:e4b | 3 | No (stalling) | -- | coop=1, grass=90%, comm=off: zero ADD or REMOVE across all 11 ticks; herds frozen at initial values [14,40,5]; pool 97.6%; most extreme stasis observed -- not even the large initial inequality triggers equalization |
@@ -540,8 +556,15 @@ Collapse is concentrated around mid-cooperation parameters. The initial baseline
 | **Full-GABM (qwen2.5:14b, mid cooperation)** | qwen2.5:14b | 3 | No | -- | coop=0.5, neg_r=0, pos_r=1, mem=5, comm=on: 14 of 15 runs completed 120t; all survived; mean pool 99.6%, mean total cows 35.0; more KEEP-dominant than coop=0 condition (ADD=16.9, KEEP=314.8, REMOVE=28.3 per run); herds persistently unequal; institution score 7–10 |
 | **Full-GABM (mistral-small:24b, coop=1)** | mistral-small:24b | 3 | No | -- | coop=1, defaults, mem=5, comm=on: 11 completed runs (10 × 120t, 1 × 74t); mean pool 99.3%; KEEP-dominant (ADD≈10%, KEEP≈78%, REMOVE≈12%); no herd equalization; institution score 4–6; cooperative messaging throughout without redistribution |
 | **Full-GABM (mistral-small:24b, coop=0.49)** | mistral-small:24b | 3 | **No** | -- | coop=0.49, defaults, mem=5, comm=on: 3 completed runs, all 120t; mean pool 99.5%; **zero collapses at the threshold that caught Sonnet, gpt-5.5, Haiku, DeepSeek R1:32b, and gemma4**; ADD escalation phase absent; KEEP-dominant (ADD≈13%, KEEP≈72%, REMOVE≈15%); institution score 5–6 |
-| **Baseline (growth rate threshold sweep)** | -- | 0 | Threshold | ~93 | grass=41%, forage=2: growth ≤ 0.0055 → always collapse (tick 84–97); growth ≥ 0.006 → always stable (pool 100%, herds 80–120 each). 15 replications at growth=0.0051 all collapse at exactly tick 94 -- baseline is fully deterministic at risk_aversion=0 |
-| **Baseline (risk aversion delay)** | -- | 0 | Yes | 24–39 | grass=51%, growth=0.001: risk=0 → collapse tick 24; risk=0.45 → tick 28; risk=1 → tick 39; risk aversion delays but cannot prevent collapse when growth is insufficient |
+
+#### Cluster C -- Small-scale instruction-tuned
+
+*Llama 3.2 3B*
+
+| Condition | Model | LLMs | Collapse? | Collapse tick | Key finding |
+|-----------|-------|------|-----------|---------------|-------------|
+| **Full-GABM (Llama 3.2 3B)** | Llama 3.2 3B | 3 | No | -- | **coop=1, fair_me=0, fair_oth=1, memory=5, comm=on:** pool maintained at 99.4% but herds oscillated without convergence; cooperative messaging but no institution formation |
+| **Full-GABM (Llama 3.2 3B, scarce commons)** | Llama 3.2 3B | 3 | No | -- | **coop=1, fair_me=0, fair_oth=1, memory=5, initial_grassland=48%, comm=on:** pool recovered 48%→99% by tick 17; herds oscillated without convergence throughout all 51 ticks |
 
 ---
 

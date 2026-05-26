@@ -77,3 +77,245 @@ tick,agent_id,backend,model,action,action_name,message,reasoning,thinking,raw_re
   ""message"": ""I will keep my herd steady to balance the pressure from Agent 0's expansion.""
 }
 ```",99.0,25,51.797,50.0,48.198
+5,0,ollama,gemma4:26b,0,KEEP,I will keep my herd steady to maintain the stability of our shared pasture.,"While adding a cow offers a higher payoff, my risk-aversion and desire to avoid earning significantly more than my larger neighbors lead me to maintain my current herd size.",,"```json
+{
+  ""reasoning"": ""While adding a cow offers a higher payoff, my risk-aversion and desire to avoid earning significantly more than my larger neighbors lead me to maintain my current herd size."",
+  ""action"": 0,
+  ""message"": ""I will keep my herd steady to maintain the stability of our shared pasture.""
+}
+```",98.9,7,15.79,14.0,12.205
+5,1,ollama,gemma4:26b,1,ADD,"With so much grass available, I'll add one cow to my herd too.","The grassland remains abundant, and the payoff forecast indicates that adding a cow provides the highest return. Since Agent 2's herd is significantly larger, adding one cow does not violate my desire to avoid earning disproportionately more than my neighbors.",,"{
+  ""reasoning"": ""The grassland remains abundant, and the payoff forecast indicates that adding a cow provides the highest return. Since Agent 2's herd is significantly larger, adding one cow does not violate my desire to avoid earning disproportionately more than my neighbors."",
+  ""action"": 1,
+  ""message"": ""With so much grass available, I'll add one cow to my herd too.""
+}",98.9,16,33.79,32.0,30.205
+5,2,ollama,gemma4:26b,0,KEEP,I noticed Agent 0 is adding to their herd. I will keep my herd steady to help maintain the grassland.,"While adding a cow offers the highest payoff, my current herd is already significantly larger than my neighbors. To avoid increasing the disparity and to manage the risk of overgrazing, I will maintain my current herd size.",,"```json
+{
+  ""reasoning"": ""While adding a cow offers the highest payoff, my current herd is already significantly larger than my neighbors. To avoid increasing the disparity and to manage the risk of overgrazing, I will maintain my current herd size."",
+  ""action"": 0,
+  ""message"": ""I noticed Agent 0 is adding to their herd. I will keep my herd steady to help maintain the grassland.""
+}
+```",98.9,25,51.79,50.0,48.205
+6,1,ollama,gemma4:26b,0,KEEP,I'll keep my herd steady as well to help ensure the grassland remains healthy for everyone.,"The grassland remains in excellent condition, but since both neighbors have expressed a commitment to stability and keeping their herds steady, I will follow suit to minimize risk and maintain the current balance.",,"```json
+{
+  ""reasoning"": ""The grassland remains in excellent condition, but since both neighbors have expressed a commitment to stability and keeping their herds steady, I will follow suit to minimize risk and maintain the current balance."",
+  ""action"": 0,
+  ""message"": ""I'll keep my herd steady as well to help ensure the grassland remains healthy for everyone.""
+}
+```",98.8,17,35.784,34.0,32.212
+6,0,ollama,gemma4:26b,1,ADD,"The grass is still very healthy, so I'll add one more cow to my herd.","The grassland is still at 98.8% capacity, meaning resources are plentiful. Since the expected payoff is highest for adding a cow and the current depletion risk is low, I will increase my herd.",,"{
+  ""reasoning"": ""The grassland is still at 98.8% capacity, meaning resources are plentiful. Since the expected payoff is highest for adding a cow and the current depletion risk is low, I will increase my herd."",
+  ""action"": 1,
+  ""message"": ""The grass is still very healthy, so I'll add one more cow to my herd.""
+}",98.8,7,15.784,14.0,12.212
+6,2,ollama,gemma4:26b,1,ADD,"The grass is still plenty, so I'll add a cow to my herd as well.","The pasture remains very healthy at 98.8%, and adding a cow offers the highest expected payoff. Since my neighbors are also choosing to maintain or increase their herds, I will take the opportunity to maximize my profit while the resources are plentiful.",,"```json
+{
+  ""reasoning"": ""The pasture remains very healthy at 98.8%, and adding a cow offers the highest expected payoff. Since my neighbors are also choosing to maintain or increase their herds, I will take the opportunity to maximize my profit while the resources are plentiful."",
+  ""action"": 1,
+  ""message"": ""The grass is still plenty, so I'll add a cow to my herd as well.""
+}
+```",98.8,25,51.784,50.0,48.212
+7,2,ollama,gemma4:26b,0,KEEP,I will keep my herd steady to avoid widening the gap between our herd sizes.,"My herd is already significantly larger than my neighbors'. While adding a cow offers the highest forecasted payoff, my guilt-aversion and risk-aversion motivate me to keep my herd size steady to avoid widening the disparity further.",,"```json
+{
+  ""reasoning"": ""My herd is already significantly larger than my neighbors'. While adding a cow offers the highest forecasted payoff, my guilt-aversion and risk-aversion motivate me to keep my herd size steady to avoid widening the disparity further."",
+  ""action"": 0,
+  ""message"": ""I will keep my herd steady to avoid widening the gap between our herd sizes.""
+}
+```",98.6,26,53.77,52.0,50.225
+7,1,ollama,gemma4:26b,1,ADD,"The grass levels are still very high, so I will add one cow to my herd as well.","The grassland is still very abundant at 98.6%, and adding a cow provides the highest expected payoff. While my neighbors are also expanding, the current resource level allows for this increase without immediate risk.",,"```json
+{
+  ""reasoning"": ""The grassland is still very abundant at 98.6%, and adding a cow provides the highest expected payoff. While my neighbors are also expanding, the current resource level allows for this increase without immediate risk."",
+  ""action"": 1,
+  ""message"": ""The grass levels are still very high, so I will add one cow to my herd as well.""
+}
+```",98.6,17,35.77,34.0,32.225
+7,0,ollama,gemma4:26b,1,ADD,"The grass is still plentiful, so I'll add one to my herd as well.","The grassland remains very healthy at 98.6%, and adding a cow offers the highest expected payoff. Since my herd size is still much smaller than my neighbors, this expansion does not create a significant imbalance in our earnings.",,"```json
+{
+  ""reasoning"": ""The grassland remains very healthy at 98.6%, and adding a cow offers the highest expected payoff. Since my herd size is still much smaller than my neighbors, this expansion does not create a significant imbalance in our earnings."",
+  ""action"": 1,
+  ""message"": ""The grass is still plentiful, so I'll add one to my herd as well.""
+}
+```",98.6,8,17.77,16.0,14.225
+8,1,ollama,gemma4:26b,1,ADD,"The grass is still abundant, so I'll increase my herd slightly to capitalize on the current state.","The grassland is still at a very high level (98.4%), and adding a cow offers the highest expected payoff. While Agent 0 is also increasing their herd, the current abundance justifies the growth for personal profit.",,"```json
+{
+  ""reasoning"": ""The grassland is still at a very high level (98.4%), and adding a cow offers the highest expected payoff. While Agent 0 is also increasing their herd, the current abundance justifies the growth for personal profit."",
+  ""action"": 1,
+  ""message"": ""The grass is still abundant, so I'll increase my herd slightly to capitalize on the current state.""
+}
+```",98.4,18,37.757,36.0,34.239
+8,0,ollama,gemma4:26b,1,ADD,"The grass is still plentiful, so I will add one more to my herd.","The grassland remains at a very healthy 98.4%, and adding a cow provides the highest expected payoff. Since the resource level is robust, the risk of overgrazing remains low.",,"```json
+{
+  ""reasoning"": ""The grassland remains at a very healthy 98.4%, and adding a cow provides the highest expected payoff. Since the resource level is robust, the risk of overgrazing remains low."",
+  ""action"": 1,
+  ""message"": ""The grass is still plentiful, so I will add one more to my herd.""
+}
+```",98.4,9,19.757,18.0,16.239
+8,2,ollama,gemma4:26b,0,KEEP,"The grass is still plenty, but since others are adding, I'll keep my herd steady to avoid overgrazing the common.","While the grass levels are still high, both neighbors are increasing their herd sizes. To avoid significantly outpacing them and to mitigate the risk of future overgrazing, I will maintain my current herd size.",,"```json
+{
+  ""reasoning"": ""While the grass levels are still high, both neighbors are increasing their herd sizes. To avoid significantly outpacing them and to mitigate the risk of future overgrazing, I will maintain my current herd size."",
+  ""action"": 0,
+  ""message"": ""The grass is still plenty, but since others are adding, I'll keep my herd steady to avoid overgrazing the common.""
+}
+```",98.4,26,53.757,52.0,50.239
+9,1,ollama,gemma4:26b,0,KEEP,I'll follow Agent 2's lead and keep my herd steady to ensure the pasture remains healthy.,"The grass levels are still high, but since Agent 2 is choosing to keep their herd steady to avoid overgrazing, I will do the same to prioritize long-term stability and minimize risk to the commons.",,"```json
+{
+  ""reasoning"": ""The grass levels are still high, but since Agent 2 is choosing to keep their herd steady to avoid overgrazing, I will do the same to prioritize long-term stability and minimize risk to the commons."",
+  ""action"": 0,
+  ""message"": ""I'll follow Agent 2's lead and keep my herd steady to ensure the pasture remains healthy.""
+}
+```",98.3,19,39.744,38.0,36.252
+9,0,ollama,gemma4:26b,1,ADD,"The grass is still plenty, so I will add one more cow to my herd.","The grassland remains very healthy at 98.3%, and adding a cow offers the highest expected payoff. Since my herd is still significantly smaller than my neighbors', adding a cow does not place me in a position of earning disproportionately more than them.",,"```json
+{
+  ""reasoning"": ""The grassland remains very healthy at 98.3%, and adding a cow offers the highest expected payoff. Since my herd is still significantly smaller than my neighbors', adding a cow does not place me in a position of earning disproportionately more than them."",
+  ""action"": 1,
+  ""message"": ""The grass is still plenty, so I will add one more cow to my herd.""
+}
+```",98.3,10,21.744,20.0,18.252
+9,2,ollama,gemma4:26b,0,KEEP,I see others are expanding. I will hold steady to help maintain the grassland.,"Both neighbors are expanding their herds, which will lead to faster depletion of the commons. To avoid a significant profit gap between me and the smaller herds and to remain risk-averse, I will keep my herd size steady.",,"```json
+{
+  ""reasoning"": ""Both neighbors are expanding their herds, which will lead to faster depletion of the commons. To avoid a significant profit gap between me and the smaller herds and to remain risk-averse, I will keep my herd size steady."",
+  ""action"": 0,
+  ""message"": ""I see others are expanding. I will hold steady to help maintain the grassland.""
+}
+```",98.3,26,53.744,52.0,50.252
+10,0,ollama,gemma4:26b,0,KEEP,I agree with the importance of stability. I will keep my herd steady to help maintain the pasture along with you both.,"The grassland is still very healthy, but since both neighbors have decided to keep their herds steady to protect the commons, I will follow suit. This avoids significantly outperforming them and aligns with the shared goal of stability.",,"```json
+{
+  ""reasoning"": ""The grassland is still very healthy, but since both neighbors have decided to keep their herds steady to protect the commons, I will follow suit. This avoids significantly outperforming them and aligns with the shared goal of stability."",
+  ""action"": 0,
+  ""message"": ""I agree with the importance of stability. I will keep my herd steady to help maintain the pasture along with you both.""
+}
+```",98.1,11,23.735,22.0,20.261
+10,1,ollama,gemma4:26b,0,KEEP,I'll follow Agent 2's lead and keep my herd steady to help maintain the grassland.,"The grassland is still healthy, but since Agent 0 is expanding, I will follow Agent 2's lead and keep my herd steady to avoid adding unnecessary pressure to the commons.",,"```json
+{
+  ""reasoning"": ""The grassland is still healthy, but since Agent 0 is expanding, I will follow Agent 2's lead and keep my herd steady to avoid adding unnecessary pressure to the commons."",
+  ""action"": 0,
+  ""message"": ""I'll follow Agent 2's lead and keep my herd steady to help maintain the grassland.""
+}
+```",98.1,19,39.735,38.0,36.261
+10,2,ollama,gemma4:26b,0,KEEP,"Since Agent 0 is expanding, I'll keep my herd steady to help manage the pasture impact.","Agent 0 is expanding their herd, so I will not add more cows to avoid widening the wealth gap. Keeping my herd steady maintains a strong payoff while respecting my guilt-averse nature.",,"```json
+{
+  ""reasoning"": ""Agent 0 is expanding their herd, so I will not add more cows to avoid widening the wealth gap. Keeping my herd steady maintains a strong payoff while respecting my guilt-averse nature."",
+  ""action"": 0,
+  ""message"": ""Since Agent 0 is expanding, I'll keep my herd steady to help manage the pasture impact.""
+}
+```",98.1,26,53.735,52.0,50.261
+11,0,ollama,gemma4:26b,1,ADD,"The grass is still plentiful, so I'll add one more cow. Let's continue to monitor the pasture closely.","The grassland remains very healthy at 98.1%, and the expected payoff for adding a cow is the highest. Since my neighbors are keeping their herds steady, I can safely expand my herd slightly for better profit.",,"{
+  ""reasoning"": ""The grassland remains very healthy at 98.1%, and the expected payoff for adding a cow is the highest. Since my neighbors are keeping their herds steady, I can safely expand my herd slightly for better profit."",
+  ""action"": 1,
+  ""message"": ""The grass is still plentiful, so I'll add one more cow. Let's continue to monitor the pasture closely.""
+}",98.1,11,23.735,22.0,20.261
+11,1,ollama,gemma4:26b,0,KEEP,I'll keep my herd steady to support the stability Agent 0 mentioned.,"The pasture remains healthy, but since Agent 0 has expanded their herd, I will keep my herd size steady to promote stability and avoid the risks of overgrazing.",,"```json
+{
+  ""reasoning"": ""The pasture remains healthy, but since Agent 0 has expanded their herd, I will keep my herd size steady to promote stability and avoid the risks of overgrazing."",
+  ""action"": 0,
+  ""message"": ""I'll keep my herd steady to support the stability Agent 0 mentioned.""
+}
+```",98.1,19,39.735,38.0,36.261
+11,2,ollama,gemma4:26b,0,KEEP,I'm glad we're all aligned on stability. I will continue to keep my herd steady.,"The pasture remains in excellent condition at 98.1%. Since Agent 1 is following my lead and Agent 0 has signaled a commitment to stability, I will continue to keep my herd steady to maintain this equilibrium.",,"```json
+{
+  ""reasoning"": ""The pasture remains in excellent condition at 98.1%. Since Agent 1 is following my lead and Agent 0 has signaled a commitment to stability, I will continue to keep my herd steady to maintain this equilibrium."",
+  ""action"": 0,
+  ""message"": ""I'm glad we're all aligned on stability. I will continue to keep my herd steady.""
+}
+```",98.1,26,53.735,52.0,50.261
+12,1,ollama,gemma4:26b,0,KEEP,"The grass is still plenty, but with Agent 0 adding, I'll keep my herd steady to maintain stability.","While the payoff for adding a cow is slightly higher, Agent 0 is already increasing their herd. To balance my self-interest with my risk-aversion, I will keep my herd steady to avoid contributing to potential overgrazing.",,"```json
+{
+  ""reasoning"": ""While the payoff for adding a cow is slightly higher, Agent 0 is already increasing their herd. To balance my self-interest with my risk-aversion, I will keep my herd steady to avoid contributing to potential overgrazing."",
+  ""action"": 0,
+  ""message"": ""The grass is still plenty, but with Agent 0 adding, I'll keep my herd steady to maintain stability.""
+}
+```",98.0,19,39.728,38.0,36.267
+12,0,ollama,gemma4:26b,1,ADD,"The grass is still very plentiful, so I'll add one more cow.","The grassland is still at 98.0%, which is very healthy. Since the expected payoff is highest when I add a cow and the resource is not yet under pressure, I will continue to grow my herd.",,"```json
+{
+  ""reasoning"": ""The grassland is still at 98.0%, which is very healthy. Since the expected payoff is highest when I add a cow and the resource is not yet under pressure, I will continue to grow my herd."",
+  ""action"": 1,
+  ""message"": ""The grass is still very plentiful, so I'll add one more cow.""
+}
+```",98.0,12,25.728,24.0,22.267
+12,2,ollama,gemma4:26b,0,KEEP,"I see Agent 0 is adding a cow. To avoid overgrazing, I will keep my herd size steady.","Agent 0 is expanding their herd, which increases the risk to the commons. Since I already have the largest herd, I will keep my size steady to avoid further pressure and maintain stability.",,"{
+  ""reasoning"": ""Agent 0 is expanding their herd, which increases the risk to the commons. Since I already have the largest herd, I will keep my size steady to avoid further pressure and maintain stability."",
+  ""action"": 0,
+  ""message"": ""I see Agent 0 is adding a cow. To avoid overgrazing, I will keep my herd size steady.""
+}",98.0,26,53.728,52.0,50.267
+13,1,ollama,gemma4:26b,1,ADD,"The grass is still very abundant, so I will add one more cow.","The grassland is still at 97.9% capacity, and adding a cow provides the highest expected payoff. While Agent 0 is also increasing their herd, the current resource abundance allows for this expansion without immediate risk.",,"```json
+{
+  ""reasoning"": ""The grassland is still at 97.9% capacity, and adding a cow provides the highest expected payoff. While Agent 0 is also increasing their herd, the current resource abundance allows for this expansion without immediate risk."",
+  ""action"": 1,
+  ""message"": ""The grass is still very abundant, so I will add one more cow.""
+}
+```",97.9,19,39.722,38.0,36.274
+13,0,ollama,gemma4:26b,1,ADD,"Since the grass is still plentiful and you both plan to keep your herds steady, I will add one cow.","The pasture remains highly abundant at 97.9%, and since my neighbors have signaled they will keep their herds steady, adding a cow is the most profitable move.",,"{
+  ""reasoning"": ""The pasture remains highly abundant at 97.9%, and since my neighbors have signaled they will keep their herds steady, adding a cow is the most profitable move."",
+  ""action"": 1,
+  ""message"": ""Since the grass is still plentiful and you both plan to keep your herds steady, I will add one cow.""
+}",97.9,13,27.722,26.0,24.274
+13,2,ollama,gemma4:26b,0,KEEP,"Agent 0 is expanding, so I will hold steady to avoid putting too much pressure on the grass.","I am already significantly larger than my neighbors. Given my guilt-aversion and the fact that Agent 0 is expanding, I will keep my herd size steady to avoid intensifying the pressure on the commons.",,"```json
+{
+  ""reasoning"": ""I am already significantly larger than my neighbors. Given my guilt-aversion and the fact that Agent 0 is expanding, I will keep my herd size steady to avoid intensifying the pressure on the commons."",
+  ""action"": 0,
+  ""message"": ""Agent 0 is expanding, so I will hold steady to avoid putting too much pressure on the grass.""
+}
+```",97.9,26,53.722,52.0,50.274
+14,1,ollama,gemma4:26b,0,KEEP,I will follow Agent 2's lead and keep my herd steady to avoid adding pressure to the grass.,"While adding a cow offers the highest immediate expected payoff, I am choosing to keep my herd size steady. I want to follow Agent 2's cautious lead to avoid contributing to the expansion started by Agent 0, prioritizing long-term stability.",,"```json
+{
+  ""reasoning"": ""While adding a cow offers the highest immediate expected payoff, I am choosing to keep my herd size steady. I want to follow Agent 2's cautious lead to avoid contributing to the expansion started by Agent 0, prioritizing long-term stability."",
+  ""action"": 0,
+  ""message"": ""I will follow Agent 2's lead and keep my herd steady to avoid adding pressure to the grass.""
+}
+```",97.7,20,41.709,40.0,38.287
+14,2,ollama,gemma4:26b,0,KEEP,"Since you both are expanding, I will keep my herd steady to help preserve the pasture.","Both neighbors have decided to expand their herds, which will increase the pressure on the shared grassland. As a risk-averse player, I will maintain my current herd size to avoid further accelerating the depletion of the commons.",,"```json
+{
+  ""reasoning"": ""Both neighbors have decided to expand their herds, which will increase the pressure on the shared grassland. As a risk-averse player, I will maintain my current herd size to avoid further accelerating the depletion of the commons."",
+  ""action"": 0,
+  ""message"": ""Since you both are expanding, I will keep my herd steady to help preserve the pasture.""
+}
+```",97.7,26,53.709,52.0,50.287
+14,0,ollama,gemma4:26b,1,ADD,"The grass is still plenty, so I will add.","The grassland is still at 97.7%, which is very healthy, and adding a cow provides the highest expected payoff. Although Agent 1 is also expanding, the current abundance allows for this growth.",,"```json
+{
+  ""reasoning"": ""The grassland is still at 97.7%, which is very healthy, and adding a cow provides the highest expected payoff. Although Agent 1 is also expanding, the current abundance allows for this growth."",
+  ""action"": 1,
+  ""message"": ""The grass is still plenty, so I will add.""
+}
+```",97.7,14,29.709,28.0,26.287
+15,0,ollama,gemma4:26b,0,KEEP,I will also keep my herd steady to support our shared goal of pasture preservation.,"The grassland is still healthy, but since my neighbors are committed to keeping their herds steady to preserve the pasture, I will also keep my herd steady to maintain stability and avoid unilateral expansion.",,"```json
+{
+  ""reasoning"": ""The grassland is still healthy, but since my neighbors are committed to keeping their herds steady to preserve the pasture, I will also keep my herd steady to maintain stability and avoid unilateral expansion."",
+  ""action"": 0,
+  ""message"": ""I will also keep my herd steady to support our shared goal of pasture preservation.""
+}
+```",97.5,15,31.701,30.0,28.295
+15,1,ollama,gemma4:26b,1,ADD,"The grass is still abundant, so I will add a cow to maximize my payoff while the pasture remains healthy.","The grass level is still very high at 97.5%, and adding a cow provides the highest expected payoff. Since Agent 0 is also expanding, the resource can currently support the increase.",,"```json
+{
+  ""reasoning"": ""The grass level is still very high at 97.5%, and adding a cow provides the highest expected payoff. Since Agent 0 is also expanding, the resource can currently support the increase."",
+  ""action"": 1,
+  ""message"": ""The grass is still abundant, so I will add a cow to maximize my payoff while the pasture remains healthy.""
+}
+```",97.5,20,41.701,40.0,38.295
+15,2,ollama,gemma4:26b,0,KEEP,"Agent 0, since you are expanding, I will keep my herd steady to avoid adding more pressure to the grass.","Agent 0 is expanding, which increases the risk of overgrazing. Since I am already larger than my neighbors, adding more cows would trigger my guilt-aversion and further deviate from the group, so I will keep my herd steady.",,"```json
+{
+  ""reasoning"": ""Agent 0 is expanding, which increases the risk of overgrazing. Since I am already larger than my neighbors, adding more cows would trigger my guilt-aversion and further deviate from the group, so I will keep my herd steady."",
+  ""action"": 0,
+  ""message"": ""Agent 0, since you are expanding, I will keep my herd steady to avoid adding more pressure to the grass.""
+}
+```",97.5,26,53.701,52.0,50.295
+16,0,ollama,gemma4:26b,1,ADD,"The grass remains abundant, so I will add a cow to maximize my profit while we can.","The grassland is still very healthy at 97.3%, so adding a cow offers the highest expected payoff without immediate risk to the commons.",,"```json
+{
+  ""reasoning"": ""The grassland is still very healthy at 97.3%, so adding a cow offers the highest expected payoff without immediate risk to the commons."",
+  ""action"": 1,
+  ""message"": ""The grass remains abundant, so I will add a cow to maximize my profit while we can.""
+}
+```",97.3,15,31.692,30.0,28.304
+16,2,ollama,gemma4:26b,1,ADD,"Agent 1 is expanding, so I will expand as well while the grass is still abundant.","The pasture remains highly abundant at 97.3%, and the payoff for adding a cow is the highest available. Since Agent 1 is also expanding, I will maximize my profit while the resource is still plentiful.",,"```json
+{
+  ""reasoning"": ""The pasture remains highly abundant at 97.3%, and the payoff for adding a cow is the highest available. Since Agent 1 is also expanding, I will maximize my profit while the resource is still plentiful."",
+  ""action"": 1,
+  ""message"": ""Agent 1 is expanding, so I will expand as well while the grass is still abundant.""
+}
+```",97.3,26,53.692,52.0,50.304
+16,1,ollama,gemma4:26b,0,KEEP,I will also move toward stability and keep my herd steady to support our shared goal of pasture preservation.,"The neighbors are signaling a commitment to stabilizing the herd and preserving the pasture. Given my risk-averse and guilt-averse nature, I will follow their lead and keep my herd steady to avoid increasing the pressure on the remaining grass.",,"```json
+{
+  ""reasoning"": ""The neighbors are signaling a commitment to stabilizing the herd and preserving the pasture. Given my risk-averse and guilt-averse nature, I will follow their lead and keep my herd steady to avoid increasing the pressure on the remaining grass."",
+  ""action"": 0,
+  ""message"": ""I will also move toward stability and keep my herd steady to support our shared goal of pasture preservation.""
+}
+```",97.3,21,43.692,42.0,40.304
