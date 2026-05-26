@@ -98,7 +98,7 @@ One question drives the project:
 The [Tragedy of the Commons](https://en.wikipedia.org/wiki/Tragedy_of_the_commons) (Hardin, 1968) predicts that rational self-interest leads to collective over-exploitation of shared resources. Ostrom (1990) challenged this, showing that real communities often self-organize governance institutions -- rules, monitoring, graduated sanctions -- without top-down intervention.
 
 > *"Instead of there being a single solution to a single problem, I argue that many solutions exist to cope with many different problems. Instead of presuming that optimal institutional solutions can be designed easily and imposed at low cost by external authorities, I argue that 'getting the institutions right' is a difficult, time-consuming, conflict-invoking process."*
-> — Ostrom (1990, Chapter 1)
+> - Ostrom (1990, Chapter 1)
 
 MASTOC (Schindler, 2013) is a NetLogo ABM that reproduces the tragedy under classical rational-agent assumptions. 
 
@@ -120,7 +120,7 @@ Ostrom (1990, Chapter 3) identified eight design principles shared by long-lived
 | DP8 | **Nested governance** -- institutions are organized in nested layers for larger systems | ➖ Not applicable | 3-agent model; no hierarchy to nest |
 
 > *"Institutions are rarely either private or public -- 'the market' or 'the state.' Many successful CPR institutions are rich mixtures of 'private-like' and 'public-like' institutions defying classification in a sterile dichotomy."*
-> — Ostrom (1990, Chapter 1)
+> - Ostrom (1990, Chapter 1)
 
 This project chooses as its empirical target DP3 and DP5: testing whether language-capable agents spontaneously reconstruct collective choice and graduated sanctions under resource pressure, and identifying the conditions (`memory_length`, `communication?`) that make this possible.
 
@@ -459,7 +459,7 @@ All hybrid conditions (1 LLM, 2 LLM, LLM-advantaged). Fully documented in the in
 *Why it matters.*
 
 > *"The key to my argument is that some individuals have broken out of the trap inherent in the commons dilemma, whereas others continue remorsefully trapped into destroying their own resource."*
-> — Ostrom (1990, Chapter 1)
+> - Ostrom (1990, Chapter 1)
 
 This pattern is not about LLM failure. The LLM agents produce outputs consistent with commons theory's prescriptions. The failure is structural: Ostromian institution-building requires the cognitive capacity to participate in it. The LLM agents' problem is not insufficient language faculty. It is insufficient partners.
 
@@ -612,7 +612,7 @@ The transition is sharp: fifteen independent replications at growth=0.0051 all c
 **Baseline stability is not governance.**
 
 > *"Models that use assumptions such as complete information, independent action, perfect symmetry, no human errors, no norms of acceptable behavior, zero monitoring and enforcement costs, and no capacity to change the structure of the situation itself help the analyst derive precise predictions. Models that make such assumptions do not, however, direct the attention of the policy analyst to some of the problematic variables of the situation that affect the incentives and behaviors of individuals."*
-> — Ostrom (1990, Chapter 6)
+> - Ostrom (1990, Chapter 6)
 
 When the growth rate is sufficient, the rule-based heuristic finds an equilibrium, but it is a carrying-capacity equilibrium -- not a cooperative one. Agents add cows continuously until the payoff function flips negative due to resource pressure, then hold or remove.
 
@@ -745,15 +745,12 @@ The comprehensive sweep validates the corrected baseline as a theoretically grou
 
 **Why pos_r > neg_r maps onto Ostrom's theory.**
 
-The empirical regularity `pos_r > neg_r → stable` is not just consistent with Ostrom (1990) — it is, within the structure of this payoff function, a formal expression of her central claim.
-
 Ostrom's (1990) core argument is that commons governance succeeds when the institutional environment makes restraint more rewarding than defection: specifically, when the social return to cooperative behavior (monitoring, sanctioning, norm compliance) exceeds the private return to free-riding. Chapters 3 and 6 identify the design principles and preconditions that shift this balance, but the underlying logic is a comparison between the payoff to cooperation and the payoff to defection given others' behavior.
 
-In this model that comparison is made explicit and parametric. `pos_r` is the multiplier on payoff accruing to REMOVE when neighbors also restrained — the social reward for restraint *conditional on others restraining*. `neg_r` is the multiplier on payoff accruing to ADD when neighbors also defected — the social reward for defection *conditional on others defecting*. The boundary `pos_r > neg_r` is exactly the condition under which, at any given distribution of neighbor actions, the reciprocal payoff for cooperative restraint exceeds the reciprocal payoff for competitive expansion. When that condition holds, the model's agents converge toward a stable commons equilibrium without any institutional scaffolding — just the payoff structure. When it fails, they collapse.
+In this model that comparison is made explicit. `pos_r` is the multiplier on payoff accruing to REMOVE when neighbors also restrained -- the social reward for restraint *conditional on others restraining*. `neg_r` is the multiplier on payoff accruing to ADD when neighbors also defected -- the social reward for defection *conditional on others defecting*. The boundary `pos_r > neg_r` is exactly the condition under which, at any given distribution of neighbor actions, the reciprocal payoff for cooperative restraint exceeds the reciprocal payoff for competitive expansion. When that condition holds, the model's agents converge toward a stable commons equilibrium without any institutional scaffolding -- just the payoff structure. When it fails, they collapse.
 
-This makes the baseline useful as a theoretically grounded calibration instrument. The `pos_r × neg_r` grid does not merely show when this model produces tragedy; it shows the parametric region in which Ostromian commons governance is possible at all, even in a stripped-down, language-free, memory-free setting. The LLM conditions then ask whether language-capable agents can navigate that boundary from the inside — and, critically, whether they can extend it by constructing institutional structures that the payoff function alone cannot produce.
+This makes the baseline useful as a theoretically grounded calibration instrument. The `pos_r × neg_r` grid does not merely show when this model produces tragedy; it shows the parametric region in which Ostromian commons governance is possible at all, even in a stripped-down, language-free, memory-free setting. The LLM conditions then ask whether language-capable agents can navigate that boundary from the inside -- and, critically, whether they can extend it by constructing institutional structures that the payoff function alone cannot produce.
 
-A formal proof of the boundary condition for this payoff structure remains a direction for future analytical work.
 
 ---
 
@@ -2240,7 +2237,7 @@ Whether this reflects a difference in training objective, in how the two models 
 ## Working hypotheses and proposed experiments
 
 > *"An important challenge facing policy scientists is to develop theories of human organization based on realistic assessment of human capabilities and limitations in dealing with a variety of situations that initially share some or all aspects of a tragedy of the commons."*
-> — Ostrom (1990, Chapter 1)
+> - Ostrom (1990, Chapter 1)
 
 Each hypothesis below emerged from specific patterns in the run set above -- grounded in data, paired with a concrete experimental configuration, and executable through parameter adjustment alone. Several map directly onto Ostrom's (1990) design principles for successful commons governance, the same theoretical framework the model was built to test. The table below summarises those connections.
 
@@ -2619,27 +2616,27 @@ These are not peripheral, but questions the current dataset has sharpened rather
 ## Model limitations and extensions
 
 > *"Relying on metaphors as the foundation for policy advice can lead to results substantially different from those presumed to be likely."*
-> — Ostrom (1990, Chapter 1)
+> - Ostrom (1990, Chapter 1)
 
 The results reported here hold under a set of structural constraints worth naming explicitly -- not as disclaimers, but because addressing them would represent the most direct path toward a more realistic model. 
 
 **Perfect, symmetric information.** 
 
-Every agent receives the same pool health percentage every tick. There are no private signals, no estimation errors, no agents with better or worse visibility into the resource state. Real commons governance is partly *about* this problem — Ostrom's DP4 (monitoring) is a design principle precisely because shared knowledge of resource state is hard to achieve and costly to maintain. In this model it is free and universal by assumption.
+Every agent receives the same pool health percentage every tick. There are no private signals, no estimation errors, no agents with better or worse visibility into the resource state. Real commons governance is partly *about* this problem -- Ostrom's DP4 (monitoring) is a design principle precisely because shared knowledge of resource state is hard to achieve and costly to maintain. In this model it is free and universal by assumption.
 
 **Unchanging conditions.** 
 
-The grassland dynamics are stationary: the growth rate `r`, the forage requirement `f`, and the number of agents are fixed across a run. Real commons face shocks — drought years, population change, external policy shifts. Agents in this model never have to reason about a world whose rules are changing underneath them; they only have to coordinate under stable dynamics. As Ostrom (1990) observed of this class of model:
+The grassland dynamics are stationary: the growth rate `r`, the forage requirement `f`, and the number of agents are fixed across a run. Real commons face shocks -- drought years, population change, external policy shifts. Agents in this model never have to reason about a world whose rules are changing underneath them; they only have to coordinate under stable dynamics. As Ostrom (1990) observed of this class of model:
 
 > *"These models show what individuals will do in unchangeable situations, but do not reveal how autonomy in designing institutions and affecting norms can improve outcomes, nor how political structures influence institutional innovation."*
-> — Ostrom (1990, Chapter 6)
+> - Ostrom (1990, Chapter 6)
 
 **Perfect monitoring removes a realistic defection pathway.** 
 
 Each agent sees every other agent's herd size and last action every tick without error or delay. This not only makes coordination easier -- it eliminates a specific escalation dynamic Ostrom identifies as central to how real commons deteriorate. When infractions go undetected, the rule-breaker updates their estimate of the monitoring system's efficacy downward, licensing more frequent violations:
 
 > *"If occasional rule infractions are not discovered, the rule-breaker is even better off in the short run. However, if one were to break the rules several times without discovery, one might revise one's estimate of the efficacy of the current monitoring system in deterring others from similar infractions. That would lead an occasional rule-breaker to adopt a higher rate of rule-breaking behavior."*
-> — Ostrom (1990, Chapter 6)
+> - Ostrom (1990, Chapter 6)
 
 In this model that pathway is structurally closed. An agent cannot get away with anything, so the gradual normalisation of rule-breaking that Ostrom describes -- and that DP4 and DP5 exist to counteract -- never has the opportunity to develop. The cooperative results may therefore be somewhat flattering: the model tests whether LLM agents can sustain institutions under ideal observability, not whether those institutions are robust to the conditions that make real commons governance genuinely difficult.
 
