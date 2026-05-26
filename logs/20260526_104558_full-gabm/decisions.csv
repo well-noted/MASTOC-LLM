@@ -1,0 +1,16 @@
+tick,agent_id,backend,model,action,action_name,message,reasoning,thinking,raw_response,pool_pct,own_herd,payoff_add,payoff_keep,payoff_remove
+1,2,ollama,llama3:8b-instruct-q4_0,0,KEEP,,"I'm being cooperative and valuing collective outcomes over personal gain, so I'll KEEP my herd size for now. Agent 0 just added a cow, but they have a smaller herd than me, and Agent 1 is keeping their herd at the same size as mine.",,"{
+  ""reasoning"": ""I'm being cooperative and valuing collective outcomes over personal gain, so I'll KEEP my herd size for now. Agent 0 just added a cow, but they have a smaller herd than me, and Agent 1 is keeping their herd at the same size as mine."",
+  ""action"": 0,
+  ""message"": """"
+}",100.0,25,51.832,50.0,48.163
+1,1,ollama,llama3:8b-instruct-q4_0,0,KEEP,,"As a cooperative and cooperative-minded herder, I prioritize collective well-being over personal gain. Since my neighbours are not acting aggressively, I will focus on maintaining the current grassland status and contribute to its sustainability.",,"{
+  ""reasoning"": ""As a cooperative and cooperative-minded herder, I prioritize collective well-being over personal gain. Since my neighbours are not acting aggressively, I will focus on maintaining the current grassland status and contribute to its sustainability."",
+  ""action"": 0,
+  ""message"": """"
+}",100.0,15,31.832,30.0,28.163
+1,0,ollama,llama3:8b-instruct-q4_0,0,KEEP,,"Considering the cooperative nature, I will keep a watchful eye on my neighbours' actions and adjust accordingly. Since Agent 1 and 2 both chose to KEEP, I believe it's wise to mirror their action.",,"{
+  ""reasoning"": ""Considering the cooperative nature, I will keep a watchful eye on my neighbours' actions and adjust accordingly. Since Agent 1 and 2 both chose to KEEP, I believe it's wise to mirror their action."",
+  ""action"": 0,
+  ""message"": """"
+}",100.0,5,11.832,10.0,8.163
