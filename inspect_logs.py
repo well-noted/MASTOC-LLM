@@ -814,7 +814,7 @@ def main():
             out_path = os.path.join(LOGS_DIR, f"{folder}.md")
             with open(out_path, "w", encoding="utf-8") as f:
                 f.write(to_md_drilldown(run))
-            print(f"  → written to {out_path}")
+            print(f"  -> written to {out_path}")
         return
 
     # -- Index mode --
@@ -830,7 +830,7 @@ def main():
         out_path = os.path.join(LOGS_DIR, "index.md")
         with open(out_path, "w", encoding="utf-8") as f:
             f.write(to_md_index(runs))
-        print(f"  → index written to {out_path}")
+        print(f"  -> index written to {out_path}")
 
 
 if __name__ == "__main__":

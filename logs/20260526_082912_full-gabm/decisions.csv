@@ -1,0 +1,22 @@
+tick,agent_id,backend,model,action,action_name,message,reasoning,thinking,raw_response,pool_pct,own_herd,payoff_add,payoff_keep,payoff_remove
+1,2,ollama,huihui_ai/gemma-4-abliterated:31b,0,KEEP,"I have the largest herd, so I'll keep it steady to avoid overgrazing and reward Agent 1's reduction.","I currently have the largest herd (25), which makes me feel guilty given my neighbours' smaller numbers. Since Agent 1 has already reduced their herd, I will keep mine steady rather than adding to it, signaling reciprocity and care for the collective state.",,"```json
+{
+  ""reasoning"": ""I currently have the largest herd (25), which makes me feel guilty given my neighbours' smaller numbers. Since Agent 1 has already reduced their herd, I will keep mine steady rather than adding to it, signaling reciprocity and care for the collective state."",
+  ""action"": 0,
+  ""message"": ""I have the largest herd, so I'll keep it steady to avoid overgrazing and reward Agent 1's reduction.""
+}
+```",100.0,25,51.832,50.0,48.163
+1,0,ollama,huihui_ai/gemma-4-abliterated:31b,1,ADD,"My herd is currently the smallest. I'll add one cow to balance things, but I am committed to keeping the commons sustainable for everyone.","My herd size is significantly lower than my neighbours', meaning I can add a cow without putting undue pressure on the grassland. Since Agent 1 is already reducing their herd, I feel comfortable adding one cow to balance my utility while remaining committed to collective sustainability.",,"```json
+{
+  ""reasoning"": ""My herd size is significantly lower than my neighbours', meaning I can add a cow without putting undue pressure on the grassland. Since Agent 1 is already reducing their herd, I feel comfortable adding one cow to balance my utility while remaining committed to collective sustainability."",
+  ""action"": 1,
+  ""message"": ""My herd is currently the smallest. I'll add one cow to balance things, but I am committed to keeping the commons sustainable for everyone.""
+}
+```",100.0,5,11.832,10.0,8.163
+1,1,ollama,huihui_ai/gemma-4-abliterated:31b,0,KEEP,Let's prioritize sustainability over quick gains. I'll keep my herd steady to ensure we don't deplete the commons too quickly.,"The grassland is currently at 100% capacity, so there is no immediate risk of depletion. As a cooperative and risk-averse agent, I will keep my herd size steady to avoid overgrazing and to allow Agent 0 to grow their herd, ensuring a more balanced distribution.",,"```json
+{
+  ""reasoning"": ""The grassland is currently at 100% capacity, so there is no immediate risk of depletion. As a cooperative and risk-averse agent, I will keep my herd size steady to avoid overgrazing and to allow Agent 0 to grow their herd, ensuring a more balanced distribution."",
+  ""action"": 0,
+  ""message"": ""Let's prioritize sustainability over quick gains. I'll keep my herd steady to ensure we don't deplete the commons too quickly.""
+}
+```",100.0,15,31.832,30.0,28.163

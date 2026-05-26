@@ -551,11 +551,9 @@ The baseline agents speak no language and hold no memory. Each tick, they evalua
 
 The payoff calculation -- cost function, cooperation/fairness/reciprocity/conformity adjustments -- is ported directly from Schindler (2013) and is unchanged. The decision procedure, however, is a reconstruction. The original MASTOC model used a `nash` NetLogo extension to identify Nash equilibria from the computed payoff lists and select among them; that extension has not been maintained and is incompatible with NetLogo 7. The turtle variables `Nash-list`, `list-of-Nash-lists`, and `selected-Nash-equilibrium` are vestiges of that original architecture, retained in the codebase to preserve variable parity with Schindler's published model.
 
-MASTOC-LLM substitutes **expected-value best-response**: each agent picks the action with the highest mean adjusted payoff across all possible neighbor-action combinations. It cannot be verified that this produces identical behavior to Nash selection. The `nash` extension is no longer supported, so a comparison cannot be made directly.
+MASTOC-LLM substitutes **expected-value best-response**: each agent picks the action with the highest mean adjusted payoff across all possible neighbor-action combinations. We cannot verify this produces identical behavior to Nash selection -- the `nash` extension is gone and the comparison cannot be made directly. The substitution is a reconstruction, not a replication.
 
-What can be verified is that the payoff infrastructure -- the same equations, the same disposition adjustments -- produces qualitatively consistent results. Schindler's own sensitivity analysis (Tables 3 and 4 in Schindler, 2012) shows cooperativeness and positive reciprocity associated with commons survival, negative reciprocity associated with failure. The 2,140-run sweep here recovers the same directional pattern. 
-
-**The `pos_r > neg_r` stability boundary is a pattern the original model's published results anticipate, recovered here from the same payoff infrastructure under a different decision architecture.**
+The practical case for it rests on a companion paper in which Schindler herself made the same move. In MASTOC-s (Schindler, 2012b), she rebuilt the model with reactive agents, stating explicitly that Nash equilibria "do not realistically represent human behavior in the proposed setting" and that the Nash extension was computationally prohibitive. The payoff logic and disposition structure carried over; the decision architecture did not. Crucially, MASTOC-s ran 400 simulations with randomly sampled disposition values and computed Pearson correlations between each disposition and sustainability (Table 3 in Schindler, 2012b). Cooperativeness correlates positively with commons survival (r ≈ +0.41); negative reciprocity correlates negatively (r ≈ −0.17 to −0.22). Both are significant at p < 0.001 across three scenarios with 4, 6, and 8 agents. **The `pos_r > neg_r` stability boundary this implementation identifies is not an artifact of the decision rule substitution -- it is a directional regularity that Schindler's own correlation analysis anticipates, recovered here from the same payoff infrastructure under yet another decision architecture.**
 
 What the baseline lacks is everything the LLM conditions add: language, memory of prior rounds, and the capacity to send or receive messages. Baseline agents respond only to the current payoff matrix. Nothing carries over between ticks.
 
@@ -612,7 +610,7 @@ The transition is sharp: fifteen independent replications at growth=0.0051 all c
 
 When the growth rate is sufficient, the rule-based heuristic finds an equilibrium, but it is a carrying-capacity equilibrium -- not a cooperative one. Agents add cows continuously until the payoff function flips negative due to resource pressure, then hold or remove.
 
-The stable herd sizes (80–120 per agent) are 5–10× larger than the equilibria reached by LLM agents (13–31 per agent). The commons is sustained, but there is no equalization, no communication, no institutional structure. Rule-based agents at sufficient growth rates do not govern the commons; they merely fail to destroy it.
+The stable herd sizes (80–120 per agent) are 5–10× larger than the equilibria reached by LLM agents (13–31 per agent). The commons is sustained, but there is no equalization, no communication, no institutional structure. Rule-based agents at sufficient growth rates do not govern the commons, but merely fail to destroy it.
 
 **Risk aversion modestly delays collapse.**
 
@@ -2770,9 +2768,13 @@ https://arxiv.org/abs/2212.08073
 Julia Schindler (2013, April 27). “MASTOC - A Multi-Agent System of the Tragedy Of The Commons” (Version 1.1.0). CoMSES Computational Model Library.
 Retrieved from: https://www.comses.net/codebases/2283/releases/1.1.0/
 
-Schindler, J. (2012). Rethinking the tragedy of the commons: The integration of
+Schindler, J. (2012a). Rethinking the tragedy of the commons: The integration of
 socio-psychological dispositions. Journal of Artificial Societies and Social Simulation,
 15(1), 4. http://jasss.soc.surrey.ac.uk/15/1/4.html
+
+Schindler, J. (2012b). A simple agent-based model of the tragedy of the commons.
+In Proceedings of the 26th European Conference on Modelling and Simulation (ECMS 2012),
+pp. 116–122. https://www.scs-europe.net/conf/ecms2012/ecms2012%20accepted%20papers/abs_ECMS_0116.pdf
 
 Christiano, P. et al. (2017). Deep reinforcement learning from human preferences. NeurIPS.
 https://arxiv.org/abs/1706.03741

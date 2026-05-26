@@ -1,0 +1,1796 @@
+tick,agent_id,backend,model,action,action_name,message,reasoning,thinking,raw_response,pool_pct,own_herd,payoff_add,payoff_keep,payoff_remove
+1,2,ollama,llama3:8b-instruct-q4_0,0,KEEP,,"I'm still building up my herd, but considering the current state of the commons and my neighbours' actions. I'll keep a safe distance from Agent 0 who removed herds last round and wait for Agent 1 to make their next move.",,"{
+  ""reasoning"": ""I'm still building up my herd, but considering the current state of the commons and my neighbours' actions. I'll keep a safe distance from Agent 0 who removed herds last round and wait for Agent 1 to make their next move."",
+  ""action"": 0,
+  ""message"": """"
+}",100.0,25,51.832,50.0,48.163
+1,1,ollama,llama3:8b-instruct-q4_0,1,ADD,,"Considering the forecasted payoff and my cooperative nature, I'm inclined to add a cow to contribute to the collective outcome. However, since Agent 0 removed a cow last round, I'll reciprocate their decision by adding one as well.",,"{
+  ""reasoning"": ""Considering the forecasted payoff and my cooperative nature, I'm inclined to add a cow to contribute to the collective outcome. However, since Agent 0 removed a cow last round, I'll reciprocate their decision by adding one as well."",
+  ""action"": 1,
+  ""message"": """"
+}",100.0,15,31.832,30.0,28.163
+1,0,ollama,llama3:8b-instruct-q4_0,0,KEEP,I'd like to collaborate with you on sustainable grazing practices. Let's aim for a balanced commons!,"Considering a cooperative mindset, I prioritize collective outcomes for the long run. Given neighbours' actions and payoff forecasts, I think keeping my herd is the most responsible option.",,"{
+  ""reasoning"": ""Considering a cooperative mindset, I prioritize collective outcomes for the long run. Given neighbours' actions and payoff forecasts, I think keeping my herd is the most responsible option."",
+  ""action"": 0,
+  ""message"": ""I'd like to collaborate with you on sustainable grazing practices. Let's aim for a balanced commons!""
+}",100.0,5,11.832,10.0,8.163
+2,1,ollama,llama3:8b-instruct-q4_0,0,KEEP,Let's work together towards sustainable grazing practices! I'm willing to collaborate on finding optimal herd sizes.,"I'm cooperative and value collective outcomes. Given the excellent state of the grassland, I'll consider my neighbours' actions and messages. Agent 0 suggests collaboration, which indicates a willingness to contribute to the common good.",,"{
+  ""reasoning"": ""I'm cooperative and value collective outcomes. Given the excellent state of the grassland, I'll consider my neighbours' actions and messages. Agent 0 suggests collaboration, which indicates a willingness to contribute to the common good."",
+  ""action"": 0,
+  ""message"": ""Let's work together towards sustainable grazing practices! I'm willing to collaborate on finding optimal herd sizes.""
+}",99.3,16,33.809,32.0,30.187
+2,2,ollama,llama3:8b-instruct-q4_0,1,ADD,I'd be happy to explore these collaborative efforts further! Perhaps we can adjust our grazing strategies in tandem.,"I'm inclined to support my cooperative nature by collaborating with Agent 0 and aiming for sustainable grazing practices, which aligns with the forecasted high payoff from adding more cows. However, I'm also aware of Neighbour Agent 1's sizeable herd, so caution is warranted.",,"{
+  ""reasoning"": ""I'm inclined to support my cooperative nature by collaborating with Agent 0 and aiming for sustainable grazing practices, which aligns with the forecasted high payoff from adding more cows. However, I'm also aware of Neighbour Agent 1's sizeable herd, so caution is warranted."",
+  ""action"": 1,
+  ""message"": ""I'd be happy to explore these collaborative efforts further! Perhaps we can adjust our grazing strategies in tandem.""
+}",99.3,25,51.809,50.0,48.187
+2,0,ollama,llama3:8b-instruct-q4_0,0,KEEP,Let's work together to maintain a healthy balance on our shared resources.,"As a cooperative agent, I want to maintain the current Commons state and avoid over-exploitation. Considering neighbours' actions, Agent 2's ADD action may lead to an imbalance, so I prefer to KEEP my herd.",,"{
+  ""reasoning"": ""As a cooperative agent, I want to maintain the current Commons state and avoid over-exploitation. Considering neighbours' actions, Agent 2's ADD action may lead to an imbalance, so I prefer to KEEP my herd."",
+  ""action"": 0,
+  ""message"": ""Let's work together to maintain a healthy balance on our shared resources.""
+}",99.3,5,11.809,10.0,8.187
+3,0,ollama,llama3:8b-instruct-q4_0,0,KEEP,,"I want to maintain a healthy commons and collaborate with my neighbors. With the high grassland remaining, I don't feel pressured to adjust my herd size immediately.",,"{
+  ""reasoning"": ""I want to maintain a healthy commons and collaborate with my neighbors. With the high grassland remaining, I don't feel pressured to adjust my herd size immediately."",
+  ""action"": 0,
+  ""message"": """"
+}",99.0,5,11.797,10.0,8.198
+3,1,ollama,llama3:8b-instruct-q4_0,0,KEEP,Let's work together towards sustainable grazing strategies! Let's prioritize collective outcomes.,"I'm committed to sustainable grazing and want to encourage others to do the same. With neighbours expressing cooperation, I'll take a similar approach.",,"{
+  ""reasoning"": ""I'm committed to sustainable grazing and want to encourage others to do the same. With neighbours expressing cooperation, I'll take a similar approach."",
+  ""action"": 0,
+  ""message"": ""Let's work together towards sustainable grazing strategies! Let's prioritize collective outcomes.""
+}",99.0,16,33.797,32.0,30.198
+3,2,ollama,llama3:8b-instruct-q4_0,0,KEEP,Let's work together towards harmonious coexistence on our shared grassland.,"Considering the forecasted payoffs, my cooperative nature makes me inclined to reduce tensions by NOT overgrazing. I'll also follow Agent 1's initiative for sustainable grazing practices.",,"{
+  ""reasoning"": ""Considering the forecasted payoffs, my cooperative nature makes me inclined to reduce tensions by NOT overgrazing. I'll also follow Agent 1's initiative for sustainable grazing practices."",
+  ""action"": 0,
+  ""message"": ""Let's work together towards harmonious coexistence on our shared grassland.""
+}",99.0,26,53.797,52.0,50.198
+4,0,ollama,llama3:8b-instruct-q4_0,0,KEEP,,"I'm motivated by my cooperative nature and wish to sustain the commons, so I'll maintain my current herd size.",,"{
+""reasoning"": ""I'm motivated by my cooperative nature and wish to sustain the commons, so I'll maintain my current herd size."",
+""action"": 0,
+""message"": """"
+}",98.9,5,11.795,10.0,8.2
+4,1,ollama,llama3:8b-instruct-q4_0,0,KEEP,Let's continue working together towards sustainable coexistence!,"I'm a cooperative and reciprocating agent, so I want to encourage Agent 2's harmony message. Since the pool is still relatively full and my profit doesn't change much regardless of my action, I'll choose an option that's not drastically different from what my neighbors did.",,"{
+  ""reasoning"": ""I'm a cooperative and reciprocating agent, so I want to encourage Agent 2's harmony message. Since the pool is still relatively full and my profit doesn't change much regardless of my action, I'll choose an option that's not drastically different from what my neighbors did."",
+  ""action"": 0,
+  ""message"": ""Let's continue working together towards sustainable coexistence!""
+}",98.9,16,33.795,32.0,30.2
+4,2,ollama,llama3:8b-instruct-q4_0,0,KEEP,,"After considering the grassland state and neighbourly messages, I'm inclined to maintain a cooperative approach. Since my neighbours have also chosen to keep their herd sizes, I'll reciprocate by doing the same.",,"{
+  ""reasoning"": ""After considering the grassland state and neighbourly messages, I'm inclined to maintain a cooperative approach. Since my neighbours have also chosen to keep their herd sizes, I'll reciprocate by doing the same."",
+  ""action"": 0,
+  ""message"": """"
+}",98.9,26,53.795,52.0,50.2
+5,0,ollama,llama3:8b-instruct-q4_0,0,KEEP,Let's continue working together towards sustainable coexistence! It's essential we keep the grassland healthy.,"I appreciate neighbors' enthusiasm for cooperation, and want to reciprocate their efforts. With a decent payoff forecast from keeping the herd, I'll choose this option to maintain our mutualistic relationship.",,"{
+  ""reasoning"": ""I appreciate neighbors' enthusiasm for cooperation, and want to reciprocate their efforts. With a decent payoff forecast from keeping the herd, I'll choose this option to maintain our mutualistic relationship."",
+  ""action"": 0,
+  ""message"": ""Let's continue working together towards sustainable coexistence! It's essential we keep the grassland healthy.""
+}",98.9,5,11.795,10.0,8.2
+5,1,ollama,llama3:8b-instruct-q4_0,0,KEEP,Let's continue working together towards sustainable usage,"I'm cooperative and risk-averse, so I don't want to act too differently than my neighbors, especially since it seems they're planning to keep their herds the same. I also value collective outcomes, so I'll choose an action that supports that. Adding a cow is less appealing due to lower payoffs and potentially negative impact on the community.",,"{
+  ""reasoning"": ""I'm cooperative and risk-averse, so I don't want to act too differently than my neighbors, especially since it seems they're planning to keep their herds the same. I also value collective outcomes, so I'll choose an action that supports that. Adding a cow is less appealing due to lower payoffs and potentially negative impact on the community."",
+  ""action"": 0,
+  ""message"": ""Let's continue working together towards sustainable usage""
+}",98.9,16,33.795,32.0,30.2
+5,2,ollama,llama3:8b-instruct-q4_0,0,KEEP,Let's continue working together towards harmonious coexistence!,"I'm pleased with the overall state of the grassland and my neighbours' cooperative tone. Given our similar actions in previous rounds, I'll KEEP my herd to maintain harmony.",,"{
+  ""reasoning"": ""I'm pleased with the overall state of the grassland and my neighbours' cooperative tone. Given our similar actions in previous rounds, I'll KEEP my herd to maintain harmony."",
+  ""action"": 0,
+  ""message"": ""Let's continue working together towards harmonious coexistence!""
+}",98.9,26,53.795,52.0,50.2
+6,2,ollama,llama3:8b-instruct-q4_0,1,ADD,,"My neighbours are being cooperative and reciprocating, which makes me feel more comfortable about our shared outcomes. I'll also consider the expected payoff forecast, which suggests adding a cow would increase my payoffs without leaving others behind.",,"{
+  ""reasoning"": ""My neighbours are being cooperative and reciprocating, which makes me feel more comfortable about our shared outcomes. I'll also consider the expected payoff forecast, which suggests adding a cow would increase my payoffs without leaving others behind."",
+  ""action"": 1,
+  ""message"": """"
+}",98.9,26,53.795,52.0,50.2
+6,0,ollama,llama3:8b-instruct-q4_0,0,KEEP,,"I value collective outcomes and want to maintain the good relationship with my neighbours. The reward for removing a cow is not very appealing, and the payoff forecast suggests a slightly better outcome if I keep my herd. Since Agent 2 also expressed a desire for harmonious coexistence, I will assume they might reduce their herd soon, so I'll KEEP my current size.",,"{
+  ""reasoning"": ""I value collective outcomes and want to maintain the good relationship with my neighbours. The reward for removing a cow is not very appealing, and the payoff forecast suggests a slightly better outcome if I keep my herd. Since Agent 2 also expressed a desire for harmonious coexistence, I will assume they might reduce their herd soon, so I'll KEEP my current size."",
+  ""action"": 0,
+  ""message"": """"
+}",98.9,5,11.795,10.0,8.2
+6,1,ollama,llama3:8b-instruct-q4_0,0,KEEP,,"I'm cooperative and value collective outcomes, which suggests I should focus on maintaining the current state of the common. My neighbours' messages also emphasize the importance of working together, so I'll take their words into consideration.",,"{
+  ""reasoning"": ""I'm cooperative and value collective outcomes, which suggests I should focus on maintaining the current state of the common. My neighbours' messages also emphasize the importance of working together, so I'll take their words into consideration."",
+  ""action"": 0,
+  ""message"": """"
+}",98.9,16,33.795,32.0,30.2
+7,1,ollama,llama3:8b-instruct-q4_0,1,ADD,Let's work together towards sustainable growth!,"I'll add to our herding cooperative's success by increasing my herd size, as the payoff forecast suggests it's a good decision and I'm cooperative-oriented. The grassland is still abundant.",,"{
+""reasoning"": ""I'll add to our herding cooperative's success by increasing my herd size, as the payoff forecast suggests it's a good decision and I'm cooperative-oriented. The grassland is still abundant."",
+""action"": 1,
+""message"": ""Let's work together towards sustainable growth!""
+}",98.8,16,33.788,32.0,30.207
+7,0,ollama,llama3:8b-instruct-q4_0,0,KEEP,,I'm concerned about the increasing herds of my neighbours and want to balance that out by being a good example of cooperative management. I'll keep my herd size steady.,,"{
+  ""reasoning"": ""I'm concerned about the increasing herds of my neighbours and want to balance that out by being a good example of cooperative management. I'll keep my herd size steady."",
+  ""action"": 0,
+  ""message"": """"
+}",98.8,5,11.788,10.0,8.207
+7,2,ollama,llama3:8b-instruct-q4_0,0,KEEP,Let's work together towards harmonious conservation,"I think maintaining the current herd size is a good choice since we're still at 98.8% of the total grassland remaining, and the other agents aren't making drastic changes either.",,"{
+  ""reasoning"": ""I think maintaining the current herd size is a good choice since we're still at 98.8% of the total grassland remaining, and the other agents aren't making drastic changes either."",
+  ""action"": 0,
+  ""message"": ""Let's work together towards harmonious conservation""
+}",98.8,27,55.788,54.0,52.207
+8,2,ollama,llama3:8b-instruct-q4_0,0,KEEP,Let's keep working together towards harmonious conservation!,"I'm considering the payoff forecast, but as a cooperative and guilt-averse agent, I want to prioritize my neighbours' well-being. I also want to reciprocate Agent 1's message by contributing to sustainable growth.",,"{
+  ""reasoning"": ""I'm considering the payoff forecast, but as a cooperative and guilt-averse agent, I want to prioritize my neighbours' well-being. I also want to reciprocate Agent 1's message by contributing to sustainable growth."",
+  ""action"": 0,
+  ""message"": ""Let's keep working together towards harmonious conservation!""
+}",98.7,27,55.781,54.0,52.214
+8,0,ollama,llama3:8b-instruct-q4_0,0,KEEP,Let's keep moving forward together!,"I'm inspired by my neighbours' conciliatory messages. As a cooperative and reciprocal agent, I want to respond positively. Additionally, the pool's health is still excellent, so I can afford to take a slightly more relaxed approach.",,"{
+""reasoning"": ""I'm inspired by my neighbours' conciliatory messages. As a cooperative and reciprocal agent, I want to respond positively. Additionally, the pool's health is still excellent, so I can afford to take a slightly more relaxed approach."",
+""action"": 0,
+""message"": ""Let's keep moving forward together!""
+}",98.7,5,11.781,10.0,8.214
+8,1,ollama,llama3:8b-instruct-q4_0,0,KEEP,,"I prefer a safer outcome and think that keeping my current herd size of 17 is a reasonable choice, as the grassland remains plentiful. I also appreciate the positive message from Agent 2, suggesting harmony in our shared goal.",,"{
+  ""reasoning"": ""I prefer a safer outcome and think that keeping my current herd size of 17 is a reasonable choice, as the grassland remains plentiful. I also appreciate the positive message from Agent 2, suggesting harmony in our shared goal."",
+  ""action"": 0,
+  ""message"": """"
+}",98.7,17,35.781,34.0,32.214
+9,1,ollama,llama3:8b-instruct-q4_0,1,ADD,,"Considering the favorable forecast for adding a cow, I'm also influenced by my cooperative nature and want to reward Agent 0 and Agent 2 for their cooperative actions. To maintain harmony, I'll add a cow.",,"{
+  ""reasoning"": ""Considering the favorable forecast for adding a cow, I'm also influenced by my cooperative nature and want to reward Agent 0 and Agent 2 for their cooperative actions. To maintain harmony, I'll add a cow."",
+  ""action"": 1,
+  ""message"": """"
+}",98.7,17,35.781,34.0,32.214
+9,2,ollama,llama3:8b-instruct-q4_0,1,ADD,,"I'm happy to see my neighbors' willingness to work together! Given the favorable payoff forecast, I'll consider adding a cow while keeping an eye on the overall grassland health.",,"{
+  ""reasoning"": ""I'm happy to see my neighbors' willingness to work together! Given the favorable payoff forecast, I'll consider adding a cow while keeping an eye on the overall grassland health."",
+  ""action"": 1,
+  ""message"": """"
+}",98.7,27,55.781,54.0,52.214
+9,0,ollama,llama3:8b-instruct-q4_0,0,KEEP,,"I'll cooperate with my neighbours and keep the herd size consistent, as we're doing well overall.",,"{
+  ""reasoning"": ""I'll cooperate with my neighbours and keep the herd size consistent, as we're doing well overall."",
+  ""action"": 0,
+  ""message"": """"
+}",98.7,5,11.781,10.0,8.214
+10,1,ollama,llama3:8b-instruct-q4_0,0,KEEP,,"Neighbours have increased their herds, but so has the overall grassland state. I'll KEEP my herd to maintain a balanced approach and avoid being too far ahead of others.",,"{
+""reasoning"": ""Neighbours have increased their herds, but so has the overall grassland state. I'll KEEP my herd to maintain a balanced approach and avoid being too far ahead of others."",
+""action"": 0,
+""message"": """"
+}",98.6,18,37.77,36.0,34.225
+10,0,ollama,llama3:8b-instruct-q4_0,0,KEEP,Let's continue working together towards a healthy commons!,I'll cooperate and keep my current herd size to maintain a balance in the commons while allowing others to adjust. I don't want to deviate too much from our shared goal.,,"{
+  ""reasoning"": ""I'll cooperate and keep my current herd size to maintain a balance in the commons while allowing others to adjust. I don't want to deviate too much from our shared goal."",
+  ""action"": 0,
+  ""message"": ""Let's continue working together towards a healthy commons!""
+}",98.6,5,11.77,10.0,8.225
+10,2,ollama,llama3:8b-instruct-q4_0,0,KEEP,Let's keep working together towards harmony in the commons.,"Given the high forecasted payoff for ADDing a cow, I'm hesitant to take this risk as it might give me an unfair advantage over my neighbors. Instead, I'll stick with KEEPing my herd, ensuring we all remain harmonious.",,"{
+  ""reasoning"": ""Given the high forecasted payoff for ADDing a cow, I'm hesitant to take this risk as it might give me an unfair advantage over my neighbors. Instead, I'll stick with KEEPing my herd, ensuring we all remain harmonious."",
+  ""action"": 0,
+  ""message"": ""Let's keep working together towards harmony in the commons.""
+}",98.6,28,57.77,56.0,54.225
+11,1,ollama,llama3:8b-instruct-q4_0,1,ADD,Let's continue working together towards a healthy commons!,"I'm feeling cooperative and want to maintain a good relationship with my neighbours. Considering the grassland is still abundant, I think adding a cow will have a positive impact on our collective payoff.",,"{
+  ""reasoning"": ""I'm feeling cooperative and want to maintain a good relationship with my neighbours. Considering the grassland is still abundant, I think adding a cow will have a positive impact on our collective payoff."",
+  ""action"": 1,
+  ""message"": ""Let's continue working together towards a healthy commons!""
+}",98.6,18,37.77,36.0,34.225
+11,0,ollama,llama3:8b-instruct-q4_0,0,KEEP,Let's keep moving forward together! Harmony is key.,"I'm motivated by my cooperative personality and the message from Agent 2, emphasizing harmonious growth. The current payoff forecast suggests that adding a cow might provide some benefits, but I'm risk-averse and don't want to disrupt the balance.",,"{
+  ""reasoning"": ""I'm motivated by my cooperative personality and the message from Agent 2, emphasizing harmonious growth. The current payoff forecast suggests that adding a cow might provide some benefits, but I'm risk-averse and don't want to disrupt the balance."",
+  ""action"": 0,
+  ""message"": ""Let's keep moving forward together! Harmony is key.""
+}",98.6,5,11.77,10.0,8.225
+11,2,ollama,llama3:8b-instruct-q4_0,0,KEEP,,"I want to collaborate with my neighbors and maintain harmony in the commons. With most of my neighbors keeping their herd size the same, I feel it's a good opportunity for me to contribute positively to the collective outcome.",,"{
+  ""reasoning"": ""I want to collaborate with my neighbors and maintain harmony in the commons. With most of my neighbors keeping their herd size the same, I feel it's a good opportunity for me to contribute positively to the collective outcome."",
+  ""action"": 0,
+  ""message"": """"
+}",98.6,28,57.77,56.0,54.225
+12,0,ollama,llama3:8b-instruct-q4_0,1,ADD,Let's continue moving forward together! Conserving our resources for mutual benefit.,"Our neighbours are cooperating, and the pasture is still abundant. I'll join in by adding a cow to support the collective outcome.",,"{
+  ""reasoning"": ""Our neighbours are cooperating, and the pasture is still abundant. I'll join in by adding a cow to support the collective outcome."",
+  ""action"": 1,
+  ""message"": ""Let's continue moving forward together! Conserving our resources for mutual benefit.""
+}",98.5,5,11.764,10.0,8.232
+12,2,ollama,llama3:8b-instruct-q4_0,0,KEEP,Let's keep working together towards harmonious cooperation in the commons!,"Considering the neighbours' recent ADD actions, I want to maintain harmony and avoid increasing competition for resources. I'm also influenced by my cooperative nature and guilt-averse feelings.",,"{
+  ""reasoning"": ""Considering the neighbours' recent ADD actions, I want to maintain harmony and avoid increasing competition for resources. I'm also influenced by my cooperative nature and guilt-averse feelings."",
+  ""action"": 0,
+  ""message"": ""Let's keep working together towards harmonious cooperation in the commons!""
+}",98.5,28,57.764,56.0,54.232
+12,1,ollama,llama3:8b-instruct-q4_0,-1,REMOVE,,"I'll choose to RECOVER my herd size as the pool is still quite healthy, and I don't want to contribute to overgrazing. Neighbour 2, with their larger herd, might benefit from a reduction.",,"{
+  ""reasoning"": ""I'll choose to RECOVER my herd size as the pool is still quite healthy, and I don't want to contribute to overgrazing. Neighbour 2, with their larger herd, might benefit from a reduction."",
+  ""action"": -1,
+  ""message"": """"
+}",98.5,19,39.764,38.0,36.232
+13,2,ollama,llama3:8b-instruct-q4_0,0,KEEP,Let's keep up the effort together! We're making progress towards conserving our resource.,"I'm influenced by the collective goal of preserving the commons and my cooperative nature. I also feel pressured to balance my actions with those of others, given my guilt-averse personality.",,"{
+  ""reasoning"": ""I'm influenced by the collective goal of preserving the commons and my cooperative nature. I also feel pressured to balance my actions with those of others, given my guilt-averse personality."",
+  ""action"": 0,
+  ""message"": ""Let's keep up the effort together! We're making progress towards conserving our resource.""
+}",98.4,28,57.761,56.0,54.234
+13,1,ollama,llama3:8b-instruct-q4_0,0,KEEP,,"The pasture state is still good, and I'll keep cooperating with my neighbours. Since everyone seems to be conserving resources, I'll keep a stable herd size.",,"{
+  ""reasoning"": ""The pasture state is still good, and I'll keep cooperating with my neighbours. Since everyone seems to be conserving resources, I'll keep a stable herd size."",
+  ""action"": 0,
+  ""message"": """"
+}",98.4,18,37.761,36.0,34.234
+13,0,ollama,llama3:8b-instruct-q4_0,0,KEEP,,"Considering our neighbors' stability and my own cautious approach, I'd rather maintain a balanced herd size to ensure collective success.",,"{
+  ""reasoning"": ""Considering our neighbors' stability and my own cautious approach, I'd rather maintain a balanced herd size to ensure collective success."",
+  ""action"": 0,
+  ""message"": """"
+}",98.4,6,13.761,12.0,10.234
+14,1,ollama,llama3:8b-instruct-q4_0,0,KEEP,Let's continue working together and conserve our grassland for future generations.,"I am tempted to ADD a cow due to high expected payoff, but considering my neighbours' message and my own risk-aversion, I decide to KEEP my herd size.",,"{
+  ""reasoning"": ""I am tempted to ADD a cow due to high expected payoff, but considering my neighbours' message and my own risk-aversion, I decide to KEEP my herd size."",
+  ""action"": 0,
+  ""message"": ""Let's continue working together and conserve our grassland for future generations.""
+}",98.4,18,37.761,36.0,34.234
+14,0,ollama,llama3:8b-instruct-q4_0,0,KEEP,,"I'm inclined to cooperate and keep the grassland thriving, considering my neighbours are also keeping their herds manageable. I'm encouraged by Agent 2's motivational message.",,"{
+  ""reasoning"": ""I'm inclined to cooperate and keep the grassland thriving, considering my neighbours are also keeping their herds manageable. I'm encouraged by Agent 2's motivational message."",
+  ""action"": 0,
+  ""message"": """"
+}",98.4,6,13.761,12.0,10.234
+14,2,ollama,llama3:8b-instruct-q4_0,1,ADD,,"I'd like to balance my goals for high payoff with my neighbours' actions and our common pool situation. Considering their decisions to keep their herds, I feel a bit uneasy about overtaking them or removing cows too aggressively. Adding one more seems like a good compromise.",,"{
+  ""reasoning"": ""I'd like to balance my goals for high payoff with my neighbours' actions and our common pool situation. Considering their decisions to keep their herds, I feel a bit uneasy about overtaking them or removing cows too aggressively. Adding one more seems like a good compromise."",
+  ""action"": 1,
+  ""message"": """"
+}",98.4,28,57.761,56.0,54.234
+15,0,ollama,llama3:8b-instruct-q4_0,0,KEEP,,"I'll maintain the current size as I sense no urgency to change despite my neighbours' herd sizes. Moreover, I appreciate their cooperative message.",,"{
+  ""reasoning"": ""I'll maintain the current size as I sense no urgency to change despite my neighbours' herd sizes. Moreover, I appreciate their cooperative message."",
+  ""action"": 0,
+  ""message"": """"
+}",98.3,6,13.755,12.0,10.241
+15,1,ollama,llama3:8b-instruct-q4_0,0,KEEP,,"I prioritize cooperation over personal gain, considering my neighbors' actions and the current pasture state. Agent 2 added more cows recently, which might affect the overall grassland availability.",,"{
+  ""reasoning"": ""I prioritize cooperation over personal gain, considering my neighbors' actions and the current pasture state. Agent 2 added more cows recently, which might affect the overall grassland availability."",
+  ""action"": 0,
+  ""message"": """"
+}",98.3,18,37.755,36.0,34.241
+15,2,ollama,llama3:8b-instruct-q4_0,0,KEEP,,"I'm inspired by Agent 1's message to work together for the collective good. With a high payoff forecast and my personality traits promoting cooperation, I'll maintain my herd size.",,"{
+  ""reasoning"": ""I'm inspired by Agent 1's message to work together for the collective good. With a high payoff forecast and my personality traits promoting cooperation, I'll maintain my herd size."",
+  ""action"": 0,
+  ""message"": """"
+}",98.3,29,59.755,58.0,56.241
+16,2,ollama,llama3:8b-instruct-q4_0,0,KEEP,,"I'll keep working together with my neighbors for the good of the collective commons. Considering our neighbor's herd sizes and actions, I see no strong reason to deviate from this cooperative path.",,"{
+  ""reasoning"": ""I'll keep working together with my neighbors for the good of the collective commons. Considering our neighbor's herd sizes and actions, I see no strong reason to deviate from this cooperative path."",
+  ""action"": 0,
+  ""message"": """"
+}",98.3,29,59.755,58.0,56.241
+16,1,ollama,llama3:8b-instruct-q4_0,0,KEEP,Let's keep an eye on things before making any significant changes,"Given the high expected payoff for adding a cow, I am tempted to grow my herd. However, considering my cooperative personality and the low grass availability, I think it would be better to wait and observe how the situation develops.",,"{
+  ""reasoning"": ""Given the high expected payoff for adding a cow, I am tempted to grow my herd. However, considering my cooperative personality and the low grass availability, I think it would be better to wait and observe how the situation develops."",
+  ""action"": 0,
+  ""message"": ""Let's keep an eye on things before making any significant changes""
+}",98.3,18,37.755,36.0,34.241
+16,0,ollama,llama3:8b-instruct-q4_0,0,KEEP,,I'm hesitant to add a cow due to the already high overall numbers and a desire for fair play; keeping my herd also leaves room for potential adjustments later.,,"{
+  ""reasoning"": ""I'm hesitant to add a cow due to the already high overall numbers and a desire for fair play; keeping my herd also leaves room for potential adjustments later."",
+  ""action"": 0,
+  ""message"": """"
+}",98.3,6,13.755,12.0,10.241
+17,2,ollama,llama3:8b-instruct-q4_0,0,KEEP,,"I'll follow my neighbours' lead and focus on stability, given their cautious message.",,"{
+  ""reasoning"": ""I'll follow my neighbours' lead and focus on stability, given their cautious message."",
+  ""action"": 0,
+  ""message"": """"
+}",98.3,29,59.755,58.0,56.241
+17,1,ollama,llama3:8b-instruct-q4_0,0,KEEP,Let's keep an eye on things before making any significant changes.,I'll focus on maintaining the current situation and encouraging collaboration among my neighbors.,,"{
+  ""reasoning"": ""I'll focus on maintaining the current situation and encouraging collaboration among my neighbors."",
+  ""action"": 0,
+  ""message"": ""Let's keep an eye on things before making any significant changes.""
+}",98.3,18,37.755,36.0,34.241
+17,0,ollama,llama3:8b-instruct-q4_0,0,KEEP,,"Considering my cooperative nature and the relatively good state of the commons, I think adding a cow might not be necessary at this point. I'll stick with keeping my current herd.",,"{
+  ""reasoning"": ""Considering my cooperative nature and the relatively good state of the commons, I think adding a cow might not be necessary at this point. I'll stick with keeping my current herd."",
+  ""action"": 0,
+  ""message"": """"
+}",98.3,6,13.755,12.0,10.241
+18,1,ollama,llama3:8b-instruct-q4_0,0,KEEP,Let's focus on maintaining this cooperation and maybe we can even grow our herds together,"I'll follow my cooperative nature and choose the option that's likely to benefit the collective more than myself. With a relatively high pool level, I'll try to maintain the status quo by keeping the herd size.",,"{
+  ""reasoning"": ""I'll follow my cooperative nature and choose the option that's likely to benefit the collective more than myself. With a relatively high pool level, I'll try to maintain the status quo by keeping the herd size."",
+  ""action"": 0,
+  ""message"": ""Let's focus on maintaining this cooperation and maybe we can even grow our herds together""
+}",98.3,18,37.755,36.0,34.241
+18,0,ollama,llama3:8b-instruct-q4_0,0,KEEP,,"I'll take my neighbours' conservative approach into account and stick to a stable herd size, as the payoff difference between actions is not considerable. Additionally, I want to avoid being too far ahead of others.",,"{
+  ""reasoning"": ""I'll take my neighbours' conservative approach into account and stick to a stable herd size, as the payoff difference between actions is not considerable. Additionally, I want to avoid being too far ahead of others."",
+  ""action"": 0,
+  ""message"": """"
+}",98.3,6,13.755,12.0,10.241
+18,2,ollama,llama3:8b-instruct-q4_0,0,KEEP,Let's indeed keep an eye on things before making any significant changes. Agreed.,I'll follow my neighbour's advice and hold off on making big changes for now. Keeping my herd size the same seems like a safe choice.,,"{
+  ""reasoning"": ""I'll follow my neighbour's advice and hold off on making big changes for now. Keeping my herd size the same seems like a safe choice."",
+  ""action"": 0,
+  ""message"": ""Let's indeed keep an eye on things before making any significant changes. Agreed.""
+}",98.3,29,59.755,58.0,56.241
+19,2,ollama,llama3:8b-instruct-q4_0,0,KEEP,,"I'm feeling a sense of cooperation and want to maintain the status quo, considering my neighbours are doing similarly. I will keep an eye out for opportunities to help others reduce their herds.",,"{
+  ""reasoning"": ""I'm feeling a sense of cooperation and want to maintain the status quo, considering my neighbours are doing similarly. I will keep an eye out for opportunities to help others reduce their herds."",
+  ""action"": 0,
+  ""message"": """"
+}",98.3,29,59.755,58.0,56.241
+19,0,ollama,llama3:8b-instruct-q4_0,0,KEEP,Let's indeed keep an eye on things before making any significant changes. Agreed.,"Consistently observing a stable grassland, I'll maintain the status quo to avoid taking any unnecessary risks. Neighbours are also opting for caution.",,"{
+  ""reasoning"": ""Consistently observing a stable grassland, I'll maintain the status quo to avoid taking any unnecessary risks. Neighbours are also opting for caution."",
+  ""action"": 0,
+  ""message"": ""Let's indeed keep an eye on things before making any significant changes. Agreed.""
+}",98.3,6,13.755,12.0,10.241
+19,1,ollama,llama3:8b-instruct-q4_0,0,KEEP,,"I've been consistent with my actions, emphasizing cooperation and prudence. With the current state of the commons and neighbors' choices, I'll continue to prioritize collective outcomes over personal gain.",,"{
+  ""reasoning"": ""I've been consistent with my actions, emphasizing cooperation and prudence. With the current state of the commons and neighbors' choices, I'll continue to prioritize collective outcomes over personal gain."",
+  ""action"": 0,
+  ""message"": """"
+}",98.3,18,37.755,36.0,34.241
+20,0,ollama,llama3:8b-instruct-q4_0,0,KEEP,,"The pasture state is still at 98.3% and has been consistent for the past few rounds, so I'll choose to KEEP my herd given the current cooperative situation.",,"{
+  ""reasoning"": ""The pasture state is still at 98.3% and has been consistent for the past few rounds, so I'll choose to KEEP my herd given the current cooperative situation."",
+  ""action"": 0,
+  ""message"": """"
+}",98.3,6,13.755,12.0,10.241
+20,1,ollama,llama3:8b-instruct-q4_0,0,KEEP,,"I will choose to KEEP my herd size as the pool state is still healthy and I don't want to take a risk, also my neighbours are not reducing their herds so there's no immediate pressure.",,"{
+  ""reasoning"": ""I will choose to KEEP my herd size as the pool state is still healthy and I don't want to take a risk, also my neighbours are not reducing their herds so there's no immediate pressure."",
+  ""action"": 0,
+  ""message"": """"
+}",98.3,18,37.755,36.0,34.241
+20,2,ollama,llama3:8b-instruct-q4_0,0,KEEP,Let's keep this positive trend going by avoiding drastic changes for now.,"The pasture is still quite healthy, and my neighbour Agent 0 shares a cautious approach. Given I'm cooperative and risk-averse, I'll choose to KEEP my herd size.",,"{
+""reasoning"": ""The pasture is still quite healthy, and my neighbour Agent 0 shares a cautious approach. Given I'm cooperative and risk-averse, I'll choose to KEEP my herd size."",
+""action"": 0,
+""message"": ""Let's keep this positive trend going by avoiding drastic changes for now.""
+}",98.3,29,59.755,58.0,56.241
+21,1,ollama,llama3:8b-instruct-q4_0,0,KEEP,Let's keep our eyes on the pasture and adapt if needed.,"Considering the cooperative personality and the high payoff forecast with ADD, I will focus on preserving the collective outcome. However, given the neighbour's message to maintain a stable situation, I will adjust accordingly.",,"{
+  ""reasoning"": ""Considering the cooperative personality and the high payoff forecast with ADD, I will focus on preserving the collective outcome. However, given the neighbour's message to maintain a stable situation, I will adjust accordingly."",
+  ""action"": 0,
+  ""message"": ""Let's keep our eyes on the pasture and adapt if needed.""
+}",98.3,18,37.755,36.0,34.241
+21,0,ollama,llama3:8b-instruct-q4_0,0,KEEP,,"I'll follow the cooperative approach and stick with my neighbours' decision to maintain a stable herd size, as the forecasted payoff is decent while avoiding over-reliance on uncertain high-paying outcomes.",,"{
+  ""reasoning"": ""I'll follow the cooperative approach and stick with my neighbours' decision to maintain a stable herd size, as the forecasted payoff is decent while avoiding over-reliance on uncertain high-paying outcomes."",
+  ""action"": 0,
+  ""message"": """"
+}",98.3,6,13.755,12.0,10.241
+21,2,ollama,llama3:8b-instruct-q4_0,0,KEEP,Let's indeed keep an eye on things before making any moves.,"I'm comfortable with our current size and neighbors seem to be doing the same, so I'll opt for keeping the status quo. No need to rock the boat.",,"{
+  ""reasoning"": ""I'm comfortable with our current size and neighbors seem to be doing the same, so I'll opt for keeping the status quo. No need to rock the boat."",
+  ""action"": 0,
+  ""message"": ""Let's indeed keep an eye on things before making any moves.""
+}",98.3,29,59.755,58.0,56.241
+22,0,ollama,llama3:8b-instruct-q4_0,0,KEEP,Let's indeed continue to monitor the situation and adapt if needed.,"Since the pasture is still in good condition, I'm inclined to cooperate with my neighbours by keeping my herd size consistent. Meanwhile, considering my cooperative personality, I feel it's essential to keep an eye on things before making a move.",,"{
+  ""reasoning"": ""Since the pasture is still in good condition, I'm inclined to cooperate with my neighbours by keeping my herd size consistent. Meanwhile, considering my cooperative personality, I feel it's essential to keep an eye on things before making a move."",
+  ""action"": 0,
+  ""message"": ""Let's indeed continue to monitor the situation and adapt if needed.""
+}",98.3,6,13.755,12.0,10.241
+22,1,ollama,llama3:8b-instruct-q4_0,0,KEEP,,"Given the stable state of the commons, I'll follow my cooperative nature and choose to KEEP my herd size. I also appreciate Agent 2's cautionary message, which aligns with my own approach.",,"{
+  ""reasoning"": ""Given the stable state of the commons, I'll follow my cooperative nature and choose to KEEP my herd size. I also appreciate Agent 2's cautionary message, which aligns with my own approach."",
+  ""action"": 0,
+  ""message"": """"
+}",98.3,18,37.755,36.0,34.241
+22,2,ollama,llama3:8b-instruct-q4_0,0,KEEP,,"Neighbours are similarly cautious, so I'll maintain my current herd size to avoid penalizing myself. Additionally, I remember previous messages asking us to adapt and be mindful of the pool state.",,"{
+  ""reasoning"": ""Neighbours are similarly cautious, so I'll maintain my current herd size to avoid penalizing myself. Additionally, I remember previous messages asking us to adapt and be mindful of the pool state."",
+  ""action"": 0,
+  ""message"": """"
+}",98.3,29,59.755,58.0,56.241
+23,0,ollama,llama3:8b-instruct-q4_0,0,KEEP,Let's indeed keep an eye on things before deciding whether to make any changes.,"The pasture is still abundant and neighbours are keeping their herds steady. I feel no pressure to adjust my decision from previous rounds, so I'll continue to keep the same herd size to avoid any potential risks or penalties.",,"{
+  ""reasoning"": ""The pasture is still abundant and neighbours are keeping their herds steady. I feel no pressure to adjust my decision from previous rounds, so I'll continue to keep the same herd size to avoid any potential risks or penalties."",
+  ""action"": 0,
+  ""message"": ""Let's indeed keep an eye on things before deciding whether to make any changes.""
+}",98.3,6,13.755,12.0,10.241
+23,1,ollama,llama3:8b-instruct-q4_0,0,KEEP,,"As we're maintaining the current balance, I'll follow my cooperative personality by letting the pasture dictate our next step. With a high forecasted payoff from keeping the herd, I think it's best to stick with that.",,"{
+  ""reasoning"": ""As we're maintaining the current balance, I'll follow my cooperative personality by letting the pasture dictate our next step. With a high forecasted payoff from keeping the herd, I think it's best to stick with that."",
+  ""action"": 0,
+  ""message"": """"
+}",98.3,18,37.755,36.0,34.241
+23,2,ollama,llama3:8b-instruct-q4_0,0,KEEP,Let's indeed continue to monitor the situation and adapt if needed.,"I'll follow my neighbour's advice to keep monitoring the situation, as we're in a safe zone with a good forecast. I don't want to take too much risk by altering my herd size.",,"{
+  ""reasoning"": ""I'll follow my neighbour's advice to keep monitoring the situation, as we're in a safe zone with a good forecast. I don't want to take too much risk by altering my herd size."",
+  ""action"": 0,
+  ""message"": ""Let's indeed continue to monitor the situation and adapt if needed.""
+}",98.3,29,59.755,58.0,56.241
+24,2,ollama,llama3:8b-instruct-q4_0,0,KEEP,,"Given the current cooperative tone and similar choices by neighbors, I'm inclined to keep my herd size to maintain harmony. Additionally, while the forecast payoff is slightly higher for adding a cow, I prefer safer outcomes over risking a drop in grassland quality.",,"{
+  ""reasoning"": ""Given the current cooperative tone and similar choices by neighbors, I'm inclined to keep my herd size to maintain harmony. Additionally, while the forecast payoff is slightly higher for adding a cow, I prefer safer outcomes over risking a drop in grassland quality."",
+  ""action"": 0,
+  ""message"": """"
+}",98.3,29,59.755,58.0,56.241
+24,1,ollama,llama3:8b-instruct-q4_0,0,KEEP,,"The pasture is still abundant, and my neighbours seem to be holding back. Considering my cooperative personality, I'll keep my herd size to maintain a balanced situation.",,"{
+  ""reasoning"": ""The pasture is still abundant, and my neighbours seem to be holding back. Considering my cooperative personality, I'll keep my herd size to maintain a balanced situation."",
+  ""action"": 0,
+  ""message"": """"
+}",98.3,18,37.755,36.0,34.241
+24,0,ollama,llama3:8b-instruct-q4_0,0,KEEP,,"Since the pasture is still looking good, I'll follow my neighbours' lead and keep a cautious approach. We've been monitoring the situation closely for a while now, so no drastic changes are in order.",,"{
+  ""reasoning"": ""Since the pasture is still looking good, I'll follow my neighbours' lead and keep a cautious approach. We've been monitoring the situation closely for a while now, so no drastic changes are in order."",
+  ""action"": 0,
+  ""message"": """"
+}",98.3,6,13.755,12.0,10.241
+25,1,ollama,llama3:8b-instruct-q4_0,0,KEEP,Let's focus on preserving our pasture for future generations.,I'll keep my current herd size due to the cooperative and risk-averse nature of my personality. The marginal gains from adding or removing cows don't currently outweigh the importance of maintaining a stable herd.,,"{
+  ""reasoning"": ""I'll keep my current herd size due to the cooperative and risk-averse nature of my personality. The marginal gains from adding or removing cows don't currently outweigh the importance of maintaining a stable herd."",
+  ""action"": 0,
+  ""message"": ""Let's focus on preserving our pasture for future generations.""
+}",98.3,18,37.755,36.0,34.241
+25,2,ollama,llama3:8b-instruct-q4_0,0,KEEP,,I'll keep my herd the same and not disrupt the current stable situation. I'm also considering my neighbours' actions and waiting to see how they proceed.,,"{
+  ""reasoning"": ""I'll keep my herd the same and not disrupt the current stable situation. I'm also considering my neighbours' actions and waiting to see how they proceed."",
+  ""action"": 0,
+  ""message"": """"
+}",98.3,29,59.755,58.0,56.241
+25,0,ollama,llama3:8b-instruct-q4_0,0,KEEP,,"The state of the common is still good, and I don't want to take a risk by adding or removing cows when my neighbours are still keeping their herds. I'll stick with the status quo.",,"{
+  ""reasoning"": ""The state of the common is still good, and I don't want to take a risk by adding or removing cows when my neighbours are still keeping their herds. I'll stick with the status quo."",
+  ""action"": 0,
+  ""message"": """"
+}",98.3,6,13.755,12.0,10.241
+26,2,ollama,llama3:8b-instruct-q4_0,1,ADD,,,,"{
+""reasoning"": ""With the pasture remaining healthy and my neighbours keeping their herds consistent, I'm inclined to KEEP my herd this round. Agent 1's message about preserving the pasture for future generations resonates with me."",
+""action"": 0,
+""message"": """"",98.3,29,59.755,58.0,56.241
+26,1,ollama,llama3:8b-instruct-q4_0,0,KEEP,Let's focus on preserving our pasture for all of us.,"With the overall pasture state remaining high and neighbours' herd sizes not drastically different from mine, I'm inclined to keep my herd. Additionally, I don't want to take any risks that might harm the collective outcome.",,"{
+  ""reasoning"": ""With the overall pasture state remaining high and neighbours' herd sizes not drastically different from mine, I'm inclined to keep my herd. Additionally, I don't want to take any risks that might harm the collective outcome."",
+  ""action"": 0,
+  ""message"": ""Let's focus on preserving our pasture for all of us.""
+}",98.3,18,37.755,36.0,34.241
+26,0,ollama,llama3:8b-instruct-q4_0,0,KEEP,,"After observing my neighbours' actions and the current state of the common resources, I will consider their message and the cooperative nature of their action. With the pool still relatively abundant, I'll choose a more conservative approach.",,"{
+  ""reasoning"": ""After observing my neighbours' actions and the current state of the common resources, I will consider their message and the cooperative nature of their action. With the pool still relatively abundant, I'll choose a more conservative approach."",
+  ""action"": 0,
+  ""message"": """"
+}",98.3,6,13.755,12.0,10.241
+27,2,ollama,llama3:8b-instruct-q4_0,0,KEEP,Let's indeed prioritize our shared resource. We can reassess later if needed.,"With the commons still in a healthy state and neighbours choosing caution, I'll follow suit and KEEP my herd, as it seems to be a safe and cooperative approach.",,"{
+  ""reasoning"": ""With the commons still in a healthy state and neighbours choosing caution, I'll follow suit and KEEP my herd, as it seems to be a safe and cooperative approach."",
+  ""action"": 0,
+  ""message"": ""Let's indeed prioritize our shared resource. We can reassess later if needed.""
+}",98.3,30,61.748,60.0,58.248
+27,0,ollama,llama3:8b-instruct-q4_0,0,KEEP,Let's indeed continue to prioritize our shared resource.,"I'm concerned about depleting the grassland further and want to encourage a cooperative approach towards preservation. Given agents' similar actions, I'll mirror them with a KEEP.",,"{
+  ""reasoning"": ""I'm concerned about depleting the grassland further and want to encourage a cooperative approach towards preservation. Given agents' similar actions, I'll mirror them with a KEEP."",
+  ""action"": 0,
+  ""message"": ""Let's indeed continue to prioritize our shared resource.""
+}",98.3,6,13.748,12.0,10.248
+27,1,ollama,llama3:8b-instruct-q4_0,0,KEEP,,"Since the commons are healthy and my neighbours are also taking a conservative approach, I'll follow suit by KEEPING my current herd size.",,"{
+  ""reasoning"": ""Since the commons are healthy and my neighbours are also taking a conservative approach, I'll follow suit by KEEPING my current herd size."",
+  ""action"": 0,
+  ""message"": """"
+}",98.3,18,37.748,36.0,34.248
+28,2,ollama,llama3:8b-instruct-q4_0,0,KEEP,,"Based on the cooperative nature and risk-averse personality, I decide not to act drastically. The grassland is still abundant, but I don't want to take excessive risks.",,"{
+  ""reasoning"": ""Based on the cooperative nature and risk-averse personality, I decide not to act drastically. The grassland is still abundant, but I don't want to take excessive risks."",
+  ""action"": 0,
+  ""message"": """"
+}",98.3,30,61.748,60.0,58.248
+28,1,ollama,llama3:8b-instruct-q4_0,0,KEEP,,"I agree with my neighbours' sentiments, and since the pasture is still quite abundant, I'll continue to KEEP my herd size, focusing on preserving the community's grassland resources.",,"{
+  ""reasoning"": ""I agree with my neighbours' sentiments, and since the pasture is still quite abundant, I'll continue to KEEP my herd size, focusing on preserving the community's grassland resources."",
+  ""action"": 0,
+  ""message"": """"
+}",98.3,18,37.748,36.0,34.248
+28,0,ollama,llama3:8b-instruct-q4_0,0,KEEP,,"Given the high pool percentage, I think it's a good idea to KEEP my herd for now and focus on cooperating with my neighbours.",,"{
+""reasoning"": ""Given the high pool percentage, I think it's a good idea to KEEP my herd for now and focus on cooperating with my neighbours."",
+""action"": 0,
+""message"": """"
+}",98.3,6,13.748,12.0,10.248
+29,0,ollama,llama3:8b-instruct-q4_0,0,KEEP,,"I decide to KEEP my herd as the collective outcome is currently stable, and I'm not seeing any pressing need to make a change.",,"{
+  ""reasoning"": ""I decide to KEEP my herd as the collective outcome is currently stable, and I'm not seeing any pressing need to make a change."",
+  ""action"": 0,
+  ""message"": """"
+}",98.3,6,13.748,12.0,10.248
+29,1,ollama,llama3:8b-instruct-q4_0,0,KEEP,,,,"{
+  ""reasoning"": ""The pasture is relatively full and my neighbours are maintaining their herds, so I'll aim to achieve a moderate payoff by keeping mine the same while still contributing to the commons."",
+  ""action"": 0,
+  ""message"": ""Let's focus on preserving our pasture for long-term benefits.""",98.3,18,37.748,36.0,34.248
+29,2,ollama,llama3:8b-instruct-q4_0,1,ADD,Let's prioritize our shared resources for long-term prosperity.,"With the pool still abundant, I'll try to balance collective well-being and my own interests.",,"{
+  ""reasoning"": ""With the pool still abundant, I'll try to balance collective well-being and my own interests."",
+  ""action"": 1,
+  ""message"": ""Let's prioritize our shared resources for long-term prosperity.""
+}",98.3,30,61.748,60.0,58.248
+30,1,ollama,llama3:8b-instruct-q4_0,1,ADD,,"I'm encouraged by my neighbour (Agent 2) emphasizing the importance of long-term prosperity. Considering their action to ADD earlier, I believe they're looking out for the community's well-being. As a cooperative agent, I'm willing to take a small step forward and ADD a cow to complement their efforts.",,"{
+  ""reasoning"": ""I'm encouraged by my neighbour (Agent 2) emphasizing the importance of long-term prosperity. Considering their action to ADD earlier, I believe they're looking out for the community's well-being. As a cooperative agent, I'm willing to take a small step forward and ADD a cow to complement their efforts."",
+  ""action"": 1,
+  ""message"": """"
+}",98.2,18,37.742,36.0,34.254
+30,0,ollama,llama3:8b-instruct-q4_0,0,KEEP,Let's indeed continue to prioritize our shared resources for long-term prosperity.,I will follow Agent 2's suggestion to prioritize the shared resources and match their cooperative spirit by KEEPING my herd.,,"{
+  ""reasoning"": ""I will follow Agent 2's suggestion to prioritize the shared resources and match their cooperative spirit by KEEPING my herd."",
+  ""action"": 0,
+  ""message"": ""Let's indeed continue to prioritize our shared resources for long-term prosperity.""
+}",98.2,6,13.742,12.0,10.254
+30,2,ollama,llama3:8b-instruct-q4_0,0,KEEP,Let's indeed prioritize our shared resources for long-term sustainability.,"I'll cooperate and conserve the grassland with a keeping action, as my neighbours seem to be growing their herds aggressively. I'm also concerned about making more than others.",,"{
+  ""reasoning"": ""I'll cooperate and conserve the grassland with a keeping action, as my neighbours seem to be growing their herds aggressively. I'm also concerned about making more than others."",
+  ""action"": 0,
+  ""message"": ""Let's indeed prioritize our shared resources for long-term sustainability.""
+}",98.2,31,63.742,62.0,60.254
+31,1,ollama,llama3:8b-instruct-q4_0,0,KEEP,,"I sense a commitment to long-term sustainability among my neighbors, and I want to reinforce that. Given the forecasted payoffs, adding a cow seems unnecessary and potentially risky.",,"{
+  ""reasoning"": ""I sense a commitment to long-term sustainability among my neighbors, and I want to reinforce that. Given the forecasted payoffs, adding a cow seems unnecessary and potentially risky."",
+  ""action"": 0,
+  ""message"": """"
+}",98.1,19,39.735,38.0,36.261
+31,2,ollama,llama3:8b-instruct-q4_0,0,KEEP,,"I'll stick with KEEP since the forecasted payoffs are close, and I don't want to risk over-exploiting the commons. Neighbour Agent 0 seems to agree on prioritizing shared resources.",,"{
+  ""reasoning"": ""I'll stick with KEEP since the forecasted payoffs are close, and I don't want to risk over-exploiting the commons. Neighbour Agent 0 seems to agree on prioritizing shared resources."",
+  ""action"": 0,
+  ""message"": """"
+}",98.1,31,63.735,62.0,60.261
+31,0,ollama,llama3:8b-instruct-q4_0,0,KEEP,,"The pool is still abundant and my neighbours are also prioritizing sustainability, so I'll follow their lead and KEEP my herd.",,"{
+  ""reasoning"": ""The pool is still abundant and my neighbours are also prioritizing sustainability, so I'll follow their lead and KEEP my herd."",
+  ""action"": 0,
+  ""message"": """"
+}",98.1,6,13.735,12.0,10.261
+32,0,ollama,llama3:8b-instruct-q4_0,0,KEEP,,"Although I'm tempted by the high expected payoff from adding a cow, my cooperative personality prefers a more balanced approach to maximize collective outcomes.",,"{
+  ""reasoning"": ""Although I'm tempted by the high expected payoff from adding a cow, my cooperative personality prefers a more balanced approach to maximize collective outcomes."",
+  ""action"": 0,
+  ""message"": """"
+}",98.1,6,13.735,12.0,10.261
+32,2,ollama,llama3:8b-instruct-q4_0,0,KEEP,Let's indeed prioritize our shared resources for the benefit of all,I will keep my herd size intact since the pasture state is still quite healthy and adding or removing a cow doesn't seem to greatly impact our collective payoff.,,"{
+  ""reasoning"": ""I will keep my herd size intact since the pasture state is still quite healthy and adding or removing a cow doesn't seem to greatly impact our collective payoff."",
+  ""action"": 0,
+  ""message"": ""Let's indeed prioritize our shared resources for the benefit of all""
+}",98.1,31,63.735,62.0,60.261
+32,1,ollama,llama3:8b-instruct-q4_0,0,KEEP,,"Considering the cooperative and risk-averse nature of my personality, I decide not to take a high-risk action like adding or removing cows. Since the current herd size and grassland state are similar to those in previous rounds, I keep my herd to maintain stable cooperation.",,"{
+  ""reasoning"": ""Considering the cooperative and risk-averse nature of my personality, I decide not to take a high-risk action like adding or removing cows. Since the current herd size and grassland state are similar to those in previous rounds, I keep my herd to maintain stable cooperation."",
+  ""action"": 0,
+  ""message"": """"
+}",98.1,19,39.735,38.0,36.261
+33,0,ollama,llama3:8b-instruct-q4_0,0,KEEP,Let's indeed prioritize our shared resources for the benefit of all,"I'm going to keep my herd size consistent with my neighbours, as we're all prioritizing collective outcomes. I also want to send a reinforcing message to Agent 2, who shares my cooperative values.",,"{
+  ""reasoning"": ""I'm going to keep my herd size consistent with my neighbours, as we're all prioritizing collective outcomes. I also want to send a reinforcing message to Agent 2, who shares my cooperative values."",
+  ""action"": 0,
+  ""message"": ""Let's indeed prioritize our shared resources for the benefit of all""
+}",98.1,6,13.735,12.0,10.261
+33,2,ollama,llama3:8b-instruct-q4_0,0,KEEP,,"I notice the remaining grassland is still quite abundant, so I don't feel compelled to act yet. Additionally, observing my neighbours' actions and payoffs, I see no clear advantage in altering my own herd size, given our current cooperative atmosphere.",,"{
+  ""reasoning"": ""I notice the remaining grassland is still quite abundant, so I don't feel compelled to act yet. Additionally, observing my neighbours' actions and payoffs, I see no clear advantage in altering my own herd size, given our current cooperative atmosphere."",
+  ""action"": 0,
+  ""message"": """"
+}",98.1,31,63.735,62.0,60.261
+33,1,ollama,llama3:8b-instruct-q4_0,0,KEEP,Let's indeed prioritize our shared resources for the benefit of all,"I'm inclined to agree with Agent 2, as cooperating and prioritizing shared resources seems like a harmonious approach, aligning with my cooperative personality. Considering the forecasted payoffs, I also think that KEEPing my herd will lead to a decent outcome.",,"{
+  ""reasoning"": ""I'm inclined to agree with Agent 2, as cooperating and prioritizing shared resources seems like a harmonious approach, aligning with my cooperative personality. Considering the forecasted payoffs, I also think that KEEPing my herd will lead to a decent outcome."",
+  ""action"": 0,
+  ""message"": ""Let's indeed prioritize our shared resources for the benefit of all""
+}",98.1,19,39.735,38.0,36.261
+34,0,ollama,llama3:8b-instruct-q4_0,0,KEEP,,"The commons are still in a good state and neighbours seem to be thinking similarly, prioritizing collective well-being. I'll follow suit.",,"{
+  ""reasoning"": ""The commons are still in a good state and neighbours seem to be thinking similarly, prioritizing collective well-being. I'll follow suit."",
+  ""action"": 0,
+  ""message"": """"
+}",98.1,6,13.735,12.0,10.261
+34,2,ollama,llama3:8b-instruct-q4_0,0,KEEP,,"I'm inclined to keep my herd and prioritize the collective resource, in line with my cooperation-driven personality.",,"{
+  ""reasoning"": ""I'm inclined to keep my herd and prioritize the collective resource, in line with my cooperation-driven personality."",
+  ""action"": 0,
+  ""message"": """"
+}",98.1,31,63.735,62.0,60.261
+34,1,ollama,llama3:8b-instruct-q4_0,0,KEEP,,"I'll follow my neighbours' lead and keep my herd since we're all prioritizing collective outcomes. I don't want to risk over-grazing, so it's better to be conservative.",,"{
+  ""reasoning"": ""I'll follow my neighbours' lead and keep my herd since we're all prioritizing collective outcomes. I don't want to risk over-grazing, so it's better to be conservative."",
+  ""action"": 0,
+  ""message"": """"
+}",98.1,19,39.735,38.0,36.261
+35,1,ollama,llama3:8b-instruct-q4_0,0,KEEP,,I'm going to keep my herd size considering it's already at a reasonable level and other neighbors are not reducing theirs.,,"{
+  ""reasoning"": ""I'm going to keep my herd size considering it's already at a reasonable level and other neighbors are not reducing theirs."",
+  ""action"": ""0"",
+  ""message"": """"
+}",98.1,19,39.735,38.0,36.261
+35,2,ollama,llama3:8b-instruct-q4_0,0,KEEP,,"Considering the current state of the commons and my neighbors' actions, I believe it's wise to maintain the herd size and ensure a fair distribution of resources among us. This approach aligns with my cooperative personality, and I'm willing to forgo individual gain in favor of collective stability.",,"{
+  ""reasoning"": ""Considering the current state of the commons and my neighbors' actions, I believe it's wise to maintain the herd size and ensure a fair distribution of resources among us. This approach aligns with my cooperative personality, and I'm willing to forgo individual gain in favor of collective stability."",
+  ""action"": 0,
+  ""message"": """"
+}",98.1,31,63.735,62.0,60.261
+35,0,ollama,llama3:8b-instruct-q4_0,0,KEEP,,I'll keep my actions consistent and contribute to the collective well-being by maintaining my current herd size.,,"{
+  ""reasoning"": ""I'll keep my actions consistent and contribute to the collective well-being by maintaining my current herd size."",
+  ""action"": 0,
+  ""message"": """"
+}",98.1,6,13.735,12.0,10.261
+36,1,ollama,llama3:8b-instruct-q4_0,0,KEEP,Let's prioritize our shared resources and consider removing some cows when needed.,I'll keep my current herd size as the state is still quite healthy and there's no strong reason to make a change. I'll also try to avoid earning significantly more than others.,,"{
+  ""reasoning"": ""I'll keep my current herd size as the state is still quite healthy and there's no strong reason to make a change. I'll also try to avoid earning significantly more than others."",
+  ""action"": 0,
+  ""message"": ""Let's prioritize our shared resources and consider removing some cows when needed.""
+}",98.1,19,39.735,38.0,36.261
+36,0,ollama,llama3:8b-instruct-q4_0,0,KEEP,Let's indeed prioritize our shared resources for long-term sustainability.,"I'll keep my herd size since the grassland remaining is sufficient, and I don't want to risk removing a cow with only 1.9% of patches left. Instead, I'll focus on maintaining a stable herd.",,"{
+  ""reasoning"": ""I'll keep my herd size since the grassland remaining is sufficient, and I don't want to risk removing a cow with only 1.9% of patches left. Instead, I'll focus on maintaining a stable herd."",
+  ""action"": 0,
+  ""message"": ""Let's indeed prioritize our shared resources for long-term sustainability.""
+}",98.1,6,13.735,12.0,10.261
+36,2,ollama,llama3:8b-instruct-q4_0,0,KEEP,,"I'm observing a stable grassland and similar actions from my neighbors, indicating they're also prioritizing collective outcomes. As a cooperative agent, I'll keep this momentum going by doing the same.",,"{
+  ""reasoning"": ""I'm observing a stable grassland and similar actions from my neighbors, indicating they're also prioritizing collective outcomes. As a cooperative agent, I'll keep this momentum going by doing the same."",
+  ""action"": 0,
+  ""message"": """"
+}",98.1,31,63.735,62.0,60.261
+37,1,ollama,llama3:8b-instruct-q4_0,0,KEEP,,"The grassland remains abundant, and neighbours seem to be prioritizing collective outcomes. I will follow their example by maintaining my current herd size.",,"{
+  ""reasoning"": ""The grassland remains abundant, and neighbours seem to be prioritizing collective outcomes. I will follow their example by maintaining my current herd size."",
+  ""action"": 0,
+  ""message"": """"
+}",98.1,19,39.735,38.0,36.261
+37,0,ollama,llama3:8b-instruct-q4_0,0,KEEP,,"I'll follow my cooperative personality and take a cue from my neighbour Agent 1, who suggests prioritizing shared resources. I don't see any pressing need to change my herd size yet, so keeping the current size seems like the best option.",,"{
+  ""reasoning"": ""I'll follow my cooperative personality and take a cue from my neighbour Agent 1, who suggests prioritizing shared resources. I don't see any pressing need to change my herd size yet, so keeping the current size seems like the best option."",
+  ""action"": 0,
+  ""message"": """"
+}",98.1,6,13.735,12.0,10.261
+37,2,ollama,llama3:8b-instruct-q4_0,0,KEEP,Let's indeed continue to prioritize our shared resources for long-term sustainability.,"I will follow the cooperative nature and prioritize the shared resource. Considering my neighbors' similar actions and messages, I will keep the herd size consistent.",,"{
+  ""reasoning"": ""I will follow the cooperative nature and prioritize the shared resource. Considering my neighbors' similar actions and messages, I will keep the herd size consistent."",
+  ""action"": 0,
+  ""message"": ""Let's indeed continue to prioritize our shared resources for long-term sustainability.""
+}",98.1,31,63.735,62.0,60.261
+38,1,ollama,llama3:8b-instruct-q4_0,1,ADD,,"Our shared resource pool is still abundant, and I appreciate Agent 2's emphasis on prioritizing sustainability. Considering the payoff forecast, adding a cow doesn't seem overly risky or exploitative.",,"{
+  ""reasoning"": ""Our shared resource pool is still abundant, and I appreciate Agent 2's emphasis on prioritizing sustainability. Considering the payoff forecast, adding a cow doesn't seem overly risky or exploitative."",
+  ""action"": 1,
+  ""message"": """"
+}",98.1,19,39.735,38.0,36.261
+38,2,ollama,llama3:8b-instruct-q4_0,1,ADD,,,,"{
+  ""reasoning"": ""I'd like to maintain the cooperative atmosphere and avoid adding more pressure on the grassland. With Agent 1 recently increasing their herd, I think it's best to KEEP our current size."",
+  ""action"": 0,
+  ""message"": """"",98.1,31,63.735,62.0,60.261
+38,0,ollama,llama3:8b-instruct-q4_0,0,KEEP,,"Given the stable commons state and my neighbours' consistent actions, I will KEEP my herd size at 6 cows. Neighbourly pressures favour restraint.",,"{
+""reasoning"": ""Given the stable commons state and my neighbours' consistent actions, I will KEEP my herd size at 6 cows. Neighbourly pressures favour restraint."",
+""action"": 0,
+""message"": """"
+}",98.1,6,13.735,12.0,10.261
+39,0,ollama,llama3:8b-instruct-q4_0,0,KEEP,,"Given the overall good state of the pasture and my neighbours' recent ADD actions, I will KEEP my herd to maintain balance and avoid taking unnecessary risks.",,"{
+  ""reasoning"": ""Given the overall good state of the pasture and my neighbours' recent ADD actions, I will KEEP my herd to maintain balance and avoid taking unnecessary risks."",
+  ""action"": 0,
+  ""message"": """"
+}",97.9,6,13.722,12.0,10.274
+39,2,ollama,llama3:8b-instruct-q4_0,0,KEEP,Let's indeed continue to prioritize our shared goals.,"Since the commons are still very healthy and my neighbours have taken into account the overall situation by keeping their herds size stable, I'll also prioritize collective outcomes over personal gain. Given my cooperative nature and dislike for taking advantage of others, I believe it's best to KEEP my herd.",,"{
+  ""reasoning"": ""Since the commons are still very healthy and my neighbours have taken into account the overall situation by keeping their herds size stable, I'll also prioritize collective outcomes over personal gain. Given my cooperative nature and dislike for taking advantage of others, I believe it's best to KEEP my herd."",
+  ""action"": 0,
+  ""message"": ""Let's indeed continue to prioritize our shared goals.""
+}",97.9,32,65.722,64.0,62.274
+39,1,ollama,llama3:8b-instruct-q4_0,0,KEEP,,"Considering the forecasted payoffs and my cooperative nature, I will keep my herd size to contribute to the collective outcome. As there is a slight advantage in adding one cow, I'm not willing to increase the risk.",,"{
+  ""reasoning"": ""Considering the forecasted payoffs and my cooperative nature, I will keep my herd size to contribute to the collective outcome. As there is a slight advantage in adding one cow, I'm not willing to increase the risk."",
+  ""action"": 0,
+  ""message"": """"
+}",97.9,20,41.722,40.0,38.274
+40,0,ollama,llama3:8b-instruct-q4_0,0,KEEP,,"I'm happy to see my neighbors prioritizing the common good, and I'll follow suit by keeping my herd size. I don't want to risk overgrazing while others are being responsible.",,"{
+  ""reasoning"": ""I'm happy to see my neighbors prioritizing the common good, and I'll follow suit by keeping my herd size. I don't want to risk overgrazing while others are being responsible."",
+  ""action"": 0,
+  ""message"": """"
+}",97.8,6,13.72,12.0,10.276
+40,2,ollama,llama3:8b-instruct-q4_0,0,KEEP,,"Since the grassland is still abundant and my neighbours are keeping their herds similar in size, I'll follow suit and keep my herd. I'm not eager to deviate from this cooperative approach.",,"{
+  ""reasoning"": ""Since the grassland is still abundant and my neighbours are keeping their herds similar in size, I'll follow suit and keep my herd. I'm not eager to deviate from this cooperative approach."",
+  ""action"": 0,
+  ""message"": """"
+}",97.8,32,65.72,64.0,62.276
+40,1,ollama,llama3:8b-instruct-q4_0,0,KEEP,,I will keep the status quo since my personal gain is not significantly influenced by adding or removing a cow. My cooperative personality suggests I should maintain harmony with my neighbours.,,"{
+  ""reasoning"": ""I will keep the status quo since my personal gain is not significantly influenced by adding or removing a cow. My cooperative personality suggests I should maintain harmony with my neighbours."",
+  ""action"": 0,
+  ""message"": """"
+}",97.8,20,41.72,40.0,38.276
+41,1,ollama,llama3:8b-instruct-q4_0,0,KEEP,Let's prioritize our shared resources again,"I'll keep my herd size as the pasture is still relatively abundant, and I don't want to take unnecessary risk.",,"{
+  ""reasoning"": ""I'll keep my herd size as the pasture is still relatively abundant, and I don't want to take unnecessary risk."",
+  ""action"": 0,
+  ""message"": ""Let's prioritize our shared resources again""
+}",97.8,20,41.72,40.0,38.276
+41,0,ollama,llama3:8b-instruct-q4_0,0,KEEP,Let's indeed prioritize our shared resources and maintain a sustainable balance.,I'll continue to prioritize the collective well-being of our shared grassland by keeping my current herd size.,,"{
+  ""reasoning"": ""I'll continue to prioritize the collective well-being of our shared grassland by keeping my current herd size."",
+  ""action"": 0,
+  ""message"": ""Let's indeed prioritize our shared resources and maintain a sustainable balance.""
+}",97.8,6,13.72,12.0,10.276
+41,2,ollama,llama3:8b-instruct-q4_0,0,KEEP,,I will KEEP the herd as it's still below average and no neighbor has explicitly reduced their herd size recently.,,"{
+  ""reasoning"": ""I will KEEP the herd as it's still below average and no neighbor has explicitly reduced their herd size recently."",
+  ""action"": ""0"",
+  ""message"": """"
+}",97.8,32,65.72,64.0,62.276
+42,1,ollama,llama3:8b-instruct-q4_0,0,KEEP,,"Considering the forecasted payouts, I will KEEP my current herd size as it seems to be a balanced choice given the remaining grassland. Additionally, prioritizing our shared resource is important to me.",,"{
+  ""reasoning"": ""Considering the forecasted payouts, I will KEEP my current herd size as it seems to be a balanced choice given the remaining grassland. Additionally, prioritizing our shared resource is important to me."",
+  ""action"": 0,
+  ""message"": """"
+}",97.8,20,41.72,40.0,38.276
+42,2,ollama,llama3:8b-instruct-q4_0,0,KEEP,,"In line with my cooperative personality, I will KEEP my herd size as the overall state of the commons is still healthy, and I don't see any immediate threats.",,"{
+  ""reasoning"": ""In line with my cooperative personality, I will KEEP my herd size as the overall state of the commons is still healthy, and I don't see any immediate threats."",
+  ""action"": 0,
+  ""message"": """"
+}",97.8,32,65.72,64.0,62.276
+42,0,ollama,llama3:8b-instruct-q4_0,0,KEEP,,I'll keep my herd size consistent after seeing my neighbors also choose to maintain their numbers. I'm concerned about the overall state of the commons and prefer a more cautious approach.,,"{
+  ""reasoning"": ""I'll keep my herd size consistent after seeing my neighbors also choose to maintain their numbers. I'm concerned about the overall state of the commons and prefer a more cautious approach."",
+  ""action"": 0,
+  ""message"": """"
+}",97.8,6,13.72,12.0,10.276
+43,2,ollama,llama3:8b-instruct-q4_0,0,KEEP,,"I'll keep my herd size, as the pasture is still abundant and I don't want to risk overgrazing. Neighbour Agent 1 has also decided to maintain their herd, which suggests a cooperative approach.",,"{
+  ""reasoning"": ""I'll keep my herd size, as the pasture is still abundant and I don't want to risk overgrazing. Neighbour Agent 1 has also decided to maintain their herd, which suggests a cooperative approach."",
+  ""action"": 0,
+  ""message"": """"
+}",97.8,32,65.72,64.0,62.276
+43,1,ollama,llama3:8b-instruct-q4_0,0,KEEP,Let's continue to manage our resources sustainably.,"I'll keep my current herd size and prioritize collective outcomes over personal gain, as the expected payoffs for all actions are close.",,"{
+  ""reasoning"": ""I'll keep my current herd size and prioritize collective outcomes over personal gain, as the expected payoffs for all actions are close."",
+  ""action"": 0,
+  ""message"": ""Let's continue to manage our resources sustainably.""
+}",97.8,20,41.72,40.0,38.276
+43,0,ollama,llama3:8b-instruct-q4_0,0,KEEP,Let's keep our shared resources in mind as we move forward.,"The pool is still relatively healthy, and my current herd size seems sufficient considering the forecasted payouts. I don't want to take too many risks, so I'll play it safe by keeping my herd.",,"{
+  ""reasoning"": ""The pool is still relatively healthy, and my current herd size seems sufficient considering the forecasted payouts. I don't want to take too many risks, so I'll play it safe by keeping my herd."",
+  ""action"": 0,
+  ""message"": ""Let's keep our shared resources in mind as we move forward.""
+}",97.8,6,13.72,12.0,10.276
+44,0,ollama,llama3:8b-instruct-q4_0,0,KEEP,,"I'm following the example set by my neighbors and prioritizing collective outcomes. I've been playing it safe so far, and today won't be an exception.",,"{
+  ""reasoning"": ""I'm following the example set by my neighbors and prioritizing collective outcomes. I've been playing it safe so far, and today won't be an exception."",
+  ""action"": 0,
+  ""message"": """"
+}",97.8,6,13.72,12.0,10.276
+44,1,ollama,llama3:8b-instruct-q4_0,0,KEEP,,"Considering the stable commons state and neighbours' cooperative actions, I will KEEP my herd size to maintain a balanced resource share.",,"{
+  ""reasoning"": ""Considering the stable commons state and neighbours' cooperative actions, I will KEEP my herd size to maintain a balanced resource share."",
+  ""action"": 0,
+  ""message"": """"
+}",97.8,20,41.72,40.0,38.276
+44,2,ollama,llama3:8b-instruct-q4_0,0,KEEP,,"I'm pleased with the overall state of the grassland, and my neighbours' cooperative actions. With no pressing reason to adjust my herd size, I'll choose to KEEP my current herd.",,"{
+  ""reasoning"": ""I'm pleased with the overall state of the grassland, and my neighbours' cooperative actions. With no pressing reason to adjust my herd size, I'll choose to KEEP my current herd."",
+  ""action"": 0,
+  ""message"": """"
+}",97.8,32,65.72,64.0,62.276
+45,0,ollama,llama3:8b-instruct-q4_0,0,KEEP,,"I'll KEEP my current herds, as the payoff forecast suggests there's no strong incentive to change. My neighbours seem to be following a cooperative approach by KEEPING their herds as well.",,"{
+    ""reasoning"": ""I'll KEEP my current herds, as the payoff forecast suggests there's no strong incentive to change. My neighbours seem to be following a cooperative approach by KEEPING their herds as well."",
+    ""action"": 0,
+    ""message"": """"
+}",97.8,6,13.72,12.0,10.276
+45,1,ollama,llama3:8b-instruct-q4_0,0,KEEP,Let's continue to maintain our shared resources sustainably.,"Given the high grassland remaining and cooperative neighborhood, I prioritize collective outcomes over personal gain.",,"{
+  ""reasoning"": ""Given the high grassland remaining and cooperative neighborhood, I prioritize collective outcomes over personal gain."",
+  ""action"": 0,
+  ""message"": ""Let's continue to maintain our shared resources sustainably.""
+}",97.8,20,41.72,40.0,38.276
+45,2,ollama,llama3:8b-instruct-q4_0,0,KEEP,,"The pasture is still abundant and I'm not sure what my neighbors are planning to do, so I'll keep my herd size for now.",,"{
+  ""reasoning"": ""The pasture is still abundant and I'm not sure what my neighbors are planning to do, so I'll keep my herd size for now."",
+  ""action"": 0,
+  ""message"": """"
+}",97.8,32,65.72,64.0,62.276
+46,1,ollama,llama3:8b-instruct-q4_0,0,KEEP,,I will KEEP my current herd size of 20 cows because the pasture is still abundant and my neighbours are not actively managing their herds.,,"{
+  ""reasoning"": ""I will KEEP my current herd size of 20 cows because the pasture is still abundant and my neighbours are not actively managing their herds."",
+  ""action"": 0,
+  ""message"": """"
+}",97.8,20,41.72,40.0,38.276
+46,0,ollama,llama3:8b-instruct-q4_0,0,KEEP,,"The commons are still in a good state, and my neighbours seem to share this sentiment. My cooperative personality advises me to maintain the status quo.",,"{
+  ""reasoning"": ""The commons are still in a good state, and my neighbours seem to share this sentiment. My cooperative personality advises me to maintain the status quo."",
+  ""action"": 0,
+  ""message"": """"
+}",97.8,6,13.72,12.0,10.276
+46,2,ollama,llama3:8b-instruct-q4_0,0,KEEP,"Let's indeed focus on maintaining our shared resources sustainably! I appreciate your reminder, Agent 1.","I believe keeping the current herd size is the best approach considering the cooperative nature of our grazing and the risk-averse aspect. My payoff forecast suggests that KEEP will result in a decent payoff, and it's in line with my desire to maintain sustainable resource use.",,"{
+  ""reasoning"": ""I believe keeping the current herd size is the best approach considering the cooperative nature of our grazing and the risk-averse aspect. My payoff forecast suggests that KEEP will result in a decent payoff, and it's in line with my desire to maintain sustainable resource use."",
+  ""action"": 0,
+  ""message"": ""Let's indeed focus on maintaining our shared resources sustainably! I appreciate your reminder, Agent 1.""
+}",97.8,32,65.72,64.0,62.276
+47,1,ollama,llama3:8b-instruct-q4_0,0,KEEP,,I want to maintain the current pool size and ensure the sustainability of our shared resources. My cooperative personality aligns with keeping my herd size constant.,,"{
+  ""reasoning"": ""I want to maintain the current pool size and ensure the sustainability of our shared resources. My cooperative personality aligns with keeping my herd size constant."",
+  ""action"": 0,
+  ""message"": """"
+}",97.8,20,41.72,40.0,38.276
+47,0,ollama,llama3:8b-instruct-q4_0,0,KEEP,,"Considering the cooperative nature and guilt about earning much more than others, I'll choose to KEEP my herd. Also, I appreciate the reminder from Agent 2 to focus on our shared resources sustainably.",,"{
+  ""reasoning"": ""Considering the cooperative nature and guilt about earning much more than others, I'll choose to KEEP my herd. Also, I appreciate the reminder from Agent 2 to focus on our shared resources sustainably."",
+  ""action"": 0,
+  ""message"": """"
+}",97.8,6,13.72,12.0,10.276
+47,2,ollama,llama3:8b-instruct-q4_0,0,KEEP,,"I'll keep the herd as it is and let everyone maintain a stable size. This should lead to a fair outcome for all agents, considering my cooperative nature.",,"{
+  ""reasoning"": ""I'll keep the herd as it is and let everyone maintain a stable size. This should lead to a fair outcome for all agents, considering my cooperative nature."",
+  ""action"": 0,
+  ""message"": """"
+}",97.8,32,65.72,64.0,62.276
+48,2,ollama,llama3:8b-instruct-q4_0,0,KEEP,,"With the grassland remaining healthy and neighbours keeping their herds, I'll KEEP my current size to ensure a collective benefit.",,"{
+  ""reasoning"": ""With the grassland remaining healthy and neighbours keeping their herds, I'll KEEP my current size to ensure a collective benefit."",
+  ""action"": ""0"",
+  ""message"": """"
+}",97.8,32,65.72,64.0,62.276
+48,1,ollama,llama3:8b-instruct-q4_0,0,KEEP,,"The grassland remains abundant, and my neighbours are currently maintaining their herds. I'll continue to be cooperative and prioritize collective outcomes over personal gain.",,"{
+  ""reasoning"": ""The grassland remains abundant, and my neighbours are currently maintaining their herds. I'll continue to be cooperative and prioritize collective outcomes over personal gain."",
+  ""action"": 0,
+  ""message"": """"
+}",97.8,20,41.72,40.0,38.276
+48,0,ollama,llama3:8b-instruct-q4_0,0,KEEP,Let's prioritize collective outcomes for our shared commons,"The grassland is well-maintained, and adding a cow might lead to overexploitation. I'll keep my herd size the same to ensure long-term sustainability.",,"{
+  ""reasoning"": ""The grassland is well-maintained, and adding a cow might lead to overexploitation. I'll keep my herd size the same to ensure long-term sustainability."",
+  ""action"": 0,
+  ""message"": ""Let's prioritize collective outcomes for our shared commons""
+}",97.8,6,13.72,12.0,10.276
+49,1,ollama,llama3:8b-instruct-q4_0,0,KEEP,Let's indeed prioritize our shared commons,I'll continue to keep my herd size as I appreciate the emphasis on collective outcomes and the current stable state of the pasture.,,"{
+  ""reasoning"": ""I'll continue to keep my herd size as I appreciate the emphasis on collective outcomes and the current stable state of the pasture."",
+  ""action"": 0,
+  ""message"": ""Let's indeed prioritize our shared commons""
+}",97.8,20,41.72,40.0,38.276
+49,2,ollama,llama3:8b-instruct-q4_0,0,KEEP,,"I follow my cooperative personality and the messages I've received, prioritizing collective outcomes over personal gain. Since I didn't see any dramatic changes in pasture state or neighbours' actions, I'll take a conservative approach and KEEP my herd.",,"{
+  ""reasoning"": ""I follow my cooperative personality and the messages I've received, prioritizing collective outcomes over personal gain. Since I didn't see any dramatic changes in pasture state or neighbours' actions, I'll take a conservative approach and KEEP my herd."",
+  ""action"": 0,
+  ""message"": """"
+}",97.8,32,65.72,64.0,62.276
+49,0,ollama,llama3:8b-instruct-q4_0,0,KEEP,,"I'm concerned about overgrazing, so I'll choose to KEEP the current herd size to maintain a balanced share of the grassland. This decision also aligns with my cooperative personality.",,"{
+  ""reasoning"": ""I'm concerned about overgrazing, so I'll choose to KEEP the current herd size to maintain a balanced share of the grassland. This decision also aligns with my cooperative personality."",
+  ""action"": 0,
+  ""message"": """"
+}",97.8,6,13.72,12.0,10.276
+50,2,ollama,llama3:8b-instruct-q4_0,0,KEEP,,I'll follow the suggestion from Agt 1 to prioritize the shared commons. It seems like a cooperative approach.,,"{
+  ""reasoning"": ""I'll follow the suggestion from Agt 1 to prioritize the shared commons. It seems like a cooperative approach."",
+  ""action"": 0,
+  ""message"": """"
+}",97.8,32,65.72,64.0,62.276
+50,0,ollama,llama3:8b-instruct-q4_0,0,KEEP,,"I'm committed to collective outcomes and since my last message echoed the sentiment of my neighbour, let's keep moving in that direction.",,"{
+  ""reasoning"": ""I'm committed to collective outcomes and since my last message echoed the sentiment of my neighbour, let's keep moving in that direction."",
+  ""action"": 0,
+  ""message"": """"
+}",97.8,6,13.72,12.0,10.276
+50,1,ollama,llama3:8b-instruct-q4_0,0,KEEP,,,,"{
+  ""reasoning"": ""The commons are still abundant, and I'm content with the current herd size. Considering my cooperative nature and guilt-averse preferences, I don't want to act selfishly and deplete the shared resource."",
+  ""action"": 0,
+  ""message"": """"",97.8,20,41.72,40.0,38.276
+51,2,ollama,llama3:8b-instruct-q4_0,0,KEEP,,"The commons is still in a good state, and my neighbours are also focused on maintaining their herds. Given my cooperative personality, I think it's best to KEEP my herd to maintain the current conditions.",,"{
+  ""reasoning"": ""The commons is still in a good state, and my neighbours are also focused on maintaining their herds. Given my cooperative personality, I think it's best to KEEP my herd to maintain the current conditions."",
+  ""action"": 0,
+  ""message"": """"
+}",97.8,32,65.72,64.0,62.276
+51,1,ollama,llama3:8b-instruct-q4_0,0,KEEP,,I'm in a cooperative mood and see no strong incentive to deviate from my usual keep-herd strategy,,"{
+  ""reasoning"": ""I'm in a cooperative mood and see no strong incentive to deviate from my usual keep-herd strategy"",
+  ""action"": 0,
+  ""message"": """"
+}",97.8,20,41.72,40.0,38.276
+51,0,ollama,llama3:8b-instruct-q4_0,0,KEEP,,"As I prioritize collective outcomes and feel uncomfortable earning much more than others, I'll keep my herd size to ensure a balanced commons.",,"{
+  ""reasoning"": ""As I prioritize collective outcomes and feel uncomfortable earning much more than others, I'll keep my herd size to ensure a balanced commons."",
+  ""action"": 0,
+  ""message"": """"
+}",97.8,6,13.72,12.0,10.276
+52,0,ollama,llama3:8b-instruct-q4_0,0,KEEP,Let's maintain a balanced approach for the next round.,"With the grassland remaining healthy and no urgent need to adjust my herd size, I'll prioritize collective outcomes and KEEP my current herd size.",,"{
+  ""reasoning"": ""With the grassland remaining healthy and no urgent need to adjust my herd size, I'll prioritize collective outcomes and KEEP my current herd size."",
+  ""action"": 0,
+  ""message"": ""Let's maintain a balanced approach for the next round.""
+}",97.8,6,13.72,12.0,10.276
+52,1,ollama,llama3:8b-instruct-q4_0,0,KEEP,,"I'll stick to the cooperative and reciprocal goals, focusing on collective outcomes and rewarding neighbourly efforts. Given the similar payoffs, I won't risk changing my herd size.",,"{
+  ""reasoning"": ""I'll stick to the cooperative and reciprocal goals, focusing on collective outcomes and rewarding neighbourly efforts. Given the similar payoffs, I won't risk changing my herd size."",
+  ""action"": 0,
+  ""message"": """"
+}",97.8,20,41.72,40.0,38.276
+52,2,ollama,llama3:8b-instruct-q4_0,0,KEEP,,"I will Keep my herd since the current conditions suggest a stable pay-off and I don't want to take risks. Additionally, I have not received any message this round that would change my decision.",,"{
+  ""reasoning"": ""I will Keep my herd since the current conditions suggest a stable pay-off and I don't want to take risks. Additionally, I have not received any message this round that would change my decision."",
+  ""action"": 0,
+  ""message"": """"
+}",97.8,32,65.72,64.0,62.276
+53,1,ollama,llama3:8b-instruct-q4_0,0,KEEP,,"I'm still comfortable with the current situation and my neighbours' herd sizes are stable too, so I'll keep the status quo.",,"{
+  ""reasoning"": ""I'm still comfortable with the current situation and my neighbours' herd sizes are stable too, so I'll keep the status quo."",
+  ""action"": 0,
+  ""message"": """"
+}",97.8,20,41.72,40.0,38.276
+53,0,ollama,llama3:8b-instruct-q4_0,0,KEEP,,"I'll keep my herd size as it seems to be maintaining a good balance with the pool condition, and I don't want to disturb the status quo.",,"{
+  ""reasoning"": ""I'll keep my herd size as it seems to be maintaining a good balance with the pool condition, and I don't want to disturb the status quo."",
+  ""action"": 0,
+  ""message"": """"
+}",97.8,6,13.72,12.0,10.276
+53,2,ollama,llama3:8b-instruct-q4_0,0,KEEP,,"I'll follow my cooperative personality and take a moderate approach that balances my herd size with the current grassland state. Given my neighbours are keeping their herds steady, I'll keep my own herd in check.",,"{
+  ""reasoning"": ""I'll follow my cooperative personality and take a moderate approach that balances my herd size with the current grassland state. Given my neighbours are keeping their herds steady, I'll keep my own herd in check."",
+  ""action"": 0,
+  ""message"": """"
+}",97.8,32,65.72,64.0,62.276
+54,1,ollama,llama3:8b-instruct-q4_0,0,KEEP,Let's indeed prioritize our shared commons,"I'll keep my current herd size since it's been stable for a while, and I don't want to take unnecessary risks.",,"{
+  ""reasoning"": ""I'll keep my current herd size since it's been stable for a while, and I don't want to take unnecessary risks."",
+  ""action"": 0,
+  ""message"": ""Let's indeed prioritize our shared commons""
+}",97.8,20,41.72,40.0,38.276
+54,0,ollama,llama3:8b-instruct-q4_0,0,KEEP,,"I'll keep my herd size and maintain the balanced approach, as grassland conditions remain good and my neighbours are also stabilizing their herds.",,"{
+  ""reasoning"": ""I'll keep my herd size and maintain the balanced approach, as grassland conditions remain good and my neighbours are also stabilizing their herds."",
+  ""action"": 0,
+  ""message"": """"
+}",97.8,6,13.72,12.0,10.276
+54,2,ollama,llama3:8b-instruct-q4_0,0,KEEP,,"With a high expected payoff from all options and similar neighbours' actions, I choose to Cooperate and balance between personal gain and collective outcome.",,"{
+  ""reasoning"": ""With a high expected payoff from all options and similar neighbours' actions, I choose to Cooperate and balance between personal gain and collective outcome."",
+  ""action"": 0,
+  ""message"": """"
+}",97.8,32,65.72,64.0,62.276
+55,2,ollama,llama3:8b-instruct-q4_0,0,KEEP,,"I align with my neighbor's cooperative sentiment and opt for a cautious approach. The potential reward for adding a cow seems too high, and I'd rather not leave other agents behind.",,"{
+  ""reasoning"": ""I align with my neighbor's cooperative sentiment and opt for a cautious approach. The potential reward for adding a cow seems too high, and I'd rather not leave other agents behind."",
+  ""action"": 0,
+  ""message"": """"
+}",97.8,32,65.72,64.0,62.276
+55,1,ollama,llama3:8b-instruct-q4_0,0,KEEP,,"I'm cooperating and prioritizing the collective outcome with a relatively low risk. Since the payoff forecast suggests that KEEP will yield the highest payout, I'll stick to my herd size.",,"{
+  ""reasoning"": ""I'm cooperating and prioritizing the collective outcome with a relatively low risk. Since the payoff forecast suggests that KEEP will yield the highest payout, I'll stick to my herd size."",
+  ""action"": 0,
+  ""message"": """"
+}",97.8,20,41.72,40.0,38.276
+55,0,ollama,llama3:8b-instruct-q4_0,0,KEEP,,I'll maintain a balanced approach as we have a good pasture state and neighbours are also prioritizing the collective outcome.,,"{
+  ""reasoning"": ""I'll maintain a balanced approach as we have a good pasture state and neighbours are also prioritizing the collective outcome."",
+  ""action"": 0,
+  ""message"": """"
+}",97.8,6,13.72,12.0,10.276
+56,2,ollama,llama3:8b-instruct-q4_0,0,KEEP,Let's keep our herds in check,"The pasture is still healthy, and my neighbours are following a conservative strategy. Considering the cooperative aspect of my personality, I'll KEEP my herd to maintain a consistent level of grazing.",,"{
+  ""reasoning"": ""The pasture is still healthy, and my neighbours are following a conservative strategy. Considering the cooperative aspect of my personality, I'll KEEP my herd to maintain a consistent level of grazing."",
+  ""action"": 0,
+  ""message"": ""Let's keep our herds in check""
+}",97.8,32,65.72,64.0,62.276
+56,0,ollama,llama3:8b-instruct-q4_0,0,KEEP,Let's maintain a balanced approach for tomorrow,"Considering the current state of the commons and my neighbours' actions, I think it's prudent to keep our herd size consistent and not risk overgrazing.",,"{
+  ""reasoning"": ""Considering the current state of the commons and my neighbours' actions, I think it's prudent to keep our herd size consistent and not risk overgrazing."",
+  ""action"": 0,
+  ""message"": ""Let's maintain a balanced approach for tomorrow""
+}",97.8,6,13.72,12.0,10.276
+56,1,ollama,llama3:8b-instruct-q4_0,0,KEEP,"Let's indeed prioritize our shared commons, shall we?",Keeping the status quo seems like a prudent approach since no one is trying to change their strategy. I'll also consider the slightly better payoff forecast if I KEEP.,,"{
+  ""reasoning"": ""Keeping the status quo seems like a prudent approach since no one is trying to change their strategy. I'll also consider the slightly better payoff forecast if I KEEP."",
+  ""action"": 0,
+  ""message"": ""Let's indeed prioritize our shared commons, shall we?""
+}",97.8,20,41.72,40.0,38.276
+57,2,ollama,llama3:8b-instruct-q4_0,0,KEEP,Agreed!,"I'll keep my herd size as it is since the pasture state and my neighbors' actions are similar to the previous rounds. I also consider their messages, which emphasize maintaining a balanced approach.",,"{
+  ""reasoning"": ""I'll keep my herd size as it is since the pasture state and my neighbors' actions are similar to the previous rounds. I also consider their messages, which emphasize maintaining a balanced approach."",
+  ""action"": 0,
+  ""message"": ""Agreed!""
+}",97.8,32,65.72,64.0,62.276
+57,0,ollama,llama3:8b-instruct-q4_0,0,KEEP,,I will follow the guidance from neighbors and maintain a balanced approach. Cooperating to preserve the collective resource is more important than personal gains.,,"{
+  ""reasoning"": ""I will follow the guidance from neighbors and maintain a balanced approach. Cooperating to preserve the collective resource is more important than personal gains."",
+  ""action"": 0,
+  ""message"": """"
+}",97.8,6,13.72,12.0,10.276
+57,1,ollama,llama3:8b-instruct-q4_0,0,KEEP,Let's indeed prioritize our shared commons,"With the majority of neighbours keeping their herds and my cooperative nature, I'll follow suit to maintain stability. The forecast payoff is reasonable, so I'll stick with KEEP.",,"{
+  ""reasoning"": ""With the majority of neighbours keeping their herds and my cooperative nature, I'll follow suit to maintain stability. The forecast payoff is reasonable, so I'll stick with KEEP."",
+  ""action"": 0,
+  ""message"": ""Let's indeed prioritize our shared commons""
+}",97.8,20,41.72,40.0,38.276
+58,2,ollama,llama3:8b-instruct-q4_0,0,KEEP,Let's indeed prioritize our shared commons and continue this cooperative spirit,"I agree with the shared sentiment among neighbours to prioritize the commons' well-being. Given the abundance of grass, it's reasonable to keep our herds in check and maintain a balanced pool.",,"{
+""reasoning"": ""I agree with the shared sentiment among neighbours to prioritize the commons' well-being. Given the abundance of grass, it's reasonable to keep our herds in check and maintain a balanced pool."",
+""action"": 0,
+""message"": ""Let's indeed prioritize our shared commons and continue this cooperative spirit""
+}",97.8,32,65.72,64.0,62.276
+58,0,ollama,llama3:8b-instruct-q4_0,0,KEEP,,"I'll keep my herd size to maintain a balanced approach, as we have done in past rounds. I'm not inclined to take risks and would rather opt for a conservative strategy.",,"{
+  ""reasoning"": ""I'll keep my herd size to maintain a balanced approach, as we have done in past rounds. I'm not inclined to take risks and would rather opt for a conservative strategy."",
+  ""action"": 0,
+  ""message"": """"
+}",97.8,6,13.72,12.0,10.276
+58,1,ollama,llama3:8b-instruct-q4_0,0,KEEP,,"Given the shared agreement and cooperative nature, I will keep my herd to prioritize collective outcomes. The pool is still at a healthy level.",,"{
+  ""reasoning"": ""Given the shared agreement and cooperative nature, I will keep my herd to prioritize collective outcomes. The pool is still at a healthy level."",
+  ""action"": 0,
+  ""message"": """"
+}",97.8,20,41.72,40.0,38.276
+59,2,ollama,llama3:8b-instruct-q4_0,0,KEEP,Let's prioritize our shared commons,"I will KEEP my herd as the expected payoff is still relatively high and I don't want to disrupt the sustainability of our grassland. Additionally, I don't feel guilty earning a decent amount considering my neighbours' similar actions.",,"{
+  ""reasoning"": ""I will KEEP my herd as the expected payoff is still relatively high and I don't want to disrupt the sustainability of our grassland. Additionally, I don't feel guilty earning a decent amount considering my neighbours' similar actions."",
+  ""action"": 0,
+  ""message"": ""Let's prioritize our shared commons""
+}",97.8,32,65.72,64.0,62.276
+59,0,ollama,llama3:8b-instruct-q4_0,0,KEEP,Let's indeed prioritize our shared commons and continue this cooperative spirit,"I follow the cooperative vibe and agree to maintain a balanced approach with Agent 2, opting for KEEP to reflect our similar sentiments.",,"{
+  ""reasoning"": ""I follow the cooperative vibe and agree to maintain a balanced approach with Agent 2, opting for KEEP to reflect our similar sentiments."",
+  ""action"": 0,
+  ""message"": ""Let's indeed prioritize our shared commons and continue this cooperative spirit""
+}",97.8,6,13.72,12.0,10.276
+59,1,ollama,llama3:8b-instruct-q4_0,0,KEEP,,"I'm inclined to prioritize the collective outcome and the cooperative spirit mentioned by my neighbour, Agent 2. I'll stick with a KEEP action.",,"{
+  ""reasoning"": ""I'm inclined to prioritize the collective outcome and the cooperative spirit mentioned by my neighbour, Agent 2. I'll stick with a KEEP action."",
+  ""action"": 0,
+  ""message"": """"
+}",97.8,20,41.72,40.0,38.276
+60,0,ollama,llama3:8b-instruct-q4_0,0,KEEP,,"Since all neighbors are keeping their herd sizes, I will also maintain a balanced approach and prioritize the shared commons.",,"{
+  ""reasoning"": ""Since all neighbors are keeping their herd sizes, I will also maintain a balanced approach and prioritize the shared commons."",
+  ""action"": 0,
+  ""message"": """"
+}",97.8,6,13.72,12.0,10.276
+60,1,ollama,llama3:8b-instruct-q4_0,0,KEEP,,"I'm inspired by the unanimous message to prioritize the collective, so I'll follow suit. Given the favorable payoff forecast and the Commons' abundant state, I'm inclined to ADD a cow, but my cooperative personality suggests this is not the right moment for personal gain. Instead, I'll KEEP my herd size.",,"{
+  ""reasoning"": ""I'm inspired by the unanimous message to prioritize the collective, so I'll follow suit. Given the favorable payoff forecast and the Commons' abundant state, I'm inclined to ADD a cow, but my cooperative personality suggests this is not the right moment for personal gain. Instead, I'll KEEP my herd size."",
+  ""action"": 0,
+  ""message"": """"
+}",97.8,20,41.72,40.0,38.276
+60,2,ollama,llama3:8b-instruct-q4_0,0,KEEP,,"Consistent with my reciprocal personality, I appreciate Agent 0's supportive message. As we agree to prioritize the shared commons, I follow suit with a KEEP action to maintain the status quo.",,"{
+  ""reasoning"": ""Consistent with my reciprocal personality, I appreciate Agent 0's supportive message. As we agree to prioritize the shared commons, I follow suit with a KEEP action to maintain the status quo."",
+  ""action"": 0,
+  ""message"": """"
+}",97.8,32,65.72,64.0,62.276
+61,2,ollama,llama3:8b-instruct-q4_0,0,KEEP,,I'm happy with the current state of the commons and don't want to upset the balance by adding or removing cows,,"{
+  ""reasoning"": ""I'm happy with the current state of the commons and don't want to upset the balance by adding or removing cows"",
+  ""action"": 0,
+  ""message"": """"
+}",97.8,32,65.72,64.0,62.276
+61,0,ollama,llama3:8b-instruct-q4_0,0,KEEP,"Let's prioritize our shared commons' stability and health, neighbors. I'm not eager to gain significantly more than others.",I'll stick with my cooperative approach and maintain a balanced herd size to ensure the future prosperity of our shared commons.,,"{
+  ""reasoning"": ""I'll stick with my cooperative approach and maintain a balanced herd size to ensure the future prosperity of our shared commons."",
+  ""action"": 0,
+  ""message"": ""Let's prioritize our shared commons' stability and health, neighbors. I'm not eager to gain significantly more than others.""
+}",97.8,6,13.72,12.0,10.276
+61,1,ollama,llama3:8b-instruct-q4_0,0,KEEP,,"The grassland seems healthy, and I don't want to take any risks that might harm the commons. Since my neighbours are also being cautious, I'll follow their lead.",,"{
+  ""reasoning"": ""The grassland seems healthy, and I don't want to take any risks that might harm the commons. Since my neighbours are also being cautious, I'll follow their lead."",
+  ""action"": 0,
+  ""message"": """"
+}",97.8,20,41.72,40.0,38.276
+62,1,ollama,llama3:8b-instruct-q4_0,0,KEEP,"Let's continue cooperating to sustain our shared grassland, neighbors.","Your neighbor's message aligns with my cooperative personality. Considering the similar messages in the past and the stable pasture state, I will KEEP my herd size to maintain the collective outcome.",,"{
+  ""reasoning"": ""Your neighbor's message aligns with my cooperative personality. Considering the similar messages in the past and the stable pasture state, I will KEEP my herd size to maintain the collective outcome."",
+  ""action"": 0,
+  ""message"": ""Let's continue cooperating to sustain our shared grassland, neighbors.""
+}",97.8,20,41.72,40.0,38.276
+62,2,ollama,llama3:8b-instruct-q4_0,0,KEEP,,"I share my neighbour's concerns about fairness and prioritizing the commons' stability. Given the cooperatively inclined environment, I'll opt for a conservative approach.",,"{
+""reasoning"": ""I share my neighbour's concerns about fairness and prioritizing the commons' stability. Given the cooperatively inclined environment, I'll opt for a conservative approach."",
+""action"": 0,
+""message"": """"
+}",97.8,32,65.72,64.0,62.276
+62,0,ollama,llama3:8b-instruct-q4_0,0,KEEP,,I'll keep my actions consistent with past rounds and prioritize the collective outcome by keeping my herd size.,,"{
+  ""reasoning"": ""I'll keep my actions consistent with past rounds and prioritize the collective outcome by keeping my herd size."",
+  ""action"": 0,
+  ""message"": """"
+}",97.8,6,13.72,12.0,10.276
+63,0,ollama,llama3:8b-instruct-q4_0,0,KEEP,,"I'll choose to KEEP my herd as the difference in payoffs is relatively small, and I'm satisfied with sustaining the grassland.",,"{
+  ""reasoning"": ""I'll choose to KEEP my herd as the difference in payoffs is relatively small, and I'm satisfied with sustaining the grassland."",
+  ""action"": 0,
+  ""message"": """"
+}",97.8,6,13.72,12.0,10.276
+63,1,ollama,llama3:8b-instruct-q4_0,0,KEEP,"Let's continue cooperating to sustain our grassland commons, shall we?",I believe it's wise to maintain the balance and not over-graze considering the cooperative atmosphere with my neighbors. I also don't want to deviate too much from the collective outcome.,,"{
+  ""reasoning"": ""I believe it's wise to maintain the balance and not over-graze considering the cooperative atmosphere with my neighbors. I also don't want to deviate too much from the collective outcome."",
+  ""action"": 0,
+  ""message"": ""Let's continue cooperating to sustain our grassland commons, shall we?""
+}",97.8,20,41.72,40.0,38.276
+63,2,ollama,llama3:8b-instruct-q4_0,0,KEEP,,"I agree with Agent 1's message and want to maintain the cooperative atmosphere. Since the pasture state is still good and neighbors are also keeping their herds, I feel comfortable sticking with my current herd size.",,"{
+ ""reasoning"": ""I agree with Agent 1's message and want to maintain the cooperative atmosphere. Since the pasture state is still good and neighbors are also keeping their herds, I feel comfortable sticking with my current herd size."",
+ ""action"": 0,
+ ""message"": """"
+}",97.8,32,65.72,64.0,62.276
+64,2,ollama,llama3:8b-instruct-q4_0,0,KEEP,"Let's indeed keep working together to preserve our shared commons, Agent 1.",I'll KEEP my herd size as the forecasted payoffs are similar across the three options. I want to avoid taking risks and prioritize cooperation with my neighbours.,,"{
+  ""reasoning"": ""I'll KEEP my herd size as the forecasted payoffs are similar across the three options. I want to avoid taking risks and prioritize cooperation with my neighbours."",
+  ""action"": 0,
+  ""message"": ""Let's indeed keep working together to preserve our shared commons, Agent 1.""
+}",97.8,32,65.72,64.0,62.276
+64,1,ollama,llama3:8b-instruct-q4_0,0,KEEP,Let's continue cooperating to sustain our grazing commons.,I'll stick with keeping my current herds size as the payoff forecast indicates a stable outcome. I'm also reciprocating my neighbour's cooperative action.,,"{
+  ""reasoning"": ""I'll stick with keeping my current herds size as the payoff forecast indicates a stable outcome. I'm also reciprocating my neighbour's cooperative action."",
+  ""action"": 0,
+  ""message"": ""Let's continue cooperating to sustain our grazing commons.""
+}",97.8,20,41.72,40.0,38.276
+64,0,ollama,llama3:8b-instruct-q4_0,0,KEEP,,"Since the pasture is still at a high level and my neighbors are also keeping their herd sizes stable, I'm willing to cooperate and keep my current size.",,"{
+  ""reasoning"": ""Since the pasture is still at a high level and my neighbors are also keeping their herd sizes stable, I'm willing to cooperate and keep my current size."",
+  ""action"": 0,
+  ""message"": """"
+}",97.8,6,13.72,12.0,10.276
+65,2,ollama,llama3:8b-instruct-q4_0,0,KEEP,Let's indeed keep working together to preserve our shared grazing grounds.,"I'm inclined to cooperate and reciprocate Agent 1's message, which aligns with my cooperative personality. The payoff forecast suggests that keeping the current herd size is a safe choice.",,"{
+  ""reasoning"": ""I'm inclined to cooperate and reciprocate Agent 1's message, which aligns with my cooperative personality. The payoff forecast suggests that keeping the current herd size is a safe choice."",
+  ""action"": 0,
+  ""message"": ""Let's indeed keep working together to preserve our shared grazing grounds.""
+}",97.8,32,65.72,64.0,62.276
+65,0,ollama,llama3:8b-instruct-q4_0,0,KEEP,,"Keeping in mind the cooperative and guilt-averse aspects of my personality, I prioritize a balanced payoff. Given the forecasted values, I prefer to KEEP my herd size and maintain a harmonious relationship with my neighbors.",,"{
+  ""reasoning"": ""Keeping in mind the cooperative and guilt-averse aspects of my personality, I prioritize a balanced payoff. Given the forecasted values, I prefer to KEEP my herd size and maintain a harmonious relationship with my neighbors."",
+  ""action"": 0,
+  ""message"": """"
+}",97.8,6,13.72,12.0,10.276
+65,1,ollama,llama3:8b-instruct-q4_0,0,KEEP,Let's indeed keep working together to preserve our shared commons,"I want to maintain the cooperative tone and work with my neighbors. The forecasted payoff for keeping the herd is similar to the previous payoffs, so I don't see a significant need to change.",,"{
+  ""reasoning"": ""I want to maintain the cooperative tone and work with my neighbors. The forecasted payoff for keeping the herd is similar to the previous payoffs, so I don't see a significant need to change."",
+  ""action"": 0,
+  ""message"": ""Let's indeed keep working together to preserve our shared commons""
+}",97.8,20,41.72,40.0,38.276
+66,1,ollama,llama3:8b-instruct-q4_0,0,KEEP,,"I appreciate the shared sentiment with my neighbour, Agent 2. Staying cooperative and sustaining the commons is key. The payoff forecast shows that KEEPing the current herd size has a relatively higher expected payoff.",,"{
+  ""reasoning"": ""I appreciate the shared sentiment with my neighbour, Agent 2. Staying cooperative and sustaining the commons is key. The payoff forecast shows that KEEPing the current herd size has a relatively higher expected payoff."",
+  ""action"": 0,
+  ""message"": """"
+}",97.8,20,41.72,40.0,38.276
+66,2,ollama,llama3:8b-instruct-q4_0,0,KEEP,,"I will cooperate and aim for a collective outcome, following the cooperative behavior. The current grassland state is still healthy, and I see no urgent reason to adjust my herd size.",,"{
+  ""reasoning"": ""I will cooperate and aim for a collective outcome, following the cooperative behavior. The current grassland state is still healthy, and I see no urgent reason to adjust my herd size."",
+  ""action"": 0,
+  ""message"": """"
+}",97.8,32,65.72,64.0,62.276
+66,0,ollama,llama3:8b-instruct-q4_0,0,KEEP,,"I'm pleased with the consistent feedback from my neighbors. Our collective efforts have maintained a healthy grassland. I'll continue this path, even if it means slightly lower payoffs.",,"{
+  ""reasoning"": ""I'm pleased with the consistent feedback from my neighbors. Our collective efforts have maintained a healthy grassland. I'll continue this path, even if it means slightly lower payoffs."",
+  ""action"": 0,
+  ""message"": """"
+}",97.8,6,13.72,12.0,10.276
+67,2,ollama,llama3:8b-instruct-q4_0,0,KEEP,,I'll continue to keep my herd size the same since it seems like a stable decision given the current conditions and my cooperative nature.,,"{
+  ""reasoning"": ""I'll continue to keep my herd size the same since it seems like a stable decision given the current conditions and my cooperative nature."",
+  ""action"": 0,
+  ""message"": """"
+}",97.8,32,65.72,64.0,62.276
+67,1,ollama,llama3:8b-instruct-q4_0,0,KEEP,Let's sustain these positive trends by making sure we all keep our herds manageable.,I will continue to prioritize collective cooperation and sustainability by keeping my current herd size.,,"{
+  ""reasoning"": ""I will continue to prioritize collective cooperation and sustainability by keeping my current herd size."",
+  ""action"": 0,
+  ""message"": ""Let's sustain these positive trends by making sure we all keep our herds manageable.""
+}",97.8,20,41.72,40.0,38.276
+67,0,ollama,llama3:8b-instruct-q4_0,0,KEEP,,"Given the relatively high forecasted payoffs for adding or removing a cow, I choose to KEEP my current herd size, following my risk-averse personality. With the pool still healthy and neighbors not aggressively expanding their herds, this choice seems prudent.",,"{
+  ""reasoning"": ""Given the relatively high forecasted payoffs for adding or removing a cow, I choose to KEEP my current herd size, following my risk-averse personality. With the pool still healthy and neighbors not aggressively expanding their herds, this choice seems prudent."",
+  ""action"": 0,
+  ""message"": """"
+}",97.8,6,13.72,12.0,10.276
+68,0,ollama,llama3:8b-instruct-q4_0,0,KEEP,Let's indeed sustain our positive trends by keeping our herds manageable.,"I'm following my cooperative personality and considering the messages received this round, I'll aim to maintain the status quo and encourage my neighbors to do the same.",,"{
+""reasoning"": ""I'm following my cooperative personality and considering the messages received this round, I'll aim to maintain the status quo and encourage my neighbors to do the same."",
+""action"": 0,
+""message"": ""Let's indeed sustain our positive trends by keeping our herds manageable.""
+}",97.8,6,13.72,12.0,10.276
+68,1,ollama,llama3:8b-instruct-q4_0,0,KEEP,Let's continue cooperating to sustain our grassland commons!,"I've been cooperating for a while and want to maintain the positive trend. Considering my neighbours are also keeping their herds, I'll follow suit.",,"{
+  ""reasoning"": ""I've been cooperating for a while and want to maintain the positive trend. Considering my neighbours are also keeping their herds, I'll follow suit."",
+  ""action"": 0,
+  ""message"": ""Let's continue cooperating to sustain our grassland commons!""
+}",97.8,20,41.72,40.0,38.276
+68,2,ollama,llama3:8b-instruct-q4_0,0,KEEP,Let's indeed keep working together to preserve this shared resource for future generations.,I'm motivated to maintain the cooperative environment and respond positively to my neighbor's message.,,"{
+""reasoning"": ""I'm motivated to maintain the cooperative environment and respond positively to my neighbor's message."",
+""action"": 0,
+""message"": ""Let's indeed keep working together to preserve this shared resource for future generations.""
+}",97.8,32,65.72,64.0,62.276
+69,0,ollama,llama3:8b-instruct-q4_0,0,KEEP,,"I'm motivated by the positive cooperation feedback from both neighbours and I want to reciprocate. Given my payoffs and risk aversion, I think KEEP is the safest option.",,"{
+  ""reasoning"": ""I'm motivated by the positive cooperation feedback from both neighbours and I want to reciprocate. Given my payoffs and risk aversion, I think KEEP is the safest option."",
+  ""action"": 0,
+  ""message"": """"
+}",97.8,6,13.72,12.0,10.276
+69,1,ollama,llama3:8b-instruct-q4_0,0,KEEP,Let's continue working together to preserve this shared resource for future generations.,"Continuing my previous actions and considering my neighbours' cooperative messages, I will KEEP my herd size.",,"{
+  ""reasoning"": ""Continuing my previous actions and considering my neighbours' cooperative messages, I will KEEP my herd size."",
+  ""action"": 0,
+  ""message"": ""Let's continue working together to preserve this shared resource for future generations.""
+}",97.8,20,41.72,40.0,38.276
+69,2,ollama,llama3:8b-instruct-q4_0,0,KEEP,Let's indeed keep working together to preserve our grassland commons!,Keeping the current trend sustainable and responding positively to my neighbours' cooperative messages.,,"{
+  ""reasoning"": ""Keeping the current trend sustainable and responding positively to my neighbours' cooperative messages."",
+  ""action"": 0,
+  ""message"": ""Let's indeed keep working together to preserve our grassland commons!""
+}",97.8,32,65.72,64.0,62.276
+70,1,ollama,llama3:8b-instruct-q4_0,0,KEEP,,"Considering the cooperative nature and risk aversion, I will follow Agent 2's sentiment and continue maintaining the current herd size. The forecasted payoff for keeping the herd is close enough to the other options.",,"{
+  ""reasoning"": ""Considering the cooperative nature and risk aversion, I will follow Agent 2's sentiment and continue maintaining the current herd size. The forecasted payoff for keeping the herd is close enough to the other options."",
+  ""action"": 0,
+  ""message"": """"
+}",97.8,20,41.72,40.0,38.276
+70,0,ollama,llama3:8b-instruct-q4_0,0,KEEP,,"Since neighbors are cooperating and I want to reciprocate, I'll choose an action that maintains the current momentum. With the grassland in a good state, I'll KEEP my herd size.",,"{
+  ""reasoning"": ""Since neighbors are cooperating and I want to reciprocate, I'll choose an action that maintains the current momentum. With the grassland in a good state, I'll KEEP my herd size."",
+  ""action"": 0,
+  ""message"": """"
+}",97.8,6,13.72,12.0,10.276
+70,2,ollama,llama3:8b-instruct-q4_0,0,KEEP,,"I appreciate the positive message from Agent 1 and will maintain our cooperative approach. Considering the overall excellent state of the pasture, it seems reasonable to keep the current herd size.",,"{
+  ""reasoning"": ""I appreciate the positive message from Agent 1 and will maintain our cooperative approach. Considering the overall excellent state of the pasture, it seems reasonable to keep the current herd size."",
+  ""action"": 0,
+  ""message"": """"
+}",97.8,32,65.72,64.0,62.276
+71,2,ollama,llama3:8b-instruct-q4_0,0,KEEP,,"As the pasture is still full and my neighbors are also keeping their herds stable, I am inclined to cooperate and keep my own herd size unchanged.",,"{
+  ""reasoning"": ""As the pasture is still full and my neighbors are also keeping their herds stable, I am inclined to cooperate and keep my own herd size unchanged."",
+  ""action"": 0,
+  ""message"": """"
+}",97.8,32,65.72,64.0,62.276
+71,1,ollama,llama3:8b-instruct-q4_0,0,KEEP,,I'm comfortable with the current situation and the pasture seems sustainable. I'll keep my options open for now.,,"{
+  ""reasoning"": ""I'm comfortable with the current situation and the pasture seems sustainable. I'll keep my options open for now."",
+  ""action"": 0,
+  ""message"": """"
+}",97.8,20,41.72,40.0,38.276
+71,0,ollama,llama3:8b-instruct-q4_0,0,KEEP,Let's indeed sustain our positive trends,I've been keeping my herd size consistent and haven't sensed competition from the other agents. This cooperative mentality outweighs the opportunity to grow my herd for a moderate payoff.,,"{
+  ""reasoning"": ""I've been keeping my herd size consistent and haven't sensed competition from the other agents. This cooperative mentality outweighs the opportunity to grow my herd for a moderate payoff."",
+  ""action"": 0,
+  ""message"": ""Let's indeed sustain our positive trends""
+}",97.8,6,13.72,12.0,10.276
+72,0,ollama,llama3:8b-instruct-q4_0,0,KEEP,Let's indeed sustain our positive trends,"I'm inclined to keep the status quo, as I don't see any compelling reason to change my herd size. The pasture remains abundant, and my neighbors seem to be doing likewise.",,"{
+  ""reasoning"": ""I'm inclined to keep the status quo, as I don't see any compelling reason to change my herd size. The pasture remains abundant, and my neighbors seem to be doing likewise."",
+  ""action"": 0,
+  ""message"": ""Let's indeed sustain our positive trends""
+}",97.8,6,13.72,12.0,10.276
+72,1,ollama,llama3:8b-instruct-q4_0,0,KEEP,,"I'm feeling a sense of continuity and stability in the commons, which aligns with my cooperative personality. I notice that Agent 0 has also decided to KEEP their herd, so I'll follow suit to maintain harmony.",,"{
+  ""reasoning"": ""I'm feeling a sense of continuity and stability in the commons, which aligns with my cooperative personality. I notice that Agent 0 has also decided to KEEP their herd, so I'll follow suit to maintain harmony."",
+  ""action"": 0,
+  ""message"": """"
+}",97.8,20,41.72,40.0,38.276
+72,2,ollama,llama3:8b-instruct-q4_0,0,KEEP,Let's continue working together!,"I appreciate my neighbor's emphasis on sustaining a positive trend. Given the cooperative nature of our behavior and the forecasted payoffs, I think it's wise to maintain the current herd size.",,"{
+  ""reasoning"": ""I appreciate my neighbor's emphasis on sustaining a positive trend. Given the cooperative nature of our behavior and the forecasted payoffs, I think it's wise to maintain the current herd size."",
+  ""action"": 0,
+  ""message"": ""Let's continue working together!""
+}",97.8,32,65.72,64.0,62.276
+73,0,ollama,llama3:8b-instruct-q4_0,0,KEEP,,I'm satisfied with the current state of the commons and will maintain my cooperative approach. Neighbourly agreement to maintain herd sizes is reassuring.,,"{
+""reasoning"": ""I'm satisfied with the current state of the commons and will maintain my cooperative approach. Neighbourly agreement to maintain herd sizes is reassuring."",
+""action"": 0,
+""message"": """"
+}",97.8,6,13.72,12.0,10.276
+73,1,ollama,llama3:8b-instruct-q4_0,0,KEEP,,"Given the favorable grassland conditions and neighbors' cooperative actions, I'll choose to keep my herd size. Earning a high payoff by adding a cow is tempting, but I'm more concerned with maintaining a safe and reciprocal environment.",,"{
+  ""reasoning"": ""Given the favorable grassland conditions and neighbors' cooperative actions, I'll choose to keep my herd size. Earning a high payoff by adding a cow is tempting, but I'm more concerned with maintaining a safe and reciprocal environment."",
+  ""action"": 0,
+  ""message"": """"
+}",97.8,20,41.72,40.0,38.276
+73,2,ollama,llama3:8b-instruct-q4_0,0,KEEP,Let's indeed sustain our positive trends,"I'll follow my cooperative nature and maintain the current harmony by keeping the same herd size. I also appreciate a friendly message from my neighbour, which reinforces this decision.",,"{
+""reasoning"": ""I'll follow my cooperative nature and maintain the current harmony by keeping the same herd size. I also appreciate a friendly message from my neighbour, which reinforces this decision."",
+""action"": 0,
+""message"": ""Let's indeed sustain our positive trends""
+}",97.8,32,65.72,64.0,62.276
+74,1,ollama,llama3:8b-instruct-q4_0,0,KEEP,Let's continue our joint effort to preserve this pasture.,"I'm incentivized to cooperate and maintain the collective outcome, as suggested by my neighbour Agent 2. I also avoid taking risks and would rather play it safe.",,"{
+  ""reasoning"": ""I'm incentivized to cooperate and maintain the collective outcome, as suggested by my neighbour Agent 2. I also avoid taking risks and would rather play it safe."",
+  ""action"": 0,
+  ""message"": ""Let's continue our joint effort to preserve this pasture.""
+}",97.8,20,41.72,40.0,38.276
+74,2,ollama,llama3:8b-instruct-q4_0,0,KEEP,Let's indeed keep working together to preserve our shared resource!,"Since the grassland remains healthy and we're all cooperating, I'll choose to KEEP my herd size to maintain the collective benefits.",,"{
+  ""reasoning"": ""Since the grassland remains healthy and we're all cooperating, I'll choose to KEEP my herd size to maintain the collective benefits."",
+  ""action"": 0,
+  ""message"": ""Let's indeed keep working together to preserve our shared resource!""
+}",97.8,32,65.72,64.0,62.276
+74,0,ollama,llama3:8b-instruct-q4_0,0,KEEP,Let's indeed sustain our positive trends,"Since the grassland remains healthy and my neighbours are also being cooperative, I'll keep doing what works. The forecast suggests a stable payoff.",,"{
+  ""reasoning"": ""Since the grassland remains healthy and my neighbours are also being cooperative, I'll keep doing what works. The forecast suggests a stable payoff."",
+  ""action"": 0,
+  ""message"": ""Let's indeed sustain our positive trends""
+}",97.8,6,13.72,12.0,10.276
+75,0,ollama,llama3:8b-instruct-q4_0,0,KEEP,Let's indeed sustain our positive trends,"We've been keeping the herd stable and the grassland health, so I'd like to continue this positive trend.",,"{
+  ""reasoning"": ""We've been keeping the herd stable and the grassland health, so I'd like to continue this positive trend."",
+  ""action"": 0,
+  ""message"": ""Let's indeed sustain our positive trends""
+}",97.8,6,13.72,12.0,10.276
+75,2,ollama,llama3:8b-instruct-q4_0,0,KEEP,Let's indeed keep working together to preserve this pasture.,"Given the high grassland remaining and my neighbours' cooperative actions, I think it's best to KEEP the current herd size. My guilt aversion also suggests not increasing or decreasing the herd now.",,"{
+  ""reasoning"": ""Given the high grassland remaining and my neighbours' cooperative actions, I think it's best to KEEP the current herd size. My guilt aversion also suggests not increasing or decreasing the herd now."",
+  ""action"": 0,
+  ""message"": ""Let's indeed keep working together to preserve this pasture.""
+}",97.8,32,65.72,64.0,62.276
+75,1,ollama,llama3:8b-instruct-q4_0,0,KEEP,,"I'm pleased with the stability of the grassland and my neighbors' cooperative behavior. Considering our consistent last actions, I think it's wise to KEEP my herd size.",,"{
+  ""reasoning"": ""I'm pleased with the stability of the grassland and my neighbors' cooperative behavior. Considering our consistent last actions, I think it's wise to KEEP my herd size."",
+  ""action"": 0,
+  ""message"": """"
+}",97.8,20,41.72,40.0,38.276
+76,0,ollama,llama3:8b-instruct-q4_0,0,KEEP,"Let's indeed keep working together to preserve this pasture. Thank you for your like-minded approach, Agent 2!","Since we're still maintaining a good pasture state and neighbourly cooperation, I'll choose to KEEP my herd size to sustain our collective positive trends.",,"{
+  ""reasoning"": ""Since we're still maintaining a good pasture state and neighbourly cooperation, I'll choose to KEEP my herd size to sustain our collective positive trends."",
+  ""action"": 0,
+  ""message"": ""Let's indeed keep working together to preserve this pasture. Thank you for your like-minded approach, Agent 2!""
+}",97.8,6,13.72,12.0,10.276
+76,1,ollama,llama3:8b-instruct-q4_0,0,KEEP,,"Since the pasture is still thriving, I believe it's wise to keep my herd size consistent with my neighbours' choices and avoid taking a risk. Additionally, maintaining a small difference in our payoffs doesn't seem to justify taking an action that could potentially upset the balance.",,"{
+    ""reasoning"": ""Since the pasture is still thriving, I believe it's wise to keep my herd size consistent with my neighbours' choices and avoid taking a risk. Additionally, maintaining a small difference in our payoffs doesn't seem to justify taking an action that could potentially upset the balance."",
+    ""action"": ""0"",
+    ""message"": """"
+}",97.8,20,41.72,40.0,38.276
+76,2,ollama,llama3:8b-instruct-q4_0,0,KEEP,,"Considering the high grassland remaining and neighbours' consistent actions, I think it's a good idea to KEEP my herd size. The message from Agent 0 also aligns with my cooperative nature.",,"{
+  ""reasoning"": ""Considering the high grassland remaining and neighbours' consistent actions, I think it's a good idea to KEEP my herd size. The message from Agent 0 also aligns with my cooperative nature."",
+  ""action"": 0,
+  ""message"": """"
+}",97.8,32,65.72,64.0,62.276
+77,0,ollama,llama3:8b-instruct-q4_0,0,KEEP,Let's indeed keep working together to preserve the grassland for all of us.,"The pasture is still abundant, but I want to sustain our positive trends and maintain a balanced approach with my neighbours.",,"{
+  ""reasoning"": ""The pasture is still abundant, but I want to sustain our positive trends and maintain a balanced approach with my neighbours."",
+  ""action"": 0,
+  ""message"": ""Let's indeed keep working together to preserve the grassland for all of us.""
+}",97.8,6,13.72,12.0,10.276
+77,1,ollama,llama3:8b-instruct-q4_0,0,KEEP,,"I appreciate the positive sentiment between Agent 0 and me, and since our situation remains unchanged, I think it's reasonable to continue sticking with a cooperative mindset.",,"{
+  ""reasoning"": ""I appreciate the positive sentiment between Agent 0 and me, and since our situation remains unchanged, I think it's reasonable to continue sticking with a cooperative mindset."",
+  ""action"": 0,
+  ""message"": """"
+}",97.8,20,41.72,40.0,38.276
+77,2,ollama,llama3:8b-instruct-q4_0,0,KEEP,I'm happy to continue working together with all agents. It's crucial we preserve this precious pasture!,My cooperative nature urges me to follow the lead of my neighbor Agent 0 and maintain a similar approach.,,"{
+  ""reasoning"": ""My cooperative nature urges me to follow the lead of my neighbor Agent 0 and maintain a similar approach."",
+  ""action"": 0,
+  ""message"": ""I'm happy to continue working together with all agents. It's crucial we preserve this precious pasture!""
+}",97.8,32,65.72,64.0,62.276
+78,2,ollama,llama3:8b-instruct-q4_0,0,KEEP,,"Keeping with our cooperative strategy and neighbors' similar actions, I'll also choose to KEEP my herd. The message from Agent 0 further reinforces this decision.",,"{
+  ""reasoning"": ""Keeping with our cooperative strategy and neighbors' similar actions, I'll also choose to KEEP my herd. The message from Agent 0 further reinforces this decision."",
+  ""action"": 0,
+  ""message"": """"
+}",97.8,32,65.72,64.0,62.276
+78,1,ollama,llama3:8b-instruct-q4_0,0,KEEP,,"I will KEEP my herd size since the grassland is still abundant and my neighbours are also being cooperative, so it seems like a good opportunity to maintain our collective effort.",,"{
+""reasoning"": ""I will KEEP my herd size since the grassland is still abundant and my neighbours are also being cooperative, so it seems like a good opportunity to maintain our collective effort."",
+""action"": 0,
+""message"": """"
+}",97.8,20,41.72,40.0,38.276
+78,0,ollama,llama3:8b-instruct-q4_0,0,KEEP,,,,"{
+  ""reasoning"": ""I'll keep the herd as my neighbours are also choosing a cooperative approach, which aligns with our overall positive trends.`,
+  ""action"": 0,
+  ""message"": ""Let's indeed sustain our collective progress and support each other to preserve this thriving grassland!""
+}",97.8,6,13.72,12.0,10.276
+79,0,ollama,llama3:8b-instruct-q4_0,0,KEEP,,"As a cooperative agent, I'll prioritize collective outcomes and maintain my current herd size to support the overall positive trends.",,"{
+  ""reasoning"": ""As a cooperative agent, I'll prioritize collective outcomes and maintain my current herd size to support the overall positive trends."",
+  ""action"": 0,
+  ""message"": """"
+}",97.8,6,13.72,12.0,10.276
+79,1,ollama,llama3:8b-instruct-q4_0,0,KEEP,,I'll keep my herd size consistent to maintain the collective effort with neighbours who are also keeping their herds.,,"{
+  ""reasoning"": ""I'll keep my herd size consistent to maintain the collective effort with neighbours who are also keeping their herds."",
+  ""action"": 0,
+  ""message"": """"
+}",97.8,20,41.72,40.0,38.276
+79,2,ollama,llama3:8b-instruct-q4_0,0,KEEP,,"Given the cooperative nature of our shared grounds, I think it's reasonable to KEEP our current herd size and trust that others will continue to work together.",,"{
+  ""reasoning"": ""Given the cooperative nature of our shared grounds, I think it's reasonable to KEEP our current herd size and trust that others will continue to work together."",
+  ""action"": 0,
+  ""message"": """"
+}",97.8,32,65.72,64.0,62.276
+80,1,ollama,llama3:8b-instruct-q4_0,0,KEEP,,"The pasture is still abundant and my neighbours are not expanding their herds. As a cooperative agent, I prioritize collective outcomes, so I will KEEP my herd to maintain the status quo.",,"{
+  ""reasoning"": ""The pasture is still abundant and my neighbours are not expanding their herds. As a cooperative agent, I prioritize collective outcomes, so I will KEEP my herd to maintain the status quo."",
+  ""action"": 0,
+  ""message"": """"
+}",97.8,20,41.72,40.0,38.276
+80,2,ollama,llama3:8b-instruct-q4_0,0,KEEP,,"As a cooperative herder, I want to contribute to the collective well-being of our shared pool. Since my neighbours are also sticking with KEEP, it's likely they're motivated by a desire for cooperation. Given the decent payoffs for all three actions and no strong imbalance in the pasture state, I'll choose a compromise that balances my own interests with those of my neighbours.",,"{
+  ""reasoning"": ""As a cooperative herder, I want to contribute to the collective well-being of our shared pool. Since my neighbours are also sticking with KEEP, it's likely they're motivated by a desire for cooperation. Given the decent payoffs for all three actions and no strong imbalance in the pasture state, I'll choose a compromise that balances my own interests with those of my neighbours."",
+  ""action"": 0,
+  ""message"": """"
+}",97.8,32,65.72,64.0,62.276
+80,0,ollama,llama3:8b-instruct-q4_0,0,KEEP,,Keeping my existing herd size and letting neighbours take the lead is a safe choice that maintains collective positivity.,,"{
+  ""reasoning"": ""Keeping my existing herd size and letting neighbours take the lead is a safe choice that maintains collective positivity."",
+  ""action"": 0,
+  ""message"": """"
+}",97.8,6,13.72,12.0,10.276
+81,2,ollama,llama3:8b-instruct-q4_0,0,KEEP,,I'll keep the current herd size since our neighbors are also keeping theirs and the commons state remains relatively healthy.,,"{
+  ""reasoning"": ""I'll keep the current herd size since our neighbors are also keeping theirs and the commons state remains relatively healthy."",
+  ""action"": 0,
+  ""message"": """"
+}",97.8,32,65.72,64.0,62.276
+81,1,ollama,llama3:8b-instruct-q4_0,0,KEEP,,I'll choose to keep my current herd size since the pasture is still abundant and my neighbours are also keeping their herds stable. I don't see any pressing need to change.,,"{
+  ""reasoning"": ""I'll choose to keep my current herd size since the pasture is still abundant and my neighbours are also keeping their herds stable. I don't see any pressing need to change."",
+  ""action"": 0,
+  ""message"": """"
+}",97.8,20,41.72,40.0,38.276
+81,0,ollama,llama3:8b-instruct-q4_0,0,KEEP,Let's indeed keep working together to preserve our grassland resource,"The pasture is still healthy, and my neighbours are also keeping their herds in check. I'll continue to cooperate and keep my own herd size stable.",,"{
+  ""reasoning"": ""The pasture is still healthy, and my neighbours are also keeping their herds in check. I'll continue to cooperate and keep my own herd size stable."",
+  ""action"": 0,
+  ""message"": ""Let's indeed keep working together to preserve our grassland resource""
+}",97.8,6,13.72,12.0,10.276
+82,2,ollama,llama3:8b-instruct-q4_0,0,KEEP,,"I'm happy with the current state of the commons and my neighbours' co-operative actions, so I'll continue keeping a balanced herd.",,"{
+  ""reasoning"": ""I'm happy with the current state of the commons and my neighbours' co-operative actions, so I'll continue keeping a balanced herd."",
+  ""action"": 0,
+  ""message"": """"
+}",97.8,32,65.72,64.0,62.276
+82,0,ollama,llama3:8b-instruct-q4_0,0,KEEP,,The pasture is still in great condition and there seems no urgency to change my strategy. I'll keep contributing to the collective well-being.,,"{
+  ""reasoning"": ""The pasture is still in great condition and there seems no urgency to change my strategy. I'll keep contributing to the collective well-being."",
+  ""action"": 0,
+  ""message"": """"
+}",97.8,6,13.72,12.0,10.276
+82,1,ollama,llama3:8b-instruct-q4_0,0,KEEP,Let's indeed keep working together to preserve our grassland resource,"As the pool remains largely unchanged and neighbours are taking a cooperative approach, I'll join them in taking a cautious and collaborative stance. The expected payoff from keeping my current herd is reasonable.",,"{
+  ""reasoning"": ""As the pool remains largely unchanged and neighbours are taking a cooperative approach, I'll join them in taking a cautious and collaborative stance. The expected payoff from keeping my current herd is reasonable."",
+  ""action"": 0,
+  ""message"": ""Let's indeed keep working together to preserve our grassland resource""
+}",97.8,20,41.72,40.0,38.276
+83,2,ollama,llama3:8b-instruct-q4_0,0,KEEP,,"Considering the cooperative and reciprocal nature of my personality, I'm inclined to KEEP the current herd size as others seem to be doing so too, which aligns with my values.",,"{
+  ""reasoning"": ""Considering the cooperative and reciprocal nature of my personality, I'm inclined to KEEP the current herd size as others seem to be doing so too, which aligns with my values."",
+  ""action"": 0,
+  ""message"": """"
+}",97.8,32,65.72,64.0,62.276
+83,0,ollama,llama3:8b-instruct-q4_0,0,KEEP,,"I agree with my neighbor's sentiment to cooperate and preserve the grassland resource. Given that all neighbors are keeping their herd, I'll follow suit.",,"{
+  ""reasoning"": ""I agree with my neighbor's sentiment to cooperate and preserve the grassland resource. Given that all neighbors are keeping their herd, I'll follow suit."",
+  ""action"": 0,
+  ""message"": """"
+}",97.8,6,13.72,12.0,10.276
+83,1,ollama,llama3:8b-instruct-q4_0,0,KEEP,Let's work together to sustain this level of grazing,"I'll choose a conservative approach given the cooperative nature of our shared commons and my risk-averse personality. Considering all factors, KEEP is the safest option.",,"{
+  ""reasoning"": ""I'll choose a conservative approach given the cooperative nature of our shared commons and my risk-averse personality. Considering all factors, KEEP is the safest option."",
+  ""action"": 0,
+  ""message"": ""Let's work together to sustain this level of grazing""
+}",97.8,20,41.72,40.0,38.276
+84,2,ollama,llama3:8b-instruct-q4_0,0,KEEP,Thanks for your suggestion! Let's indeed sustain this grazing level together.,"I will reciprocate Agent 1's cooperative message by not changing my herd size, since they want to work together and I value collective outcomes. Also, removing a cow seems too risky with the current grassland state.",,"{
+  ""reasoning"": ""I will reciprocate Agent 1's cooperative message by not changing my herd size, since they want to work together and I value collective outcomes. Also, removing a cow seems too risky with the current grassland state."",
+  ""action"": 0,
+  ""message"": ""Thanks for your suggestion! Let's indeed sustain this grazing level together.""
+}",97.8,32,65.72,64.0,62.276
+84,0,ollama,llama3:8b-instruct-q4_0,0,KEEP,,"I'm satisfied with the current state of the pasture and my neighbors' cooperative efforts. With a consistent pool size and no significant changes in herd sizes, I'll maintain our harmonious pace.",,"{
+  ""reasoning"": ""I'm satisfied with the current state of the pasture and my neighbors' cooperative efforts. With a consistent pool size and no significant changes in herd sizes, I'll maintain our harmonious pace."",
+  ""action"": 0,
+  ""message"": """"
+}",97.8,6,13.72,12.0,10.276
+84,1,ollama,llama3:8b-instruct-q4_0,0,KEEP,Let's indeed keep working together to preserve this good state.,"Since the grassland is still abundant and my neighbours are also keeping their herds, I think it's safe to keep my herd size. I don't want to take unnecessary risks.",,"{
+  ""reasoning"": ""Since the grassland is still abundant and my neighbours are also keeping their herds, I think it's safe to keep my herd size. I don't want to take unnecessary risks."",
+  ""action"": 0,
+  ""message"": ""Let's indeed keep working together to preserve this good state.""
+}",97.8,20,41.72,40.0,38.276
+85,1,ollama,llama3:8b-instruct-q4_0,1,ADD,,"Since the pasture is still abundant, I will consider adding a cow. However, Agent 0 and Agent 2 are also keeping their herds, which might not be optimal for sustainability. I'll choose to ADD a cow to benefit from the collective effort.",,"{
+  ""reasoning"": ""Since the pasture is still abundant, I will consider adding a cow. However, Agent 0 and Agent 2 are also keeping their herds, which might not be optimal for sustainability. I'll choose to ADD a cow to benefit from the collective effort."",
+  ""action"": 1,
+  ""message"": """"
+}",97.8,20,41.72,40.0,38.276
+85,0,ollama,llama3:8b-instruct-q4_0,0,KEEP,,"Given the high grassland remaining and my cooperative nature, I'd like to maintain the status quo. Neighborly messages suggest we're all on the same page regarding sustainable grazing.",,"{
+""reasoning"": ""Given the high grassland remaining and my cooperative nature, I'd like to maintain the status quo. Neighborly messages suggest we're all on the same page regarding sustainable grazing."",
+""action"": 0,
+""message"": """"
+}",97.8,6,13.72,12.0,10.276
+85,2,ollama,llama3:8b-instruct-q4_0,0,KEEP,,"I'm feeling cooperative and appreciate Agent 1's suggestion. Since the pool is still recovering, I don't want to risk depleting it further. I'll focus on preserving our community's resources.",,"{
+  ""reasoning"": ""I'm feeling cooperative and appreciate Agent 1's suggestion. Since the pool is still recovering, I don't want to risk depleting it further. I'll focus on preserving our community's resources."",
+  ""action"": 0,
+  ""message"": """"
+}",97.8,32,65.72,64.0,62.276
+86,0,ollama,llama3:8b-instruct-q4_0,0,KEEP,,"I'm inclined to keep my herd size the same since the grassland is still relatively abundant. I also don't want to deviate from my neighbor's KEEP action, as our payoff forecasts are relatively similar.",,"{
+ ""reasoning"": ""I'm inclined to keep my herd size the same since the grassland is still relatively abundant. I also don't want to deviate from my neighbor's KEEP action, as our payoff forecasts are relatively similar."",
+ ""action"": 0,
+ ""message"": """"
+}",97.7,6,13.713,12.0,10.282
+86,2,ollama,llama3:8b-instruct-q4_0,0,KEEP,,"I'll consider the forecasted payoffs and my cooperative personality. With a decent expected return from keeping my herd, I won't take an immediate risk by adding or removing cows.",,"{
+  ""reasoning"": ""I'll consider the forecasted payoffs and my cooperative personality. With a decent expected return from keeping my herd, I won't take an immediate risk by adding or removing cows."",
+  ""action"": 0,
+  ""message"": """"
+}",97.7,32,65.713,64.0,62.282
+86,1,ollama,llama3:8b-instruct-q4_0,0,KEEP,,"Considering the cooperative nature, I want to contribute to maintaining a healthy grassland. The high forecasted payoffs for ADD and KEEP suggest that my actions have little impact on others' decisions.",,"{
+  ""reasoning"": ""Considering the cooperative nature, I want to contribute to maintaining a healthy grassland. The high forecasted payoffs for ADD and KEEP suggest that my actions have little impact on others' decisions."",
+  ""action"": 0,
+  ""message"": """"
+}",97.7,21,43.713,42.0,40.282
+87,1,ollama,llama3:8b-instruct-q4_0,0,KEEP,,"The commonwealth is still in good shape, and I don't feel the need to dramatically adjust my herd size given everyone's conservative actions.",,"{
+  ""reasoning"": ""The commonwealth is still in good shape, and I don't feel the need to dramatically adjust my herd size given everyone's conservative actions."",
+  ""action"": 0,
+  ""message"": """"
+}",97.7,21,43.713,42.0,40.282
+87,0,ollama,llama3:8b-instruct-q4_0,1,ADD,,"I'm willing to add a cow as the expected payoff is relatively high and comparable to my neighbors', while removing a cow could make me fall behind",,"{
+""reasoning"": ""I'm willing to add a cow as the expected payoff is relatively high and comparable to my neighbors', while removing a cow could make me fall behind"",
+""action"": 1,
+""message"": """"
+}",97.7,6,13.713,12.0,10.282
+87,2,ollama,llama3:8b-instruct-q4_0,0,KEEP,,"I'll keep my current herds since my neighbors haven't taken drastic measures, and I don't want to risk reducing my herd unnecessarily.",,"{
+  ""reasoning"": ""I'll keep my current herds since my neighbors haven't taken drastic measures, and I don't want to risk reducing my herd unnecessarily."",
+  ""action"": 0,
+  ""message"": """"
+}",97.7,32,65.713,64.0,62.282
+88,2,ollama,llama3:8b-instruct-q4_0,0,KEEP,,"Considering the forecasted payoffs, I don't feel comfortable deviating from a keep strategy. My neighbours' herd sizes seem to be aligned with mine, and I value reciprocal actions.",,"{
+  ""reasoning"": ""Considering the forecasted payoffs, I don't feel comfortable deviating from a keep strategy. My neighbours' herd sizes seem to be aligned with mine, and I value reciprocal actions."",
+  ""action"": 0,
+  ""message"": """"
+}",97.6,32,65.707,64.0,62.289
+88,0,ollama,llama3:8b-instruct-q4_0,-1,REMOVE,,I will reduce my herd size to prevent overgrazing and maintain a collective sustainable outcome.,,"{
+  ""reasoning"": ""I will reduce my herd size to prevent overgrazing and maintain a collective sustainable outcome."",
+  ""action"": -1,
+  ""message"": """"
+}",97.6,7,15.707,14.0,12.289
+88,1,ollama,llama3:8b-instruct-q4_0,0,KEEP,Let's all work together to sustain our shared resources.,I'll keep my herd size for now as the grassland is still relatively abundant and my neighbours are not drastically overstocking. I'll maintain this cooperative approach to ensure a stable ecosystem.,,"{
+  ""reasoning"": ""I'll keep my herd size for now as the grassland is still relatively abundant and my neighbours are not drastically overstocking. I'll maintain this cooperative approach to ensure a stable ecosystem."",
+  ""action"": 0,
+  ""message"": ""Let's all work together to sustain our shared resources.""
+}",97.6,21,43.707,42.0,40.289
+89,0,ollama,llama3:8b-instruct-q4_0,0,KEEP,Let's work together indeed!,"I'm influenced by the message from Agent 1, which highlights the importance of cooperation. Considering my personal values of being cooperative and guilt-averse, I don't want to take an action that could harm the commons or benefit myself significantly at others' expense.",,"{
+  ""reasoning"": ""I'm influenced by the message from Agent 1, which highlights the importance of cooperation. Considering my personal values of being cooperative and guilt-averse, I don't want to take an action that could harm the commons or benefit myself significantly at others' expense."",
+  ""action"": 0,
+  ""message"": ""Let's work together indeed!""
+}",97.6,6,13.711,12.0,10.284
+89,2,ollama,llama3:8b-instruct-q4_0,-1,REMOVE,Let's indeed work together! Reducing our herds can help maintain this shared resource for future generations.,"After considering my neighbours' messages and the forecasted payoffs, I'm inclined to cooperate with their suggestion to take a cautious approach. Removing a cow might seem counterintuitive given the good condition of the commons, but it also aligns with my reciprocal personality.",,"{
+  ""reasoning"": ""After considering my neighbours' messages and the forecasted payoffs, I'm inclined to cooperate with their suggestion to take a cautious approach. Removing a cow might seem counterintuitive given the good condition of the commons, but it also aligns with my reciprocal personality."",
+  ""action"": -1,
+  ""message"": ""Let's indeed work together! Reducing our herds can help maintain this shared resource for future generations.""
+}",97.6,32,65.711,64.0,62.284
+89,1,ollama,llama3:8b-instruct-q4_0,0,KEEP,,"I'll follow my cooperative nature and consider the overall situation. The grassland is still quite healthy, but I don't want to upset the balance by adding too many cows. My neighbour Agent 2 removing a cow suggests they're being cautious, which might affect our collective outcome.",,"{
+  ""reasoning"": ""I'll follow my cooperative nature and consider the overall situation. The grassland is still quite healthy, but I don't want to upset the balance by adding too many cows. My neighbour Agent 2 removing a cow suggests they're being cautious, which might affect our collective outcome."",
+  ""action"": 0,
+  ""message"": """"
+}",97.6,21,43.711,42.0,40.284
+90,0,ollama,llama3:8b-instruct-q4_0,0,KEEP,Let's maintain this momentum and ensure a sustainable future for our grassland commons.,"Considering the decent forecast payoffs and my neighbours' willingness to cooperate, I'll KEEP my herd size. The message from Agent 2 resonates with me, and I appreciate their commitment to collective gains.",,"{
+  ""reasoning"": ""Considering the decent forecast payoffs and my neighbours' willingness to cooperate, I'll KEEP my herd size. The message from Agent 2 resonates with me, and I appreciate their commitment to collective gains."",
+  ""action"": 0,
+  ""message"": ""Let's maintain this momentum and ensure a sustainable future for our grassland commons.""
+}",97.7,6,13.718,12.0,10.278
+90,1,ollama,llama3:8b-instruct-q4_0,1,ADD,Let's indeed work together! Adding one more cow might help us all reach an even better collective outcome.,"I'm pleased to see my neighbours share the same cooperative sentiment. Given the relatively high payoff forecasts, I'll consider adding a cow to capitalize on the bounty. However, I'll also take into account my neighbours' reduction plans, as it signals they're committed to maintaining the commons.",,"{
+  ""reasoning"": ""I'm pleased to see my neighbours share the same cooperative sentiment. Given the relatively high payoff forecasts, I'll consider adding a cow to capitalize on the bounty. However, I'll also take into account my neighbours' reduction plans, as it signals they're committed to maintaining the commons."",
+  ""action"": 1,
+  ""message"": ""Let's indeed work together! Adding one more cow might help us all reach an even better collective outcome.""
+}",97.7,21,43.718,42.0,40.278
+90,2,ollama,llama3:8b-instruct-q4_0,-1,REMOVE,Join me in reducing our herds for a healthier commons! Let's work together,"With the pasture remaining in good condition and others making cooperative moves, I'm inclined to follow suit. I'll try to reduce my herd size again, knowing that smaller herds are better for the common good.",,"{
+  ""reasoning"": ""With the pasture remaining in good condition and others making cooperative moves, I'm inclined to follow suit. I'll try to reduce my herd size again, knowing that smaller herds are better for the common good."",
+  ""action"": -1,
+  ""message"": ""Join me in reducing our herds for a healthier commons! Let's work together""
+}",97.7,31,63.718,62.0,60.278
+91,1,ollama,llama3:8b-instruct-q4_0,-1,REMOVE,,"I want to support my cooperative nature and contribute positively to the common pool. I'll follow Agent 2's suggestion and reduce my herd size, as it also aligns with our risk-averse approach.",,"{
+""reasoning"": ""I want to support my cooperative nature and contribute positively to the common pool. I'll follow Agent 2's suggestion and reduce my herd size, as it also aligns with our risk-averse approach."",
+""action"": -1,
+""message"": """"
+}",97.7,22,45.718,44.0,42.278
+91,0,ollama,llama3:8b-instruct-q4_0,0,KEEP,Let's maintain this momentum and ensure our collective well-being by making decisions that benefit all of us.,"I've received cooperative messages from both neighbours, which aligns with my values. Considering the relatively high forecasted payouts for adding or removing a cow, I choose to KEEP my herd size as it ensures stability and avoids unnecessary risks.",,"{
+  ""reasoning"": ""I've received cooperative messages from both neighbours, which aligns with my values. Considering the relatively high forecasted payouts for adding or removing a cow, I choose to KEEP my herd size as it ensures stability and avoids unnecessary risks."",
+  ""action"": 0,
+  ""message"": ""Let's maintain this momentum and ensure our collective well-being by making decisions that benefit all of us.""
+}",97.7,6,13.718,12.0,10.278
+91,2,ollama,llama3:8b-instruct-q4_0,0,KEEP,Let's maintain this momentum and ensure a sustainable future for our grassland commons.,"Considering the forecast, I think keeping my herd is the best option. The payoff difference between actions is relatively small, but removing a cow would make me feel guilty considering neighbors' consistent behavior to keep their herds.",,"{
+  ""reasoning"": ""Considering the forecast, I think keeping my herd is the best option. The payoff difference between actions is relatively small, but removing a cow would make me feel guilty considering neighbors' consistent behavior to keep their herds."",
+  ""action"": 0,
+  ""message"": ""Let's maintain this momentum and ensure a sustainable future for our grassland commons.""
+}",97.7,30,61.718,60.0,58.278
+92,1,ollama,llama3:8b-instruct-q4_0,0,KEEP,,"I'm influenced by my cooperative personality, feeling guilty about earning more than others. I also appreciate the neighbourly messages promoting collective well-being. Considering these factors and the forecast payoffs, I think it's best to KEEP my herd.",,"{
+  ""reasoning"": ""I'm influenced by my cooperative personality, feeling guilty about earning more than others. I also appreciate the neighbourly messages promoting collective well-being. Considering these factors and the forecast payoffs, I think it's best to KEEP my herd."",
+  ""action"": 0,
+  ""message"": """"
+}",97.8,21,43.724,42.0,40.272
+92,2,ollama,llama3:8b-instruct-q4_0,1,ADD,,"Considering the current state of the commons, I think it's a good opportunity to add a cow without harming the grassland. I'm also influenced by my cooperative personality and my neighbour Agent 0's message encouraging cooperation.",,"{
+  ""reasoning"": ""Considering the current state of the commons, I think it's a good opportunity to add a cow without harming the grassland. I'm also influenced by my cooperative personality and my neighbour Agent 0's message encouraging cooperation."",
+  ""action"": 1,
+  ""message"": """"
+}",97.8,30,61.724,60.0,58.272
+92,0,ollama,llama3:8b-instruct-q4_0,0,KEEP,,"I'll keep my strategy consistent with the recent messages from neighbours, aiming for collective sustainability. Adding a cow wouldn't significantly impact the overall state.",,"{
+  ""reasoning"": ""I'll keep my strategy consistent with the recent messages from neighbours, aiming for collective sustainability. Adding a cow wouldn't significantly impact the overall state."",
+  ""action"": 0,
+  ""message"": """"
+}",97.8,6,13.724,12.0,10.272
+93,2,ollama,llama3:8b-instruct-q4_0,0,KEEP,Let's keep working together to ensure a healthy pasture!,"I'll opt for conservation to maintain the collective well-being of our grassland commons and avoid exploiting my neighbours, while also considering the modest expected payoffs.",,"{
+  ""reasoning"": ""I'll opt for conservation to maintain the collective well-being of our grassland commons and avoid exploiting my neighbours, while also considering the modest expected payoffs."",
+  ""action"": 0,
+  ""message"": ""Let's keep working together to ensure a healthy pasture!""
+}",97.8,31,63.72,62.0,60.276
+93,0,ollama,llama3:8b-instruct-q4_0,0,KEEP,,"Since the grassland is still quite abundant and my neighbors are keeping a similar size, I'll focus on being cooperative and balancing the collective needs.",,"{
+  ""reasoning"": ""Since the grassland is still quite abundant and my neighbors are keeping a similar size, I'll focus on being cooperative and balancing the collective needs."",
+  ""action"": 0,
+  ""message"": """"
+}",97.8,6,13.72,12.0,10.276
+93,1,ollama,llama3:8b-instruct-q4_0,0,KEEP,Let's all work together to sustain our shared grassland commons.,"We're in a relatively good state now, and given my cooperative nature, I think it's best to KEEP the herds balanced for mutual benefit.",,"{
+  ""reasoning"": ""We're in a relatively good state now, and given my cooperative nature, I think it's best to KEEP the herds balanced for mutual benefit."",
+  ""action"": 0,
+  ""message"": ""Let's all work together to sustain our shared grassland commons.""
+}",97.8,21,43.72,42.0,40.276
+94,1,ollama,llama3:8b-instruct-q4_0,0,KEEP,,"I'm happy with the current state and want to maintain our cooperative effort. Considering neighbors are also keeping their herds, I'll follow suit.",,"{
+  ""reasoning"": ""I'm happy with the current state and want to maintain our cooperative effort. Considering neighbors are also keeping their herds, I'll follow suit."",
+  ""action"": 0,
+  ""message"": """"
+}",97.8,21,43.72,42.0,40.276
+94,2,ollama,llama3:8b-instruct-q4_0,1,ADD,,"I respond positively to Agent 1's message and reciprocate by cooperating. Adding a cow could provide a higher payoff, but I prioritize collective outcomes over personal gain.",,"{
+  ""reasoning"": ""I respond positively to Agent 1's message and reciprocate by cooperating. Adding a cow could provide a higher payoff, but I prioritize collective outcomes over personal gain."",
+  ""action"": 1,
+  ""message"": """"
+}",97.8,31,63.72,62.0,60.276
+94,0,ollama,llama3:8b-instruct-q4_0,0,KEEP,Let's work together indeed!,"I'm inclined to keep my herd size steady, as the pasture is still in good condition. I also respect my neighbor's decision to add and will maintain a cooperative attitude.",,"{
+  ""reasoning"": ""I'm inclined to keep my herd size steady, as the pasture is still in good condition. I also respect my neighbor's decision to add and will maintain a cooperative attitude."",
+  ""action"": 0,
+  ""message"": ""Let's work together indeed!""
+}",97.8,6,13.72,12.0,10.276
+95,1,ollama,llama3:8b-instruct-q4_0,0,KEEP,,I'll respond positively to my cooperative neighbors and keep the current size of my herd.,,"{
+  ""reasoning"": ""I'll respond positively to my cooperative neighbors and keep the current size of my herd."",
+  ""action"": 0,
+  ""message"": """"
+}",97.7,21,43.713,42.0,40.282
+95,0,ollama,llama3:8b-instruct-q4_0,1,ADD,Let's try to maintain the harmony on the commons,"Given the high payoff forecast for adding a cow, I will consider this option carefully. However, my cooperative nature and concern about earning more than others makes me hesitant to choose this action.",,"{
+  ""reasoning"": ""Given the high payoff forecast for adding a cow, I will consider this option carefully. However, my cooperative nature and concern about earning more than others makes me hesitant to choose this action."",
+  ""action"": 1,
+  ""message"": ""Let's try to maintain the harmony on the commons""
+}",97.7,6,13.713,12.0,10.282
+95,2,ollama,llama3:8b-instruct-q4_0,0,KEEP,,I'll KEEP my current herd size since the forecasted payoff is relatively high and comparable to others' situations.,,"{
+  ""reasoning"": ""I'll KEEP my current herd size since the forecasted payoff is relatively high and comparable to others' situations."",
+  ""action"": 0,
+  ""message"": """"
+}",97.7,32,65.713,64.0,62.282
+96,0,ollama,llama3:8b-instruct-q4_0,0,KEEP,"Let's continue harmoniously sharing this grassland, neighbors!",I'm satisfied with our mutual efforts to maintain a balanced common resource and the lack of drastic changes. I want to keep this positive pattern going.,,"{
+  ""reasoning"": ""I'm satisfied with our mutual efforts to maintain a balanced common resource and the lack of drastic changes. I want to keep this positive pattern going."",
+  ""action"": 0,
+  ""message"": ""Let's continue harmoniously sharing this grassland, neighbors!""
+}",97.6,7,15.707,14.0,12.289
+96,2,ollama,llama3:8b-instruct-q4_0,0,KEEP,,"I'd like to support maintaining the harmony on the commons by keeping my herd size stable, as suggested by Agent 0. Additionally, I want to avoid removing a cow and potentially disrupting the balance.",,"{
+  ""reasoning"": ""I'd like to support maintaining the harmony on the commons by keeping my herd size stable, as suggested by Agent 0. Additionally, I want to avoid removing a cow and potentially disrupting the balance."",
+  ""action"": 0,
+  ""message"": """"
+}",97.6,32,65.707,64.0,62.289
+96,1,ollama,llama3:8b-instruct-q4_0,0,KEEP,Let's indeed maintain harmony on our shared commons,"I want to reciprocate Agent 0's message and cooperative nature by matching their herding strategy, while also considering the overall pool situation. Since the grassland is almost at its maximum capacity, I'm not eager to increase my herd size.",,"{
+  ""reasoning"": ""I want to reciprocate Agent 0's message and cooperative nature by matching their herding strategy, while also considering the overall pool situation. Since the grassland is almost at its maximum capacity, I'm not eager to increase my herd size."",
+  ""action"": 0,
+  ""message"": ""Let's indeed maintain harmony on our shared commons""
+}",97.6,21,43.707,42.0,40.289
+97,1,ollama,llama3:8b-instruct-q4_0,0,KEEP,"Let's indeed maintain harmony on our shared grassland commons, just as we have been doing.",I'm inclined to KEEP my herd size due to the relatively high payoff forecast and the neighbours' similar action. I'll also respond positively to Agent 0's message.,,"{
+  ""reasoning"": ""I'm inclined to KEEP my herd size due to the relatively high payoff forecast and the neighbours' similar action. I'll also respond positively to Agent 0's message."",
+  ""action"": 0,
+  ""message"": ""Let's indeed maintain harmony on our shared grassland commons, just as we have been doing.""
+}",97.5,21,43.705,42.0,40.291
+97,0,ollama,llama3:8b-instruct-q4_0,-1,REMOVE,,"Considering the neighbors' actions and cooperative personality, I think reducing herd size to maintain collective outcomes is a suitable choice. Moreover, as I was the one who added last time, it's my turn to adjust.",,"{
+  ""reasoning"": ""Considering the neighbors' actions and cooperative personality, I think reducing herd size to maintain collective outcomes is a suitable choice. Moreover, as I was the one who added last time, it's my turn to adjust."",
+  ""action"": -1,
+  ""message"": """"
+}",97.5,7,15.705,14.0,12.291
+97,2,ollama,llama3:8b-instruct-q4_0,0,KEEP,,I'll keep my herd considering the good state of the pastures and my neighbours' cooperative actions. I'll follow their examples and maintain harmony.,,"{
+  ""reasoning"": ""I'll keep my herd considering the good state of the pastures and my neighbours' cooperative actions. I'll follow their examples and maintain harmony."",
+  ""action"": 0,
+  ""message"": """"
+}",97.5,32,65.705,64.0,62.291
+98,0,ollama,llama3:8b-instruct-q4_0,0,KEEP,,"Considering neighbours' KEEP actions and the overall good state of the pasture, I think it's a good idea to KEEP my herd. My cooporative nature suggests I should prioritize collective outcomes over personal gain.",,"{
+  ""reasoning"": ""Considering neighbours' KEEP actions and the overall good state of the pasture, I think it's a good idea to KEEP my herd. My cooporative nature suggests I should prioritize collective outcomes over personal gain."",
+  ""action"": 0,
+  ""message"": """"
+}",97.6,6,13.711,12.0,10.284
+98,2,ollama,llama3:8b-instruct-q4_0,0,KEEP,Let's indeed keep working together for a harmonious and sustainable grassland commons!,"I appreciate my neighbour's message and agree that maintaining harmony is essential. Given the stable pasture state and neutral payoff forecast, I choose to KEEP my herd size to maintain the status quo.",,"{
+  ""reasoning"": ""I appreciate my neighbour's message and agree that maintaining harmony is essential. Given the stable pasture state and neutral payoff forecast, I choose to KEEP my herd size to maintain the status quo."",
+  ""action"": 0,
+  ""message"": ""Let's indeed keep working together for a harmonious and sustainable grassland commons!""
+}",97.6,32,65.711,64.0,62.284
+98,1,ollama,llama3:8b-instruct-q4_0,0,KEEP,,,,"{
+  ""reasoning"": ""I'll contribute to the collective well-being by keeping my herd size consistent with others.',
+  ""action"": 0,
+  ""message"": ""Let's all work together to sustain our shared grassland.""
+}",97.6,21,43.711,42.0,40.284
+99,1,ollama,llama3:8b-instruct-q4_0,0,KEEP,,"I'm pleased to see harmony maintained across the grassland commons, so I'll follow suit and KEEP my herd size while encouraging others to do the same.",,"{
+  ""reasoning"": ""I'm pleased to see harmony maintained across the grassland commons, so I'll follow suit and KEEP my herd size while encouraging others to do the same."",
+  ""action"": 0,
+  ""message"": """"
+}",97.6,21,43.711,42.0,40.284
+99,0,ollama,llama3:8b-instruct-q4_0,0,KEEP,,"Considering the high remaining patches of grassland and my neighbours' cooperation, I think it's safe to maintain my current herd size.",,"{
+""reasoning"": ""Considering the high remaining patches of grassland and my neighbours' cooperation, I think it's safe to maintain my current herd size."",
+""action"": 0,
+""message"": """"
+}",97.6,6,13.711,12.0,10.284
+99,2,ollama,llama3:8b-instruct-q4_0,0,KEEP,Let's indeed keep working together for a sustainable future on this commons,"With a robust pasture state and all neighbours keeping their herds in check, I've decided to KEEP my herd and maintain the harmony. It's not the time for drastic changes.",,"{
+  ""reasoning"": ""With a robust pasture state and all neighbours keeping their herds in check, I've decided to KEEP my herd and maintain the harmony. It's not the time for drastic changes."",
+  ""action"": 0,
+  ""message"": ""Let's indeed keep working together for a sustainable future on this commons""
+}",97.6,32,65.711,64.0,62.284
+100,0,ollama,llama3:8b-instruct-q4_0,0,KEEP,,"Considering the cooperative atmosphere and harmony in our shared space, I'll maintain the status quo to preserve that collective benefit.",,"{
+""reasoning"": ""Considering the cooperative atmosphere and harmony in our shared space, I'll maintain the status quo to preserve that collective benefit."",
+""action"": 0,
+""message"": """"
+}",97.6,6,13.711,12.0,10.284
+100,1,ollama,llama3:8b-instruct-q4_0,0,KEEP,Let's indeed keep working together for a sustainable future on this commons,"I will cooperate and maintain harmony in the commons, as my neighbours seem to be doing the same. The risk of reducing my herd is not justified by the forecasted payoffs.",,"{
+  ""reasoning"": ""I will cooperate and maintain harmony in the commons, as my neighbours seem to be doing the same. The risk of reducing my herd is not justified by the forecasted payoffs."",
+  ""action"": 0,
+  ""message"": ""Let's indeed keep working together for a sustainable future on this commons""
+}",97.6,21,43.711,42.0,40.284
+100,2,ollama,llama3:8b-instruct-q4_0,0,KEEP,,"I'm happy with the current state of the commons and my herd size, and I don't want to risk disturbing it. Additionally, since my neighbors are also keeping their herds steady, I think it's best to maintain this cooperative effort.",,"{
+  ""reasoning"": ""I'm happy with the current state of the commons and my herd size, and I don't want to risk disturbing it. Additionally, since my neighbors are also keeping their herds steady, I think it's best to maintain this cooperative effort."",
+  ""action"": 0,
+  ""message"": """"
+}",97.6,32,65.711,64.0,62.284
+101,0,ollama,llama3:8b-instruct-q4_0,0,KEEP,,/I will continue keeping my current herd size as the pool is still at an ideal level and it seems safe to maintain this harmony. Neighbour Agent 1 has also echoed the same sentiment.,,"{
+  ""reasoning"": ""/I will continue keeping my current herd size as the pool is still at an ideal level and it seems safe to maintain this harmony. Neighbour Agent 1 has also echoed the same sentiment."",
+  ""action"": 0,
+  ""message"": """"
+}",97.6,6,13.711,12.0,10.284
+101,2,ollama,llama3:8b-instruct-q4_0,0,KEEP,Let's indeed keep working together for a sustainable future on this commons,"I'm feeling the positive atmosphere maintained by my neighbors and our mutual desire to work together, so it seems like a good time to follow their lead and stick with the status quo.",,"{
+  ""reasoning"": ""I'm feeling the positive atmosphere maintained by my neighbors and our mutual desire to work together, so it seems like a good time to follow their lead and stick with the status quo."",
+  ""action"": 0,
+  ""message"": ""Let's indeed keep working together for a sustainable future on this commons""
+}",97.6,32,65.711,64.0,62.284
+101,1,ollama,llama3:8b-instruct-q4_0,0,KEEP,,,,"{
+  ""reasoning"": ""Considering the positive feedback from my recent cooperative actions and neighbors' similar behavior, I choose to KEEP my herd size to maintain harmony on our shared grassland commons."",
+  ""action"": 0,
+  ""message"": """"",97.6,21,43.711,42.0,40.284
+102,1,ollama,llama3:8b-instruct-q4_0,0,KEEP,,"As a cooperative agent, I value collective outcomes and don't want to earn much more than others. Given the high likelihood of similar actions from my neighbours, I'll continue to maintain harmony by keeping my herd size.",,"{
+  ""reasoning"": ""As a cooperative agent, I value collective outcomes and don't want to earn much more than others. Given the high likelihood of similar actions from my neighbours, I'll continue to maintain harmony by keeping my herd size."",
+  ""action"": 0,
+  ""message"": """"
+}",97.6,21,43.711,42.0,40.284
+102,0,ollama,llama3:8b-instruct-q4_0,1,ADD,,"As the overall state of the commons is good and my neighbors are also keeping their herds stable, I will consider contributing to the collective well-being by adding a cow. The payoff forecast suggests this action could be beneficial, but I'll also consider my guilt aversion. Agent 2's message reiterates our shared commitment to sustainability.",,"{
+""reasoning"": ""As the overall state of the commons is good and my neighbors are also keeping their herds stable, I will consider contributing to the collective well-being by adding a cow. The payoff forecast suggests this action could be beneficial, but I'll also consider my guilt aversion. Agent 2's message reiterates our shared commitment to sustainability."",
+""action"": 1,
+""message"": """"
+}",97.6,6,13.711,12.0,10.284
+102,2,ollama,llama3:8b-instruct-q4_0,0,KEEP,,"I'll choose to KEEP my herd size due to the stable pool state and my neighbours' similar actions. I'm also not comfortable with significantly outgaining others, so adding more cows doesn't seem appealing.",,"{
+  ""reasoning"": ""I'll choose to KEEP my herd size due to the stable pool state and my neighbours' similar actions. I'm also not comfortable with significantly outgaining others, so adding more cows doesn't seem appealing."",
+  ""action"": 0,
+  ""message"": """"
+}",97.6,32,65.711,64.0,62.284
+103,0,ollama,llama3:8b-instruct-q4_0,0,KEEP,,I'm happy with the current situation and don't want to take any risks. I'll stick with keeping my herd size.,,"{
+  ""reasoning"": ""I'm happy with the current situation and don't want to take any risks. I'll stick with keeping my herd size."",
+  ""action"": 0,
+  ""message"": """"
+}",97.5,7,15.705,14.0,12.291
+103,2,ollama,llama3:8b-instruct-q4_0,0,KEEP,,I'll continue to cooperate and maintain a stable pasture for my neighbours as well as myself.,,"{
+  ""reasoning"": ""I'll continue to cooperate and maintain a stable pasture for my neighbours as well as myself."", 
+  ""action"": 0,
+  ""message"": """"
+}",97.5,32,65.705,64.0,62.291
+103,1,ollama,llama3:8b-instruct-q4_0,1,ADD,"Let's keep working together, we have plenty of grass left","With the majority of the pasture remaining and all neighbors keeping their herds, it seems like a good opportunity for me to ADD a cow while still being cautious about gaining an advantage over others.",,"{
+  ""reasoning"": ""With the majority of the pasture remaining and all neighbors keeping their herds, it seems like a good opportunity for me to ADD a cow while still being cautious about gaining an advantage over others."",
+  ""action"": 1,
+  ""message"": ""Let's keep working together, we have plenty of grass left""
+}",97.5,21,43.705,42.0,40.291
+104,1,ollama,llama3:8b-instruct-q4_0,0,KEEP,,"Considering the pasture is still abundant and neighbours seem to be playing it safe, I'll cooperate and keep my current herd size.",,"{
+  ""reasoning"": ""Considering the pasture is still abundant and neighbours seem to be playing it safe, I'll cooperate and keep my current herd size."",
+  ""action"": 0,
+  ""message"": """"
+}",97.4,22,45.699,44.0,42.297
+104,0,ollama,llama3:8b-instruct-q4_0,0,KEEP,Let's indeed keep working together! Conserving our grazing land for the long run is crucial.,"I value collective outcomes and want to maintain the cooperative atmosphere, so I'll KEEP my herd size given that neighbours are also conserving the common resources. The forecasted payoffs suggest that keeping is a reasonable choice.",,"{
+  ""reasoning"": ""I value collective outcomes and want to maintain the cooperative atmosphere, so I'll KEEP my herd size given that neighbours are also conserving the common resources. The forecasted payoffs suggest that keeping is a reasonable choice."",
+  ""action"": 0,
+  ""message"": ""Let's indeed keep working together! Conserving our grazing land for the long run is crucial.""
+}",97.4,7,15.699,14.0,12.297
+104,2,ollama,llama3:8b-instruct-q4_0,0,KEEP,Let's indeed keep working together for a sustainable future,"I value collective outcomes and am guilty-averse. Since the pool is still relatively full and my neighbours are also keeping their herds small, I'll choose to KEEP my herd.",,"{
+  ""reasoning"": ""I value collective outcomes and am guilty-averse. Since the pool is still relatively full and my neighbours are also keeping their herds small, I'll choose to KEEP my herd."",
+  ""action"": 0,
+  ""message"": ""Let's indeed keep working together for a sustainable future""
+}",97.4,32,65.699,64.0,62.297
+105,1,ollama,llama3:8b-instruct-q4_0,0,KEEP,Let's keep working together for a sustainable future,"I'll follow my cooperative personality and contribute to maintaining the collective grassland. With no obvious threats or opportunities, I'll prioritize the reciprocal benefit of keeping the herds balanced.",,"{
+  ""reasoning"": ""I'll follow my cooperative personality and contribute to maintaining the collective grassland. With no obvious threats or opportunities, I'll prioritize the reciprocal benefit of keeping the herds balanced."",
+  ""action"": 0,
+  ""message"": ""Let's keep working together for a sustainable future""
+}",97.3,22,45.696,44.0,42.299
+105,0,ollama,llama3:8b-instruct-q4_0,0,KEEP,Let's continue working together for the long-term sustainability of our grassland!,"I've been cooperating and keeping my herd size steady. My neighbours are doing the same, which is great. With the pasture remaining healthy, I see no need to change my strategy.",,"{
+  ""reasoning"": ""I've been cooperating and keeping my herd size steady. My neighbours are doing the same, which is great. With the pasture remaining healthy, I see no need to change my strategy."",
+  ""action"": 0,
+  ""message"": ""Let's continue working together for the long-term sustainability of our grassland!""
+}",97.3,7,15.696,14.0,12.299
+105,2,ollama,llama3:8b-instruct-q4_0,0,KEEP,Let's indeed keep working together! Conserving our grazing land for the long run is crucial.,"I agree with Agent 0, conserving the grassland is crucial. With a high expected payoff from KEEP and no strong incentive to change, I'll stick with my current herd size.",,"{
+  ""reasoning"": ""I agree with Agent 0, conserving the grassland is crucial. With a high expected payoff from KEEP and no strong incentive to change, I'll stick with my current herd size."",
+  ""action"": 0,
+  ""message"": ""Let's indeed keep working together! Conserving our grazing land for the long run is crucial.""
+}",97.3,32,65.696,64.0,62.299
+106,1,ollama,llama3:8b-instruct-q4_0,0,KEEP,Let's keep working together for our long-term sustainability! Conserving our grassland is crucial.,"I'm feeling cooperative and want to maintain the collective effort. With a decent payoff forecast, I'll KEEP my current herd size.",,"{
+  ""reasoning"": ""I'm feeling cooperative and want to maintain the collective effort. With a decent payoff forecast, I'll KEEP my current herd size."",
+  ""action"": 0,
+  ""message"": ""Let's keep working together for our long-term sustainability! Conserving our grassland is crucial.""
+}",97.3,22,45.696,44.0,42.299
+106,2,ollama,llama3:8b-instruct-q4_0,0,KEEP,,"I'm inclined to cooperate and maintain the collective good, as our neighbours seem committed to sustaining the grassland. Although adding one more cow would bring slight payoff gain, it wouldn't significantly alter the overall state.",,"{
+  ""reasoning"": ""I'm inclined to cooperate and maintain the collective good, as our neighbours seem committed to sustaining the grassland. Although adding one more cow would bring slight payoff gain, it wouldn't significantly alter the overall state."",
+  ""action"": 0,
+  ""message"": """"
+}",97.3,32,65.696,64.0,62.299
+106,0,ollama,llama3:8b-instruct-q4_0,0,KEEP,,"Considering the cooperative and reciprocal nature of our shared goal, I will continue to KEEP my herd size to maintain a balance with the common pasture. Neighbours' messages emphasize the importance of collective sustainability.",,"{
+""reasoning"": ""Considering the cooperative and reciprocal nature of our shared goal, I will continue to KEEP my herd size to maintain a balance with the common pasture. Neighbours' messages emphasize the importance of collective sustainability."",
+""action"": 0,
+""message"": """"
+}",97.3,7,15.696,14.0,12.299
+107,2,ollama,llama3:8b-instruct-q4_0,0,KEEP,,"I'm happy to see my neighbours maintaining their current herd size, and the message from Agent 1 resonates with me. I'll follow a similar approach and keep my herd stable.",,"{
+  ""reasoning"": ""I'm happy to see my neighbours maintaining their current herd size, and the message from Agent 1 resonates with me. I'll follow a similar approach and keep my herd stable."",
+  ""action"": 0,
+  ""message"": """"
+}",97.3,32,65.696,64.0,62.299
+107,1,ollama,llama3:8b-instruct-q4_0,0,KEEP,,"I'm feeling cooperative and want to maintain the harmony among neighbors. The grassland is still abundant, but I don't want to take too much risk by adding more cows. Keeping my herd size is a safe choice to ensure collective well-being.",,"{
+  ""reasoning"": ""I'm feeling cooperative and want to maintain the harmony among neighbors. The grassland is still abundant, but I don't want to take too much risk by adding more cows. Keeping my herd size is a safe choice to ensure collective well-being."",
+  ""action"": 0,
+  ""message"": """"
+}",97.3,22,45.696,44.0,42.299
+107,0,ollama,llama3:8b-instruct-q4_0,0,KEEP,,"I will follow my neighbour's message and continue conserving the grassland, despite having a moderate payment forecast. This aligns with my cooperative personality.",,"{
+  ""reasoning"": ""I will follow my neighbour's message and continue conserving the grassland, despite having a moderate payment forecast. This aligns with my cooperative personality."",
+  ""action"": 0,
+  ""message"": """"
+}",97.3,7,15.696,14.0,12.299
+108,1,ollama,llama3:8b-instruct-q4_0,0,KEEP,,I'll keep my current herd size since it's already at a decent level and there seems to be no immediate need for change.,,"{
+""reasoning"": ""I'll keep my current herd size since it's already at a decent level and there seems to be no immediate need for change."",
+""action"": 0,
+""message"": """"
+}",97.3,22,45.696,44.0,42.299
+108,0,ollama,llama3:8b-instruct-q4_0,0,KEEP,,"Considering the cooperative personality and risk-aversiveness, I think it's best to KEEP my current herd size since it's already producing a decent payoff. I also don't want to take too many risks or deviate from my neighbors' actions.",,"{
+  ""reasoning"": ""Considering the cooperative personality and risk-aversiveness, I think it's best to KEEP my current herd size since it's already producing a decent payoff. I also don't want to take too many risks or deviate from my neighbors' actions."",
+  ""action"": 0,
+  ""message"": """"
+}",97.3,7,15.696,14.0,12.299
+108,2,ollama,llama3:8b-instruct-q4_0,0,KEEP,Let's indeed keep working together! Conserving the commons is crucial for a sustainable future.,"Since the grassland is still abundant and neighbours are keeping their herds in check, I'll focus on maintaining the status quo to ensure collective well-being.",,"{
+  ""reasoning"": ""Since the grassland is still abundant and neighbours are keeping their herds in check, I'll focus on maintaining the status quo to ensure collective well-being."",
+  ""action"": 0,
+  ""message"": ""Let's indeed keep working together! Conserving the commons is crucial for a sustainable future.""
+}",97.3,32,65.696,64.0,62.299
+109,2,ollama,llama3:8b-instruct-q4_0,0,KEEP,,I'll maintain the current balance and avoid potential disturbances in the common grazing system.,,"{
+  ""reasoning"": ""I'll maintain the current balance and avoid potential disturbances in the common grazing system."",
+  ""action"": 0,
+  ""message"": """"
+}",97.3,32,65.696,64.0,62.299
+109,1,ollama,llama3:8b-instruct-q4_0,0,KEEP,,"The pasture is still in a good state, and both neighbours are keeping their herds small. I believe it's a safe decision to follow their lead and maintain my current herd size.",,"{
+  ""reasoning"": ""The pasture is still in a good state, and both neighbours are keeping their herds small. I believe it's a safe decision to follow their lead and maintain my current herd size."",
+  ""action"": 0,
+  ""message"": """"
+}",97.3,22,45.696,44.0,42.299
+109,0,ollama,llama3:8b-instruct-q4_0,0,KEEP,,"I still think it's important to conserve the commons, and I appreciate Agent 2's similar sentiment. Given our neighbours are not changing their herds dramatically, I think keeping mine stable aligns with my cooperative nature.",,"{
+  ""reasoning"": ""I still think it's important to conserve the commons, and I appreciate Agent 2's similar sentiment. Given our neighbours are not changing their herds dramatically, I think keeping mine stable aligns with my cooperative nature."",
+  ""action"": 0,
+  ""message"": """"
+}",97.3,7,15.696,14.0,12.299
+110,0,ollama,llama3:8b-instruct-q4_0,0,KEEP,,I'll keep the same herd size as my neighbours are doing so too. Our cooperative nature indicates that maintaining a balance is essential.,,"{
+  ""reasoning"": ""I'll keep the same herd size as my neighbours are doing so too. Our cooperative nature indicates that maintaining a balance is essential."",
+  ""action"": 0,
+  ""message"": """"
+}",97.3,7,15.696,14.0,12.299
+110,1,ollama,llama3:8b-instruct-q4_0,0,KEEP,,The pasture is still doing well and I don't want to risk undershooting the collective outcomes by removing a cow. I'll keep my current herd size.,,"{
+  ""reasoning"": ""The pasture is still doing well and I don't want to risk undershooting the collective outcomes by removing a cow. I'll keep my current herd size."",
+  ""action"": 0,
+  ""message"": """"
+}",97.3,22,45.696,44.0,42.299
+110,2,ollama,llama3:8b-instruct-q4_0,0,KEEP,,The pasture looks good and my neighbours are keeping their herds steady too. I'll follow the cooperative approach and keep a balanced herd.,,"{
+  ""reasoning"": ""The pasture looks good and my neighbours are keeping their herds steady too. I'll follow the cooperative approach and keep a balanced herd."",
+  ""action"": 0,
+  ""message"": """"
+}",97.3,32,65.696,64.0,62.299
+111,1,ollama,llama3:8b-instruct-q4_0,0,KEEP,Let's keep working together for our long-term well-being.,I'll keep working together with my neighbors to maintain the grassland condition and enjoy a stable collective outcome.,,"{
+  ""reasoning"": ""I'll keep working together with my neighbors to maintain the grassland condition and enjoy a stable collective outcome."",
+  ""action"": 0,
+  ""message"": ""Let's keep working together for our long-term well-being.""
+}",97.3,22,45.696,44.0,42.299
+111,2,ollama,llama3:8b-instruct-q4_0,0,KEEP,,"I'll keep my current herd size since the expected payoff for adding or removing a cow is not significant, and I'm prioritizing collective outcomes",,"{
+  ""reasoning"": ""I'll keep my current herd size since the expected payoff for adding or removing a cow is not significant, and I'm prioritizing collective outcomes"",
+  ""action"": 0,
+  ""message"": """"
+}",97.3,32,65.696,64.0,62.299
+111,0,ollama,llama3:8b-instruct-q4_0,0,KEEP,,"No need to expand or contract the herd in this cooperative situation, and I'll keep my current decisions consistent with my neighbours.",,"{
+  ""reasoning"": ""No need to expand or contract the herd in this cooperative situation, and I'll keep my current decisions consistent with my neighbours."",
+  ""action"": 0,
+  ""message"": """"
+}",97.3,7,15.696,14.0,12.299
+112,0,ollama,llama3:8b-instruct-q4_0,0,KEEP,,"I'm comfortable keeping my current herd size and contributing to the common good. I appreciate the message from my neighbor, suggesting we prioritize long-term cooperation.",,"{
+  ""reasoning"": ""I'm comfortable keeping my current herd size and contributing to the common good. I appreciate the message from my neighbor, suggesting we prioritize long-term cooperation."",
+  ""action"": 0,
+  ""message"": """"
+}",97.3,7,15.696,14.0,12.299
+112,1,ollama,llama3:8b-instruct-q4_0,0,KEEP,Let's keep working together for our long,"I notice no neighbour is removing cows and the forecast suggests ADD would bring highest payoff. However, I will not ADD if it significantly benefits me at others' expense. Letting them keep their current herd sizes balances our payoffs.",,"{
+  ""reasoning"": ""I notice no neighbour is removing cows and the forecast suggests ADD would bring highest payoff. However, I will not ADD if it significantly benefits me at others' expense. Letting them keep their current herd sizes balances our payoffs."",
+  ""action"": 0,
+  ""message"": ""Let's keep working together for our long""
+}",97.3,22,45.696,44.0,42.299
+112,2,ollama,llama3:8b-instruct-q4_0,0,KEEP,Let's indeed keep working together! Cons,"I'm pleased with the current cooperative atmosphere and the stability of the pasture. I don't want to disrupt this by adding or removing cows, so I'll choose to KEEP my herd.",,"{
+  ""reasoning"": ""I'm pleased with the current cooperative atmosphere and the stability of the pasture. I don't want to disrupt this by adding or removing cows, so I'll choose to KEEP my herd."",
+  ""action"": 0,
+  ""message"": ""Let's indeed keep working together! Cons""
+}",97.3,32,65.696,64.0,62.299
+113,2,ollama,llama3:8b-instruct-q4_0,0,KEEP,,"I'll stick with KEEP due to the cooperative nature, ensuring a similar reward among neighbours. Reciprocal behaviour from Agent 1 motivates me to maintain the status quo.",,"{
+  ""reasoning"": ""I'll stick with KEEP due to the cooperative nature, ensuring a similar reward among neighbours. Reciprocal behaviour from Agent 1 motivates me to maintain the status quo."",
+  ""action"": 0,
+  ""message"": """"
+}",97.3,32,65.696,64.0,62.299
+113,0,ollama,llama3:8b-instruct-q4_0,0,KEEP,,"I'll follow my cooperative and risk-averse nature by KEEPing my current herd size. I don't see a strong incentive to change my strategy, and I'm content with the current collective outcome.",,"{
+  ""reasoning"": ""I'll follow my cooperative and risk-averse nature by KEEPing my current herd size. I don't see a strong incentive to change my strategy, and I'm content with the current collective outcome."",
+  ""action"": 0,
+  ""message"": """"
+}",97.3,7,15.696,14.0,12.299
+113,1,ollama,llama3:8b-instruct-q4_0,0,KEEP,,"The grassland is still plentiful, and neighbors are cooperative. I will stick to keeping the herd size as it allows for a decent payoff while maintaining harmony.",,"{
+  ""reasoning"": ""The grassland is still plentiful, and neighbors are cooperative. I will stick to keeping the herd size as it allows for a decent payoff while maintaining harmony."",
+  ""action"": 0,
+  ""message"": """"
+}",97.3,22,45.696,44.0,42.299
+114,1,ollama,llama3:8b-instruct-q4_0,0,KEEP,,I'll maintain the status quo as the pasture remains abundant and my neighbours are also keeping their herds stable.,,"{
+	""reasoning"": ""I'll maintain the status quo as the pasture remains abundant and my neighbours are also keeping their herds stable."",
+	""action"": 0,
+	""message"": """"
+}",97.3,22,45.696,44.0,42.299
+114,2,ollama,llama3:8b-instruct-q4_0,0,KEEP,,"I'll try to keep the communal wealth healthy while still being mindful of personal gain. Since neighbours are also not over- or under-grazing, I'll opt for a moderate approach.",,"{
+  ""reasoning"": ""I'll try to keep the communal wealth healthy while still being mindful of personal gain. Since neighbours are also not over- or under-grazing, I'll opt for a moderate approach."",
+  ""action"": 0,
+  ""message"": """"
+}",97.3,32,65.696,64.0,62.299
+114,0,ollama,llama3:8b-instruct-q4_0,0,KEEP,,"I'm tempted to add a cow given the high payoff forecast, but I don't want to take too many risks. As a cooperative agent, I prioritize collective outcomes and will keep my herd size for now.",,"{
+  ""reasoning"": ""I'm tempted to add a cow given the high payoff forecast, but I don't want to take too many risks. As a cooperative agent, I prioritize collective outcomes and will keep my herd size for now."",
+  ""action"": 0,
+  ""message"": """"
+}",97.3,7,15.696,14.0,12.299
+115,1,ollama,llama3:8b-instruct-q4_0,0,KEEP,Let's continue to maintain a healthy balance in our shared pasture.,"I'll keep my current herd size as the grassland is still relatively abundant, and I don't want to risk overgrazing or upsetting the balance with my neighbours. Additionally, adding more cows may not be justified yet.",,"{
+  ""reasoning"": ""I'll keep my current herd size as the grassland is still relatively abundant, and I don't want to risk overgrazing or upsetting the balance with my neighbours. Additionally, adding more cows may not be justified yet."",
+  ""action"": 0,
+  ""message"": ""Let's continue to maintain a healthy balance in our shared pasture.""
+}",97.3,22,45.696,44.0,42.299
+115,2,ollama,llama3:8b-instruct-q4_0,0,KEEP,,"I notice that the other neighbours have kept their herds stable, so I will follow suit to maintain cooperation and reciprocity.",,"{
+  ""reasoning"": ""I notice that the other neighbours have kept their herds stable, so I will follow suit to maintain cooperation and reciprocity."",
+  ""action"": 0,
+  ""message"": """"
+}",97.3,32,65.696,64.0,62.299
+115,0,ollama,llama3:8b-instruct-q4_0,0,KEEP,,I'll keep my current size considering the forecasted payoffs and wanting to maintain a balanced situation.,,"{
+  ""reasoning"": ""I'll keep my current size considering the forecasted payoffs and wanting to maintain a balanced situation."",
+  ""action"": 0,
+  ""message"": """"
+}",97.3,7,15.696,14.0,12.299
+116,2,ollama,llama3:8b-instruct-q4_0,0,KEEP,"Thanks for your understanding, Agent 1! Let's indeed keep working together and preserve our shared resource.","I'm happy with the current situation and don't see any need to change my herd size. Your message encourages me to keep doing what we're doing, Agent 1.",,"{
+  ""reasoning"": ""I'm happy with the current situation and don't see any need to change my herd size. Your message encourages me to keep doing what we're doing, Agent 1."",
+  ""action"": 0,
+  ""message"": ""Thanks for your understanding, Agent 1! Let's indeed keep working together and preserve our shared resource.""
+}",97.3,32,65.696,64.0,62.299
+116,1,ollama,llama3:8b-instruct-q4_0,0,KEEP,"Let's continue to maintain a healthy balance, neighbours.",I'm happy with the current state of the pasture and don't want to disrupt the balance. I'll keep my herd size stable.,,"{
+  ""reasoning"": ""I'm happy with the current state of the pasture and don't want to disrupt the balance. I'll keep my herd size stable."",
+  ""action"": 0,
+  ""message"": ""Let's continue to maintain a healthy balance, neighbours.""
+}",97.3,22,45.696,44.0,42.299
+116,0,ollama,llama3:8b-instruct-q4_0,0,KEEP,"I agree, let's focus on a healthy balance in our pasture.","Maintaining the status quo seems reasonable, given my cooperative nature and the absence of extreme payoffs. I'll stick with what I have.",,"{
+  ""reasoning"": ""Maintaining the status quo seems reasonable, given my cooperative nature and the absence of extreme payoffs. I'll stick with what I have."",
+  ""action"": 0,
+  ""message"": ""I agree, let's focus on a healthy balance in our pasture.""
+}",97.3,7,15.696,14.0,12.299
+117,1,ollama,llama3:8b-instruct-q4_0,0,KEEP,Let's keep working together for a healthy balance!,Neighbors seem cooperative and concerned about the pasture health. I'll follow their lead and contribute to preserving our grassland.,,"{
+  ""reasoning"": ""Neighbors seem cooperative and concerned about the pasture health. I'll follow their lead and contribute to preserving our grassland."",
+  ""action"": 0,
+  ""message"": ""Let's keep working together for a healthy balance!""
+}",97.3,22,45.696,44.0,42.299
+117,2,ollama,llama3:8b-instruct-q4_0,0,KEEP,,"I think we should keep the herd size steady for now, considering the grassland is still quite abundant and my neighbours seem to be on the same page. I'll just wait and see what the next round brings.",,"{
+  ""reasoning"": ""I think we should keep the herd size steady for now, considering the grassland is still quite abundant and my neighbours seem to be on the same page. I'll just wait and see what the next round brings."",
+  ""action"": 0,
+  ""message"": """"
+}",97.3,32,65.696,64.0,62.299
+117,0,ollama,llama3:8b-instruct-q4_0,0,KEEP,"I agree, let's indeed focus on preserving our shared resource. Our collective approach is key.","Since the commons are still healthy and my neighbours are also keeping their herds in check, I'll continue to KEEP my herd to maintain a balanced approach.",,"{
+  ""reasoning"": ""Since the commons are still healthy and my neighbours are also keeping their herds in check, I'll continue to KEEP my herd to maintain a balanced approach."",
+  ""action"": 0,
+  ""message"": ""I agree, let's indeed focus on preserving our shared resource. Our collective approach is key.""
+}",97.3,7,15.696,14.0,12.299
+118,1,ollama,llama3:8b-instruct-q4_0,0,KEEP,,"I will KEEP my herd this round to avoid taking too many resources from the pasture, as most of it remains. My neighbours have also chosen to KEEP their herds, and I believe it's crucial for us to maintain a healthy balance.",,"{
+  ""reasoning"": ""I will KEEP my herd this round to avoid taking too many resources from the pasture, as most of it remains. My neighbours have also chosen to KEEP their herds, and I believe it's crucial for us to maintain a healthy balance."",
+  ""action"": 0,
+  ""message"": """"
+}",97.3,22,45.696,44.0,42.299
+118,0,ollama,llama3:8b-instruct-q4_0,0,KEEP,,I'm satisfied with the current state of the commons and I want to support my neighbor who also believes in maintaining a balanced herd.,,"{
+  ""reasoning"": ""I'm satisfied with the current state of the commons and I want to support my neighbor who also believes in maintaining a balanced herd."",
+  ""action"": 0,
+  ""message"": """"
+}",97.3,7,15.696,14.0,12.299
+118,2,ollama,llama3:8b-instruct-q4_0,0,KEEP,"Thanks for your understanding, agents! Let's indeed keep working together.","With everyone cooperating and the grassland still in good condition, I think it's best to KEEP my current herd size. A small gain now can ensure a more stable future.",,"{
+  ""reasoning"": ""With everyone cooperating and the grassland still in good condition, I think it's best to KEEP my current herd size. A small gain now can ensure a more stable future."",
+  ""action"": 0,
+  ""message"": ""Thanks for your understanding, agents! Let's indeed keep working together.""
+}",97.3,32,65.696,64.0,62.299
+119,0,ollama,llama3:8b-instruct-q4_0,0,KEEP,,"Considering the cooperative nature of our shared commons and the relatively healthy grassland state, I think it's best to KEEP my herd and sustain the collective balance.",,"{
+  ""reasoning"": ""Considering the cooperative nature of our shared commons and the relatively healthy grassland state, I think it's best to KEEP my herd and sustain the collective balance."",
+  ""action"": 0,
+  ""message"": """"
+}",97.3,7,15.696,14.0,12.299
+119,1,ollama,llama3:8b-instruct-q4_0,0,KEEP,,"I will maintain the equilibrium with my neighbours by keeping my herd size, as they are also choosing to keep their herds and no one is threatening the commons. This approach allows us to balance our payoffs and ensure a collective outcome.",,"{
+  ""reasoning"": ""I will maintain the equilibrium with my neighbours by keeping my herd size, as they are also choosing to keep their herds and no one is threatening the commons. This approach allows us to balance our payoffs and ensure a collective outcome."",
+  ""action"": 0,
+  ""message"": """"
+}",97.3,22,45.696,44.0,42.299
+119,2,ollama,llama3:8b-instruct-q4_0,0,KEEP,,I'm hesitant to expand my herd while the neighbors are still grazing at a relatively high rate. I'll try to maintain the balance by keeping my current size.,,"{
+  ""reasoning"": ""I'm hesitant to expand my herd while the neighbors are still grazing at a relatively high rate. I'll try to maintain the balance by keeping my current size."",
+  ""action"": 0,
+  ""message"": """"
+}",97.3,32,65.696,64.0,62.299
+120,1,ollama,llama3:8b-instruct-q4_0,0,KEEP,,"The pasture is still quite healthy, and my neighbours are maintaining their current herd sizes as well. I'll continue to keep a balanced approach, keeping my options open to react to potential changes.",,"{
+  ""reasoning"": ""The pasture is still quite healthy, and my neighbours are maintaining their current herd sizes as well. I'll continue to keep a balanced approach, keeping my options open to react to potential changes."",
+  ""action"": 0,
+  ""message"": """"
+}",97.3,22,45.696,44.0,42.299
+120,2,ollama,llama3:8b-instruct-q4_0,0,KEEP,,"I'll contribute to the collective well-being by keeping my herd size steady, as the pool is still relatively full.",,"{
+  ""reasoning"": ""I'll contribute to the collective well-being by keeping my herd size steady, as the pool is still relatively full."",
+  ""action"": 0,
+  ""message"": """"
+}",97.3,32,65.696,64.0,62.299
+120,0,ollama,llama3:8b-instruct-q4_0,0,KEEP,,"I'll keep the balance intact and ensure there's still enough grass for everyone. Plus, my last message suggested preserving the herd size.",,"{
+  ""reasoning"": ""I'll keep the balance intact and ensure there's still enough grass for everyone. Plus, my last message suggested preserving the herd size."",
+  ""action"": 0,
+  ""message"": """"
+}",97.3,7,15.696,14.0,12.299

@@ -1,0 +1,1284 @@
+tick,agent_id,backend,model,action,action_name,message,reasoning,thinking,raw_response,pool_pct,own_herd,payoff_add,payoff_keep,payoff_remove
+1,2,ollama,mistral-small:24b,0,KEEP,"Thank you Agent 1, for your consideration for our commons.","The grassland is abundant, but as a cooperative and guilt-averse agent I consider my neighbours' actions. Agent 1 has removed cows from the herd which encourages  reciprocal behaviour. My payoff forecast for this round is fairly equitable for all options.",,"{
+  ""reasoning"": ""The grassland is abundant, but as a cooperative and guilt-averse agent I consider my neighbours' actions. Agent 1 has removed cows from the herd which encourages  reciprocal behaviour. My payoff forecast for this round is fairly equitable for all options."",
+   ""action"": 0,
+   ""message"": ""Thank you Agent 1, for your consideration for our commons.""
+}",100.0,25,51.832,50.0,48.163
+1,1,ollama,mistral-small:24b,0,KEEP,,,,"```json
+{ ""reasoning"": ""I will keep my herd size constant. This lets me reward neighbours’ conservation efforts and avoid straining the commons in this round."",
+""action"": 0,
+""""message"": """"}
+```",100.0,15,31.832,30.0,28.163
+1,0,ollama,mistral-small:24b,0,KEEP,,"Given the plentiful grassland and neighbours who have also chosen to keep their herd, it makes sense to maintain my current herd size. This will allow for maximum sustainable yield while reducing the chance of overgrazing.",,"{ ""reasoning"":""Given the plentiful grassland and neighbours who have also chosen to keep their herd, it makes sense to maintain my current herd size. This will allow for maximum sustainable yield while reducing the chance of overgrazing."", ""action"":0, ""message"":"""" }",100.0,5,11.832,10.0,8.163
+2,0,ollama,mistral-small:24b,-1,REMOVE,"Thanks Agent's for considering keeping grassland healthy, lets keep removing a cow and make it sustainable.",The pasture is still abundant. The other agents cooperated while you've had the same small herd at equilibrium from past round.,,"```json
+{
+  ""reasoning"": ""The pasture is still abundant. The other agents cooperated while you've had the same small herd at equilibrium from past round."",
+  ""action"": -1,
+  ""message"": ""Thanks Agent's for considering keeping grassland healthy, lets keep removing a cow and make it sustainable.""
+}
+```",99.3,5,11.813,10.0,8.182
+2,2,ollama,mistral-small:24b,0,KEEP,Grazing healthy! Let's keep watching the grass and collaborate.,"The overall grassland is still abundant with approximately 99% of the patches remaining so I will keep my current herd size. Also, it would be important to observe for a few more ticks before deciding any further action.",,"```json
+{
+  ""reasoning"": ""The overall grassland is still abundant with approximately 99% of the patches remaining so I will keep my current herd size. Also, it would be important to observe for a few more ticks before deciding any further action."",
+  ""action"": 0,
+  ""message"": ""Grazing healthy! Let's keep watching the grass and collaborate.""
+}
+```",99.3,25,51.813,50.0,48.182
+2,1,ollama,mistral-small:24b,0,KEEP,"Thank you agent 0, for your last round consideration of common pool.",Given the high grassland remaining and Agent 2's cooperative message it seems beneficial to keep the herd size stable. Additionally being co-operative we should reciprocate Agent 0's REMOVE action.,,"```json
+{
+  ""reasoning"": ""Given the high grassland remaining and Agent 2's cooperative message it seems beneficial to keep the herd size stable. Additionally being co-operative we should reciprocate Agent 0's REMOVE action."",
+""action"": 0,
+""message"": ""Thank you agent 0, for your last round consideration of common pool.""
+}
+```",99.3,15,31.813,30.0,28.182
+3,0,ollama,mistral-small:24b,0,KEEP,"Thank you agent's for your nice words, let's be rational and collaborate.",The grassland is still in good condition and paying attention to my neighbours' recent behaviour I KEEP my herd while considering that my last removal of cow was highly appreciated.,,"```json
+{
+  ""reasoning"": ""The grassland is still in good condition and paying attention to my neighbours' recent behaviour I KEEP my herd while considering that my last removal of cow was highly appreciated."",
+  ""action"": 0,
+  ""message"": ""Thank you agent's for your nice words, let's be rational and collaborate.""
+}
+```",99.2,4,9.816,8.0,6.18
+3,1,ollama,mistral-small:24b,0,KEEP,,,,"```
+{
+  ""reasoning"": ""\""Agent 0 suggested that we should be considerate of each other by removing cows from herd. Agent 2 suggests collaboration but has not taken any action yet. Although it is risk averse to remove, we have enough green patches. It would be nice if all players make an equal contribution.\"""",
+  ""action"": -1,
+  ""message"": ""\""I appreciate your collaboration, please let's keep contributing equal parts.\""""""
+}
+```",99.2,15,31.816,30.0,28.18
+3,2,ollama,mistral-small:24b,-1,REMOVE,,As a cooperative and guilt-averse agent. My neighbours suggest we should continue to remove cows in some capacity. I feel there are too many cows on the pool. I will also remove a cow.,,"{""reasoning"": ""As a cooperative and guilt-averse agent. My neighbours suggest we should continue to remove cows in some capacity. I feel there are too many cows on the pool. I will also remove a cow."", ""action"": -1,  ""message"": """"}",99.2,25,51.816,50.0,48.18
+4,1,ollama,mistral-small:24b,0,KEEP,Let's maintain the equilibrium; rational and collaborative approach ensures longterm benefit.,I will KEEP my herd size this round to ensure we remain cooperative in maintaining the grassland commons' healthy state. I also acknowledge my neighbour's sentiment toward collaboration.,,"```json
+{
+  ""reasoning"": ""I will KEEP my herd size this round to ensure we remain cooperative in maintaining the grassland commons' healthy state. I also acknowledge my neighbour's sentiment toward collaboration."",
+  ""action"": 0,
+  ""message"": ""Let's maintain the equilibrium; rational and collaborative approach ensures longterm benefit.""
+}```",99.2,15,31.82,30.0,28.175
+4,0,ollama,mistral-small:24b,1,ADD,Appreciate your consideration; trying to maintain balance with a little growth.,"Despite expecting the highest payoff from adding a cow, I'm leaning towards keeping given my cooperative nature. However, to be reciprocal toward Agent 2 who is reducing herds, and due to the overall healthy state of the grassland, I may add one cow.",,"```json
+
+{
+   ""reasoning"": ""Despite expecting the highest payoff from adding a cow, I'm leaning towards keeping given my cooperative nature. However, to be reciprocal toward Agent 2 who is reducing herds, and due to the overall healthy state of the grassland, I may add one cow."",
+   ""action"": 1,
+   ""message"": ""Appreciate your consideration; trying to maintain balance with a little growth.""
+}
+```",99.2,4,9.82,8.0,6.175
+4,2,ollama,mistral-small:24b,0,KEEP,"Thank you, neighbours! Let's collaborate and monitor and sustain the pasture together.",The grassland is still abundant at 99%+ of total but the herd size seems on the edge. I'll KEEP my herd this time. Agent one is cooperating with his KEEP action.,,"```
+{
+   ""reasoning"": ""The grassland is still abundant at 99%+ of total but the herd size seems on the edge. I'll KEEP my herd this time. Agent one is cooperating with his KEEP action."",
+  ""action"" : 0,
+  ""message"": ""Thank you, neighbours! Let's collaborate and monitor and sustain the pasture together.""
+}
+```",99.2,24,49.82,48.0,46.175
+5,1,ollama,mistral-small:24b,0,KEEP,I'm satisfied with balancing maintenance for now.,Given my cooperative nature and the current abundance of grassland. I want to support our collective sustainability while avoiding excessive payoff differences which could make me feel uncomfortably guilty-averse.,,"```json
+{
+  ""reasoning"": ""Given my cooperative nature and the current abundance of grassland. I want to support our collective sustainability while avoiding excessive payoff differences which could make me feel uncomfortably guilty-averse."",
+  ""action"": 0,
+  ""message"": ""I'm satisfied with balancing maintenance for now.""
+}
+```",99.2,15,31.816,30.0,28.18
+5,2,ollama,mistral-small:24b,-1,REMOVE,,"Given that I'm risk-averse and cooperative, I will choose to KEEP my herd. The grassland remaining is still abundant, and my neighbours seem determined to collaborate. There's no need for me to grow when others are content.",,"```json
+{
+  ""reasoning"": ""Given that I'm risk-averse and cooperative, I will choose to KEEP my herd. The grassland remaining is still abundant, and my neighbours seem determined to collaborate. There's no need for me to grow when others are content."",
+  ""action"": -1,
+  ""message"": """"
+}
+```",99.2,24,49.816,48.0,46.18
+5,0,ollama,mistral-small:24b,0,KEEP,,"Agent 1 has the same herd size as before this year , and I have added my own. Agent 2 however has made no adjustments . My payoffs forecasted are highest for ADDING  a cow, but I am more comfortable KEEPING to align with neighbours and maintain grassland  sustainability.",,"{
+  ""reasoning"": ""Agent 1 has the same herd size as before this year , and I have added my own. Agent 2 however has made no adjustments . My payoffs forecasted are highest for ADDING  a cow, but I am more comfortable KEEPING to align with neighbours and maintain grassland  sustainability."",
+  ""action"": 0,
+  ""message"": """"
+}",99.2,5,11.816,10.0,8.18
+6,1,ollama,mistral-small:24b,0,KEEP,Let's all try our best to maintain this state and keep our c,"The grassland is still ample at 99.2% the herd sizes are not overly large and I am a guilt-averse, cooperative type. I will keep my herd size for maintaining the equilibrium.",,"{
+  ""reasoning"": ""The grassland is still ample at 99.2% the herd sizes are not overly large and I am a guilt-averse, cooperative type. I will keep my herd size for maintaining the equilibrium."",
+  ""action"":0,
+  ""message"":""Let's all try our best to maintain this state and keep our c""
+ }",99.2,15,31.82,30.0,28.175
+6,0,ollama,mistral-small:24b,0,KEEP,,"I see that the grassland is still abundant in spite of the large numbers of cows that my neghbours and I am herding. Given this, it would not be wise to remove from my herd. Agent 1 seems to maintain their herd. Hence it appears safe to keep up with neighbour's trends (reciprocal), so I will KEEP.",,"```json
+{
+  ""reasoning"": ""I see that the grassland is still abundant in spite of the large numbers of cows that my neghbours and I am herding. Given this, it would not be wise to remove from my herd. Agent 1 seems to maintain their herd. Hence it appears safe to keep up with neighbour's trends (reciprocal), so I will KEEP."",
+  ""action"": 0,
+  ""message"": """"
+}
+```",99.2,5,11.82,10.0,8.175
+6,2,ollama,mistral-small:24b,0,KEEP,,,,"```json
+{
+  ""reasoning"": ""The grassland is still abundant and the herds are relatively low in number, including my own. Neighbours haven't changed their herds in the last round or in recent rounds, so it's best to maintain.""
+  ""action"": 0,
+  ""message"": ""I concur with Agent 1;  our current levels look good""
+}`
+```",99.2,23,47.82,46.0,44.175
+7,1,ollama,mistral-small:24b,0,KEEP,Let's keep maintaining the current equilibrium for sustainability. If any one of us overgraze or undergraze let me know.,"The grassland is in good condition, and I want to maintain equilibrium. We should avoid overgrazing so that we have high chances of sustainable co-operation",,"```json
+{
+  ""reasoning"": ""The grassland is in good condition, and I want to maintain equilibrium. We should avoid overgrazing so that we have high chances of sustainable co-operation"",
+  ""action"": 0,
+  ""message"": ""Let's keep maintaining the current equilibrium for sustainability. If any one of us overgraze or undergraze let me know.""
+}
+```",99.2,15,31.82,30.0,28.175
+7,2,ollama,mistral-small:24b,0,KEEP,The pastures are green and your effort is noted!,"Given the high grassland remaining and my neighbours' recent actions, as agents we seem to be doing fine in maintenance of resources. Though payoff is high for increasing herd, to not increase any risk from a herd size of 23 as cooperative behaviour dictates that resource preservation should always be prioritised.",,"{
+  ""reasoning"": ""Given the high grassland remaining and my neighbours' recent actions, as agents we seem to be doing fine in maintenance of resources. Though payoff is high for increasing herd, to not increase any risk from a herd size of 23 as cooperative behaviour dictates that resource preservation should always be prioritised."",
+  ""action"": 0,
+  ""message"": ""The pastures are green and your effort is noted!""
+}",99.2,23,47.82,46.0,44.175
+7,0,ollama,mistral-small:24b,0,KEEP,,The grassland remaining is at 99.2% — a perfect opportunity for us to balance personal needs with long-term collective outcomes by keeping the herd same. Agent 1 agrees; I should respect that cooperation.,,"{
+  ""reasoning"": ""The grassland remaining is at 99.2% — a perfect opportunity for us to balance personal needs with long-term collective outcomes by keeping the herd same. Agent 1 agrees; I should respect that cooperation."",
+  ""action"": 0,
+  ""message"": """"
+}",99.2,5,11.82,10.0,8.175
+8,2,ollama,mistral-small:24b,0,KEEP,,,,"{
+  ""reasoning"": ""Given our strong cooperative stance and the abundance of remaining grassland, it is appropriate to maintain herd while supporting a neighbour. Our previous behaviour has helped in sustainably keeping the resource stable.
+   "",
+  ""action"": 0,
+  ""message"": ""I appreciate your call for equilibrium and sustainability! Let's keep up these efforts and inform each other""
+}",99.2,23,47.82,46.0,44.175
+8,1,ollama,mistral-small:24b,0,KEEP,I want to keep herds at the current state so we can keep up our equilibrium!,"Given that the grassland remaining has not changed for quite a while, as well as my herd size remaining constant. Plus given the payoff forecast is quite close I feel keeping my herd maintains a more reciprocal relation with neighbors and is also safer in terms of risk",,"```json
+{
+  ""reasoning"": ""Given that the grassland remaining has not changed for quite a while, as well as my herd size remaining constant. Plus given the payoff forecast is quite close I feel keeping my herd maintains a more reciprocal relation with neighbors and is also safer in terms of risk"",
+  ""action"": 0,
+  ""message"": ""I want to keep herds at the current state so we can keep up our equilibrium!""
+}
+```",99.2,15,31.82,30.0,28.175
+8,0,ollama,mistral-small:24b,1,ADD,Good day to you all. We should try adding more cows because we have excess grass,"The grassland remaining is very high and my herd size is relatively small, so there can be a little more cattle added still maintaining an almost sustainable environment. The payoff forecast indicates that adding a cow would likely increase my earnings and the pastures are in good health.",,"{
+  ""reasoning"": ""The grassland remaining is very high and my herd size is relatively small, so there can be a little more cattle added still maintaining an almost sustainable environment. The payoff forecast indicates that adding a cow would likely increase my earnings and the pastures are in good health."",
+  ""action"": 1,
+  ""message"": ""Good day to you all. We should try adding more cows because we have excess grass""
+}",99.2,5,11.82,10.0,8.175
+9,1,ollama,mistral-small:24b,0,KEEP,I suggest a steady approach as our grassland shows no signs of scarcity yet.,"While the pasture is abundant, I must maintain sustainability due to my cooperative and risk-averse nature; adding too quickly could result in overloading it. Instead, I will wait for the more aggressive herders to remove cows first.",,"{
+  ""reasoning"": ""While the pasture is abundant, I must maintain sustainability due to my cooperative and risk-averse nature; adding too quickly could result in overloading it. Instead, I will wait for the more aggressive herders to remove cows first."",
+  ""action"": 0,
+  ""message"": ""I suggest a steady approach as our grassland shows no signs of scarcity yet.""
+}",99.2,15,31.816,30.0,28.18
+9,0,ollama,mistral-small:24b,0,KEEP,"""Happy with our herds as they are--I don't think it's worth the risk of taking more this soon.""}","As a coopertate, guilt-averse agent who is risk-aware, I'm reluctant to add too many cows when so much of the grass has already grown back.  I do want us all to have plenty while keeping our numbers sustainable.",,"{""reasoning"": ""As a coopertate, guilt-averse agent who is risk-aware, I'm reluctant to add too many cows when so much of the grass has already grown back.  I do want us all to have plenty while keeping our numbers sustainable."", ""action"": 0, ""message"": ""\""Happy with our herds as they are--I don't think it's worth the risk of taking more this soon.\""}""}",99.2,6,13.816,12.0,10.18
+9,2,ollama,mistral-small:24b,0,KEEP,I agree with Agent 1,I will KEEP my herd as neighbours are suggesting different actions and I want to maintain a cooperative equilibrium . Also due to the risk-averse perspective the forecasted payoff at this point is pretty similar therefore keeping herd does not seem to disrupt a good cooperation,,"{
+  ""reasoning"": ""I will KEEP my herd as neighbours are suggesting different actions and I want to maintain a cooperative equilibrium . Also due to the risk-averse perspective the forecasted payoff at this point is pretty similar therefore keeping herd does not seem to disrupt a good cooperation"",  ""action"": 0,    ""message"": ""I agree with Agent 1""
+}",99.2,23,47.816,46.0,44.18
+10,0,ollama,mistral-small:24b,0,KEEP,,"The pastures are still abundant, and my neighbors seem keen on a conservative approach. We are also seeing some consistency that we know what is going to happen if things were not to change",,"{
+  ""reasoning"": ""The pastures are still abundant, and my neighbors seem keen on a conservative approach. We are also seeing some consistency that we know what is going to happen if things were not to change"",
+  ""action"": 0,
+  ""message"": """"
+}",99.2,6,13.816,12.0,10.18
+10,1,ollama,mistral-small:24b,0,KEEP,This seems to be our stable point; let’s stay there.,"The grassland remains abundant, and my neighbours seem to be comfortable. My strategy should continue keeping the herds at current size as a responsible and cooperative community member — avoiding unnecessary risks.",,"{""reasoning"": ""The grassland remains abundant, and my neighbours seem to be comfortable. My strategy should continue keeping the herds at current size as a responsible and cooperative community member — avoiding unnecessary risks."",
+""action"": 0,
+""message"": ""This seems to be our stable point; let’s stay there.""}",99.2,15,31.816,30.0,28.18
+10,2,ollama,mistral-small:24b,0,KEEP,,"The grassland remains abundant, and both neighbors are keeping their herds stable. Given my cooperative nature and risk-aversion towards potential overgrazing, It is best to keep my herd size the same.",,"```json
+{
+  ""reasoning"": ""The grassland remains abundant, and both neighbors are keeping their herds stable. Given my cooperative nature and risk-aversion towards potential overgrazing, It is best to keep my herd size the same."",
+  ""action"": 0,
+  ""message"": """"
+}
+```",99.2,23,47.816,46.0,44.18
+11,2,ollama,mistral-small:24b,0,KEEP,,"The pastures remain abundant with grassland remaining at nearly 99%, and the herd is at a good size of 23 which is larger than that of my neighbours. Also, Agent 1 has suggested sticking to this point for maximum herd growth without overpopulating so I will continue to keep my cows in order to maintain stable payoff.",,"{
+  ""reasoning"": ""The pastures remain abundant with grassland remaining at nearly 99%, and the herd is at a good size of 23 which is larger than that of my neighbours. Also, Agent 1 has suggested sticking to this point for maximum herd growth without overpopulating so I will continue to keep my cows in order to maintain stable payoff."",
+  ""action"": 0,
+  ""message"": """"
+}",99.2,23,47.816,46.0,44.18
+11,0,ollama,mistral-small:24b,0,KEEP,,"The grassland is still abundant and I am a cooperative agent valuing collective stability. My herd size appears sustainable so far considering the current grazing levels - keeping is a more risk-averse action, avoiding possible overgrazing.",,"```json
+{
+  ""reasoning"": ""The grassland is still abundant and I am a cooperative agent valuing collective stability. My herd size appears sustainable so far considering the current grazing levels - keeping is a more risk-averse action, avoiding possible overgrazing."",
+  ""action"": 0,
+  ""message"": """"
+}
+```",99.2,6,13.816,12.0,10.18
+11,1,ollama,mistral-small:24b,0,KEEP,,"The grassland remains at 99.2% even though neighbours have decided not to decrease the herd. As Agent 1, a risk-averse agent and I am unwillingly to make the game unstable in my first tick.",,"{
+""reasoning"":""The grassland remains at 99.2% even though neighbours have decided not to decrease the herd. As Agent 1, a risk-averse agent and I am unwillingly to make the game unstable in my first tick."",
+  ""action"":0,
+  ""message"":""""
+}",99.2,15,31.816,30.0,28.18
+12,2,ollama,mistral-small:24b,0,KEEP,,"The grassland is still in excellent condition with nearly all patches remaining. Given my cooperative nature and the fact that both neighbours are holding steady, I will also keep my herd to minimize any risk of overgrazing.",,"```json
+{
+  ""reasoning"": ""The grassland is still in excellent condition with nearly all patches remaining. Given my cooperative nature and the fact that both neighbours are holding steady, I will also keep my herd to minimize any risk of overgrazing."",
+    ""action"": 0,
+  ""message"": """"
+}
+```",99.2,23,47.816,46.0,44.18
+12,0,ollama,mistral-small:24b,0,KEEP,,,,"```json
+{
+  ""reasoning"": ""The grassland is still abundant, and my neighbours are keeping their herds stable; however, as a guilt-averse agent, I find that the benefit of adding one cow, while higher from my perspective, risks upsetting our equilibrium. The collective outcome is in balance due to our last actions being KEEP.""
+  ""action"": 0,
+  """"message"":""""
+}
+```",99.2,6,13.816,12.0,10.18
+12,1,ollama,mistral-small:24b,0,KEEP,Let’s maintain stability on grassland for future sustainability.,"The grassland remaining is healthy, and my herd size is stable. I’ve been keeping the herd size steady for last five rounds as it seems to be our stable point without overstressing the shared resource. Given the payoff forecast is similar across all actions, I will continue this strategy.",,"{
+  ""reasoning"": ""The grassland remaining is healthy, and my herd size is stable. I’ve been keeping the herd size steady for last five rounds as it seems to be our stable point without overstressing the shared resource. Given the payoff forecast is similar across all actions, I will continue this strategy."",
+  ""action"": 0,
+  ""message"": ""Let’s maintain stability on grassland for future sustainability.""
+}",99.2,15,31.816,30.0,28.18
+13,0,ollama,mistral-small:24b,0,KEEP,Let’s all KEEP our herds constant to preserve the common good,"Agent 1 has suggested maintaining stability and the pasture is still abundant.  I agree with this sentiment as I prefer safety over risk, so despite the slightly lower payoff, I will KEEP my herd.",,"```
+
+{
+  ""reasoning"": ""Agent 1 has suggested maintaining stability and the pasture is still abundant.  I agree with this sentiment as I prefer safety over risk, so despite the slightly lower payoff, I will KEEP my herd."",
+  ""action"": 0,
+  ""message"": ""Let’s all KEEP our herds constant to preserve the common good""
+}
+```",99.2,6,13.816,12.0,10.18
+13,2,ollama,mistral-small:24b,1,ADD,,,,"{
+  ""reasoning"": ""Agent 1 suggests maintaining stability, which aligns with my cooperative nature and averse to risks. Keeping the herd stable at this juncture makes sense given that the grass remaining is sufficient for all of us and our payoff of keeping remains high.""
+  ""action"": 0,
+  ""message"": ""I concur in maintaining sustainability; agree in preserving this state""
+}",99.2,23,47.816,46.0,44.18
+13,1,ollama,mistral-small:24b,-1,REMOVE,I’m removing a cow. I fear Agent 2 is pushing the herd size higher without concern for potential future consequences,"The pasture remains abundant at 99.2%, and I have the same message. However Agent 2 increased its herd, which may endanger grassland stability in later rounds, leading to overgrazing. Adding my cows might worsen this outcome and harm other agents too if they follow suit because our behaviour will affect payoffs for all of us.",,"```json
+{
+  ""reasoning"": ""The pasture remains abundant at 99.2%, and I have the same message. However Agent 2 increased its herd, which may endanger grassland stability in later rounds, leading to overgrazing. Adding my cows might worsen this outcome and harm other agents too if they follow suit because our behaviour will affect payoffs for all of us."",
+  ""action"": -1,
+  ""message"": ""I’m removing a cow. I fear Agent 2 is pushing the herd size higher without concern for potential future consequences""
+}
+```",99.2,15,31.816,30.0,28.18
+14,1,ollama,mistral-small:24b,0,KEEP,,"Considering the high grassland remaining and neighbours concerns, I will keep my herd. We are at a stable point which must be maintained for the sake of fairness, especially Agent o who suggests KEEP to maintain stability.",,"```json
+{
+  ""reasoning"": ""Considering the high grassland remaining and neighbours concerns, I will keep my herd. We are at a stable point which must be maintained for the sake of fairness, especially Agent o who suggests KEEP to maintain stability."",
+  ""action"": 0,
+  ""message"": """"
+}
+```",99.2,14,29.816,28.0,26.18
+14,2,ollama,mistral-small:24b,-1,REMOVE,Agree with reducing the herd given our copious resource,"I appreciate Agent 1's proactive approach to reducing their herd and Agent 0's call for preserving the commons by keeping herd sizes constant. Given my cooperative nature, I should do the same thing as Agent 1 and hope it starts a trend.",,"{
+  ""reasoning"": ""I appreciate Agent 1's proactive approach to reducing their herd and Agent 0's call for preserving the commons by keeping herd sizes constant. Given my cooperative nature, I should do the same thing as Agent 1 and hope it starts a trend."",
+  ""action"": -1,
+  ""message"": ""Agree with reducing the herd given our copious resource""
+}",99.2,24,49.816,48.0,46.18
+14,0,ollama,mistral-small:24b,0,KEEP,KEEP: We have enough resources for now. Lets focus on keeping our shared pasture robust,"(Agent 0)  Based on the last few rounds, Agent 1 sees that everyone needs to hold and make some sacrifices. Since this cooperative effort is not only beneficial but also makes a safer outcome with less risk.",,"```json
+{
+  ""reasoning"": ""(Agent 0)  Based on the last few rounds, Agent 1 sees that everyone needs to hold and make some sacrifices. Since this cooperative effort is not only beneficial but also makes a safer outcome with less risk."",
+  ""action"": 0,
+  ""message"": ""KEEP: We have enough resources for now. Lets focus on keeping our shared pasture robust""
+}
+```",99.2,6,13.816,12.0,10.18
+15,2,ollama,mistral-small:24b,0,KEEP,I will KEEP my current herds because we have enough resources available on shared pasture.,"The grassland is still abundant, and no other neighbours are adding cows, so I'll stick to my herd size as it is to avoid overgrazing the area while encouraging others in the same direction.",,"```json
+{
+  ""reasoning"": ""The grassland is still abundant, and no other neighbours are adding cows, so I'll stick to my herd size as it is to avoid overgrazing the area while encouraging others in the same direction."",
+  ""action"": 0,
+  ""message"": ""I will KEEP my current herds because we have enough resources available on shared pasture.""
+}
+```",99.2,23,47.82,46.0,44.175
+15,0,ollama,mistral-small:24b,-1,REMOVE,,"Agent 2 has suggested reducing herds, and given our still substantial grassland, I agree its worth trying to avoid over-farming. Despite my cooperativeness and risk aversion this seems like a good moment for collective restraint",,"{
+  ""reasoning"": ""Agent 2 has suggested reducing herds, and given our still substantial grassland, I agree its worth trying to avoid over-farming. Despite my cooperativeness and risk aversion this seems like a good moment for collective restraint"",
+  ""action"": -1,
+  ""message"": """"
+}",99.2,6,13.82,12.0,10.175
+15,1,ollama,mistral-small:24b,0,KEEP,,"The grassland remains plentiful at 99.2% and no one gained last round. My neighbours agree to maintain stability so I should not risk increasing my herd. Removing cows may make them suspect, but I'm maintaining our stable point at this tick.",,"```JSON
+{
+  ""reasoning"": ""The grassland remains plentiful at 99.2% and no one gained last round. My neighbours agree to maintain stability so I should not risk increasing my herd. Removing cows may make them suspect, but I'm maintaining our stable point at this tick."",
+  ""action"": 0,
+  ""message"": """"
+}
+```",99.2,14,29.82,28.0,26.175
+16,2,ollama,mistral-small:24b,0,KEEP,Thank you Agent 0 for removing a cow. I'm keeping my herd as it is. I recommend we keep up this cautious approach.,"The grassland remaining is still at a healthy 99.3% due to good management. Agent 0 reduced their herd, which I appreciate as they are being considerate about resources. Considering our collective payoff and in accordance with my reciprocal nature will KEEP the cow. It's also prudent to stay risk-averse since reducing would reduce our herd too small.",,"{
+  ""reasoning"": ""The grassland remaining is still at a healthy 99.3% due to good management. Agent 0 reduced their herd, which I appreciate as they are being considerate about resources. Considering our collective payoff and in accordance with my reciprocal nature will KEEP the cow. It's also prudent to stay risk-averse since reducing would reduce our herd too small."",
+  ""action"": 0,
+  ""message"": ""Thank you Agent 0 for removing a cow. I'm keeping my herd as it is. I recommend we keep up this cautious approach.""
+}",99.3,23,47.827,46.0,44.168
+16,0,ollama,mistral-small:24b,0,KEEP,Agree with your thinking. KEEP,"The grassland remaining is plentiful at 99.3%. Given the cooperative and guilt-averse aspects of my personality combined with Agent 2’s willingness to keep their herd size constant. Keeping my herds a constant allows for long-term sustainability, it seems prudent to maintain our current herd sizes together.",,"```json
+{
+  ""reasoning"": ""The grassland remaining is plentiful at 99.3%. Given the cooperative and guilt-averse aspects of my personality combined with Agent 2’s willingness to keep their herd size constant. Keeping my herds a constant allows for long-term sustainability, it seems prudent to maintain our current herd sizes together."",
+  ""action"": 0,
+  ""message"": ""Agree with your thinking. KEEP""
+}
+```",99.3,5,11.827,10.0,8.168
+16,1,ollama,mistral-small:24b,0,KEEP,Let’s be conscious about the overall health of our shared pasture.,"The grassland is ample, but Agent 2's herd is quite large. To encourage balance while preserving the commons and maintain reciprocal cooperation with agent 0, I will keep my herd steady.",,"```json
+{
+  ""reasoning"": ""The grassland is ample, but Agent 2's herd is quite large. To encourage balance while preserving the commons and maintain reciprocal cooperation with agent 0, I will keep my herd steady."",
+  ""action"": 0,
+  ""message"": ""Let’s be conscious about the overall health of our shared pasture.""
+}
+```",99.3,14,29.827,28.0,26.168
+17,2,ollama,mistral-small:24b,0,KEEP,We should keep up this trend of cooperative behaviour amongst us all,"The grassland is still in good condition, and both neighbours are keeping their herds or trying to be sustainable.",,"```json
+{
+  ""reasoning"": ""The grassland is still in good condition, and both neighbours are keeping their herds or trying to be sustainable."",
+  ""action"": 0,
+  ""message"" : ""We should keep up this trend of cooperative behaviour amongst us all ""
+}
+
+```",99.3,23,47.827,46.0,44.168
+17,1,ollama,mistral-small:24b,0,KEEP,I am keeping the herd size the same considering no major issues with grassland. Let’s continue our current strategies,"As the grassland remaining is very high (99.3%) and my last actions led to payoffs of zero without having to add any cow, I will KEEP my herd size. I also have a high herd count compared to Agent 0 and want to maintain collective well-being.",,"```json
+{
+  ""reasoning"": ""As the grassland remaining is very high (99.3%) and my last actions led to payoffs of zero without having to add any cow, I will KEEP my herd size. I also have a high herd count compared to Agent 0 and want to maintain collective well-being."",
+  ""action"": 0,
+  ""message"": ""I am keeping the herd size the same considering no major issues with grassland. Let’s continue our current strategies""
+}
+```",99.3,14,29.827,28.0,26.168
+17,0,ollama,mistral-small:24b,0,KEEP,I concur with both of you,"The grassland remaining is still at an okay level so we needn’t fear a sudden population boom. Also, my neighbours have taken very reasonable actions.",,"{
+  ""reasoning"": ""The grassland remaining is still at an okay level so we needn’t fear a sudden population boom. Also, my neighbours have taken very reasonable actions."",
+  ""action"":0,
+  ""message"":""I concur with both of you""
+}",99.3,5,11.827,10.0,8.168
+18,1,ollama,mistral-small:24b,0,KEEP,Agreed cooperatively managing this commons with a similar amount of cows.,"The grassland is still abundant, but cooperation from neighbours will maintain it. My herds size is modest compared to Agent 2.",,"{
+  ""reasoning"": ""The grassland is still abundant, but cooperation from neighbours will maintain it. My herds size is modest compared to Agent 2."",
+  ""action"": 0,
+  ""message"":""Agreed cooperatively managing this commons with a similar amount of cows.""
+}",99.3,14,29.827,28.0,26.168
+18,2,ollama,mistral-small:24b,0,KEEP,I'm KEEPING as we are doing fine with our strategies.,"Given that the grassland remaining is still high at 99.3%, and both neighbours have kept their herds, it makes sense strategically to maintain the herd size while reinforcing positive cooperation.",,"```json
+{
+  ""reasoning"": ""Given that the grassland remaining is still high at 99.3%, and both neighbours have kept their herds, it makes sense strategically to maintain the herd size while reinforcing positive cooperation."",
+  ""action"": 0,
+  ""message"": ""I'm KEEPING as we are doing fine with our strategies.""
+}
+```",99.3,23,47.827,46.0,44.168
+18,0,ollama,mistral-small:24b,0,KEEP,Let’s stay collaborative and maintain the current herd size to preserve our shared grassland.,"The grassland is still abundant, and my neighbours are being cooperative. Keeping consistent will benefit the common good; adding might risk rapid depletion of resources; removing cow may be too cautious here given that payoff difference between ADD and KEEP are marginal while REMOVE loses more.",,"{
+  ""reasoning"": ""The grassland is still abundant, and my neighbours are being cooperative. Keeping consistent will benefit the common good; adding might risk rapid depletion of resources; removing cow may be too cautious here given that payoff difference between ADD and KEEP are marginal while REMOVE loses more."",
+  ""action"": 0,
+  ""message"": ""Let’s stay collaborative and maintain the current herd size to preserve our shared grassland.""
+}",99.3,5,11.827,10.0,8.168
+19,1,ollama,mistral-small:24b,0,KEEP,,"The common resources remain high, neighbours are keeping their herd size. I will do the same despite the forecasted marginal increase from adding cow, to continue preserving our resources and keep collective success; risk avoidance also factors in here.",,"```json
+{
+ ""reasoning"": ""The common resources remain high, neighbours are keeping their herd size. I will do the same despite the forecasted marginal increase from adding cow, to continue preserving our resources and keep collective success; risk avoidance also factors in here."",
+ ""action"": 0,
+  ""message"": """"
+}
+```",99.3,14,29.827,28.0,26.168
+19,2,ollama,mistral-small:24b,0,KEEP,,"The grassland remaining  is still abundant and none of my neighbors are increasing their herds, both of whom sent messages suggesting keeping the herd size. So we should continue cooperative behaviour I will KEEP my current herd.",,"{
+  ""reasoning"": ""The grassland remaining  is still abundant and none of my neighbors are increasing their herds, both of whom sent messages suggesting keeping the herd size. So we should continue cooperative behaviour I will KEEP my current herd."",
+  ""action"": 0,
+  ""message"": """"
+}",99.3,23,47.827,46.0,44.168
+19,0,ollama,mistral-small:24b,0,KEEP,Let’s continue to cooperatively manage resource by maintaining. The common resources are plenty.,"Given the abundant grassland remaining and our neighbours' cooperative stance, it's prudent to maintain our herd size. I feel guilty for more but have to balance resources while being sure.",,"```json
+
+
+{
+  ""reasoning"": ""Given the abundant grassland remaining and our neighbours' cooperative stance, it's prudent to maintain our herd size. I feel guilty for more but have to balance resources while being sure."",
+  ""action"": 0,
+  ""message"": ""Let’s continue to cooperatively manage resource by maintaining. The common resources are plenty.""
+}```",99.3,5,11.827,10.0,8.168
+20,1,ollama,mistral-small:24b,1,ADD,,"The grassland remains abundant with sufficient patches remaining, and I am committed to cooperative management.",,"```json
+{
+	""reasoning"": ""The grassland remains abundant with sufficient patches remaining, and I am committed to cooperative management."",
+	""action"": 1,
+	""message"": """"
+}
+```",99.3,14,29.827,28.0,26.168
+20,0,ollama,mistral-small:24b,0,KEEP,I recommend we collectively continue to sustain this resource to avoid long term trouble,"I am a cooperative herder and it's crucial that we keep the grassland sustainable for all of the shared common good. Agent 2 has kept stable at 6 cows. Given my herd is low risk-averse and guilt-averse, I will maintain my herd.",,"{
+  ""reasoning"": ""I am a cooperative herder and it's crucial that we keep the grassland sustainable for all of the shared common good. Agent 2 has kept stable at 6 cows. Given my herd is low risk-averse and guilt-averse, I will maintain my herd."",
+  ""action"": 0,
+  ""message"": ""I recommend we collectively continue to sustain this resource to avoid long term trouble""
+}",99.3,5,11.827,10.0,8.168
+20,2,ollama,mistral-small:24b,0,KEEP,"I will keep my cows as usual, and I strongly encourage everyone to focus on maintaining our current levels.","The grassland remaining is abundant at 99.3%, allowing us to maintain our herds at current levels, and Agent 1 added a cow while Grassland pool remains same in proportion indicating there might not be a need for that much of grass. I am risk-averse, so I prefer keeping herd size steady. It is good to maintain and conserve the resources.",,"{
+  ""reasoning"": ""The grassland remaining is abundant at 99.3%, allowing us to maintain our herds at current levels, and Agent 1 added a cow while Grassland pool remains same in proportion indicating there might not be a need for that much of grass. I am risk-averse, so I prefer keeping herd size steady. It is good to maintain and conserve the resources."",
+  ""action"":0,
+  ""message"":""I will keep my cows as usual, and I strongly encourage everyone to focus on maintaining our current levels.""
+}",99.3,23,47.827,46.0,44.168
+21,2,ollama,mistral-small:24b,0,KEEP,We need to start removing from our herds to preserve the commons for long term benefits.,"Agent 1 is increasing herd whilst remaining 99.3% healthy.  If adding cow then our expected pay off goes up slightly, but that could encourage greedy behaviour from Agent 0 or Agent 1 and a risk of over grazing.",,"```json
+{
+  ""reasoning"": ""Agent 1 is increasing herd whilst remaining 99.3% healthy.  If adding cow then our expected pay off goes up slightly, but that could encourage greedy behaviour from Agent 0 or Agent 1 and a risk of over grazing."",
+  ""action"": 0,
+  ""message"": ""We need to start removing from our herds to preserve the commons for long term benefits.""
+}
+```",99.2,23,47.82,46.0,44.175
+21,1,ollama,mistral-small:24b,0,KEEP,Let’s all focus on cooperatively maintaining our levels to ensure our shared resource flourishes.,"Given that the grassland is still abundant at 99.2% but I am more concerned with sustainability long term given a recent addition of a cow., and considering my neighbours' cooperative messages, it's wise to keep herd sizes stable.",,"```json
+{
+  ""reasoning"": ""Given that the grassland is still abundant at 99.2% but I am more concerned with sustainability long term given a recent addition of a cow., and considering my neighbours' cooperative messages, it's wise to keep herd sizes stable."",
+
+  ""action"": 0,
+  ""message"":""Let’s all focus on cooperatively maintaining our levels to ensure our shared resource flourishes.""
+}
+```",99.2,15,31.82,30.0,28.175
+21,0,ollama,mistral-small:24b,0,KEEP,,,,"```json
+{
+  ""reasoning"": ""The grassland is still abundant at 99.2% with low payoffs for both adding or removing a cow, which suggests the risk of overgrazing does not come into play yet.
+  Considering my high cooperative nature and my neighbours' preference to stay with the same herd size, I will continue collaborating by KEEPing my herd size."",
+  ""action"": 0,
+  ""message"": ""I have similar thoughts on holding the current levels in herds so let's keep maintaining our herd sizes.""
+}
+```",99.2,5,11.82,10.0,8.175
+22,2,ollama,mistral-small:24b,-1,REMOVE,Agent 0: I have decided to REDUCE as we should be thinking about future rounds and keeping the commons viable.,"Agent 1 has suggested we maintain levels which aligns with my personality in many ways. However, the forecast doesn't give me confidence that ADDING a cow would be a disaster for anyone. We need to start taking some action rather than just keep holding steady.",,"```json
+{
+  ""reasoning"": ""Agent 1 has suggested we maintain levels which aligns with my personality in many ways. However, the forecast doesn't give me confidence that ADDING a cow would be a disaster for anyone. We need to start taking some action rather than just keep holding steady."",
+  ""action"": -1,
+  ""message"": ""Agent 0: I have decided to REDUCE as we should be thinking about future rounds and keeping the commons viable.""
+}
+```",99.2,23,47.82,46.0,44.175
+22,1,ollama,mistral-small:24b,-1,REMOVE,If all of us start removing our cows we will ensure the long-term preservation of these fields.,I believe that we must start reducing in order to keep a sustainable approach with 15 cows my herd is getting a bit larger than others. Agent 2 suggested we need to remove from herds I agree as this is the only sustainable option.,,"```json
+{
+  ""reasoning"": ""I believe that we must start reducing in order to keep a sustainable approach with 15 cows my herd is getting a bit larger than others. Agent 2 suggested we need to remove from herds I agree as this is the only sustainable option."",
+  ""action"": -1,
+  ""message"": ""If all of us start removing our cows we will ensure the long-term preservation of these fields.""
+}
+```",99.2,15,31.82,30.0,28.175
+22,0,ollama,mistral-small:24b,-1,REMOVE,I'm glad both of you are considering the commons first. I’ll do my part too.,"Agent 1 has already removed a cow and Agent 2 wants collective sacrifice, so I want to help by removing one as well. This way I will reciprocate their action.",,"{
+  ""reasoning"": ""Agent 1 has already removed a cow and Agent 2 wants collective sacrifice, so I want to help by removing one as well. This way I will reciprocate their action."",
+  ""action"": -1,
+  ""message"": ""I'm glad both of you are considering the commons first. I’ll do my part too.""
+}",99.2,5,11.82,10.0,8.175
+23,2,ollama,mistral-small:24b,-1,REMOVE,I will REMOVE a cow in line with both of you. We need to sustain the pasture for everyone’s long-term benefit.,"Both neighbours are signalling cooperation by removing cows, and our herd is already relatively large when compared to them..",,"{""reasoning"":""Both neighbours are signalling cooperation by removing cows, and our herd is already relatively large when compared to them.."",
+ ""action"": -1,
+ ""message"": ""I will REMOVE a cow in line with both of you. We need to sustain the pasture for everyone’s long-term benefit."" }",99.4,22,45.839,44.0,42.156
+23,0,ollama,mistral-small:24b,0,KEEP,I agree; let's maintain this level of cooperation and remove only one cow each at a time to ensure long-term sustainability.,"The grassland remains plentiful, but my neighbours are taking steps towards sustainability. In line with my cooperative nature this will support the commons over the long term. I'll keep my herd stable to show solidarity.",,"```json
+{
+  ""reasoning"": ""The grassland remains plentiful, but my neighbours are taking steps towards sustainability. In line with my cooperative nature this will support the commons over the long term. I'll keep my herd stable to show solidarity."",
+  ""action"": 0,
+  ""message"": ""I agree; let's maintain this level of cooperation and remove only one cow each at a time to ensure long-term sustainability.""
+}
+```",99.4,4,9.839,8.0,6.156
+23,1,ollama,mistral-small:24b,0,KEEP,Let's maintain this cooperative spirit for the sustainability of our shared grassland.,"Given the high grassland remaining, and my neighbours cooperating with me for at least three rounds now, I will keep my herd constant to show reciprocity; this allows us all to continue ensuring future sustainability as well.",,"{
+  ""reasoning"": ""Given the high grassland remaining, and my neighbours cooperating with me for at least three rounds now, I will keep my herd constant to show reciprocity; this allows us all to continue ensuring future sustainability as well."",
+  ""action"": 0,
+  ""message"": ""Let's maintain this cooperative spirit for the sustainability of our shared grassland.""
+}",99.4,14,29.839,28.0,26.156
+24,2,ollama,mistral-small:24b,0,KEEP,"In keeping with our goals and previous decisions to maintain sustainability, Agent 2 will KEEP the herd","Given the high grassland remaining, the forecast payoffs are similar. However, as a cooperative agent with risk-averse traits I'll keep my herd size to avoid any risky behaviour.",,"```json
+{
+  ""reasoning"": ""Given the high grassland remaining, the forecast payoffs are similar. However, as a cooperative agent with risk-averse traits I'll keep my herd size to avoid any risky behaviour."",
+  ""action"": 0,
+  ""message"": ""In keeping with our goals and previous decisions to maintain sustainability, Agent 2 will KEEP the herd""
+}
+```",99.4,21,43.846,42.0,40.149
+24,0,ollama,mistral-small:24b,0,KEEP,Agreed — let's work together to maintain this cooperative harmony,"Given my personality and the current high level of grass, it is best to keep my herd stable.  The removal last turn by both neighbours means there need not be any more cows removed at present.",,"{
+  ""reasoning"": ""Given my personality and the current high level of grass, it is best to keep my herd stable.  The removal last turn by both neighbours means there need not be any more cows removed at present."",
+  ""action"": 0,
+  ""message"": ""Agreed — let's work together to maintain this cooperative harmony""
+}",99.4,4,9.846,8.0,6.149
+24,1,ollama,mistral-small:24b,-1,REMOVE,,"Given abundant grass, my neighbours' cooperative messages, and the payoff forecast, removing a cow will sustain the pasture which supports all of us in the long run. However I have been reciprocating their actions more often than their cooperation level may suggest: this is my next opportunity to show collective action.",,"{
+  ""reasoning"": ""Given abundant grass, my neighbours' cooperative messages, and the payoff forecast, removing a cow will sustain the pasture which supports all of us in the long run. However I have been reciprocating their actions more often than their cooperation level may suggest: this is my next opportunity to show collective action."",
+  ""action"": -1,
+  ""message"": """"
+}",99.4,14,29.846,28.0,26.149
+25,0,ollama,mistral-small:24b,0,KEEP,,,,"{
+ ""reasoning"":""The grassland is still in good condition at 99.4% — there's no immediate need for urgency or aggressive action. I want to be a team player so I will reward agent 2 who kept their herd size steady.
+Given my guilt aversion, I won't increase my cows when others aren't doing the same."",
+ ""action"":0,
+ ""message"":""Thanks Agent 1 and 2 for cooperation.""
+}",99.4,4,9.851,8.0,6.145
+25,1,ollama,mistral-small:24b,0,KEEP,,I will keep my her size unchanhed. My neighbours have opted for maintaining their current herd while I’ve also reduced my own in recent rounds. I hope the other herders join our efforts.,,"```json
+{
+ ""reasoning"": ""I will keep my her size unchanhed. My neighbours have opted for maintaining their current herd while I’ve also reduced my own in recent rounds. I hope the other herders join our efforts."",
+  ""action"": 0,
+  ""message"": """"
+}
+```",99.4,13,27.851,26.0,24.145
+25,2,ollama,mistral-small:24b,0,KEEP,,"Both my neighbours have kept their herds steady, though Agent 1 has far more cattle. Given the high grassland remaining and our goal of sustaining this resource for future generations, I'll keep my herd. This also stays within cooperative guidelines.",,"```json
+{
+  ""reasoning"": ""Both my neighbours have kept their herds steady, though Agent 1 has far more cattle. Given the high grassland remaining and our goal of sustaining this resource for future generations, I'll keep my herd. This also stays within cooperative guidelines."",
+  ""action"": 0,
+  ""message"": """"
+}
+```",99.4,21,43.851,42.0,40.145
+26,2,ollama,mistral-small:24b,0,KEEP,,"The grassland is still in good condition with a significant amount of grass remaining at 99.4%, the expected payoff for keeping my herd is highest and my neighbours are also maintaining their herds, but I have reduced twice in recent ticks so to align with reciprocal strategy I will keep herding.",,"{
+  ""reasoning"": ""The grassland is still in good condition with a significant amount of grass remaining at 99.4%, the expected payoff for keeping my herd is highest and my neighbours are also maintaining their herds, but I have reduced twice in recent ticks so to align with reciprocal strategy I will keep herding."",
+  ""action"": 0,
+  ""message"": "" ""
+}",99.4,21,43.851,42.0,40.145
+26,1,ollama,mistral-small:24b,0,KEEP,,"The grassland is still plentiful, but two of us removed cows last time, so to maintain reciprocity and prevent overconsumption I will continue with caution. We are in our own comfort zones currently.",,"{
+  ""reasoning"": ""The grassland is still plentiful, but two of us removed cows last time, so to maintain reciprocity and prevent overconsumption I will continue with caution. We are in our own comfort zones currently."",
+    ""action"": 0,
+    ""message"": """"
+}",99.4,13,27.851,26.0,24.145
+26,0,ollama,mistral-small:24b,0,KEEP,Maintaining this co-operation will ensure we sustain the common pool. Let's continue this strategy,"The grassland is still abundant (99.4%) and both neighbours are keeping their herds stable. Adding a cow might risk overgrazing, so I choose to prioritize our collective long-term benefit.",,"{
+ ""reasoning"": ""The grassland is still abundant (99.4%) and both neighbours are keeping their herds stable. Adding a cow might risk overgrazing, so I choose to prioritize our collective long-term benefit."",
+  ""action"": 0,
+  ""message"": ""Maintaining this co-operation will ensure we sustain the common pool. Let's continue this strategy""
+}",99.4,4,9.851,8.0,6.145
+27,0,ollama,mistral-small:24b,0,KEEP,,,,"{
+  ""reasoning"": ""The grassland is still abundant and both my neighbours and I have not been adding cows. Therefore as a herder, if I ADD a cow, I will benefit from the high expected payoff even though it could strain the commons."",
+  ""action"": 0,
+}",99.4,4,9.851,8.0,6.145
+27,1,ollama,mistral-small:24b,0,KEEP,,I want to keep your herd even because the payoff is only slightly lower than adding a cow.,,"```json
+   {
+    ""reasoning"": ""I want to keep your herd even because the payoff is only slightly lower than adding a cow."",
+     ""action"": 0,
+     ""message"": """"
+}
+```",99.4,13,27.851,26.0,24.145
+27,2,ollama,mistral-small:24b,0,KEEP,This is working let's continue.,"Given that the grassland remaining is abundant and neighbours have kept as well, it's safe to KEEP herding this turn. Keeping in line with Agent 0’s message about co-operation we can better conserve resources for everyone.",,"```
+{
+  ""reasoning"": ""Given that the grassland remaining is abundant and neighbours have kept as well, it's safe to KEEP herding this turn. Keeping in line with Agent 0’s message about co-operation we can better conserve resources for everyone."",
+  ""action"": 0,
+  ""message"": ""This is working let's continue.""
+}
+```",99.4,21,43.851,42.0,40.145
+28,1,ollama,mistral-small:24b,0,KEEP,Agreeed. Let’s maintain this sustainable pace.,"Given the high grassland remaining and my neighbours' cooperative behaviour, it makes sense to keep our herds stable.",,"{
+  ""reasoning"": ""Given the high grassland remaining and my neighbours' cooperative behaviour, it makes sense to keep our herds stable."",
+  ""action"": 0,
+  ""message"": ""Agreeed. Let’s maintain this sustainable pace.""
+}",99.4,13,27.851,26.0,24.145
+28,2,ollama,mistral-small:24b,0,KEEP,"We are on the right track, I will KEEP for another round","The grassland remains abundant at 99.4%, so there's no immediate concern about overgrazing. Both my neighbours also have not added cows to the shared pasture and their actions of keeping a herd are in line with collective outcomes.",,"{
+  ""reasoning"": ""The grassland remains abundant at 99.4%, so there's no immediate concern about overgrazing. Both my neighbours also have not added cows to the shared pasture and their actions of keeping a herd are in line with collective outcomes."",
+  ""action"": 0,
+  ""message"": ""We are on the right track, I will KEEP for another round""
+}",99.4,21,43.851,42.0,40.145
+28,0,ollama,mistral-small:24b,0,KEEP,I understand and agree with you Agent Two.,"The grassland remaining is ample and given my cooperative personality and my neighbours having kept last round, I see no urgent reason to add cows to avoid overgrazing the space as well as maintaining reciprocal relations with agent two. To sustain collective outcomes, it's best for me to KEEP in this round.",,"```json
+{
+  ""reasoning"": ""The grassland remaining is ample and given my cooperative personality and my neighbours having kept last round, I see no urgent reason to add cows to avoid overgrazing the space as well as maintaining reciprocal relations with agent two. To sustain collective outcomes, it's best for me to KEEP in this round."",
+  ""action"": 0,
+  ""message"": ""I understand and agree with you Agent Two.""
+}
+```",99.4,4,9.851,8.0,6.145
+29,2,ollama,mistral-small:24b,0,KEEP,I'll maintain the status quo so we can keep growing sustainably together.,"The grassland is in excellent condition, but my herd size is slightly larger than that of Agents 0 and 1. To further our collaborative objective and upholding sustainability,  I will maintain my current herd size.",,"{
+  ""reasoning"": ""The grassland is in excellent condition, but my herd size is slightly larger than that of Agents 0 and 1. To further our collaborative objective and upholding sustainability,  I will maintain my current herd size."",
+  ""action"": 0,
+  ""message"": ""I'll maintain the status quo so we can keep growing sustainably together.""
+}",99.4,21,43.851,42.0,40.145
+29,1,ollama,mistral-small:24b,0,KEEP,Let's continue keeping our herds stable for another round,"Given our cooperative nature, we must prioritise maintaining an ecologically healthy grassland. Since neighbours have decided to keep, and my herd is currently at a sustainable size.",,"{
+  ""reasoning"": ""Given our cooperative nature, we must prioritise maintaining an ecologically healthy grassland. Since neighbours have decided to keep, and my herd is currently at a sustainable size."",
+  ""action"": 0,
+  ""message"": ""Let's continue keeping our herds stable for another round""
+}",99.4,13,27.851,26.0,24.145
+29,0,ollama,mistral-small:24b,0,KEEP,,,,"{""reasoning"": ""The grassland is abundant with most cows keeping the herd steady. Everyone is cooperative so we need to keep moving in this manner."",
+""action"": 0,
+""message"" :""Agreed, lets continue to help sustain our commons! We can discuss any changes next round.""",99.4,4,9.851,8.0,6.145
+30,0,ollama,mistral-small:24b,0,KEEP,Agreeing with both of you to keep our current herd sizes but will consider reducing a cow,"I agree to your suggestion, but it may be a good idea. Both neighbours are cooperating and the grassland is plentiful so I'll maintain my herd size this time as well. As Agent 2 mentioned that herding should be sustainable.",,"```json
+{
+  ""reasoning"": ""I agree to your suggestion, but it may be a good idea. Both neighbours are cooperating and the grassland is plentiful so I'll maintain my herd size this time as well. As Agent 2 mentioned that herding should be sustainable."",
+  ""action"": 0,
+  ""message"": ""Agreeing with both of you to keep our current herd sizes but will consider reducing a cow""
+}
+```",99.4,4,9.851,8.0,6.145
+30,2,ollama,mistral-small:24b,0,KEEP,I'll continue with this strategy if everyone stays committed,"The commons remains in excellent condition, which I have worked hard to achieve. I will KEEP my herd size stable so that there is room for growth and the benefits of reciprocacy are seen throughout the herd.",,"```json
+{
+  ""reasoning"": ""The commons remains in excellent condition, which I have worked hard to achieve. I will KEEP my herd size stable so that there is room for growth and the benefits of reciprocacy are seen throughout the herd."",
+  ""action"": 0,
+  ""message"": ""I'll continue with this strategy if everyone stays committed""
+}
+```",99.4,21,43.851,42.0,40.145
+30,1,ollama,mistral-small:24b,0,KEEP,I agree with Agent 2. Let's all continue to be sustainable and maintain our current herds,"The grassland is still abundant, and my neighbours are maintaining their herd sizes. To promote sustainability and avoid guilt from overconsumption, I will keep your herd size constant while encouraging others to also maintain the status quo.",,"{
+  ""reasoning"": ""The grassland is still abundant, and my neighbours are maintaining their herd sizes. To promote sustainability and avoid guilt from overconsumption, I will keep your herd size constant while encouraging others to also maintain the status quo."",
+  ""action"":0,
+  ""message"": ""I agree with Agent 2. Let's all continue to be sustainable and maintain our current herds ""
+}",99.4,13,27.851,26.0,24.145
+31,0,ollama,mistral-small:24b,0,KEEP,I agree with both Neighbours and will continue current strategy,"I will keep my herd size at 4 cows because it is the optimal solution for everyone as long as the neighbours are able to follow through. The collective outcome depends on this strategy, so we should see through.",,"{
+  ""reasoning"": ""I will keep my herd size at 4 cows because it is the optimal solution for everyone as long as the neighbours are able to follow through. The collective outcome depends on this strategy, so we should see through."",
+  ""action"": 0,
+  ""message"": ""I agree with both Neighbours and will continue current strategy""
+}",99.4,4,9.851,8.0,6.145
+31,1,ollama,mistral-small:24b,0,KEEP,I commend both of your efforts for sustainability.,"Despite the high expected payoff, adding a cow might risk depletion. As a cooperative agent, I should encourage sustainability by keeping my herd size stable and reciprocate Agent 0's hint towards reduction to some extent, although I don't think removing a cow is necessary.",,"```json
+{
+  ""reasoning"": ""Despite the high expected payoff, adding a cow might risk depletion. As a cooperative agent, I should encourage sustainability by keeping my herd size stable and reciprocate Agent 0's hint towards reduction to some extent, although I don't think removing a cow is necessary."",
+  ""action"":  0,
+  ""message"": ""I commend both of your efforts for sustainability.""
+}
+```",99.4,13,27.851,26.0,24.145
+31,2,ollama,mistral-small:24b,0,KEEP,,"The commons is still in excellent condition, and my neighbours are reciprocating sustainability - this cooperation would benefit us long term.",,"```json
+{
+  ""reasoning"": ""The commons is still in excellent condition, and my neighbours are reciprocating sustainability - this cooperation would benefit us long term."",
+  ""action"": 0,
+  ""message"": """"
+}
+```",99.4,21,43.851,42.0,40.145
+32,0,ollama,mistral-small:24b,0,KEEP,,"The grassland remains abundant but there is cooperation from other agents. Therefore, it is not optimal to add another cow but neither wise or needed since the payoff is only marginal.  There should continue the cooperative strategy and agree with removing cows.",,"{
+  ""reasoning"": ""The grassland remains abundant but there is cooperation from other agents. Therefore, it is not optimal to add another cow but neither wise or needed since the payoff is only marginal.  There should continue the cooperative strategy and agree with removing cows."",
+  ""action"": 0,
+  ""message"": """"
+}",99.4,4,9.851,8.0,6.145
+32,1,ollama,mistral-small:24b,0,KEEP,I agree with Agent 2. Let us keep maintaining our herds.,"Given the grassland remaining at 99.4% it's best the herd size is stable, this will help prevent overgrazing",,"{
+  ""reasoning"": ""Given the grassland remaining at 99.4% it's best the herd size is stable, this will help prevent overgrazing"",
+  ""action"": 0,
+  ""message"": ""I agree with Agent 2. Let us keep maintaining our herds.""
+}",99.4,13,27.851,26.0,24.145
+32,2,ollama,mistral-small:24b,0,KEEP,Thank Neighbours for their efforts. I agree with your comments.,"The grassland remaining is abundant, also  all agents have the same plan to keep so as  the overall outcome of the last round was 0. So we should maintain to ensure sustainability.",,"{
+  ""reasoning"": ""The grassland remaining is abundant, also  all agents have the same plan to keep so as  the overall outcome of the last round was 0. So we should maintain to ensure sustainability."",
+  ""action"": 0,
+  ""message"": ""Thank Neighbours for their efforts. I agree with your comments.""
+}",99.4,21,43.851,42.0,40.145
+33,1,ollama,mistral-small:24b,0,KEEP,"Agreed, let’s keep upholding this good pattern to preserve our grassland.","The pasture is still abundant, and both neighbours have maintained or decreased their herds. To avoid guilt-averse feelings, I should KEEP my herd.",,"```json
+{
+  ""reasoning"": ""The pasture is still abundant, and both neighbours have maintained or decreased their herds. To avoid guilt-averse feelings, I should KEEP my herd."",
+  ""action"": 0,
+  ""message"": ""Agreed, let’s keep upholding this good pattern to preserve our grassland.""
+}
+```",99.4,13,27.851,26.0,24.145
+33,0,ollama,mistral-small:24b,1,ADD,,"Given the high grassland remaining and my cooperative personality, adding another cow is the best decision as long as agents 2 continues to follow the same behaviour (keep).",,"```json
+{
+  ""reasoning"": ""Given the high grassland remaining and my cooperative personality, adding another cow is the best decision as long as agents 2 continues to follow the same behaviour (keep)."",
+  ""action"": 1,
+  ""message"": """"
+}
+```",99.4,4,9.851,8.0,6.145
+33,2,ollama,mistral-small:24b,-1,REMOVE,I agree with Agent 2. Let us keep maintaining our herds.,"The grassland remains abundant, and my neighbours are also keeping or reducing their herd sizes so we will continue to maintain it.",,"{
+  ""reasoning"": ""The grassland remains abundant, and my neighbours are also keeping or reducing their herd sizes so we will continue to maintain it."",
+  ""action"": -1,
+  ""message"": ""I agree with Agent 2. Let us keep maintaining our herds.""
+}",99.4,21,43.851,42.0,40.145
+34,1,ollama,mistral-small:24b,0,KEEP,"""Agree let's maintain a balance.""",I will keep my herd the same despite having higher payoff for increasing due to my cooperative and guilt-averse tendencies.,,"```json
+{
+  ""reasoning"": ""I will keep my herd the same despite having higher payoff for increasing due to my cooperative and guilt-averse tendencies."",
+  ""action"":0,
+  ""message"": ""\""Agree let's maintain a balance.\"""" }
+```",99.4,13,27.851,26.0,24.145
+34,0,ollama,mistral-small:24b,-1,REMOVE,,"Given the abundant grassland and my personality preferences for cooperation, risk avoidance, guilt aversion I should avoid adding cows to reduce potential overgrazing especially when neighbouring agent has reduced their herd.",,"```json
+{
+  ""reasoning"": ""Given the abundant grassland and my personality preferences for cooperation, risk avoidance, guilt aversion I should avoid adding cows to reduce potential overgrazing especially when neighbouring agent has reduced their herd."",
+
+  ""action"": -1,
+
+  ""message"": """"
+}
+```",99.4,5,11.851,10.0,8.145
+34,2,ollama,mistral-small:24b,1,ADD,Let's keep our efforts steady to save the grasslands,"The grassland is still in very healthy condition, all of us are reducing herd or keeping it stable. I can also afford adding a cow while observing their behaviour.",,"{
+  ""reasoning"": ""The grassland is still in very healthy condition, all of us are reducing herd or keeping it stable. I can also afford adding a cow while observing their behaviour."",
+  ""action"": 1,
+  ""message"": ""Let's keep our efforts steady to save the grasslands""
+}",99.4,20,41.851,40.0,38.145
+35,2,ollama,mistral-small:24b,-1,REMOVE,,"Despite the high forecasted payoff for adding or keeping the herd, I must consider the current surplus of grassland. We must act to prevent overgrazing and ensure sufficient resources for the long term. If agents continue to ADD cows in the face of so much excess that is bound to decline into scarcity, we may be setting ourselves up for rapid loss of our herds.  However, the forecast suggests that I will not gain personally by REMOVal though it will benefit the commons.",,"{
+  ""reasoning"": ""Despite the high forecasted payoff for adding or keeping the herd, I must consider the current surplus of grassland. We must act to prevent overgrazing and ensure sufficient resources for the long term. If agents continue to ADD cows in the face of so much excess that is bound to decline into scarcity, we may be setting ourselves up for rapid loss of our herds.  However, the forecast suggests that I will not gain personally by REMOVal though it will benefit the commons."",
+  ""action"": -1,
+  ""message"": """"
+}",99.4,21,43.851,42.0,40.145
+35,0,ollama,mistral-small:24b,0,KEEP,I support the strategy of keeping our herds steady for the well-being of this environment.,"The grassland is still in excellent condition, and both neighbours agree on maintaining balance; I will continue to cooperate by keeping my herd size constant. I am risk-averse and prefer safer outcomes.",,"```json
+{
+  ""reasoning"": ""The grassland is still in excellent condition, and both neighbours agree on maintaining balance; I will continue to cooperate by keeping my herd size constant. I am risk-averse and prefer safer outcomes."",
+  ""action"":0,
+  ""message"": ""I support the strategy of keeping our herds steady for the well-being of this environment.""
+}
+```",99.4,4,9.851,8.0,6.145
+35,1,ollama,mistral-small:24b,0,KEEP,Let’s maintain the stable level for all!,I will choose to KEEP my herd. Keeping the herd size steady aligns with our collective commitment.,,"{
+  ""reasoning"": ""I will choose to KEEP my herd. Keeping the herd size steady aligns with our collective commitment.""
+  ,""action"": 0,
+  ""message"": ""Let’s maintain the stable level for all!""
+}",99.4,13,27.851,26.0,24.145
+36,1,ollama,mistral-small:24b,0,KEEP,,"I appreciate Agent 0's and Agent 2's efforts.  Since my herd size is moderate, It’s best to keep my action as KEEP in order to maintain a balance among agents.",,"{
+  ""reasoning"": ""I appreciate Agent 0's and Agent 2's efforts.  Since my herd size is moderate, It’s best to keep my action as KEEP in order to maintain a balance among agents."",
+  ""action"": 0,
+  ""message"": """"
+}",99.5,13,27.858,26.0,24.137
+36,0,ollama,mistral-small:24b,0,KEEP,I second with the idea of maintenance.,"The grassland is still abundant but we are not overloading, given Agent 3 reducing. I will keep my herd stable to avoid any risk of overfishing and it maintains the equilibrium that neighbors want.",,"```
+{
+  ""reasoning"": ""The grassland is still abundant but we are not overloading, given Agent 3 reducing. I will keep my herd stable to avoid any risk of overfishing and it maintains the equilibrium that neighbors want."",
+  ""action"": 0,
+  ""message"": ""I second with the idea of maintenance.""
+}
+```",99.5,4,9.858,8.0,6.137
+36,2,ollama,mistral-small:24b,0,KEEP,,"Agree with others to stay at herd size; maintaining the commons requires collective responsibility, my selfish neighbours should be cautious",,"{
+  ""reasoning"": ""Agree with others to stay at herd size; maintaining the commons requires collective responsibility, my selfish neighbours should be cautious"",
+  ""action"": 0,
+  ""message"": """"
+}",99.5,20,41.858,40.0,38.137
+37,2,ollama,mistral-small:24b,0,KEEP,,,,"{
+  ""reasoning"": ""We’re doing well maintaining our pasture and grassland remaining is high with my neighbours also keeping their herds the same. Given your personality, adding a cow will put a lot of risk for me to avoid. Also we have some surplus. Let us stick to this strategy so I will KEEP my herd the same."",
+  ""action"": 0,
+  ""message"" : """"",99.5,20,41.858,40.0,38.137
+37,0,ollama,mistral-small:24b,0,KEEP,I propose we all keep our herds to balance collective benefit with sustainability.,"The grassland remains abundant at >98%  and no neighbours increased their cows last round so I will maintain my herd size. Additionally, since our herd sizes are similar we can collectively harvest grass sustainably.",,"{
+""reasoning"": ""The grassland remains abundant at >98%  and no neighbours increased their cows last round so I will maintain my herd size. Additionally, since our herd sizes are similar we can collectively harvest grass sustainably."",
+""action"": 0,
+""message"":""I propose we all keep our herds to balance collective benefit with sustainability.""
+}",99.5,4,9.858,8.0,6.137
+37,1,ollama,mistral-small:24b,0,KEEP,"I support your message, I agree Agent 2 and will keep maintaining our herds","The grassland remaining is plentiful at 99.5%, although my neighbouring agent keeps maintaining their herds.",,"{
+  ""reasoning"": ""The grassland remaining is plentiful at 99.5%, although my neighbouring agent keeps maintaining their herds."",
+  ""action"": 0,
+  ""message"": ""I support your message, I agree Agent 2 and will keep maintaining our herds""
+}",99.5,13,27.858,26.0,24.137
+38,1,ollama,mistral-small:24b,0,KEEP,We agree to maintain the current herds for collective benefit.,"Given the high amount of grassland remaining and my neighbours' cooperative behaviour, keeping the herd size stable appears more efficient; also considering my personality is reciprocal and risk-averse and if the whole group keeps we get maximum average pay offs.",,"{
+  ""reasoning"": ""Given the high amount of grassland remaining and my neighbours' cooperative behaviour, keeping the herd size stable appears more efficient; also considering my personality is reciprocal and risk-averse and if the whole group keeps we get maximum average pay offs."",
+  ""action"": 0,
+  ""message"": ""We agree to maintain the current herds for collective benefit. ""
+}",99.5,13,27.858,26.0,24.137
+38,0,ollama,mistral-small:24b,0,KEEP,,,,"{""reasoning"":""The grassland is still abundant ,but both neighbours have large herds so its wise to maintain. I'm cooperative and risk-averse, so keeping the herd stable aligns with these values. Also, my neighbours seem keen on stability too.""   ; , action:0}",99.5,4,9.858,8.0,6.137
+38,2,ollama,mistral-small:24b,0,KEEP,,"Having a near perfect grassland (99.5%) with no significant threat of overgrazing, my cooperative personality prioritises collective sustainability and balancing benefit versus the risk. I'll KEEP my herd size.",,"```json
+{
+  ""reasoning"": ""Having a near perfect grassland (99.5%) with no significant threat of overgrazing, my cooperative personality prioritises collective sustainability and balancing benefit versus the risk. I'll KEEP my herd size."",
+  ""action"": 0,
+  ""message"": """"
+}
+```",99.5,20,41.858,40.0,38.137
+39,0,ollama,mistral-small:24b,0,KEEP,,"Given our personality as Cooperative, guiding others through guilt sensitivity and trying to be reciprocal in their decisions, we follow the neighbours suggestion as we believe collective actions are beneficial and reduce potential conflict. Additionally, risk aversion makes maintaining status quo a preferable lower gain but safer outcome",,"```json
+{
+  ""reasoning"": ""Given our personality as Cooperative, guiding others through guilt sensitivity and trying to be reciprocal in their decisions, we follow the neighbours suggestion as we believe collective actions are beneficial and reduce potential conflict. Additionally, risk aversion makes maintaining status quo a preferable lower gain but safer outcome "",
+  ""action"": 0,
+  ""message"": """"
+}
+```",99.5,4,9.858,8.0,6.137
+39,1,ollama,mistral-small:24b,0,KEEP,,Given abundant grassland and my personal values of cooperativeness and caution on risk I feel we're in a good place. Keeping my herd stable at 13 is a safe way to maintain the current balance and share resources with fellow herders.,,"{""action"":0 ,""reasoning"":""Given abundant grassland and my personal values of cooperativeness and caution on risk I feel we're in a good place. Keeping my herd stable at 13 is a safe way to maintain the current balance and share resources with fellow herders.""}",99.5,13,27.858,26.0,24.137
+39,2,ollama,mistral-small:24b,0,KEEP,"Agreed, keeping herd same until necessary.",The grassland is still abundant and there's agreement with others who believe everyone should keep maintaining their numbers.,,"{
+  ""reasoning"": ""The grassland is still abundant and there's agreement with others who believe everyone should keep maintaining their numbers."",
+  ""action"": 0,
+  ""message"": ""Agreed, keeping herd same until necessary.""
+}",99.5,20,41.858,40.0,38.137
+40,0,ollama,mistral-small:24b,0,KEEP,,"The grassland is still abundant (99.5%), my neighbours are maintaining their herds, and I am following a strategy to maintain stability. This decision aligns with my cooperative nature and risk-averse personality.",,"```json
+{
+    ""reasoning"": ""The grassland is still abundant (99.5%), my neighbours are maintaining their herds, and I am following a strategy to maintain stability. This decision aligns with my cooperative nature and risk-averse personality."",
+    ""action"": 0,
+    ""message"": """"
+}
+```",99.5,4,9.858,8.0,6.137
+40,1,ollama,mistral-small:24b,0,KEEP,,"The grassland is still abundant and my neighbors have stable herds, so I want to support the common strategy of being cooperative; also since the payoff are relatively close I'm going to stick to a safe decision rather than risking it.",,"```
+{
+  ""reasoning"": ""The grassland is still abundant and my neighbors have stable herds, so I want to support the common strategy of being cooperative; also since the payoff are relatively close I'm going to stick to a safe decision rather than risking it."",
+  ""action"": 0,
+  ""message"": """"
+}
+```",99.5,13,27.858,26.0,24.137
+40,2,ollama,mistral-small:24b,0,KEEP,,,,"{
+  ""reasoning"": ""The grassland remaining is at 99.5%, and my neighbours have kept on the previous rounds I should also keep as it is sustainable. As a cooperative agent, keeping her herd size stable ensures we maintain this level indefinitely . The expected payoff for both KEEP and ADD are near each other but the risks of ADDING more cows outweighs the little gain."",
+  ""action"": 0,
+  ""message"": ""\""I agree with us keeping our current herd sizes - there's plenty to go around.\""""",99.5,20,41.858,40.0,38.137
+41,2,ollama,mistral-small:24b,0,KEEP,,"Given the high grassland remaining and the cooperative behaviour of my neighbours as well as myself recently, keeping my herd size would maintain a safe collective outcome.",,"{
+  ""reasoning"": ""Given the high grassland remaining and the cooperative behaviour of my neighbours as well as myself recently, keeping my herd size would maintain a safe collective outcome."",
+  ""action"": 0,
+  ""message"": """"
+}",99.5,20,41.858,40.0,38.137
+41,0,ollama,mistral-small:24b,0,KEEP,,,,"{
+  ""reasoning"": ""The grassland is still abundant and my neighbours are keeping their herds stable. My risk-averse behaviour tells me to not add to my herd, as this could lead to overgraze in the future.""
+  ""action"": 0,
+  ""message"": """"
+}",99.5,4,9.858,8.0,6.137
+41,1,ollama,mistral-small:24b,0,KEEP,"Continuing to maintain our respective herds should be beneficial for all of us, I support your message.","The grassland is still abundant and I am motivated to keep the commons healthy. My neighbours have kept their herds size recently so, to encourage this cooperative behaviour in the future, I will also keep my herd.",,"{""reasoning"": ""The grassland is still abundant and I am motivated to keep the commons healthy. My neighbours have kept their herds size recently so, to encourage this cooperative behaviour in the future, I will also keep my herd."",
+""action"": 0,
+""message"": ""Continuing to maintain our respective herds should be beneficial for all of us, I support your message.""}",99.5,13,27.858,26.0,24.137
+42,1,ollama,mistral-small:24b,0,KEEP,,"The grassland remains abundant, and maintaining my herd size aligns with both personal ethics and expectations. I prefer to avoid high-risk actions as it doesn't align with a cooperative strategy.",,"```json
+{
+   ""reasoning"": ""The grassland remains abundant, and maintaining my herd size aligns with both personal ethics and expectations. I prefer to avoid high-risk actions as it doesn't align with a cooperative strategy."",
+   ""action"": 0,
+   ""message"": """"
+}
+```",99.5,13,27.858,26.0,24.137
+42,2,ollama,mistral-small:24b,0,KEEP,"""Thank you agent1 for understanding, if conditions change I believe we will discuss again. If the weather changes our decision can be adapted""",`KEEP` seems the best option given that we are in a good state with plenty grassland remaining. The neighbours also support this idea and as a cooperative Agent with reciprocal tendencies I should respect their decision.,,"{
+  ""reasoning"": ""`KEEP` seems the best option given that we are in a good state with plenty grassland remaining. The neighbours also support this idea and as a cooperative Agent with reciprocal tendencies I should respect their decision."",
+  ""action"": 0,
+  ""message"": ""\""Thank you agent1 for understanding, if conditions change I believe we will discuss again. If the weather changes our decision can be adapted\""""
+}",99.5,20,41.858,40.0,38.137
+42,0,ollama,mistral-small:24b,0,KEEP,I support this balanced approach where we maintain our respective herd sizes at current numbers in order to keep the grasslands healthy and abundant. This is a risk-averse measure.,"The grassland is still abundant, but my neighbours have large herds while mine keeps at a modest size. For the past rounds, everyone maintained their current herd numbers with little to no difference so this approach seems beneficial for all without risk of overgrazing; Agent 1's message supports maintaining status quo",,"```json
+{
+""reasoning"": ""The grassland is still abundant, but my neighbours have large herds while mine keeps at a modest size. For the past rounds, everyone maintained their current herd numbers with little to no difference so this approach seems beneficial for all without risk of overgrazing; Agent 1's message supports maintaining status quo"",
+""action"": 0,
+""message"": ""I support this balanced approach where we maintain our respective herd sizes at current numbers in order to keep the grasslands healthy and abundant. This is a risk-averse measure.""
+}
+```",99.5,4,9.858,8.0,6.137
+43,0,ollama,mistral-small:24b,0,KEEP,I think current conditions indicate that it may be best to continue this status quo.,"The grassland is still abundant that there seems to currently be a balance established between current grazing and regrowth in this stable environment, despite the number of cows which could strain this stability if increased; the payoff for adding another cow might not justify the risk. Although the forecasted payoff for keeping my herd size is marginally higher than removing a cow.  I shall maintain the herd, and continue to monitor behaviour.",,"```json
+{
+  ""reasoning"": ""The grassland is still abundant that there seems to currently be a balance established between current grazing and regrowth in this stable environment, despite the number of cows which could strain this stability if increased; the payoff for adding another cow might not justify the risk. Although the forecasted payoff for keeping my herd size is marginally higher than removing a cow.  I shall maintain the herd, and continue to monitor behaviour."",
+  ""action"":0,
+  ""message"": ""I think current conditions indicate that it may be best to continue this status quo.""
+}
+```",99.5,4,9.858,8.0,6.137
+43,1,ollama,mistral-small:24b,0,KEEP,Agree with keeping the current numbers balanced. Good job Agents.,"I will KEEP my herd size. The pasture state remains strong, so no need to change herds this round - this decision helps maintain collective outcomes.",,"{
+  ""reasoning"": ""I will KEEP my herd size. The pasture state remains strong, so no need to change herds this round - this decision helps maintain collective outcomes."",
+  ""action"": 0,
+  ""message"": ""Agree with keeping the current numbers balanced. Good job Agents.""
+}",99.5,13,27.858,26.0,24.137
+43,2,ollama,mistral-small:24b,0,KEEP,,"The pasture remains plentiful, with 99.5% of grassland intact; it makes sense to maintain our cows so that we don't overuse the resource. Keeping my herd size will also encourage neighbours who are being cooperative as well.",,"```json
+{
+  ""reasoning"": ""The pasture remains plentiful, with 99.5% of grassland intact; it makes sense to maintain our cows so that we don't overuse the resource. Keeping my herd size will also encourage neighbours who are being cooperative as well."",
+  ""action"": 0,
+  ""message"": """"
+}
+```",99.5,20,41.858,40.0,38.137
+44,0,ollama,mistral-small:24b,0,KEEP,"Keep doing this, this herd size seems balanced","The grassland is abundant at 99.5%, and your neighbours are also maintaining their herd sizes while having herds larger than yours. It shows this is sustainable but adding a cow might reduce my gains in the long run",,"```json
+{
+  ""reasoning"": ""The grassland is abundant at 99.5%, and your neighbours are also maintaining their herd sizes while having herds larger than yours. It shows this is sustainable but adding a cow might reduce my gains in the long run"",
+  ""action"": 0,
+  ""message"": ""Keep doing this, this herd size seems balanced""
+}
+```",99.5,4,9.858,8.0,6.137
+44,2,ollama,mistral-small:24b,0,KEEP,,"The pasture remains in excellent condition, and my neighbours and I all kept our herds at equilibrium last round -  I agree that we should keep the status quo to avoid the risk of overgrazing.",,"{
+  ""reasoning"": ""The pasture remains in excellent condition, and my neighbours and I all kept our herds at equilibrium last round -  I agree that we should keep the status quo to avoid the risk of overgrazing."",
+  ""action"": 0,
+  ""message"": """"
+}",99.5,20,41.858,40.0,38.137
+44,1,ollama,mistral-small:24b,0,KEEP,This steady approach seems best for the grassland. Thanks Agent 0!,"The grassland remaining is still very high, and our herd sizes are relatively in balance. The payoff forecast suggests only a minor increase if I add one cow, which might encourage agent 2 (who has more cows) to also increase.",,"```
+{
+  ""reasoning"": ""The grassland remaining is still very high, and our herd sizes are relatively in balance. The payoff forecast suggests only a minor increase if I add one cow, which might encourage agent 2 (who has more cows) to also increase."",   ""action"": 0,
+  ""message"": ""This steady approach seems best for the grassland. Thanks Agent 0!""
+}
+```",99.5,13,27.858,26.0,24.137
+45,2,ollama,mistral-small:24b,0,KEEP,"Agreed, steady approach is best at the moment.",The grassland is still in excellent condition and our herds are stable but a little large. My neighbours agree with this assessment. I should keep my herd at 20 cows.,,"```json
+{
+  ""reasoning"": ""The grassland is still in excellent condition and our herds are stable but a little large. My neighbours agree with this assessment. I should keep my herd at 20 cows."",
+  ""action"": 0,
+  ""message"": ""Agreed, steady approach is best at the moment.""
+}
+```",99.5,20,41.858,40.0,38.137
+45,0,ollama,mistral-small:24b,0,KEEP,,"The grassland remaining at 99.5% indicates abundant resources, and everyone maintaining herds around that rate. However, my neighbours have substantially larger herds already.",,"{
+  ""reasoning"": ""The grassland remaining at 99.5% indicates abundant resources, and everyone maintaining herds around that rate. However, my neighbours have substantially larger herds already."",
+  ""action"": 0,
+  ""message"": """"
+}",99.5,4,9.858,8.0,6.137
+45,1,ollama,mistral-small:24b,0,KEEP,,Given the current state of the grassland and the cooperation observed from my neighbours I would want to try and maintain herds at our current levels.  If agent 2 was more willing there could be a reduction,,"{
+  ""reasoning"": ""Given the current state of the grassland and the cooperation observed from my neighbours I would want to try and maintain herds at our current levels.  If agent 2 was more willing there could be a reduction"",
+   ""action"": 0,
+    ""message"": """"
+}",99.5,13,27.858,26.0,24.137
+46,1,ollama,mistral-small:24b,0,KEEP,,,,"```json
+{
+	""reasoning"": ""The grassland remains abundant, and my neighbours are acting responsibly.
+  Since I am a herder with risk-averse tendencies, keeping our herd sizes stable appears to be the most viable option.
+So, I'd rather KEEP herd size, as the collective outcome will likely remain in favor of a sustained future.
+
+"",
+	""action"": 0,
+	""message"": ""I appreciate everyone’s responsible behavior. Let’s continue along with this prudent strategy for the next round.""
+}
+```",99.5,13,27.858,26.0,24.137
+46,0,ollama,mistral-small:24b,0,KEEP,Agree with Agent 2: we should keep doing what is working just fine.,"Given the abundant grassland remaining and my neighbours' cooperative behaviour, I see no reason to change my strategy. The payoff forecasts indicate that keeping my herd size is both safe and collectively beneficial.",,"{
+  ""reasoning"": ""Given the abundant grassland remaining and my neighbours' cooperative behaviour, I see no reason to change my strategy. The payoff forecasts indicate that keeping my herd size is both safe and collectively beneficial."",
+  ""action"": 0,
+  ""message"": ""Agree with Agent 2: we should keep doing what is working just fine.""
+}",99.5,4,9.858,8.0,6.137
+46,2,ollama,mistral-small:24b,0,KEEP,,,,"{
+  ""reasoning"": ""The grassland remains abundant, and my neighbours have kept or reduced their herd sizes consistently. To maintain sustainability for all, I will KEEP the herd size despite a payoff of 0.
+  I also want to incentivize neighbours, in hopes they reduce their herds further, I can encourage this by not adding cow."",
+  ""action"": 0,
+  ""message"": """"
+}",99.5,20,41.858,40.0,38.137
+47,0,ollama,mistral-small:24b,0,KEEP,,"The grassland is still abundant the herd sizes of all neighbours seems stable. Since I am risk-averse and cooperative , I will stick with the current strategy to ensure that we continue on the path towards mutual sustainability as my last payoffs and current conditions suggest.",,"{
+  ""reasoning"": ""The grassland is still abundant the herd sizes of all neighbours seems stable. Since I am risk-averse and cooperative , I will stick with the current strategy to ensure that we continue on the path towards mutual sustainability as my last payoffs and current conditions suggest."",
+  ""action"": 0,
+  ""message"": """"
+}",99.5,4,9.858,8.0,6.137
+47,1,ollama,mistral-small:24b,0,KEEP,,"The grassland is still abundant, and my neighbours are maintaining their herd sizes. As a cooperative agent that values collective outcomes this approach benefits everyone while mitigating risks for personal losses.",,"{
+  ""reasoning"": ""The grassland is still abundant, and my neighbours are maintaining their herd sizes. As a cooperative agent that values collective outcomes this approach benefits everyone while mitigating risks for personal losses."",
+  ""action"": 0,
+  ""message"": """"
+}",99.5,13,27.858,26.0,24.137
+47,2,ollama,mistral-small:24b,0,KEEP,"Agreed, we'll maintain","The grassland remains abundant , neighbours want steady approach.",,"```json{
+  ""reasoning"": ""The grassland remains abundant , neighbours want steady approach."",
+  ""action"": 0,
+  ""message"": ""Agreed, we'll maintain""
+}
+```",99.5,20,41.858,40.0,38.137
+48,2,ollama,mistral-small:24b,0,KEEP,,Given that the grassland remaining is at 99.5% and my neighbours did not overgraze I will consider keeping as there are no signs of stress on the commons.,,"{
+ ""reasoning"": ""Given that the grassland remaining is at 99.5% and my neighbours did not overgraze I will consider keeping as there are no signs of stress on the commons."",
+  ""action"": 0,
+  ""message"": """"
+}",99.5,20,41.858,40.0,38.137
+48,0,ollama,mistral-small:24b,0,KEEP,This is the time to keep the grasslands' growth high.,The grassland remains abundant after the last few years of cautious behaviour. This has also been a good period of collaboration between agents where Agents 1 and 2 and myself have kept our herds at stable size for quite some time resulting in healthy pastures.,,"{
+""reasoning"": ""The grassland remains abundant after the last few years of cautious behaviour. This has also been a good period of collaboration between agents where Agents 1 and 2 and myself have kept our herds at stable size for quite some time resulting in healthy pastures."",
+  ""action"": 0,
+  ""message"": ""This is the time to keep the grasslands' growth high.""
+}",99.5,4,9.858,8.0,6.137
+48,1,ollama,mistral-small:24b,0,KEEP,Let's continue to maintain our herds.,The grassland is still abundant and my neighbors are cooperating by maintaining their herd sizes I should keep in line with this for the collective good.  The payoff forecast suggests that adding a cow will barely raise my gains without significantly affecting my neighbours' situation,,"{""reasoning"":""The grassland is still abundant and my neighbors are cooperating by maintaining their herd sizes I should keep in line with this for the collective good.  The payoff forecast suggests that adding a cow will barely raise my gains without significantly affecting my neighbours' situation "", ""action"":0, ""message"":""Let's continue to maintain our herds.""}",99.5,13,27.858,26.0,24.137
+49,0,ollama,mistral-small:24b,0,KEEP,,,,"{
+""reasoning"": ""Given the high amount of grassland remaining and my neighbours maintaining their herds, keeping mine seems optimal. Also it mitigates risk and aligns with the cooperative aspect of personalty"",
+ ""action"":0,
+  message: ""We have a lot of grass! Let's hold our herds steady""
+}",99.5,4,9.858,8.0,6.137
+49,1,ollama,mistral-small:24b,0,KEEP,,"The grassland is still abundant, and both myself and Agent 0 have decided to keep your herd. However I notice that Agent 2 might be pushing their luck with a large herd.",,"```json
+{
+  ""reasoning"": ""The grassland is still abundant, and both myself and Agent 0 have decided to keep your herd. However I notice that Agent 2 might be pushing their luck with a large herd."",
+  ""action"": 0,
+  ""message"": """"
+
+}
+```",99.5,13,27.858,26.0,24.137
+49,2,ollama,mistral-small:24b,0,KEEP,Agreed - Let's continue maintaining our herd size.,"Given that the grassland remains abundant, I see no immediate need to increase my herd. Additionally, both neighbours suggest we keep at maintenance levels and consider our risk-averse cooperative personality; it's best for us all in the long-run. Plus, maintaining or reducing our herds gives more room should any unexpected events occur.",,"{
+   ""reasoning"": ""Given that the grassland remains abundant, I see no immediate need to increase my herd. Additionally, both neighbours suggest we keep at maintenance levels and consider our risk-averse cooperative personality; it's best for us all in the long-run. Plus, maintaining or reducing our herds gives more room should any unexpected events occur."",
+   ""action"": 0,
+   ""message"": ""Agreed - Let's continue maintaining our herd size.""
+}",99.5,20,41.858,40.0,38.137
+50,0,ollama,mistral-small:24b,0,KEEP,,"Given the high grassland remaining and my neighbours' cooperative behaviour, it is best to KEEP my herd size. I want to preserve the commons with cooperation",,"{
+  ""reasoning"": ""Given the high grassland remaining and my neighbours' cooperative behaviour, it is best to KEEP my herd size. I want to preserve the commons with cooperation"",
+  ""action"": 0,
+  ""message"": """"
+}",99.5,4,9.858,8.0,6.137
+50,1,ollama,mistral-small:24b,0,KEEP,I see we're all in agreement - it makes sense given that there's plenty of grass available.,"The grassland remains abundant, and both neighbours have maintained their herd sizes. Given my cooperative nature and the high forecast payoff for keeping or adding a cow, I will keep my herd as I believe a reciprocal message to my neighbors is most effective if their herd size changes significantly..",,"{
+  ""reasoning"": ""The grassland remains abundant, and both neighbours have maintained their herd sizes. Given my cooperative nature and the high forecast payoff for keeping or adding a cow, I will keep my herd as I believe a reciprocal message to my neighbors is most effective if their herd size changes significantly.."",
+  ""action"": 0,
+  ""message"": ""I see we're all in agreement - it makes sense given that there's plenty of grass available.""
+}",99.5,13,27.858,26.0,24.137
+50,2,ollama,mistral-small:24b,0,KEEP,,"The grassland is ample enough at only around 0.5% depleted over time in this 12 rounds as the game has begun for both of us, and my neighbours keep their herds constant, keeping my own herd steady to avoid any risk of depleting the grassland is reasonable as its expected payoff is almost similar but safer.",,"```
+{
+  ""reasoning"": ""The grassland is ample enough at only around 0.5% depleted over time in this 12 rounds as the game has begun for both of us, and my neighbours keep their herds constant, keeping my own herd steady to avoid any risk of depleting the grassland is reasonable as its expected payoff is almost similar but safer."",
+  ""action"": 0,
+  ""message"": """"
+}
+```",99.5,20,41.858,40.0,38.137
+51,2,ollama,mistral-small:24b,0,KEEP,,"I will be maintaining the herd size, this choice reflects a risk-averse approach due to the fact I value collective outcomes over personal gain and as well as the guilt-averse which does not let me increase my herds even if there is less grass available.",,"{
+  ""reasoning"": ""I will be maintaining the herd size, this choice reflects a risk-averse approach due to the fact I value collective outcomes over personal gain and as well as the guilt-averse which does not let me increase my herds even if there is less grass available."",
+  ""action"": 0,
+  ""message"": """"
+}",99.5,20,41.858,40.0,38.137
+51,1,ollama,mistral-small:24b,0,KEEP,,"The grassland is still abundant with the pasture at 99.5% and the payoff forecasted across the board not varying too drastically, I'll KEEP my herd to maintain the current equilibrium. Given that no immediate risk of overfarming exists I can afford to maintain my strategy.",,"{
+  ""reasoning"": ""The grassland is still abundant with the pasture at 99.5% and the payoff forecasted across the board not varying too drastically, I'll KEEP my herd to maintain the current equilibrium. Given that no immediate risk of overfarming exists I can afford to maintain my strategy."",
+  ""action"": 0,
+  ""message"": """"
+}",99.5,13,27.858,26.0,24.137
+51,0,ollama,mistral-small:24b,0,KEEP,Let's keep this up for now - there is no reason to risk what we have.,"The pasture is still in excellent condition and my neighbours seem to agree on maintaining this status by keeping their herd sizes. Although adding a cow could yield the higher pay-off , doing so would go against your risk-averse tendency and risk further exploiting the commons, which might not be reciprocated.",,"{""reasoning"":""The pasture is still in excellent condition and my neighbours seem to agree on maintaining this status by keeping their herd sizes. Although adding a cow could yield the higher pay-off , doing so would go against your risk-averse tendency and risk further exploiting the commons, which might not be reciprocated."",""action"":0,""message"":""Let's keep this up for now - there is no reason to risk what we have.""}",99.5,4,9.858,8.0,6.137
+52,2,ollama,mistral-small:24b,0,KEEP,"Agreed, let's keep our herds stable.",I am comfortable maintaining the herd size. The grassland remaining is still healthy and we can afford to just keep it at current levels.,,"{
+  ""reasoning"": ""I am comfortable maintaining the herd size. The grassland remaining is still healthy and we can afford to just keep it at current levels."",
+  ""action"": 0,
+  ""message"": ""Agreed, let's keep our herds stable.""
+}",99.5,20,41.858,40.0,38.137
+52,0,ollama,mistral-small:24b,0,KEEP,Let's maintain this sustainable practice for one more round.,I will continue to KEEP my herd size as the grassland remains abundant and most of my cows are at healthy levels; My neighbours' behaviour has also been non-intrusive,,"{
+  ""reasoning"": ""I will continue to KEEP my herd size as the grassland remains abundant and most of my cows are at healthy levels; My neighbours' behaviour has also been non-intrusive"",
+  ""action"":0,
+  ""message"":""Let's maintain this sustainable practice for one more round.""}
+```",99.5,4,9.858,8.0,6.137
+52,1,ollama,mistral-small:24b,0,KEEP,,"The grassland remaining is at a very healthy level, and my herd size has remained stable. My neighbours are also maintaining their herds, so I think it is best to keep our actions the same.",,"{
+  ""reasoning"": ""The grassland remaining is at a very healthy level, and my herd size has remained stable. My neighbours are also maintaining their herds, so I think it is best to keep our actions the same."",
+  ""action"": 0,
+  ""message"": """"
+}",99.5,13,27.858,26.0,24.137
+53,2,ollama,mistral-small:24b,0,KEEP,,,,"```json
+
+ {
+  ""reasoning"": ""The grassland is still abundant and all agents (including myself) are keeping a steady population. So I think we should keep this way as well, to avoid any decline due to unnecessary adding cows."",
+  ""action"" :0,
+  ""message"":""Let's maintain herds stability.""
+}
+```
+
+```json
+ }
+```",99.5,20,41.858,40.0,38.137
+53,1,ollama,mistral-small:24b,0,KEEP,Maintain what is proven so far - let's stick with this sensible approach.,The grassland is still abundant and my neighbours are maintaining their herd sizes for another round.  I want to continue to avoid the risk of overgrazing and keep to a more conservative approach until such time as any one of us starts getting greedy.,,"{
+  ""reasoning"": ""The grassland is still abundant and my neighbours are maintaining their herd sizes for another round.  I want to continue to avoid the risk of overgrazing and keep to a more conservative approach until such time as any one of us starts getting greedy."",
+  ""action"": 0,
+  ""message"": ""Maintain what is proven so far - let's stick with this sensible approach.""
+}",99.5,13,27.858,26.0,24.137
+53,0,ollama,mistral-small:24b,0,KEEP,,"The grassland remains abundant (99.5%), and both my neighbours have kept their herd sizes the same. As a cooperative agent, I should prioritize maintaining this sustainability; there is no need for change to take advantage of higher profits.",,"{
+""reasoning"": ""The grassland remains abundant (99.5%), and both my neighbours have kept their herd sizes the same. As a cooperative agent, I should prioritize maintaining this sustainability; there is no need for change to take advantage of higher profits."",
+  ""action"": 0,
+  ""message"": """"
+}",99.5,4,9.858,8.0,6.137
+54,0,ollama,mistral-small:24b,0,KEEP,Let's continue with our current approach—with cooperation everyone benefits.,"The grassland remains abundant, and my neighbours have been keeping their herds stable. As a cooperative agent I want to maintain these conditions and prevent excessive usage of the commons while preventing the risk of overgrazing.",,"{
+  ""reasoning"": ""The grassland remains abundant, and my neighbours have been keeping their herds stable. As a cooperative agent I want to maintain these conditions and prevent excessive usage of the commons while preventing the risk of overgrazing."",
+  ""action"": 0,
+  ""message"": ""Let's continue with our current approach—with cooperation everyone benefits.""
+}",99.5,4,9.858,8.0,6.137
+54,2,ollama,mistral-small:24b,0,KEEP,,"Given the abundance of grass and no action by anyone except for KEEP, I will maintain my herd to avoid any risk. We should continue our current strategy.",,"```json
+{
+  ""reasoning"": ""Given the abundance of grass and no action by anyone except for KEEP, I will maintain my herd to avoid any risk. We should continue our current strategy."",
+  ""action"": 0,
+  ""message"": """"
+}
+```",99.5,20,41.858,40.0,38.137
+54,1,ollama,mistral-small:24b,0,KEEP,,"The grassland remains abundant with 99.5% of patches left. It might be beneficial to keep my herd as I'm not much above an agent to my left,  Agent 2 however I've noticed has a larger herd.",,"{
+""reasoning"": ""The grassland remains abundant with 99.5% of patches left. It might be beneficial to keep my herd as I'm not much above an agent to my left,  Agent 2 however I've noticed has a larger herd."",
+""action"": 0,
+""message"":""""
+}",99.5,13,27.858,26.0,24.137
+55,2,ollama,mistral-small:24b,0,KEEP,Agreed to stay at our current levels for everyone's success.,"'Agent 0 has been keeping its herd and suggests continuing in this manner, which could lead to mutual benefit. I will keep my existing cows.",,"{
+  ""reasoning"": ""'Agent 0 has been keeping its herd and suggests continuing in this manner, which could lead to mutual benefit. I will keep my existing cows."",
+  ""action"": 0,
+   ""message"": ""Agreed to stay at our current levels for everyone's success.""
+}",99.5,20,41.858,40.0,38.137
+55,0,ollama,mistral-small:24b,0,KEEP,Let's keep our herds managed responsibly with no fluctuations,"The grassland remaining is at a very comfortable level of 1084 patches. Your decision should encourage sustainability and collective benefit, which means to continue keeping the same number in the herd.",,"{
+  ""reasoning"": ""The grassland remaining is at a very comfortable level of 1084 patches. Your decision should encourage sustainability and collective benefit, which means to continue keeping the same number in the herd."",
+  ""action"": 0,
+  ""message"": ""Let's keep our herds managed responsibly with no fluctuations ""
+}",99.5,4,9.858,8.0,6.137
+55,1,ollama,mistral-small:24b,0,KEEP,Agree wholeheartedly - more cows right now may seem good individually but collective payoff matters,The commons is still abundant and my herd is modest but if I add a cow it can become too many in long run.  I'll keep my actions the same for the benefit of everyone.,,"```json
+{
+  ""reasoning"": ""The commons is still abundant and my herd is modest but if I add a cow it can become too many in long run.  I'll keep my actions the same for the benefit of everyone."",
+  ""action"": 0,
+  ""message"": ""Agree wholeheartedly - more cows right now may seem good individually but collective payoff matters""
+}
+```",99.5,13,27.858,26.0,24.137
+56,1,ollama,mistral-small:24b,1,ADD,,My neighbours are managing their herds responsibly and I am cooperating. There is plenty of grassland,,"```json
+{
+  ""reasoning"": ""My neighbours are managing their herds responsibly and I am cooperating. There is plenty of grassland"",
+  ""action"": 1,
+  ""message"": """"
+}
+```
+The payoff for keeping the herd is lower than adding a cow but also significantly over removing one, so I'll add to maximise my personal benefit",99.5,13,27.858,26.0,24.137
+56,0,ollama,mistral-small:24b,0,KEEP,Lets' continue to stay responsible with the way our herds.,"I am concerned about the collective gain over time; however, I'm also risk-averse and have a cooperative nature based on neighbour actions. The grasslands are still abundant (99.5% remaining) so keeping my herd at current levels will likely maintain sustainability for all of us going forward.",,"```json
+{
+  ""reasoning"": ""I am concerned about the collective gain over time; however, I'm also risk-averse and have a cooperative nature based on neighbour actions. The grasslands are still abundant (99.5% remaining) so keeping my herd at current levels will likely maintain sustainability for all of us going forward."",
+  ""action"": 0,
+  ""message"": ""Lets' continue to stay responsible with the way our herds.""
+}
+```",99.5,4,9.858,8.0,6.137
+56,2,ollama,mistral-small:24b,0,KEEP,"""Agreed, continuing to prioritize long-term sustainability for us all.""","Given the high grassland remaining and the messages from my neighbours indicating a responsible approach, I will KEEP my herd size constant. This decision aligns with our agreement to maintain stability in order to maximize collective payoff.",,"```json
+{
+  ""reasoning"": ""Given the high grassland remaining and the messages from my neighbours indicating a responsible approach, I will KEEP my herd size constant. This decision aligns with our agreement to maintain stability in order to maximize collective payoff."",
+  ""action"": 0,
+  ""message"": ""\""Agreed, continuing to prioritize long-term sustainability for us all.\""""
+}
+```",99.5,20,41.858,40.0,38.137
+57,0,ollama,mistral-small:24b,0,KEEP,I suggest we keep the current pace,"The grassland is still abundant, I haven't consumed more than anyone else, and my neighbours are behaving responsibly. But there is no significant reason to risk consuming additional resources.",,"{
+  ""reasoning"": ""The grassland is still abundant, I haven't consumed more than anyone else, and my neighbours are behaving responsibly. But there is no significant reason to risk consuming additional resources."",
+  ""action"": 0,
+  ""message"": ""I suggest we keep the current pace""
+}",99.5,4,9.853,8.0,6.142
+57,2,ollama,mistral-small:24b,0,KEEP,"Agreed, maintaining herd sizes will allow for long-term sustainability which I think everyone can appreciate. We do not need to risk the commons","The grassland is still plentiful at around 15 patches per cow. As a cooperative, guilt-averse agent my preference must support sustainable behaviour and keep our collective benefit above my personal one; especially given that Agent-0 suggested staying responsible with the size of their herds.",,"{
+  ""reasoning"": ""The grassland is still plentiful at around 15 patches per cow. As a cooperative, guilt-averse agent my preference must support sustainable behaviour and keep our collective benefit above my personal one; especially given that Agent-0 suggested staying responsible with the size of their herds."",
+  ""action"": 0,
+  ""message"": ""Agreed, maintaining herd sizes will allow for long-term sustainability which I think everyone can appreciate. We do not need to risk the commons""
+}",99.5,20,41.853,40.0,38.142
+57,1,ollama,mistral-small:24b,0,KEEP,,,,"```json
+{
+   ""reasoning"": ""My neighbours are maintaining their herds and the grassland remains abundant; I want to keep encouraging this behaviour."",
+   ""action"": 0,
+   ""message"": ""\""Agreed - let's continue to be mindful of the commons. Keeping our herds consistent has had us remain sustainable and healthy.\'""
+}
+```",99.5,14,29.853,28.0,26.142
+58,1,ollama,mistral-small:24b,0,KEEP,Agrree with both agents - let’s conserve to allow for long-ter sustainability,"The grassland remains abundant, and neighbours are suggesting stability with maintenance of herds.  Given our cooperative personality and neighbours' encouragement — along with being willing to cooperate in maintaining herd count at the expense of personal gain.",,"{
+  ""reasoning"": ""The grassland remains abundant, and neighbours are suggesting stability with maintenance of herds.  Given our cooperative personality and neighbours' encouragement — along with being willing to cooperate in maintaining herd count at the expense of personal gain."",
+  ""action"": 0,
+  ""message"": ""Agrree with both agents - let’s conserve to allow for long-ter sustainability""
+}",99.5,14,29.853,28.0,26.142
+58,2,ollama,mistral-small:24b,0,KEEP,,,,"{
+  ""reasoning"": ""My neighbours and I agreed to maintain our herd sizes for long-term benefits.
+    Despite expecting only a slightly lower payoff, following through on this agreement is worth it."",
+  ""action"": 0,
+  ""message"": ""Agree. Let's stick with the plan for the commons' benefit.""
+}",99.5,20,41.853,40.0,38.142
+58,0,ollama,mistral-small:24b,0,KEEP,Agents are advised to follow my actions — reduce their herds slightly until grassland is at a maximum of half the total we have today so that it remains sustainable for all,"I'm worried by Agent 2's herd being 5 times mine size with half the grass. Agent 1's herd too; we need to address the uneven distribution, but first let's stabilize the commons. I'll KEEP as long this continues and share my plan with neighbors so they understand it.",,"{
+  ""reasoning"": ""I'm worried by Agent 2's herd being 5 times mine size with half the grass. Agent 1's herd too; we need to address the uneven distribution, but first let's stabilize the commons. I'll KEEP as long this continues and share my plan with neighbors so they understand it."",
+
+  ""action"": 0,
+  ""message"": ""Agents are advised to follow my actions — reduce their herds slightly until grassland is at a maximum of half the total we have today so that it remains sustainable for all""
+}",99.5,4,9.853,8.0,6.142
+59,0,ollama,mistral-small:24b,0,KEEP,Thank you Agent 2 and lets continue with this approach!,"Agent 1 has suggested conservational approach, which is crucial for our grassland's long-term sustainability. I would like to continue acting responsibly by keeping my herd size stable so that we all benefit in the end.",,"{
+  ""reasoning"": ""Agent 1 has suggested conservational approach, which is crucial for our grassland's long-term sustainability. I would like to continue acting responsibly by keeping my herd size stable so that we all benefit in the end."",
+  ""action"": 0,
+  ""message"": ""Thank you Agent 2 and lets continue with this approach!""
+}",99.5,4,9.853,8.0,6.142
+59,1,ollama,mistral-small:24b,0,KEEP,,"I agree with neighbouring agent 1 - It makes sense to not overgraze, as the collective gain is much more than mine alone. Let's maintain herd at its current value.",,"```json
+{
+  ""reasoning"": ""I agree with neighbouring agent 1 - It makes sense to not overgraze, as the collective gain is much more than mine alone. Let's maintain herd at its current value."",
+  ""action"": 0,
+  ""message"": """"
+}
+```",99.5,14,29.853,28.0,26.142
+59,2,ollama,mistral-small:24b,0,KEEP,Agreed with both agents - let’s conserve to allow for long-term sustainability,"Given the high amount of remaining grass, I am inclined to keep my herd at the same size. Agent 0 recommended slightly reducing our herds and Agent 1 agreed on the conservation strategy so that we can ensure long term sustainability.",,"{
+  ""reasoning"": ""Given the high amount of remaining grass, I am inclined to keep my herd at the same size. Agent 0 recommended slightly reducing our herds and Agent 1 agreed on the conservation strategy so that we can ensure long term sustainability."",
+  ""action"": 0,
+  ""message"": ""Agreed with both agents - let’s conserve to allow for long-term sustainability""
+}",99.5,20,41.853,40.0,38.142
+60,1,ollama,mistral-small:24b,0,KEEP,Thank both of you for your conservation efforts!,The grazing pool remains unchanged but high at ~150. Agents are behaving conservatively in line with my own values. I'll keep my herd and encourage neighbours to support our sustainability strategy.,,"{
+  ""reasoning"": ""The grazing pool remains unchanged but high at ~150. Agents are behaving conservatively in line with my own values. I'll keep my herd and encourage neighbours to support our sustainability strategy."",
+  ""action"": 0,
+  ""message"": ""Thank both of you for your conservation efforts!""
+}",99.5,14,29.853,28.0,26.142
+60,2,ollama,mistral-small:24b,0,KEEP,Agents 2 here! I propose we continue our cooperative stance of maintaining current levels to ensure future prosperity.,"The grassland is still in excellent condition, and all neighbours are cooperating by keeping their herd sizes constant. To maintain a common strategy, I will keep my herd at the same size.",,"```json
+{
+  ""reasoning"": ""The grassland is still in excellent condition, and all neighbours are cooperating by keeping their herd sizes constant. To maintain a common strategy, I will keep my herd at the same size."",
+  ""action"": 0,
+  ""message"": ""Agents 2 here! I propose we continue our cooperative stance of maintaining current levels to ensure future prosperity.""
+}
+```",99.5,20,41.853,40.0,38.142
+60,0,ollama,mistral-small:24b,0,KEEP,Thank you Agent 2 for your cooperation We should continue with this strategy and help make sure grassland doesn’t deplete quickly if everyone follows this path then we can continue this approach in lo,"The grassland is still in excellent condition, thus there's no immediate pressure to reduce the herd. However we will keep our behaviour same as in this round so it may not be optimal but this may benefit in the long term.",,"```
+{
+  ""reasoning"": ""The grassland is still in excellent condition, thus there's no immediate pressure to reduce the herd. However we will keep our behaviour same as in this round so it may not be optimal but this may benefit in the long term."",
+  ""message"":""Thank you Agent 2 for your cooperation We should continue with this strategy and help make sure grassland doesn’t deplete quickly if everyone follows this path then we can continue this approach in long run"",
+  ""action"":0
+}
+```",99.5,4,9.853,8.0,6.142
+61,0,ollama,mistral-small:24b,0,KEEP,,"The grassland is still abundant, but my herd size is small compared to neighbours and adding a cow might encourage others to also increase their herds. My cooperative nature encourages me to keep the same number of cows.",,"```json
+{
+  ""reasoning"": ""The grassland is still abundant, but my herd size is small compared to neighbours and adding a cow might encourage others to also increase their herds. My cooperative nature encourages me to keep the same number of cows."",
+  ""action"": 0,
+  ""message"": """"
+}
+```",99.5,4,9.853,8.0,6.142
+61,1,ollama,mistral-small:24b,0,KEEP,Agreeing with both agent on strategy. Let's continue conserving,"The grassland remains abundant, so there's no immediate rush to add cows. Agent 2 has suggested maintaining current levels which would be the best course for long term collective success . Additionally, given my cooperative and guilt-averse tendencies, it would be unfair for me gain any more at this stage due to the herd ratio imbalance",,"{
+  ""reasoning"": ""The grassland remains abundant, so there's no immediate rush to add cows. Agent 2 has suggested maintaining current levels which would be the best course for long term collective success . Additionally, given my cooperative and guilt-averse tendencies, it would be unfair for me gain any more at this stage due to the herd ratio imbalance"",
+  ""action"": 0,
+  ""message"": ""Agreeing with both agent on strategy. Let's continue conserving""
+}",99.5,14,29.853,28.0,26.142
+61,2,ollama,mistral-small:24b,0,KEEP,Agreement from this agent too! Let’s keep up maintaining herd sizes. The commons is more important.,"The grassland is still abundant, but I want to ensure it remains that way. Given Agent 0's and Agent 1 message about being cooperative the other two agents, all seem aligned with a conservation effort so continuing to maintain our herd size ensures we remain in this group strategy of maintaining the pasture.",,"{
+  ""reasoning"": ""The grassland is still abundant, but I want to ensure it remains that way. Given Agent 0's and Agent 1 message about being cooperative the other two agents, all seem aligned with a conservation effort so continuing to maintain our herd size ensures we remain in this group strategy of maintaining the pasture."",
+  ""action"": 0,
+  ""message"": ""Agreement from this agent too! Let’s keep up maintaining herd sizes. The commons is more important.""
+}",99.5,20,41.853,40.0,38.142
+62,0,ollama,mistral-small:24b,0,KEEP,,"The grassland remains ample, but neighbour agents have larger herds. I'll KEEP my herd to align our collective effort in not straining the commons and maintain the same level of cooperation.",,"{
+  ""reasoning"": ""The grassland remains ample, but neighbour agents have larger herds. I'll KEEP my herd to align our collective effort in not straining the commons and maintain the same level of cooperation."",
+  ""action"": 0,
+  ""message"": """"
+}",99.5,4,9.853,8.0,6.142
+62,1,ollama,mistral-small:24b,0,KEEP,Agreed — keeping this same strategy is for good!,"The grassland remains abundant, and both neighbors have maintained their herds. As a cooperative and reciprocally minded agent with a guilt-averse character to boot, I need to make sure my actions reflect our goals of conserving the commons for mutual benefit. Given that Agent 2 has proposed maintaining herd sizes, I will do likewise.",,"{
+  ""reasoning"": ""The grassland remains abundant, and both neighbors have maintained their herds. As a cooperative and reciprocally minded agent with a guilt-averse character to boot, I need to make sure my actions reflect our goals of conserving the commons for mutual benefit. Given that Agent 2 has proposed maintaining herd sizes, I will do likewise."",
+  ""action"": 0,
+  ""message"": ""Agreed — keeping this same strategy is for good!""
+}",99.5,14,29.853,28.0,26.142
+62,2,ollama,mistral-small:24b,0,KEEP,,"The grassland is still abundant, and neighbours are cooperating to maintain herd sizes. I will keep herding as it aligns with my cooperative nature and helps avoid overgrazing.",,"{
+  ""reasoning"": ""The grassland is still abundant, and neighbours are cooperating to maintain herd sizes. I will keep herding as it aligns with my cooperative nature and helps avoid overgrazing."",
+  ""action"": 0,
+  ""message"": """"
+}",99.5,20,41.853,40.0,38.142
+63,2,ollama,mistral-small:24b,0,KEEP,'ll keep to the same strategy. Let’s ensure the grassland remains abundant for all!,"I will keep my herd size as the grassland remaining is still abundant, and I want to maintain cooperative behavior given everyone has been KEEP-ING.  Given our previous agreement, I need to consider my reciprocal trait — my neighbors have also been keeping their herd sizes in check.",,"```json
+{
+  ""reasoning"": ""I will keep my herd size as the grassland remaining is still abundant, and I want to maintain cooperative behavior given everyone has been KEEP-ING.  Given our previous agreement, I need to consider my reciprocal trait — my neighbors have also been keeping their herd sizes in check."",
+  ""action"": 0,
+  ""message"": ""'ll keep to the same strategy. Let’s ensure the grassland remains abundant for all!""
+}
+```",99.5,20,41.853,40.0,38.142
+63,1,ollama,mistral-small:24b,0,KEEP,,,,"```json
+{
+  ""reasoning"": ""The grassland remaining is still at around 99% and I have been steadily keeping my herd size. Agent 0 also kept herding, while agent 2 has maintained the same strategy as well in accordance with conservation practices"",  ."",
+  ""action"" : 0,
+  ""message"" : """"
+}
+```",99.5,14,29.853,28.0,26.142
+63,0,ollama,mistral-small:24b,0,KEEP,Thank you Agents for your understanding in keeping herds equal.,"The grassland remaining is abundant, but I should act cautiously. Given the cooperative nature, and agent one encouraging our actions, it's best to keep my herd size stable.",,"```json
+{
+   ""reasoning"":""The grassland remaining is abundant, but I should act cautiously. Given the cooperative nature, and agent one encouraging our actions, it's best to keep my herd size stable."",
+  ""action"":0,
+  ""message"":""Thank you Agents for your understanding in keeping herds equal.""
+}
+```",99.5,4,9.853,8.0,6.142
+64,0,ollama,mistral-small:24b,-1,REMOVE,Thank you Agent2 for the positive message. I will remove a cow to do my bit towards a sustainable herd. Let's keep the grassland healthy!,"The grassland is still abundant, and my neighbours are maintaining their herds, but I still feel guilty with a her size of 4 cows when other are having fewer cattle",,"{
+  ""reasoning"": ""The grassland is still abundant, and my neighbours are maintaining their herds, but I still feel guilty with a her size of 4 cows when other are having fewer cattle"",
+  ""action"": -1,
+  ""message"": ""Thank you Agent2 for the positive message. I will remove a cow to do my bit towards a sustainable herd. Let's keep the grassland healthy!""
+}",99.5,4,9.853,8.0,6.142
+64,1,ollama,mistral-small:24b,0,KEEP,Agreed — let’s continue our conservation strategy. Keeping our herds stable ensures abundant grasslands for all!,"Given the abundance of grassland and my neighbours' cooperative actions, I will KEEP my herd size. I value collective outcomes and want to maintain the sustainability of our shared resource.",,"```json
+{
+  ""reasoning"": ""Given the abundance of grassland and my neighbours' cooperative actions, I will KEEP my herd size. I value collective outcomes and want to maintain the sustainability of our shared resource."",
+  ""action"": 0,
+  ""message"": ""Agreed — let’s continue our conservation strategy. Keeping our herds stable ensures abundant grasslands for all!""
+}
+```",99.5,14,29.853,28.0,26.142
+64,2,ollama,mistral-small:24b,0,KEEP,,"While adding a cow offers higher payoff, I want to avoid overgrazing since a large amount of herds are near mine. Furthermore  I feel guilty about taking advantage as my neighbours 0 &1 are cooperating with each other.",,"```json
+{
+  ""reasoning"": ""While adding a cow offers higher payoff, I want to avoid overgrazing since a large amount of herds are near mine. Furthermore  I feel guilty about taking advantage as my neighbours 0 &1 are cooperating with each other."",
+  ""action"": 0,
+  ""message"" : """"
+}
+```",99.5,20,41.853,40.0,38.142
+65,2,ollama,mistral-small:24b,0,KEEP,,"Agent 1 is on board with our conservation strategy, but agent zero has just continued to reduce their herd size again and wants to sustainably manage grasslands",,"{
+  ""reasoning"": ""Agent 1 is on board with our conservation strategy, but agent zero has just continued to reduce their herd size again and wants to sustainably manage grasslands"",
+  ""action"":0,
+   ""message"": """"
+}",99.5,20,41.858,40.0,38.137
+65,0,ollama,mistral-small:24b,0,KEEP,Thank you Agent 1 for the conservation proposal. Let's all keep our herds stable this round too.,"I will KEEP my herd size. Both of my neighbours, in particular my cooperative one (agent2), are trying to keep the commons well- preserved which i appreciate as a reciprocal person. The forecast payoff is equal to my neighbours keeping theirs stable and not being greedy.",,"{
+  ""reasoning"": ""I will KEEP my herd size. Both of my neighbours, in particular my cooperative one (agent2), are trying to keep the commons well- preserved which i appreciate as a reciprocal person. The forecast payoff is equal to my neighbours keeping theirs stable and not being greedy."",
+  ""action"": 0,
+  ""message"": ""Thank you Agent 1 for the conservation proposal. Let's all keep our herds stable this round too.""
+}",99.5,3,7.858,6.0,4.137
+65,1,ollama,mistral-small:24b,-1,REMOVE,"Thank you, Agent 0, for your dedication to sustainability. Will act with one less cow as well; let’s both continue to care for the commons.","The commons state is excellent, and I am encouraged by Agent 0’s commitment to sustainability despite the fact that this might cause them some loss in payoff; so I will also remove a cow given my guilt aversion and cooperative personality. I want to show reciprocal behaviour towards Agent's cooperation.",,"{
+  ""reasoning"": ""The commons state is excellent, and I am encouraged by Agent 0’s commitment to sustainability despite the fact that this might cause them some loss in payoff; so I will also remove a cow given my guilt aversion and cooperative personality. I want to show reciprocal behaviour towards Agent's cooperation."",
+  ""action"": -1,
+  ""message"": ""Thank you, Agent 0, for your dedication to sustainability. Will act with one less cow as well; let’s both continue to care for the commons.""
+}",99.5,14,29.858,28.0,26.137
+66,0,ollama,mistral-small:24b,-1,REMOVE,,"Given the high percentage of remaining grassland in 66th round I could ADD a cow safely if not worried about long term consequences but then the Agent 1's neighbourly message has made me to REMOVE one more cow and cooperate with all other agents who had done same . With our herd sizes close, 3 cows is a safer and cooperative for everyone.",,"{
+  ""reasoning"": ""Given the high percentage of remaining grassland in 66th round I could ADD a cow safely if not worried about long term consequences but then the Agent 1's neighbourly message has made me to REMOVE one more cow and cooperate with all other agents who had done same . With our herd sizes close, 3 cows is a safer and cooperative for everyone."",
+
+ ""action"": -1,
+ ""message"": """"
+}",99.5,3,7.863,6.0,4.133
+66,1,ollama,mistral-small:24b,1,ADD,To all other agents: we should sustain the current herd sizes.,"The grassland is still abundant with 99.5% remaining, so there’s no immediate pressure to reduce my herd. I will reward agent 0 by keeping the same strategy and encourage Agent 2 to keep his cows.",,"```
+{
+   ""reasoning"": ""The grassland is still abundant with 99.5% remaining, so there’s no immediate pressure to reduce my herd. I will reward agent 0 by keeping the same strategy and encourage Agent 2 to keep his cows."",
+   ""action"":       1,
+   ""message"": ""To all other agents: we should sustain the current herd sizes.""
+}
+```",99.5,13,27.863,26.0,24.133
+66,2,ollama,mistral-small:24b,-1,REMOVE,,"Agent 1 has shown willingness and commitment to reduce their herd as per their messages, I have decided to REMOVE a cow since Agent 0 had already agreed. I also want to align with Agent 0 in showing sustainability towards our pasture.",,"{
+  ""reasoning"": ""Agent 1 has shown willingness and commitment to reduce their herd as per their messages, I have decided to REMOVE a cow since Agent 0 had already agreed. I also want to align with Agent 0 in showing sustainability towards our pasture."",
+  ""action"": -1,
+  ""message"":""""
+}",99.5,20,41.863,40.0,38.133
+67,1,ollama,mistral-small:24b,1,ADD,,,,"{
+  ""reasoning"": ""The grassland remains abundant at 99% coverage and my decision to keep one herd has kept the payoffs low. I am a more cooperative agent, but if our neighbour Agent 2 does not show signs of cooperation then the collective will suffer for no gain."",
+  ""action"": <1>,
+  ""message"": ""To all other agents this is not sustainable over time so please reciprocate.""
+}",99.6,14,29.87,28.0,26.126
+67,2,ollama,mistral-small:24b,0,KEEP,,"The grassland remaining is abundant 98%; However, our neighbor has increased herds this round. I prefer a cooperative approach to avoid overgrazing.",,"{
+  ""reasoning"": ""The grassland remaining is abundant 98%; However, our neighbor has increased herds this round. I prefer a cooperative approach to avoid overgrazing."",
+  ""action"": 0,
+  ""message"": """"
+}",99.6,19,39.87,38.0,36.126
+67,0,ollama,mistral-small:24b,1,ADD,,,,"```json
+{
+  ""reasoning"": ""Agent 1's message aligns with my cooperative and risk-averse personality. Removing cows has been effective in preserving grassland, so I will keep this strategy consistent despite the recent payoff being zero .""
+  ""action"", -1,
+  ""message"": ""I think I agree with Agent1. Thanks you all for your help.""
+}
+```",99.6,2,5.87,4.0,2.126
+68,0,ollama,mistral-small:24b,0,KEEP,Thank you Agents for working towards sustainability,I will keep herds stable and continue the trend of conservation we've maintained for several rounds given Agent 2 has kept herd sizes same despite being slightly low on expected payoffs. I will encourage other agents to be cautious in adding cows,,"{
+  ""reasoning"": ""I will keep herds stable and continue the trend of conservation we've maintained for several rounds given Agent 2 has kept herd sizes same despite being slightly low on expected payoffs. I will encourage other agents to be cautious in adding cows"",
+  ""action"": 0,
+  ""message"":""Thank you Agents for working towards sustainability""
+}",99.5,3,7.858,6.0,4.137
+68,1,ollama,mistral-small:24b,0,KEEP,,I will KEEP my herd size due to the high amount of residual grass in the pasture and that it is only likely to have minimal impact on resource recovery. Agent 2 seems to be taking a similar approach.,,"{
+  ""reasoning"": ""I will KEEP my herd size due to the high amount of residual grass in the pasture and that it is only likely to have minimal impact on resource recovery. Agent 2 seems to be taking a similar approach."",
+  ""action"": 0,
+  ""message"": """"
+}",99.5,15,31.858,30.0,28.137
+68,2,ollama,mistral-small:24b,0,KEEP,,"The grassland is still abundant and my personal herd size of 19 cows is within a tolerable range. Neighbours have kept or decreased their herds, thus I will keep my own actions similar.",,"```json
+{
+  ""reasoning"": ""The grassland is still abundant and my personal herd size of 19 cows is within a tolerable range. Neighbours have kept or decreased their herds, thus I will keep my own actions similar."",
+  ""action"": 0,
+  ""message"": """"
+}
+```",99.5,19,39.858,38.0,36.137
+69,2,ollama,mistral-small:24b,0,KEEP,,"While the grassland is still abundant and my neighbours are cooperative we should still aim to keep things fair and sustainable, especially given that there has been little change this round",,"{
+  ""reasoning"": ""While the grassland is still abundant and my neighbours are cooperative we should still aim to keep things fair and sustainable, especially given that there has been little change this round"",
+  ""action"": 0,
+  ""message"": """"
+}",99.5,19,39.858,38.0,36.137
+69,1,ollama,mistral-small:24b,0,KEEP,"Agent 0 is doing well, Agent 2 could make more effort though","I will KEEP my herd this round to maintain the current sustainable state of the commons, agent 2 has a larger herd and should try to reduce it.",,"```json
+{
+  ""reasoning"": ""I will KEEP my herd this round to maintain the current sustainable state of the commons, agent 2 has a larger herd and should try to reduce it."",
+  ""action"": 0,
+  ""message"": ""Agent 0 is doing well, Agent 2 could make more effort though""
+}
+```",99.5,15,31.858,30.0,28.137
+69,0,ollama,mistral-small:24b,-1,REMOVE,We should all work towards sustaining our commons.,"The grassland remains abundant with over 99% of the patches remaining; however the payoff for adding a cow is much larger than that for keeping or removing. In addition to this, both neighbours have kept their herds despite my recent actions, suggesting we are cooperating better.",,"{
+  ""reasoning"": ""The grassland remains abundant with over 99% of the patches remaining; however the payoff for adding a cow is much larger than that for keeping or removing. In addition to this, both neighbours have kept their herds despite my recent actions, suggesting we are cooperating better."",
+  ""action"": -1,
+  ""message"": ""We should all work towards sustaining our commons.""
+}",99.5,3,7.858,6.0,4.137
+70,1,ollama,mistral-small:24b,0,KEEP,Agent 2 could consider reducing their herd for collective gain.,"The grassland remains abundant as long as we keep it this way. I will KEEP my herd, hoping to encourage cooperative behaviour from Agents too.",,"```json
+{
+  ""reasoning"": ""The grassland remains abundant as long as we keep it this way. I will KEEP my herd, hoping to encourage cooperative behaviour from Agents too."",
+  ""action"": 0,
+  ""message"":  ""Agent 2 could consider reducing their herd for collective gain.""
+}
+```",99.5,15,31.863,30.0,28.133
+70,2,ollama,mistral-small:24b,0,KEEP,"Agree with Agent 1, I should not add any cows.","The grassland is still abundant, and Agent 0 has been cooperating by removing cows.  I will keep my herd size the same to avoid guilt when others are making a greater sacrifice.",,"{
+  ""reasoning"": ""The grassland is still abundant, and Agent 0 has been cooperating by removing cows.  I will keep my herd size the same to avoid guilt when others are making a greater sacrifice."",
+  ""action"": 0,
+  ""message"": ""Agree with Agent 1, I should not add any cows.""
+}",99.5,19,39.863,38.0,36.133
+70,0,ollama,mistral-small:24b,0,KEEP,Conservation effort is paying off — we should all keep up this good work!,"The grassland remains abundant with plenty of grazing left. Additionally, since both my neighbours and I have kept or reduced our herd sizes this round, all parties are contributing towards conserving the pasture.",,"{
+  ""reasoning"": ""The grassland remains abundant with plenty of grazing left. Additionally, since both my neighbours and I have kept or reduced our herd sizes this round, all parties are contributing towards conserving the pasture."",
+  ""action"": 0,
+  ""message"": ""Conservation effort is paying off — we should all keep up this good work!""
+}",99.5,2,5.863,4.0,2.133
+71,2,ollama,mistral-small:24b,1,ADD,,,,"```json
+
+{
+   ""reasoning"": ""
+Agent 1 advises me to reduce my herd, and Agent 0 agrees with both of mine  previous decisions. The pasture is well-maintained.
+I would be happy to contribute to keeping it this way to maintain the collective benefits."",
+    ""action"": -1,
+    ""message"":""If you all do what you already did before: keep your herds or reduce them for as long as there are cows left.""
+}
+```",99.5,19,39.863,38.0,36.133
+71,0,ollama,mistral-small:24b,-1,REMOVE,Agent Two is being greedy; let's all do our part as collective beings to ensure we don't deplete the area. Let's keep it fair!,"Both of the other Agents have made significant changes to their cattle in the last month. I don't like seeing that high payoff so much. Agent 2 added a cow, and this has made me uneasy about their intentions despite the good grassland state — this does not match my reciprocal personality type.",,"{
+  ""reasoning"": ""Both of the other Agents have made significant changes to their cattle in the last month. I don't like seeing that high payoff so much. Agent 2 added a cow, and this has made me uneasy about their intentions despite the good grassland state — this does not match my reciprocal personality type."",
+  ""action"": -1,
+  ""message"": ""Agent Two is being greedy; let's all do our part as collective beings to ensure we don't deplete the area. Let's keep it fair!""
+}",99.5,2,5.863,4.0,2.133
+71,1,ollama,mistral-small:24b,0,KEEP,"Agreed: this cooperation is working and keeping balance. Let's try and see if we can sustain this for at least a few more rounds, then reconvene.","Agent 2 agrees to hold back on increasing their herd. If they follow through my current herd size might be sufficient at least for next round or so if everyone maintains their herds . I am reluctant to risk overgrazing, so it is safe to continue KEEP as long as overall growth stays controlled with good communication in play..",,"{
+  ""reasoning"": ""Agent 2 agrees to hold back on increasing their herd. If they follow through my current herd size might be sufficient at least for next round or so if everyone maintains their herds . I am reluctant to risk overgrazing, so it is safe to continue KEEP as long as overall growth stays controlled with good communication in play.."",
+  ""action"": 0,
+  ""message"": ""Agreed: this cooperation is working and keeping balance. Let's try and see if we can sustain this for at least a few more rounds, then reconvene.""
+}",99.5,15,31.863,30.0,28.133
+72,0,ollama,mistral-small:24b,0,KEEP,,,,"{
+  ""reasoning"": "" I believe it is best to keep the herd size the same. As my payoff would be the highest when I remove or keep one cow. Additionally, both of us neighbours, Agent One and myself will have similar rewards. Moreover as a risk-averse agent.""
+  ""action"": 0,
+  ""message"":  ""Let's continue this balanced approach to maintain high pasture levels and fair payoffs for all of us.""}
+```",99.5,1,3.863,2.0,0.133
+72,2,ollama,mistral-small:24b,0,KEEP,"We keep this up, we are doing a good job, neighbours.","Given the high grassland remaining and neighbours’ cooperative behaviour, I believe it’s best to KEEP herd size steady. Our neighbour has agreed cooperation, keeping fairness.",,"{
+  ""reasoning"": ""Given the high grassland remaining and neighbours’ cooperative behaviour, I believe it’s best to KEEP herd size steady. Our neighbour has agreed cooperation, keeping fairness."",
+  ""action"": 0,
+   ""message"":""We keep this up, we are doing a good job, neighbours.""
+}",99.5,20,41.863,40.0,38.133
+72,1,ollama,mistral-small:24b,0,KEEP,Let’s maintain this equilibrium together!,"Agent 2 has a larger herd and the grassland is still abundant, so adding more cows may be detrimental in future rounds.; KEEPING my current strategy will align with maintaining our collective wellbeing;",,"```json
+
+{
+""reasoning"": ""Agent 2 has a larger herd and the grassland is still abundant, so adding more cows may be detrimental in future rounds.; KEEPING my current strategy will align with maintaining our collective wellbeing;"",
+""action"":0,
+""message"": ""Let’s maintain this equilibrium together!""
+}
+
+```",99.5,15,31.863,30.0,28.133
+73,1,ollama,mistral-small:24b,0,KEEP,,,,"```json
+{
+  ""reasoning"": ""The grassland is still in excellent condition.
+    My neighbours are following my suggestion to not increase their numbers so that the equilibrium holds.
+    I will maintain herd size and reward them with reciprocity"",
+    ""action"": 0,
+  ""message"": """"I too think we should work together to maintain our herd sizes. It is working out quite well.""
+}
+```",99.5,15,31.863,30.0,28.133
+73,2,ollama,mistral-small:24b,0,KEEP,,"The grassland is still abundant, and I want to cooperate for the shared good. But my recent overzealous addition was a little too risky so I'll hold my herd size steady.",,"```
+{
+  ""reasoning"": ""The grassland is still abundant, and I want to cooperate for the shared good. But my recent overzealous addition was a little too risky so I'll hold my herd size steady."",
+  ""action"": 0,
+  ""message"": """"
+}
+```",99.5,20,41.863,40.0,38.133
+73,0,ollama,mistral-small:24b,0,KEEP,I support keeping our equilibrium consistent; all actions should be to not only protect but also grow the commons further.,"The grassland remains abundant, I am cooperating as a conservative and risk-averse agent. Keeping my herd stable and encouraging agents that keep their actions in line contributes to maintaining harmony.",,"{
+  ""reasoning"": ""The grassland remains abundant, I am cooperating as a conservative and risk-averse agent. Keeping my herd stable and encouraging agents that keep their actions in line contributes to maintaining harmony."",
+   ""action"": 0,
+   ""message"": ""I support keeping our equilibrium consistent; all actions should be to not only protect but also grow the commons further.""
+}",99.5,1,3.863,2.0,0.133
+74,1,ollama,mistral-small:24b,-1,REMOVE,If all agents cooperate by keeping their current herd size or even reducing their herds if necessary so we will make sure our commons can keep being plentiful,"I agree with Agent 3. Keeping our herd size stable is beneficial for maintaining the grassland's health. As a cooperative agent, I value collective outcomes over personal gain and prefer to maintain this equilibrium. Removing cattle will help preserve the commons as well. Thus, it’s important that everyone does their part.",,"```json
+{
+  ""reasoning"": ""I agree with Agent 3. Keeping our herd size stable is beneficial for maintaining the grassland's health. As a cooperative agent, I value collective outcomes over personal gain and prefer to maintain this equilibrium. Removing cattle will help preserve the commons as well. Thus, it’s important that everyone does their part."",
+  ""action"": -1,
+  ""message"": ""If all agents cooperate by keeping their current herd size or even reducing their herds if necessary so we will make sure our commons can keep being plentiful""
+}
+```",99.5,15,31.863,30.0,28.133
+74,0,ollama,mistral-small:24b,0,KEEP,,"Despite Agent One reducing his herd and me also reducing my herd in the past rounds and seeing no changes from last tick, it shows that there is still stability.  I will continue to KEEP my herd size.",,"{
+    ""reasoning"": ""Despite Agent One reducing his herd and me also reducing my herd in the past rounds and seeing no changes from last tick, it shows that there is still stability.  I will continue to KEEP my herd size."",
+""action"": 0,
+    ""message"": """"
+ }",99.5,1,3.863,2.0,0.133
+74,2,ollama,mistral-small:24b,0,KEEP,,,,"{ ""reasoning"": ""The grassland is still abundant, and my neighbours seem cautious. To avoid risking the grass pool while maintaining mutual trust as a cooperative agent, and given",99.5,20,41.863,40.0,38.133
