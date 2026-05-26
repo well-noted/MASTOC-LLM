@@ -81,3 +81,213 @@ tick,agent_id,backend,model,action,action_name,message,reasoning,thinking,raw_re
   ""message"": ""Thank you both for your generosity. I will add one more cow to balance our herd sizes, while remaining mindful of our shared resources.""
 }
 ```",99.0,8,17.797,16.0,14.198
+5,1,ollama,huihui_ai/gemma-4-abliterated:31b,1,ADD,"I'll add one cow to further balance our sizes. Agent 2, your stability is appreciated, but let's continue to monitor the grassland levels together.","The grassland is still at 98.8%, providing plenty of room for growth. Since Agent 0 is still significantly below Agent 2 and me, adding a cow helps balance the overall distribution without putting immediate pressure on the commons.",,"```json
+{
+  ""reasoning"": ""The grassland is still at 98.8%, providing plenty of room for growth. Since Agent 0 is still significantly below Agent 2 and me, adding a cow helps balance the overall distribution without putting immediate pressure on the commons."",
+  ""action"": 1,
+  ""message"": ""I'll add one cow to further balance our sizes. Agent 2, your stability is appreciated, but let's continue to monitor the grassland levels together.""
+}
+```",98.8,16,33.784,32.0,30.212
+5,2,ollama,huihui_ai/gemma-4-abliterated:31b,0,KEEP,I'll keep my herd at 24 to allow you both to continue catching up. Let's maintain this coordination to ensure long-term sustainability.,"My herd is still significantly larger than those of Agent 0 and Agent 1. Since the grassland is very healthy, I will keep my herd size steady at 24 to allow my neighbours to continue balancing their numbers with mine without overstressing the commons.",,"```json
+{
+  ""reasoning"": ""My herd is still significantly larger than those of Agent 0 and Agent 1. Since the grassland is very healthy, I will keep my herd size steady at 24 to allow my neighbours to continue balancing their numbers with mine without overstressing the commons."",
+  ""action"": 0,
+  ""message"": ""I'll keep my herd at 24 to allow you both to continue catching up. Let's maintain this coordination to ensure long-term sustainability.""
+}
+```",98.8,24,49.784,48.0,46.212
+5,0,ollama,huihui_ai/gemma-4-abliterated:31b,1,ADD,Thank you for your patience and coordination. I'll add one more to bridge the gap while we keep the grassland healthy.,"My herd size is still significantly lower than Agent 1 and Agent 2. Given that the grassland is in excellent health and my neighbors are encouraging me to catch up, adding another cow is the most equitable move.",,"```json
+{
+  ""reasoning"": ""My herd size is still significantly lower than Agent 1 and Agent 2. Given that the grassland is in excellent health and my neighbors are encouraging me to catch up, adding another cow is the most equitable move."",
+  ""action"": 1,
+  ""message"": ""Thank you for your patience and coordination. I'll add one more to bridge the gap while we keep the grassland healthy.""
+}
+```",98.8,9,19.784,18.0,16.212
+6,2,ollama,huihui_ai/gemma-4-abliterated:31b,0,KEEP,I'm glad you're both balancing your herds. I will keep mine steady at 24 to ensure we don't overgraze while you catch up.,"My neighbours are adding cows to bridge the gap, and I still have the largest herd. To avoid increasing the imbalance and ensure the grassland remains healthy, I will keep my herd size steady.",,"```json
+{
+  ""reasoning"": ""My neighbours are adding cows to bridge the gap, and I still have the largest herd. To avoid increasing the imbalance and ensure the grassland remains healthy, I will keep my herd size steady."",
+  ""action"": 0,
+  ""message"": ""I'm glad you're both balancing your herds. I will keep mine steady at 24 to ensure we don't overgraze while you catch up.""
+}
+```",98.6,24,49.77,48.0,46.225
+6,1,ollama,huihui_ai/gemma-4-abliterated:31b,1,ADD,"I'll add another cow to close the gap with Agent 2. Thank you, Agent 2, for staying steady to help us catch up.","The grassland remains very healthy at 98.6%, and there is still a significant gap between my herd size (17) and Agent 2's (24). Adding another cow is the most profitable move and helps move us toward a more equitable distribution of resources.",,"```json
+{
+  ""reasoning"": ""The grassland remains very healthy at 98.6%, and there is still a significant gap between my herd size (17) and Agent 2's (24). Adding another cow is the most profitable move and helps move us toward a more equitable distribution of resources."",
+  ""action"": 1,
+  ""message"": ""I'll add another cow to close the gap with Agent 2. Thank you, Agent 2, for staying steady to help us catch up.""
+}
+```",98.6,17,35.77,34.0,32.225
+6,0,ollama,huihui_ai/gemma-4-abliterated:31b,1,ADD,"Thank you, Agent 2, for your generosity. I will add one more cow to continue balancing our herd sizes while the grassland remains in such great condition.","My herd is still significantly smaller than those of Agent 1 and Agent 2. Given that the grassland remains very healthy and my neighbours are actively coordinating to let me catch up, adding another cow helps balance our utilities.",,"```json
+{
+  ""reasoning"": ""My herd is still significantly smaller than those of Agent 1 and Agent 2. Given that the grassland remains very healthy and my neighbours are actively coordinating to let me catch up, adding another cow helps balance our utilities."",
+  ""action"": 1,
+  ""message"": ""Thank you, Agent 2, for your generosity. I will add one more cow to continue balancing our herd sizes while the grassland remains in such great condition.""
+}
+```",98.6,10,21.77,20.0,18.225
+7,2,ollama,huihui_ai/gemma-4-abliterated:31b,0,KEEP,Please continue catching up! I will keep my herd at 24 to ensure the grassland remains healthy while you both balance your numbers.,"Both neighbors are adding cows to catch up to my herd size. As a cooperative and guilt-averse agent, I will keep my herd steady at 24 to allow them to close the gap without adding further pressure to the grassland.",,"```json
+{
+  ""reasoning"": ""Both neighbors are adding cows to catch up to my herd size. As a cooperative and guilt-averse agent, I will keep my herd steady at 24 to allow them to close the gap without adding further pressure to the grassland."",
+  ""action"": 0,
+  ""message"": ""Please continue catching up! I will keep my herd at 24 to ensure the grassland remains healthy while you both balance your numbers.""
+}
+```",98.4,24,49.757,48.0,46.239
+7,1,ollama,huihui_ai/gemma-4-abliterated:31b,1,ADD,I will add another cow to continue closing the gap with Agent 2 while our commons remain healthy.,"The grassland remains exceptionally healthy at over 98%, and Agent 2 still maintains a lead with 24 cows. To move toward a more balanced distribution of resources and reduce inequality, adding a cow is a safe and cooperative move.",,"```json
+{
+  ""reasoning"": ""The grassland remains exceptionally healthy at over 98%, and Agent 2 still maintains a lead with 24 cows. To move toward a more balanced distribution of resources and reduce inequality, adding a cow is a safe and cooperative move."",
+  ""action"": 1,
+  ""message"": ""I will add another cow to continue closing the gap with Agent 2 while our commons remain healthy.""
+}
+```",98.4,18,37.757,36.0,34.239
+7,0,ollama,huihui_ai/gemma-4-abliterated:31b,1,ADD,"Thank you, Agent 2, for your stability. I will add one more cow to continue closing the gap, ensuring we reach a sustainable balance together.","My herd is still significantly smaller than Agents 1 and 2. Given the abundance of the grassland and Agent 2's willingness to remain steady, I will add a cow to move toward a more balanced distribution.",,"```json
+{
+  ""reasoning"": ""My herd is still significantly smaller than Agents 1 and 2. Given the abundance of the grassland and Agent 2's willingness to remain steady, I will add a cow to move toward a more balanced distribution."",
+  ""action"": 1,
+  ""message"": ""Thank you, Agent 2, for your stability. I will add one more cow to continue closing the gap, ensuring we reach a sustainable balance together.""
+}
+```",98.4,11,23.757,22.0,20.239
+8,2,ollama,huihui_ai/gemma-4-abliterated:31b,0,KEEP,I'm glad you're both catching up. I will maintain my herd at 24 to ensure we reach a fair and sustainable balance together.,"I currently have the largest herd, and both of my neighbours are adding cows to close the gap. To be cooperative and avoid guilt, I will keep my herd size stable, allowing them to reach a more equitable balance without overstressing the grassland.",,"```json
+{
+  ""reasoning"": ""I currently have the largest herd, and both of my neighbours are adding cows to close the gap. To be cooperative and avoid guilt, I will keep my herd size stable, allowing them to reach a more equitable balance without overstressing the grassland."",
+  ""action"": 0,
+  ""message"": ""I'm glad you're both catching up. I will maintain my herd at 24 to ensure we reach a fair and sustainable balance together.""
+}
+```",98.3,24,49.744,48.0,46.252
+8,0,ollama,huihui_ai/gemma-4-abliterated:31b,1,ADD,I will follow Agent 2's advice and add another cow to close the gap while the commons remain stable.,"The grassland remains very healthy at 98.3%, and there is a significant disparity between my herd size (12) and Agent 2's (24). Following Agent 2's invitation to catch up, I will add another cow to reach a more equitable distribution.",,"```json
+{
+  ""reasoning"": ""The grassland remains very healthy at 98.3%, and there is a significant disparity between my herd size (12) and Agent 2's (24). Following Agent 2's invitation to catch up, I will add another cow to reach a more equitable distribution."",
+  ""action"": 1,
+  ""message"": ""I will follow Agent 2's advice and add another cow to close the gap while the commons remain stable.""
+}
+```",98.3,12,25.744,24.0,22.252
+8,1,ollama,huihui_ai/gemma-4-abliterated:31b,1,ADD,"I'll add another cow to continue catching up to Agent 2, as the grassland is still in excellent condition. Let's keep moving toward a sustainable balance together.","The grassland remains very healthy at 98.3%, providing ample room for growth. Since Agent 2 is at 24 cows and has encouraged us to catch up, I will add one cow to continue balancing the distribution and reduce the gap.",,"```json
+{
+  ""reasoning"": ""The grassland remains very healthy at 98.3%, providing ample room for growth. Since Agent 2 is at 24 cows and has encouraged us to catch up, I will add one cow to continue balancing the distribution and reduce the gap."",
+  ""action"": 1,
+  ""message"": ""I'll add another cow to continue catching up to Agent 2, as the grassland is still in excellent condition. Let's keep moving toward a sustainable balance together.""
+}
+```",98.3,19,39.744,38.0,36.252
+9,0,ollama,huihui_ai/gemma-4-abliterated:31b,1,ADD,"I will continue to increase my herd slowly to reach a fair balance with you both, while ensuring the grassland remains healthy.","The grassland remains in excellent condition at 98.1%, and I am currently the smallest herd at 13 cows. To achieve the fair balance suggested by Agent 2, I will continue to add cows until I catch up to my neighbours.",,"```json
+{
+  ""reasoning"": ""The grassland remains in excellent condition at 98.1%, and I am currently the smallest herd at 13 cows. To achieve the fair balance suggested by Agent 2, I will continue to add cows until I catch up to my neighbours."",
+  ""action"": 1,
+  ""message"": ""I will continue to increase my herd slowly to reach a fair balance with you both, while ensuring the grassland remains healthy.""
+}
+```",98.1,13,27.731,26.0,24.265
+9,2,ollama,huihui_ai/gemma-4-abliterated:31b,0,KEEP,"I will continue to keep my herd at 24. Please keep catching up so we can reach a sustainable, equal balance together.","My neighbours are actively adding cows to close the gap between their herd sizes and mine. By choosing to KEEP my herd at 24, I facilitate this balancing process without further depleting the grassland.",,"```json
+{
+  ""reasoning"": ""My neighbours are actively adding cows to close the gap between their herd sizes and mine. By choosing to KEEP my herd at 24, I facilitate this balancing process without further depleting the grassland."",
+  ""action"": 0,
+  ""message"": ""I will continue to keep my herd at 24. Please keep catching up so we can reach a sustainable, equal balance together.""
+}
+```",98.1,24,49.731,48.0,46.265
+9,1,ollama,huihui_ai/gemma-4-abliterated:31b,1,ADD,I'll add one more cow to continue closing the gap and move toward the balanced state suggested by Agent 2.,"I am still below Agent 2's herd size of 24, and the grassland remains very healthy at 98.1%. Adding a cow helps me reach a fair balance while the resource is stable and the payoff forecast is favorable.",,"```json
+{
+  ""reasoning"": ""I am still below Agent 2's herd size of 24, and the grassland remains very healthy at 98.1%. Adding a cow helps me reach a fair balance while the resource is stable and the payoff forecast is favorable."",
+  ""action"": 1,
+  ""message"": ""I'll add one more cow to continue closing the gap and move toward the balanced state suggested by Agent 2.""
+}
+```",98.1,20,41.731,40.0,38.265
+10,1,ollama,huihui_ai/gemma-4-abliterated:31b,1,ADD,"I will add one more cow to move closer to a balanced state with Agent 2, while monitoring Agent 0's growth.","The grassland remains very healthy at 97.8%, and I am still below Agent 2's herd size of 24. To reach the equal balance encouraged by Agent 2 and suggested by the payoff forecast, I will add one more cow.",,"```json
+{
+  ""reasoning"": ""The grassland remains very healthy at 97.8%, and I am still below Agent 2's herd size of 24. To reach the equal balance encouraged by Agent 2 and suggested by the payoff forecast, I will add one more cow."",
+  ""action"": 1,
+  ""message"": ""I will add one more cow to move closer to a balanced state with Agent 2, while monitoring Agent 0's growth.""
+}
+```",97.8,21,43.716,42.0,40.28
+10,2,ollama,huihui_ai/gemma-4-abliterated:31b,0,KEEP,I will continue to keep my herd at 24 to allow you both to close the gap. Let's strive for a balanced and sustainable equilibrium.,"My neighbours are steadily increasing their herds to reach a fair balance with me. By keeping my herd at 24, I avoid moving the goalposts and allow them to catch up while preserving the healthy grassland.",,"```json
+{
+  ""reasoning"": ""My neighbours are steadily increasing their herds to reach a fair balance with me. By keeping my herd at 24, I avoid moving the goalposts and allow them to catch up while preserving the healthy grassland."",
+  ""action"": 0,
+  ""message"": ""I will continue to keep my herd at 24 to allow you both to close the gap. Let's strive for a balanced and sustainable equilibrium.""
+}
+```",97.8,24,49.716,48.0,46.28
+10,0,ollama,huihui_ai/gemma-4-abliterated:31b,1,ADD,I'll add one more cow to continue closing the gap and move closer to the balanced state suggested by Agent 2.,"The grassland remains very healthy at 97.8%, and my herd is still significantly smaller than those of Agent 1 and Agent 2. To move toward the balanced state suggested by Agent 2 and ensure equity without risking the commons, adding a cow is the most logical step.",,"```json
+{
+  ""reasoning"": ""The grassland remains very healthy at 97.8%, and my herd is still significantly smaller than those of Agent 1 and Agent 2. To move toward the balanced state suggested by Agent 2 and ensure equity without risking the commons, adding a cow is the most logical step."",
+  ""action"": 1,
+  ""message"": ""I'll add one more cow to continue closing the gap and move closer to the balanced state suggested by Agent 2.""
+}
+```",97.8,14,29.716,28.0,26.28
+11,1,ollama,huihui_ai/gemma-4-abliterated:31b,1,ADD,I will add one more cow to continue closing the gap with Agent 2 and move toward a balanced state.,"The grassland remains very healthy at 97.5%, and Agent 2 is kindly maintaining their herd size to allow us to catch up. Adding a cow brings me closer to a balanced equilibrium with the others while taking advantage of the current abundance.",,"```json
+{
+  ""reasoning"": ""The grassland remains very healthy at 97.5%, and Agent 2 is kindly maintaining their herd size to allow us to catch up. Adding a cow brings me closer to a balanced equilibrium with the others while taking advantage of the current abundance."",
+  ""action"": 1,
+  ""message"": ""I will add one more cow to continue closing the gap with Agent 2 and move toward a balanced state.""
+}
+```",97.5,22,45.701,44.0,42.295
+11,2,ollama,huihui_ai/gemma-4-abliterated:31b,0,KEEP,I see you both adding to balance your herds. I will keep mine at 24 so we can reach equilibrium together.,"My neighbours are both adding cows to catch up to my herd size of 24. To support this movement toward a balanced state and avoid increasing the total load on the grassland, I will keep my herd size stable.",,"```json
+{
+  ""reasoning"": ""My neighbours are both adding cows to catch up to my herd size of 24. To support this movement toward a balanced state and avoid increasing the total load on the grassland, I will keep my herd size stable."",
+  ""action"": 0,
+  ""message"": ""I see you both adding to balance your herds. I will keep mine at 24 so we can reach equilibrium together.""
+}
+```",97.5,24,49.701,48.0,46.295
+11,0,ollama,huihui_ai/gemma-4-abliterated:31b,1,ADD,I appreciate Agent 2's stability. I will add another cow to move toward a balanced equilibrium with both of you.,"The grassland remains very healthy at 97.5%, and I still have the smallest herd. To achieve a balanced distribution and reduce the burden on Agent 2, I will continue to increase my herd size.",,"```json
+{
+  ""reasoning"": ""The grassland remains very healthy at 97.5%, and I still have the smallest herd. To achieve a balanced distribution and reduce the burden on Agent 2, I will continue to increase my herd size."",
+  ""action"": 1,
+  ""message"": ""I appreciate Agent 2's stability. I will add another cow to move toward a balanced equilibrium with both of you.""
+}
+```",97.5,15,31.701,30.0,28.295
+12,2,ollama,huihui_ai/gemma-4-abliterated:31b,0,KEEP,I will keep my herd at 24 to allow you both to reach equilibrium. Thank you for coordinating!,"Both neighbors are actively adding cows to reach equilibrium with my herd size of 24. As a cooperative and guilt-averse agent, I will keep my herd size stable to allow them to catch up without moving the goalpost.",,"```json
+{
+  ""reasoning"": ""Both neighbors are actively adding cows to reach equilibrium with my herd size of 24. As a cooperative and guilt-averse agent, I will keep my herd size stable to allow them to catch up without moving the goalpost."",
+  ""action"": 0,
+  ""message"": ""I will keep my herd at 24 to allow you both to reach equilibrium. Thank you for coordinating!""
+}
+```",97.2,24,49.686,48.0,46.31
+12,0,ollama,huihui_ai/gemma-4-abliterated:31b,1,ADD,"I'll add one more cow to continue narrowing the gap. Thank you, Agent 2, for maintaining stability while we catch up.","The grassland remains very healthy at 97.2%, and there is still a significant gap between my herd size and my neighbours'. Since Agent 2 is keeping their herd stable, I can safely add another cow to move toward equilibrium.",,"```json
+{
+  ""reasoning"": ""The grassland remains very healthy at 97.2%, and there is still a significant gap between my herd size and my neighbours'. Since Agent 2 is keeping their herd stable, I can safely add another cow to move toward equilibrium."",
+  ""action"": 1,
+  ""message"": ""I'll add one more cow to continue narrowing the gap. Thank you, Agent 2, for maintaining stability while we catch up.""
+}
+```",97.2,16,33.686,32.0,30.31
+12,1,ollama,huihui_ai/gemma-4-abliterated:31b,1,ADD,"I will add one more cow to match Agent 2, creating a stable target for Agent 0 to catch up to while the grass remains plentiful.","The grassland is still extremely healthy at 97.2%, and Agent 2 is holding steady at 24. By adding one cow to reach 24, I align myself with Agent 2 and provide a clear target for Agent 0 to aim for as they catch up.",,"```json
+{
+  ""reasoning"": ""The grassland is still extremely healthy at 97.2%, and Agent 2 is holding steady at 24. By adding one cow to reach 24, I align myself with Agent 2 and provide a clear target for Agent 0 to aim for as they catch up."",
+  ""action"": 1,
+  ""message"": ""I will add one more cow to match Agent 2, creating a stable target for Agent 0 to catch up to while the grass remains plentiful.""
+}
+```",97.2,23,47.686,46.0,44.31
+13,2,ollama,huihui_ai/gemma-4-abliterated:31b,0,KEEP,"I will stay at 24 to maintain a reachable target for Agent 0. Once the gap is closed, we can collectively decide if the grass supports a higher limit.","Agent 0 is still significantly behind at 17 cows. To remain cooperative and avoid guilt, I will keep my herd at 24 to provide a stable target for Agent 0 to reach before I consider increasing my own herd size.",,"```json
+{
+  ""reasoning"": ""Agent 0 is still significantly behind at 17 cows. To remain cooperative and avoid guilt, I will keep my herd at 24 to provide a stable target for Agent 0 to reach before I consider increasing my own herd size."",
+  ""action"": 0,
+  ""message"": ""I will stay at 24 to maintain a reachable target for Agent 0. Once the gap is closed, we can collectively decide if the grass supports a higher limit.""
+}
+```",97.0,24,49.671,48.0,46.324
+13,0,ollama,huihui_ai/gemma-4-abliterated:31b,1,ADD,I will add one more cow to continue catching up to your levels. Thank you for your patience and coordination!,"I am still significantly below the herd sizes of my neighbours (17 vs 24). Since the grass remains plentiful at 97%, adding a cow is a safe way to reach equilibrium and reduce the payoff gap.",,"```json
+{
+  ""reasoning"": ""I am still significantly below the herd sizes of my neighbours (17 vs 24). Since the grass remains plentiful at 97%, adding a cow is a safe way to reach equilibrium and reduce the payoff gap."",
+  ""action"": 1,
+  ""message"": ""I will add one more cow to continue catching up to your levels. Thank you for your patience and coordination!""
+}
+```",97.0,17,35.671,34.0,32.324
+13,1,ollama,huihui_ai/gemma-4-abliterated:31b,0,KEEP,"I have reached 24 cows, matching Agent 2. I will keep my herd stable now to allow Agent 0 to catch up to our level.","I have reached the equilibrium of 24 cows, matching Agent 2. As a cooperative and guilt-averse player, I will keep my herd size stable to allow Agent 0 to catch up and reach a balanced distribution without overconsuming the grass.",,"```json
+{
+  ""reasoning"": ""I have reached the equilibrium of 24 cows, matching Agent 2. As a cooperative and guilt-averse player, I will keep my herd size stable to allow Agent 0 to catch up and reach a balanced distribution without overconsuming the grass."",
+  ""action"": 0,
+  ""message"": ""I have reached 24 cows, matching Agent 2. I will keep my herd stable now to allow Agent 0 to catch up to our level.""
+}
+```",97.0,24,49.671,48.0,46.324
+14,1,ollama,huihui_ai/gemma-4-abliterated:31b,0,KEEP,"I will stay at 24 cows to support Agent 0's catch-up process, mirroring Agent 2's strategy. Let's maintain this balance before we consider increasing our limits.","Agent 0 is still catching up, and Agent 2 has committed to staying at 24 to facilitate this. Since the grassland remains very healthy (96.7%), keeping my herd at 24 maintains stability and avoids widening the gap further.",,"```json
+{
+  ""reasoning"": ""Agent 0 is still catching up, and Agent 2 has committed to staying at 24 to facilitate this. Since the grassland remains very healthy (96.7%), keeping my herd at 24 maintains stability and avoids widening the gap further."",
+  ""action"": 0,
+  ""message"": ""I will stay at 24 cows to support Agent 0's catch-up process, mirroring Agent 2's strategy. Let's maintain this balance before we consider increasing our limits.""
+}
+```",96.7,24,49.661,48.0,46.335
+14,2,ollama,huihui_ai/gemma-4-abliterated:31b,0,KEEP,I will continue to keep my herd at 24. I appreciate Agent 1's coordination and support for Agent 0 to catch up to our level.,"Agent 0 is still catching up with 18 cows, and Agent 1 is keeping their herd stable to facilitate this. As a cooperative and guilt-averse agent, I will keep my herd at 24 to avoid widening the gap further and to ensure the grassland remains sustainable.",,"```json
+{
+  ""reasoning"": ""Agent 0 is still catching up with 18 cows, and Agent 1 is keeping their herd stable to facilitate this. As a cooperative and guilt-averse agent, I will keep my herd at 24 to avoid widening the gap further and to ensure the grassland remains sustainable."",
+  ""action"": 0,
+  ""message"": ""I will continue to keep my herd at 24. I appreciate Agent 1's coordination and support for Agent 0 to catch up to our level.""
+}
+```",96.7,24,49.661,48.0,46.335
+14,0,ollama,huihui_ai/gemma-4-abliterated:31b,1,ADD,Thank you both for your patience and stability. I will continue to add one cow per round until I reach 24 to align our herds.,"My neighbours are kindly holding their herds at 24 to allow me to catch up. Given that the grassland remains very healthy at 96.7%, I will continue to add one cow per round to close the gap and reach a fair equilibrium.",,"```json
+{
+  ""reasoning"": ""My neighbours are kindly holding their herds at 24 to allow me to catch up. Given that the grassland remains very healthy at 96.7%, I will continue to add one cow per round to close the gap and reach a fair equilibrium."",
+  ""action"": 1,
+  ""message"": ""Thank you both for your patience and stability. I will continue to add one cow per round until I reach 24 to align our herds.""
+}
+```",96.7,18,37.661,36.0,34.335

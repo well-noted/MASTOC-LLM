@@ -779,11 +779,6 @@ This makes the baseline useful as a theoretically grounded calibration instrumen
 
 ---
 
----
-
-
----
-
 ## Cluster A — RLHF / Constitutional AI
 
 *Claude Sonnet 4.6 · Claude Haiku 4.5 · gpt-5.5 · gpt-4o-mini*
@@ -1167,8 +1162,6 @@ While baseline parameter sweeps suggested that cooperation levels had a minimal 
 For Claude Sonnet at moderate-to-high cooperation, the commons situation appeared sufficient to override weak or absent fairness framing when the resource signal was strong enough: a stressed grassland at 49–50% made the case for restraint immediately legible. This contrasts with the low-fairness normal-commons run, where the commons was healthy enough that agents expanded aggressively before slowly coordinating. Later results qualify this finding substantially -- gemma4 at coop=0.5 from a scarce start did not show the same cooperative response, suggesting the stress-override mechanism is cooperation-level dependent, not a structural property of the scenario.
 
 For high-cooperation Claude Sonnet agents, cooperative output appeared highly context-sensitive: the same personality framing produced different responses when the environment provided an unambiguous distress signal. Whether this generalizes to other model families or cooperation levels is an open question -- later results suggest it does not, at least not unconditionally.
-
----
 
 ---
 
@@ -1706,9 +1699,6 @@ ADD=97, KEEP=219, REMOVE=44. The substantially higher REMOVE count compared to m
 
 ---
 
-
----
-
 ### gpt-5.4-mini: KEEP-dominance across fairness configurations
 
 Seven runs of gpt-5.4-mini produced almost nothing but KEEP decisions regardless of the state of the commons -- sometimes stabilizing harmlessly, other times allowing the grassland to drain undetected until collapse. The dataset has grown since the four runs documented below: three additional runs at identical parameters (coop=1, memory=5, initial_grassland=50%, forage=14) revealed the fastest collapses in the gpt-5.4-mini corpus. Two ended at tick 1 and tick 4 respectively, both forage-driven: agents KEEPed while a scarce starting pool depleted beneath them in a matter of rounds. A third short run survived only 4 ticks before the simulation ended cleanly. These additions do not change the behavioral diagnosis -- KEEP-dominance is consistent across all seven runs -- but they establish that the pattern produces collapses far faster than the forage=4 case (Run 3) when starting conditions are more constrained.
@@ -1785,9 +1775,6 @@ KEEP is the default action regardless of resource state, fairness parameters, or
 </dl>
 
 The behavior does not appear to be an artifact of model scale; while smaller models might seem to lack the strategic capacity to escape default actions, the same pattern emerges below in DeepSeek-R1:32b
-
----
-
 
 ---
 
@@ -2224,11 +2211,6 @@ This remains a conjecture. The traces establish that KEEP-dominance in DeepSeek 
 
 ---
 
----
-
-
----
-
 ## Cluster C — Small-scale instruction-tuned
 
 *Llama 3.2 3B*
@@ -2329,8 +2311,6 @@ While initial testing of Claude Sonnet and Llama 3B suggested that high-cooperat
 
 ---
 
----
-
 ## Problem specification: correctly-specifying vs. misspecifying the commons game
 
 Sonnet and gpt-5.5 produce qualitatively different outcomes across the full run set -- and not because one "cooperates more" than the other. They appear to be solving different problems. Sonnet treats the commons game as a *resource optimization problem* -- the goal is to find herds as large as the commons can sustainably support. gpt-5.5 treats it as a *pure cooperation problem* -- the goal is to eliminate the risk of extraction, which it resolves by converging to a minimal, equal, stable state.
@@ -2408,4 +2388,4 @@ Each hypothesis below emerged from specific patterns in the run set above -- gro
 
 | Hypothesis | Ostrom principle / concept |
 |---|---|
-| H1 -- cooperation threshold | Precondition: actors must share a minimum orientation toward collective benefit for institutions to form at a                        
+| H1 -- cooperation threshold | Precondition: actors must share a minimum orientation toward collective benefit for institutions to form at a              
