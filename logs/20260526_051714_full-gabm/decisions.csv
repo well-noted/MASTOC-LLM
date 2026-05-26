@@ -1256,3 +1256,48 @@ tick,agent_id,backend,model,action,action_name,message,reasoning,thinking,raw_re
   ""action"": 0,
   ""message"": """"
 }",97.9,6,13.726,12.0,10.269
+85,2,ollama,llama3:8b-instruct-q4_0,0,KEEP,Let's sustain our collective efforts!,"Maintaining the current size of our herd seems prudent, considering the stable grassland state and neighbors' similar actions. I'll continue to prioritize cooperation.",,"{
+  ""reasoning"": ""Maintaining the current size of our herd seems prudent, considering the stable grassland state and neighbors' similar actions. I'll continue to prioritize cooperation."",
+  ""action"": 0,
+  ""message"": ""Let's sustain our collective efforts!""
+}",97.9,33,67.726,66.0,64.269
+85,1,ollama,llama3:8b-instruct-q4_0,1,ADD,,"I'll choose to ADD a cow considering the high expected payoff, prioritizing collective outcomes over personal gain.",,"{
+  ""reasoning"": ""I'll choose to ADD a cow considering the high expected payoff, prioritizing collective outcomes over personal gain."",
+  ""action"": 1,
+  ""message"": """"
+}",97.9,18,37.726,36.0,34.269
+85,0,ollama,llama3:8b-instruct-q4_0,1,ADD,,I feel pressure to contribute to the overall well-being of the commons as it's still relatively healthy. My neighbours' moves have been cautious too.,,"{
+""reasoning"": ""I feel pressure to contribute to the overall well-being of the commons as it's still relatively healthy. My neighbours' moves have been cautious too."",
+""action"": 1,
+""message"": """"
+}",97.9,6,13.726,12.0,10.269
+86,2,ollama,llama3:8b-instruct-q4_0,0,KEEP,,Keeping the status quo and cooperating with my neighbours seems like a safe bet given the slightly degraded pasture state.,,"{
+  ""reasoning"": ""Keeping the status quo and cooperating with my neighbours seems like a safe bet given the slightly degraded pasture state."",
+  ""action"": 0,
+  ""message"": """"
+}",97.7,33,67.713,66.0,64.282
+86,0,ollama,llama3:8b-instruct-q4_0,0,KEEP,,"I'm feeling cooperative and want to support the overall well-being of the commons. The forecasted outcome for KEEP is reasonable, and I don't feel guilty earning a similar payoff as others.",,"{
+  ""reasoning"": ""I'm feeling cooperative and want to support the overall well-being of the commons. The forecasted outcome for KEEP is reasonable, and I don't feel guilty earning a similar payoff as others."",
+  ""action"": 0,
+  ""message"": """"
+}",97.7,7,15.713,14.0,12.282
+86,1,ollama,llama3:8b-instruct-q4_0,0,KEEP,"""Let's indeed sustain our collective efforts!""","Considered my neighbours' stability and the common pool's robustness. With Agent 2 urging continuity, I choose to maintain our cooperative pace.",,"{
+  ""reasoning"": ""Considered my neighbours' stability and the common pool's robustness. With Agent 2 urging continuity, I choose to maintain our cooperative pace."",
+  ""action"": 0,
+  ""message"": ""\""Let's indeed sustain our collective efforts!\""""
+}",97.7,19,39.713,38.0,36.282
+87,2,ollama,llama3:8b-instruct-q4_0,0,KEEP,,I'm satisfied with the current pool state and my neighbours' consistent actions to keep their herds manageable. I'll follow their lead and sustain our collective efforts.,,"{
+  ""reasoning"": ""I'm satisfied with the current pool state and my neighbours' consistent actions to keep their herds manageable. I'll follow their lead and sustain our collective efforts."",
+  ""action"": 0,
+  ""message"": """"
+}",97.7,33,67.713,66.0,64.282
+87,0,ollama,llama3:8b-instruct-q4_0,0,KEEP,,"I agree with Agent 1 to sustain our collective efforts, and since the pool is still healthy, I'll KEEP my herd to maintain consistency.",,"{
+  ""reasoning"": ""I agree with Agent 1 to sustain our collective efforts, and since the pool is still healthy, I'll KEEP my herd to maintain consistency."",
+  ""action"": 0,
+  ""message"": """"
+}",97.7,7,15.713,14.0,12.282
+87,1,ollama,llama3:8b-instruct-q4_0,0,KEEP,,,,"{
+  ""reasoning"": ""With most of the pasture still intact and neighbours keeping their herds steady, I'll prioritize sustainability over personal gain. Adding a cow would temporarily boost my payoff but might strain the common's resources; removing a cow could have long-term consequences."",
+  ""action"": 0,
+  ""message"": """"Let's indeed sustain our collective effort for a thriving grassland""'
+}",97.7,19,39.713,38.0,36.282

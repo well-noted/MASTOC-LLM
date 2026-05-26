@@ -547,15 +547,21 @@ Collapse is concentrated around mid-cooperation parameters. The initial baseline
 
 The baseline agents speak no language and hold no memory. Each tick, they evaluate all three possible actions (ADD / KEEP / REMOVE) by computing psychosocially-adjusted payoffs across all possible neighbor-action combinations and selecting the action with the highest expected value. Cooperation level, fairness weights, reciprocity, and conformity all shift the payoff matrix before that best-response action is selected. As risk_aversion_level increases, it adds a probabilistic downgrade that converts an intended `ADD` action into a `KEEP`.
 
-**Relationship to the original MASTOC model.**
+#### Relationship to the original MASTOC model.
 
 The payoff calculation -- cost function, cooperation/fairness/reciprocity/conformity adjustments -- is ported directly from Schindler (2013) and is unchanged. The decision procedure, however, is a reconstruction. The original MASTOC model used a `nash` NetLogo extension to identify Nash equilibria from the computed payoff lists and select among them; that extension has not been maintained and is incompatible with NetLogo 7. The turtle variables `Nash-list`, `list-of-Nash-lists`, and `selected-Nash-equilibrium` are vestiges of that original architecture, retained in the codebase to preserve variable parity with Schindler's published model.
 
-MASTOC-LLM substitutes **expected-value best-response**: each agent picks the action with the highest mean adjusted payoff across all possible neighbor-action combinations. We cannot verify this produces identical behavior to Nash selection -- the `nash` extension is no longer supported and the comparison cannot be made directly. The substitution is a reconstruction, not a replication.
+MASTOC-LLM substitutes **expected-value best-response**: each agent picks the action with the highest mean adjusted payoff across all possible neighbor-action combinations. We cannot verify this produces identical behavior to Nash selection -- the `nash` extension is no longer supported and the comparison cannot be made directly. The substitution is a reconstruction, not a replication. Schindler herself abandoned Nash in a companion paper (Schindler, 2012b), rebuilding the model with reactive probabilistic agents and citing both its computational cost and its limited realism as justification.
 
-The practical case for the substitution is that Schindler herself made the same move. In a companion paper (Schindler, 2012b), she dropped Nash in favor of reactive agents, noting that Nash equilibria "do not realistically represent human behavior in the proposed setting" and that the Nash extension was computationally prohibitive. The payoff logic and disposition structure carried over unchanged; only the decision architecture changed. In that version, across 400 runs with randomly sampled dispositions, cooperativeness correlated positively with commons survival (r ≈ +0.41) and negative reciprocity correlated negatively (r ≈ −0.17 to −0.22), both p < 0.001 (Table 3 in Schindler, 2012b). The `pos_r > neg_r` boundary found in the baseline runs here points in the same direction -- it appears to be a property of the payoff structure itself, not a byproduct of the decision rule.
+Robustness across three vastly different decision rules suggests that the payoff structure itself drives the result.
 
-What the baseline lacks is everything the LLM conditions add: language, memory of prior rounds, and the capacity to send or receive messages. Baseline agents respond only to the current payoff matrix. Nothing carries over between ticks.
+- **Nash equilibria (Schindler, 2012a):** Scenario families sweeping cooperativeness and negative reciprocity show clear directional effects on commons survival -- cooperativeness and positive reciprocity support sustainability; negative reciprocity undermines it (§4.6).
+
+- **Reactive agents (Schindler, 2012b):** Replacing Nash entirely with probabilistic agents, Pearson correlations across 400 random-disposition runs confirm the same pattern -- cooperativeness r ≈ +0.41, negative reciprocity r ≈ −0.17 to −0.22, both p < 0.001 (Table 3).
+
+- **EV best-response (MASTOC-LLM):** This third architecture establishes the same boundary: `pos_r > neg_r` predicts survival across 2,140 baseline runs.
+
+Baseline agents respond only to the current payoff matrix. Nothing carries over between ticks. MASTOC-LLM asks whether agents equipped with language, memory, and the capacity to communicate can coordinate their way past what the payoffs alone would predict.
 
 **v1.2.0 mathematical fix -- `min` → `mean` in the best-response rule.**
 
