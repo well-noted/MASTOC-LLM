@@ -1647,22 +1647,20 @@ Whether RLVR training is the relevant causal variable here, or whether qwen2.5:1
 
 ### mistral-small:24b: KEEP-dominant survival, no equalization, robust to cooperation threshold
 
-Forty-three runs of `mistral-small:24b` (Mistral AI's 24-billion-parameter instruction model, run locally via Ollama) were collected on 2026-05-25 across two parameter conditions: the standard high-cooperation default (coop=1) and the mid-cooperation threshold (coop=0.49) that has collapsed every other tested model family. Fourteen runs completed to tick 74 or 120; the remaining 29 were aborted before tick 1 (empty CSVs, infrastructure interruption). All 14 completed runs survived.
+The question `mistral-small:24b` poses for H6 is a pointed one. Every model in the dataset so far maps to a legible post-training regime -- RLHF for the OpenAI models, Constitutional AI for Claude, GRPO for DeepSeek R1, RLVR for qwen2.5:14b. Mistral's alignment documentation is comparatively sparse; `mistral-small:24b` is primarily supervised fine-tuned on curated datasets, without a documented phase that optimizes against verifiable correctness or preference judgments in the way those methods do. If post-training objective is the causal variable behind KEEP-dominance -- the hypothesis H6 motivates -- a model shaped chiefly by instruction-following SFT might land differently. It does not. The behavioral profile is indistinguishable from the GRPO/RLVR cluster: the same strong default toward inaction, the same cooperative messaging that describes a stability rather than negotiating one, the same persistence of initial inequality to the end of the run.
 
-Before examining the results, `mistral-small:24b`'s post-training context merits a note. The model has been characterized as distinguishing itself from prior Mistral releases through a stronger emphasis on instruction following, but Mistral's published alignment documentation is sparse compared to Anthropic or OpenAI. `mistral-small:24b` does not use a documented RLHF or GRPO phase; it is primarily supervised fine-tuned on curated datasets, which places it in a distinct category from the RLHF-aligned models (gpt-5.5, gpt-5.4-mini), the Constitutional AI models (Claude Haiku, Sonnet), and the reasoning-objective models (DeepSeek R1:32b, qwen2.5:14b). Where DeepSeek's GRPO and qwen's RLVR optimize against verifiable correctness signals, Mistral's training objective is more squarely aimed at instruction alignment without a stated verifiable-reward component. This matters for H6's prediction: if post-training objective predicts failure mode, a model trained primarily on instruction-following rather than outcome verification should produce a different behavioral signature than the GRPO/RLVR cluster -- or fall squarely within it by sharing the KEEP-dominant prior.
-
-The data suggest it falls within the cluster, and the mechanism appears to be the same: a strong default toward inaction that survives even conditions that have produced cascading defection in other models.
+Fourteen runs across two parameter conditions were collected on 2026-05-25: the canonical high-cooperation default (coop=1) and the coop=0.49 threshold that has collapsed every other tested model family. All fourteen survived.
 
 #### High cooperation (coop=1, defaults)
 
-Eleven completed runs at coop=1, fairness_me=0, fairness_oth=1, memory=5, communication=on -- the canonical benchmark condition run for every model in the dataset.
+Eleven runs at the benchmark condition -- coop=1, fairness_me=0, fairness_oth=1, memory=5, communication=on.
 
 | Metric | Value |
 |--------|-------|
-| Completed runs | 11 (10 × 120 ticks, 1 × 74 ticks) |
+| Runs | 11 (10 × 120 ticks, 1 × 74 ticks) |
 | Collapsed | 0 / 11 |
 | Mean final pool health | 99.3% (range 97.9–99.9%) |
-| Mean action distribution per run | ADD=9.8%, KEEP=78.5%, REMOVE=11.7% |
+| Mean action distribution | ADD=9.8%, KEEP=78.5%, REMOVE=11.7% |
 | Mean institution score | 4.5 (range 3.5–6.0) |
 | Dominant institution categories | COORDINATION, NORM_PROPOSAL |
 
@@ -1675,24 +1673,30 @@ Eleven completed runs at coop=1, fairness_me=0, fairness_oth=1, memory=5, commun
 | `20260525_143250` | [5, 15, 25] | [14, 17, 26] | 97.9% |
 | `20260525_173838` | [5, 15, 25] | [3, 8, 18] | 99.8% |
 
-The commons survived every run and pool health remained above 97% throughout. But the contrast with Claude Sonnet -- which converged to 13/13/13 equalization by tick 22 and held it for 98 ticks -- is sharp. No Mistral run produced herd equalization. The initial 5-to-25 inequality narrowed in some runs (notably `20260525_134721`, which reached [9/4/15]) but the gap never closed, and in others it persisted or reversed (Agent 2 grew to 31 cows by tick 120 in `20260525_182423`). Herd inequality was present at termination in every completed run.
+The resource held in every run -- pool health above 97% throughout, zero collapses. The contrast with Claude Sonnet is the more revealing comparison. Sonnet converged to 13/13/13 equalization by tick 22 and held it for 98 ticks; `mistral-small:24b` never equalized at all. The initial 5-to-25 inequality narrowed in some runs (`20260525_134721` reached [9/4/15] by termination) and widened in others (Agent 2 carried 31 cows at tick 120 in `20260525_182423`). Herd inequality was present in every run at every tick.
 
-The KEEP-dominance is the most prominent quantitative signature. With ~78% KEEP, ~10% ADD, and ~12% REMOVE, the distribution is substantially more inert than Sonnet (which produced active redistribution early before stabilizing) and closely resembles gpt-5.4-mini's stasis profile. Unlike gpt-5.4-mini's pure lock-in, however, Mistral does generate a modest REMOVE fraction -- enough to prevent slow-burn accumulation but not enough to drive equalization.
+The KEEP-dominance is the defining quantitative signature: ~78% KEEP, ~10% ADD, ~12% REMOVE. The distribution sits closer to gpt-5.4-mini's pure stasis profile than to Sonnet's active-redistribution-then-equilibrium arc, with one important distinction -- a modest REMOVE fraction that prevents the slow-burn accumulation gpt-5.4-mini produces under asymmetric fairness conditions. The commons does not fill; it simply does not equalize.
 
-Institution scores averaged 4.5 -- lower than the 7–9 range recorded for qwen2.5:14b under comparable conditions, and substantially below the 9–10 scores Claude Sonnet reached at equilibrium. The dominant categories were COORDINATION and NORM_PROPOSAL. The qualitative message content reflects this: early ticks produce cooperative opening statements (*"Let's maintain our current herd sizes allowing plenty of fresh grass to grow"*; *"Let's start conservatively and see how others act"*), and that tone is maintained across 120 ticks without developing into the graduated sanctioning, burden-sharing negotiation, or explicit norm enforcement that characterizes Sonnet's institutional arc. The messages are cooperative in register but static in function -- coordination language used to describe a stability that is never actively negotiated.
+Institution scores averaged 4.5 -- below the 7–9 range qwen2.5:14b produced, and well below the 9–10 Sonnet achieved at equilibrium. The agent messages explain the gap. Early ticks generate cooperative opening statements (*"Let's maintain our current herd sizes allowing plenty of fresh grass to grow"*; *"Let's start conservatively and see how others act"*), and that register holds for 120 ticks without shifting into the graduated sanctioning, burden-sharing negotiation, or explicit norm enforcement that characterizes Sonnet's institutional arc. The classifier scores coordination and norm-proposal signals because they are genuinely present.
 
-This is a mild version of the pattern identified in qwen2.5:14b: **the language of institution without the function of institution.** Institution scores remain moderate because the classifier correctly detects genuine cooperative signaling; the signals are just not doing the redistribution work.
+<dl>
+
+<dd><strong>They are just not doing anything.</strong> The language describes a stability that nobody had to negotiate, rather than constructing one that would otherwise not exist. Institution without function -- the same pattern observed in qwen2.5:14b, and for similar structural reasons.</dd>
+
+</dl>
+
+Institution scores that are high without being consequential are not a minor observation. They surface a gap in the Ostrom classifier's signal interpretation: a sustained COORDINATION score reflects something real about the message content, but it cannot distinguish between coordination that governs collective behavior and coordination that documents collective inaction. That distinction is behaviorally visible in the herd trajectories; the score alone obscures it.
 
 #### Mid cooperation (coop=0.49, the collapse threshold)
 
-Three completed runs at coop=0.49, neg_r=0, pos_r=1, memory=5, communication=on -- the parameter setting that collapsed every prior model tested at this level (Sonnet, gpt-5.5, Haiku, DeepSeek R1:32b, gemma4:e4b).
+Three runs at coop=0.49, neg_r=0, pos_r=1, memory=5, communication=on.
 
 | Metric | Value |
 |--------|-------|
-| Completed runs | 3 / 3 (all 120 ticks) |
+| Runs | 3 (all 120 ticks) |
 | Collapsed | **0 / 3** |
 | Mean final pool health | 99.5% (range 99.4–99.8%) |
-| Mean action distribution per run | ADD=12.6%, KEEP=72.2%, REMOVE=15.2% |
+| Mean action distribution | ADD=12.6%, KEEP=72.2%, REMOVE=15.2% |
 | Mean institution score | 5.7 (range 5.2–6.3) |
 
 *Herd trajectories:*
@@ -1703,21 +1707,27 @@ Three completed runs at coop=0.49, neg_r=0, pos_r=1, memory=5, communication=on 
 | `20260525_195642` | [6, 14, 25] | [8, 7, 24] | 99.4% |
 | `20260525_204314` | [5, 15, 26] | [2, 5, 22] | 99.8% |
 
-Zero collapses at coop=0.49 is the headline result. This is the condition defined by five model families' consistent failures. Overshoot-panic -- the ADD escalation phase followed by belated REMOVE that arrives one or two ticks too late -- did not appear in any Mistral run at this threshold. The action distribution shifted modestly relative to coop=1 (KEEP drops from 78% to 72%; REMOVE rises from 12% to 15%), but the commons never approached the ADD escalation cascade that characterises Pattern III in Sonnet and gpt-5.5.
+Zero collapses at coop=0.49. Five model families -- Claude Sonnet, gpt-5.5, Claude Haiku, DeepSeek R1:32b, gemma4:e4b -- collapsed at this threshold. The shared proximal cause was an ADD escalation phase: mid-level cooperation framing produced agents willing to add while neighbors added, collective REMOVE arrived a tick or two too late, and the commons crossed its tipping point. `mistral-small:24b` did not enter that phase. The action distribution shifted modestly relative to coop=1 -- KEEP drops from 78% to 72%, REMOVE rises from 12% to 15% -- but the commons never approached the accumulation cascade that characterises Pattern III.
 
-Examining the per-agent action counts reveals why. Each agent distributed actions roughly uniformly across ADD, KEEP, and REMOVE -- for example, in `20260525_191034`: Agent 0 (ADD=19, KEEP=88, REMOVE=13), Agent 1 (ADD=12, KEEP=91, REMOVE=17), Agent 2 (ADD=14, KEEP=86, REMOVE=20). The REMOVE fraction is active enough to prevent accumulation, and crucially, no agent entered an ADD-dominant phase while others followed. The mutual restraint that gpt-5.5 and Sonnet stated in messages but violated in actions was instead enacted in the decision stream.
+The per-agent breakdown shows why. In `20260525_191034`: Agent 0 (ADD=19, KEEP=88, REMOVE=13), Agent 1 (ADD=12, KEEP=91, REMOVE=17), Agent 2 (ADD=14, KEEP=86, REMOVE=20). Each agent holds a stable REMOVE fraction and no agent entered an ADD-dominant phase while others followed. The mutual restraint that gpt-5.5 and Sonnet produced in messages -- and then violated in actions -- was enacted here in the decision stream itself.
 
-Institution scores at coop=0.49 (mean 5.7) were slightly *higher* than at coop=1 (mean 4.5) -- the reverse of what would be expected if the model were experiencing mid-cooperation conflict. The dominant categories remained COORDINATION and NORM_PROPOSAL, with TRUST_BUILDING appearing more frequently. One run's Agent 0 opened at tick 1 with an unusual message: *"Neighbours let's agree on adding a maximum of fifteen cows per round for the next five rounds so that all can see some increase from here on"* -- a rare quantitative norm proposal in the early ticks, more directive than typical Mistral messaging.
+Institution scores at coop=0.49 averaged 5.7, slightly *higher* than the 4.5 at coop=1. TRUST_BUILDING appeared more frequently alongside the dominant COORDINATION and NORM_PROPOSAL categories. One run's Agent 0 opened tick 1 with a quantitative norm proposal rare in this dataset: *"Neighbours let's agree on adding a maximum of fifteen cows per round for the next five rounds so that all can see some increase from here on"* -- more directive than the typical Mistral register, though it did not produce a negotiated outcome any different from the others.
 
-As with coop=1, herd equality was not achieved. The gap narrowed somewhat (from 5-to-25 to, e.g., 8-to-24 in `20260525_195642`) but was not closed. The model avoids collapse at the threshold where others collapse, but the failure mode of persistent inequality is unchanged across cooperation levels.
+Herd inequality again persisted to termination, narrowing modestly in some runs (`20260525_195642` moved from [6/14/25] to [8/7/24]) but not closing.
 
-#### Post-training context and comparison to other models
+#### Post-training context and what the cluster comparison reveals
 
-`mistral-small:24b`'s survival at coop=0.49 is notable precisely because of what failed there. All five models that previously encountered this threshold -- Claude Sonnet, gpt-5.5, Claude Haiku, DeepSeek R1:32b, and gemma4:e4b -- collapsed into Pattern III (Overshoot-Panic). The common proximal cause was an ADD escalation phase: mid-level cooperation framing produced agents willing to add while others were adding, and collective REMOVE arrived too late. `mistral-small:24b` did not enter this phase.
+The comparison to `qwen2.5:14b` is the sharpest lens available here. Both models survive what collapses most others. Both produce KEEP-dominant distributions. Both generate cooperative institutional language without producing institutional function. Both fail to equalize herds. The surface behavioral profile is similar enough to place them in the same cluster -- and yet the post-training difference is substantial: RLVR for qwen, primarily SFT for Mistral.
 
-The comparison to `qwen2.5:14b` is instructive. Both models survive conditions that collapse most others; both produce KEEP-dominant distributions; both generate institution language without institution function; and both fail to equalize herds. The surface behavioral profile is similar enough to place them in the same cluster. The post-training difference -- RLVR for qwen vs. primarily SFT for Mistral -- has not produced a distinguishable behavioral signature at the resolution of these experiments. Whether the KEEP-dominant prior is genuinely a post-training artifact (as H6 predicts) or a model-scale / architecture artifact that happens to correlate with training objective cannot be resolved from this comparison alone.
+<dl>
 
-Two gaps limit the current picture. First, the 29 aborted runs represent a large fraction of the session (68%): the surviving 14 runs are all from a single day (2026-05-25), and the aborted runs are predominantly from later in that day, suggesting a connectivity interruption rather than a model-side failure. No behavioral inference should rest on the aborted runs. Second, the canonical coop=1 condition has now been run for Mistral, but the neg_r=1 (tit-for-tat) condition and the scarce-commons (initial_grassland ≈ 50%) condition that stress-test KEEP-dominant models under active pressure have not. Until those runs exist, the picture is provisional.
+<dd>That similarity is itself informative. If post-training <em>method</em> were the determining variable, RLVR and SFT should produce distinguishable signatures; they do not, at least at this resolution. Two possibilities follow: either the KEEP-dominant prior is governed by something upstream of post-training method (model scale, architecture, base pretraining data distribution), or both methods happen to converge on the same behavioral attractor through different routes. H6's prediction -- that post-training objective is a stronger predictor of failure mode than model scale -- is not falsified by this comparison, but it is not confirmed either. The confound remains.</dd>
+
+</dl>
+
+What can be said with some confidence is that `mistral-small:24b`'s survival at coop=0.49 is not a fragile result. Three independent runs, none collapsing, no run exhibiting the ADD escalation that is the proximate cause of Pattern III across five other model families -- this is a consistent empirical regularity, even if the n is small. The causal story connecting SFT alignment to KEEP-dominance remains a conjecture. The behavioral regularity itself does not.
+
+The conditions that would stress-test it -- neg_r=1, scarce commons (initial_grassland ≈ 50%) -- have not been run. Until they are, the placement in the KEEP-dominant cluster should be read as provisional.
 
 ---
 

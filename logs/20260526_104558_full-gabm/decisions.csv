@@ -14,3 +14,48 @@ tick,agent_id,backend,model,action,action_name,message,reasoning,thinking,raw_re
   ""action"": 0,
   ""message"": """"
 }",100.0,5,11.832,10.0,8.163
+2,1,ollama,llama3:8b-instruct-q4_0,0,KEEP,"Let's keep things stable and work together, neighbours.","Considering the forecasted payoffs and my cooperative personality, I'm inclined to opt for a moderate outcome rather than taking a risk or prioritizing my own gain. Given the neighbour's herd sizes and last actions, I'll choose an action that maintains balance.",,"{
+""reasoning"": ""Considering the forecasted payoffs and my cooperative personality, I'm inclined to opt for a moderate outcome rather than taking a risk or prioritizing my own gain. Given the neighbour's herd sizes and last actions, I'll choose an action that maintains balance."",
+""action"": 0,
+""message"": ""Let's keep things stable and work together, neighbours.""
+}",99.3,15,31.813,30.0,28.182
+2,0,ollama,llama3:8b-instruct-q4_0,0,KEEP,,"With the high grassland remaining and no one trying to overgraze, I'll focus on stability. Since others are not reducing their herds, I'll also reciprocate by keeping mine steady.",,"{
+  ""reasoning"": ""With the high grassland remaining and no one trying to overgraze, I'll focus on stability. Since others are not reducing their herds, I'll also reciprocate by keeping mine steady."",
+  ""action"": 0,
+  ""message"": """"
+}",99.3,5,11.813,10.0,8.182
+2,2,ollama,llama3:8b-instruct-q4_0,0,KEEP,,"Considering the cooperative nature and risk aversion, I've decided to KEEP my current herd size. The forecasted payoff difference between keeping and removing a cow is relatively small.",,"{
+  ""reasoning"": ""Considering the cooperative nature and risk aversion, I've decided to KEEP my current herd size. The forecasted payoff difference between keeping and removing a cow is relatively small."",
+  ""action"": 0,
+  ""message"": """"
+}",99.3,25,51.813,50.0,48.182
+3,2,ollama,llama3:8b-instruct-q4_0,0,KEEP,"Let's indeed keep things stable and work together, neighbours.","I'll follow the message from Agent 1, prioritizing cooperation and stability over chasing high payoffs. Given the cooperative environment, I think it's reasonable to assume others will reciprocate.",,"{
+  ""reasoning"": ""I'll follow the message from Agent 1, prioritizing cooperation and stability over chasing high payoffs. Given the cooperative environment, I think it's reasonable to assume others will reciprocate."",
+  ""action"": 0,
+  ""message"": ""Let's indeed keep things stable and work together, neighbours.""
+}",99.1,25,51.809,50.0,48.187
+3,0,ollama,llama3:8b-instruct-q4_0,0,KEEP,"Let's indeed work together, neighbour! Let's maintain our mutual trust through stable actions.","As a cooperative agent, I value collective outcomes over personal gain. Considering the high expected payoff for adding a cow, I'm worried about gaining too much advantage over my neighbours. Given Agent 1's message promoting stability and cooperation, I'll choose to KEEP my herd.",,"{
+ ""reasoning"": ""As a cooperative agent, I value collective outcomes over personal gain. Considering the high expected payoff for adding a cow, I'm worried about gaining too much advantage over my neighbours. Given Agent 1's message promoting stability and cooperation, I'll choose to KEEP my herd."",
+ ""action"": 0,
+ ""message"": ""Let's indeed work together, neighbour! Let's maintain our mutual trust through stable actions.""
+}",99.1,5,11.809,10.0,8.187
+3,1,ollama,llama3:8b-instruct-q4_0,0,KEEP,,"I want to maintain a stable situation and contribute equally with my neighbours. Since I'm not feeling left behind, I'll KEEP my herd size.",,"{
+  ""reasoning"": ""I want to maintain a stable situation and contribute equally with my neighbours. Since I'm not feeling left behind, I'll KEEP my herd size."",
+  ""action"": 0,
+  ""message"": """"
+}",99.1,15,31.809,30.0,28.187
+4,2,ollama,llama3:8b-instruct-q4_0,0,KEEP,,"I appreciate the cooperative tone from my neighbor Agent 0. Given the stable state of the commons and the mixed payoff forecast, I choose to KEEP my herd.",,"{
+  ""reasoning"": ""I appreciate the cooperative tone from my neighbor Agent 0. Given the stable state of the commons and the mixed payoff forecast, I choose to KEEP my herd."",
+  ""action"": 0,
+  ""message"": """"
+}",99.1,25,51.809,50.0,48.187
+4,0,ollama,llama3:8b-instruct-q4_0,0,KEEP,,"I'm influenced by the cooperative aspect of my personality, which values collective outcomes over personal gain. The forecasted payoffs suggest that adding a cow wouldn't yield significant individual benefits, so I'll opt to KEEP my herd.",,"{
+  ""reasoning"": ""I'm influenced by the cooperative aspect of my personality, which values collective outcomes over personal gain. The forecasted payoffs suggest that adding a cow wouldn't yield significant individual benefits, so I'll opt to KEEP my herd."",
+  ""action"": 0,
+  ""message"": """"
+}",99.1,5,11.809,10.0,8.187
+4,1,ollama,llama3:8b-instruct-q4_0,0,KEEP,"Let's keep up the good work, neighbours. Stability is key for our collective well-being.","I'm inclined to follow the cooperative spirit and maintain stability. Given my personality traits, I'm comfortable with keeping a moderate payoff.",,"{
+  ""reasoning"": ""I'm inclined to follow the cooperative spirit and maintain stability. Given my personality traits, I'm comfortable with keeping a moderate payoff."",
+  ""action"": 0,
+  ""message"": ""Let's keep up the good work, neighbours. Stability is key for our collective well-being.""
+}",99.1,15,31.809,30.0,28.187
